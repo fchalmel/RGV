@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr"><!-- use class="debug" here if you develope a template and want to check-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+   	<!-- some meta tags, important for SEO"--> 
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="robots" content="index,follow" />
+	
+	<title> The ReproGenomics Viewer</title>
+			
+            
+            <link rel="stylesheet" href="css/inuit.css" />
+            <link rel="stylesheet" href="css/fluid-grid16-1100px.css" />
+            <link rel="stylesheet" href="css/eve-styles.css" />
+
+            <script src="js/respond-min.js" type="text/javascript"></script>
+            <script src="dropzone.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+            <script>window.jQuery || document.write('<script src="scripts/jquery164min.js">\x3C/script>')</script><!--local fallback for JQuery-->
+            <script type="text/javascript">
+				function switchInfoPerso1()
+				{
+				divInfo = document.getElementById('divacacherBrowser');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacherBrowser2');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso2()
+				{
+				divInfo = document.getElementById('divacacherConvert');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacherConvert2');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso3()
+				{
+				divInfo = document.getElementById('divacacherAlignment');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacherAlignment2');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso4()
+				{
+				divInfo = document.getElementById('divacacherGalaxy');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacherGalaxy2');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso5()
+				{
+				divInfo = document.getElementById('divacacherUser');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacherUser2');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso5()
+				{
+				divInfo = document.getElementById('divacacherGenome');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacherGenome2');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+			</script>
+            
+				  
+                  <!--Hide the hr img because of ugly borders in IE7. You can change the color of border-top to display a line -->
+                  <!--[if lte IE 7]>
+                    	<style>
+                    		hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 0; padding:0; }
+                            .grid-4{ width:22% }
+                        </style>
+                    <![endif]-->
+
+</head>
+
+<!--===============================================================  Logo, social and menu =====================================================================================--> 
+<body>
+	<div class="wrapper">	
+                     <a href="index.html" id="logo"><img src="img/logo.png" alt="something" />
+                      <h1 class="accessibility">RGV, the ReproGenomic Viewer</h1></a>
+
+                   <ul id="nav" class="main">
+                        <li><a href="index.html" >Home</a></li>
+                        <li><a href="tools.html" class="active">Toolbox</a></li>
+                		<li><a href="project.html">RGV Content</a></li>
+                        <li><a href="tuto.html">Tutorial</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="publication.html">Publications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                        
+        </div><!--end of wrapper div--> 
+           
+	<div class="clear"></div>    
+<!--===============================================================  Tools =====================================================================================--> 
+	<div class="wrapper">
+				
+				<div class="grid-16 grid intro green">
+					<div style="width:90%;float:left;">
+                    <h5><a href="browser.html">RGV genome browser (JBrowse)</a></h5>
+					</div>
+					<div style="width:10%;float:left;">
+					<h6 align="right"><a href="javascript: switchInfoPerso1();">details</a></h6>
+					</div>
+                 
+                    	<div id="divacacherBrowser" class="grid-5" style="display: none;">
+		                    <h6>Description</h6>
+		                    	<p style="text-align: justify;">The implementation of  <a href="http://jbrowse.org//" target="_blank_">JBrowse</a> allows users to view and download datasets embedded into the RGV genome browser by choosing a track of interest. Users can also upload their own datasets (several file formats are allowed: gff3, gtf, bigWig, bam, and vcf) in the JBrowse session to compare them to the existing tracks by using the option “Open” in the “File” tab. If necessary the user can first run the RGV data processing pipeline, implemented in the Galaxy session and then upload their own tracks into the system.</p>
+							<h6>Development : Available</h6>
+							<h6>Coming soon</h6>
+								<ul>
+								<li style="text-align: justify;">Other datasets and other genome sequences will be integrated </li>
+								<li>UTR visualization</li>
+								<li>New track selector</li>
+								<li>Fix some minor bug</li>
+								</ul>
+                    	</div>
+                    	<div id="divacacherBrowser2" class="grid-10" style="display: none;">
+                        				<a href="browser.html"><img src="images/browser.png" alt="demo-image" /></a><br>
+                        				<h6><a href="tuto.html">How to use</a></h6>
+                        				
+                    	</div>
+                                        
+                 </div><!--end of slogan div-->
+                                        
+                 	<div class="grid-16 grid intro green">
+                 	<div style="width:90%;float:left;">
+                 	<h5><a href="http://rgv.genouest.org/galaxy" target="_blank">RGV working environment (Galaxy)</a></h5>
+					</div>
+					<div style="width:10%;float:left;">
+					<h6 align="right"><a href="javascript: switchInfoPerso4();">details</a></h6>
+					</div> 
+	                    <div id="divacacherGalaxy" class="grid-16" style="display: none;">
+	                    	<div class="grid-16">
+								<p align="justify">To host genomics tools essential for data comparisons between genome releases and above all between species, we implemented a Galaxy bioinformatics workflow environment. Galaxy is an open web-based platform for genomic research that provides users with an easy-to-use web interface to create complex biological workflows by tools that simply need to be dragged and dropped. The RGV Galaxy session is available without creating an account</p>
+	                    	</div>
+								<div style="width:90%;float:left;">
+									<h6><a href="http://rgv.genouest.org/galaxy">RGV data processing</a></h6>
+								</div>
+									<div style="width:10%;float:left;">
+										<h6 align="right"><a href="javascript: switchInfoPerso3();">+</a></h6>
+									</div>
+									<div id="divacacherAlignment" class="grid-16" style="display: none;">
+										<h6>Description</h6>
+											<p style="text-align: justify;">This pipeline is based on the implementation of three tool suites: UCSC tools, bedtools, and <a href="http://crossmap.sourceforge.net/" target="_blank_">CrossMap</a>. The former is used for all data file format conversions in either bedGraph or bigWig formats. The second is employed for the data standardization step. Finally, the latter is used in both cross-assembly and cross-species conversions of genome coordinates and makes use of pair-wise alignment files (chain format) provided by UCSC. The entire process takes roughly 30 min for an input file (bam format) of 200 Mb. Once the conversion is completed, the user can easily upload the resulting bigWig file to the RGV JBrowse session<br>
+		                    	</p>
+										<h6>Development : Available</h6>
+										<h6>Coming soon</h6>
+										<ul>
+											<li tyle="text-align: justify">Gff/gtf conversion across inter-species and assemblies</li>
+										</ul>
+									</div>
+									<div id="divacacherAlignment2" class="grid-16" style="display: none;">
+                        				<a href="browser.html"><img style="display: block;margin-left: auto;margin-right: auto" src="images/RGVdataprocessing.png" alt="demo-image" /></a><br>
+                        				<h6><a href="tuto.html">How to use</a></h6>
+                        				
+									</div>
+									
+									
+									
+								<div style="width:90%;float:left;">
+									<h6><a href="http://rgv.genouest.org/galaxy">RGV alignment tool</a></h6>
+								</div>
+									<div style="width:10%;float:left;">
+										<h6 align="right"><a href="javascript: switchInfoPerso2();">+</a></h6>
+									</div>
+									<div id="divacacherConvert" class="grid-16" style="display: none;">
+										<h6>Description</h6>
+											<p style="text-align: justify;">The genome alignment workflow based on the Blast-Like Alignment Tool (<a href="http://genome.ucsc.edu/FAQ/FAQblat.html" target="_blank_">BLAT</a>) allows users to use a one-step procedure to automatically align their DNA/RNA or protein sequences (fasta format) onto the thirteen reference genome sequences available in the RGV system. The resulting alignments are post-processed and made available in two forms: a table including direct links to the JBrowse session and a General Feature Format (gff) file that can be uploaded to the genome browser.<br></p>
+										<h6>Development : Available</h6>
+										<h6>Coming soon</h6>
+										<ul>
+											<li tyle="text-align: justify">Directly Blat sequences in genome browser</li>
+										</ul>
+										<br><h6><a href="tuto.html">How to use</a></h6>
+									</div>
+									
+									
+									
+	                    </div>
+		                                        
+                 </div><!--end of slogan div-->
+                
+ 
+ 
+          </div><!--end of div grids-->
+	
+    </div><!--end of div wrapper-->    
+    
+<hr>
+<!--===============================================================  Footer =====================================================================================-->  
+		<div class="wrapper">
+			<div id="logos" class="grid text-center">
+	    <!--<a title="IRSET" href="http://www.irset.org"><img src="/bundles/peppsy/img/logos/logotypeIrset.gif" alt="IRSET" width=75 /></a>-->
+        <a title="INSERM" href="http://www.inserm.fr"><img src="img/inserm.gif" alt="INSERM" width=115 />
+        <a title="IRSET" href="http://www.irset.fr"><img src="img/logo_irset.jpg" alt="IRSET" width=115 />
+        <a title="FRM" href="http://www.frm.fr"><img src="img/logo_frm.gif" alt="FRM" width=75 />
+        <a title="ANSES" href="http://www.anses.fr"><img src="img/anses_logo.jpg" alt="ANSES" width=55 />
+	    <a title="Biogenouest" href="http://www.biogenouest.org"><img src="img/logo_biogenouest.jpg" alt="Biogenouest" width=75 height=57 /></a>
+	    <a title="IRISA" href="http://www.irisa.fr"><img src="img/irisa.png" alt="IRISA" width=120 height=29 /></a>
+	    <a title="INRIA" href="http://www.inria.fr/"><img src="img/logoINRIA.gif" alt="INRIA" width=105 height=44 /></a>
+	    <a title="CNRS" href="http://www.cnrs.fr/"><img src="img/cnrs.jpg" alt="CNRS" width=56 height=56 /></a>
+	    <a title="Rennes 1 University" href="http://www.univ-rennes1.fr/"><img src="img/univrennes1.jpg" alt="Université de Rennes 1" width=128 height=52 /></a>
+	    <a title="Region Bretagne" href="http://www.bretagne.fr/"><img src="img/region_bretagne.gif" alt="Région Bretagne" width=57 height=58 /></a>
+            <a title="FEDER" href="#"><img src="img/feder.jpg" alt="GIS-IBiSA" width=75 height=40 /></a>
+	    <br/>
+    </div>
+					<div id="footer">
+            	
+                
+                			<div class="grids">
+                                <div class="grid-5 grid text-center">
+                                    <p>&copy; Genouest - IRSET 
+                                </div>
+                                <div class="grid-6 grid text-center">
+                                    <p>Copyright 2014-2019 Genouest</p>
+                                </div>
+                                
+                                <div class="grid-5 grid text-center">
+                                  <p>Contact : support@genouest.org
+                                </div>
+                                
+                           </div><!--end of grids-->
+                   </div><!--end of footer-->
+		   </div><!--end of wrapper-->
+    
+    
+        	<script type="text/javascript"> <!--Outdated browsers warning/message and link to Browser-Update. Comment or delete it if you don´t want to use it-->
+						var $buoop = {} 
+						$buoop.ol = window.onload; 
+						window.onload=function(){ 
+						 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+						 var e = document.createElement("script"); 
+						 e.setAttribute("type", "text/javascript"); 
+						 e.setAttribute("src", "http://browser-update.org/update.js"); 
+						 document.body.appendChild(e); 
+						} 
+			</script> 
+                        
+			 <script type="text/javascript">  <!--Javascript for Tabs by Sohtanaka, include it on pages where you use tabs, else delete it-->                     
+                        $(document).ready(function() {
+							
+							 //When page loads...
+							 $(".tab_content").hide(); //Hide all content
+							 $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+							 $(".tab_content:first").show(); //Show first tab content
+							
+							 //On Click Event
+							 $("ul.tabs li").click(function() {
+							
+							  $("ul.tabs li").removeClass("active"); //Remove any "active" class
+							  $(this).addClass("active"); //Add "active" class to selected tab
+							  $(".tab_content").hide(); //Hide all tab content
+							
+							  var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+							  $(activeTab).fadeIn(); //Fade in the active ID content
+							  return false;
+							 });
+							
+							});
+			</script>
+</body>
+</html>

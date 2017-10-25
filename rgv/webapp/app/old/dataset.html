@@ -1,0 +1,233 @@
+<script src="scripts/AddHeader.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="bower_components/angular-mass-autocomplete/massautocomplete.js"></script>
+
+<div class="row">
+
+    <!--#################################### Project Main panel  ###################################-->
+    <!--  
+                ##########################  ############
+                #                        #  #          #
+                #       Project info     #  #    2nd   #
+                #        u are here      #  #    panel #
+                ##########################  ############
+    -->
+
+    <div class='col-lg-8'>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                New project 
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <label class="control-label"  for="description">Title <sup>*</sup></label>
+                        <input ng-model="dataset.title" class="form-control" id="title" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <label class="control-label"  for="description">Description  <sup>*</sup></label>
+                        <textarea  ng-model="dataset.description" class="form-control" id="description" placeholder="200-1000 words max" required></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <label class="control-label"  for="description">Overall design</label>
+                        <textarea  ng-model="dataset.overalldesign" class="form-control" id="overalldesign" placeholder="200-1000 words max" ></textarea>
+                    </div>
+                    <div class="col-md-6 ">
+                        <label class="control-label"  for="description">Result(s)</label>
+                        <textarea  ng-model="dataset.result" class="form-control" id="overalldesign" placeholder="200-1000 words max" ></textarea>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Pubmed link(s)</label>
+                            <input class="form-control" ng-model="pubu" id="pin"/>
+                            <buton class="btn btn-success" style="margin-top:10px;" ng-click="add_pub(pubu)">Add</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6" ng-repeat="pub in dataset.pubmed" >
+                        <a ng-href="http://www.ncbi.nlm.nih.gov/pubmed/{{pub}}">http://www.ncbi.nlm.nih.gov/pubmed/{{pub}} <a href="" ng-click="del_pub(pub)"><i class="fa fa-times pull-right" aria-hidden="true" ></i></a></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Crosslink(s)</label>
+                            <input class="form-control" ng-model="linku" id="lin"/>
+                            <buton class="btn btn-success" style="margin-top:10px;" ng-click="add_link(linku)">Add</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6" ng-repeat="lin in dataset.ext_link" >
+                        <a href="{{lin}}">{{lin}} <a href="" ng-click="del_link(lin)"><i class="fa fa-times pull-right" aria-hidden="true" ></i></a></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div ng-if="dataset.owner == user.id && dataset.status == 'private'" class="col-md-6">
+                        <div class="form-group">
+                             <label>Contributor(s)</label>
+                            <input id="dataset.contributor" class="form-control" type="text" data-ng-model="contributor"/>
+                            <buton class="btn btn-success" style="margin-top:10px;" ng-click="add_contributors(contributor)">Add</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6" ng-repeat="contrib in dataset.contributors" >
+                        <p>{{contrib}}<a ng-if="dataset.owner == user.id && dataset.status == 'private'" href="" ng-click="del_contributor(contrib)"><i class="fa fa-times pull-right" aria-hidden="true" ></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#################################### Project End Main panel  ###############################-->
+
+
+
+
+    <!--#################################### Project Secondary panel  ##############################-->
+    <!--  
+                ##########################  ############
+                #                        #  #          #
+                #       Project info     #  #u are here#
+                #                        #  #          #
+                ##########################  ############
+    -->
+    <div class='col-lg-4'>
+        <div class="row">
+            <div class='col-lg-12'> 
+                <div class="panel panel-primary text-center no-boder" style="background-color: #325d88;border-color: #ffffff;">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary text-center no-boder" style="background-color: #325d88;border-style: none;">
+                                    <h3 style="color: white;">About project</h3>
+                                    <div class="row">
+                                        <div class="col-md-12 ">
+                                            <label class="control-label"  style="color: white;">Author</label>
+                                            <p style="color: white;">{{dataset.authors}}</p>
+                                        </div>                           
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div ng-repeat='study in dataset.studies' class="col-md-6">
+                                <a style="text-decoration: none;color: black;" data-toggle="collapse" data-parent="#accordion" href="#{{study.id}}" target="_self" ng-click="getInfo(dataset,study.id)" target='_self'>
+                                    <div class="panel panel-primary text-center no-boder bg-color-blue ">
+                                        <div class="panel-body boxstud">
+                                            <i class="fa fa-folder fa-2x"></i>
+                                            <p ng-if="study.type == 'observational'">{{study.id}} - {{study.observational_title}} </p>
+                                            <p ng-if="study.type == 'interventional'" >{{study.id}} - {{study.interventional_title}} </p>
+                                        </div>
+                                        <div class="panel-footer back-footer-blue">
+                                            {{study.type}}
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+        </div>
+        <div class="row" style="margin-top:10px; ">
+            <div class="col-lg-12" ng-if="Math.round((progress * 100)/5) >= 30">
+                <ul class="list-inline pull-left">
+                    <li><button type="btn" ng-click="dataset_add()" class="btn btn-primary btn-large">Save and quit</button></li>
+                </ul>
+                <ul class="list-inline pull-right">
+                    <li><button type="button" class="btn btn-primary" ng-click="dataset_add_continue()" >Save and continue</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--####################################  End Project Secondary panel  ##########################-->
+
+</div>
+<sup>*</sup> Required 
+
+
+<!-- Begin Add data connecting line
+<div class="container">
+    <div class="row">
+        <h3>Create New Project</h3>
+        <form role="form">
+            <div class="form-group">
+                <label class="control-label " for="title">Title</label>
+                <input ng-model="dataset.title" class="form-control" id="title" required/>
+            </div>
+            <div class="form-group">
+                <label class="control-label"  for="description">Description</label>
+                <textarea ng-model="dataset.description" class="form-control" id="description" placeholder="200-1000 words max" required></textarea>
+            </div>
+            <div class="form-group">
+                <label class="control-label"  for="description">Design</label>
+                <textarea ng-model="dataset.overalldesign" class="form-control" id="description" placeholder="200-1000 words max" required></textarea>
+            </div>
+            <div class="form-group">
+                <label class="control-label"  for="description">Results</label>
+                <textarea ng-model="dataset.results" class="form-control" id="description" placeholder="200-1000 words max" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Authors</label></i>
+                <textarea  placeholder="author id, comma separated, no whitespace: user1,user2" ng-model="dataset.authors" ng-init ='dataset.authors=user.id' class="form-control" id="authors"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label"  for="collaborators">PubMed ID(s)</label>
+                        <input id="dataset.pmid" class="form-control" type="text" data-ng-model="pmid" />
+                        <buton class="btn btn-success" style="margin-top:10px;" ng-click="add_pmid(pmid)">Add</button>
+                    </div>
+                </div>
+                <div class="col-md-6" ng-repeat="contrib in dataset.pmids" >
+                     <button style="font-size:9px;line-height:10px;text-transform: none;" type="button" class="btn btn-info">{{contrib}}<a  href="" ng-click="del_contributor(contrib)"><i class="fa fa-times pull-right" aria-hidden="true" ></i></a></button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label"  for="collaborators">Contributors</label>
+                        <input id="dataset.contributor" class="form-control" type="text" data-ng-model="contributor" />
+                        <buton class="btn btn-success" style="margin-top:10px;" ng-click="add_contributors(contributor)">Add</button>
+                    </div>
+                </div>
+                <div class="col-md-6" ng-repeat="contrib in dataset.contributors" >
+                     <button style="font-size:9px;line-height:10px;text-transform: none;" type="button" class="btn btn-info">{{contrib}}<a  href="" ng-click="del_contributor(contrib)"><i class="fa fa-times pull-right" aria-hidden="true" ></i></a></button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label"  for="links" >Links</label>
+                        <input  class="form-control" ng-model="linku" id="lin"/>
+                        <buton class="btn btn-success" style="margin-top:10px;" ng-click="add_link(linku)">Add</button>
+                    </div>
+                </div>
+                <div class="col-md-6" ng-repeat="lin in dataset.ext_link" >
+                    <button style="font-size:9px;line-height:10px;text-transform: none;" type="button" class="btn btn-info">{{lin}}<a  href="" ng-click="del_link(lin)"><i class="fa fa-times pull-right" aria-hidden="true" ></i></a></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Save and Quit
+    <ul class="list-inline pull-left">
+        <li><button type="btn" ng-click="dataset_add()" class="btn btn-primary btn-large">Save and quit</button></li>
+    </ul>
+    <ul class="list-inline pull-right">
+        <li><button type="button" class="btn btn-primary" ng-click="dataset_add_continue()" >Save and continue</button></li>
+    </ul>
+    <!-- Save and Quit End
+</div> -->

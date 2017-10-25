@@ -1,0 +1,28 @@
+{
+  "name": "angular-venn",
+  "version": "1.0.1",
+  "description": "Venn diagrams for AngularJS",
+  "main": "angular-venn.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hash-bang/angular-venn.git"
+  },
+  "keywords": [
+    "angular",
+    "venn",
+    "diagram",
+    "graph",
+    "ui"
+  ],
+  "author": "Matt Carter <m@ttcarter.com> (https://github.com/hash-bang)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hash-bang/angular-venn/issues"
+  },
+  "homepage": "https://github.com/hash-bang/angular-venn#readme",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "d3": "^3.5.16",
+    "venn": "^1.0.2"
+  }
+}

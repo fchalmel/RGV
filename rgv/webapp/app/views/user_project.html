@@ -1,0 +1,65 @@
+<!-- Begin User profile header -->
+<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<h2>Projects overview</h2>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#project" target="_self">Projets ({{project_number}})</a></li>
+  <li><a data-toggle="tab" href="#study" target="_self" ng-click="showStudies()">Studies ({{studies_number}})</a></li>
+  <li><a data-toggle="tab" href="#assay" target="_self" ng-click="showAssays()">Assay ({{assay_number}})</a></li>
+  <li><a data-toggle="tab" href="#signature" target="_self" ng-click="showSignatures()">Signatures ({{signatures_number}})</a></li>
+  
+</ul>
+
+<div class="tab-content">
+  <div id="project" class="tab-pane fade in active">
+    <div ng-repeat='project in projects'>
+      <h3>{{project.id}} - {{project.title}}</h3>(<a href="#/browse?dataset={{project.id}}">view</a>)
+      <p><b>Description : </b>{{project.description}}</p>
+      <p><b>Pubmed : </b><span ng-repeat='pub in project.pubmed.split()'><a href="https://www.ncbi.nlm.nih.gov/pubmed/{{pub}}">{{pub}} </a></span></p>
+      <p><b>Studies : </b>{{project.studies}}</p>
+      <p><b>Signatures : </b>{{project.signatures}}</p>
+      <hr>
+    </div>
+    <button ng-click="back('projects')" class="btn btn-primary pull-left" ng-if="pfrom - 25 > 0">Back</button>
+    <button ng-click="more('projects')" class="btn btn-primary pull-right" ng-if="projects.length == 25">Next</button>
+  </div>
+  <div id="study" class="tab-pane fade">
+      <div ng-repeat='study in studies'>
+        <h3>{{study.id}} - {{study.title}}</h3>(<a href="#/browse?dataset={{study.id}}">view</a>)
+        <p><b>Description : </b>{{study.description}}</p>
+        <p><b>Experimental design : </b> {{study.experimental_design}}</p>
+        <p><b>Type : </b>{{study.study_type}}</p>
+        <p><b>Assays : </b>{{study.assays}}</p>
+        <p><b>Signatures : </b>{{study.signatures}}</p>
+        <hr>
+      </div>
+      <button ng-click="back('studies')" class="btn btn-primary pull-left" ng-if="sfrom - 25 >= 0">Back</button>
+      <button ng-click="more('studies')" class="btn btn-primary pull-left" ng-if="studies.length == 25">Next</button>
+  </div>
+  <div id="assay" class="tab-pane fade">
+      <div ng-repeat='assay in assays'>
+        <h3>{{assay.id}} - {{assay.title}}</h3>(<a href="#/browse?dataset={{assay.id}}">view</a>)
+        <p><b>Organism : </b>{{assay.organism}}</p>
+        <p><b>Factor(s) : </b>{{assay.factors}}</p>
+        <p><b>Study : </b>{{assay.studies}}</p>
+        <p><b>Signatures : </b>{{assay.signatures}}</p>
+        <hr>
+      </div>
+      <button ng-click="back('assays')" class="btn btn-primary pull-left" ng-if="afrom - 25 >= 0">Back</button>
+      <button ng-click="more('assays')" class="btn btn-primary pull-left" ng-if="assays.length == 25">Next</button>
+  </div>
+  <div id="signature" class="tab-pane fade">
+    <div ng-repeat='signature in signatures'>
+        <h3>{{signature.id}} - {{signature.title}}</h3>(<a href="#/browse?dataset={{signature.id}}">view</a>)
+        <p><b>Type : </b>{{signature.type}}</p>
+        <p><b>Organism : </b>{{signature.organism}}</p>
+        <p><b>Factor(s) : </b>{{signature.factors}}</p>
+        <p><b>Project : </b>{{signature.projects}}</p>
+        <p><b>Study : </b>{{signature.studies}}</p>
+        <p><b>Assay : </b>{{signature.assays}}</p>
+        <hr>
+      </div>
+      <button ng-click="back('signatures')" class="btn btn-primary pull-left" ng-if="sgfrom - 25 >= 0">Back</button>
+      <button ng-click="more('signatures')" class="btn btn-primary pull-left" ng-if="signatures.length == 25">Next</button>
+  </div>
+</div>

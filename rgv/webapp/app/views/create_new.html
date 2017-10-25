@@ -1,0 +1,126 @@
+<!-- <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+
+<script type="text/ng-template" id="firstDialogId">
+<div class="container" style="width: auto;">
+  <div class="row">
+    <h2>Errors</h2>
+    <div ng-repeat="err in ngDialogData.error_p.Critical" class="alert alert-danger" role="alert">[Project] Critical - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_s.Critical" class="alert alert-danger" role="alert">[Study] Critical - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_a.Critical" class="alert alert-danger" role="alert">[Assay] Critical - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_f.Critical" class="alert alert-danger" role="alert">[Factor] Critical - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_sig.Critical" class="alert alert-danger" role="alert">[Signature] Critical - {{err}}</div>
+
+    <div ng-repeat="err in ngDialogData.error_p.Warning" class="alert alert-warning" role="alert">[Project] Warning - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_s.Warning" class="alert alert-warning" role="alert">[Study] Warning - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_a.Warning" class="alert alert-warning" role="alert">[Assay] Warning - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_f.Warning" class="alert alert-warning" role="alert">[Factor] Warning - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_sig.Warning" class="alert alert-warning" role="alert">[Signature] Warning - {{err}}</div>
+
+    <div ng-repeat="err in ngDialogData.error_p.Info" class="alert alert-info" role="alert">[Project] Info - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_s.Info" class="alert alert-info" role="alert">[Study] Info - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_a.Info" class="alert alert-info" role="alert">[Assay] Info - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_f.Info" class="alert alert-info" role="alert">[Factor] Info - {{err}}</div>
+    <div ng-repeat="err in ngDialogData.error_sig.Info" class="alert alert-info" role="alert">[Signature] Info - {{err}}</div>
+  </div>
+    
+  <div ng-if="ngDialogData.critical != 0 " class="row">
+    <h2>Some critical errors are detected !</h2>
+    <p>Would you want to modify the TOXsIgN template ?</p>
+    <button ng-click="closeThisDialog(0)" type="btn" class="btn btn-success btn-large pull right">Yes</button>
+    <button ng-click="upExcel(ngDialogData.file)" type="btn" class="btn btn-default btn-large">No</button>
+  </div>
+
+  <div ng-if="ngDialogData.critical == 0 " class="row">
+    <h2>No error or some minor errors are detected !</h2>
+    <p>Would you want to modify the TOXsIgN template ?</p>
+    <button ng-click="closeThisDialog(0)" type="btn" class="btn btn-success btn-large pull right">Yes</button>
+    <button ng-click="upExcel(ngDialogData.file)" type="btn" class="btn btn-default btn-large">No</button>
+  </div>
+
+  
+</div>
+
+</script>
+
+<script type="text/ng-template" id="checking">
+  <div class="container" style="width: auto;">
+    <div class="progress-bar progress-bar-striped active" role="progressbar"
+    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+      Checking excel template ...
+    </div>
+  </div>
+
+</script>
+
+<script type="text/ng-template" id="saving">
+  <div class="container" style="width: auto;">
+    <div class="progress-bar progress-bar-striped active" role="progressbar"
+    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+      Saving ...
+    </div>
+  </div>
+
+</script>
+
+<h2>Create new project</h2>
+
+<input class="form-control" id="organism_vivo" type="text" ng-model="selectOnto" placeholder="Species"
+                            typeahead-min-length="4" ng-change="get_onto()" typeahead-on-select="selected_tissue($item, $model,label)" typeahead=" item.prefLabel for item in search_result | filter:$viewValue " typeahead-loading="loading"
+                            class="form-control" >
+<button type="btn" 
+    class="btn btn-success btn-large"
+    ng-dialog="views/selectonto.html"
+    ng-dialog-class="ngdialog-theme-default"
+    ng-dialog-close-previous>
+    Open modal text
+</button>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Upload your projects here
+    </div>
+    <div class="panel-body">
+        <div class="row">
+          <a href="" ngf-select="signature_upload($file)" style="text-align: center;">
+            <div class="col-md-2" style="margin-top: 50px;vertical-align: middle;" >
+              <i class="fa fa-file fa-5x" aria-hidden="true" style="margin-top: 10px;"></i>
+              <h2>Create new</h2>
+            </div>
+          </a>
+          <div class="col-md-10">
+            <p>Download the last template for data upload.<br> Use the v.04 temlpate version. All other versions are deprecated</p>
+            <table class="table table-bordered table-hover table-striped">
+              <tr>
+                <th>Description</th>
+                <th>File</th>
+              </tr>
+              <tr>
+                  <td>TOXsIgN update project template</td>
+                  <td><a ng-href="/dataset_download/templates/TOXsIgN_template_v0.4.xlsx">TOXsIgN_template_v0.4</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+    </div>
+
+</div> -->
+<link rel="stylesheet" media="screen" href="bower_components/handsontable/dist/handsontable.full.css">
+
+<hot-table settings="{colHeaders: colHeaders, contextMenu: ['row_above', 'row_below', 'remove_row'], afterChange: afterChange}"
+           row-headers="false"
+           min-spare-rows="minSpareRows"
+           datarows="db.items"
+           height="300"
+           width="700">
+    <hot-column data="id" title="'ID'"></hot-column>
+    <hot-column data="name.first" title="'First Name'" type="grayedOut" read-only></hot-column>
+    <hot-column data="name.last" title="'Last Name'" type="grayedOut" read-only></hot-column>
+    <hot-column data="address" title="'Address'" width="150"></hot-column>
+    <hot-column data="product.description" title="'Favorite food'" type="'autocomplete'">
+        <hot-autocomplete datarows="description in product.options"></hot-autocomplete>
+    </hot-column>
+    <hot-column data="price" title="'Price'" type="'numeric'" width="80" format="'$ 0,0.00'"></hot-column>
+    <hot-column data="isActive" title="'Is active'" type="'checkbox'" width="65" checked-template="'Yes'" unchecked-template="'No'"></hot-column>
+</hot-table>

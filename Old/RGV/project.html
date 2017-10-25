@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="fr"><!-- use class="debug" here if you develope a template and want to check-->
+<head>
+	<meta charset="UTF-8" />
+	<meta me="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+   	<!-- some meta tags, important for SEO"--> 
+    <meta me="description" content="put a short description in here" />
+    <meta me="keywords" content="put your important keywords in here" />
+    <meta me="revisit-after" content="7 days" />
+    <meta me="robots" content="index,follow" />
+	
+	<title> The ReproGenomics Viewer</title>
+			
+            
+            <link rel="stylesheet" href="css/inuit.css" />
+            <link rel="stylesheet" href="css/fluid-grid16-1100px.css" />
+            <link rel="stylesheet" href="css/eve-styles.css" />
+            
+            <script src="js/respond-min.js" type="text/javascript"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+            <script>window.jQuery || document.write('<script src="scripts/jquery164min.js">\x3C/script>')</script><!--local fallback for JQuery-->
+            
+				  
+                  <!--Hide the hr img because of ugly borders in IE7. You can change the color of border-top to display a line -->
+                  <!--[if lte IE 7]>
+                    	<style>
+                    		hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 0; padding:0; }
+                            .grid-4{ width:22% }
+                        </style>
+                    <![endif]-->
+
+</head>
+
+<!--===============================================================  Logo, social and menu =====================================================================================--> 
+<body>
+	<div class="wrapper">	
+                      <a href="index.html" id="logo"><img src="images/logo.png" alt="something" /></a>
+                      <h1 class="accessibility">RGV, the ReproGenomic Viewer</h1></a>
+                   
+                    
+                    <ul id="nav" class="main">
+                        <li><a href="index.html" >Home</a></li>
+                        <li><a href="tools.html">Toolbox</a></li>
+                		<li><a href="project.html" class="active">RGV Content</a></li>
+                        <li><a href="tuto.html">Tutorial</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="publication.html">Publications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    
+            
+        </div><!--end of wrapper div-->    
+	<div class="clear"></div>   
+<!--===============================================================  Intro =====================================================================================--> 
+	<div class="wrapper">
+		<div class="grid intro grey"
+			<h2 id ="datasets"style="text-align : center">Tables</h2>
+			<p><a href="#genome">Genome sequences & status</a><br><a href="#data">Datasets & conversion</a><br><a href="#database">Databases & status</a><br><a href="#tools">Tools & status</a>
+		</div>
+	
+    </div><!--end of div wrapper-->   
+<!--===============================================================  Intro =====================================================================================--> 
+	<div class="wrapper">
+		<h2 id ="genome"style="text-align : center">Genome sequences & status</h2>
+	
+    </div><!--end of div wrapper-->    
+
+
+<!--===============================================================  Style playground =====================================================================================-->                 
+     <div class="wrapper">           
+                  <div class="grid-17 grid">
+                  	<table>
+                                    <thead>
+                                        <tr>
+                                        	<th></th>
+                                            <th scope="col">Species</th>
+                                            <th scope="col">Release</th>
+                                            <th scope="col">Genes annotation</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="images/hg.png" width="50px"></td>
+                                            <td>Human</td>
+                                            <td>Hg19</td>
+                                            <td class="success2">Ensembl : 2/03/15<br>RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/gorGor.png" width="50px"></td>
+                                            <td>Gorilla</td>
+                                            <td>gorGor3</td>
+                                            <td class="success2">Ensembl : 2/03/15
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/rheMac.png" width="50px"></td>
+                                            <td>Rhesus macaque</td>
+                                            <td>rheMac3</td>
+                                            <td class="success2">RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/mm.png" width="50px"></td>
+                                            <td>Mouse</td>
+                                            <td>mm10</td>
+                                            <td class="success2">Ensembl : 2/03/15<br>RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/rn.png" width="50px"></td>
+                                            <td>Rat</td>
+                                            <td>Rn6</td>
+                                            <td class="success2">RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/bosTau.png" width="50px"></td>
+                                            <td>Cow</td>
+                                            <td>bosTau7</td>
+                                            <td class="success2">RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/canFam.png" width="50px"></td>
+                                            <td>Dog</td>
+                                            <td>canFam3</td>
+                                            <td class="success2">Ensembl : 2/03/15<br>RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/monDom.png" width="50px"></td>
+                                            <td>Opossum</td>
+                                            <td>monDom5</td>
+                                            <td class="success2">Ensembl : 2/03/15<br>RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/ornAna.png" width="50px"></td>
+                                            <td>Platypus</td>
+                                            <td>ornAna1</td>
+                                            <td class="success2">Ensembl : 2/03/15<br>RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/susScr.png" width="50px"></td>
+                                            <td>Pig</td>
+                                            <td>susScr3</td>
+                                            <td class="success2">Ensembl : 2/03/15<br>RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/danRer.png" width="50px"></td>
+                                            <td>Zebrafish</td>
+                                            <td>danRer7</td>
+                                            <td class="success2">Ensembl : 2/03/15<br>RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/galGal.jpg" width="50px"></td>
+                                            <td>Chicken</td>
+                                            <td>galGal3</td>
+                                            <td class="success2">Ensembl : 2/03/15<br>RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/xenTro.png" width="50px"></td>
+                                            <td>Frog</td>
+                                            <td>xenTro3</td>
+                                            <td class="success2">Ensembl : 2/03/15<br>RefSeq : 2/03/15</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/sacCer.png" width="50px"></td>
+                                            <td>Yeast</td>
+                                            <td>sacCer3</td>
+                                            <td class="success2">Ensembl : 2/03/15
+                                            <td class="success"></td>
+                                        </tr>
+                                 </tbody>
+                          </table> 
+                  </div>
+     </div><!--end of div wrapper-->    
+<!--===============================================================  Intro =====================================================================================--> 
+	<div class="wrapper">
+		<h2 style="text-align : center">Datasets & conversion</h2>
+	
+    </div><!--end of div wrapper-->    
+
+
+<!--===============================================================  Style playground =====================================================================================-->                 
+     <div id ="data"  class="wrapper">           
+                  <div class="grid-17 grid">
+                                
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Projects</th>
+                                            <th scope="col">Species</th>
+                                            <th scope="col">Topics</th>
+                                            <th scope="col">Technologies</th>
+                                            <th><img src="images/hg.png" width="200px"></th>
+                                            <th><img src="images/gorGor.png" width="200px"></th>
+                                            <th><img src="images/rheMac.png" width="200px"></th>
+                                            <th><img src="images/mm.png" width="200px"></th>
+                                            <th><img src="images/rn.png" width="200px"></th>
+                                            <th scope="col"><img src="images/bosTau.png" width="200px"></th>
+                                            <th scope="col"><img src="images/canFam.png" width="200px"></th>
+                                            <th scope="col"><img src="images/monDom.png" width="200px"></th>
+                                            <th scope="col"><img src="images/ornAna.png" width="200px"></th>
+                                            <th scope="col"><img src="images/susScr.png" width="200px"></th>
+                                            <th scope="col"><img src="images/danRer.png" width="200px"></th>
+                                            <th scope="col"><img src="images/galGal.jpg" width="200px"></th>
+                                            <th scope="col"><img src="images/xenTro.png" width="200px"></th>
+                                            <th scope="col"><img src="images/sacCer.png" width="200px"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/24740603" target="_blank">Chalmel et al 2014<br></a></td>
+                                            <td>Rat, rn4</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq</td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="error"></td>
+                                        </tr> 
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/23759713" target="_blank">Gan et al 2013</a><br></td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq 5hMeDIP-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/24463510" target="_blank">Necsulea et al 2014 <br></a></td>
+                                            <td>Multi</td>
+                                            <td>Tissue profiling</td>
+                                            <td>RNA-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/23791531" target="_blank">Soumillon et al 2013 <br></a></td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/20473313" target="_blank">Brykczynska et al 2010 <br></a></td>
+                                            <td>Human, hg18</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>MNase-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/25210130" target="_blank">Chocu et al 2014 <br></a></td>
+                                            <td>Rat, rn4</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq ChIP-seq MNase-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr> 
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/23770822" target="_blank">Erkek et al 2013 <br></a></td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>    
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/22922464" target="_blank">Gaucher et al 2012 <br></a></td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/24835570" target="_blank">Hammoud et al 2014 <br></a></td>
+                                            <td>Multi</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>Chip-seq Bisulfite-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/23613874" target="_blank">Laiho et al 2013 <br></a></td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                          <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/22660327" target="_blank">Brick et al 2012 <br></a></td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>ChIP-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr> 
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/23523368" target="_blank">Li et al 2013 <br></a></td>
+                                            <td>Multi</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>ChIP-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                                                                <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/24554440" target="_blank">Meikar et al 2014 <br></a></td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq smallRNA-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/25710594" target="_blank">Zimmermann et al 2015</a><br></td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq</td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="error"></td>
+                                        </tr>
+                                         <tr>
+                                            <td>Rolland, Evrard et al<br>In prep</td>
+                                            <td>Rat, rn6</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>MNase-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/21997732" target="_blank_">Lavigne et al 2012 <br></a></td>
+                                            <td>Yeast, sacCer3</td>
+                                            <td>...</td>
+                                            <td>DIPP</td>
+                                            <td class="error"></td><!--Human--> 
+                                            <td class="error"></td><!--Gorilla--> 
+                                            <td class="error"></td><!--Macaque--> 
+                                            <td class="error"></td><!--Mouse--> 
+                                            <td class="error"></td><!--Rat--> 
+                                            <td class="error"></td><!--Cow--> 
+                                            <td class="error"></td><!--Dog--> 
+                                            <td class="error"></td><!--Opposum--> 
+                                            <td class="error"></td><!--Platipus--> 
+                                            <td class="error"></td><!--Pig--> 
+                                            <td class="error"></td><!--Zebrafish--> 
+                                            <td class="error"></td><!--Chiken--> 
+                                            <td class="error"></td><!--Frog--> 
+                                            <td class="success"></td><!--Yeast--> 
+                                        </tr>  
+                                         <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/21149693" target="_blank_">Lardenois et al 2011 <br></a></td>
+                                            <td>Yeast</td>
+                                            <td>...</td>
+                                            <td>Affymetrix tiling array</td>
+                                            <td class="error"></td><!--Human--> 
+                                            <td class="error"></td><!--Gorilla--> 
+                                            <td class="error"></td><!--Macaque--> 
+                                            <td class="error"></td><!--Mouse--> 
+                                            <td class="error"></td><!--Rat--> 
+                                            <td class="error"></td><!--Cow--> 
+                                            <td class="error"></td><!--Dog--> 
+                                            <td class="error"></td><!--Opposum--> 
+                                            <td class="error"></td><!--Platipus--> 
+                                            <td class="error"></td><!--Pig--> 
+                                            <td class="error"></td><!--Zebrafish--> 
+                                            <td class="error"></td><!--Chiken--> 
+                                            <td class="error"></td><!--Frog--> 
+                                            <td class="success"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/19169243" target="_blank_">Xu et al 2009 <br></a></td>
+                                            <td>Yeast</td>
+                                            <td>...</td>
+                                            <td>Affymetrix tiling array</td>
+                                            <td class="error"></td><!--Human--> 
+                                            <td class="error"></td><!--Gorilla--> 
+                                            <td class="error"></td><!--Macaque--> 
+                                            <td class="error"></td><!--Mouse--> 
+                                            <td class="error"></td><!--Rat--> 
+                                            <td class="error"></td><!--Cow--> 
+                                            <td class="error"></td><!--Dog--> 
+                                            <td class="error"></td><!--Opposum--> 
+                                            <td class="error"></td><!--Platipus--> 
+                                            <td class="error"></td><!--Pig--> 
+                                            <td class="error"></td><!--Zebrafish--> 
+                                            <td class="error"></td><!--Chiken--> 
+                                            <td class="error"></td><!--Frog--> 
+                                            <td class="success"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/20193063" target="_blank_">Granovskaia et al 2010 <br></a></td>
+                                            <td>Yeast</td>
+                                            <td>...</td>
+                                            <td>Affymetrix tiling array</td>
+                                            <td class="error"></td><!--Human--> 
+                                            <td class="error"></td><!--Gorilla--> 
+                                            <td class="error"></td><!--Macaque--> 
+                                            <td class="error"></td><!--Mouse--> 
+                                            <td class="error"></td><!--Rat--> 
+                                            <td class="error"></td><!--Cow--> 
+                                            <td class="error"></td><!--Dog--> 
+                                            <td class="error"></td><!--Opposum--> 
+                                            <td class="error"></td><!--Platipus--> 
+                                            <td class="error"></td><!--Pig--> 
+                                            <td class="error"></td><!--Zebrafish--> 
+                                            <td class="error"></td><!--Chiken--> 
+                                            <td class="error"></td><!--Frog--> 
+                                            <td class="success"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/25662576" target="_blank_">Becker et al 2015<br></a></td>
+                                            <td>Yeast, sacCer3</td>
+                                            <td>...</td>
+                                            <td>DIPP</td>
+                                            <td class="error"></td><!--Human--> 
+                                            <td class="error"></td><!--Gorilla--> 
+                                            <td class="error"></td><!--Macaque--> 
+                                            <td class="error"></td><!--Mouse--> 
+                                            <td class="error"></td><!--Rat--> 
+                                            <td class="error"></td><!--Cow--> 
+                                            <td class="error"></td><!--Dog--> 
+                                            <td class="error"></td><!--Opposum--> 
+                                            <td class="error"></td><!--Platipus--> 
+                                            <td class="error"></td><!--Pig--> 
+                                            <td class="error"></td><!--Zebrafish--> 
+                                            <td class="error"></td><!--Chiken--> 
+                                            <td class="error"></td><!--Frog--> 
+                                            <td class="success"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td>Chalmel, Rolland et al<br>In prep</td>
+                                            <td>Human, hg19</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-seq</td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="success"></td>
+                                            <td class="error"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bernstein et al 2010 <br>NatureBiotech</td>
+                                            <td>Human, hg19</td>
+                                            <td>Tissue profiling</td>
+                                            <td>ChIP-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/22367190" target="_blank_">Khil et al 2012</a><br>GenomeRes</td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>ChIP-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td>Mu et al 2014 <br>GenesDev</td>
+                                            <td>Mouse, mm9</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>ChIP-seq</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="success"></td><!--Gorilla--> 
+                                            <td class="success"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="success"></td><!--Rat--> 
+                                            <td class="success"></td><!--Cow--> 
+                                            <td class="success"></td><!--Dog--> 
+                                            <td class="success"></td><!--Opposum--> 
+                                            <td class="success"></td><!--Platipus--> 
+                                            <td class="success"></td><!--Pig--> 
+                                            <td class="success"></td><!--Zebrafish--> 
+                                            <td class="success"></td><!--Chiken--> 
+                                            <td class="success"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/21925322" target="_blank_">Tan et al 2011<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>ChIP-seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/22709888" target="_blank_">Sleutels et al 2012<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>ChIP-seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/23352811" target="_blank_">Ng et al 2013<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Tissue profiling</td>
+                                            <td>ChIP-seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/23486062" target="_blank_">Yokobayashi et al 2013<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-Seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>  
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/23486062" target="_blank_">Yokobayashi et al 2013<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-Seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/24438502" target="_blank_">Margolin et al 2014<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Tissue profiling</td>
+                                            <td>RNA-Seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/24874946" target="_blank_">Howarth et al 2014<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>RNA-Seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/25450459" target="_blank_">Korfanty et al 2014<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Spermatogenesis</td>
+                                            <td>ChIP-Seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/26378784" target="_blank_">Soh et al 2015<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Tissue profiling</td>
+                                            <td>RNA-Seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td><a href="http://www.ncbi.nlm.nih.gov/pubmed/21460839" target="_blank_">Smagulova et al 2011<br></a></td>
+                                            <td>Mouse, mm10</td>
+                                            <td>Tissue profiling</td>
+                                            <td>ChIP-Seq</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="success"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>                      
+                                        <tr>
+                                            <td>Jiang et al 2013 <br>Cell</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="warning"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td>Shen et al 2012 <br>Nature</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="warning"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td>Smagulova et al 2013 <br>BMCGenomics</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="warning"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td>Tan et al 2011 <br>Cell</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="warning"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr> 
+                                        <tr>
+                                            <td>Wang et al 2014 <br>Cell</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="warning"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                                       
+                                        
+                                    </tbody>                           
+                                </table>
+ 
+			</div><!--end of grids-->
+			
+<!--===============================================================  Intro =====================================================================================--> 
+	<div class="wrapper">
+		<h2 id ="genome"style="text-align : center">Databases & status</h2>
+	
+    </div><!--end of div wrapper-->    
+
+
+<!--===============================================================  Style playground =====================================================================================-->                 
+     <div id="database" class="wrapper">           
+                  <div class="grid-17 grid">
+                  	<table>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Database</th>
+                                            <th scope="col">Topics</th>
+                                            <th scope="col">Release</th>
+                                            <th><img src="images/hg.png" width="200px"></th>
+                                            <th><img src="images/gorGor.png" width="200px"></th>
+                                            <th><img src="images/rheMac.png" width="200px"></th>
+                                            <th><img src="images/mm.png" width="200px"></th>
+                                            <th><img src="images/rn.png" width="200px"></th>
+                                            <th scope="col"><img src="images/bosTau.png" width="200px"></th>
+                                            <th scope="col"><img src="images/canFam.png" width="200px"></th>
+                                            <th scope="col"><img src="images/monDom.png" width="200px"></th>
+                                            <th scope="col"><img src="images/ornAna.png" width="200px"></th>
+                                            <th scope="col"><img src="images/susScr.png" width="200px"></th>
+                                            <th scope="col"><img src="images/danRer.png" width="200px"></th>
+                                            <th scope="col"><img src="images/galGal.jpg" width="200px"></th>
+                                            <th scope="col"><img src="images/xenTro.png" width="200px"></th>
+                                            <th scope="col"><img src="images/sacCer.png" width="200px"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ClinVar hg19</td>
+                                            <td>Phenotype and disease</td>
+                                            <td>12/01/2014</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="warning"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td>GWAS hg19</td>
+                                            <td>Phenotype and disease</td>
+                                            <td>12/01/2014</td>
+                                            <td class="success"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="warning"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td>Mouse QTL</td>
+                                            <td>Phenotype and disease</td>
+                                            <td>12/01/2014</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td id="info"></td><!--Mouse--> 
+                                            <td class="warning"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                        <tr>
+                                            <td>Rat<br> QTL</td>
+                                            <td>Phenotype and disease</td>
+                                            <td>12/01/2014</td>
+                                            <td class="warning"></td><!--Human--> 
+                                            <td class="warning"></td><!--Gorilla--> 
+                                            <td class="warning"></td><!--Macaque--> 
+                                            <td class="warning"></td><!--Mouse--> 
+                                            <td id="info"></td><!--Rat--> 
+                                            <td class="warning"></td><!--Cow--> 
+                                            <td class="warning"></td><!--Dog--> 
+                                            <td class="warning"></td><!--Opposum--> 
+                                            <td class="warning"></td><!--Platipus--> 
+                                            <td class="warning"></td><!--Pig--> 
+                                            <td class="warning"></td><!--Zebrafish--> 
+                                            <td class="warning"></td><!--Chiken--> 
+                                            <td class="warning"></td><!--Frog--> 
+                                            <td class="error"></td><!--Yeast--> 
+                                        </tr>
+                                    </tbody>
+                  	</table>
+                  </div>
+     </div>
+			<div class="grid">
+				<h2 style="text-align : center">Tools & status</h2>
+				<div id="tools" class="grid-10 grid">
+                                
+                                <table>
+                                    <thead>
+                                    	<tr>
+                                            <th>Tools</th>
+                                            <th>Progressing</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<tr>
+                                            <td scope="row">Genome browser</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">RGV data processing</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">RGV alignment tool</td>
+                                            <td class=" success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Galaxy session</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Personal browser</td>
+                                            <td class="message warning">Available soon</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">JBrowse integration under Galaxy</td>
+                                            <td class="success"></td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Single-cell compatible</td>
+                                            <td class="message warning"> Coming with RGV 2.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Strain specificity</td>
+                                            <td class="message" id="info"> Coming with RGV 2.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">Gene level visualization</td>
+                                            <td class="message warning"> Coming with RGV 2.0</td>
+                                        </tr>
+                                    </tbody>                           
+                                </table>
+                </div><!--end of grid-10-->
+                <h4>How to read the table</h4>
+						   <div with=30%>
+                                    <p class="message success" style="display : inline;" >Done</p>
+                                    <p class="message" id="info" style="display : inline;" >In progress</p>
+                                    <p class="message warning" style="display : inline;" >Soon</p>
+                                    <p class="message error" style="display : inline;" >NA</p>
+						   </div>
+						   <div with=70%>
+						   </div>
+			</div>
+     </div>
+   <hr>
+	</div><!--end of wrapper-->
+</div><!--end of div wrapper--> 
+    
+
+<!--===============================================================  Footer =====================================================================================-->  
+		<div class="wrapper">
+			<div id="logos" class="grid text-center">
+	    <!--<a title="IRSET" href="http://www.irset.org"><img src="/bundles/peppsy/img/logos/logotypeIrset.gif" alt="IRSET" width=75 /></a>-->
+        <a title="INSERM" href="http://www.inserm.fr"><img src="img/inserm.gif" alt="INSERM" width=115 />
+        <a title="IRSET" href="http://www.irset.fr"><img src="img/logo_irset.jpg" alt="IRSET" width=115 />
+        <a title="FRM" href="http://www.frm.fr"><img src="img/logo_frm.gif" alt="FRM" width=75 />
+        <a title="ANSES" href="http://www.anses.fr"><img src="img/anses_logo.jpg" alt="ANSES" width=55 />
+	    <a title="Biogenouest" href="http://www.biogenouest.org"><img src="img/logo_biogenouest.jpg" alt="Biogenouest" width=75 height=57 /></a>
+	    <a title="IRISA" href="http://www.irisa.fr"><img src="img/irisa.png" alt="IRISA" width=120 height=29 /></a>
+	    <a title="INRIA" href="http://www.inria.fr/"><img src="img/logoINRIA.gif" alt="INRIA" width=105 height=44 /></a>
+	    <a title="CNRS" href="http://www.cnrs.fr/"><img src="img/cnrs.jpg" alt="CNRS" width=56 height=56 /></a>
+	    <a title="Rennes 1 University" href="http://www.univ-rennes1.fr/"><img src="img/univrennes1.jpg" alt="Université de Rennes 1" width=128 height=52 /></a>
+	    <a title="Region Bretagne" href="http://www.bretagne.fr/"><img src="img/region_bretagne.gif" alt="Région Bretagne" width=57 height=58 /></a>
+            <a title="FEDER" href="#"><img src="img/feder.jpg" alt="GIS-IBiSA" width=75 height=40 /></a>
+	    <br/>
+    </div>
+    <div id="footer">
+            	
+                
+                			<div class="grids">
+                                <div class="grid-5 grid text-center">
+                                    <p>&copy; Genouest - IRSET 
+                                </div>
+                                <div class="grid-6 grid text-center">
+                                    <p>Copyright 2014-2019 Genouest
+                                </div>
+                                
+                                <div class="grid-5 grid text-center">
+                                  <p>Contact : support@genouest.org
+                                </div>
+                                
+                           </div><!--end of grids-->
+                   </div><!--end of footer-->
+		   </div><!--end of wrapper-->
+    
+    
+        	<script type="text/javascript"> <!--Outdated browsers warning/and link to Browser-Update. Comment or delete it if you don´t want to use it-->
+						var $buoop = {} 
+						$buoop.ol = window.onload; 
+						window.onload=function(){ 
+						 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+						 var e = document.createElement("script"); 
+						 e.setAttribute("type", "text/javascript"); 
+						 e.setAttribute("src", "http://browser-update.org/update.js"); 
+						 document.body.appendChild(e); 
+						} 
+			</script> 
+                        
+			 <script type="text/javascript">  <!--Javascript for Tabs by Sohtaka, include it on pages where you use tabs, else delete it-->                     
+                        $(document).ready(function() {
+							
+							 //When page loads...
+							 $(".tab_content").hide(); //Hide all content
+							 $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+							 $(".tab_content:first").show(); //Show first tab content
+							
+							 //On Click Event
+							 $("ul.tabs li").click(function() {
+							
+							  $("ul.tabs li").removeClass("active"); //Remove any "active" class
+							  $(this).addClass("active"); //Add "active" class to selected tab
+							  $(".tab_content").hide(); //Hide all tab content
+							
+							  var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+							  $(activeTab).fadeIn(); //Fade in the active ID content
+							  return false;
+							 });
+							
+							});
+			</script>
+</body>
+</html>

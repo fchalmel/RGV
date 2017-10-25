@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<div ng-if="msg" class="alert alert-warning">
+    {{msg}}
+</div>
+<link href="styles/justified-nav.css" rel="stylesheet">
+<div class="jumbotron">
+  <h1>Welcome to the ReproGenomics Viewer</h1>
+  <h3>The genomics toolbox for the reproductive science community</h3>
+  <p class="lead">The ReproGenomics Viewer (RGV) is a cross-species genomic toolbox for the reproductive community. The system is based on the implementation of a JBrowse genome browser and a Galaxy bioinformatics workflow environment. It was developed to provide a one-stop genomic working environment and aims to assist scientists in the analysis and the mining of a wide range of high-throughput repro-genomics data, including sequencing data.<br><br> RGV allows hosting, visualization, and direct comparison of users’ data to published genomics studies as well as to relevant genetic variations linked to reproduction. One way it does this is by enabling various genomic file format conversions.<br><br>The ReproGenomics Viewer currently hosts datasets that are oriented mainly towards testis biology and spermatogenesis. In the near future, these will extend to other areas of reproduction, including gonad development, urogenital cancers, and reproductive toxicology.<br><b>If you use RGV please cite : <a href="https://www.ncbi.nlm.nih.gov/pubmed/25883147" target="_blank">Darde <i>et al.</i> , Nucleic Acids Res., 2015 Jul</b></a></p>
+
+</div>
+
+<div class="row">
+
+  <a href="#/help">
+    <div class="col-md-4" style="text-align: center;">
+      <i class="fa fa-list fa-5x" aria-hidden="true" ></i>
+      <h2>Get started</h2>
+    </div>
+  </a> 
+
+  <a href="#/tutorial" style="text-align: center;">
+    <div class="col-md-4">
+      <i class="fa fa-magic fa-5x" aria-hidden="true"></i>
+      <h2>How using it ?</h2>
+    </div>
+  </a> 
+
+  <a href="#/involved" style="text-align: center;">
+    <div class="col-md-4">
+      <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+      <h2>Get involved</h2>
+    </div>
+  </a> 
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default" style="margin-top:20px;">
+        <div class="panel-heading">
+            Last updates
+        </div>
+        <div class="panel-body fixed-panel">
+          <div ng-repeat="sign in last_sign">
+            <h4>{{sign.id}} - {{sign.title}}</h4>
+            <ul>
+              <li><b>Description :</b> {{sign.description}}</li>
+              <li><b>Studies :</b> <span ng-repeat="stud in sign.studies.split(',')"><a href="#/browse?dataset={{stud}}">{{stud}}</a> </span></li>
+              <li><b>Signatures :</b> <span ng-repeat="sig in sign.signatures.split(',')"><a href="#/browse?dataset={{sig}}">{{sig}}</a> </span></li>
+              <li>(<a href="#/browse?dataset={{sign.id}}">view</a>)</li>
+            </ul>
+            <hr>
+
+          </div>
+        
+        </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="panel panel-default" style="margin-top:20px;">
+        <div class="panel-heading">
+            Links
+        </div>
+        <div class="panel-body">
+          <p>Information about how to search TOXsIgN, understand search results and how to submit data can be found in our <a href="#/help">Help</a>  section.</p>
+
+          <p>Find out more about the Research Institute for Environmental and Occupational Health (<a href="https://www.irset.org/">IRSET</a>).</p>
+        </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+    <div class="panel panel-default" style="margin-top:20px;">
+        <div class="panel-heading">
+            Tools and Access
+        </div>
+        <div class="panel-body">
+          <p>The <a href="#/tools">TOXsIgN warehouse</a> for toxicogenomics and predictve toxicology tools</p>
+          <p><a href ="#/query">TOXsIgN search engine</a>: a powerful tool to access and query the TOXsIgN repository.</p>
+          <p>HTTP access: data can be downloaded directly from our <a href="http://toxsign.genouest.org/public/toxsign">HTTP site</a>.</p>
+        </div>
+    </div>
+  </div>

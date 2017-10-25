@@ -1,0 +1,93 @@
+<h2>Functional analysis tool </h2>
+<div class="well">
+	This module gives the possibility to perform enrichment in biological process, molecular function, cellular component and phenotype for a selected signature. The tool return all over/under represented term associated to the selected signature. To be able to compare these results across species, each EntrezGene Id (which composed the signature) has been converted to HomoloGene Id (deprecated  EntrezGene Id are not used).<br>
+	As many existing procedures, the TOXsIgN enrichment tool is based on the hypergeometric test.<br><br> 
+
+	Finally, for practical reasons, every week each signature’s enrichment is pre-calculated to avoid the overload of the IRSET datacenter. It's possible that your signature enrichment was not pre-calculated yet.<br><br> 
+
+	<b>How to perform enrichment</b><br><br>
+	<b><i>Input data</i></b>: Select the signature using the "Select signature" selector<br>
+	<b><i>Parameters</i></b>: Defined which parameter to use as threshold and the threshold value<br>
+	<b><i>Output data</i></b>: : 4 tables that respectively correspond to the biological process, cellular component, molecular function and phenotypes enrichment, where N is the total number of HomoleGene Ids measured, R is the total number of HomoleGene Ids meeting the criterion, n is the total number of HomoleGene Ids in this specific signature, r is the number of HomoleGene Ids meeting the criterion in this specific signature and ratio corresponding to r/union(n,R).<br>
+	<b><i>Information messages</i></b>:<ul>
+								<li><i>No enrichment are available</i>: There is no over/under represented term associated to the selected signature</li>
+								<li><i>Please come back later</i>: There is no pre-calculated enrichment for the selected signature</li>
+								<li><i>Contact the site administrator</i>: Something went wrong</li>
+							  </ul>
+</div>         
+	                        	
+		  	<div class="row">
+		  		<div class="col-md-8">
+		  			<div class="panel panel-info">
+	                    <div class="panel-heading">
+	                            <a data-toggle="collapse" data-parent="#accordion" href="#Parameters" target="_self" class="collapsed" style="text-decoration: none; color:black;">Parameters<span class="pull-right">More</span></a>
+	                    </div>
+	                    <div id="Parameters" class="panel-collapse collapse in">
+	                        <div class="panel-body" id="paneltable">
+	                        	<div class="row">
+	                        		<div class="col-md-3">
+	                        			<label>Select signature</label>
+	                        			<select  ng-model="signature_selected" class="form-control" id="convert_way">
+						  					<option value="" disabled selected>Please select</option>
+						  					<option ng-repeat="sign in signatures" value="{{sign}}">{{sign.id}} - {{sign.title}}</option>
+						  				</select>
+	                        		</div>
+	                        		<div class="col-md-3">
+	                        			<label>Filter on</label>
+	                        			<select  ng-model="filter" class="form-control" id="convert_way">
+						  					<option value="pvalue">Pvalue</option>
+						  					<option value="pbh">Adjusted Pvalue (Benjamini-Hochberg)</option>
+						  					<option value="n">n</option>
+						  					<option value="r">r</option>
+
+						  				</select>
+	                        		</div>
+	                        		<div class="col-md-3">
+	                        			<label>Adjust</label>
+	                        			<select  ng-model="adjust_filter" class="form-control" id="convert_way">
+						  					<option value="lt">Less than</option>
+						  					<option value="gt">Greater than</option>
+						  				</select>
+	                        		</div>
+	                        		<div class="col-md-3">
+	                        			<label>Threshold</label>
+			  							<input type="number" step="any" ng-model="value_filter" class="form-control" id="sample"/>
+	                        		</div>
+	                        		<div class="col-md-3">
+	                        			<label>Job Name</label>
+			  							<input type="text"  ng-model="job_name" class="form-control" id="sample"/>
+	                        		</div>
+	                        		<div class="col-md-3">
+	                        			<button class="btn btn-primary " ng-click="add()" style="margin-bottom:20px;margin-top:10px;">Add filter</button>
+	                        		</div>
+	                        	</div>
+	                      	</div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-md-4">
+		  			<div class="panel panel-info">
+	                    <div class="panel-heading">
+	                            <a data-toggle="collapse" data-parent="#accordion" href="#Filters" target="_self" class="collapsed" style="text-decoration: none; color:black;">Filters<span class="pull-right">More</span></a>
+	                    </div>
+	                    <div id="Filters" class="panel-collapse collapse in">
+	                        <div class="panel-body" id="paneltable">
+	                        	<label>Filter on </label>
+				  				<div ng-repeat="(key, value) in filter_val">
+					                <div class="form form-inline">
+					                  <input class="form-control" value="{{key}}" disabled/>
+					                  <input class="form-control" value="{{value.param}}" disabled/>
+					                  <input class="form-control" value="{{value.value}}" disabled/>
+					                  <input class="form-control" value="{{value.name}}" disabled/>
+					                  <button ng-click="param_del(key)" type="button" class="btn btn-primary btn-small"><li class="glyphicon glyphicon-trash"></li></button>
+					                </div>
+					                <button class="btn btn-primary " ng-click="run(signature_selected)" style="margin-bottom:20px;margin-top:10px;">Run</button>
+				            	</div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+</div>

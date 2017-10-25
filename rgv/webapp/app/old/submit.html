@@ -1,0 +1,39 @@
+<div ng-if="msg" class="alert alert-warning">
+    {{msg}}
+</div>
+
+<h3>Projects</h3>
+
+<div class="container">
+    <div class="container-fluid">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Submission date</th>
+            <th>Approval</th>
+            <th>Release</th>
+            <th>Release date</th>
+            <th>Status</th>
+            <th>Confidence</th>
+            <th>Access</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+            <tr ng-repeat="dataset in datasets">
+            <td>{{::dataset._id.$oid}}</td>
+            <td>{{::dataset.title}}</td>
+            <td>{{convert_timestamp_to_date(dataset.submission_date)}}</td>
+            <td>{{::dataset.approval}}</td>
+            <td>{{::dataset.release}}</td>
+            <td>{{::dataset.release_date}}</td>
+            <td>{{::dataset.status}}</td>
+            <td>{{::dataset.confidence}}</td>
+            <td><span ng-click="show_dataset(dataset)"><i class="glyphicon glyphicon-edit"</li></span></td>
+            <td><a data-toggle="modal" ng-click="dataset_remove(dataset)" ng-if="dataset.status == 'private'" class="glyphicon glyphicon-remove"></a><span ng-if="dataset.status == 'public'">Please contact us</span></td>
+        </tr>
+    </table>
+    <button class="btn btn-primary" ng-click="dataset_new()"><b>+</b> Add new </button>
+    </div>
+</div>

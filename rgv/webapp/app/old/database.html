@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="styles/panel.css">
+
+<div class="container">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active">
+          <a href="#dataset" target="_self" role="tab" data-toggle="tab">
+              <icon class="fa fa-object-group"></icon> Projects
+          </a>
+      </li>
+      <!-- <li>
+        <a href="#study" target="_self" role="tab" data-toggle="tab">
+          <i class="fa fa-book"></i> Studies
+        </a>
+      </li>
+      <li>
+          <a href="#signatures" target="_self" role="tab" data-toggle="tab">
+              <i class="fa fa-line-chart"></i> Signatures
+          </a>
+      </li> -->
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane fade active in" id="dataset">
+            <h2>Project information</h2>
+            <table class="table table-bordered table-hover table-striped">
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Submission date</th>
+                <th>Studies</th>
+                <th>Types</th>
+                <th>Conditions</th>
+                <th>Signatures</th>
+              </tr>
+                <tr ng-repeat="dataset in datasets" >
+                    <td><a href="" ng-click="show_dataset(dataset)">{{dataset.id}}</a></td>
+                    <td>{{dataset.title}}</td>
+                    <td>{{convert_timestamp_to_date(dataset.submission_date)}}</td>
+                    <td>{{dataset.studies.length}}</td>
+                    <td>
+                      <span ng-repeat="study in dataset.studies" ng-if="study.type == 'interventional'" >Interventional<br></span>
+                      <span ng-repeat="study in dataset.studies" ng-if="study.type == 'observational'" >Observational<br></span>
+                    </td>
+                    <td ng-model = "total" ng-init ='total = 0'>
+                      <span ng-repeat="study in dataset.studies" ng-init="total = total + study.conditions.length" >{{total}}<br></span>
+                    </td>
+                    <td ng-model = "totalsign" ng-init ='totalsign = 0'>
+                      <span ng-repeat="study in dataset.studies" ng-init="totalsign = totalsign + study.signatures.length" >{{totalsign}}<br></span>
+                    </td>
+                </tr>
+            </table>
+      </div>
+      <!--<div class="tab-pane fade" id="study">
+          <h2>Studies</h2>
+          <table ng-table="studyTable" show-filter="true" class="table table-bordered table-hover table-striped">
+              <tr ng-repeat="dataset in studies">
+                  <td data-title="'ID'">{{dataset.id}}</td>
+                  <td data-title="'Title'" sortable="'title'" filter="{ 'title': 'text' }"><span ng-if="dataset.interventional_title != undefined">{{dataset.interventional_title}}</span><span ng-if="dataset.observational_title != undefined">{{dataset.observational_title}}</span></td>
+                  <td data-title="'Approval'">{{dataset.approval}}</td>
+                  <td data-title="'Release'">{{dataset.release}}</td>
+                  <td data-title="'Release date'">{{dataset.release_date}}</td>
+                  <td data-title="'Status'" sortable="'status'">{{dataset.status}}</td>
+                  <td data-title="'Confidence'">{{dataset.confidence}}</td>
+                  <td data-title="'Access'"><span ><i class="fa fa-eye"></i></span></td>
+              </tr>
+          </table>
+      </div>
+        <div class="tab-pane fade" id="signatures">
+            <h2>Signatures</h2>
+            <img src="http://lorempixel.com/400/400/cats/3" alt="Cats"/>
+        </div>
+    </div>-->
+</div>
+<button ng-click="back()" class="btn btn-primary" ng-if="max - 25 != 0">Back</button>
+<button ng-click="more()" class="btn btn-primary">Next</button>

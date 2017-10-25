@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="fr"><!-- use class="debug" here if you develope a template and want to check-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+   	<!-- some meta tags, important for SEO"--> 
+    <meta name="description" content="The ReproGenomics Viewer (RGV) is a cross-species genomic toolbox for the reproductive community" />
+    <meta name="keywords" content="Spermatogenesis, omics, genome browser, JBrowse, Galaxy" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="robots" content="index,follow" />
+	
+	<title> The ReproGenomics Viewer</title>
+			
+            
+            <link rel="stylesheet" href="css/inuit.css" />
+            <link rel="stylesheet" href="css/fluid-grid16-1100px.css" />
+            <link rel="stylesheet" href="css/eve-styles.css" />
+            
+            <script src="js/respond-min.js" type="text/javascript"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+            <script>window.jQuery || document.write('<script src="scripts/jquery164min.js">\x3C/script>')</script><!--local fallback for JQuery-->
+			<script src="js/jquery.flexslider-min.js" type="text/javascript"></script>
+            <link rel="stylesheet" href="css/flexslider.css" />
+            <script type="text/javascript">
+				  $(window).load(function() {
+					$('.flexslider').flexslider({
+						  animation: "slide",<!--you can also choose fade here-->
+						  directionNav: true,<!--Attention: if you choose true here, the nav-buttons will also appear in the ticker! -->
+						  keyboardNav: true,
+						  mousewheel: true
+					});
+				  });
+				  function sendData(){ 
+		              var hu = $("#inputSearch").val();
+		              window.location.href = "./result.php?keyword="+hu+"&genome=all"; 
+		        } 
+				</script>
+               
+                    <!--Hide the hr img because of ugly borders in IE7. You can change the color of border-top to display a line -->
+                    <!--[if lte IE 7]>
+
+                        <style>
+                    		hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 0; padding:0; }
+                            .grid-4{ width:22% }
+                        </style>
+                    <![endif]-->
+
+</head>
+<!--===============================================================  Logo, social and menu =====================================================================================--> 
+
+<body>
+	<div class="wrapper">	
+                      <a href="index.html" id="logo"><img src="images/logo.png" alt="something" /></a>
+                      <h1 class="accessibility">RGV, the ReproGenomic Viewer</h1>
+                   
+                    
+                    <ul id="nav" class="main">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="tools.html">Toolbox</a></li>
+                		<li><a href="project.html">RGV Content</a></li>
+                        <li><a href="tuto.html">Tutorial</a></li>
+                        <li><a href="news.html" >News</a></li>
+                        <li><a href="publication.html">Publications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    
+            
+        </div><!--end of wrapper div-->    
+	<div class="clear"></div> 
+    
+<!--========================================================================== Intro and FlexSlider =====================================================================================-->    
+
+	<div class="wrapper">
+ 		<div class="grids top">
+                <div class="grid-6 grid intro2">
+                 <h2>Welcome to the ReproGenomics Viewer website</h2>
+                       <p>The genomics toolbox for the reproductive science community
+                       </p><br>
+                  <h3>Search for a gene</h3>
+                  <form>
+						<input id="inputSearch" type="text" name="Search">
+						<input id = "goto" type="button" value="search" onclick="sendData()">
+				 </form>
+
+
+                                        
+                 </div><!--end of slogan div-->
+ 
+                 <div class="grid-10 grid"> 
+                  <div class="flexslider"><!--http://flex.madebymufffin.com/-->
+                  
+                      <noscript>You have Javascript set to disabled. This slideshow runs with Javascript and will only be shown if you turn it on.<br />
+                      Sie haben Javascript deaktiviert. Diese Slideshow wird nur vollständig angezeigt, wenn Sie Javascript aktivieren.</noscript> 
+
+  						<ul class="slides">
+                             
+                            	<li>
+                        				<a href="browser.html"><img src="images/browser.png" alt="demo-image" />
+                                        <p class="flex-caption">Display your reprogenomics data in RGV</p>
+                                        </a>
+                                </li>
+                                <li>
+                        				<a href="tools.html"><img src="images/convert.png" width="2872" height="1558" alt="demo-image" />
+                                        <p class="flex-caption">Convert your own files to use them in RGV</p>
+                                        </a>
+                                </li> 
+                               
+                                <li>                                
+                        				<a href="tuto.html"><img src="images/table.png" alt="demo-image" />
+                                        <p class="flex-caption">Use the table to follow the Reprogenomics Viewer data integration</p>
+                                        </a>
+                                </li>
+							
+                            </ul>
+                            
+						</div><!--end of div flexslider-->
+					</div><!--end of div grid-10-->
+            	</div><!--end of div grids-->
+                <!--<span class="slidershadow"></span>-->
+				
+    		</div><!--end of div wrapper-->
+    		
+            
+<!--========================================================================== Content Part 1 =====================================================================================-->             
+
+    <div class="wrapper">
+    
+    		<div class="grids">
+    		<div class="grid-4 grid grey">
+                            <h2>Statistics</h2>
+                            <p class="quote">
+                            <b>RGV version : 1.7</b><br>
+                            Galaxy tools : 6 <br>
+                            Datasets : 39 (12 in prep)<br>
+                            Species : 13 <br>
+                            <a href="project.html"><span> See more</span></a><br> If you want to take part in this project, please contact us.
+                            <a href="contact.html"><span>Contact</span></a></p>
+            
+                </div>
+
+                  <div class="grid-6 grid">
+                  			
+                            <h2>What's RGV?</h2>
+                            <p align="justify">
+                            The ReproGenomics Viewer (RGV) is a cross-species genomic toolbox for the reproductive community. The system is based on the implementation of a JBrowse genome browser and a Galaxy bioinformatics workflow environment. It was developed to provide a one-stop genomic working environment and aims to assist scientists in the analysis and the mining of a wide range of high-throughput repro-genomics data, including sequencing data.<br><br> RGV allows hosting, visualization, and direct comparison of users’ data to published genomics studies as well as to relevant genetic variations linked to reproduction. One way it does this is by enabling various genomic file format conversions.<br><br>The ReproGenomics Viewer currently hosts datasets that are oriented mainly towards testis biology and spermatogenesis. In the near future, these will extend to other areas of reproduction, including gonad development, urogenital cancers, and reproductive toxicology.<br><b>If you use RGV please cite : <a href="https://www.ncbi.nlm.nih.gov/pubmed/25883147" target="_blank">Darde <i>et al.</i> , Nucleic Acids Res., 2015 Jul</b></a></p>
+                            
+
+          		</div><!--end of grid-10--> 
+
+                <div class="grid-6 grid">
+                            
+                            <h2>What's next for RGV?</h2>
+                            <p align="justify">
+                            Maintain The ReproGenomics Viewer (RGV) as it is, not corresponding to our expectations. We want to provide to the reproductive community the best cross-species genomic toolbox. So, to adress this issue, we are pleased to announce that <b>we are working on a new version of RGV : RGV 2.0</b> .</p>
+                            
+
+                </div><!--end of grid-10--> 
+                
+                
+                <div class="grid-6 grid green">
+                            <h2>News</h2>
+                            <h6>Datasets Updates</h6>
+                            <h6>2016</h6>
+							<ul>
+								<li>[Upload - 09/16] Howarth <i>et al.</i>, 2014 in Mouse genome</li>
+                                <li>[Upload - 09/16] Korfanty <i>et al.</i>, 2014 in Mouse genome</li>
+                                <li>[Upload - 09/16] Soh <i>et al.</i>, 2015 in Mouse genome</li>
+                                <li>[Upload - 05/16] Ng <i>et al.</i>, 2013 in Mouse genome</li>
+                                <li>[Upload - 05/16] Yokobayashi <i>et al.</i>, 2013 in Mouse genome</li>
+                                <li>[Upload - 05/16] Margolin <i>et al.</i>, 2014 in Mouse genome</li>
+							</ul>
+                            <h6>Genome Information</h6>
+                            <ul>
+                            	<li>[Corrective - 05/16] Correct gorilla genes display</li>
+                            	<li>[Error - 04/16] Gorilla genes display trouble</li>
+                            </ul>
+                            <h6>Next Updates</h6>
+                            <ul>
+                            	<li>[Browser] Link annotation with MyGene.info</li>
+                            	<li>[Browser] Update JBrowse software version</li>
+                            	<li>[System] Work on strain specificity display</li>
+                            </ul>
+                            <h6>Others</h6>
+                            <ul>
+                            	<li>[System - 20/10/16 to 25/10/16] RGV maintenance</li>
+                            	<li>[System - 03/07/16] RGV Galaxy shutdown</li>
+                            </ul>
+							<p><a href="news.html">see more</a></p>
+            
+                </div>
+           
+                
+			</div><!--end of grids-->
+           
+		</div><!--end of wrapper-->
+<hr /> 		
+
+<!--========================================================================== Content Part 2 =====================================================================================-->    
+
+ 
+
+<!--========================================================================== Footer =====================================================================================-->     
+		<div class="wrapper">
+			<div id="logos" class="grid text-center">
+	    <!--<a title="IRSET" href="http://www.irset.org"><img src="/bundles/peppsy/img/logos/logotypeIrset.gif" alt="IRSET" width=75 /></a>-->
+        <a title="INSERM" href="http://www.inserm.fr"><img src="img/inserm.gif" alt="INSERM" width=115 />
+        <a title="IRSET" href="http://www.irset.fr"><img src="img/logo_irset.jpg" alt="IRSET" width=115 />
+        <a title="FRM" href="http://www.frm.fr"><img src="img/logo_frm.gif" alt="FRM" width=75 />
+        <a title="ANSES" href="http://www.anses.fr"><img src="img/anses_logo.jpg" alt="ANSES" width=55 />
+	    <a title="Biogenouest" href="http://www.biogenouest.org"><img src="img/logo_biogenouest.jpg" alt="Biogenouest" width=75 height=57 /></a>
+	    <a title="IRISA" href="http://www.irisa.fr"><img src="img/irisa.png" alt="IRISA" width=120 height=29 /></a>
+	    <a title="INRIA" href="http://www.inria.fr/"><img src="img/logoINRIA.gif" alt="INRIA" width=105 height=44 /></a>
+	    <a title="CNRS" href="http://www.cnrs.fr/"><img src="img/cnrs.jpg" alt="CNRS" width=56 height=56 /></a>
+	    <a title="Rennes 1 University" href="http://www.univ-rennes1.fr/"><img src="img/univrennes1.jpg" alt="Université de Rennes 1" width=128 height=52 /></a>
+	    <a title="Region Bretagne" href="http://www.bretagne.fr/"><img src="img/region_bretagne.gif" alt="Région Bretagne" width=57 height=58 /></a>
+            <a title="FEDER" href="#"><img src="img/feder.jpg" alt="GIS-IBiSA" width=75 height=40 /></a>
+	    <br/>
+    </div>
+					<div id="footer">
+            	
+                
+                			<div class="grids">
+                                <div class="grid-5 grid text-center">
+                                    <p>&copy; Genouest - IRSET 
+                                </div>
+                                <div class="grid-6 grid text-center">
+                                    <p>Copyright 2014-2019 Genouest</p>
+                                </div>
+                                
+                                <div class="grid-5 grid text-center">
+                                  <p>Contact : support@genouest.org
+                                </div>
+                                
+                           </div><!--end of grids-->
+                   </div><!--end of footer-->
+		   </div><!--end of wrapper-->
+    
+    
+        				<script type="text/javascript"> <!--Outdated browsers warning/message and link to Browser-Update. Comment or delete it if you don´t want to use it-->
+						var $buoop = {} 
+						$buoop.ol = window.onload; 
+						window.onload=function(){ 
+						 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+						 var e = document.createElement("script"); 
+						 e.setAttribute("type", "text/javascript"); 
+						 e.setAttribute("src", "http://browser-update.org/update.js"); 
+						 document.body.appendChild(e); 
+						} 
+						</script> 
+
+</body>
+</html>

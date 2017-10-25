@@ -1,0 +1,190 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<div ng-if="msg" class="alert alert-warning">
+    {{msg}}
+</div>
+<h2>Advanced search</h2>
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default" style="margin-top:20px;">
+      <div class="panel-heading">
+        Search parameters
+      </div>
+      <div class="panel-body">
+        <form class="form-inline">
+
+          <label class="sr-only" for="inlineFormInput">Query mode</label>
+          <select ng-if="selected_querymode.mode != undefined" ng-model="selected_querymode.mode" class="form-control" id="inlineFormInput" placeholder="Choose...">
+            <option value="AND">AND</option>
+            <option value="OR">OR</option>
+          </select>
+
+          <label class="sr-only" for="inlineFormInput">Type</label>
+          <select ng-model="selected_type" class="form-control" id="inlineFormInput" placeholder="Choose...">
+            <option value="all">All</option>
+            <option value="projects">Project</option>
+            <option value="studies">Study</option>
+            <option value="signatures">Signature</option>
+          </select>
+
+          <label class="sr-only" for="fieldproject">Field</label>
+          <select ng-if="selected_type == 'projects'" ng-model="selected_field.projects" class="form-control" id="fieldproject" placeholder="Choose...">
+            <option value="_all">Any</option>
+            <option value="id">Project id</option>
+            <option value="title">Title</option>
+            <option value="pubmed">PubMed Id</option>
+            <option value="owner">Owner e-mail</option>
+            <option value="contributor">Contributors</option>
+            <option value="studies">Study id</option>
+            <option value="factors">Factor id</option>
+            <option value="signatures">Signatures id</option> 
+          </select>
+
+          <select ng-if="selected_type == 'studies'" ng-model="selected_field.studies" class="form-control" id="fieldstudies" placeholder="Choose...">
+            <option value="_all">Any</option>
+            <option value="id">Study id</option>
+            <option value="title">Title</option>
+            <option value="pubmed">PubMed Id</option>
+            <option value="owner">Owner e-mail</option>
+            <option value="projects">Project id</option>
+            <option value="factors">Factor id</option>
+            <option value="signatures">Signatures id</option>
+            <option value="inclusion">Inclusion</option>
+            <option value="inclusion_period">Inclusion period</option>
+            <option value="study_type">Study type</option>  
+          </select>
+
+          <select ng-if="selected_type == 'signatures'" ng-model="selected_field.signatures" class="form-control" id="fieldsignatures" placeholder="Choose...">
+            <option value="_all">Any</option>
+            <option value="id">Signature Id</option>
+            <option value="title">Title</option>
+            <option value="organism">Organism</option>
+            <option value="tissue">Tissue</option>
+            <option value="cell_line">Cell line</option>
+            <option value="cell">Cell</option>
+            <option value="pathology">Pathology</option>
+            <option value="technology">Technology</option>
+            <option value="tag">Chemical</option>
+            <option value="molecule">Molecule</option>
+            <option value="type">Type</option>  
+          </select>
+
+          <input ng-model="research" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+          <button type="btn" ng-click="param_add()" class="btn btn-primary">Add</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-info" style="margin-top:20px;">
+      <div class="panel-heading">
+        Search history
+      </div>
+      <div class="panel-body">
+        <div class="col-md-4">
+            <div ng-repeat="hist in search_history">
+                <a href="" ng-click="search_history_item(hist)"><i class="fa fa-refresh" aria-hidden="true"></i><span >{{hist}}</span></a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div ng-repeat="(key, value) in query">
+        <p>{{value}} - {{key}} <a href="" ng-click="param_del(key)"><i class="glyphicon glyphicon-trash"></i></a></p>
+    </div>
+    <button style="margin-top: 5px;" type="button" class="btn btn-primary btn-large" ng-click="search(true)">Search</button>
+  </div>
+</div>
+
+<div ng-if="results != undefined">
+  <h2>Search results</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#project" target="_self">Projets ({{project_number}})</a></li>
+    <li><a data-toggle="tab" href="#study" target="_self" ng-click="showStudies()">Studies ({{studies_number}})</a></li>
+    <li><a data-toggle="tab" href="#assay" target="_self" ng-click="showAssays()">Assay ({{assay_number}})</a></li>
+    <li><a data-toggle="tab" href="#signature" target="_self" ng-click="showSignatures()">Signatures ({{signatures_number}})</a></li>
+    
+  </ul>
+
+  <div class="tab-content">
+    <div id="project" class="tab-pane fade in active">
+      <div ng-repeat='project in projects'>
+        <h3>{{project.id}} - {{project.title}}</h3>(<a href="#/browse?dataset={{project.id}}">view</a>)
+        <p><b>Description : </b>{{project.description}}</p>
+        <p><b>Pubmed : </b><span ng-repeat='pub in project.pubmed.split(",")'><a href="https://www.ncbi.nlm.nih.gov/pubmed/{{pub}}" target="_blank">{{pub}} </a></span></p>
+        <p><b>Studies : </b>{{project.studies}}</p>
+        <p><b>Signatures : </b>{{project.signatures}}</p>
+        <hr>
+      </div>
+      <button ng-click="back('projects')" class="btn btn-primary pull-left" ng-if="pfrom - 25 > 0">Back</button>
+      <button ng-click="more('projects')" class="btn btn-primary pull-right" ng-if="projects.length == 25">Next</button>
+    </div>
+    <div id="study" class="tab-pane fade">
+        <div ng-repeat='study in studies'>
+          <h3>{{study.id}} - {{study.title}}</h3>(<a href="#/browse?dataset={{study.id}}">view</a>)
+          <p><b>Description : </b>{{study.description}}</p>
+          <p><b>Experimental design : </b> {{study.experimental_design}}</p>
+          <p><b>Type : </b>{{study.study_type}}</p>
+          <p><b>Assays : </b>{{study.assays}}</p>
+          <p><b>Signatures : </b>{{study.signatures}}</p>
+          <hr>
+        </div>
+        <button ng-click="back('studies')" class="btn btn-primary pull-left" ng-if="sfrom - 25 >= 0">Back</button>
+        <button ng-click="more('studies')" class="btn btn-primary pull-right" ng-if="studies.length == 25">Next</button>
+    </div>
+    <div id="assay" class="tab-pane fade">
+        <div ng-repeat='assay in assays'>
+          <h3>{{assay.id}} - {{assay.title}}</h3>(<a href="#/browse?dataset={{assay.id}}">view</a>)
+          <div class="row">
+            <div class="col-md-6">
+              <p><b>Organism : </b>{{assay.organism}}</p>
+              <p><b>Factor(s) : </b>{{assay.factors}}</p>
+            </div>
+            <div class="col-md-6">
+              <p><b>Study : </b>{{assay.studies}}</p>
+              <p><b>Signatures : </b>{{assay.signatures}}</p>
+            </div>
+          </div>
+          
+          
+          <hr>
+        </div>
+        <button ng-click="back('assays')" class="btn btn-primary pull-left" ng-if="afrom - 25 >= 0">Back</button>
+        <button ng-click="more('assays')" class="btn btn-primary pull-right" ng-if="assays.length == 25">Next</button>
+    </div>
+    <div id="signature" class="tab-pane fade">
+      <div ng-repeat='signature in signatures'>
+          <h3>{{signature.id}} - {{signature.title}}</h3>(<a href="#/browse?dataset={{signature.id}}">view</a>)
+          <div class="row">
+           <div class="col-md-6">
+            <p><b>Type : </b>{{signature.type}}</p>
+            <p><b>Organism : </b>{{signature.organism}}</p>
+           </div>
+           <div class="col-md-6">
+            <p><b>Project : </b>{{signature.projects}}</p>
+            <p><b>Study : </b>{{signature.studies}}</p>
+            <p><b>Assay : </b>{{signature.assays}}</p>
+           </div>  
+          </div>
+          <hr>
+        </div>
+        <button style="margin-top: 5px;" type="button" ng-if="max >= 0" class="btn btn-primary btn-large pull-right" ng-click="more()">More</button>
+        <button style="margin-top: 5px;" type="button" ng-if="max != 0" class="btn btn-primary btn-large pull-left" ng-click="back()">Back</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

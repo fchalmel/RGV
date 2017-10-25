@@ -1,0 +1,1103 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="styles/panel.css">
+<script type="text/ng-template" id="switch">
+    <h1>Project status</h1>
+    <p>Change the project status from private to public</p>
+</script>
+<img src="images/loading.gif" id="bgimg" alt="Loading" style="display:none;">
+<div class='row'>
+    <div class='col-md-4'>
+        <h3></h3>
+        <i id='trprjectname' class="fa fa-folder"></i>      <a href='' ng-click="showstud(dataset)">[{{dataset.id}}] - {{dataset.title}}</a>
+        <ul ng-repeat='study in displaystud'>
+            <li style="list-style-type: none;" ng-if="study.type == 'observational'">  <i id='trstudname' class="fa fa-folder-o"></i>     <a href='' ng-click="showsign(study)"> [{{study.id}}] - {{study.observational_title}}</a></li>
+            <li style="list-style-type: none;" ng-if="study.type == 'interventional'">  <i id='trstudname' class="fa fa-folder-o"></i>     <a href='' ng-click="showsign(study)"> [{{study.id}}] - {{study.interventional_title}}</a></li>
+        </ul>
+        <ul>
+            <ul ng-repeat='sign in displaysign'>
+                <li style="list-style-type: none;">   <i class="fa fa-file-text-o"></i>   <a href='' ng-click="selectsign(sign)">[{{sign.id}}] - {{sign.title}}</a></li>
+            </ul>
+        </ul>
+    </div>
+    <div class='col-lg-8'>
+        <h3>Information</h3>
+        <!-- ======================= Project information=========================================-->
+        <div id='project_info' style="display: block;">
+            <form role="form">
+                <div class="form-group">
+                    <label class="control-label" for="title" >Title</label>
+                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="dataset.title" class="form-control" id="title"/>
+                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'" > {{dataset.title}}</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label " for="status">Status</label><a href="" ng-click='open_info("switch")'><i class="fa fa-info-circle pull-right" style="color:black;"></i></a>
+                    <input ng-model="dataset.status" class="form-control" id="status" disabled/>
+                    <button ng-if="can_edit()" type="button" class="btn btn-danger" style="margin-top:15px;" ng-click="to_public()">Switch to public</button>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="description">Description</label>
+                    <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="dataset.description" class="form-control" id="description" placeholder="200-1000 words max" ></textarea>
+                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'" id="description">{{dataset.description}}</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="description" >Overall design</label>
+                    <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="dataset.overalldesign" class="form-control" id="description" placeholder="200-1000 words max"></textarea>
+                    <p ng-if="dataset.owner != user.id || dataset.status != 'private' && dataset.overalldesign != '' && dataset.overalldesign != undefined " id="description">{{dataset.overalldesign}}</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="description">Result(s)</label>
+                    <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="dataset.result" class="form-control" id="description" placeholder="200-1000 words max"></textarea>
+                    <p ng-if="dataset.owner != user.id || dataset.status != 'private' && dataset.result != '' && dataset.result != undefined" id="description">{{dataset.result}}</p>
+                </div>
+                <div class="form-group">
+                    <label>Author(s)</label>
+                    <textarea  ng-if="dataset.owner == user.id && dataset.status == 'private'" placeholder="author id, comma separated, no whitespace: user1,user2" ng-model="dataset.authors" ng-init ='dataset.authors=user.id'class="form-control" id="authors"></textarea>
+                    <p  ng-if="dataset.owner != user.id || dataset.status != 'private'" class="form-control" id="authors">{{dataset.authors}}</p>
+                </div>
+                <div class="form-group">
+                    <label>Pubmed link(s)</label>
+                    <textarea  ng-if="dataset.owner == user.id && dataset.status == 'private'" placeholder="pubmed link(s), comma separated" ng-model="dataset.pubmed" ng-init ='dataset.authors=user.id' class="form-control" id="pubmed"></textarea>
+                    <p  ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-repeat="pub in dataset.pubmed "><a ng-href="http://www.ncbi.nlm.nih.gov/pubmed/{{pub}}">{{pub}}</a></p>
+                </div>
+
+                <label class="control-label"  for="collaborators" > Contributor(s)</label>
+                <div class="row">
+                    <div ng-if="dataset.owner == user.id && dataset.status == 'private'" class="col-md-6">
+                        <div class="form-group">
+                            <input id="dataset.contributor" class="form-control" type="text" data-ng-model="contributor"/>
+                            <buton class="btn btn-success" style="margin-top:10px;" ng-click="add_contributors(contributor)">Add</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6" ng-repeat="contrib in dataset.contributors" >
+                        <a href="#/user/{{contrib}}" style="font-size:9px;line-height:10px;text-transform: none;" type="button" class="btn btn-info">{{contrib}}<a ng-if="dataset.owner == user.id && dataset.status == 'private'" href="" ng-click="del_contributor(contrib)"><i class="fa fa-times pull-right" aria-hidden="true" ></i></a></a>
+                    </div>
+                </div>
+                <hr>
+                <label class="control-label"  for="links">Crosslink(s)</label>
+                <div class="row">
+                    <div ng-if="dataset.owner == user.id && dataset.status == 'private'" class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" ng-model="linku" id="lin"/>
+                            <buton class="btn btn-success" style="margin-top:10px;" ng-click="add_link(linku)">Add</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6" ng-repeat="lin in dataset.ext_link" >
+                        <a href="{{lin}}" style="font-size:9px;line-height:10px;text-transform: none;" type="button" class="btn btn-info">{{lin}}<a ng-if="dataset.owner == user.id && dataset.status == 'private'"  href="" ng-click="del_link(lin)"><i class="fa fa-times pull-right" aria-hidden="true" ></i></a></a>
+                    </div>
+                </div>
+            </form>
+            <!-- Save and Quit -->
+            <form style="margin-bottom:80px;">
+                <ul class="list-inline pull-left">
+                    <li><button ng-if="can_edit()" type="button" class="btn btn-primary" ng-click="dataset_update()">Update</button></li>
+                    <li><button ng-if="can_edit()" type="button" class="btn btn-primary" ng-click="treatment_add(dataset)">Add Study</button></li>
+                    <li><button ng-if="can_edit()" type="button" class="btn btn-warning" ng-click="project_del(dataset)">Delete project</button></li>
+                </ul>
+            </form>
+        </div>
+        <!-- =======================END Project information=========================================-->
+
+
+        <!-- =======================Study Observational information=========================================-->
+        <div id='study_info' style="display: none;">
+            <div ng-repeat="study in :: dataset.studies" ng-if="study.type == 'observational' && study.id == selectedstud">
+                        <div class="form-group">
+                            <label class="control-label " for="title">Title</label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_title" class="form-control" id="title"/>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_title}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="description">Description</label>
+                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_description" class="form-control" id="description" placeholder="200-1000 words max"></textarea>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_description}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label " for="title">PubMed ID</label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_pmid" class="form-control" id="PMID"/>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'"><a ng-href="http://www.ncbi.nlm.nih.gov/pubmed/{{study.observational_pmid}}">{{study.observational_pmid}}</a></p>
+                        </div>
+                        <div class="form-group">
+                            <label>Authors</label></i>
+                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" placeholder="author id, comma separated, no whitespace: user1,user2" ng-model="study.observational_authors" ng-init ='study.observational_authors=user.id' class="form-control" id="authors"></textarea>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_authors}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="description">Design</label>
+                            <textarea  ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_overalldesign" class="form-control" id="description" placeholder="200-1000 words max" required></textarea>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_overalldesign}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="Results">Results</label>
+                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_results" class="form-control" id="results" placeholder="200-1000 words max"></textarea>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_results}}</p>
+                        </div>
+                        <div  class="form-group">
+                            <label class="control-label"  for="organism">Organism</label>
+                            <input  ng-if="dataset.owner == user.id && dataset.status == 'private'" class="form-control" id="organism_vivo" type="text" ng-model="study.observational_organism" placeholder="Species"
+                            typeahead-min-length="4" typeahead-on-select="selectorga($item, $model,
+                            $label)" typeahead="item.name for item in get_onto($viewValue,'species.tab')" typeahead-loading="loadingOrganism"
+                            class="form-control" >
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_organism}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="experimental_nature">Inclusion period</label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_inclusion_period" class="form-control">
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_inclusion_period}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="experimental_nature">Inclusion</label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_inclusion" class="form-control">
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_inclusion}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="experimental_nature">Exclusion</label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_exclusion" class="form-control">
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_exclusion}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="experimental_nature">Population size</label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_population_size" class="form-control">
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_population_size}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="experimental_nature">Follow up</label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_followup" class="form-control">
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_followup}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="experimental_nature">Adjustments </label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.observational_adjustment" class="form-control">
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.observational_adjustment}}</p>
+                        </div>
+                        <form style="margin-bottom:80px;">
+                            <ul class="list-inline pull-left">
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="dataset_update()">Update</button></li>
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="condition_add(dataset,study)">Add Condition</button></li>
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-warning" ng-click="study_del(dataset,study)">Delete study</button></li><!-- TO DO -->
+                            </ul>
+                        </form>
+            </div>
+            <!-- =======================END Study Observational information=========================================-->
+
+            <!-- =======================Study Interventional information=========================================-->
+            <div ng-repeat="study in :: dataset.studies" ng-if="study.type == 'interventional' && study.id == selectedstud">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="control-label" for="title" >Title</label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_title" class="form-control" id="title"/>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'" > {{study.interventional_title}}</p>
+                        </div>
+                        <div class="form-group" ng-if="study.interventional_experimental_type != undefined">
+                            <label class="control-label"  for="description">Description</label>
+                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_description" class="form-control" id="description" placeholder="200-1000 words max"></textarea>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'" id="description">{{study.interventional_description}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="design">Design</label>
+                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_design" class="form-control" id="design" placeholder="200-1000 words max"></textarea>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'" id="design" >{{study.interventional_design}}</p>
+                        </div>
+                                <!-- Results -->
+                        <div class="form-group">
+                            <label class="control-label"  for="Results">Results</label>
+                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_results" class="form-control" id="results" placeholder="200-1000 words max"></textarea>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private' " id="results" >{{study.interventional_results}}</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"  for="description">Additionnal information</label>
+                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_information" class="form-control" id="description" placeholder="50-500 words max" maxlength="5000" ></textarea>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private' " id="results" >{{study.interventional_information}}</p>
+                        </div>
+                        <!-- Experimental type -->
+                        <div class="form-group">
+                            <label class="control-label"  for="experimental_type">Experimental type</label>
+                            <select  ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_experimental_type" class="form-control" placeholder="Please select your experimental type" id="experimental_type" >
+                                <option value="" disabled selected>Select your experimental type</option>
+                                <option value="in_vivo">In vivo (e.g. in utero)</option>
+                                <option value="ex_vivo">Ex vivo (e.g. organotypic culture, xenograft)</option>
+                                <option value="in_vitro">In vitro (e.g. cell line, primary cell, yeast assay)</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <select  ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_experimental_type" class="form-control" placeholder="Please select your experimental type" id="experimental_type"  disabled>
+                                <option value="" disabled selected>Select your experimental type</option>
+                                <option value="in_vivo">In vivo (e.g. in utero)</option>
+                                <option value="ex_vivo">Ex vivo (e.g. organotypic culture, xenograft)</option>
+                                <option value="in_vitro">In vitro (e.g. cell line, primary cell, yeast assay)</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Si in vivo -->
+                        <div class="panel panel-default" style="margin-top:20px;" ng-if="study.interventional_experimental_type == 'in_vivo'">
+                            <div class="panel-heading">
+                                In vivo information
+                            </div>
+                            <div class="panel-body" id="paneltable">
+                                <div  class="form-group">
+                                    <label class="control-label"  for="organism">Species</label>
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="organism_vivo" type="text" ng-model="study.interventional_vivo.organism"  placeholder="Species"
+                                           typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                           $label)" typeahead="item.name for item in get_onto($viewValue,'ncbitaxon.obo.txt.tab')" typeahead-loading="loadingOrganism"
+                                           class="form-control" >
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.interventional_vivo.organism}}</p>
+                                </div>
+
+
+
+                                <div class="form-group" ng-if="interventional_vivo.organism != 'Homo sapiens'">
+                                    <label class="control-label"  for="strain">Strain or sub-species</label>
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="organism_vivo" type="text" ng-model="study.interventional_vivo.strain" placeholder="Strain"
+                                               typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                               $label)" typeahead="item.name for item in get_onto($viewValue,'')" typeahead-loading="loadingCellLine"
+                                               class="form-control">
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.interventional_vivo.strain}}</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label"  for="sex">Sex</label>
+                                    <select ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_vivo.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="male">Male</option>
+                                        <option value="ex_vivo">Female</option>
+                                        <option value="both">Both</option>
+                                        <option value="unknown">Unknown</option>
+                                        <option value="other">Other</option>
+                                        <option value="na">NA</option>
+                                    </select>
+                                    <select ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_vivo.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex" disabled>
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="male">Male</option>
+                                        <option value="ex_vivo">Female</option>
+                                        <option value="both">Both</option>
+                                        <option value="unknown">Unknown</option>
+                                        <option value="other">Other</option>
+                                        <option value="na">NA</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label"  for="sex">Developmental stage</label>
+                                    <select ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_vivo.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="Fetal">Fetal</option>
+                                        <option value="Embryonic">Embryonic</option>
+                                        <option value="Larva">Larva</option>
+                                        <option value="Neo-natal">Neo-natal</option>
+                                        <option value="Juvenile">Juvenile</option>
+                                        <option value="Pre-pubertal">Pre-pubertal</option>
+                                        <option value="Pubertal">Pubertal</option>
+                                        <option value="Adulthood">Adulthood</option>
+                                        <option value="Elderly">Elderly</option>
+                                    </select>
+                                    <select ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_vivo.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex" disabled>
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="Fetal">Fetal</option>
+                                        <option value="Embryonic">Embryonic</option>
+                                        <option value="Larva">Larva</option>
+                                        <option value="Neo-natal">Neo-natal</option>
+                                        <option value="Juvenile">Juvenile</option>
+                                        <option value="Pre-pubertal">Pre-pubertal</option>
+                                        <option value="Pubertal">Pubertal</option>
+                                        <option value="Adulthood">Adulthood</option>
+                                        <option value="Elderly">Elderly</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- END panel-body in vivo -->
+                        </div>
+                        <!-- END  panel Si  vivo -->
+
+
+                        <!-- Si in ex vivo -->
+                        <div class="panel panel-default" style="margin-top:20px;" ng-if="study.interventional_experimental_type == 'ex_vivo'">
+                            <div class="panel-heading">
+                                Ex vivo description
+                            </div>
+                            <div class="panel-body" id="paneltable">
+                                <div  class="form-group">
+                                    <label class="control-label"  for="organism">Species</label>
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="organism_vivo" type="text" ng-model="study.interventional_exvivo.organism" ng-init="interventional_exvivo.organism ='Homo sapiens'" placeholder="Organism"
+                                          typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                          $label)" typeahead="item.name for item in get_onto($viewValue,'ncbitaxon.obo.txt.tab')" typeahead-loading="loadingOrganism"
+                                          class="form-control" >
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'"> {{study.interventional_exvivo.organism}}</p>
+                                </div>
+
+                                <div class="form-group" ng-if="interventional_exvivo.organism != 'Homo sapiens'">
+                                    <label class="control-label"  for="strain">Strain or sub-species</label>
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.interventional_exvivo.strain}}</p>
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="organism_vivo" type="text" ng-model="study.interventional_exvivo.strain" placeholder="Strain"
+                                              typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                              $label)" typeahead="item.name for item in get_onto($viewValue,'')" typeahead-loading="loadingCellLine"
+                                              class="form-control">
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label class="control-label"  for="sex">Sex</label>
+                                    <select ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_exvivo.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex" disabled>
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="male">Male</option>
+                                        <option value="ex_vivo">Female</option>
+                                        <option value="both">Both</option>
+                                        <option value="unknown">Unknown</option>
+                                        <option value="other">Other</option>
+                                        <option value="na">NA</option>
+                                    </select>
+                                    <select ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_exvivo.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="male">Male</option>
+                                        <option value="ex_vivo">Female</option>
+                                        <option value="both">Both</option>
+                                        <option value="unknown">Unknown</option>
+                                        <option value="other">Other</option>
+                                        <option value="na">NA</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label"  for="sex">Developmental stage</label>
+                                    <select ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_exvivo.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="Fetal">Fetal</option>
+                                        <option value="Embryonic">Embryonic</option>
+                                        <option value="Larva">Larva</option>
+                                        <option value="Neo-natal">Neo-natal</option>
+                                        <option value="Juvenile">Juvenile</option>
+                                        <option value="Pre-pubertal">Pre-pubertal</option>
+                                        <option value="Pubertal">Pubertal</option>
+                                        <option value="Adulthood">Adulthood</option>
+                                        <option value="Elderly">Elderly</option>
+                                    </select>
+                                    <select ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_exvivo.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex" disabled>
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="Fetal">Fetal</option>
+                                        <option value="Embryonic">Embryonic</option>
+                                        <option value="Larva">Larva</option>
+                                        <option value="Neo-natal">Neo-natal</option>
+                                        <option value="Juvenile">Juvenile</option>
+                                        <option value="Pre-pubertal">Pre-pubertal</option>
+                                        <option value="Pubertal">Pubertal</option>
+                                        <option value="Adulthood">Adulthood</option>
+                                        <option value="Elderly">Elderly</option>
+                                    </select>
+                                </div>
+
+                                <!-- Tissue -->
+                                <div class="form-group">
+                                    <label class="control-label " for="tissue">Tissue</label> <!-- http://www.obofoundry.org/ontology/fma.html -->
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="tissue_vivo" type="text" ng-model="study.interventional_exvivo.tissue" placeholder="Tissue"
+                                                      typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                                      $label)" typeahead="item.name for item in get_onto($viewValue,'fma.obo.tab')" typeahead-loading="loadingCellLine"
+                                                      class="form-control">
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'"> {{study.interventional_exvivo.tissue}}</p>
+                                </div>
+
+
+                                <!-- generation -->
+                                <div class="form-group">
+                                    <label class="control-label"  for="generation">Generation</label><i class="glyphicon glyphicon-info-sign" title="info"></i>
+                                    <select ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_exvivo.generation" class="form-control" id="generation">
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="f0">F0</option>
+                                        <option value="f1">F1</option>
+                                        <option value="f2">F2</option>
+                                        <option value="f3">F3</option>
+                                        <option value="f4">F4</option>
+                                        <option value="f5">F5</option>
+                                        <option value="f6">F6</option>
+                                        <option value="f7">F7</option>
+                                        <option value="f8">F8</option>
+                                        <option value="f9">F9</option>
+                                        <option value="f10">F10</option>
+                                    </select>
+                                    <select ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_exvivo.generation" class="form-control" id="generation" disabled>
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="f0">F0</option>
+                                        <option value="f1">F1</option>
+                                        <option value="f2">F2</option>
+                                        <option value="f3">F3</option>
+                                        <option value="f4">F4</option>
+                                        <option value="f5">F5</option>
+                                        <option value="f6">F6</option>
+                                        <option value="f7">F7</option>
+                                        <option value="f8">F8</option>
+                                        <option value="f9">F9</option>
+                                        <option value="f10">F10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- END panel-body ex vivo -->
+                        </div>
+                        <!-- END Si in ex vivo -->
+
+
+                        <!--  Si in vitro -->
+                        <div class="panel panel-default" style="margin-top:20px;" ng-if="study.interventional_experimental_type == 'in_vitro'">
+                            <div class="panel-heading">
+                                    In vitro description
+                            </div>
+                            <div class="panel-body" id="paneltable">
+                                <div class="form-group">
+
+                                    <div  class="form-group">
+                                        <label class="control-label"  for="organism">Organism</label>
+                                        <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="organism_vivo" type="text" ng-model="study.interventional_vitro.organism" placeholder="Organism" typeahead-min-length="4" typeahead-on-select="select($item, $model,$label)" typeahead="item.name for item in get_onto($viewValue,'ncbitaxon.obo.txt.tab')" typeahead-loading="loadingOrganism" class="form-control"/>
+
+                                        <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.interventional_vitro.organism}}</p>
+                                    </div>
+
+                                    <div class="form-group" ng-if="interventional_vitro.organism != 'Homo sapiens'">
+                                        <label class="control-label"  for="strain">Strain or sub-species</label>
+                                        <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="strain" type="text" ng-model="study.interventional_invitro.strain" placeholder="Strain" typeahead-min-length="4" typeahead-on-select="select($item, $model,$label)" typeahead="item.name for item in get_onto($viewValue,'')" typeahead-loading="loadingCellLine" class="form-control"/>
+                                        <p ng-if="dataset.owner != user.id || dataset.status != 'private' && study.interventional_vitro.strain != ''">{{study.interventional_vitro.strain}} </p>
+                                    </div>
+
+                                    <!-- Tissue -->
+                                    <div class="form-group">
+                                        <label class="control-label " for="tissue">Tissue</label> <!-- http://www.obofoundry.org/ontology/fma.html -->
+                                        <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="tissue_vivo" type="text" ng-model="study.interventional_vitro.tissue" placeholder="Tissue" typeahead-min-length="4" typeahead-on-select="select($item, $model,$label)" typeahead="item.name for item in get_onto($viewValue,'fma.obo.tab')" typeahead-loading="loadingCellLine" class="form-control"/>
+                                        <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.interventional_vitro.tissue}} </p>
+                                    </div>
+
+                                    <!-- generation -->
+                                    <div class="form-group"  >
+                                        <label class="control-label"  for="generation">Generation</label>
+                                        <select ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_vitro.generation" class="form-control" id="generation">
+                                            <option value="" disabled selected>Please select</option>
+                                            <option value="f0">F0</option>
+                                            <option value="f1">F1</option>
+                                            <option value="f2">F2</option>
+                                            <option value="f3">F3</option>
+                                            <option value="f4">F4</option>
+                                            <option value="f5">F5</option>
+                                            <option value="f6">F6</option>
+                                            <option value="f7">F7</option>
+                                            <option value="f8">F8</option>
+                                            <option value="f9">F9</option>
+                                            <option value="f10">F10</option>
+                                        </select>
+                                        <select ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_vitro.generation" class="form-control" id="generation" disabled>
+                                            <option value="" disabled selected>Please select</option>
+                                            <option value="f0">F0</option>
+                                            <option value="f1">F1</option>
+                                            <option value="f2">F2</option>
+                                            <option value="f3">F3</option>
+                                            <option value="f4">F4</option>
+                                            <option value="f5">F5</option>
+                                            <option value="f6">F6</option>
+                                            <option value="f7">F7</option>
+                                            <option value="f8">F8</option>
+                                            <option value="f9">F9</option>
+                                            <option value="f10">F10</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label"  for="experimental_type">Type</label>
+                                        <select  ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_vitro.experimental" class="form-control" placeholder="Please select your experimental type" id="experimental_type" ng-init='none' disabled>
+                                            <option value="" disabled selected>Please select</option>
+                                            <option value="cell_line">Cell line</option>
+                                            <option value="primary_cell_culture">Primary cell culture</option>
+                                            <option value="yeast_assay">Yeast assay</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <select  ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_vitro.experimental" class="form-control" placeholder="Please select your experimental type" id="experimental_type" ng-init='none'>
+                                            <option value="" disabled selected>Please select</option>
+                                            <option value="cell_line">Cell line</option>
+                                            <option value="primary_cell_culture">Primary cell culture</option>
+                                            <option value="yeast_assay">Yeast assay</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div ng-if="study.interventional_vitro.experimental =='cell_line' " id="cell_line"  class="form-group" >
+                                    <label class="control-label"  for="cell_name">Name</label>
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'"   id="organism_vivo" type="text" ng-model="study.interventional_vitro.cell_line" placeholder="Cell Line" typeahead-min-length="4" typeahead-on-select="select($item, $model,$label)" typeahead="item.name for item in get_onto($viewValue,'clo.obo.txt.tab')" typeahead-loading="loadingCellLine" class="form-control"/>
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.interventional_vitro.cell_line}}</p>
+
+                                    <label class="control-label"  for="passage">Passage</label>
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'"> {{study.interventional_vitro.passage}}</p>
+                                </div>
+
+
+                                <div ng-if="interventional_vitro.experimental =='primary_cell_culture' " id="cell_line"  class="form-group">
+                                    <label class="control-label"  for="cell_name"> Cell name</label>
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'"  id="organism_vivo" type="text" ng-model="study.interventional_vitro.cell_name" placeholder="Cell" typeahead-min-length="4" typeahead-on-select="select($item, $model,$label)" typeahead="item.name for item in get_onto($viewValue,'cl.obo.txt.tab')" typeahead-loading="loadingCellLine" class="form-control"/>
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'"> {{study.interventional_vitro.cell_name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  END panel body in vitro -->
+
+                        <!-- OTHER -->
+                        <div class="panel panel-default" style="margin-top:20px;" ng-if="study.interventional_experimental_type == 'other'">
+                            <div class="panel-heading">
+                                Description
+                            </div>
+                            <div class="panel-body" id="paneltable">
+                                <div  class="form-group">
+                                    <label class="control-label"  for="organism">Species</label>
+                                    <input   ng-if="dataset.owner == user.id && dataset.status == 'private'"  id="organism_vivo" type="text" ng-model="study.interventional_other.organism" ng-init="interventional_other.organism='Rattus norvegicus'" placeholder="Species"
+                                    typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                    $label)" typeahead="item.name for item in get_onto($viewValue,'ncbitaxon.obo.txt.tab')" typeahead-loading="loadingOrganism"
+                                    class="form-control" />
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'"> {{study.interventional_other.organism}}</p>
+                                </div>
+
+                                <div class="form-group" ng-if="interventional_other.organism != 'Homo sapiens'">
+                                    <label class="control-label"  for="strain">Strain or sub-species</label>
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'"  id="organism_vivo" type="text" ng-model="study.interventional_other.strain" placeholder="Strain"
+                                    typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                    $label)" typeahead="item.name for item in get_onto($viewValue,'')" typeahead-loading="loadingCellLine"
+                                    class="form-control"/>
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.interventional_other.strain}}</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label"  for="sex">Sex</label>
+                                    <select ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="study.interventional_other.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="male">Male</option>
+                                        <option value="ex_vivo">Female</option>
+                                        <option value="both">Both</option>
+                                        <option value="unknown">Unknown</option>
+                                        <option value="other">Other</option>
+                                        <option value="na">NA</option>
+                                    </select>
+                                    <select ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_other.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex" disabled>
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="male">Male</option>
+                                        <option value="ex_vivo">Female</option>
+                                        <option value="both">Both</option>
+                                        <option value="unknown">Unknown</option>
+                                        <option value="other">Other</option>
+                                        <option value="na">NA</option>
+                                    </select>
+                                </div>
+                                <!-- Tissue -->
+                                <div class="form-group">
+                                    <label class="control-label " for="tissue">Tissue</label> <!-- http://www.obofoundry.org/ontology/fma.html -->
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="tissue_vivo" type="text" ng-model="study.interventional_other.tissue" placeholder="Tissue"
+                                    typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                    $label)" typeahead="item.name for item in get_onto($viewValue,'fma.obo.tab')" typeahead-loading="loadingCellLine"
+                                    class="form-control"/>
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{study.interventional_other.tissue}}</p>
+                                </div>
+                                <label class="control-label"  for="cell_name"> Cell name</label>
+                                <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="organism_vivo" type="text" ng-model="study.interventional_other.cell_name" placeholder="Cell"
+                                typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                $label)" typeahead="item.name for item in get_onto($viewValue,'cl.obo.txt.tab')" typeahead-loading="loadingCellLine"
+                                class="form-control"/>
+                                <p ng-if="dataset.owner != user.id || dataset.status != 'private'"> {{study.interventional_other.cell_name}}</p>
+
+                                <!-- generation -->
+                                <div class="form-group">
+                                    <label class="control-label"  for="generation">Generation</label>
+                                    <select ng-if="dataset.owner == user.id && dataset.status == 'private'"  ng-model="study.interventional_other.generation" class="form-control" id="generation">
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="f0">F0</option>
+                                        <option value="f1">F1</option>
+                                        <option value="f2">F2</option>
+                                        <option value="f3">F3</option>
+                                        <option value="f4">F4</option>
+                                        <option value="f5">F5</option>
+                                        <option value="f6">F6</option>
+                                        <option value="f7">F7</option>
+                                        <option value="f8">F8</option>
+                                        <option value="f9">F9</option>
+                                        <option value="f10">F10</option>
+                                    </select>
+                                    <select ng-if="dataset.owner != user.id || dataset.status != 'private'" ng-model="study.interventional_other.generation" class="form-control" id="generation" disabled>
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="f0">F0</option>
+                                        <option value="f1">F1</option>
+                                        <option value="f2">F2</option>
+                                        <option value="f3">F3</option>
+                                        <option value="f4">F4</option>
+                                        <option value="f5">F5</option>
+                                        <option value="f6">F6</option>
+                                        <option value="f7">F7</option>
+                                        <option value="f8">F8</option>
+                                        <option value="f9">F9</option>
+                                        <option value="f10">F10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--END panel-body-->
+                        </div>
+                        <!--END Other-->
+                        <form style="margin-bottom:80px;">
+                            <ul class="list-inline pull-left">
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="dataset_update()">Update</button></li>
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="condition_add(dataset,study)">Add Condition</button></li>
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="add_signature(dataset,study)">Add Signature</button></li>
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-warning" ng-click="study_del(dataset,study)">Delete study</button></li><!-- TO DO -->
+                            </ul>
+                        </form>
+                    </div>
+            </div>
+            <!-- =======================END Study Interventional information=========================================-->
+        </div>
+        <!-- =======================END Study information=========================================-->
+
+
+        <!-- =======================Signature information=========================================-->       
+        <div id='sign_info' style="display: none;">
+            <!-- =======================Signature Observational information=========================================--> 
+            <div ng-repeat="study in :: dataset.studies" ng-if="study.type == 'observational' && study.id == selectedstud">
+                <div ng-repeat="sign in :: study.signatures" ng-if="sign.id == selectedsign">
+                    <div ng-repeat="cond in :: study.conditions" ng-if="sign.asso_cond == cond.id">
+                        <div class="form-group">
+                                    <label class="control-label " for="title">Title</label>
+                                    <input ng-if="dataset.owner == user.id && dataset.status == 'private'"  ng-model="cond.title" class="form-control" id="title"/>
+                                    <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{cond.title}}</p>
+                                </div>
+                                <table ng-repeat="treatment in cond.treatment" ng-if="treatment.chemicals != {}" class="table table-bordered table-hover table-striped">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Population age</th>
+                                        <th>Geographic location</th>
+                                        <th>Reference</th>
+                                        <th>Matrice</th>
+                                        <th>Chemical</th>
+                                        <th>Dose</th>
+                                        <th>Additional information</th>
+                                    </tr>
+                                    <tr ng-repeat="chem in treatment.chemicals">
+                                        <td>{{$index +1}}</td>
+                                        <td>{{cond.population_age}}</td>
+                                        <td>{{cond.location}}</td>
+                                        <td>{{cond.ref}}</td>
+                                        <td>{{cond.matrice}}</td>
+                                        <td>{{chem.name}}</td>
+                                        <td>{{chem.dose}} {{chem.dose_unit}}</td>
+                                        <td>{{chem.info}}</td>
+                                    </tr>
+                                </table>
+                                <ul class="nav nav-tabs">
+                                    <li ng-repeat="sign in :: study.signatures" class="active">
+                                        <a ng-if="sign.id == selectedsign && sign.asso_cond == cond.id" href="#sign{{cond.id}}{{$index + 1}}" target="_self" role="tab" data-toggle="tab">
+                                            <i class="fa fa-info"></i>{{sign.id}}
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div ng-repeat="sign in :: study.signatures" class="tab-pane fade active in" id="sign{{cond.id}}{{$index + 1}}" ng-if="sign.id == selectedsign && sign.asso_cond == cond.id">
+                                        <div ng-if="sign.env.length != 0">
+                                            <table class="table table-bordered table-hover table-striped" >
+                                                <thead>
+                                                    <tr>
+                                                        <th>Title</th>
+                                                        <th>Species</th>
+                                                        <th>Outcome</th>
+                                                        <th>Tissue</th>
+                                                        <th>Generation</th>
+                                                        <th>Developmental stage</th>
+                                                        <th>Associated observation</th>
+                                                        <th>Effect</th>
+                                                        <th>Statistical significance</th>
+                                                        <th ng-if="can_edit()"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tr ng-repeat="env in sign.env">
+                                                    <td ng-if="dataset.owner == user.id && dataset.status == 'private'"> <a ng-click="show_signature(dataset,study.id,sign.id)">{{sign.title}}</a></td>
+                                                    <td ng-if="dataset.owner != user.id || dataset.status != 'private'">{{sign.title}}</td>
+                                                    <td><span>{{sign.organism}}</span></td>
+                                                    <td>{{env.outcome}}</td>
+                                                    <td><span >{{sign.tissue}}</span></td>
+                                                    <td><span>{{sign.generation}}</span></td>
+                                                    <td><span>{{sign.devstage}}</span></td>
+                                                    <td>{{env.asso}}</td>
+                                                    <td>{{env.obs_effect}}</td>
+                                                    <td>{{env.statsign}}</td>
+                                                    <td ng-if="can_edit()"><button type="button" class="btn btn-primary btn-small" ><i class="glyphicon glyphicon-trash" ng-click="signature_delete('env', $index)"></i></button></td>
+                                                </tr>
+                                            </table>
+                                            <div class="panel panel-default" style="margin-top:20px;">
+                                                <div class="panel-heading">
+                                                    Information
+                                                </div>
+                                                <div class="panel-body" id="paneltable" ng-repeat="env in sign.env">
+                                                    <div class="form-group">
+                                                        <label class="control-label"  for="statistical">Additional information</label> <!-- http://www.obofoundry.org/ontology/stato.html -->
+                                                        <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="env.expe_info" placeholder="50-500 words max" maxlength="5000" class="form-control" id="statistical" disabled></textarea>
+                                                        <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{env.expe_info}}</p>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label"  for="statistical">Other statistical information</label> <!-- http://www.obofoundry.org/ontology/stato.html -->
+                                                        <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="env.other_stat" placeholder="50-500 words max" maxlength="5000" class="form-control" id="statistical" disabled></textarea>
+                                                        <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{env.other_stat}}</p>
+                                                    </div>
+                                                </div>
+                                                <label>Additional information         <a ng-if="sign.files.length > 0" href="" ng-click="downloadsign(dataset.status,dataset.id,selectedstud,sign.asso_cond,selectedsign,sign.supfiles,user.id)"><i class="fa fa-download" aria-hidden="true"></i></a></label></br>
+                                                <button class="btn btn-info " ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles.length == 0 " ngf-select="signature_upload($file, 3,sign,selectedstud,'info')">Add additional information file</button>
+                                                <button class="btn btn-info" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles.length > 0" ngf-select="signature_upload($file, 3,sign,selectedstud,'info',sign)">Change additional information file</button><button class="btn btn-warning" ng-if="dataset.owner == user.id && dataset.status != 'private' && sign.supfiles.length > 0" ng-click="deletefile(sign.supfiles,selectedsign,selectedstud,sign.asso_cond,'info')"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+                                            </div>
+                                            <form style="margin-bottom:80px;">
+                                                <ul class="list-inline pull-left">
+                                                    <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="add_signature(dataset,study)">Add Signature</button></li>
+                                                    <li><button ng-if="can_edit()" type="button" class="btn btn-warning" ng-click="signature_delete(study,sign)">Delete signature</button></li><!-- TO DO -->
+                                                </ul>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form style="margin-top:20px;">
+                                    <ul class="list-inline pull-left">
+                                        <li><button  type="button" class="btn btn-info" ng-click="add_todash(cond.id,dataset)">Add to dashboard</button></li>
+                                    </ul>
+                                </form>    
+                    </div>
+                </div>
+            </div>
+            <!-- =======================END Signature Observational information=========================================-->
+
+            <!-- =======================Signature Interventional information=========================================-->
+            <div ng-repeat="study in :: dataset.studies" ng-if="study.type == 'interventional' && study.id == selectedstud">
+                <div ng-repeat="sign in :: study.signatures" ng-if="sign.id == selectedsign">
+                    <div ng-repeat="cond in :: study.conditions" ng-if="sign.asso_cond == cond.id">
+                        <div class="form-group">
+                            <label class="control-label " for="title">Title</label>
+                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'"  ng-model="cond.title" class="form-control" id="title"/>
+                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'"> {{cond.title}}</p>
+                        </div>
+                        <table ng-repeat="treatment in cond.treatment" ng-if="treatment.chemicals != {}" class="table table-bordered table-hover table-striped">
+                            <tr>
+                                <th>#</th>
+                                <th>Chemical</th>
+                                <th>Vehicle</th>
+                                <th>Route</th>
+                                <th>Dose</th>
+                                <th>Exposure duration</th>
+                                <th>Exposure frequency</th>
+                                <th>Additional information</th>
+                            </tr>
+                            <tr ng-repeat="chem in treatment.chemicals">
+                                <td>{{$index +1}}</td>
+                                <td>{{chem.name}}</td>
+                                <td>{{chem.vehicle}}</td>
+                                <td>{{chem.route}}</td>
+                                <td>{{chem.dose}} {{chem.dose_unit}}</td>
+                                <td>{{chem.exposure_duration}} {{chem.exposure_duration_unit}}</td>
+                                <td>{{chem.exposure_frequency}}</td>
+                                <td>{{chem.info}}</td>
+                            </tr>
+                        </table>
+                        <form style="margin-bottom:80px;">
+                            <ul class="list-inline pull-left">
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="dataset_update()">Update</button></li>
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="condition_add(dataset,study)">Add Condition</button></li>
+                                <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="add_signature(dataset,study)">Add Signature</button></li>
+                            </ul>
+                        </form>
+
+                    <!--===============================================SIGNATURE Nav=================================== -->
+                    <ul class="nav nav-tabs">
+                        <li ng-repeat="sign in :: study.signatures" class="active">
+                            <a ng-if="sign.id == selectedsign && sign.asso_cond == cond.id" href="#sign{{sign.id}}{{$index + 1}}" target="_self" role="tab" data-toggle="tab">
+                                <i class="fa fa-info"></i>{{sign.id}}
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div ng-repeat="sign in :: study.signatures" class="tab-pane fade active in" id="sign{{sign.id}}{{$index + 1}}" ng-if="sign.id == selectedsign && sign.asso_cond == cond.id">
+                            <div ng-if="sign.physio.length != 0">
+                                <table class="table table-bordered table-hover table-striped" >
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Species</th>
+                                            <th>Tissue</th>
+                                            <th>Generation</th>
+                                            <th>Developmental stage</th>
+                                            <th>Associated observation</th>
+                                            <th>Effect</th>
+                                            <th ng-if="can_edit()"></th>
+                                        </tr>
+                                    </thead>
+                                    <tr ng-repeat="physio in sign.physio">
+                                        <td ng-if="dataset.owner == user.id && dataset.status == 'private'"> <a ng-click="show_signature(dataset,study.id,sign.id)">{{sign.title}}</a></td>
+                                        <td ng-if="dataset.owner != user.id || dataset.status != 'private'">{{sign.title}}</td>
+                                        <td>{{sign.organism}}</td>
+                                        <td>{{sign.tissue}}</td>
+                                        <td>{{sign.generation}}</td>
+                                        <td>{{sign.devstage}}</td>
+                                        <td>{{physio.asso}}</td>
+                                        <td>{{physio.obs_effect}}</td>
+                                        <td ng-if="can_edit()"><button type="button" class="btn btn-primary btn-small" ><i class="glyphicon glyphicon-trash" ng-click="signature_delete('physio', $index)"></i></button></td>
+                                    </tr>
+                                </table>
+                                <div class="panel panel-default" style="margin-top:20px;">
+                                    <div class="panel-heading">
+                                        Statistical information
+                                    </div>
+                                    <div class="panel-body" id="paneltable" ng-repeat="physio in sign.physio">
+                                        <!-- Sample -->
+                                        <div class="form-group">
+                                            <label class="control-label " for="sample">Number of exposed samples </label>
+                                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="physio.sample" class="form-control" id="sample"/>
+                                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">physio.sample</p>
+                                        </div>
+
+                                        <!-- Control -->
+                                        <div class="form-group">
+                                            <label class="control-label " for="control">Number of control samples</label>
+                                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="physio.control" class="form-control" id="control"/>
+                                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">physio.control</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label " for="pvalue">P-value cutoff</label>
+                                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="physio.pvalue" class="form-control" id="pvalue"/>
+                                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">physio.pvalue</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label"  for="statistical">Additional information</label> <!-- http://www.obofoundry.org/ontology/stato.html -->
+                                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="physio.statistical" placeholder="50-500 words max" maxlength="5000" class="form-control" id="statistical" ></textarea>
+                                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">physio.statistical</p>
+                                        </div>
+                                        <label>Additional information         <a ng-if="sign.files.length > 0" href="" ng-click="downloadsign(dataset.status,dataset.id,selectedstud,sign.asso_cond,selectedsign,sign.supfiles,user.id)"><i class="fa fa-download" aria-hidden="true"></i></a></label></br>
+                                        <button class="btn btn-info " ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles.length == 0 " ngf-select="signature_upload($file, 3,sign,selectedstud,'info')">Add additional information file</button>
+                                        <button class="btn btn-info" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles != undefined && sign.supfiles.length > 0 " ngf-select="signature_upload($file, 3,sign,selectedstud,'info',sign)">Change additional information file</button><button class="btn btn-warning" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles != undefined && sign.supfiles.length > 0" ng-click="deletefile(sign.supfiles,selectedsign,selectedstud,sign.asso_cond,'info')"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Mol sign-->
+                            <div ng-if="sign.molecular.length != 0">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Species</th>
+                                            <th>Tissue</th>
+                                            <th>Generation</th>
+                                            <th>Developmental stage</th>
+                                            <th>Extracted molecule</th>
+                                            <th>Technology used</th>
+                                            <th>Identifiant</th>
+                                            <th ng-if="can_edit()"></th>
+                                        </tr>
+                                    </thead>
+                                    <tr ng-repeat="mol in sign.molecular">
+                                        <td ng-if="dataset.owner == user.id && dataset.status == 'private'"> <a ng-click="show_signature(dataset,study.id,sign.id)">{{sign.title}}</a></td>
+                                        <td ng-if="dataset.owner != user.id || dataset.status != 'private'">{{sign.title}}</td>
+                                        <td>{{sign.organism}}</td>
+                                        <td><span>{{sign.tissue}}</span></td>
+                                        <td><span>{{sign.generation}}</span></td>
+                                        <td><span>{{sign.devstage}}</span></td>
+                                        <td>{{mol.extractedmolecule}}</td>
+                                        <td>{{mol.techno}}</td>
+                                        <td>{{mol.iduse}}</td>
+                                        <td ng-if="can_edit()"><button type="button" class="btn btn-primary btn-small"><i class="glyphicon glyphicon-trash" ng-click="signature_delete('mol', $index)"></i></button></td>
+                                    </tr>
+                                </table>
+                                <div ng-repeat="molecular_signature in sign.molecular">
+                                <div class="panel panel-success" style="margin-top:20px;">
+                                    <div class="panel-heading">
+                                        Experimental information
+                                    </div>
+                                    <!-- Extracted Molecule -->
+                                    <div class="panel-body" id="paneltable">
+                                      <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="molecular_signature.expe_info" placeholder="50-500 words max" maxlength="5000" class="form-control" id="extractproto"/></textarea>
+                                      <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{molecular_signature.expe_info}}</p>
+                                    </div>
+                                </div>
+                                <div class="panel panel-success" style="margin-top:20px;">
+                                    <div class="panel-heading">
+                                        Signature information
+                                    </div>
+                                    <!-- Extracted Molecule -->
+                                    <div class="form-group">
+                                        <label class="control-label " for="extractedmolecule">Extracted molecule</label> <!-- http://www.obofoundry.org/ontology/chebi.html + CTD -->
+                                        <input ng-if="dataset.owner == user.id && dataset.status == 'private'" id="extractedmolecule" type="text" ng-model="molecular_signature.extractedmolecule" placeholder="Extracted molecule"
+                                                     typeahead-min-length="4" typeahead-on-select="selectmol($item, $model,
+                                                     $label)" typeahead="item.name for item in get_onto($viewValue,'chemical.tab')" typeahead-loading="loadingOrganism"
+                                                     class="form-control">
+                                        <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{molecular_signature.extractedmolecule}}</p>
+                                    </div>
+                                    <div ng-if="dataset.owner == user.id && dataset.status == 'private'" class="form-group">
+                                      <label class="control-label"  for="exposure,exposure_duration">Observed effect</label>
+                                      <select  class="form-control" ng-model="molecular_signature.obs_effect" id="ec" >
+                                          <option value="" disabled selected>Select your unit</option>
+                                          <option value="Increase">Increase</option>
+                                          <option value="Decrease">Decrease</option>
+                                          <option value="noeffect">No effect</option>
+                                          <option value="na">NA</option>
+                                      </select>
+                                    </div>
+                                    <div ng-if="dataset.owner != user.id || dataset.status != 'private'" class="form-group">
+                                      <label class="control-label"  for="exposure,exposure_duration">Observed effect</label>
+                                      <select  class="form-control" ng-model="molecular_signature.obs_effect" id="ec" disabled>
+                                          <option value="" disabled >Select your unit</option>
+                                          <option value="Increase">Increase</option>
+                                          <option value="Decrease">Decrease</option>
+                                          <option value="noeffect">No effect</option>
+                                          <option value="na">NA</option>
+                                      </select>
+                                    </div>
+
+                                    <!-- Extraction Protocol -->
+                                    <div class="form-group">
+                                      <label class="control-label " for="extractproto">Extraction Protocol</label> <!-- http://www.obofoundry.org/ontology/chebi.html + CTD -->
+                                      <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="molecular_signature.extractproto" placeholder="50-500 words max" maxlength="5000" class="form-control" id="extractproto"/></textarea>
+                                      <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{molecular_signature.extractproto}}</p>
+                                    </div>
+                                    <label>Additional information         <a ng-if="sign.files.length > 0" href="" ng-click="downloadsign(dataset.status,dataset.id,selectedstud,sign.asso_cond,selectedsign,sign.supfiles,user.id)"><i class="fa fa-download" aria-hidden="true"></i></a></label></br>
+                                    <button class="btn btn-info " ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles.length == 0 " ngf-select="signature_upload($file, 3,sign,selectedstud,'info')">Add additional information file</button>
+                                    <button class="btn btn-info" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles != undefined && sign.supfiles.length > 0" ngf-select="signature_upload($file, 3,sign,selectedstud,'info',sign)">Change additional information file</button><button class="btn btn-warning" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles != undefined && sign.supfiles.length > 0" ng-click="deletefile(sign.supfiles,selectedsign,selectedstud,sign.asso_cond,'info')"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default" style="margin-top:20px;">
+                                    <div class="panel-heading">
+                                        Statistical information
+                                    </div>
+                                    <div class="panel-body" id="paneltable" ng-repeat="mol in sign.molecular">
+                                                    <!-- Sample -->
+                                        <div class="form-group">
+                                            <label class="control-label " for="sample">Number of exposed samples </label>
+                                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="mol.sample" class="form-control" id="sample" disabled/>
+                                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{mol.sample}}</p>
+                                        </div>
+
+                                                    <!-- Control -->
+                                        <div class="form-group">
+                                            <label class="control-label " for="control">Number of control samples</label>
+                                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="mol.control" class="form-control" id="control" disabled/>
+                                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{mol.control}}</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label " for="pvalue">P-value cutoff</label>
+                                            <input ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="mol.pvalue" class="form-control" id="pvalue" disabled/>
+                                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{mol.pvalue}}</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label"  for="statistical">Additional information</label> <!-- http://www.obofoundry.org/ontology/stato.html -->
+                                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'" ng-model="mol.statistical" placeholder="50-500 words max" maxlength="5000" class="form-control" id="statistical" disabled></textarea>
+                                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'">{{mol.statistical}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+                            <!--Genomic sign-->
+                            <div ng-if="sign.genomic.length != 0 ">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Species</th>
+                                            <th>Tissue</th>
+                                            <th>Generation</th>
+                                            <th>Developmental stage</th>
+                                            <th>Technology used</th>
+                                            <th>Geo plateform</th>
+                                            <th ng-if="can_edit()"></th>
+                                        </tr>
+                                    </thead>
+                                    <tr ng-repeat="geno in sign.genomic">
+                                        <td ng-if="dataset.owner == user.id && dataset.status == 'private'"> <a ng-click="show_signature(dataset,study.id,sign.id)">{{sign.title}}</a></td>
+                                        <td ng-if="dataset.owner != user.id || dataset.status != 'private'">{{sign.title}}</td>
+                                        <td><span>{{sign.organism}}</span></td>
+                                        <td><span>{{sign.tissue}}</span></td>
+                                        <td><span>{{sign.generation}}</span></td>
+                                        <td><span>{{sign.devstage}}</span></td>
+                                        <td>{{geno.techno}}</td>
+                                        <td>{{geno.plateform}}</td>
+                                        <td ng-if="can_edit()"><button type="button" class="btn btn-primary btn-small"><i class="glyphicon glyphicon-trash" ng-click="signature_delete('geno', $index)"></i></button></td>
+                                    </tr>
+                                </table>
+                                <div class="panel panel-default" style="margin-top:20px;">
+                                    <div class="panel-heading">
+                                        Signature information
+                                    </div>
+                                    <div ng-repeat="geno in sign.genomic">
+                                        <label class="control-label"  for="exposure,exposure_duration">Identifiers</label>
+                                        <select  class="form-control" ng-model="geno.obs_effect" id="ec" disabled>
+                                            <option value="" disabled selected>Select your Type</option>
+                                            <option value="Entrez">Entrez Gene ID</option>
+                                                        <!-- <option value="Vegatrans">Vega Transcript ID</option>
+                                                        <option value="VegaPep">Vega Peptide ID</option>
+                                                        <option value="VegaGene">Vega Gene ID</option>-->
+                                        </select>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label"  for="exposure,exposure_duration">Down-regulated genes         <a ng-if="sign.files.indexOf('genomic_downward.txt') >= 0" ng-href="" ng-click="downloadsign(dataset.status,dataset.id,selectedstud,sign.asso_cond,selectedsign,'genomic_downward.txt',user.id)" download="genomic_downward.txt"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></label></br>
+
+                                                <button class="btn btn-info" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.files.indexOf('genomic_downward.txt') == -1" ngf-select="signature_upload($file, 1,sign,selectedstud,geno)">Add down regulated signature</button>
+                                                <button class="btn btn-info" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.files != undefined && sign.files.indexOf('genomic_downward.txt') >= 0" ngf-select="signature_upload($file, 1,sign,selectedstud,geno)">Change signature</button><button class="btn btn-warning" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.files.indexOf('genomic_downward.txt') >= 0" ng-click="deletefile('genomic_downward.txt',selectedsign,selectedstud,sign.asso_cond,'genomic',sign)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="control-label"  for="exposure,exposure_duration">Up-regulated genes            <a ng-if="sign.files.indexOf('genomic_upward.txt') >= 0" ng-href="" ng-click="downloadsign(dataset.status,dataset.id,selectedstud,sign.asso_cond,selectedsign,'genomic_upward.txt',user.id)" download="genomic_upward.txt"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></label></br>
+
+                                                <button class="btn btn-info" ng-if="dataset.owner == user.id && dataset.status == 'private' &&  sign.files.indexOf('genomic_upward.txt') == -1" ngf-select="signature_upload($file, 0,sign,selectedstud,geno)">Add up regulated signature</button>
+                                                <button class="btn btn-info" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.files != undefined && sign.files.indexOf('genomic_upward.txt') >= 0 " ngf-select="signature_upload($file, 0,sign,selectedstud,geno)">Change signature</button><button class="btn btn-warning" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.files.indexOf('genomic_upward.txt')" ng-click="deletefile('genomic_upward.txt',selectedsign,selectedstud,sign.asso_cond,'genomic',sign)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="control-label"  for="exposure,exposure_duration">Interrogated genes             <a ng-if="sign.files.indexOf('genomic_interrogated_genes.txt') >= 0" ng-href="" ng-click="downloadsign(dataset.status,dataset.id,selectedstud,sign.asso_cond,selectedsign,'genomic_interrogated_genes.txt',user.id)" download="genomic_interrogated_genes.txt"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></label></br>
+
+                                                <button class="btn btn-info" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.files.indexOf('genomic_interrogated_genes.txt') >= 0" ngf-select="signature_upload($file, 2,sign,selectedstud,geno)">Change interogated genes</button><button class="btn btn-warning" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.files.indexOf('genomic_interrogated_genes.txt') >= 0" ng-click="deletefile('genomic_interrogated_genes.txt',selectedsign,selectedstud,sign.asso_cond,'genomic',sign)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="panel panel-default" style="margin-top:20px;">
+                                    <div class="panel-heading">
+                                        Statistical information
+                                    </div>
+                                    <div class="panel-body" id="paneltable" ng-repeat="geno in sign.genomic">
+                                                    <!-- Sample -->
+                                        <div class="form-group">
+                                            <label class="control-label " for="sample">Number of exposed samples </label>
+                                            <input ng-model="geno.sample" class="form-control" id="sample" disabled/>
+                                        </div>
+                                                    <!-- Control -->
+                                        <div class="form-group">
+                                            <label class="control-label " for="control">Number of control samples </label>
+                                            <input ng-model="geno.control" class="form-control" id="control" disabled/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label " for="pvalue">P-value cutoff</label>
+                                            <input ng-model="geno.pvalue" class="form-control" id="pvalue" disabled/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label"  for="statistical">Additional information</label> <!-- http://www.obofoundry.org/ontology/stato.html -->
+                                            <textarea ng-if="dataset.owner == user.id && dataset.status == 'private'"  ng-model="geno.statistical" class="form-control" id="statgeno" placeholder="200-1000 words max"></textarea>
+                                            <p ng-if="dataset.owner != user.id || dataset.status != 'private'" id="description">{{geno.statistical}}</p>
+                                        </div>
+                                        <label>Additional information         <a ng-if="sign.files.length > 0" href="" ng-click="downloadsign(dataset.status,dataset.id,selectedstud,sign.asso_cond,selectedsign,sign.supfiles,user.id)"><i class="fa fa-download" aria-hidden="true"></i></a></label></br>
+                                        <button class="btn btn-info " ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles === undefined || sign.supfiles.length == 0" ngf-select="signature_upload($file, 3,sign,selectedstud,'info')">Add additional information file</button>
+                                        <button class="btn btn-info" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles != undefined && sign.supfiles.length > 0" ngf-select="signature_upload($file, 3,sign,selectedstud,'info',sign)">Change additional information file</button><button class="btn btn-warning" ng-if="dataset.owner == user.id && dataset.status == 'private' && sign.supfiles != undefined && sign.supfiles.length > 0" ng-click="deletefile(sign.supfiles,selectedsign,selectedstud,sign.asso_cond,'info')"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                                <form style="margin-bottom:80px;">
+                                    <ul class="list-inline pull-left">
+                                        <li><button ng-if="can_edit()" type="button" class="btn btn-info" ng-click="add_signature(dataset,study)">Add Signature</button></li>
+                                        <li><button ng-if="can_edit()" type="button" class="btn btn-warning" ng-click="signature_delete(study,sign)">Delete signature</button></li><!-- TO DO -->
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <form style="margin-top:20px;">
+                        <ul class="list-inline pull-left">
+                            <li><button  type="button" class="btn btn-info" ng-click="add_todash(sign.id,dataset)">Add to dashboard</button></li>
+                        </ul>
+                    </form>    
+                </div>
+            </div>
+        </div>
+            <!-- =======================END Signature Interventional information=========================================-->
+
+    </div>
+        <!-- =======================END Signature information=========================================-->
+         
+    </div>
+</div>

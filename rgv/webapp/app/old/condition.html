@@ -1,0 +1,744 @@
+<script src="scripts/AddHeader.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="styles/sb-admin-2.css" rel="stylesheet">
+<link rel="stylesheet" href="styles/panel.css">
+
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-primary text-center no-boder" style="background-color: #325d88;border-color: #ffffff;">
+      <div class="panel-body">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="panel panel-primary text-center no-boder" style="background-color: #325d88;border-style: none;">
+                      <h3 style="color: white;">Project information</h3>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <label class="control-label"  style="color: white;">ID</label>
+                              <p style="color: white;">{{dataset.id}}</p>
+                          </div>
+                          <div class="col-md-6">
+                              <label class="control-label"  style="color: white;">Title</label>
+                              <p style="color: white;" ng-if="study.type == 'interventional'">{{dataset.title}}</p>
+                          </div>                
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <label class="control-label"  style="color: white;">Description</label>
+                              <p style="color: white;">{{dataset.description}}</p>
+                          </div>         
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div> 
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-success text-center no-boder" style="background-color: #93c54b;border-color: #ffffff;">
+      <div class="panel-body">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="panel panel-success text-center no-boder" style="background-color: #93c54b;border-style: none;">
+                      <h3 style="color: white;">Study information</h3>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <label class="control-label"  style="color: white;">ID</label>
+                              <p style="color: white;">{{study.id}}</p>
+                          </div>
+                          <div class="col-md-6">
+                              <label class="control-label"  style="color: white;">Title</label>
+                              <p style="color: white;" ng-if="study.type == 'interventional'">{{study.interventional_title}}</p>
+                              <p style="color: white;" ng-if="study.type == 'observational'">{{study.observational_title}}</p>
+                          </div>                
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <label class="control-label"  style="color: white;">Description</label>
+                              <p style="color: white;" ng-if="study.type == 'interventional'">{{study.interventional_description}}</p>
+                              <p style="color: white;" ng-if="study.type == 'observational'">{{study.observational_description}}</p>
+                          </div>         
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div> 
+  </div> 
+</div>
+
+
+<div class="form-group">
+   <label class="control-label " for="title">Condition title <sup>*</sup></label>
+   <input ng-model="condition.title" class="form-control" id="title"/>
+</div>
+<div class="row" ng-if="study.type == 'interventional'">
+  <div class="col-md-8">
+     <div class="panel panel-primary">
+        <div class="panel-heading">
+            Create a condition - New item
+        </div>
+        <div class="panel-body">
+          
+          <div class="form-group">
+              <label class="control-label"  for="experimental_condition_nature">Treatment type <sup>*</sup></label>
+              <select ng-model="nature" class="form-control" id="experimental_condition_nature" placeholder="Please select your experimental condition nature">
+                  <option value="" disabled selected>Please select</option>
+                  <option value="chemical">Chemical (e.g. pesticides, plasticizers)</option>
+                  <option value="physical" disabled>Physical (e.g. radiations, temperature) Coming Soon</option>
+                  <option value="biological" disabled>Biological (e.g. pathogens, parasites) Coming Soon</option>
+                 <!-- <option value="other">Other</option> -->
+              </select>
+          </div>
+          <div ng-if="nature=='chemical'" class="form-group panel panel-default">
+            <div class = "panel-heading">
+              <h3 class = "panel-title">Add Chemical</h3>
+            </div>
+            <form name="myform" class = "panel-body">
+              <div class="form-group">
+                  <div class="form-group">
+                      <label class="control-label"  for="compound">Chemical name <sup>*</sup></label> <!-- http://www.obofoundry.org/ontology/chebi.html + CTD -->
+                      <input id="chemical" type="text" ng-model="chemical.name" placeholder="Chemical"
+                                   typeahead-min-length="4" typeahead-on-select="selectchemical($item, $model,
+                                   $label)" typeahead="item.name for item in get_onto($viewValue,'chemical.tab')" value = "item.id" typeahead-loading="loadingOrganism"
+                                   class="form-control">
+                  </div>
+                          <!-- Vehicle -->
+                  <div class="form-group">
+                      <label class="control-label"  for="vehicle">Vehicle <sup>*</sup></label>
+                      <input ng-model="chemical.vehicle" class="form-control" id="ec"/>
+                  </div>
+                          <!-- Route -->
+                  <div class="form-group"  ng-if="study.interventional_experimental_type=='in_vivo' || study.interventional_experimental_type== 'other'">
+                      <label class="control-label"  for="route">Route <sup>*</sup></label>
+                      <select  ng-model="chemical.route" class="form-control" placeholder="Please select your experimental type" id="ec" >
+                          <option value="" disabled selected>Select your route</option>
+                          <option value="oral gavage">Oral gavage</option>
+                          <option value="gastric gavage">Gastric gavage</option>
+                          <option value="intravenous">Intravenous</option>
+                          <option value="epicutaneous">Epicutaneous</option>
+                          <option value="intradermal">Intradermal</option>
+                          <option value="subcutaneous">Subcutaneous</option>
+                          <option value="transdermal">Transdermal</option>
+                          <option value="intramuscular">Intramuscular</option>
+                          <option value="transcorneal">Transcorneal</option>
+                          <option value="intraocular">Intraocular</option>
+                          <option value="intracerebral">Intracerebral</option>
+                          <option value="epidural">Epidural</option>
+                          <option value="intrathecal">Intrathecal</option>
+                          <option value="intraperitoneal">Intraperitoneal</option>
+                          <option value="intraosseous">Intraosseous</option>
+                          <option value="intranasal">Intranasal</option>
+                          <option value="intratracheal">Intratracheal</option>
+                          <option value="inhalation">Inhalation</option>
+                          <option value="other">Other</option>
+                      </select>
+                  </div>
+
+
+                  <!-- Route -->
+          <div class="form-group"  ng-if="study.interventional_experimental_type !='in_vivo' && study.interventional_experimental_type !='other'">
+              <label class="control-label"  for="route">Route <sup>*</sup></label>
+              <select  ng-model="chemical.route" class="form-control" id="ec" >
+                  <option value="" disabled selected>Select your route</option>
+                  <option value="Medium">Medium</option>
+                  <option value="other">Other</option>
+                  <option value="na">NA</option>
+              </select>
+          </div>
+                          <!-- Dose -->
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label class="control-label"  for="dose,dose_concentration">Dose <sup>*</sup></label>
+                                  <!-- http://www.obofoundry.org/ontology/uo.html -->
+                          <input id="ec" step="any" class="form-control" type="text" ng-model="chemical.dose" placeholder="Dose"/>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="control-label"  for="dose,dose_concentration">Unit</label>
+                          <select  class="form-control" ng-model="chemical.dose_unit"id="ec" >
+                              <option value="" disabled selected>Select your unit</option>
+                              <option value="mM">mM</option>
+                              <option value="µM">µM</option>
+                              <option value="nM">nM</option>
+                              <option value="mgmL">mg/mL</option>
+                              <option value="µgml">µg/ml</option>
+                              <option value="ngmL">ng/mL</option>
+                              <option value="mgkg">mg/kg</option>
+                              <option value="µgkg">µg/kg</option>
+                              <option value="ngkg">ng/kg</option>
+                          </select>
+                      </div>
+                  </div>
+
+
+                  <!-- Exposure duration -->
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label class="control-label"  for="exposure,exposure_duration">Exposure duration <sup>*</sup></label>
+                                  <!-- http://www.obofoundry.org/ontology/uo.html -->
+                          <input step="any" ng-model="chemical.exposure_duration" class="form-control" id="ec"/>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="control-label"  for="exposure,exposure_duration">Unit</label>
+                          <select  class="form-control" ng-model="chemical.exposure_duration_unit" id="ec" >
+                              <option value="" disabled selected>Select your unit</option>
+                              <option value="seconds">seconds</option>
+                              <option value="minutes">minutes</option>
+                              <option value="hours">hours</option>
+                              <option value="days">days</option>
+                          </select>
+                      </div>
+                  </div>
+
+                          <!-- Exposure time -->
+                  <div class="form-group">
+                      <label class="control-label"  for="exposure,exposure_time">Exposure frequency</label>
+                              <!-- http://www.obofoundry.org/ontology/uo.html -->
+                              <!-- http://www.obofoundry.org/ontology/exo.html -->
+                      <input id="ec" class="form-control" ng-model="chemical.exposure_frequency" placeholder="Exposure frequency">
+                  </div>
+
+                          <!-- Results -->
+                  <div class="form-group">
+                      <label class="control-label"  for="Results">Additional information</label>
+                      <textarea ng-model="chemical.info" class="form-control" id="results" placeholder="50-500 words max" maxlength="5000" ></textarea>
+                  </div>
+
+                  <button ng-if="(chemical.name != '' && chemical.name != undefined) && (chemical.route != '' && chemical.route != undefined) && (chemical.dose != '' && chemical.dose != undefined) && (chemical.exposure_duration != '' && chemical.exposure_duration != undefined) && (chemical.vehicle != '' && chemical.vehicle != undefined)" class="btn btn-primary" ng-click="chemicals_add()">Add Chemical</button>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>    
+  </div>
+
+
+  <div class="col-md-4">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="panel panel-success text-center no-boder" style="background-color: #29abe0;border-color: #ffffff;">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-success text-center no-boder" style="background-color: #29abe0;border-style: none;">
+                                <h3 style="color: white;">Condition</h3>
+                                <table ng-if="ec.chemicals != {} && ec.chemicals != undefined" class="table table-bordered" style="color:white;">
+                                  <tr>
+                                      <th style="text-align: center;">Chemical</th>
+                                      <th style="text-align: center;">Vehicle</th>
+                                      <th style="text-align: center;">Route</th>
+                                      <th style="text-align: center;">Dose</th>
+                                  </tr>
+                                  <tr ng-repeat="chem in ec.chemicals">
+                                      <td>{{chem.name}}</td>
+                                      <td>{{chem.vehicle}}</td>
+                                      <td>{{chem.route}}</td>
+                                      <td>{{chem.dose}}</td>
+                                  </tr>
+                              </table>
+                              <button type="btn" ng-if="ec.chemicals != {} && ec.chemicals != undefined" ng-click="add_ec()" class="btn btn-primary btn-large " style="margin-left:10px;margin-bottom:10px;">Create condition</button></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class ="row">
+        <div class="col-md-12">
+          <div  class="panel panel-default" style="margin-top:40px;">
+            <div class="panel-heading">
+                <a href="" ng-click="tableShowCondInt = ! tableShowCondInt">Import existing condition</a>
+            </div>
+            <div class="panel-body" ng-show="tableShowCondInt">
+              <table class="table table-striped custab" ng-repeat="item in study.conditions">
+                      <tr>
+                          <th>Information</td>
+                          <th>Action</td>
+                      </tr>
+                      <tr>
+                          <td ng-repeat="type in item.treatment" data-title="'Information'" class="text-center">
+                              <table ng-if="type.chemicals!=undefined" class="table table-striped custab">
+                                  <tr>
+                                      <th>Chemical</th>
+                                      <th>Dose</th>
+                                      <th>Exposure duration</th>
+                                  </tr>
+                                  <tr ng-repeat="chem in type.chemicals">
+                                      <td>{{chem.name}}</td>
+                                      <td>{{chem.dose}} {{chem.dose_unit}}</td>
+                                      <td>{{chem.exposure_duration}} {{chem.exposure_duration_unit}}</td>
+                                  </tr>
+                              </table>
+                          </td>
+                          <td style="vertical-align:middle;" class="text-center">
+                              <button class="btn btn-primary" ng-click="select_cond(item)"><i class="fa fa-download"></i>Select</button>
+                          </td>
+                      </tr>
+                  </table>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="row" ng-if="study.type == 'observational'">
+  <div class="col-md-8">
+     <div class="panel panel-primary">
+        <div class="panel-heading">
+            Create a condition - New item
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label class="control-label"  for="sex">Sex</label>
+            <select ng-model="condition.sex" class="form-control" id="sex" placeholder="Please select your organism sex">
+              <option value="" disabled selected>Please select</option>
+              <option value="male">Male</option>
+              <option value="ex_vivo">Female</option>
+              <option value="both">Both</option>
+              <option value="unknown">Unknown</option>
+              <option value="other">Other</option>
+              <option value="na">NA</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label"  for="experimental_nature">Population age</label>
+            <input ng-model="condition.population_age" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label"  for="experimental_nature">Geographic location</label>
+          <input ng-model="condition.location" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="control-label"  for="sex">Reference</label>
+            <select ng-model="condition.ref" class="form-control" id="sex" placeholder="Please select your organism sex">
+              <option value="" disabled selected>Please select</option>
+              <option value="Positive control">Positive control</option>
+              <option value="Negative control">Negative control</option>
+              <option value="Lower exposure">Lower group of exposure</option>
+              <option value="Higher exposure">Higher group of exposure</option>
+              <option value="Remaining population">Remaining population</option>
+              <option value="Treated">Treated</option>
+              <option value="na">NA</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label"  for="sex">Matrice</label>
+            <select ng-model="condition.matrice" class="form-control" id="sex" placeholder="Please select your organism sex">
+              <option value="" disabled selected>Please select</option>
+              <option value="Urinary">Urinary</option>
+              <option value="Blood">Blood</option>
+              <option value="Hair">Hair</option>
+              <option value="Nail">Nail</option>
+              <option value="other">Other</option>
+              <option value="na">NA</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label class="control-label"  for="sex">Developmental stage</label>
+          <ul class="checkbox-grid">
+            <li><input type="checkbox" name="text1" value="Fetal" ng-click="toggleSelection('Fetal')"/><label for="text1">Fetal</label></li>
+            <li><input type="checkbox" name="text2" value="Embryonic" ng-click="toggleSelection('Embryonic')"/><label for="text2">Embryonic</label></li>
+            <li><input type="checkbox" name="text3" value="Larva" ng-click="toggleSelection('Larva')"/><label for="text3">Larva</label></li>
+            <li><input type="checkbox" name="text4" value="Neo-natal" ng-click="toggleSelection('Neo-natal')"/><label for="text4">Neo-natal</label></li>
+            <li><input type="checkbox" name="text5" value="Juvenile" ng-click="toggleSelection('Juvenile')"/><label for="text5">Juvenile</label></li>
+            <li><input type="checkbox" name="text6" value="Pre-pubertal" ng-click="toggleSelection('Pre-pubertal')"/><label for="text6">Pre-pubertal</label></li>
+            <li><input type="checkbox" name="text7" value="Pubertal" ng-click="toggleSelection('Pubertal')"/><label for="text7">Pubertal</label></li>
+            <li><input type="checkbox" name="text8" value="Adulthood" ng-click="toggleSelection('Adulthood')"/><label for="text8">Adulthood</label></li>
+            <li><input type="checkbox" name="text9" value="Elderly" ng-click="toggleSelection('Elderly')"/><label for="text9">Elderly</label></li>
+          </ul>
+        </div>
+        <div class="form-group">
+              <label class="control-label"  for="experimental_condition_nature">Treatment type <sup>*</sup></label>
+              <select ng-model="nature" class="form-control" id="experimental_condition_nature" placeholder="Please select your experimental condition nature">
+                  <option value="" disabled selected>Please select</option>
+                  <option value="chemical">Chemical (e.g. pesticides, plasticizers)</option>
+                  <option value="physical" disabled>Physical (e.g. radiations, temperature) Coming Soon</option>
+                  <option value="biological" disabled>Biological (e.g. pathogens, parasites) Coming Soon</option>
+                 <!-- <option value="other">Other</option> -->
+              </select>
+          </div>
+      </div>
+    </div>
+
+        <div ng-if="nature == 'chemical'" class="panel panel-default" style="margin-top:40px;">
+          <div class="panel-heading">
+            <h3 class = "panel-title">Chemical exposition</h3>
+          </div>
+          <div class="panel-body" id="paneltable">
+            <div class="form-group">
+                <label class="control-label"  for="compound">Chemical name</label> <!-- http://www.obofoundry.org/ontology/chebi.html + CTD -->
+                <input id="chemical" type="text" ng-model="chemical.name" placeholder="Chemical"
+                                             typeahead-min-length="4" typeahead-on-select="selectchemical($item, $model,
+                                             $label)" typeahead="item.name for item in get_onto($viewValue,'chemical.tab')" value = "item.id" typeahead-loading="loadingOrganism"
+                                             class="form-control">
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                  <label class="control-label"  for="dose,dose_concentration">Dose</label>
+                          <!-- http://www.obofoundry.org/ontology/uo.html -->
+                  <input id="ec" step="any" class="form-control" type="text" ng-model="chemical.dose" placeholder="Dose"/>
+              </div>
+              <div class="col-md-4">
+                <label class="control-label"  for="dose,dose_concentration">Unit</label>
+                  <select  class="form-control" ng-model="chemical.dose_unit"id="ec" >
+                      <option value="" disabled selected>Select your unit</option>
+                      <option value="mM">mM</option>
+                      <option value="µM">µM</option>
+                      <option value="nM">nM</option>
+                      <option value="mgmL">mg/mL</option>
+                      <option value="µgml">µg/ml</option>
+                      <option value="ngmL">ng/mL</option>
+                      <option value="mgkg">mg/kg</option>
+                      <option value="µgkg">µg/kg</option>
+                      <option value="ngkg">ng/kg</option>
+                  </select>
+              </div>
+            </div>
+            <!-- Exposure duration -->
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="control-label"  for="exposure,exposure_duration">Exposure duration</label>
+                            <!-- http://www.obofoundry.org/ontology/uo.html -->
+                    <input  step="any" ng-model="chemical.exposure_duration" class="form-control" id="ec"/>
+                </div>
+                <div class="col-md-4">
+                  <label class="control-label"  for="exposure,exposure_duration">Unit</label>
+                    <select  class="form-control" ng-model="chemical.exposure_duration_unit" id="ec" >
+                        <option value="" disabled selected>Select your unit</option>
+                        <option value="seconds">seconds</option>
+                        <option value="minutes">minutes</option>
+                        <option value="hours">hours</option>
+                        <option value="days">days</option>
+                    </select>
+                </div>
+            </div>
+
+              <!-- Exposure time -->
+            <div class="form-group">
+                <label class="control-label"  for="exposure,exposure_time">Exposure frequency</label>
+                        <!-- http://www.obofoundry.org/ontology/uo.html -->
+                        <!-- http://www.obofoundry.org/ontology/exo.html -->
+                <input id="ec"  class="form-control" ng-model="chemical.exposure_frequency" placeholder="Exposure frequency">
+            </div>
+
+            <!-- Results -->
+            <div class="form-group">
+                <label class="control-label"  for="Results">Additional information</label>
+                <textarea ng-model="chemical.info" class="form-control" id="results" placeholder="50-500 words max" maxlength="5000" ></textarea>
+            </div>
+            <ul class="list-inline pull-left">
+              <li><button type="btn" ng-if="(chemical.name != '' && chemical.name != undefined) && (chemical.dose != '' && chemical.dose != undefined)" class="btn btn-primary btn-large " style="margin-top:0px;" ng-click="chemicals_add()">Add Chemical</button></li>
+            </ul>
+          </div>
+          
+        </div>
+  </div>
+  <div class="col-md-4">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="panel panel-success text-center no-boder" style="background-color: #29abe0;border-color: #ffffff;">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-success text-center no-boder" style="background-color: #29abe0;border-style: none;">
+                                <h3 style="color: white;">Condition</h3>
+                                <table ng-if="ec.chemicals != {} && ec.chemicals != undefined" class="table table-bordered" style="color:white;">
+                                  <tr>
+                                      <th style="text-align: center;">Chemical</th>
+                                      <th style="text-align: center;">Vehicle</th>
+                                      <th style="text-align: center;">Route</th>
+                                      <th style="text-align: center;">Dose</th>
+                                  </tr>
+                                  <tr ng-repeat="chem in ec.chemicals">
+                                      <td>{{chem.name}}</td>
+                                      <td>{{chem.vehicle}}</td>
+                                      <td>{{chem.route}}</td>
+                                      <td>{{chem.dose}}</td>
+                                  </tr>
+                              </table>
+                              <button type="btn" ng-if="ec.chemicals != {} && ec.chemicals != undefined" ng-click="add_ec()" class="btn btn-primary btn-large " style="margin-left:10px;margin-bottom:10px;">Create condition</button></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class ="row">
+        <div class="col-md-12">
+          <div  class="panel panel-default" style="margin-top:40px;">
+            <div class="panel-heading">
+                <a href="" ng-click="tableShowCondObs = ! tableShowCondObs">Import existing condition</a>
+            </div>
+            <div class="panel-body" ng-show="tableShowCondObs">
+              <table class="table table-striped custab" ng-repeat="item in study.conditions">
+                      <tr>
+                          <th>Information</td>
+                          <th>Action</td>
+                      </tr>
+                      <tr>
+                          <td ng-repeat="type in item.treatment" data-title="'Information'" class="text-center">
+                              <table ng-if="type.chemicals!=undefined" class="table table-striped custab">
+                                  <tr>
+                                      <th>Chemical</th>
+                                      <th>Dose</th>
+                                      <th>Exposure duration</th>
+                                  </tr>
+                                  <tr ng-repeat="chem in type.chemicals">
+                                      <td>{{chem.name}}</td>
+                                      <td>{{chem.dose}} {{chem.dose_unit}}</td>
+                                      <td>{{chem.exposure_duration}} {{chem.exposure_duration_unit}}</td>
+                                  </tr>
+                              </table>
+                          </td>
+                          <td style="vertical-align:middle;" class="text-center">
+                              <button class="btn btn-primary" ng-click="select_cond(item)"><i class="fa fa-download"></i>Select</button>
+                          </td>
+                      </tr>
+                  </table>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<sup>*</sup> Required 
+
+
+
+<div ng-if="condition.treatment !={} && condition.treatment != undefined" id ="test" class="form-group panel panel-success" style="margin-top:20px;">
+    <div class = "panel-heading">
+        <h3 class = "panel-title">Created treatments</h3>
+    </div>
+    <div class = "panel-body">
+        <table class="table table-striped custab">
+            <tr>
+                <th>#</td>
+                <th>Nature</td>
+                <th>Information</td>
+                <th>Action</td>
+            </tr>
+            <tr ng-repeat="item in condition.treatment">
+                <td style="vertical-align:middle;" class="text-center">{{$index +1}}</td>
+                <td style="vertical-align:middle;" class="text-center">
+                    <span ng-if="item.chemicals!=undefined">Chemical</span>
+                    <span ng-if="item.physicals!=undefined">Physical</span>
+                    <span ng-if="item.biologicals!=undefined">Biological</span>
+                </td>
+                <td data-title="'Information'" class="text-center">
+                    <table ng-if="item.chemicals!=undefined" class="table table-striped custab">
+                        <tr>
+                            <th>Compound</th>
+                            <th>Route</th>
+                            <th>Vehicle</th>
+                            <th>Dose</th>
+                            <th>Exposure duration</th>
+                        </tr>
+                        <tr ng-repeat="chem in item.chemicals">
+                            <td>{{chem.name}}</td>
+                            <td>{{chem.route}}</td>
+                            <td>{{chem.vehicle}}</td>
+                            <td>{{chem.dose}} {{chem.dose_unit}}</td>
+                            <td>{{chem.exposure_duration}} {{chem.exposure_duration_unit}}</td>
+                        </tr>
+                    </table>
+                    <table ng-if="item.physicals!=undefined" class="table table-striped custab">
+                            <tr>
+                                <th>Nature</th>
+                                <th>Dose</th>
+                                <th>Exposure time</th>
+                                <th>Exposure duration</th>
+                            </tr>
+                            <tr ng-repeat="phys in item.physicals">
+                                <td>{{phys.nature}}</td>
+                                <td>{{phys.dose}}</td>
+                                <td>{{phys.exposure_time}}</td>
+                                <td>{{phys.exposure_duration}}</td>
+                            </tr>
+                        </table>
+                        <table ng-if="item.biologicals!=undefined" class="table table-striped custab">
+                            <tr>
+                                <th>Nature</th>
+                                <th>Strain</th>
+                                <th>Route</th>
+                            </tr>
+                            <tr ng-repeat="bio in item.biologicals">
+                                <td>{{bio.nature}}</td>
+                                <td>{{bio.strain}}</td>
+                                <td>{{bio.route}}</td>
+                            </tr>
+                        </table>
+                </td>
+                <td style="vertical-align:middle;" class="text-center">
+                    <button class="btn btn-danger" ng-click="remove_ec(item)"><i class="fa fa-trash fa-2x pull-left"></i>Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row" style="margin-top:10px; ">
+    <div class="col-lg-12" ng-if="condition.treatment !={} && condition.treatment != undefined">
+        <ul class="list-inline pull-left">
+            <li><button type="btn" ng-click="condition_add()" class="btn btn-primary btn-large ">Save and quit</button></li>
+        </ul>
+        <ul class="list-inline pull-right">
+            <li><button type="btn" ng-click="condition_add_continue()" class="btn btn-primary btn-large ">Save and continue</button></li>
+        </ul>
+    </div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- USE EXISTING STUDIES-->
+
+                <!-- END Chemical PANEL -->
+
+                <!-- BEGIN PHYSIK PANEL
+        <div ng-if="nature=='physical'" id="physical_information" class="form-group panel panel-success">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">Physical experimental condition</h3>
+            </div>
+            <div class = "panel-body">
+                <div class="form-group">
+                    <label class="control-label"  for="physical_nature">Nature</label>
+                    <select ng-model="physical.nature" class="form-control" id="ec">
+                        <option value=" "></option>
+                        <option value="mechanical">Mechanical (pressure, friction...) </option>
+                        <option value="waves">Waves</option>
+                        <option value="radiation">Radiations</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="dose,dose_concentration">Dose</label>
+                            <!-- http://www.obofoundry.org/ontology/uo.html
+                    <input ng-model="physical.dose" class="form-control" id="ec"/>
+                    <input id="ec" type="text" ng-model="physical.dose" placeholder="Dose"
+                                 typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                 $label)" typeahead="item.name for item in get_onto($viewValue,'')" typeahead-loading="loadingOrganism"
+                                 class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="exposure,exposure_time">Exposure time</label>
+                            <!-- http://www.obofoundry.org/ontology/uo.html
+                            <!-- http://www.obofoundry.org/ontology/exo.html
+                    <input id="ec" type="text" ng-model="physical.exposure_time" placeholder="Exposure time"
+                                 typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                 $label)" typeahead="item.name for item in get_onto($viewValue,'')" typeahead-loading="loadingOrganism"
+                                 class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="exposure,exposure_duration">Exposure duration</label>
+                            <!-- ontology?
+                    <input ng-model="physical.exposure_duration" class="form-control" id="ec" />
+                </div>
+                <button class="btn btn-primary" ng-click="physicals_add()">Add Physical</button>
+            </div>
+        </div>
+                <!-- END PHYSIK PANEL -->
+
+                <!-- BEGIN BIOLOGICAL PANEL
+        <div id="biological_information"   ng-if="nature=='biological'" class="form-group panel panel-success">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">Biological experimental condition</h3>
+            </div>
+            <div class = "panel-body">
+                <div class="form-group">
+                    <label class="control-label"  for="biological_nature">Nature</label>
+                    <select ng-model="biological.nature" class="form-control" id="ec">
+                        <option value=" "> </option>
+                        <option value="virus">Virus</option>
+                        <option value="bacteria">Bacteria</option>
+                        <option value="yeast">Yeast</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="dose,dose_concentration">Strain</label>
+                                <!-- http://www.obofoundry.org/ontology/uo.html
+                    <input id="ec" type="text" ng-model="biological.strain" placeholder="Strain"
+                                 typeahead-min-length="4" typeahead-on-select="select($item, $model,
+                                 $label)" typeahead="item.name for item in get_onto($viewValue,'')" typeahead-loading="loadingOrganism"
+                                 class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="dose,dose_concentration">Route of exposure</label>
+                                <!-- http://www.obofoundry.org/ontology/uo.html
+                    <input ng-model="biological.route" class="form-control" ng-init="ec.biological_route='NA'" id='ec'/>
+                </div>
+                <button class="btn btn-primary" ng-click="biologicals_add()">Add Biological</button>
+            </div>
+        </div>-->
+
+
+        <!--<label class="control-label" >Physical treatments</label>
+        <table class="table table-bordered table-hover table-striped">
+            <tr>
+                <th>#</th>
+                <th>Nature</th>
+                <th>Dose</th>
+                <th>Exposure time</th>
+                <th>Exposure duration</th>
+            </tr>
+            <tr ng-repeat="phy in ec.physicals">
+                <td>{{$index}}</td>
+                <td>{{phy.nature}}</td>
+                <td>{{phy.dose}}</td>
+                <td>{{phy.exposure_time}}</td>
+                <td>{{phy.exposure_duration}}</td>
+            </tr>
+        </table>
+        <label class="control-label" >Biological treatments</label>
+        <table class="table table-bordered table-hover table-striped">
+            <tr>
+                <th>#</th>
+                <th>Nature</th>
+                <th>Strain</th>
+                <th>Route of exposure</th>
+            </tr>
+            <tr ng-repeat="bio in ec.biologicals">
+                <td>{{$index}}</td>
+                <td>{{bio.nature}}</td>
+                <td>{{bio.strain}}</td>
+                <td>{{bio.route}}</td>
+            </tr>
+        </table>-->

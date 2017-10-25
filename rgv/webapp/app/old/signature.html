@@ -1,0 +1,788 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
+<link rel="stylesheet" href="styles/panel.css">
+
+<!-- DESCRIPTION DATASET -->
+<img src="images/loading.gif" id="bgimg" alt="Loading" style="display:none;">
+
+<div ng-if="study.type=='interventional'">
+<div class="row" id="selector" style="display: block;">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          Select your signature type
+      </div>
+      <div class="panel-body">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div style="text-decoration: none;color: black;">
+              <div class="panel panel-primary text-center no-boder bg-color-blue ">
+                  <div class="panel-body ">
+                      Physiological responses (i.e. disease, pathway or biological process alteration) after an exposure to single or combined environmental factors.
+                  </div>
+                    <div class="panel-footer back-footer-blue">
+                        <button class="btn btn-info" ng-click="display_table('physiological')">Physiological Signatures</button>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+              <div style="text-decoration: none;color: black;">
+                <div class="panel panel-primary text-center no-boder bg-color-blue ">
+                    <div class="panel-body ">
+                        Molecular responses after an exposure to single or combined environmental factors.
+                    </div>
+                      <div class="panel-footer back-footer-blue">
+                          <button class="btn btn-info" ng-click="display_table('molecular')">Molecular Signatures</button>
+                      </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div style="text-decoration: none;color: black;">
+                <div class="panel panel-primary text-center no-boder bg-color-blue ">
+                    <div class="panel-body ">
+                        Set of genes whose expression is known to be positively or negatively altered after an exposure to single or combined environmental factors.
+                    </div>
+                      <div class="panel-footer back-footer-blue">
+                          <button class="btn btn-info" ng-click="display_table('genomic')">Genomic Signatures</button>
+                      </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--============================================ Physiological signature ======================================================-->
+<div class="row" id='physiological' style="display:none;">
+  <div class="col-md-8">
+    <div class="panel panel-danger" style="margin-top:20px;">
+      <div class="panel-heading">
+          Physiological Signature
+      </div>
+      <div class="panel-body" id="paneltable">
+        <div class="form-group">
+          <label class="control-label"  for="generation">Associated treatment <sup>*</sup></label>
+          <select ng-model="signature.asso_cond" class="form-control" id="generation">
+              <option value="" disabled selected>Please select the associated treatment</option>
+              <option ng-repeat="item in study.conditions">{{item.id}} - {{item.title}}</option>
+          </select>
+        </div>
+
+        <!-- Title -->
+        <div class="form-group">
+            <label class="control-label " for="title">Title <sup>*</sup></label>
+            <input ng-model="signature.title" class="form-control" id="title"/>
+        </div>
+
+
+        <!-- Tissue -->
+        <div class="form-group" >
+            <label class="control-label " for="tissue">Tissue</label> <!-- http://www.obofoundry.org/ontology/fma.html -->
+            <input ng-if="study.interventional_experimental_type=='in_vivo'" id="tissue_vivo" type="text" ng-model="signature.tissue" placeholder="Tissue"
+                               typeahead-min-length="4" typeahead-on-select="selecttissue($item, $model,
+                               $label)" typeahead="item.name for item in get_onto($viewValue,'tissue.tab')" typeahead-loading="loadingCellLine"
+                               class="form-control">
+            <input ng-if="study.interventional_experimental_type=='in_vitro'" class="form-control" type="text" ng-model="study.interventional_invitro.organism" disabled/>
+            <input ng-if="study.interventional_experimental_type=='ex_vivo'" class="form-control" type="text" ng-model="study.interventional_exvivo.organism" disabled/>
+            <input ng-if="study.interventional_experimental_type=='other'" class="form-control" type="text" ng-model="study.interventional_other.organism" disabled/>
+
+
+        </div>
+
+        <!-- generation -->
+        <div class="form-group" ng-if="study.interventional_experimental_type=='in_vivo'">
+            <label class="control-label"  for="generation">Generation</label>
+            <select ng-model="signature.generation" class="form-control" id="generation">
+                <option value="" disabled selected>Please select</option>
+                <option value="f0">F0</option>
+                <option value="f1">F1</option>
+                <option value="f2">F2</option>
+                <option value="f3">F3</option>
+                <option value="f4">F4</option>
+                <option value="f5">F5</option>
+                <option value="f6">F6</option>
+                <option value="f7">F7</option>
+                <option value="f8">F8</option>
+                <option value="f9">F9</option>
+                <option value="f10">F10</option>
+            </select>
+        </div>
+
+          <div class="form-group" ng-if="study.interventional_experimental_type=='in_vivo'">
+              <label class="control-label"  for="sex">Developmental stage</label>
+              <select ng-model="signature.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                  <option value="" disabled selected>Please select</option>
+                  <option value="Fetal">Fetal</option>
+                  <option value="Embryonic">Embryonic</option>
+                  <option value="Larva">Larva</option>
+                  <option value="Neo-natal">Neo-natal</option>
+                  <option value="Juvenile">Juvenile</option>
+                  <option value="Pre-pubertal">Pre-pubertal</option>
+                  <option value="Pubertal">Pubertal</option>
+                  <option value="Adulthood">Adulthood</option>
+                  <option value="Elderly">Elderly</option>
+                  <option value="na">NA</option>
+              </select>
+          </div>
+
+          <div class="panel panel-success" style="margin-top:20px;">
+              <div class="panel-heading">
+                  Experimental information
+              </div>
+              <div class="panel-body" id="paneltable">
+                <textarea ng-model="physio_signature.expe_info" placeholder="50-500 words max" maxlength="5000" class="form-control" id="extractproto"/></textarea>
+              </div>
+          </div>
+
+          <div class="panel panel-default" style="margin-top:20px;">
+              <div class="panel-heading">
+                  Signature information
+              </div>
+              <div class="panel-body" id="paneltable">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="control-label"  for="exposure,exposure_duration">Associated phenotype, diseases processes or pathway</label>
+                                <!-- http://www.obofoundry.org/ontology/uo.html -->
+                        <input id="tissue_vivo" type="text" ng-model="physio_signature.asso" placeholder="Associated effect"
+                                                   typeahead-min-length="4" typeahead-on-select="selectdisease($item, $model,
+                                                   $label)" typeahead="item.name for item in get_onto($viewValue,'disease.tab')" typeahead-loading="loadingCellLine"
+                                                   class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="control-label"  for="exposure,exposure_duration">Observed effect</label>
+                        <select  class="form-control" ng-model="physio_signature.obs_effect" id="ec" >
+                            <option value="" disabled selected>Select your unit</option>
+                            <option value="Increase">Increase</option>
+                            <option value="Decrease">Decrease</option>
+                            <option value="noeffect">No effect</option>
+                            <option value="na">NA</option>
+                        </select>
+                    </div>
+                </div>
+
+              </div>
+          </div>
+
+          <div class="panel panel-info" style="margin-top:20px;">
+              <div class="panel-heading">
+                  Additional statistical information
+              </div>
+              <div class="panel-body" id="paneltable">
+                <!-- Sample -->
+                <div class="form-group">
+                    <label class="control-label " for="sample">Number of sample </label>
+                    <input step="any"  ng-model="physio_signature.sample" class="form-control" id="sample"/>
+                </div>
+
+                <!-- Control -->
+                <div class="form-group">
+                    <label class="control-label " for="control">Number of control</label>
+                    <input step="any"  ng-model="physio_signature.control" class="form-control" id="control"/>
+                </div>
+
+
+                <!-- Fold Change -->
+                <div class="form-group">
+                    <label class="control-label " for="fc">Fold Change</label>
+                    <input step="any"  ng-model="physio_signature.fc" class="form-control" id="fc"/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label " for="pvalue">pvalue</label>
+                    <input step="any"  ng-model="physio_signature.pvalue" class="form-control" id="pvalue"/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="statistical">Statistical Processing</label> <!-- http://www.obofoundry.org/ontology/stato.html -->
+                    <textarea ng-model="physio_signature.statistical" placeholder="50-500 words max" maxlength="5000" class="form-control" id="statistical"></textarea>
+                </div>
+              </div>
+          </div>
+          <button type="btn" ng-if="check_signature()" ng-click="signature_add_physio()" class="btn btn-primary btn-large">Add signature</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="panel panel-success text-center no-boder" style="background-color: #d9534f;border-color: #ffffff;">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-success text-center no-boder" style="background-color: #d9534f;border-style: none;">
+                                <h3 style="color: white;">Signature</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label ng-if="(supfile == '' || supfile == undefined) && signature.asso_cond != undefined" class="control-label"  style="color: white;">Supplementary file</label><br>
+                                        <button ng-if="(supfile == '' || supfile == undefined) && signature.asso_cond != undefined" class="btn btn-info" ngf-select="signature_upload($file, 3)">Add</button>
+                                        <p style="color:white;" ng-if="supfile != ''">{{supfile}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="control-label"  style="color: white;"></label><br>
+                                        <button type="btn" ng-if="check_signature()" ng-click="signature_add_physio()" class="btn btn-info">Add signature</button>
+                                    </div>                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+  
+
+<!--============================================ Molecular signature ======================================================-->
+
+
+
+<div class="row" id='molecular' style="display:none;">
+  <div class="col-md-8">
+     <div class="panel panel-danger" style="margin-top:20px;">
+      <div class="panel-heading">
+          Molecular Signature
+      </div>
+      <div class="panel-body" id="paneltable">
+        <div class="form-group">
+            <label class="control-label"  for="generation">Associated treatment <sup>*</sup></label>
+            <select ng-model="signature.asso_cond" class="form-control" id="generation">
+                <option value="" disabled selected>Please select the associated treatment</option>
+                <option ng-repeat="item in study.conditions">{{item.id}} - {{item.title}}</option>
+            </select>
+        </div>
+        <!-- Title -->
+        <div class="form-group">
+            <label class="control-label " for="title">Title <sup>*</sup></label>
+            <input ng-model="signature.title" class="form-control" id="title"/>
+        </div>
+
+
+        <!-- Tissue -->
+        <div class="form-group">
+            <label class="control-label " for="tissue">Tissue</label> <!-- http://www.obofoundry.org/ontology/fma.html -->
+            <input  ng-if="study.interventional_experimental_type=='in_vivo'" id="tissue_vivo" type="text" ng-model="signature.tissue" placeholder="Tissue"
+                               typeahead-min-length="4" typeahead-on-select="selecttissue($item, $model,
+                               $label)" typeahead="item.name for item in get_onto($viewValue,'tissue.tab')" typeahead-loading="loadingCellLine"
+                               class="form-control">
+            <input ng-if="study.interventional_experimental_type=='in_vitro'" class="form-control" type="text" ng-model="study.interventional_invitro.organism" disabled/>
+            <input ng-if="study.interventional_experimental_type=='ex_vivo'" class="form-control" type="text" ng-model="study.interventional_exvivo.organism" disabled/>
+            <input ng-if="study.interventional_experimental_type=='other'" class="form-control" type="text" ng-model="study.interventional_other.organism" disabled/>
+
+        </div>
+
+        <!-- generation -->
+        <div class="form-group" ng-if="study.interventional_experimental_type=='in_vivo'">
+            <label class="control-label"  for="generation">Generation</label>
+            <select ng-model="signature.generation" class="form-control" id="generation">
+                <option value="" disabled selected>Please select</option>
+                <option value="f0">F0</option>
+                <option value="f1">F1</option>
+                <option value="f2">F2</option>
+                <option value="f3">F3</option>
+                <option value="f4">F4</option>
+                <option value="f5">F5</option>
+                <option value="f6">F6</option>
+                <option value="f7">F7</option>
+                <option value="f8">F8</option>
+                <option value="f9">F9</option>
+                <option value="f10">F10</option>
+            </select>
+        </div>
+
+          <div class="form-group" ng-if="study.interventional_experimental_type=='in_vivo'">
+              <label class="control-label"  for="sex">Developmental stage</label>
+              <select ng-model="signature.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                  <option value="" disabled selected>Please select</option>
+                  <option value="Fetal">Fetal</option>
+                  <option value="Embryonic">Embryonic</option>
+                  <option value="Larva">Larva</option>
+                  <option value="Neo-natal">Neo-natal</option>
+                  <option value="Juvenile">Juvenile</option>
+                  <option value="Pre-pubertal">Pre-pubertal</option>
+                  <option value="Pubertal">Pubertal</option>
+                  <option value="Adulthood">Adulthood</option>
+                  <option value="Elderly">Elderly</option>
+                  <option value="na">NA</option>
+              </select>
+          </div>
+           <div class="panel panel-success" style="margin-top:20px;">
+              <div class="panel-heading">
+                  Experimental information
+              </div>
+              <!-- Extracted Molecule -->
+              <div class="panel-body" id="paneltable">
+                <textarea ng-model="molecular_signature.expe_info" placeholder="50-500 words max" maxlength="5000" class="form-control" id="extractproto"/></textarea>
+              </div>
+          </div>
+
+          <div class="panel panel-success" style="margin-top:20px;">
+              <div class="panel-heading">
+                  Signature information
+              </div>
+              <div class="panel-body" id="paneltable">
+
+              <!-- Extracted Molecule -->
+                <div class="form-group">
+                    <label class="control-label " for="extractedmolecule">Extracted molecule</label> <!-- http://www.obofoundry.org/ontology/chebi.html + CTD -->
+                    <input id="extractedmolecule" type="text" ng-model="molecular_signature.extractedmolecule" placeholder="Extracted molecule"
+                                 typeahead-min-length="4" typeahead-on-select="selectmol($item, $model,
+                                 $label)" typeahead="item.name for item in get_onto($viewValue,'chemical.tab')" typeahead-loading="loadingOrganism"
+                                 class="form-control">
+                </div>
+                <div class="orm-group">
+                  <label class="control-label"  for="exposure,exposure_duration">Observed effect</label>
+                  <select  class="form-control" ng-model="molecular_signature.obs_effect" id="ec" >
+                      <option value="" disabled selected>Select your unit</option>
+                      <option value="Increase">Increase</option>
+                      <option value="Decrease">Decrease</option>
+                      <option value="noeffect">No effect</option>
+                      <option value="na">NA</option>
+                  </select>
+                </div>
+
+                <!-- Extraction Protocol -->
+                <div class="form-group">
+                  <label class="control-label " for="extractproto">Extraction Protocol</label> <!-- http://www.obofoundry.org/ontology/chebi.html + CTD -->
+                  <textarea ng-model="molecular_signature.extractproto" placeholder="50-500 words max" maxlength="5000" class="form-control" id="extractproto"/></textarea>
+                </div>
+              </div>
+          </div>
+           <div class="panel panel-info" style="margin-top:20px;">
+              <div class="panel-heading">
+                  Additional statistical information
+              </div>
+              <div class="panel-body" id="paneltable">
+                <!-- Sample -->
+                <div class="form-group">
+                    <label class="control-label " for="sample">Number of sample </label>
+                    <input step="any"  ng-model="molecular_signature.sample" class="form-control" id="sample"/>
+                </div>
+
+                <!-- Control -->
+                <div class="form-group">
+                    <label class="control-label " for="control">Number of control</label>
+                    <input step="any" ng-model="molecular_signature.control" class="form-control" id="control"/>
+                </div>
+
+                <!-- Fold Change -->
+                <div class="form-group">
+                    <label class="control-label " for="fc">Fold Change</label>
+                    <input step="any" ng-model="molecular_signature.fc" class="form-control" id="fc"/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label " for="pvalue">pvalue</label>
+                    <input step="any"  ng-model="molecular_signature.pvalue" class="form-control" id="pvalue"/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"  for="statistical">Statistical Processing</label> <!-- http://www.obofoundry.org/ontology/stato.html -->
+                    <textarea ng-model="molecular_signature.statistical" placeholder="50-500 words max" maxlength="5000" class="form-control" id="statistical"></textarea>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="panel panel-success text-center no-boder" style="background-color: #d9534f;border-color: #ffffff;">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-success text-center no-boder" style="background-color: #d9534f;border-style: none;">
+                                <h3 style="color: white;">Signature</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label ng-if="(supfile == '' || supfile == undefined) && signature.asso_cond != undefined" class="control-label"  style="color: white;">Supplementary file</label><br>
+                                        <button ng-if="(supfile == '' || supfile == undefined) && signature.asso_cond != undefined" class="btn btn-info" ngf-select="signature_upload($file, 3)">Add</button>
+                                        <p style="color:white;" ng-if="supfile != ''">{{supfile}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                      <label class="control-label"  style="color: white;"></label><br>
+                                        <button type="btn" ng-if="check_signature()" ng-click="signature_add_molecular()" class="btn btn-primary btn-large">Add signature</button>
+                                    </div>                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--============================================ Genomic signature ======================================================-->
+
+
+
+<div class="row" id="genomic" style="display:none;">
+  <div class="col-md-8">
+    <div class="panel panel-danger" style="margin-top:20px;">
+      <div class="panel-heading">
+          Genomics Signature
+      </div>
+      <div class="panel-body" id="paneltable">
+        <div class="form-group">
+            <label class="control-label"  for="generation">Associated treatment <sup>*</sup></label>
+            <select ng-model="signature.asso_cond" class="form-control" id="generation">
+                <option value="" disabled selected>Please select the associated treatment</option>
+                <option ng-repeat="item in study.conditions">{{item.id}} - {{item.title}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label " for="title">Title <sup>*</sup></label>
+            <input ng-model="signature.title" class="form-control" id="title"/>
+        </div>
+        <!-- Tissue -->
+        <div class="form-group" >
+            <label class="control-label " for="tissue">Tissue</label> <!-- http://www.obofoundry.org/ontology/fma.html -->
+            <input ng-if="study.interventional_experimental_type=='in_vivo'" id="tissue_vivo" type="text" ng-model="signature.tissue" placeholder="Tissue"
+                               typeahead-min-length="4" typeahead-on-select="selecttissue($item, $model,
+                               $label)" typeahead="item.name for item in get_onto($viewValue,'tissue.tab')" typeahead-loading="loadingCellLine"
+                               class="form-control">
+          <input ng-if="study.interventional_experimental_type=='in_vitro'" class="form-control" type="text" ng-model="study.interventional_invitro.tissue" disabled/>
+          <input ng-if="study.interventional_experimental_type=='ex_vivo'" class="form-control" type="text" ng-model="study.interventional_exvivo.tissue" disabled/>
+          <input ng-if="study.interventional_experimental_type=='other'" class="form-control" type="text" ng-model="study.interventional_other.tissue" disabled/>
+
+        </div>
+
+        <!-- generation -->
+        <div class="form-group" ng-if="study.interventional_experimental_type=='in_vivo'">
+            <label class="control-label"  for="generation">Generation</label>
+            <select ng-model="signature.generation" class="form-control" id="generation">
+                <option value="" disabled selected>Please select</option>
+                <option value="f0">F0</option>
+                <option value="f1">F1</option>
+                <option value="f2">F2</option>
+                <option value="f3">F3</option>
+                <option value="f4">F4</option>
+                <option value="f5">F5</option>
+                <option value="f6">F6</option>
+                <option value="f7">F7</option>
+                <option value="f8">F8</option>
+                <option value="f9">F9</option>
+                <option value="f10">F10</option>
+            </select>
+        </div>
+
+          <div class="form-group" ng-if="study.interventional_experimental_type=='in_vivo'">
+              <label class="control-label"  for="sex">Developmental stage</label>
+              <select ng-model="signature.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                  <option value="" disabled selected>Please select</option>
+                  <option value="Fetal">Fetal</option>
+                  <option value="Embryonic">Embryonic</option>
+                  <option value="Larva">Larva</option>
+                  <option value="Neo-natal">Neo-natal</option>
+                  <option value="Juvenile">Juvenile</option>
+                  <option value="Pre-pubertal">Pre-pubertal</option>
+                  <option value="Pubertal">Pubertal</option>
+                  <option value="Adulthood">Adulthood</option>
+                  <option value="Elderly">Elderly</option>
+                  <option value="na">NA</option>
+              </select>
+          </div>
+      <div class="panel panel-success" style="margin-top:20px;">
+            <div class="panel-heading">
+                Experimental information
+            </div>
+            <!-- Extracted Molecule -->
+            <div class="panel-body" id="paneltable">
+              <textarea ng-model="genomic_signature.expe_info" placeholder="50-500 words max" maxlength="5000" class="form-control" id="extractproto"/></textarea>
+            </div>
+        </div>
+
+        <div class="panel panel-danger" style="margin-top:20px;">
+            <div class="panel-heading">
+                Signature information
+            </div>
+            <div class="panel-body" id="paneltable">
+                      <label class="control-label"  for="exposure,exposure_duration">Technology used</label>
+                              <!-- http://www.obofoundry.org/ontology/uo.html -->
+                      <input id="tissue_vivo" type="text" ng-model="genomic_signature.techno" placeholder="Technology"
+                                                 typeahead-min-length="4" typeahead-on-select="selecttechno($item, $model,
+                                                 $label)" typeahead="item.name for item in get_onto($viewValue,'experiment.tab')" typeahead-loading="loadingCellLine"
+                                                 class="form-control">
+
+                      <label class="control-label"  for="exposure,exposure_duration">Platform</label>
+                                                         <!-- http://www.obofoundry.org/ontology/uo.html -->
+                      <input class="form-control" id="tissue_vivo" type="text" ng-model="genomic_signature.plateform" placeholder="Platform">
+
+                    <label class="control-label"  for="exposure,exposure_duration">Identifier type</label>
+                      <select  class="form-control" ng-model="genomic_signature.obs_effect" id="ec" >
+                          <option value="" disabled selected>Select your identifier</option>
+                          <option value="Swissprot" disabled>Swissprot ID</option>
+                          <option value="Uniprot" disabled>Ensembl ID</option>
+                          <option value="Entrez">Entrez Gene ID</option>
+                          <option value="Vegatrans" disabled>Vega Transcript ID</option>
+                          <option value="VegaPep" disabled>Vega Peptide ID</option>
+                          <option value="VegaGene" disabled>Vega Gene ID</option>
+                      </select>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label class="control-label"  for="exposure,exposure_duration">Genes up</label>
+                          <textarea ng-model="genomic_signature.down" class="form-control" id="ec"/>
+                          <button class="btn btn-primary pull-left" ng-if="genomic_signature.obs_effect=='Entrez' && signature.asso_cond != undefined" ngf-select="signature_upload($file, 1)" style="margin-bottom:20px;margin-top:10px;">Upload file</button>
+                          <div>{{genodownfile}}</div>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="control-label"  for="exposure,exposure_duration">Interrogated  genes</label>
+                          <textarea  ng-model="genomic_signature.nde" class="form-control" id="ec"/>
+                          <button class="btn btn-primary pull-left" ng-if="genomic_signature.obs_effect=='Entrez' && signature.asso_cond != undefined" ngf-select="signature_upload($file, 2)" style="margin-bottom:20px;margin-top:10px;">Upload file</button>
+                          <div>{{genoallfile}}</div>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="control-label"  for="exposure,exposure_duration">Gene down</label>
+                          <textarea  ng-model="genomic_signature.up" class="form-control" id="ec"/>
+                          <button class="btn btn-primary pull-left" ng-if="genomic_signature.obs_effect=='Entrez' && signature.asso_cond != undefined" ngf-select="signature_upload($file, 0)" style="margin-bottom:20px;margin-top:10px;">Upload file</button>
+                          <div>{{genoupfile}}</div>
+                        </div>
+                      </div>
+            </div>
+        </div>
+
+        <div class="panel panel-info" style="margin-top:20px;">
+            <div class="panel-heading">
+                Additional statistical information
+            </div>
+            <div class="panel-body" id="paneltable">
+              <!-- Sample -->
+              <div class="form-group">
+                  <label class="control-label " for="sample">Number of sample </label>
+                  <input step="any" ng-model="genomic_signature.sample" class="form-control" id="sample"/>
+              </div>
+
+              <!-- Control -->
+              <div class="form-group">
+                  <label class="control-label " for="control">Number of control</label>
+                  <input step="any" ng-model="genomic_signature.control" class="form-control" id="control"/>
+              </div>
+              <!-- Fold Change -->
+              <div class="form-group">
+                  <label class="control-label " for="fc">Fold Change</label>
+                  <input step="any" ng-model="genomic_signature.fc" class="form-control" id="fc"/>
+              </div>
+              <div class="form-group">
+                  <label class="control-label " for="pvalue">pvalue</label>
+                  <input step="any" ng-model="genomic_signature.pvalue" class="form-control" id="pvalue"/>
+              </div>
+              <div class="form-group">
+                  <label class="control-label"  for="statistical">Statistical Processing</label> <!-- http://www.obofoundry.org/ontology/stato.html -->
+                  <textarea ng-model="genomic_signature.statistical" placeholder="50-500 words max" maxlength="5000" class="form-control" id="statistical"></textarea>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="panel panel-success text-center no-boder" style="background-color: #d9534f;border-color: #ffffff;">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-success text-center no-boder" style="background-color: #d9534f;border-style: none;">
+                                <h3 style="color: white;">Signature</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label ng-if="(supfile == '' || supfile == undefined) && signature.asso_cond != undefined" class="control-label"  style="color: white;">Supplementary file</label><br>
+                                        <button ng-if="(supfile == '' || supfile == undefined) && signature.asso_cond != undefined" class="btn btn-info" ngf-select="signature_upload($file, 3)">Add</button>
+                                        <p style="color:white;" ng-if="supfile != ''">{{supfile}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="control-label"  style="color: white;"></label><br>
+                                        <button type="btn" ng-if="check_signature()" ng-click="signature_add_genomic()" class="btn btn-primary btn-large">Add signature</button>
+                                    </div>                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<sup>*</sup> Required 
+</div>
+
+
+
+<div ng-if="study.type=='observational'">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-danger" style="margin-top:20px;">
+        <div class="panel-heading">
+            Exposure signature
+        </div>
+        <div class="panel-body" id="paneltable">
+          <div class="form-group">
+              <label class="control-label"  for="generation">Associated exposure <sup>*</sup></label>
+              <select ng-model="signature.asso_cond" class="form-control" id="generation">
+                  <option value="" disabled selected>Please select the associated exposure</option>
+                  <option ng-repeat="item in study.conditions">{{item.id}} - {{item.title}}</option>
+          </div>
+
+            <!-- Title -->
+            <div class="form-group">
+                <label class="control-label " for="title">Title <sup>*</sup></label>
+                <input ng-model="signature.title" class="form-control" id="title"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label " for="title">Outcome</label>
+                <input ng-model="env_signature.outcome" class="form-control" id="title"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"  for="sex">Sex</label>
+                <select ng-model="signature.sex" class="form-control" id="sex" placeholder="Please select your organism sex">
+                  <option value="" disabled selected>Please select</option>
+                  <option value="male">Male</option>
+                  <option value="ex_vivo">Female</option>
+                  <option value="both">Both</option>
+                  <option value="unknown">Unknown</option>
+                  <option value="other">Other</option>
+                  <option value="na">NA</option>
+                </select>
+            </div>
+
+            <!-- generation -->
+            <div class="form-group">
+                <label class="control-label"  for="generation">Generation</label>
+                <select ng-model="signature.generation" class="form-control" id="generation">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="f0">F0</option>
+                    <option value="f1">F1</option>
+                    <option value="f2">F2</option>
+                    <option value="f3">F3</option>
+                    <option value="f4">F4</option>
+                    <option value="f5">F5</option>
+                    <option value="f6">F6</option>
+                    <option value="f7">F7</option>
+                    <option value="f8">F8</option>
+                    <option value="f9">F9</option>
+                    <option value="f10">F10</option>
+                </select>
+            </div>
+
+
+              <div class="form-group">
+                  <label class="control-label"  for="sex">Developmental stage</label>
+                  <select ng-model="signature.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                      <option value="" disabled selected>Please select</option>
+                      <option value="Fetal">Fetal</option>
+                      <option value="Embryonic">Embryonic</option>
+                      <option value="Larva">Larva</option>
+                      <option value="Neo-natal">Neo-natal</option>
+                      <option value="Juvenile">Juvenile</option>
+                      <option value="Pre-pubertal">Pre-pubertal</option>
+                      <option value="Pubertal">Pubertal</option>
+                      <option value="Adulthood">Adulthood</option>
+                      <option value="Elderly">Elderly</option>
+                      <option value="na">NA</option>
+                  </select>
+              </div>
+
+              <div class="form-group" >
+                <label class="control-label " for="tissue">Tissue</label> <!-- http://www.obofoundry.org/ontology/fma.html -->
+                <input ng-if="study.interventional_experimental_type=='in_vivo'" id="tissue_vivo" type="text" ng-model="signature.tissue" placeholder="Tissue"
+                                   typeahead-min-length="4" typeahead-on-select="selecttissue($item, $model,
+                                   $label)" typeahead="item.name for item in get_onto($viewValue,'tissue.tab')" typeahead-loading="loadingCellLine"
+                                   class="form-control">
+              </div>
+              <div class="panel panel-success" style="margin-top:20px;">
+                  <div class="panel-heading">
+                      Experimental information
+                  </div>
+                  <div class="panel-body" id="paneltable">
+                    <textarea ng-model="env_signature.expe_info" placeholder="50-500 words max" maxlength="5000" class="form-control" id="extractproto"/></textarea>
+                  </div>
+              </div>
+
+              <div class="panel panel-danger" style="margin-top:20px;">
+                  <div class="panel-heading">
+                      Signature information
+                  </div>
+                  <div class="panel-body" id="paneltable">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="control-label"  for="exposure,exposure_duration">Associated phenotype, diseases processus or pathway</label>
+                                    <!-- http://www.obofoundry.org/ontology/uo.html -->
+                            <input id="tissue_vivo" type="text" ng-model="env_signature.asso" placeholder="Associated effect"
+                                                       typeahead-min-length="4" typeahead-on-select="selectdisease($item, $model,
+                                                       $label)" typeahead="item.name for item in get_onto($viewValue,'disease.tab')" typeahead-loading="loadingCellLine"
+                                                       class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                          <label class="control-label"  for="exposure,exposure_duration">Observed effect</label>
+                            <select  class="form-control" ng-model="env_signature.obs_effect" id="ec" >
+                                <option value="" disabled selected>Select your unit</option>
+                                <option value="Increase">Increase</option>
+                                <option value="Decrease">Decrease</option>
+                                <option value="noeffect">No effect</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="control-label"  for="exposure,exposure_duration">Statistical significance</label>
+                          <select  class="form-control" ng-model="env_signature.statsign" id="ec" >
+                                <option value="" disabled selected>Please select</option>
+                                <option value="Statistically significant">Statistically significant</option>
+                                <option value="Not statistically significant">Not statistically significant</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="panel panel-success text-center no-boder" style="background-color: #d9534f;border-color: #ffffff;">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-success text-center no-boder" style="background-color: #d9534f;border-style: none;">
+                                <h3 style="color: white;">Signature</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label ng-if="(supfile == '' || supfile == undefined) && signature.asso_cond != undefined" class="control-label"  style="color: white;">Supplementary file</label><br>
+                                        <button ng-if="(supfile == '' || supfile == undefined) && signature.asso_cond != undefined" class="btn btn-info" ngf-select="signature_upload($file, 3)">Add</button>
+                                        <p style="color:white;" ng-if="supfile != ''">{{supfile}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="control-label"  style="color: white;"></label><br>
+                                        <button type="btn" ng-if="check_signature()" ng-click="signature_add_env()" class="btn btn-primary btn-large">Add signature</button>
+                                    </div>                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  <sup>*</sup> Required 
+</div>

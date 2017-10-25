@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr"><!-- use class="debug" here if you develope a template and want to check-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+   	<!-- some meta tags, important for SEO"--> 
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="robots" content="index,follow" />
+	
+	<title> The ReproGenomics Viewer</title>
+			
+            
+            <link rel="stylesheet" href="css/inuit.css" />
+            <link rel="stylesheet" href="css/fluid-grid16-1100px.css" />
+            <link rel="stylesheet" href="css/eve-styles.css" />
+            
+            <script src="js/respond-min.js" type="text/javascript"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+            <script>window.jQuery || document.write('<script src="scripts/jquery164min.js">\x3C/script>')</script><!--local fallback for JQuery-->
+            
+				  
+                  <!--Hide the hr img because of ugly borders in IE7. You can change the color of border-top to display a line -->
+                  <!--[if lte IE 7]>
+                    	<style>
+                    		hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 0; padding:0; }
+                            .grid-4{ width:22% }
+                        </style>
+                    <![endif]-->
+
+</head>
+
+<!--===============================================================  Logo, social and menu =====================================================================================--> 
+<body>
+	<div class="wrapper">	
+                     <a href="index.html" id="logo"><img src="img/logo.png" alt="something" />
+                      <h1 class="accessibility">RGV, the ReproGenomic Viewer</h1></a>
+                                
+                    
+                    <ul id="nav" class="main">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tools.html" class="active">Toolbox</a></li>
+                		<li><a href="project.html">RGV Content</a></li>
+                        <li><a href="tuto.html">Tutorial</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="publication.html">Publications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                        
+        </div><!--end of wrapper div--> 
+           
+	<div class="clear"></div>    
+<div id="genome" class="wrapper">
+	<h2 style="text-align : center">Browse your species</h2>
+   		<div id="externe" class="grids">
+	   			<div class='container'>
+		   			<div style="width:15%;float:left;height:120px">
+			   			<h4 style="padding:20px 0px">Primates</h4>
+			   		</div>
+			   		<div style="width:85%;float:right;height:120px">
+				   		<ul>
+					   		<li>
+						   		<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Human/hg19/' target="_blank" >
+							   		<img src='images/hg.png' width="100" height="100">
+							   	</a>
+							   	<div class='info'>
+								   	<h3 style="text-align : center"><i>Homo sapiens</i></h3>
+								   	<p style="text-align : center">hg19</p>
+							    </div>
+							</li>
+							<li>
+								<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Gorilla/gorGor3/' target="_blank" >
+									<img src='images/gorGor.png' width="100" height="100">
+								</a>
+								<div class='info'>
+									<h3 style="text-align : center"><i>Gorilla gorilla</i></h3>
+									<p style="text-align : center">gorGor3</p>
+								</div>
+							</li>
+							<li>
+								<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Macaque/rheMac3/' target="_blank" >
+									<img src='images/rheMac.png' width="100" height="100">
+								</a>
+								<div class='info'>
+									<h3 style="text-align : center"><i>Rhesus macaque</i></h3>
+									<p style="text-align : center">rheMac3</p>
+								</div>
+							</li>
+						</ul>
+					</div><!--end of container-->
+					<div class='container'>
+						<div style="width:15%;float:left;height:120px">
+							<h4 style="padding:30px 0px">Rodents</h4>
+						</div>
+						<div style="width:85%;float:right;height:120px">
+							<ul>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Mouse/mm10/' target="_blank" >
+										<img src='images/mm.png' width="100" height="100">
+									</a>
+									<div class='info'>
+										<h3 style="text-align : center"><i>Mus musculus</i></h3>
+										<p style="text-align : center">mm10</p>
+									</div>
+								</li>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Rat/rn6/' target="_blank" >
+										<img src='images/rn.png' width="100" height="100">
+									</a>
+									<div class='info'>
+										<h3 style="text-align : center"><i>Rattus norvegicus</i></h3>
+										<p style="text-align : center">rn6</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div><!--end of container-->
+					<div class='container'>
+						<div style="width:15%;float:left;height:120px">
+							<h4 style="padding:30px 0px">Other Mammals</h4>
+						</div>
+						<div style="width:85%;float:right;height:120px">
+							<ul>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Cow/bosTau7/' target="_blank" >
+										<img src='images/bosTau.png' width="100" height="100">
+									</a>
+									<div class='info'>
+										<h3 style="text-align : center"><i>Bos taurus</i></h3>
+										<p style="text-align : center">bosTau7</p>
+									</div>
+								</li>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Dog/canFam3/' target="_blank" >
+										<img src='images/canFam.png' width="100" height="100">
+									</a>
+									<div class='info'>
+										<h3 style="text-align : center"><i>Canis lupus</i></h3>
+										<p style="text-align : center">canFam3</p>
+									</div>
+								</li>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Opossum/monDom5/' target="_blank" >
+										<img src='images/monDom.png' width="100" height="100">
+									</a>
+									<div class='info'>
+										<h3 style="text-align : center;font-size: 11px;"><i>Monodelphis domestica</i></h3>
+										<p style="text-align : center">monDom5</p>
+									</div>
+								</li>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Platypus/ornAna1/' target="_blank" >
+										<img src='images/ornAna.png' width="100" height="100">
+									</a>
+									<div class='info' style="padding:20px 0px">
+										<h3 style="text-align : center;font-size: 10px;"><i>Ornithorhynchus anatinus</i></h3>
+										<p style="text-align : center">ornAna1</p>
+									</div>
+								</li>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Pig/susScr3/' target="_blank" >
+										<img src='images/susScr.png' width="100" height="100">
+									</a>
+									<div class='info'>
+										<h3 style="text-align : center"><i>Sus scrofa</i></h3>
+										<p style="text-align : center">susScr3</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div><!--end of container-->
+					<div class='container'>
+						<div style="width:15%;float:left;height:120px;">
+							<h4 style="padding:0px -10px">Other Vertebrates</h4>
+						</div>
+						<div style="width:85%;float:right;height:120px">
+							<ul>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Zebrafish/danRer7/' target="_blank" >
+										<img src='images/danRer.png' width="100" height="100">
+									</a>
+									<div class='info'>
+										<h3 style="text-align : center"><i>Danio rerio</i></h3>
+										<p style="text-align : center">danRer7</p>
+									</div>
+								</li>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Chicken/galGal3/' target="_blank" >
+										<img src='images/galGal.jpg' width="100" height="100">
+									</a>
+									<div class='info'>
+										<h3 style="text-align : center"><i>Gallus gallus</i></h3>
+										<p style="text-align : center">galGal3</p>
+									</div>
+								</li>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Frog/xenTro3/' target="_blank" >
+										<img src='images/xenTro.png' width="100" height="100">
+									</a>
+									<div class='info'>
+										<h3 style="text-align : center"><i>Xenopus tropicalis</i></h3>
+										<p style="text-align : center">xenTro3</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div><!--end of container-->
+					<div class='container'>
+						<div style="width:10%;float:left;height:120px">
+							<h4 style="padding:0px 0px">Other eukaryotic</h4>
+						</div>
+						<div style="width:85%;float:right;height:120px">
+							<ul>
+								<li>
+									<a class='normal' href='http://rgv.genouest.org/jbrowse/?data=sample_data/json/Yeast/sacCer3/' target="_blank" >
+										<img src='images/sacCer.png' width="100" height="100">
+									</a>
+									<div class='info' style="padding:20px 0px">
+										<h3 style="text-align : center"><i>Saccharomyces cerevisiae </i></h3>
+										<p style="text-align : center">sacCer3</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div><!--end of container-->
+   		</div><!--end of grid-->   
+</div><!--end of wrapper-->
+<script src='js/script1.js'></script>
+<script src='js/script2.js'></script>
+<div class="wrapper">
+	<div class="grid intro">
+	<p>Grey images : genome without integrated data yet</p> 
+	</div>
+</div>
+        
+<!--===============================================================  Footer =====================================================================================-->  
+		<div class="wrapper">
+			<div id="logos" class="grid text-center">
+	    <!--<a title="IRSET" href="http://www.irset.org"><img src="/bundles/peppsy/img/logos/logotypeIrset.gif" alt="IRSET" width=75 /></a>-->
+        <a title="INSERM" href="http://www.inserm.fr"><img src="img/inserm.gif" alt="INSERM" width=115 />
+        <a title="IRSET" href="http://www.irset.fr"><img src="img/logo_irset.jpg" alt="IRSET" width=115 />
+        <a title="FRM" href="http://www.frm.fr"><img src="img/logo_frm.gif" alt="FRM" width=75 />
+        <a title="ANSES" href="http://www.anses.fr"><img src="img/anses_logo.jpg" alt="ANSES" width=55 />
+	    <a title="Biogenouest" href="http://www.biogenouest.org"><img src="img/logo_biogenouest.jpg" alt="Biogenouest" width=75 height=57 /></a>
+	    <a title="IRISA" href="http://www.irisa.fr"><img src="img/irisa.png" alt="IRISA" width=120 height=29 /></a>
+	    <a title="INRIA" href="http://www.inria.fr/"><img src="img/logoINRIA.gif" alt="INRIA" width=105 height=44 /></a>
+	    <a title="CNRS" href="http://www.cnrs.fr/"><img src="img/cnrs.jpg" alt="CNRS" width=56 height=56 /></a>
+	    <a title="Rennes 1 University" href="http://www.univ-rennes1.fr/"><img src="img/univrennes1.jpg" alt="Université de Rennes 1" width=128 height=52 /></a>
+	    <a title="Region Bretagne" href="http://www.bretagne.fr/"><img src="img/region_bretagne.gif" alt="Région Bretagne" width=57 height=58 /></a>
+            <a title="FEDER" href="#"><img src="img/feder.jpg" alt="GIS-IBiSA" width=75 height=40 /></a>
+	    <br/>
+    </div>
+					<div id="footer">
+            	
+                
+                			<div class="grids">
+                                <div class="grid-5 grid text-center">
+                                    <p>&copy; Genouest - IRSET 
+                                </div>
+                                <div class="grid-6 grid text-center">
+                                    <p>Copyright 2014-2019 Genouest</p>
+                                </div>
+                                
+                                <div class="grid-5 grid text-center">
+                                  <p>Contact : support@genouest.org
+                                </div>
+                                
+                           </div><!--end of grids-->
+                   </div><!--end of footer-->
+		   </div><!--end of wrapper-->
+    
+    
+        	<script type="text/javascript"> <!--Outdated browsers warning/message and link to Browser-Update. Comment or delete it if you don´t want to use it-->
+						var $buoop = {} 
+						$buoop.ol = window.onload; 
+						window.onload=function(){ 
+						 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+						 var e = document.createElement("script"); 
+						 e.setAttribute("type", "text/javascript"); 
+						 e.setAttribute("src", "http://browser-update.org/update.js"); 
+						 document.body.appendChild(e); 
+						} 
+			</script> 
+                        
+			 <script type="text/javascript">  <!--Javascript for Tabs by Sohtanaka, include it on pages where you use tabs, else delete it-->                     
+                        $(document).ready(function() {
+							
+							 //When page loads...
+							 $(".tab_content").hide(); //Hide all content
+							 $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+							 $(".tab_content:first").show(); //Show first tab content
+							
+							 //On Click Event
+							 $("ul.tabs li").click(function() {
+							
+							  $("ul.tabs li").removeClass("active"); //Remove any "active" class
+							  $(this).addClass("active"); //Add "active" class to selected tab
+							  $(".tab_content").hide(); //Hide all tab content
+							
+							  var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+							  $(activeTab).fadeIn(); //Fade in the active ID content
+							  return false;
+							 });
+							
+							});
+			</script>
+</body>
+</html>

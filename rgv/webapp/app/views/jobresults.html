@@ -1,0 +1,109 @@
+
+<h2>Results job : TSJ{{job.id}}</h2>
+
+
+
+
+
+<div ng-if="job.tool == 'distance analysis'" id="results">
+    <div class="panel-body" id="paneltable">
+    	<a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="myTable.txt">
+	      <i class="glyphicon glyphicon-new-window"></i> Export
+	    </a>
+		<table ng-table="conditionTable"  show-filter="true" class="table table-striped" export-csv="csv" separator=";" export-csv-ignore="ignore">
+            <tr ng-repeat="val in $data">
+            	<td data-title="'Signature'" filter="{Term: 'text'}"><a href=""  ng-click="show_dataset(val.signature)" target="_blank">{{val.name}}</a></td>
+		        <td data-title="'r'" sortable="'r'">{{val.r}}</td>
+		        <td data-title="'R'" sortable="'R'">{{val.R}}</td>
+		        <td data-title="'n'" sortable="'n'">{{val.n}}</td>
+		        <td data-title="'N'" sortable="'N'">{{val.N}}</td>
+		        <td data-title="'Ratio'" sortable="'rR'">{{Math.round(val.rR *100)}} %</td>
+		        <td data-title="'Pvalue'" sortable="'pvalue'">{{val.pvalue}}</td>
+		        <td data-title="'Zscore'" sortable="'zscore'">{{val.zscore}}</td>
+		        <td data-title="'Euclidean distance'" sortable="'euclid'">{{val.euclid}}</td>
+		        <td data-title="'Correlation distance'" sortable="'cor'">{{val.cor}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div ng-if="job.tool == 'functional analysis'" id="results">
+	<ul class="nav nav-tabs">
+	  <li class="active"><a data-toggle="tab" href="#bp" target="_self">Biological process</a></li>
+	  <li><a data-toggle="tab" href="#cc" target="_self" ng-click="showStudies()">Cellular Component</a></li>
+	  <li><a data-toggle="tab" href="#mf" target="_self" ng-click="showAssays()">Molecular Function</a></li>
+	  <li><a data-toggle="tab" href="#pato" target="_self" ng-click="showSignatures()">Phenotype</a></li>
+	  
+	</ul>
+
+	<div class="tab-content">
+	  <div id="bp" class="tab-pane fade in active">
+	    <a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="myTable.txt">
+	      <i class="glyphicon glyphicon-new-window"></i> Export
+	    </a>
+		<table ng-table="conditionTable"  show-filter="true" class="table table-striped" export-csv="csv" separator=";" export-csv-ignore="ignore">
+            <tr ng-repeat="val in $data">
+            	<td data-title="'Term'" filter="{Term: 'text'}"><a href="" ng-click="showInfo(val)">{{val.Term}}</a></td>
+		        <td data-title="'r'" sortable="'r'">{{val.r}}</td>
+		        <td data-title="'R'" sortable="'R'">{{val.R}}</td>
+		        <td data-title="'n'" sortable="'n'">{{val.n}}</td>
+		        <td data-title="'N'" sortable="'N'">{{val.N}}</td>
+		        <td data-title="'Ratio'" sortable="'rR'">{{Math.round(val.rR *100)}} %</td>
+		        <td data-title="'Pvalue'" sortable="'pvalue'">{{val.pvalue}}</td>
+		        <td data-title="'Adjusted Pvalue (Benjamini-Hochberg)'" sortable="'pbh'">{{val.pbh}}</td>
+            </tr>
+        </table>
+	</div>
+	<div id="cc" class="tab-pane fade">
+	    <a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="myTable.txt">
+	      <i class="glyphicon glyphicon-new-window"></i> Export
+	    </a>
+		<table ng-table="ccTable"  show-filter="true" class="table table-striped" export-csv="csv" separator=";" export-csv-ignore="ignore">
+            <tr ng-repeat="val in $data">
+            	<td data-title="'Term'" filter="{Term: 'text'}"><a href="" ng-click="showInfo(val)">{{val.Term}}</a></td>
+		        <td data-title="'r'" sortable="'r'">{{val.r}}</td>
+		        <td data-title="'R'" sortable="'R'">{{val.R}}</td>
+		        <td data-title="'n'" sortable="'n'">{{val.n}}</td>
+		        <td data-title="'N'" sortable="'N'">{{val.N}}</td>
+		        <td data-title="'Ratio'" sortable="'rR'">{{Math.round(val.rR *100)}} %</td>
+		        <td data-title="'Pvalue'" sortable="'pvalue'">{{val.pvalue}}</td>
+		        <td data-title="'Adjusted Pvalue (Benjamini-Hochberg)'" sortable="'pbh'">{{val.pbh}}</td>
+            </tr>
+        </table>
+	</div>
+	<div id="mf" class="tab-pane fade">
+	    <a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="myTable.txt">
+	      <i class="glyphicon glyphicon-new-window"></i> Export
+	    </a>
+		<table ng-table="MfTable"  show-filter="true" class="table table-striped" export-csv="csv" separator=";" export-csv-ignore="ignore">
+            <tr ng-repeat="val in $data">
+            	<td data-title="'Term'" filter="{Term: 'text'}"><a href="" ng-click="showInfo(val)">{{val.Term}}</a></td>
+		        <td data-title="'r'" sortable="'r'">{{val.r}}</td>
+		        <td data-title="'R'" sortable="'R'">{{val.R}}</td>
+		        <td data-title="'n'" sortable="'n'">{{val.n}}</td>
+		        <td data-title="'N'" sortable="'N'">{{val.N}}</td>
+		        <td data-title="'Ratio'" sortable="'rR'">{{Math.round(val.rR *100)}} %</td>
+		        <td data-title="'Pvalue'" sortable="'pvalue'">{{val.pvalue}}</td>
+		        <td data-title="'Adjusted Pvalue (Benjamini-Hochberg)'" sortable="'pbh'">{{val.pbh}}</td>
+            </tr>
+        </table>
+	</div>
+	<div id="pato" class="tab-pane fade">
+	    <a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="myTable.txt">
+	      <i class="glyphicon glyphicon-new-window"></i> Export
+	    </a>
+		<table ng-table="dsTable"  show-filter="true" class="table table-striped" export-csv="csv" separator=";" export-csv-ignore="ignore">
+            <tr ng-repeat="val in $data">
+            	<td data-title="'Term'" filter="{Term: 'text'}"><a href="" ng-click="showInfo(val)">{{val.Term}}</a></td>
+		        <td data-title="'r'" sortable="'r'">{{val.r}}</td>
+		        <td data-title="'R'" sortable="'R'">{{val.R}}</td>
+		        <td data-title="'n'" sortable="'n'">{{val.n}}</td>
+		        <td data-title="'N'" sortable="'N'">{{val.N}}</td>
+		        <td data-title="'Ratio'" sortable="'rR'">{{Math.round(val.rR *100)}} %</td>
+		        <td data-title="'Pvalue'" sortable="'pvalue'">{{val.pvalue}}</td>
+		        <td data-title="'Adjusted Pvalue (Benjamini-Hochberg)'" sortable="'pbh'">{{val.pbh}}</td>
+            </tr>
+        </table>
+	</div>
+</div>

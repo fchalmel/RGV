@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr"><!-- use class="debug" here if you develope a template and want to check-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+   	<!-- some meta tags, important for SEO"--> 
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="robots" content="index,follow" />
+	
+	<title> The ReproGenomics Viewer</title>
+			
+            
+            <link rel="stylesheet" href="css/inuit.css" />
+            <link rel="stylesheet" href="css/fluid-grid16-1100px.css" />
+            <link rel="stylesheet" href="css/eve-styles.css" />
+            
+            <script src="js/respond-min.js" type="text/javascript"></script>
+            <script src="dropzone.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+            <script>window.jQuery || document.write('<script src="scripts/jquery164min.js">\x3C/script>')</script><!--local fallback for JQuery-->
+            
+				  
+                  <!--Hide the hr img because of ugly borders in IE7. You can change the color of border-top to display a line -->
+                  <!--[if lte IE 7]>
+                    	<style>
+                    		hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 0; padding:0; }
+                            .grid-4{ width:22% }
+                        </style>
+                    <![endif]-->
+
+</head>
+
+<!--===============================================================  Logo, social and menu =====================================================================================--> 
+<body>
+	<div class="wrapper">	
+                     <a href="index.html" id="logo"><img src="img/logo.png" alt="something" />
+                      <h1 class="accessibility">RGV, the ReproGenomic Viewer</h1></a>
+
+                   <ul id="nav" class="main">
+                        <li><a href="index.html" >Home</a></li>
+                        <li><a href="tools.html">Toolbox</a></li>
+                		<li><a href="project.html">RGV Content</a></li>
+                        <li><a href="tuto.html">Tutorial</a></li>
+                        <li><a href="news.html" >News</a></li>
+                        <li><a href="publication.html" class="active">Publications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                        
+        </div><!--end of wrapper div--> 
+           
+	<div class="clear"></div>    
+<!--===============================================================  Tools =====================================================================================--> 
+	<div class="wrapper">
+ 		<div style="width:50%;float:left;" class="grids">
+                <div  class="grid-16 grid grey">
+                 
+                    <h3>Cited by</h3>
+                    <h5>Currently RGV is cited by :</h5>
+                    <p><a href="http://www.ncbi.nlm.nih.gov/pubmed/24740603" target="_blank">Chalmel et al., 2014, Biol. Reprod</a><br>
+                    <a href="http://www.ncbi.nlm.nih.gov/pubmed/25210130" target="_blank">Chocu et al., 2014, Biol. Reprod</a><br>
+                    <a href="http://www.ncbi.nlm.nih.gov/pubmed/25710594" target="_blank">Zimmermann et al 2015 Mol Endocrinol</a><br>
+                    <a href="http://www.ncbi.nlm.nih.gov/pubmed/25728275" target="_blank">Stuparevic  et al 2015 FEBS Lett.</a><br>
+                    Chalmel, Rolland et al., in preparation<br></p>
+                                        
+                </div><!--end of slogan div-->
+                
+                <div class="grid-16 intro grid grey">
+                 
+                    <h3>How to cite RGV</h3>
+                    <h6>If you use RGV please cite : <a href="https://www.ncbi.nlm.nih.gov/pubmed/25883147" target="_blank">Darde <i>et al.</i> , Nucleic Acids Res., 2015 Jul</b></a></h6>
+			   </div><!--end of slogan div-->
+        </div><!--end of div grids-->
+        <div style="width:40%;float:right;" class="grid-16 grid grey" >
+        	<h3>Links</h3>
+        	 <h5>Website dedicated to reproduction</h5>
+        	 <p><a href="http://www.germonline.org">GermOnline</a><br>
+        	 <a href="http://germsage.nichd.nih.gov/germsage">GermSage</a><br>
+        	 <a href="http://mcg.ustc.edu.cn/sdap1/spermgenes/">SpermatogenesisOnline</a><br>
+        	 <a href="http://gonadsage.nichd.nih.gov/sage/home.html">GonadSage</a><br>
+        	 <a href="http://okdb.appliedbioinfo.net/">Ovarian Kaleidoscope Database</a><br>
+        	 <a href="http://www.gudmap.org/">GudMap</a></p>
+        	 <h5>Genome Browser websites</h5>
+        	 <p><a href="http://rgd.mcw.edu/fgb2/gbrowse">RGD GBrowse session</a><br>
+        	 <a href="http://jbrowse.informatics.jax.org/?data=data/mouse">MGI Mouse JBrowse</a><br>
+        	 <a href="http://vibrio.um.edu.my/index.php/home/main">VibrioBase</a><br>
+        	 <a href="http://helicobacter.um.edu.my/index.php/home/main">HélicoBase</a><br>
+        	 <a href="http://mabscessus.um.edu.my/">MabsBase</a><br>
+        	 <a href="http://staphylococcus.um.edu.my/index.php/home/main">StaphyloBase</a><br>
+        	 <a href="http://cnidarians.bu.edu/EdwardBase/cgi-bin/index.cgi">EdwardsiellaBase</a><br>
+        	 <a href="http://bioinfo2.ugr.es/NGSmethDB/index.php">NGSmethDB</a><br>
+        	 <a href="http://www.brachypodium.org/">Brachypodium.org</a></p>
+        </div>
+	
+    </div><!--end of div wrapper-->    
+    
+<hr>
+<!--===============================================================  Footer =====================================================================================-->  
+		<div class="wrapper">
+			<div id="logos" class="grid text-center">
+	    <!--<a title="IRSET" href="http://www.irset.org"><img src="/bundles/peppsy/img/logos/logotypeIrset.gif" alt="IRSET" width=75 /></a>-->
+        <a title="INSERM" href="http://www.inserm.fr"><img src="img/inserm.gif" alt="INSERM" width=115 />
+        <a title="IRSET" href="http://www.irset.fr"><img src="img/logo_irset.jpg" alt="IRSET" width=115 />
+        <a title="FRM" href="http://www.frm.fr"><img src="img/logo_frm.gif" alt="FRM" width=75 />
+        <a title="ANSES" href="http://www.anses.fr"><img src="img/anses_logo.jpg" alt="ANSES" width=55 />
+	    <a title="Biogenouest" href="http://www.biogenouest.org"><img src="img/logo_biogenouest.jpg" alt="Biogenouest" width=75 height=57 /></a>
+	    <a title="IRISA" href="http://www.irisa.fr"><img src="img/irisa.png" alt="IRISA" width=120 height=29 /></a>
+	    <a title="INRIA" href="http://www.inria.fr/"><img src="img/logoINRIA.gif" alt="INRIA" width=105 height=44 /></a>
+	    <a title="CNRS" href="http://www.cnrs.fr/"><img src="img/cnrs.jpg" alt="CNRS" width=56 height=56 /></a>
+	    <a title="Rennes 1 University" href="http://www.univ-rennes1.fr/"><img src="img/univrennes1.jpg" alt="Université de Rennes 1" width=128 height=52 /></a>
+	    <a title="Region Bretagne" href="http://www.bretagne.fr/"><img src="img/region_bretagne.gif" alt="Région Bretagne" width=57 height=58 /></a>
+            <a title="FEDER" href="#"><img src="img/feder.jpg" alt="GIS-IBiSA" width=75 height=40 /></a>
+	    <br/>
+    </div>
+					<div id="footer">
+            	
+                
+                			<div class="grids">
+                                <div class="grid-5 grid text-center">
+                                    <p>&copy; Genouest - IRSET 
+                                </div>
+                                <div class="grid-6 grid text-center">
+                                    <p>Copyright 2014-2019 Genouest</p>
+                                </div>
+                                
+                                <div class="grid-5 grid text-center">
+                                  <p>Contact : support@genouest.org
+                                </div>
+                                
+                           </div><!--end of grids-->
+                   </div><!--end of footer-->
+		   </div><!--end of wrapper-->
+    
+    
+        	<script type="text/javascript"> <!--Outdated browsers warning/message and link to Browser-Update. Comment or delete it if you don´t want to use it-->
+						var $buoop = {} 
+						$buoop.ol = window.onload; 
+						window.onload=function(){ 
+						 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+						 var e = document.createElement("script"); 
+						 e.setAttribute("type", "text/javascript"); 
+						 e.setAttribute("src", "http://browser-update.org/update.js"); 
+						 document.body.appendChild(e); 
+						} 
+			</script> 
+                        
+			 <script type="text/javascript">  <!--Javascript for Tabs by Sohtanaka, include it on pages where you use tabs, else delete it-->                     
+                        $(document).ready(function() {
+							
+							 //When page loads...
+							 $(".tab_content").hide(); //Hide all content
+							 $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+							 $(".tab_content:first").show(); //Show first tab content
+							
+							 //On Click Event
+							 $("ul.tabs li").click(function() {
+							
+							  $("ul.tabs li").removeClass("active"); //Remove any "active" class
+							  $(this).addClass("active"); //Add "active" class to selected tab
+							  $(".tab_content").hide(); //Hide all tab content
+							
+							  var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+							  $(activeTab).fadeIn(); //Fade in the active ID content
+							  return false;
+							 });
+							
+							});
+			</script>
+</body>
+</html>

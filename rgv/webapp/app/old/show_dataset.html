@@ -1,0 +1,172 @@
+<div ng-if="dataset" class="datasetsbrowser col-sm-12 col-md-8">
+    <div class="row">
+        <h3>{{dataset.title}} <i ng-if="dataset.owner == user.id" class="glyphicon glyphicon-user"></i></h3>
+    </div>
+</div>
+
+      <!--  <span>dataset data</span>
+
+        <div class="form-group">
+            <label class="control-label " for="title">Title</label>
+            <input ng-model="dataset.title" class="form-control" id="title"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label " for="status">Status</label>
+            <input ng-model="dataset.status" class="form-control" id="status" disabled/>
+            <select ng-if="user.admin" ng-model="dataset.status" class="form-control">
+                <option value="public">public</option>
+                <option value="private">private</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label"  for="description">Description</label>
+            <textarea ng-model="dataset.description" class="form-control" id="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label"  for="contributors">Contributors</label>
+            <textarea ng-model="dataset.contributors" class="form-control" id="contributors"></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label"  for="collaborators">Collaborators</label>
+            <span ng-repeat="collab in dataset.collaborators" class="label label-info" id="collaborators">{{collab}} <i ng-click="collaborator_delete(collab)" class="glyphicon glyphicon-trash"></i></span>
+            <br/>
+            <div ng-if="dataset.owner == user.id" >
+                <input class="form-control" ng-model="collaborator"/>
+                <button type="button" class="btn btn-primary" ng-click="collaborator_add(collaborator)">Add</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label"  for="citations">Citations</label>
+            <textarea ng-model="dataset.citations" class="form-control" id="citations"></textarea>
+        </div>
+        <button ng-if="can_edit()" type="button" class="btn btn-primary" ng-click="dataset_update()">Update</button>
+    </div>
+    <div class="row">
+        <button ng-if="can_edit()" type="button" class="btn btn-primary" ng-click="treatment_add(dataset)">Add Treatment</button>
+    </div>
+    <div ng-if="treatment == null" class="row">
+        <div ng-repeat="dataset_treatments in ::dataset.treatments">
+        <h3>Treatment <i ng-if="dataset.owner == user.id" class="glyphicon glyphicon-trash" ng-click="treatment_delete(dataset_treatments)"></i></h3>
+        <table class="table">
+            <tr><td>Title: {{dataset_treatments.title}} <a ng-href="#/dataset/{{dataset._id['$oid']}}/treatment/{{dataset_treatments.id}}"><i ng-if="can_edit()" class="glyphicon glyphicon-edit"></i></a></td><td>Description: {{dataset_treatments.description}}</td></tr>
+            <tr><td>Organism: {{dataset_treatments.organism}}</td><td>{{dataset_treatments.experimentaldesign}}</td></tr>
+            <tr><td>{{dataset_treatments.treatmentprotocol}}</td><td>{{dataset_treatments.sampletype}}</td></tr>
+            <tr><td>{{dataset_treatments.growthprotocol}}</td><td>{{dataset_treatments.extractionprotocol}}</td></tr>
+            <tr><td>{{dataset_treatments.mixture}}</td><td>{{dataset_treatments.mixturetype}}</td></tr>
+            <tr><td></td><td>{{dataset_treatments.extractedmolecule}}</td></tr>
+        </table>
+        <h4>Chemicals</h4>
+        <table class="table treatment-controls">
+            <tr><th>Compound</th><th>CAS</th><th>Vehicle</th><th>Route</th><th>Dose</th><th>Exposure time</th><th>Age</th><th>Individual effect reference</th></tr>
+            <tr ng-repeat="item in dataset_treatments.control">
+                <td>{{item.compound}}</td>
+                <td>{{item.cas}}</td>
+                <td>{{item.vehicle}}</td>
+                <td>{{item.dose}}</td>
+                <td>{{item.exposure_time}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.reference}}</td>
+            </tr>
+        </table>
+        <h4>Control</h4>
+        <table class="table treatment-controls">
+            <tr><th>Compound</th><th>CAS</th><th>Vehicle</th><th>Route</th><th>Dose</th><th>Exposure time</th><th>Age</th><th>Individual effect reference</th></tr>
+            <tr ng-repeat="item in dataset_treatments.control">
+                <td>{{item.compound}}</td>
+                <td>{{item.cas}}</td>
+                <td>{{item.vehicle}}</td>
+                <td>{{item.dose}}</td>
+                <td>{{item.exposure_time}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.reference}}</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    <div class="row" ng-if="treatment">
+        <h3>Treatment <i ng-if="dataset.owner == user.id" class="glyphicon glyphicon-trash" ng-click="treatment_delete(treatment)"></i></h3>
+        <span>dataset selected treatment</span>
+        <table class="table">
+            <tr><td>{{treatment.title}} <a ng-href="#/dataset/{{dataset._id['$oid']}}/treatment/{{treatment.id}}"><i ng-if="can_edit()" class="glyphicon glyphicon-edit"></i></a></td><td>{{treatment.description}}</td></tr>
+            <tr><td>{{treatment.organism}}</td><td>{{treatment.experimentaldesign}}</td></tr>
+            <tr><td>{{treatment.treatmentprotocol}}</td><td>{{treatment.sampletype}}</td></tr>
+            <tr><td>{{treatment.growthprotocol}}</td><td>{{treatment.extractionprotocol}}</td></tr>
+            <tr><td>{{treatment.mixture}}</td><td>{{treatment.mixturetype}}</td></tr>
+            <tr><td></td><td>{{treatment.extractedmolecule}}</td></tr>
+        </table>
+        <h4>Chemicals</h4>
+        <table class="table treatment-controls">
+            <tr><th>Compound</th><th>CAS</th><th>Vehicle</th><th>Route</th><th>Dose</th><th>Exposure time</th><th>Age</th><th>Individual effect reference</th></tr>
+            <tr ng-repeat="item in treatment.chemicals">
+                <td>{{item.compound}}</td>
+                <td>{{item.cas}}</td>
+                <td>{{item.vehicle}}</td>
+                <td>{{item.dose}}</td>
+                <td>{{item.exposure_time}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.reference}}</td>
+            </tr>
+        </table>
+        <h4>Control</h4>
+        <table class="table treatment-controls">
+            <tr><th>Compound</th><th>CAS</th><th>Vehicle</th><th>Route</th><th>Dose</th><th>Exposure time</th><th>Age</th><th>Individual effect reference</th></tr>
+            <tr ng-repeat="item in treatment.control">
+                <td>{{item.compound}}</td>
+                <td>{{item.cas}}</td>
+                <td>{{item.vehicle}}</td>
+                <td>{{item.dose}}</td>
+                <td>{{item.exposure_time}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.reference}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div ng-if="treatment.signatures.length > 0">
+        <h3>Signatures</h3>
+        <div ng-repeat="sig in treatment.signatures">
+            <span>Physio</span>
+            <table class="table">
+                <tr ng-repeat="physio in sig.physio">
+                <td>{{physio.tissue}}</td>
+                <td>{{physio.status}}</td>
+                <td>{{physio.physiomolecule}}</td>
+                <td>{{physio.statisticaltest}}</td>
+                <td>{{physio.nbreplica}}</td>
+                <td>{{physio.nbsample}}</td>
+                <td>{{physio.nbcontrol}}</td>
+                <td>{{physio.fc}}</td>
+                <td>{{physio.quantitativedata}}</td>
+                <td>{{physio.pvalue}}</td>
+                <td>{{physio.description}}</td>
+                <td>{{physio.id}}</td>
+                </tr>
+            </table>
+            <span>Genomic</span>
+            <table class="table">
+                <tr ng-repeat="genomic in sig.genomic">
+                <td>{{genomic.tissue}}</td>
+                <td>{{genomic.techno}}</td>
+                <td>{{genomic.platform}}</td>
+                <td>{{genomic.description}}</td>
+                <td>{{genomic.id}}</td>
+                </tr>
+            </table>
+             <a ng-href="/user/{{user.id}}/dataset/{{dataset._id['$oid']}}/treatment/{{treatment.title}}/download/{{sig.id}}?token={{token}}" target="_blank">
+                 <button class="btn btn-primary btn-large" type="button">
+                     Download signature
+                 </button>
+             </a>
+             <button type="button" class="btn btn-primary btn-large" ng-if="can_edit()"><a ng-href="#/dataset/{{dataset._id['$oid']}}/treatment/{{treatment.id}}/signature/{{sig.id}}"><i ng-if="can_edit()" class="glyphicon glyphicon-edit"></i></a></button>
+             <button type="button" class="btn btn-primary btn-large" ng-if="dataset.owner == user.id"><i class="glyphicon glyphicon-trash" ng-click="signature_delete(treatment, sig)"></i></button>
+             <div class="download-links">
+                 <div>Public URL: <span>http://{{location}}/user/{{user.id}}/dataset/{{dataset._id['$oid']}}/treatment/{{treatment.id}}/download/{{sig.id}}</span></div>
+                 <div ng-if="token">Private temporary URL: <span>http://{{location}}/user/{{user.id}}/dataset/{{dataset._id['$oid']}}/treatment/{{treatment.id}}/download/{{sig.id}}?token={{token}}</span></div>
+             </div>
+        </div>
+
+    </div>
+    <button ng-if="treatment && can_edit()" type="button" class="btn btn-primary" ng-click="signature_add(dataset,treatment)">Add Signature</button>
+</div>
+</div> -->

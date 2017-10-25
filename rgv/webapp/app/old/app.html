@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="bower_components/angular-carousel/dist/angular-carousel.css" rel="stylesheet" type="text/css" />
+<div ng-if="msg" class="alert alert-warning">
+    {{msg}}
+</div>
+
+<!--<div class="well">
+    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+</div>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Welcome to TOXsIgN</h1>
+      <h3>A public repository for toxicological signatures</h3>
+      <div class="well">
+          <p>The <b>TOX</b>icological s<b>I</b>g<b>N</b>ature (TOXsIgN) repository provides a flexible and open design that facilitates online submission by the toxicology community, storage and retrieval of toxicological signatures,
+          defined as the description of physiological, cellular, molecular or (transcript-/epigen-)omics effects on individuals or their descendants, after exposure to single or combined environmental factors,
+          including chemical (e.g. pesticides, plasticizers, drugs, endocrine disruptors), physical (e.g. radiations, temperature) or biological (e.g. pathogens, parasites) factors.
+          TOXsIgN also intends to serve as a warehouse for toxicogenomics and predictive toxicology tools which could lean on the deposited signatures deposited by the community.</p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+          <img ng-src="{{slide.image}}" style="margin:auto;">
+          <div class="carousel-caption">
+            <h4>{{news.title}}</h4>
+            <p>{{slide.text}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="panel panel-warning" style="margin-top:20px;">
+        <div class="panel-heading">
+            Last Update
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4" ng-repeat="data in last">
+              <div class="panel panel-default" style="margin-top:20px;">
+                <div class="panel-heading">
+                  {{data.id}} - {{data.title}}
+                </div>
+                <div class="panel-body">
+                <p ng-if="data.description != ''">{{data.description}}</p>
+                <p ng-if="data.description == ''"><i class="fa fa-cogs" aria-hidden="true"></i>          No description available</p>
+                <ul>
+                  <li>Studies numbers: {{data.studies.length}}</li>
+                  <li>Owner : {{data.authors}}</li>
+                  <li><a href="" ng-click="show_dataset(data)">View</a></li>
+                </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-info" style="margin-top:20px;">
+            <div class="panel-heading">
+                Links
+            </div>
+            <div class="panel-body">
+              <p>Information about how to search TOXsIgN, understand search results and how to submit data can be found in our <a href="#/help">Help</a>  section.</p>
+
+              <p>Find out more about the Research Institute for Environmental and Occupational Health (<a href="https://www.irset.org/">IRSET</a>).</p>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="panel panel-info" style="margin-top:20px;">
+            <div class="panel-heading">
+                Tools and Access
+            </div>
+            <div class="panel-body">
+              <p>The <a href="#/tools">TOXsIgN warehouse</a> for toxicogenomics and predictve toxicology tools</p>
+              <p><a href ="#/query">TOXsIgN search engine</a>: a powerful tool to access and query the TOXsIgN repository.</p>
+              <p>HTTP access: data can be downloaded directly from our <a href="http://toxsign.genouest.org/public/toxsign">HTTP site</a>.</p>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="panel panel-info" style="margin-top:20px;">
+            <div class="panel-heading">
+                Data content
+            </div>
+            <div class="panel-body"> 
+              <div>Projects: {{project}}</div>
+              <div>Studies: {{study}}</div>
+              <div>Conditions: {{condition}}</div>
+              <div>Signatures: {{signature}}</div>
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+   <!-- <div class="col-md-4">
+        <h2>Start</h2>
+        About....
+    </div>
+    <div class="col-md-4">
+        <h2>Tools</h2>
+        About....
+    </div>
+    <div class="col-md-4">
+        <h2>Content</h2>
+        <div>Datasets: {{nb_datasets}}</div>
+        <div>Treatments: {{nb_treatments}}</div>
+        <div>Signatures: {{nb_sig}}</div>
+    </div>-->
+</div>

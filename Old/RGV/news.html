@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr"><!-- use class="debug" here if you develope a template and want to check-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+   	<!-- some meta tags, important for SEO"--> 
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="robots" content="index,follow" />
+	
+	<title> The ReproGenomics Viewer</title>
+			
+            
+            <link rel="stylesheet" href="css/inuit.css" />
+            <link rel="stylesheet" href="css/fluid-grid16-1100px.css" />
+            <link rel="stylesheet" href="css/eve-styles.css" />
+            
+            <script src="js/respond-min.js" type="text/javascript"></script>
+            <script src="dropzone.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+            <script>window.jQuery || document.write('<script src="scripts/jquery164min.js">\x3C/script>')</script><!--local fallback for JQuery-->
+             <script type="text/javascript">
+				function switchInfoPerso1()
+				{
+				divInfo = document.getElementById('dataset');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso2()
+				{
+				divInfo = document.getElementById('genome');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso3()
+				{
+				divInfo = document.getElementById('update');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso4()
+				{
+				divInfo = document.getElementById('other');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				</script>
+            
+				  
+                  <!--Hide the hr img because of ugly borders in IE7. You can change the color of border-top to display a line -->
+                  <!--[if lte IE 7]>
+                    	<style>
+                    		hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 0; padding:0; }
+                            .grid-4{ width:22% }
+                        </style>
+                    <![endif]-->
+
+</head>
+
+<!--===============================================================  Logo, social and menu =====================================================================================--> 
+<body>
+	<div class="wrapper">	
+                     <a href="index.html" id="logo"><img src="img/logo.png" alt="something" />
+                      <h1 class="accessibility">RGV, the ReproGenomic Viewer</h1></a>
+
+                   <ul id="nav" class="main">
+                        <li><a href="index.html" >Home</a></li>
+                        <li><a href="tools.html">Toolbox</a></li>
+                		<li><a href="project.html">RGV Content</a></li>
+                        <li><a href="tuto.html">Tutorial</a></li>
+                        <li><a href="news.html" class="active">News</a></li>
+                        <li><a href="publication.html">Publications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                        
+        </div><!--end of wrapper div--> 
+           
+	<div class="clear"></div>    
+<!--===============================================================  Tools =====================================================================================--> 
+	<div class="wrapper">
+		<h2 style="text-align : center">News</h2>
+ 		
+ 		<div class="grids">
+                 <div class="grid-16 grid intro green">
+                 	<div style="width:90%;float:left;">
+                    	<h5><a href="javascript: switchInfoPerso1();">Datasets Updates</a></h5>
+                 	</div>
+                    <div id="dataset" class="grid-9" style="display: none;">
+                    	<h6>September 2016</h6>
+							<ul>
+								<li>[Upload - 09/16] Howarth <i>et al.</i>, 2014 in Mouse genome</li>
+								<li>[Upload - 09/16] Korfanty <i>et al.</i>, 2014 in Mouse genome</li>
+								<li>[Upload - 09/16] Soh <i>et al.</i>, 2015 in Mouse genome</li>
+							</ul>
+                    	<h6>May 2016</h6>
+							<ul>
+								<li>[Upload - 05/16] Ng <i>et al.</i>, 2013 in Mouse genome</li>
+								<li>[Upload - 05/16] Yokobayashi <i>et al.</i>, 2013 in Mouse genome</li>
+								<li>[Upload - 05/16] Margolin <i>et al.</i>, 2014 in Mouse genome</li>
+							</ul>
+                    	<h6>April 2016</h6>
+							<ul>
+								<li>[Upload - 04/16] Tan <i>et al.</i>, 2012 in Mouse genome</li>
+								<li>[Upload - 04/16] Sleutels <i>et al.</i>, 2012 in Mouse genome</li>
+							</ul>
+						<h6>March 2016</h6>
+							<ul>
+								<li>[Upload - 03/16] Khil <i>et al.</i>, 2012 in all RGV's species</li>
+								<li>[Upload - 03/16] Chalmel, Rolland <i>et al.</i>, in prep in all RGV's species</li>
+							</ul>
+						<h6>January 2016</h6>
+							<ul>
+								<li>[Upload - 01/16] Smagulova <i>et al.</i>, 2011 in all RGV's species</li>
+							</ul>
+						<h6>October 2015</h6>
+							<ul>
+								<li>[Upload - 10/15] Zimmerman <i>et al.</i>, 2015 in all RGV's species</li>
+								<li>[Upload - 10/15] Mu <i>et al.</i>, 2014 in all RGV's species</li>
+								<li>[Upload - 10/15] Bernstein <i>et al.</i>, 2010 in all RGV's species</li>
+							</ul>
+                    	<h6>May 2015</h6>
+							<ul>
+								<li>[Upload - 05/15] Necsulea <i>et al.</i>, 2014 in all RGV's species</li>
+								<li>[Upload - 05/15] Chocu <i>et al.</i>, 2014 in all RGV's species</li>
+								<li>[Upload - 05/15] Erkek <i>et al.</i>, 2013 in all RGV's species</li>
+								<li>[Upload - 05/15] Gaucher <i>et al.</i>, 2012 in all RGV's species</li>
+								<li>[Upload - 05/15] Lahio <i>et al.</i>, 2013 in all RGV's species</li>
+								<li>[Upload - 05/15] Brick <i>et al.</i>, 2012 in all RGV's species</li>
+								<li>[Upload - 05/15] Meikar <i>et al.</i>, 2014 in all RGV's species</li>
+								<li>[Upload - 05/15] Brykczynska <i>et al.</i>, 2010 in all RGV's species</li>
+							</ul>
+                    	<h6>April 2015</h6>
+							<ul>
+								<li>[Upload - 25/04/15] Rolland, Evrard <i>et al.</i>, In prep in all RGV's species</li>
+								<li>[Upload - 19/04/15] Soumillon <i>et al.</i>, 2013 in all RGV's species</li>
+								<li>[Upload - 15/04/15] Gan <i>et al.</i>, 2013 in all RGV's species</li>
+							</ul>
+
+                    	<h6>March 2015</h6>
+							<ul>
+								<li>[Upload - 1/03/15] Chalmel <i>et al.</i>, 2014 in all RGV's species</li>
+							</ul>
+						<h6>February 2015</h6>
+							<ul>
+								<li>[Upload - 17/02/15] Chalmel <i>et al.</i>, 2014 in Gorilla genome</li>
+								<li>[Upload - 15/02/15] Chalmel <i>et al.</i>, 2014 in Macaque genome</li>
+								<li>[Upload - 10/02/15] Necsulea <i>et al.</i>, 2014 in Gorilla genome</li>
+								<li>[Upload - 8/02/15] Necsulea <i>et al.</i>, 2014 in Rat genome</li>
+								<li>[Upload - 5/02/15] Gan <i>et al.</i>, 2013 in Rat genome</li>
+							</ul>
+						<h6>January 2015</h6>
+							<ul>
+								<li>[Upload - 26/01/15] Lavigne <i>et al.</i>, 2012 in Yeast genome</li>
+								<li>[Upload - 21/01/15] Xu <i>et al.</i>, 2009 in Yeast genome</li>
+								<li>[Upload - 16/01/15] Lardenois <i>et al.</i>, 2011 in Yeast genome</li>
+								<li>[Upload - 18/01/15] Brykczynska <i>et al.</i>, 2010 in Rat genome</li>
+								<li>[Upload - 13/01/15] Soumillon <i>et al.</i>, 2013 in Rat genome</li>
+								<li>[Upload - 12/01/15] Granovskaia <i>et al.</i>, 2010 in Yeast genome</li>
+								<li>[Upload - 8/01/15] Necsulea <i>et al.</i>, 2014 in Mouse genome</li>
+								<li>[Upload - 7/01/15] Becker <i>et al.</i>, in prep in Yeast genome</li>
+							</ul>
+						<h6>December 2014</h6>
+							<ul>
+								<li>[Upload - 22/12/14] Gan <i>et al.</i>, 2013 in Human genome</li>
+								<li>[Upload - 21/12/14] Gan <i>et al.</i>, 2013 in Mouse genome</li>
+								<li>[Upload - 21/12/14] Soumillon <i>et al.</i>, 2013 in Human genome</li>
+								<li>[Upload - 20/12/14] Soumillon <i>et al.</i>, 2013 in Mouse genome</li>
+								<li>[Upload - 20/12/14] Chocu <i>et al.</i>, 2014 in Human genome</li>
+								<li>[Upload - 19/12/14] Chocu <i>et al.</i>, 2014 in Mouse genome</li>
+								<li>[Upload - 19/12/14] Chocu <i>et al.</i>, 2014 in Rat genome</li>
+								<li>[Upload - 18/12/14] Brykczynska <i>et al.</i>, 2010 in Mouse genome</li>
+								<li>[Upload - 17/12/14] Brykczynska <i>et al.</i>, 2010 in Human genome</li>
+								<li>[Upload - 17/12/14] Necsulea <i>et al.</i>, 2014 in Human genome</li>
+								<li>[Upload - 17/12/14] Brykczynska <i>et al.</i>, 2010 in Human genome</li>
+								<li>[Upload - 15/12/14] Erkek <i>et al.</i>, 2013 in Human genome</li>
+								<li>[Upload - 15/12/14] Erkek <i>et al.</i>, 2013 in Rat genome</li>
+								<li>[Upload - 14/12/14] Erkek <i>et al.</i>, 2013 in Mouse genome</li>
+								<li>[Upload - 12/12/14] Gaucher <i>et al.</i>, 2012 in Human genome</li>
+								<li>[Upload - 10/12/14] Hammoud <i>et al.</i>, 2014 in Mouse genome</li>
+								<li>[Upload - 10/12/14] Hammoud <i>et al.</i>, 2014 in Human genome</li>
+								<li>[Upload - 10/12/14] Gaucher <i>et al.</i>, 2012 in Rat genome</li>
+								<li>[Upload - 9/12/14] Gaucher <i>et al.</i>, 2012 in Mouse genome</li>
+								<li>[Upload - 4/12/14] Chalmel <i>et al.</i>, 2014 in Mouse genome</li>
+								<li>[Upload - 4/12/14] Chalmel <i>et al.</i>, 2014 in Rat genome</li>
+								<li>[Upload - 3/12/14] Chalmel <i>et al.</i>, 2014 in Human genome</li>
+							</ul>
+						<h6>November 2014</h6>
+							<ul>
+								<li>[Upload - 29/11/14] Laiho <i>et al.</i>, 2013 in Human genome</li>
+								<li>[Upload - 29/11/14] Laiho <i>et al.</i>, 2013 in Mouse genome</li>
+								<li>[Upload - 29/11/14] Chalmel,Rolland <i>et al.</i>, in prep in Mouse genome</li>
+								<li>[Upload - 29/11/14] Chalmel,Rolland <i>et al.</i>, in prep in Human genome</li>
+								<li>[Upload - 29/11/14] Zimmermann <i>et al.</i>, 2015 in Human genome</li>
+								<li>[Upload - 29/11/14] Zimmermann <i>et al.</i>, 2015 in Mouse genome</li>
+								<li>[Upload - 28/11/14] Brick <i>et al.</i>, 2012 in Mouse genome</li>
+								<li>[Upload - 28/11/14] Brick <i>et al.</i>, 2012 in Human genome</li>
+								<li>[Upload - 28/11/14] Li <i>et al.</i>, 2013 in Mouse genome</li>
+								<li>[Upload - 28/11/14] Li <i>et al.</i>, 2013 in Human genome</li>
+								<li>[Upload - 28/11/14] Meikar <i>et al.</i>, 2014 in Mouse genome</li>
+								<li>[Upload - 28/11/14] Meikar <i>et al.</i>, 2014 in Human genome</li>
+							</ul>
+                    </div>                                       
+        </div><!--end of slogan div-->
+        
+        
+        
+        <div class="grid-16 grid intro green">
+        			<div style="width:90%;float:left;">
+                    	<h5><a href="javascript: switchInfoPerso2();">Genome Information</a></h5>
+        			</div>
+        			<div id="genome" class="grid-9" style="display: none;">
+        				<h6>2016</h6>
+							<ul> 
+								<li>[Corrective - 05/16] Correct gorilla genes display</li>
+                            	<li>[Issue Report - 04/16] Gorilla genes display trouble</li>
+                            	<li>[Corrective - 01/16] Correct Opposum chromosome diplay</li>
+							</ul> 
+        				<h6>2015</h6>
+							<ul> 
+								<li>[Issue Report - 10/15] Opposum chromosome diplay issues</li>
+								<li>[Upload - 05/15] Opposum reference sequence</li>
+								<li>[Corrective - 03/15] Fix some issues in Frog genome (browser)</li>
+								<li>[Upload - 03/15] Chicken reference sequence</li>
+								<li>[Corrective - 03/15] Fix some issues in Chicken genome (browser)</li>
+								<li>[Issue Report - 02/15] Issues in Chicken genome (browser)</li>
+								<li>[Upload - 02/15] Genes name indexation (all species)</li>
+								<li>[Issue Report - 02/15] Yeast genome annotation format issues</li>
+								<li>[Upload - 02/15] Integration genome annotation for all specie (except for yeast)</li>
+								<li>[Upload - 02/15] All species genes annotation </li>
+							</ul>
+						<h6>2014</h6>
+							<ul>
+								<li>[Upload - 15/11/14] All species genes annotation </li>
+							</ul>
+        			</div>	                                        
+        </div><!--end of slogan div-->
+                 
+        <div class="grid-16 grid intro green">
+        		<div style="width:90%;float:left;">
+                    <h5><a href="javascript: switchInfoPerso3();">Next Updates</a></h5>	 
+        		</div>
+        		<div id="update" class="grid-9" style="display: none;"> 
+        				<h6>2016</h6>
+							<ul>
+                            	<li>[Corrective] Upload yeast genes annotation</li>
+                            	<li>[System] Link Jbrowse and Galaxy</li>
+							</ul>
+        				<h6>2015</h6>
+							<ul>
+                            	<li>[Corrective] Upload yeast genes annotation</li>
+                            	<li>[System] New tool integration in Galaxy</li>
+							</ul>
+        		</div>                                
+        </div><!--end of slogan div-->
+        
+        <div class="grid-16 grid intro green">
+        		<div style="width:90%;float:left;">
+                    <h5><a href="javascript: switchInfoPerso4();">Others</a></h5>
+        		</div>	        
+        		<div id="other" class="grid-9" style="display: none;">
+        			<h6>2016</h6>
+        				<ul>
+        					<li>[System - 20/10/16 to 25/10/16] RGV maintenance</li>
+                            <li>[System - 03/07/16] RGV Galaxy shutdown</li>
+        				</ul>
+        			<h6>2015</h6>
+							<ul>
+								<li>[System - 23/03/15] Home page search function</li>
+								<li>[Website - 16/03/15] Track name modification</li>
+								<li>[Website - 4/03/15] New page in RGV : "News"</li>
+								<li>[System - 4/03/15] Due to technical problem encountered by our clusters, projects conversion may take longer than expected</li>
+								<li>[System - 8/02/15] The RGV website and all other GenOuest web facilities will be temporarily unavailable due to hardware upgrade from February 10 to February 13</li>
+							</ul>
+        		</div>                                
+        </div><!--end of slogan div-->
+ 
+     </div><!--end of div grids-->
+	
+    </div><!--end of div wrapper-->    
+<hr>
+<!--===============================================================  Footer =====================================================================================-->  
+		<div class="wrapper">
+			<div id="logos" class="grid text-center">
+	    <!--<a title="IRSET" href="http://www.irset.org"><img src="/bundles/peppsy/img/logos/logotypeIrset.gif" alt="IRSET" width=75 /></a>-->
+        <a title="INSERM" href="http://www.inserm.fr"><img src="img/inserm.gif" alt="INSERM" width=115 />
+        <a title="IRSET" href="http://www.irset.fr"><img src="img/logo_irset.jpg" alt="IRSET" width=115 />
+        <a title="FRM" href="http://www.frm.fr"><img src="img/logo_frm.gif" alt="FRM" width=75 />
+        <a title="ANSES" href="http://www.anses.fr"><img src="img/anses_logo.jpg" alt="ANSES" width=55 />
+	    <a title="Biogenouest" href="http://www.biogenouest.org"><img src="img/logo_biogenouest.jpg" alt="Biogenouest" width=75 height=57 /></a>
+	    <a title="IRISA" href="http://www.irisa.fr"><img src="img/irisa.png" alt="IRISA" width=120 height=29 /></a>
+	    <a title="INRIA" href="http://www.inria.fr/"><img src="img/logoINRIA.gif" alt="INRIA" width=105 height=44 /></a>
+	    <a title="CNRS" href="http://www.cnrs.fr/"><img src="img/cnrs.jpg" alt="CNRS" width=56 height=56 /></a>
+	    <a title="Rennes 1 University" href="http://www.univ-rennes1.fr/"><img src="img/univrennes1.jpg" alt="Université de Rennes 1" width=128 height=52 /></a>
+	    <a title="Region Bretagne" href="http://www.bretagne.fr/"><img src="img/region_bretagne.gif" alt="Région Bretagne" width=57 height=58 /></a>
+            <a title="FEDER" href="#"><img src="img/feder.jpg" alt="GIS-IBiSA" width=75 height=40 /></a>
+	    <br/>
+    </div>
+					<div id="footer">
+            	
+                
+                			<div class="grids">
+                                <div class="grid-5 grid text-center">
+                                    <p>&copy; Genouest - IRSET 
+                                </div>
+                                <div class="grid-6 grid text-center">
+                                    <p>Copyright 2014-2019 Genouest</p>
+                                </div>
+                                
+                                <div class="grid-5 grid text-center">
+                                  <p>Contact : support@genouest.org
+                                </div>
+                                
+                           </div><!--end of grids-->
+                   </div><!--end of footer-->
+		   </div><!--end of wrapper-->
+    
+    
+        	<script type="text/javascript"> <!--Outdated browsers warning/message and link to Browser-Update. Comment or delete it if you don´t want to use it-->
+						var $buoop = {} 
+						$buoop.ol = window.onload; 
+						window.onload=function(){ 
+						 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+						 var e = document.createElement("script"); 
+						 e.setAttribute("type", "text/javascript"); 
+						 e.setAttribute("src", "http://browser-update.org/update.js"); 
+						 document.body.appendChild(e); 
+						} 
+			</script> 
+                        
+			 <script type="text/javascript">  <!--Javascript for Tabs by Sohtanaka, include it on pages where you use tabs, else delete it-->                     
+                        $(document).ready(function() {
+							
+							 //When page loads...
+							 $(".tab_content").hide(); //Hide all content
+							 $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+							 $(".tab_content:first").show(); //Show first tab content
+							
+							 //On Click Event
+							 $("ul.tabs li").click(function() {
+							
+							  $("ul.tabs li").removeClass("active"); //Remove any "active" class
+							  $(this).addClass("active"); //Add "active" class to selected tab
+							  $(".tab_content").hide(); //Hide all tab content
+							
+							  var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+							  $(activeTab).fadeIn(); //Fade in the active ID content
+							  return false;
+							 });
+							
+							});
+			</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<script type="text/ng-template" id="lofInfo">
+<div class="container" style="width: auto;">
+  <div class="row">
+    <h2>Log job n° {{ngDialogData.id}}</h2>
+    <ul ng-repeat="log in ngDialogData.stderr.split('\n')">
+    	<li>{{log}}</li>
+    </ul>
+  
+</div>
+      
+</script>
+
+
+
+
+
+
+<h3>Runnings jobs</h3>
+<div class="well">
+  <p>Running jobs</p>
+</div>
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+      <th>Job id</th>
+      <th>Job Name</th>
+      <th>Created</th>
+      <th>Tool</th>
+      <th>Parameters</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    <tr ng-repeat="job in jobs">
+        <td>{{job.id}}</td>
+        <td>{{job.name}}</td>
+        <td>{{convert_timestamp_to_date(job.id)}}</td>
+        <td>{{job.tool}}</td>
+        <td>{{job.arguments}}</td>
+        <td>
+        	<div ng-if="job.status == 'running'" class="progress">
+			  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="100"
+			  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+			    Running
+			  </div>
+			</div>
+			<div ng-if="job.status == 'success'" class="progress">
+			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100"
+			  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+			    Success
+			  </div>
+			</div>
+			<div ng-if="job.status == 'error'" class="progress">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100"
+			  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+			    Error
+			  </div>
+			</div>
+			<div ng-if="job.status == 'pending'" class="progress">
+			  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"
+			  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+			    Pending
+			  </div>
+			</div>
+			<div ng-if="job.status == 'creating'" class="progress">
+			  <div class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="100"
+			  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+			    Creating
+			  </div>
+			</div>
+        </td>
+        <td><a href="" ng-click="show_result(job)"><i class="fa fa-eye" aria-hidden="true"></i></a> <a ><i class="fa fa-file-o" aria-hidden="true"></i></a> <a href="" ng-click="show_info(job)"><i class="fa fa-info-circle" aria-hidden="true"></i></a>   <a href="" ng-click="del_job(job)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+    </tr>
+</table>

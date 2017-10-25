@@ -1,0 +1,24 @@
+{
+  "author": "AngularUI Team",
+  "name": "angular-ui-scrollpoint",
+  "homepage": "https://github.com/angular-ui/ui-scrollpoint",
+  "main": "./dist/scrollpoint.js",
+  "license": "MIT",
+  "dependencies": {
+    "angular": ">= 1.0.5"
+  },
+  "devDependencies": {
+    "angular-mocks": ">=1.0.5",
+    "jquery": ">=1.6"
+  },
+  "version": "1.0.1",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "7b1dc9c8a693e4cafa7dfdacb5917eb565dfead1"
+  },
+  "_source": "git://github.com/angular-ui/ui-scrollpoint.git",
+  "_target": "*",
+  "_originalSource": "angular-ui-scrollpoint"
+}

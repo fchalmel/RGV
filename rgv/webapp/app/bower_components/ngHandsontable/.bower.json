@@ -1,0 +1,43 @@
+{
+  "name": "ngHandsontable",
+  "dependencies": {
+    "angular": "~1.5.0",
+    "handsontable": "~0.28.4"
+  },
+  "homepage": "https://github.com/handsontable/ngHandsontable",
+  "authors": [
+    "Handsoncode",
+    "Handsoncode <hello@handsontable.com>"
+  ],
+  "description": "AngularJS directive for Handsontable",
+  "main": "dist/ngHandsontable.js",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "handsontable",
+    "datagrid",
+    "grid",
+    "table"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "demo",
+    "node_modules",
+    "src",
+    "test",
+    "tests"
+  ],
+  "version": "0.13.0",
+  "_release": "0.13.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.13.0",
+    "commit": "fd4ea8e98928310e2b85607b24de46d683f2d5b1"
+  },
+  "_source": "https://github.com/handsontable/ngHandsontable.git",
+  "_target": "^0.13.0",
+  "_originalSource": "ngHandsontable",
+  "_direct": true
+}

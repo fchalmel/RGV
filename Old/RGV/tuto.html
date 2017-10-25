@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr"><!-- use class="debug" here if you develope a template and want to check-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+   	<!-- some meta tags, important for SEO"--> 
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="robots" content="index,follow" />
+	
+	<title> The ReproGenomics Viewer</title>
+			
+            
+            <link rel="stylesheet" href="css/inuit.css" />
+            <link rel="stylesheet" href="css/fluid-grid16-1100px.css" />
+            <link rel="stylesheet" href="css/eve-styles.css" />
+            
+            <script src="js/respond-min.js" type="text/javascript"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+            <script>window.jQuery || document.write('<script src="scripts/jquery164min.js">\x3C/script>')</script><!--local fallback for JQuery-->
+            <script type="text/javascript">
+				function switchInfoPerso0()
+				{
+				divInfo = document.getElementById('divacacher0');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacher00');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso1()
+				{
+				divInfo = document.getElementById('divacacher1');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacher11');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso2()
+				{
+				divInfo = document.getElementById('divacacher2');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacher22');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacher222');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				}
+				function switchInfoPerso3()
+				{
+				divInfo = document.getElementById('divacacher3');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacher33');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				
+				}
+				function switchInfoPerso4()
+				{
+				divInfo = document.getElementById('divacacher4');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				divInfo = document.getElementById('divacacher44');
+				if (divInfo.style.display == 'none')
+				divInfo.style.display = 'block';
+				else
+				divInfo.style.display = 'none';
+				
+				}
+			</script>
+				  
+                  <!--Hide the hr img because of ugly borders in IE7. You can change the color of border-top to display a line -->
+                  <!--[if lte IE 7]>
+                    	<style>
+                    		hr { display:block; height:1px; border:0; border-top:1px solid #fff; margin:1em 0; padding:0; }
+                            .grid-4{ width:22% }
+                        </style>
+                    <![endif]-->
+
+</head>
+
+<!--===============================================================  Logo, social and menu =====================================================================================--> 
+<body>
+	<div class="wrapper">	
+                     <a href="index.html" id="logo"><img src="img/logo.png" alt="something" />
+                      <h1 class="accessibility">RGV, the ReproGenomic Viewer</h1></a>
+
+                    <ul id="nav" class="main">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tools.html">Toolbox</a></li>
+                		<li><a href="project.html">RGV Content</a></li>
+                        <li><a href="tuto.html"  class="active">Tutorial</a></li>
+                        <li><a href="news.html" >News</a></li>
+                        <li><a href="publication.html">Publications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                        
+        </div><!--end of wrapper div--> 
+           
+	<div class="clear"></div>    
+<!--===============================================================  Intro =====================================================================================--> 
+	<div class="wrapper">
+ 		<div class="grids">
+ 		 <div class="grid-16 grid intro grey">
+                 	<div style="width:90%;float:left;">
+                    	<h5><a href="javascript: switchInfoPerso0();">RGV basic usage</a></h5>
+					</div>
+                    	<div id="divacacher0" class="grid-6" style="display: none;">
+		                    <h6>Displaying information about specific gene</h6>
+		                    <ul>
+		                    	<li align="justify"><b>Step 1 - </b>Enter gene name or synonym in the search bar in RGV home page and validate by clicking on "go" button.<br><font  size="2pt">Valid names include gene symbol and synonyms, transcript IDs (Ensembl, RefSeq) and gene IDs (NCBI, Entrez Gene, Ensembl) and are not case sensitive.</font></li>
+		                    	<li align="justify"><b>Step 2 - </b>In the result page, corresponding entries from all species indexed in RGV are proposed.<br><font  size="2pt">As RGV integrates information from NCBI and Ensembl, genes can be identified in duplicate. Click on the information link to have a direct access to the entry of the corresponding database.</font> </li>
+		                    	<li align="justify"><b>Step 3 - </b>Select your entry in the Chromosome + Link field.</li>
+		                    </ul>
+		                    
+		                    <h6>Crosslinking RGV</h6>
+		                    <ul>
+		                    <li align="justify">RGV has a generic URL that allows you to access the results page directly.</li>
+		                    <li align="justify">Customize the URL with gene name and refine your query with a precise species if necessary.<br><font  size="2pt">Valid names include gene symbol and synonyms, transcript IDs (Ensembl, RefSeq) and gene IDs (NCBI, Entrez Gene, Ensembl). Valid genomes include generic species names (Human, Mouse, Rat, Dog..) as well as precise genome releases (hg19, mm10...).</font> </li>
+		                    </ul>
+		                   
+                    	</div>
+                    	<div id="divacacher00" class="grid-10" style="display: none;">
+                    		<br><br><br>
+                    		<video width="400" height="222" controls="controls">
+								  <source src="video/RGV_03.mp4" type="video/mp4" />
+							</video><br><br><br><br><br><br><br>
+                    		<video width="400" height="222" controls="controls">
+								  <source src="video/RGV_04.mp4" type="video/mp4" />
+							</video>
+                    	</div>                  
+                 </div><!--end of slogan div-->
+                 
+                 
+                 
+                 
+                 
+ 		 <div class="grid-16 grid intro grey">
+                 	<div style="width:90%;float:left;">
+                    	<h5><a href="javascript: switchInfoPerso1();">RGV genome browser (JBrowse)</a></h5>
+					</div>
+                    	<div id="divacacher1" class="grid-6" style="display: none;">
+		                    <h6>Display specific gene</h6>
+		                    <ul>
+		                    	<li align="justify"><b>Step 1 - </b>Enter gene name in the search bar and validate.<br><font  size="2pt">Valid names include gene symbol and synonyms and are not case sensitive.</font></li>
+		                    	<li align="justify"><b>Step 2 - </b>In a result windows, choose your displayed annotation. Click on "Show" or "Go" to display your gene.<font  size="2pt">As RGV integrates information from NCBI and Ensembl, genes can be identified in duplicate.</font> </li>
+		                    	<li align="justify"><b>Step 3 - </b>To have an overview of your gene region, use the zoom-in or zoom-out button. </li>
+		                    </ul>
+		                    
+		                    <h6>Selecting tracks</h6>
+		                    <ul>
+		                    <li align="justify"><b>Step 1 - </b>Use the left menu "Available tracks" to choose your tracks. To show the different tracks, use the collapse menu.</li>
+		                    <li align="justify"><b>Step 2 - </b>Drag and drop selected feature, to reorganized displayed tracks, .<br><font  size="2pt">Note that the “Available Tracks” menu is organized so that the same tracks could have been identified by the “Technologies” tab, by the “Biological topics” tab, by "Species" tab or by "Publications" tab.</font></li>
+		                    <li align="justify"><b>Step 3 - </b>To delete a track, click on "close" button near of name</li>
+		                    </ul>
+		                    
+		                    <h6>Tracks information</h6>
+		                    <ul>
+		                    <li align="justify"><b>Step 1 - </b>For genes or variant tracks, you can display an information box by clicking on selected gene. A link to PubMed and ClinVar/GWAS database are available for variant tracks.</li>
+		                    <li align="justify"><b>Step 2 - </b>For expression tracks, the expression value appear when cursor browse the track.</li>
+		                    <li align="justify"><b>Step 3 - </b>To display information box of expression tracks, click on down arrow near of the name and select "About this track". For each tracks, a PubMed link to associated publication is available.</li>
+		                    </ul>
+		                    
+		                    <h6>Import your data on genome browser</h6>
+		                    <ul>
+		                    <li align="justify"><b>Step 1 - </b>Click on File > Open on the head menu.</li>
+		                    <li align="justify"><b>Step 2 - </b>Files could be opened by drag and drop file in the dedicated area. Files could be also opened by clicking on select files button or by copy / paste a URL.</li>
+		                    <li align="justify"><b>Step 3 - </b>If the file extension is not recognized, pleased defined it in Files and URLs section.<br><font  size="2pt">File accepted are : GTF, GFF3, BigWig, Bam, Bamindex or VCF.</font></li>
+		                    <li align="justify"><b>Step 4 - </b>Configure the display track.  For an advance users, use edit configuration button.</li>
+		                    </ul>
+                    	</div>
+                    	<div id="divacacher11" class="grid-10" style="display: none;">
+                    	<br><br><br><br>
+                    		<video width="400" height="222" controls="controls">
+								  <source src="video/RGV_05.mp4" type="video/mp4" />
+							</video><br><br><br><br>
+                    		<video width="400" height="222" controls="controls">
+								  <source src="video/RGV_06.mp4" type="video/mp4" />
+							</video><br><br><br><br><br>
+                    		<video width="400" height="222" controls="controls">
+								  <source src="video/RGV_07.mp4" type="video/mp4" />
+							</video><br><br><br><br>
+                    		<video width="400" height="222" controls="controls">
+								  <source src="video/RGV_08.mp4" type="video/mp4" />
+							</video>
+                    	</div>                  
+                 </div><!--end of slogan div-->
+                 
+                 
+                 
+                 
+                 <div class="grid-16 grid intro grey">
+                 	<div style="width:90%;float:left;">
+                    	<h5><a href="javascript: switchInfoPerso2();">RGV working environment (Galaxy)</a></h5>
+					</div>
+                    	<div id="divacacher2" class="grid-6" style="display: none;">
+		                    <h6>Login</h6>
+		                    <ul>
+		                    	<li align="justify"><b>Step 1 - </b> In order to have access to files history, finished job alert and more, you have to register to Galaxy. For that select register in user tab.</li>
+		                    	<li align="justify"><b>Step 2 - </b>Fill out the form</li>
+		                    	<li align="justify"><b>Step 3 - </b>Login in user tab.</li>
+		                    </ul>
+		                    
+		                    
+		                    <h6>Import files</h6>
+		                    <ul>
+		                    <li align="justify"><b>Step 1 - </b>Select import file <img src="images/import.png"></li>
+		                    <li align="justify"><b>Step 2 - </b>Drag and drop, paste a URL or use select file button to choose your file. All extension files are automatically detected by Galaxy. </li>
+		                    <li align="justify"><b>Step 3 - </b>Click on start to begin. The importation may take some time in function of your file size.</li>
+		                    </ul>
+		                    
+		                    <h6>RGV data processing</h6>
+		                    <ul>
+		                    <li align="justify"><b>Step 1 - </b>To convert your files for RGV genome browser, select RGV data processing in RGV tools tab.</li>
+		                    <li align="justify"><b>Step 2 - </b>Choose your file. By default, Galaxy select one of compatible file uploaded.<br><font  size="2pt"> RGV data processing convert bedgraph, BigWig, Wig and Bam files from specific genome release to a BigWig file from another genome release. </font></li>
+		                    <li align="justify"><b>Step 3 - </b>Choose your input genome release.<br><font  size="2pt"> Another release available soon.</font></li>
+		                    <li align="justify"><b>Step 4 - </b>Choose your output genome release. Select execute.<br><font  size="2pt"> During conversion a new tab on your right appear. The color of this tab show you the state of your job. Green : complet, Yellow : working, Red : error.<br>Only genome release indexed in RGV are available.</font></li>
+		                    <li align="justify"><b>Step 5 - </b>Working done : download file by selecting download button in the process tab.</li>
+		                    </ul>
+		                    
+		                    <h6>RGV alignment tool</h6>
+		                    <ul>
+		                    <li>UNDER CONSTRUCTION</li>
+		                    </ul>
+		                    
+		                    
+                    	</div>
+                    	<div id="divacacher22" class="grid-10" style="display: none;">
+                    		<video width="400" height="222" controls="controls">
+								  <source src="video/RGV_10.mp4" type="video/mp4" />
+							</video>
+							<video width="400" height="222" controls="controls">
+								  <source src="video/RGV_9.mp4" type="video/mp4" />
+							</video><br><br><br><br>
+							<video width="400" height="222" controls="controls">
+								  <source src="video/RGV_11.mp4" type="video/mp4" />
+							</video>
+                    		
+		                </div>
+                    	       
+                 </div><!--end of slogan div-->
+                
+ 
+          </div><!--end of div grids-->
+	
+    </div><!--end of div wrapper-->    
+
+
+<!--===============================================================  Footer =====================================================================================-->  
+		<div class="wrapper">
+			<div id="logos" class="grid text-center">
+	    <!--<a title="IRSET" href="http://www.irset.org"><img src="/bundles/peppsy/img/logos/logotypeIrset.gif" alt="IRSET" width=75 /></a>-->
+        <a title="INSERM" href="http://www.inserm.fr"><img src="img/inserm.gif" alt="INSERM" width=115 />
+        <a title="IRSET" href="http://www.irset.fr"><img src="img/logo_irset.jpg" alt="IRSET" width=115 />
+        <a title="FRM" href="http://www.frm.fr"><img src="img/logo_frm.gif" alt="FRM" width=75 />
+        <a title="ANSES" href="http://www.anses.fr"><img src="img/anses_logo.jpg" alt="ANSES" width=55 />
+	    <a title="Biogenouest" href="http://www.biogenouest.org"><img src="img/logo_biogenouest.jpg" alt="Biogenouest" width=75 height=57 /></a>
+	    <a title="IRISA" href="http://www.irisa.fr"><img src="img/irisa.png" alt="IRISA" width=120 height=29 /></a>
+	    <a title="INRIA" href="http://www.inria.fr/"><img src="img/logoINRIA.gif" alt="INRIA" width=105 height=44 /></a>
+	    <a title="CNRS" href="http://www.cnrs.fr/"><img src="img/cnrs.jpg" alt="CNRS" width=56 height=56 /></a>
+	    <a title="Rennes 1 University" href="http://www.univ-rennes1.fr/"><img src="img/univrennes1.jpg" alt="Université de Rennes 1" width=128 height=52 /></a>
+	    <a title="Region Bretagne" href="http://www.bretagne.fr/"><img src="img/region_bretagne.gif" alt="Région Bretagne" width=57 height=58 /></a>
+            <a title="FEDER" href="#"><img src="img/feder.jpg" alt="GIS-IBiSA" width=75 height=40 /></a>
+	    <br/>
+    </div>
+    		<div id="footer">
+            	
+                
+                			<div class="grids">
+                                <div class="grid-5 grid text-center">
+                                    <p>&copy; Genouest - IRSET 
+                                </div>
+                                <div class="grid-6 grid text-center">
+                                    <p>Copyright 2014-2019 Genouest</p>
+                                </div>
+                                
+                                <div class="grid-5 grid text-center">
+                                  <p>Contact : support@genouest.org
+                                </div>
+                                
+                           </div><!--end of grids-->
+                   </div><!--end of footer-->
+		   </div><!--end of wrapper-->
+    
+    
+        	<script type="text/javascript"> <!--Outdated browsers warning/message and link to Browser-Update. Comment or delete it if you don´t want to use it-->
+						var $buoop = {} 
+						$buoop.ol = window.onload; 
+						window.onload=function(){ 
+						 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+						 var e = document.createElement("script"); 
+						 e.setAttribute("type", "text/javascript"); 
+						 e.setAttribute("src", "http://browser-update.org/update.js"); 
+						 document.body.appendChild(e); 
+						} 
+			</script> 
+                        
+			 <script type="text/javascript">  <!--Javascript for Tabs by Sohtanaka, include it on pages where you use tabs, else delete it-->                     
+                        $(document).ready(function() {
+							
+							 //When page loads...
+							 $(".tab_content").hide(); //Hide all content
+							 $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+							 $(".tab_content:first").show(); //Show first tab content
+							
+							 //On Click Event
+							 $("ul.tabs li").click(function() {
+							
+							  $("ul.tabs li").removeClass("active"); //Remove any "active" class
+							  $(this).addClass("active"); //Add "active" class to selected tab
+							  $(".tab_content").hide(); //Hide all tab content
+							
+							  var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+							  $(activeTab).fadeIn(); //Fade in the active ID content
+							  return false;
+							 });
+							
+							});
+			</script>
+</body>
+</html>

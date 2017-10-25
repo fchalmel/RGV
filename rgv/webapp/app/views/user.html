@@ -1,0 +1,172 @@
+
+<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- Begin User profile header -->
+
+<h2>{{user.first_name}} {{user.last_name}} profil</h2>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+        <!-- Begin Profile Tab-->
+            <div class="panel-heading">
+                <i class="fa fa-info-circle fa-fw"></i> Profil information
+            </div>
+            <div ng-if="user.id == auth_user.id && user.id !='demo@toxsign.genouest.org'" class="tab-pane fade in" >
+                <form class="form-horizontal"  >
+                  <fieldset>
+
+                  <!-- Form Name -->
+
+                  <!-- Text input-->
+                  <div class="form-group" style="margin-top:15px;">
+                    <label class="col-md-4 control-label" for="fn">First name</label>  
+                    <div class="col-md-4">
+                    <input ng-model="user.first_name" id="fn" name="fn" type="text" placeholder="first name" class="form-control input-md" required="">
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="ln">Last name</label>  
+                    <div class="col-md-4">
+                    <input ng-model="user.last_name" id="ln" name="ln" type="text" placeholder="last name" class="form-control input-md" required="">
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="lab">Institute / Laboratory</label>  
+                    <div class="col-md-4">
+                    <input ng-model="user.laboratory" id="lab" name="lab" type="text" placeholder="Institute / Laboratory" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Email</label>  
+                    <div class="col-md-4">
+                    <input ng-model="user.id" id="email" name="email" type="text" placeholder="email" class="form-control input-md" required="">
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="add1">Address</label>  
+                    <div class="col-md-4">
+                    <input ng-model="user.address" id="add1" name="add1" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="ctry">Country</label>  
+                    <div class="col-md-4">
+                    <input ng-model="user.country" id="ctry" name="ctry" type="text" placeholder="Country" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="submit"></label>
+                    <div class="col-md-4">
+                      <button ng-if="user.id == auth_user.id && user.id !='demo@toxsign.genouest.org'" ng-click="update()" id="submit" name="submit" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+                  </fieldset>
+                </form>
+
+               
+            </div>
+            <div ng-if="user.id != auth_user.id || user.id =='demo@toxsign.genouest.org'" class="tab-pane fade in" >
+                <form class="form-horizontal"  >
+                  <fieldset>
+
+                  <!-- Form Name -->
+
+                  <!-- Text input-->
+                  <div class="form-group" style="margin-top:15px;">
+                    <label class="col-md-4 control-label" for="fn">First name</label>  
+                    <div class="col-md-4">
+                    <p> {{user.first_name}}</p>
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="ln">Last name</label>  
+                    <div class="col-md-4">
+                    <p> {{user.last_name}}</p>
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="lab">Institute / Laboratory</label>  
+                    <div class="col-md-4">
+                    <p> {{user.laboratory}}</p>
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Email</label>  
+                    <div class="col-md-4">
+                    <p> {{user.id}}</p>
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="add1">Address</label>  
+                    <div class="col-md-4">
+                    <p> {{user.address}}</p>
+                      
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="ctry">Country</label>  
+                    <div class="col-md-4">
+                    <p> {{user.country}}</p>
+                      
+                    </div>
+                  </div>
+                  </fieldset>
+                </form>
+
+            </div>
+<!-- End Profile Tab-->
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <div class="span3 well">
+                <center>
+                    <a href=""><img src="images/default-profil.png" name="aboutme" width="130" height="140" class="img-circle"></a>
+                    <h3>{{user.first_name}} {{user.last_name}}</h3>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Help
+                </div>
+                <div class="panel-body">
+                    <p>Information about how to search TOXsIgN, understand search results and how to submit data can be found in our <a href="#/help">Help</a>  section.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

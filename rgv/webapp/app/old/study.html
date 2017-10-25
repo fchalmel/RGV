@@ -1,0 +1,545 @@
+<script src="scripts/AddHeader.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="styles/sb-admin-2.css" rel="stylesheet">
+<link rel="stylesheet" href="styles/panel.css">
+
+<script type="text/ng-template" id="interventionalId">
+    <h1>Interventional study</h1>
+    <p></p>
+</script>
+<script type="text/ng-template" id="observationalId">
+    <h1>Observational study</h1>
+    <p></p>
+</script>
+
+<div class="row" id="selector" style="display: block;">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          Select your study type
+      </div>
+      <div class="panel-body">
+
+        <div class="row">
+          <div class="col-md-6">
+            <div style="text-decoration: none;color: black;">
+              <div class="panel panel-primary text-center no-boder bg-color-blue ">
+                  <div class="panel-body ">
+                      A study in which participants are assigned to receive one or more interventions (or no intervention) so that researchers can evaluate the effects of the interventions on biomedical or health-related outcomes. The assignments are determined by the study protocol. Participants may receive diagnostic, therapeutic, or other types of interventions.
+                  </div>
+                    <div class="panel-footer back-footer-blue">
+                        <button class="btn btn-info" ng-click="display_table('interventional')">Interventional study</button>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div style="text-decoration: none;color: black;">
+                <div class="panel panel-primary text-center no-boder bg-color-blue ">
+                    <div class="panel-body ">
+                        A biomedical or behavioral research study of human subjects designed to assess risk factors for disease development or progression, assess natural history of risk factors or disease, identify variations based on geographic or personal characteristics (such as race/ethnicity or gender), track temporal trends, or describe patterns of clinical care and treatment in absence of specific study-mandated interventions.
+                    </div>
+                      <div class="panel-footer back-footer-blue">
+                          <button class="btn btn-info" ng-click="display_table('observational')">Observational study</button>
+                      </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" id="interventional" style="display: none;">
+  <div class='col-lg-8'>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        New interventional study
+      </div>
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12 ">
+                <label class="control-label"  for="description">Title <sup>*</sup></label>
+                <input ng-model="study.interventional_title" class="form-control" id="title"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ">
+                <label class="control-label"  for="description">Description <sup>*</sup></label>
+                <textarea ng-model="study.interventional_description" class="form-control" id="description" placeholder="200-1000 words max"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ">
+                <label class="control-label"  for="description">Design</label>
+                <textarea ng-model="study.interventional_design" class="form-control" id="description" placeholder="200-1000 words max"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ">
+                <label class="control-label"  for="description">Result(s)</label>
+                <textarea ng-model="study.interventional_results" class="form-control" id="description" placeholder="200-1000 words max"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ">
+                <label class="control-label"  for="description">Additionnal information</label>
+                <textarea ng-model="study.interventional_information" class="form-control" id="description" placeholder="50-500 words max" maxlength="5000" ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ">
+                <label class="control-label"  for="description">Experimental type <sup>*</sup></label>
+                <select ng-model="study.interventional_experimental_type" class="form-control" placeholder="Please select your experimental type" id="experimental_type">
+                    <option value="" disabled selected>Select your experimental type</option>
+                    <option value="in_vivo">In vivo (e.g. in utero)</option>
+                    <option value="ex_vivo">Ex vivo (e.g. organotypic culture, xenograft)</option>
+                    <option value="in_vitro">In vitro (e.g. cell line, primary cell, yeast assay)</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 ">
+                <label class="control-label"  for="description">Organism <sup>*</sup></label>
+                <input ng-if="study.interventional_experimental_type == 'in_vivo'" id="organism_vivo" type="text" ng-model="interventional_vivo.organism"  placeholder="Species"
+                               typeahead-min-length="4" typeahead-on-select="selectorga($item, $model,
+                               $label)" typeahead="item.name for item in get_onto($viewValue,'species.tab')" typeahead-loading="loadingOrganism"
+                               class="form-control" >
+                <input ng-if="study.interventional_experimental_type == 'ex_vivo'" id="organism_vivo" type="text" ng-model="interventional_exvivo.organism"  placeholder="Species"
+                               typeahead-min-length="4" typeahead-on-select="selectorga($item, $model,
+                               $label)" typeahead="item.name for item in get_onto($viewValue,'species.tab')" typeahead-loading="loadingOrganism"
+                               class="form-control" >
+                <input ng-if="study.interventional_experimental_type == 'in_vitro'" id="organism_vivo" type="text" ng-model="interventional_vitro.organism"  placeholder="Species"
+                               typeahead-min-length="4" typeahead-on-select="selectorga($item, $model,
+                               $label)" typeahead="item.name for item in get_onto($viewValue,'species.tab')" typeahead-loading="loadingOrganism"
+                               class="form-control" >
+                <input ng-if="study.interventional_experimental_type == 'other'" id="organism_vivo" type="text" ng-model="interventional_other.organism"  placeholder="Species"
+                               typeahead-min-length="4" typeahead-on-select="selectorga($item, $model,
+                               $label)" typeahead="item.name for item in get_onto($viewValue,'species.tab')" typeahead-loading="loadingOrganism"
+                               class="form-control" >
+            </div>
+            <div class="col-md-4 ">
+                <label class="control-label"  for="description">Sex <sup>*</sup></label>
+                <select ng-if="study.interventional_experimental_type == 'in_vivo'" ng-model="interventional_vivo.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="male">Male</option>
+                    <option value="ex_vivo">Female</option>
+                    <option value="both">Both</option>
+                    <option value="unknown">Unknown</option>
+                    <option value="other">Other</option>
+                    <option value="na">NA</option>
+                </select>
+                <select ng-if="study.interventional_experimental_type == 'ex_vivo'" ng-model="interventional_exvivo.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="male">Male</option>
+                    <option value="ex_vivo">Female</option>
+                    <option value="both">Both</option>
+                    <option value="unknown">Unknown</option>
+                    <option value="other">Other</option>
+                    <option value="na">NA</option>
+                </select>
+                <select ng-if="study.interventional_experimental_type == 'in_vitro'" ng-model="interventional_vitro.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="male">Male</option>
+                    <option value="ex_vivo">Female</option>
+                    <option value="both">Both</option>
+                    <option value="unknown">Unknown</option>
+                    <option value="other">Other</option>
+                    <option value="na">NA</option>
+                </select>
+                <select ng-if="study.interventional_experimental_type == 'other'" ng-model="interventional_other.sex" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="male">Male</option>
+                    <option value="ex_vivo">Female</option>
+                    <option value="both">Both</option>
+                    <option value="unknown">Unknown</option>
+                    <option value="other">Other</option>
+                    <option value="na">NA</option>
+                </select>
+            </div>
+            <div class="col-md-4 ">
+                <label class="control-label"  for="description">Developmental stage</label>
+                <select ng-if="study.interventional_experimental_type == 'in_vivo'" ng-model="interventional_vivo.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="Fetal">Fetal</option>
+                    <option value="Embryonic">Embryonic</option>
+                    <option value="Larva">Larva</option>
+                    <option value="Neo-natal">Neo-natal</option>
+                    <option value="Juvenile">Juvenile</option>
+                    <option value="Pre-pubertal">Pre-pubertal</option>
+                    <option value="Pubertal">Pubertal</option>
+                    <option value="Adulthood">Adulthood</option>
+                    <option value="Elderly">Elderly</option>
+                </select>
+                <select ng-if="study.interventional_experimental_type == 'ex_vivo'" ng-model="interventional_exvivo.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="Fetal">Fetal</option>
+                    <option value="Embryonic">Embryonic</option>
+                    <option value="Larva">Larva</option>
+                    <option value="Neo-natal">Neo-natal</option>
+                    <option value="Juvenile">Juvenile</option>
+                    <option value="Pre-pubertal">Pre-pubertal</option>
+                    <option value="Pubertal">Pubertal</option>
+                    <option value="Adulthood">Adulthood</option>
+                    <option value="Elderly">Elderly</option>
+                </select>
+                <select ng-if="study.interventional_experimental_type == 'other'" ng-model="interventional_other.devstage" class="form-control" id="sex_vivo" placeholder="Please select your organism sex">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="Fetal">Fetal</option>
+                    <option value="Embryonic">Embryonic</option>
+                    <option value="Larva">Larva</option>
+                    <option value="Neo-natal">Neo-natal</option>
+                    <option value="Juvenile">Juvenile</option>
+                    <option value="Pre-pubertal">Pre-pubertal</option>
+                    <option value="Pubertal">Pubertal</option>
+                    <option value="Adulthood">Adulthood</option>
+                    <option value="Elderly">Elderly</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 ">
+                <label class="control-label"  for="description">Tissue</label>
+                <input ng-if="study.interventional_experimental_type == 'in_vitro'" id="tissue_vivo" type="text" ng-model="interventional_vitro.tissue" placeholder="Tissue"
+                                          typeahead-min-length="4" typeahead-on-select="selecttissue($item, $model,
+                                          $label)" typeahead="item.name for item in get_onto($viewValue,'tissue.tab')" typeahead-loading="loadingCellLine"
+                                          class="form-control">
+                <input ng-if="study.interventional_experimental_type == 'ex_vivo'" id="tissue_vivo" type="text" ng-model="interventional_exvivo.tissue" placeholder="Tissue"
+                                          typeahead-min-length="4" typeahead-on-select="selecttissue($item, $model,
+                                          $label)" typeahead="item.name for item in get_onto($viewValue,'tissue.tab')" typeahead-loading="loadingCellLine"
+                                          class="form-control">
+                <input ng-if="study.interventional_experimental_type == 'other'" id="tissue_vivo" type="text" ng-model="interventional_other.tissue" placeholder="Tissue"
+                                          typeahead-min-length="4" typeahead-on-select="selecttissue($item, $model,
+                                          $label)" typeahead="item.name for item in get_onto($viewValue,'tissue.tab')" typeahead-loading="loadingCellLine"
+                                          class="form-control">
+            </div>
+            <div class="col-md-4 ">
+                <label class="control-label"  for="description">Generation</label>
+                <select ng-if="study.interventional_experimental_type == 'in_vitro'" ng-model="interventional_vitro.generation" class="form-control" id="generation">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="f0">F0</option>
+                    <option value="f1">F1</option>
+                    <option value="f2">F2</option>
+                    <option value="f3">F3</option>
+                    <option value="f4">F4</option>
+                    <option value="f5">F5</option>
+                    <option value="f6">F6</option>
+                    <option value="f7">F7</option>
+                    <option value="f8">F8</option>
+                    <option value="f9">F9</option>
+                    <option value="f10">F10</option>
+                </select>
+                <select ng-if="study.interventional_experimental_type == 'ex_vivo'" ng-model="interventional_exvivo.generation" class="form-control" id="generation">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="f0">F0</option>
+                    <option value="f1">F1</option>
+                    <option value="f2">F2</option>
+                    <option value="f3">F3</option>
+                    <option value="f4">F4</option>
+                    <option value="f5">F5</option>
+                    <option value="f6">F6</option>
+                    <option value="f7">F7</option>
+                    <option value="f8">F8</option>
+                    <option value="f9">F9</option>
+                    <option value="f10">F10</option>
+                </select>
+                <select ng-if="study.interventional_experimental_type == 'other'" ng-model="interventional_other.generation" class="form-control" id="generation">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="f0">F0</option>
+                    <option value="f1">F1</option>
+                    <option value="f2">F2</option>
+                    <option value="f3">F3</option>
+                    <option value="f4">F4</option>
+                    <option value="f5">F5</option>
+                    <option value="f6">F6</option>
+                    <option value="f7">F7</option>
+                    <option value="f8">F8</option>
+                    <option value="f9">F9</option>
+                    <option value="f10">F10</option>
+                </select>
+            </div>
+            <div class="col-md-4 " ng-if="study.interventional_experimental_type == 'other' || interventional_experimental_type == 'in_vitro'">
+                <label class="control-label"  for="description">In vitro experiment type</label>
+                <select  ng-if="study.interventional_experimental_type == 'in_vitro'" ng-model="interventional_vitro.experimental" class="form-control" placeholder="Please select your experimental type" id="experimental_type">
+                    <option value="" disabled selected>Please select</option>
+                    <option value="cell_line">Cell line</option>
+                    <option value="primary_cell_culture">Primary cell culture</option>
+                    <option value="yeast_assay">Yeast assay</option>
+                    <option value="other">Other</option>
+                </select>
+                <select  ng-if="study.interventional_experimental_type == 'other'" ng-model="interventional_other.experimental" class="form-control" placeholder="Please select your experimental type" id="experimental_type" >
+                    <option value="" disabled selected>Please select</option>
+                    <option value="cell_line">Cell line</option>
+                    <option value="primary_cell_culture">Primary cell culture</option>
+                    <option value="yeast_assay">Yeast assay</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" ng-if="study.interventional_experimental_type == 'other' || study.interventional_experimental_type == 'in_vitro'">
+            <div class="col-md-4 " ng-if="interventional_vitro.experimental =='cell_line' || interventional_other.experimental =='cell_line'">
+                <label class="control-label"  for="description">Cell line </label>
+                <input ng-if="study.interventional_experimental_type == 'in_vitro'"  id="organism_vivo" type="text" ng-model="interventional_vitro.cell_line" placeholder="Cell Line" typeahead-min-length="4" typeahead-on-select="selectcell($item, $model,$label)" typeahead="item.name for item in get_onto($viewValue,'cell_line.tab')" typeahead-loading="loadingCellLine" class="form-control"/>
+                <input ng-if="study.interventional_experimental_type == 'other"  id="organism_vivo" type="text" ng-model="interventional_other.cell_line" placeholder="Cell Line" typeahead-min-length="4" typeahead-on-select="selectcell($item, $model,$label)" typeahead="item.name for item in get_onto($viewValue,'cell_line.tab')" typeahead-loading="loadingCellLine" class="form-control"/>
+            </div>
+            <div class="col-md-4" ng-if="interventional_vitro.experimental =='cell_line' || interventional_other.experimental =='cell_line'">
+                <label class="control-label"  for="description">Passage</label>
+                <input ng-if="study.interventional_experimental_type == 'in_vitro'" ng-model="interventional_vitro.passage" class="form-control" placeholder="Optionnal" id="passage"/>
+                <input ng-if="study.interventional_experimental_type == 'other'" ng-model="interventional_other.passage" class="form-control" placeholder="Optionnal" id="passage"/>
+            </div>
+        </div>
+        <div class="row" ng-if="study.interventional_experimental_type == 'other' || study.interventional_experimental_type == 'in_vitro'">
+            <div class="col-md-12 " ng-if="study.interventional_vitro.experimental =='primary_cell_culture' || study.interventional_other.experimental =='primary_cell_culture'">
+                <label class="control-label"  for="description">Cell name </label>
+                <input ng-if="study.interventional_experimental_type == 'in_vitro'" id="organism_vivo" type="text" ng-model="interventional_vitro.cell_name" placeholder="Cell"
+                            typeahead-min-length="4" typeahead-on-select="selectcell($item, $model,
+                            $label)" typeahead="item.name for item in get_onto($viewValue,'cell.tab')" typeahead-loading="loadingCellLine"
+                            class="form-control">
+                <input ng-if="study.interventional_experimental_type == 'other'" id="organism_vivo" type="text" ng-model="interventional_other.cell_name" placeholder="Cell"
+                            typeahead-min-length="4" typeahead-on-select="selectcell($item, $model,
+                            $label)" typeahead="item.name for item in get_onto($viewValue,'cell.tab')" typeahead-loading="loadingCellLine"
+                            class="form-control">
+            </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+      </div>
+    </div>
+  </div>
+  <!--#################################### END Main col  STUDIES INT  ##############################-->
+
+
+  <!--#################################### Study INT Secondary panel  ##############################-->
+  <!--  
+            ##########################  ############
+            #                        #  #          #
+            #       Project info     #  #          #
+            #                        #  #          #
+            ##########################  ############
+
+            ##########################  ############
+            #                        #  #          #
+            #       Study info INT   #  #    here  #
+            #                        #  #          #
+            ##########################  ############
+  -->
+  <div class='col-lg-4' id="{{study.id}}_secpanel">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="panel panel-success text-center no-boder" style="background-color: #93c54b;border-color: #ffffff;">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-success text-center no-boder" style="background-color: #93c54b;border-style: none;">
+                                <h3 style="color: white;">Project</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="control-label"  style="color: white;">ID</label>
+                                        <p style="color: white;">{{dataset.id}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label"  style="color: white;">Title</label>
+                                        <p style="color: white;">{{dataset.title}}</p>
+                                    </div>                
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="control-label"  style="color: white;">Desscription</label>
+                                        <p style="color: white;">{{dataset.description}}</p>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class ="row">
+        <div class="col-md-12">
+          <div  class="panel panel-default" style="margin-top:40px;">
+            <div class="panel-heading">
+                <a href="" ng-click="tableShowInt = ! tableShowInt">Import existing study</a>
+            </div>
+            <div class="panel-body" id="paneltable" ng-show="tableShowInt">
+              <table ng-table="conditionTable"  class="table table-bordered table-hover table-striped">
+                <tr ng-repeat="study in $data">
+                    <td data-title="'Title'">{{study.interventional_title}}</td>
+                    <td data-title="'Action'" style="text-align: center;"><a ng-click="select_cond(study)"><i class="fa fa-download"></i>Select</a></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:10px; ">
+        <div class="col-lg-12" ng-if="canUpdate('interventional')">
+            <ul class="list-inline pull-left">
+                <button type="btn" ng-click="study_add('interventional')" class="btn btn-primary btn-large ">Save and quit</button></li>
+            </ul>
+            <ul class="list-inline pull-right">
+                <li><button type="btn" ng-click="study_add_continue('interventional')" class="btn btn-primary btn-large ">Save and continue</button></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" id="observational" style="display: none;">
+  <div class='col-lg-8'>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        New observational study
+      </div>
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <label class="control-label"  for="description">Title <sup>*</sup></label>
+                <input class="form-control" ng-model="study.observational_title" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label class="control-label"  for="description">Description <sup>*</sup></label>
+                <textarea  ng-model="study.observational_description" class="form-control" id="description" placeholder="200-1000 words max" ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="control-label"  for="description">Design</label>
+                <textarea  ng-model="study.observational_overalldesign" class="form-control" id="description" placeholder="200-1000 words max" ></textarea>
+            </div>
+            <div class="col-md-6 ">
+                <label class="control-label"  for="description">Result(s)</label>
+                <textarea  ng-model="study.observational_results" class="form-control" id="description" placeholder="200-1000 words max" ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="control-label"  for="description">Organism <sup>*</sup></label>
+                <input class="form-control" id="organism_vivo" type="text" ng-model="study.observational_organism" placeholder="Species"
+                typeahead-min-length="4" typeahead-on-select="selectorga($item, $model,
+                $label)" typeahead="item.name for item in get_onto($viewValue,'species.tab')" typeahead-loading="loadingOrganism"
+                class="form-control" >
+            </div>
+            <div class="col-md-6 ">
+                <label class="control-label"  for="description">Population size</label>
+                <input ng-model="study.observational_population_size" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 ">
+                <label class="control-label"  for="description">Inclusion period</label>
+                <input ng-model="study.observational_inclusion_period" class="form-control">
+            </div>
+            <div class="col-md-4 ">
+                <label class="control-label"  for="description">Inclusion</label>
+                <input ng-model="study.observational_inclusion" class="form-control">
+            </div>
+            <div class="col-md-4 ">
+                <label class="control-label"  for="description">Exclusion</label>
+                <input ng-model="study.observational_exclusion" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="control-label"  for="description">Follow up</label>
+                <input ng-model="study.observational_followup" class="form-control">
+            </div>
+            <div class="col-md-6 ">
+                <label class="control-label"  for="description">Adjustments</label>
+                <input ng-model="study.observational_adjustment" class="form-control">
+            </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+          <label>Pubmed link(s)</label>
+          <div  class="row">
+              <div class="col-md-6 col-xs-6">
+                  <input ng-model="study.observational_pmid" class="form-control" id="PMID"/>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!--#################################### END Main col  STUDIES INT  ##############################-->
+
+
+  <!--#################################### Study INT Secondary panel  ##############################-->
+  <!--  
+            ##########################  ############
+            #                        #  #          #
+            #       Project info     #  #          #
+            #                        #  #          #
+            ##########################  ############
+
+            ##########################  ############
+            #                        #  #          #
+            #       Study info INT   #  #    here  #
+            #                        #  #          #
+            ##########################  ############
+  -->
+  <div class='col-lg-4' id="{{study.id}}_secpanel">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="panel panel-success text-center no-boder" style="background-color: #93c54b;border-color: #ffffff;">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-success text-center no-boder" style="background-color: #93c54b;border-style: none;">
+                                <h3 style="color: white;">Project</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="control-label"  style="color: white;">ID</label>
+                                        <p style="color: white;">{{dataset.id}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label"  style="color: white;">Title</label>
+                                        <p style="color: white;">{{dataset.title}}</p>
+                                    </div>                
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="control-label"  style="color: white;">Description</label>
+                                        <p style="color: white;">{{dataset.description}}</p>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class ="row">
+        <div class="col-md-12">
+          <div  class="panel panel-default" style="margin-top:40px;">
+            <div class="panel-heading">
+                <a href="" ng-click="tableShowObs = ! tableShowObs">Import existing study</a>
+            </div>
+            <div class="panel-body" id="paneltable" ng-show="tableShowObs">
+              <table ng-table="conditionTableObs"  class="table table-bordered table-hover table-striped">
+                <tr ng-repeat="study in $data">
+                    <td data-title="'Title'">{{study.observational_title}}</td>
+                    <td data-title="'Action'" style="text-align: center;"><a ng-click="select_cond(study)"><i class="fa fa-download"></i>Select</a></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:10px; ">
+        <div class="col-lg-12" ng-if="canUpdate('observational')">
+            <ul class="list-inline pull-left">
+                <li><button type="btn" ng-click="study_add('observational')" class="btn btn-success btn-large ">Save and quit</button></li>
+            </ul>
+            <ul class="list-inline pull-right">
+                <li><button type="btn" ng-click="study_add_continue('observational')" class="btn btn-success btn-large ">Save and continue</button></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>
+<sup>*</sup> Required 

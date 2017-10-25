@@ -1,0 +1,88 @@
+<div ng-if="msg" class="alert alert-warning">
+    {{msg}}
+</div>
+<form class="form-horizontal">
+  <fieldset>
+
+  <!-- Form Name -->
+  <legend>Register an account.</legend>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="fn">First name<sup>*</sup></label>  
+    <div class="col-md-4">
+    <input ng-model="register_firstname" id="fn" name="fn" type="text" placeholder="first name" class="form-control input-md" required>
+      
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="ln">Last name<sup>*</sup></label>  
+    <div class="col-md-4">
+    <input ng-model="register_lastname" id="ln" name="ln" type="text" placeholder="last name" class="form-control input-md" required>
+      
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="lab">Institute / Laboratory</label>  
+    <div class="col-md-4">
+    <input ng-model="register_laboratory" id="lab" name="lab" type="text" placeholder="Institute / Laboratory" class="form-control input-md">
+      
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="email">Email<sup>*</sup></label>  
+    <div class="col-md-4">
+    <input ng-model="register_email" id="email" name="email" type="text" placeholder="email" class="form-control input-md" required>
+      
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="add1">Address</label>  
+    <div class="col-md-4">
+    <input ng-model="register_address" id="add1" name="add1" type="text" placeholder="" class="form-control input-md">
+      
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="ctry">Country</label>  
+    <div class="col-md-4">
+    <input ng-model="register_country" id="ctry" name="ctry" type="text" placeholder="Country" class="form-control input-md">
+      
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="passwd">Password<sup>*</sup></label>  
+    <div class="col-md-4">
+    <input ng-model="register_password" id="passwd" name="passwd" type="password" placeholder="Password" class="form-control input-md" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="passwd_c">Confirm password<sup>*</sup></label>  
+    <div class="col-md-4">
+    <input ng-model="register_check_password" id="passwd_c" name="passwd" type="password" placeholder="Confirm password" class="form-control input-md" required>
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="submit"></label>
+    <div class="col-md-4">
+      <button id="submit" name="submit" ng-click="register()" class="btn btn-primary">REGISTER</button>
+    </div>
+  </div>
+
+  </fieldset>
+</form>
+<p>* required</p>

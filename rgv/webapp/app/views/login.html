@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<div ng-if="msg" class="alert alert-warning">
+    {{msg}}
+</div>
+<form class="form-horizontal">
+  <fieldset>
+
+  <!-- Form Name -->
+  <legend>Login</legend>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="fn">E-mail</label>  
+    <div class="col-md-4">
+    <input ng-model="user_name" id="email" placeholder="E-mail" type="text" class="form-control input-md" required="">
+      
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="ln">Password</label>  
+    <div class="col-md-4">
+    <input ng-model="user_password" id="password" type="password" placeholder="Password" type="text" class="form-control input-md" required="">
+      
+    </div>
+  </div>
+  <button id="login_lost_btn" type="button" class="btn btn-link" ng-click="recover()">Lost Password?</button>
+  <div class="modal-footer">
+    <div>
+        <button ng-click="login()" type="btn" class="btn btn-primary btn-large">Login</button>
+    </div>
+
+  </div>
+
+   <h2>Try TOXsIgN without login</h2>
+    <div class="modal-footer">
+        <button ng-click="loginDemo()" type="btn" class="btn btn-success btn-large">Login as Demo user</button>
+    </div>
+  </fieldset>
+</form>

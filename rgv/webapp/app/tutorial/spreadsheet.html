@@ -1,0 +1,143 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
+
+<h2><i class="fa fa-plus"></i>        How to fill the TOXsIgN spreadsheet</h2>
+<p>The TOXsIgN spreadsheet is divided into 6 sheets. Each sheet describes, respectively, only one project and at least one study, assay, factor and signature. The last one describe all ontologies used in TOXsIgN. This template will be improved over time to respond fully to users' expectations. <b>So please, use only the latest version of it.</b></p>
+<div style="text-align:center">
+  <a href="images/TOXsIgN_template1.png" ><img src="images/TOXsIgN_template1.png" style="text-align: center;"></a>
+</div>
+<h5>Project</h5>
+<p>The project is a high level concept that links related studies, assays, factors and signatures. A project is described and linked using the following fields:
+  <ul>    
+    <li><i>Project Id : </i>Project identifier for the spreadsheet. <b>Do not modify it.</b></li>
+    <li><i>Title : </i>Provide a unique title that describes the overall project. You should make titles as descriptive as possible.</li>
+    <li><i>Description</i>: Provide a thorough description of the goals and objectives of this project. The abstract from the associated publication may be suitable. Multiple summary lines can be included.</li>
+    <li><i>PubMed link(s)</i>: [Optional] Specify a valid PubMed identifier (PMID) that references a published article describing this study. Most commonly, this information is not available at the time of submission - it can be added later once the data are published.</li>
+    <li><i>Crosslink(s)</i>: [Optional] Specify a Web link that directs users to supplementary information about the study. Please restrict to Web sites that you know are stable.</li>
+  </ul>
+</p><br>
+<div style="text-align:center">
+  <a href="images/TOXsIgN_template2.png" ><img src="images/TOXsIgN_template2.png" style="text-align: center;"></a>
+</div>
+
+<h5>Studies</h5>
+<p>In TOXsIgN you can choose between interventional or interventional study :<br>
+    <b>An interventional study is defined as</b>: A study in which participants are assigned to receive one or more interventions (or no intervention) so that researchers can evaluate the effects of the interventions on biomedical or health-related outcomes. The assignments are determined by the study protocol. Participants may receive diagnostic, therapeutic, or other types of interventions.<br>
+    <b>An observational study is defined as</b>: A biomedical or behavioral research study of human subjects designed to assess risk factors for disease development or progression, assess natural history of risk factors or disease, identify variations based on geographic or personal characteristics (such as race/ethnicity or gender), track temporal trends, or describe patterns of clinical care and treatment in absence of specific study-mandated interventions.<br><br>
+    Each line describe a study and each study is defined and linked using the following fields:
+  <ul> 
+      <li><i>Study Id : </i>Study identifier for the spreadsheet. <b>Do not modify it.</b></li>
+      <li><i>Associated project : </i>Project identifier for the spreadsheet associated to this study.</li>    
+      <li><i>Title</i>: Provide a unique title that describes the overall study.</li>
+      <li><i>Description</i>: Provide a thorough description of the goals and objectives of this study. The abstract from the associated publication may be suitable. Multiple summary lines can be included.</li>
+      <li><i>Design</i>: [Optional] provide a description of the experimental design. Indicate how many Samples are analyzed, if replicates are included, are there control and/or reference Samples, dye-swaps, etc... Multiple lines can be included.</li>
+      <li><i>Result(s)</i>: [Optional] Provide a short overview of the results of this project.</li>
+      <li><i>Study type</i>: Identify the study as interventional or observational study</li>
+      <li><i>Inclusion period</i>: [Optional & only for observational study] </li>
+      <li><i>Inclusion criteria</i>: [Optional & only for observational study] </li>
+      <li><i>Exclusion criteria</i>: [Optional & only for observational study] </li>
+      <li><i>Follow up</i>: [Optional & only for observational study] </li>
+      <li><i>Population size</i>: [Optional & only for observational study] </li>
+      <li><i>Pubmed Id(s) (comma separated)</i>: [Optional & only for observational study]  Specify a valid PubMed identifier (PMID) that references a published article describing this study. Most commonly, this information is not available at the time of submission - it can be added later once the data are published.</li>
+
+  </ul>
+</p>
+
+
+<div style="text-align:center">
+  <a href="images/TOXsIgN_template3.png" ><img src="images/TOXsIgN_template3.png" style="text-align: center;"></a>
+</div>
+
+<h5>Assays</h5>
+<p>An assay is in general an experiment that converts either a material or data sample, into a new material or data sample, via a protocol. Multiple assays can be connected to a Study.
+Each line describe an assay and each assay is defined and linked using the following fields:
+  <ul> 
+      <li><i>Assay Id : </i>Assay identifier for the spreadsheet. <b>Do not modify it.</b></li>
+      <li><i>Associated study : </i>Study identifier for the spreadsheet associated to this assay.</li>    
+      <li><i>Title</i>: Provide a unique title that describes the overall assay.</li>
+      <li><i>Organism</i>: [Optional & use ontologies] Identify the organism from which the biological material was derived.</li>
+      <li><i>Sex</i>: [Optional] Identify the sex from the organism.</li>
+      <li><i>Developmental stage</i>: [Optional] Identify the developmental stage from the organism.</li>
+      <li><i>Tissue</i>: [Optional & use ontologies] Identify the tissue from which the biological material was derived.</li>
+      <li><i>Generation</i>: [Optional] Identify the generation from which the signature was obtained.</li>
+      <li><i>Cell</i>: [Optional  & use ontologies] Identify the cell type from which the biological material was derived.</li>
+      <li><i>Cell line</i>: [Optional  & use ontologies] Identify the cell line used.</li>
+      <li><i>Experimental type</i>: [Optional] Type of experiment (<i>in vivo</i>, <i>ex vivo</i>, <i>in vitro</i>...)</li>
+      <li><i>Population age</i>: [Optional & only for observational study] </li>
+      <li><i>Geographical location</i>: [Optional & only for observational study] </li>
+      <li><i>Controle / Reference</i>: [Optional & only for observational study] </li>
+      <li><i>Biological matrice</i>: [Optional & only for observational study] </li>
+      <li><i>Additional information </i>: [Optional] Include any additional information not provided in the other fields.</li>
+  </ul>
+</p>
+
+<div style="text-align:center">
+  <a href="images/TOXsIgN_template4.png" ><img src="images/TOXsIgN_template4.png" style="text-align: center;"></a>
+</div>
+
+<h5>Factors</h5>
+<p>A fator describes the exposure of a given study model (e.g. cell culture, living animals, human population) to at least one chemical (e.g. pesticides, plasticizers, drugs, endocrine disruptors), physical (e.g. radiations, temperature) or biological (e.g. pathogens, parasites) factor at a given dose and at a given time of exposure. This organization therefore makes TOXsIgN compatible with mixtures studies. Currently, factors are restricted to chemical compounds. <br>
+Each line describe one factor and each factor is defined and linked using the following fields:
+
+  <ul> 
+      <li><i>Factor Id : </i>Factor identifier for the spreadsheet. <b>Do not modify it.</b></li>
+      <li><i>Associated assay : </i>Assay identifier for the spreadsheet associated to this factor.</li>    
+      <li><i>Exposition factor</i>: Type of exposition factor (biological, physical or chemical). <b>Currently TOXsIgN is restricted to chemical factor.</b></li>
+      <li><i>Chemical name</i>: [Optional & use ontologies] Identify the chemical factor used.</li>
+      <li><i>Biological</i>: [Not available] Identify the biological factor used.</li>
+      <li><i>Physical name</i>: [Not available] Identify the physical factor used.</li>
+      <li><i>Vehicle</i>: Specify the vehicle used.</li>
+      <li><i>Route</i>: Select the route used.</li>
+      <li><i>Dose</i>: Set the administered dose. </li>
+      <li><i>Exposure duration</i>: Chemical exposition time.</li>
+      <li><i>Exposure frequency</i>: [Optional] describe the chronical exposition protocol.</li>
+      <li><i>Additional information</i>: [Optional] Include any additional information not provided in the other fields.</li>
+  </ul>
+</p>
+
+
+<div style="text-align:center">
+  <a href="images/TOXsIgN_template6.png" ><img src="images/TOXsIgN_template6.png" style="text-align: center;"></a>
+</div>
+
+<h5>Signatures</h5>
+<p>TOXsIgN allow scientists to actively submit toxicological signatures, defined as the description of physiological, cellular, molecular or omic effects on individuals or their descendants, after exposure to single or combined environmental factors. You can create either physiological, molecular or genomic signature.<br>
+      <b>Physiological signature</b>: physiological responses (i.e. disease, pathway or biological process alteration) after an exposure to single or combined environmental factors.<br>
+      <b>Molecular signature</b>: molecular responses after an exposure to single or combined environmental factors.<br>
+      <b>Genomic signature</b>: set of genes whose expression is known to be positively or negatively altered after an exposure to single or combined environmental factors.<br>
+Each line describe one signature and each factor is defined and linked using the following fields:
+  Control sample  Treated sample  pvalue  Cutoff  Statistical processing  Additional file File up File down Interrogated genes file Genes identifier
+  <ul> 
+      <li><i>Signature Id : </i>Signature identifier for the spreadsheet. <b>Do not modify it.</b></li>
+      <li><i>Associated study : </i>Study identifier for the spreadsheet associated to this signature.</li>
+      <li><i>Associated assay : </i>Assay identifier for the spreadsheet associated to this factor.</li>    
+      <li><i>Title</i>: Provide a unique title that describes the overall signature.</li>
+      <li><i>Type</i>: Type of observed signature (physiological, molecular or genomic).</li>
+      <li><i>Organism</i>: [Optional & use ontologies] Identify the organism from which the biological material was derived.</li>
+      <li><i>Sex</i>: [Optional] Identify the sex from the organism.</li>
+      <li><i>Developmental stage</i>: [Optional] Identify the developmental stage from the organism.</li>
+      <li><i>Tissue</i>: [Optional & use ontologies] Identify the tissue from which the biological material was derived.</li>
+      <li><i>Cell</i>: [Optional  & use ontologies] Identify the cell type from which the biological material was derived.</li>
+      <li><i>Cell line</i>: [Optional  & use ontologies] Identify the cell line used.</li>
+      <li><i>Generation</i>: [Optional] Identify the generation from which the signature was obtained.</li>
+      <li><i>Associated phenotype, diseases processes or pathway / outcome</i>: [Optional  & use ontologies & only for physiological and molecular signatures] Phenotype observed after exposure.</li>
+      <li><i>Technology used</i>: [Optional & only for genomic signature] Technology used to obtain the signature.</li>
+      <li><i>Platform</i>: [Optional & only for genomics signatures] Reference the Platform accession number (GPLxxx).</li>
+      <li><i>Controle / unexposed (n=)</i>: [Optional & only for obs. studies] </li>
+      <li><i>Case / exposed (n=)</i>: [Optional & only for obs. studies] </li>
+      <li><i>Observed effect</i>: [Optional & only for physiological and molecular signatures] Describe the observed trend of the associated phenotype (increase, decrease, NA, ...)</li>
+      <li><i> Statistical significance</i>: [Optional  & use ontologies & only for obs. studies] </li>
+      <li><i> Statistical value</i>: [Optional  & use ontologies & only for obs. studies] </li>
+      <li><i> Statistical adjustments</i>: [Optional  & use ontologies & only for obs. studies] </li>
+      <li><i> Other satistical information</i>: [Optional  & use ontologies & only for obs. studies] </li>
+      <li><i>Identifier type</i>: [Optional & only for genomics signatures] Gene identifier used for the signature.</li>
+      <li><i>File up</i>: [Optional & only for genomics signatures] Name of file containing list of over expressed genes (upload file manually in signature information view).</li>
+      <li><i>Interrogated genes</i>: [Only for genomics signatures] Name of file containing list of all interrogated genes (upload file manually in signature information view).</li>
+      <li><i>File downs</i>: [Optional & only for genomics signatures] Name of file containing list of under expressed genes (upload file manually in signature information view).</li>
+      <li><i>Additional file:</i> [Optional] Name of additional file (upload file manually in signature information view).</li>
+      <li><i>Number of sample:</i> [Optional] Number of exposed sample.</li>
+      <li><i>Fold change</i>: [Optional] Fold change used for the statistical filtration.</li>
+      <li><i>Pvalue</i>: [Optional] Pvalue threshold for the statistical filtration.</li>
+      <li><i>Statistical processing</i>: [Optional] Include any additional information not provided in the other fields about statistical processing.</li>
+  </ul>
+</p>

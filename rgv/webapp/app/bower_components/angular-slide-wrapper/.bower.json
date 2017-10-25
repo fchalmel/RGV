@@ -1,0 +1,19 @@
+{
+  "name": "angular-slide-wrapper",
+  "version": "0.1.8",
+  "main": "./src/angular-slide-wrapper.js",
+  "dependencies": {
+    "angular": "^1.0.8"
+  },
+  "homepage": "https://github.com/wender/angular-slide-wrapper",
+  "_release": "0.1.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.8",
+    "commit": "7669eeabf5eac07d0436a9b55244f08e429e8858"
+  },
+  "_source": "https://github.com/wender/angular-slide-wrapper.git",
+  "_target": "^0.1.8",
+  "_originalSource": "angular-slide-wrapper",
+  "_direct": true
+}

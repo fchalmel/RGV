@@ -1,0 +1,15 @@
+<div ng-if="msg" class="alert alert-warning">
+    {{msg}}
+</div>
+<div class="col-md-4">
+    <h2>Reset your password</h2>
+    <div class="form-group">
+    <label class="control-label col-sm-1" for="password">Password</label>
+    <input class="form-control" ng-model="password" id="register_password" type="password"></input>
+    </div>
+    <div class="form-group">
+    <label class="control-label col-sm-1" for="password">Confirm password</label>
+    <input class="form-control" ng-model="check_password" id="register_check_password" type="password"></input>
+    </div>
+    <button ng-click="recover()" type="btn" class="btn btn-large btn-primary">Register</button>
+</div>

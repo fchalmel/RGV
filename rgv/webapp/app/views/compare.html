@@ -1,0 +1,333 @@
+	<link href="tools/cssvenn/bootstrap.css" rel="stylesheet" media="screen">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	
+	<script type="text/javascript" src="tools/jsvenn/jquery.min.js"></script>
+	<script type="text/javascript" src="tools/jsvenn/bootstrap.min.js"></script>
+	<script type="text/javascript" src="tools/jsvenn/bootstrap-colorpicker.min.js"></script>
+	
+	<script type="text/javascript" src="tools/srcvenn/canvas2svg.js"></script>
+	<script type="text/javascript" src="tools/srcvenn/jvenn.min.js"></script>
+	<script type="text/javascript" src="tools/js/compare.js"></script>
+
+<script type="text/ng-template" id="usermanual">
+	<div class="container" style='width: auto;'>
+		<div class="row">
+		  	<div class="span7">
+		  		<section id="quickStart">
+					<div class="page-header">
+				    	<h1>Quick start</h1>
+				    </div>
+				    <h4>How to provide list(s) of element(s)</h4>
+				    <p>
+				    On the right of the example page, you can fill each of the six textareas with your own data (<b>warning:</b> one element per line!).
+				    If the same item is given multiple times, this one will be considered as unique. <br/>
+				    You can also customize the list labels using the text field on the top of each textarea. The length of the name is limited at eleven characters.
+				    </p>
+				    <div class="bs-docs-example" style="text-align: center;">
+				  		<img width="50%" src="images/jvenn-input-lists.png" class="img-rounded">
+				  	</div> 
+				    <h4>Two display modes: classic and Edwards</h4>
+				    <p>The default value is 'classic' to output a classical venn diagram. If you want an Edwards-Venn
+				    diagram representation, just select 'edwards' using the drop-down list. Available values are: 'classic' and 'edwards'.</p>
+					<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="48%" src="images/jvenn-classic.png" class="img-rounded img-polaroid"> <img width="48%" src="images/jvenn-edwards.png" class="img-rounded img-polaroid">
+				  	</div>
+				  	<h4>Highlighting intersections</h4>
+				  	<p>When you point an intersection count, all list(s) sharing it are highlighted.</p>
+				  	<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="48%" src="images/jvenn-hl-classic.png" class="img-rounded img-polaroid"> <img width="48%" src="images/jvenn-hl-edwards.png" class="img-rounded img-polaroid">
+				  	</div>
+				  	<h4>Question mark</h4>
+				  	<p>For all diagrams, when the intersection count size exceeds the allowed space, the value is substituted by a question mark.
+				  	The real value pops-up on mouseover.</p>
+				  	<h4>Click function</h4>
+				  	<p>To display the specific or shared element(s) click on the intersection numbers. The linked elements are listed in the
+				  	textarea below the jvenn diagram.</p>
+				  	<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="50%" src="images/jvenn-click.png" class="img-rounded">
+				  	</div> 
+				</section>
+		  		
+		  		<section id="export">
+					<div class="page-header">
+				    	<h1>Export to PNG, SVG and/or CSV</h1>
+				    </div>
+				    <p>By clicking on the top right icon you can export:
+					    <ul>
+					    	<li>the venn diagram as a PNG file</li>
+					    	<li>the venn diagram as a SVG file</li>
+					    	<li>the intersection table as a CSV file</li>
+					    </ul>
+					</p>
+					<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="50%" src="images/jvenn-export.png" class="img-rounded">
+				  	</div> 
+				</section>
+				
+				<section id="search">
+					<div class="page-header">
+				    	<h1>Search for an element</h1>
+				    </div>
+				    <p>Fill the input field on the top of the page to search for an element (case sensitive). Three different status are possible: 
+					<ul>
+						<li><b>found</b> only one element matched, the corresponding intersection is then highlighted</li>
+					    <li><b>not found</b> no element matched, all intersections are faded out</li>
+   					    <li><b>ambiguous</b> two or more elements matched, keep on searching...</li>
+					    </ul>
+					</p>
+					<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="48%" src="images/jvenn-search1.png" class="img-rounded img-polaroid"> <img width="48%" src="images/jvenn-search2.png" class="img-rounded img-polaroid">
+				  	</div>
+				</section>
+				
+				<section id="legend">
+					<div class="page-header">
+				    	<h1>Switch button panel</h1>
+					</div>
+				  	<p>
+				  	If you provide more than 3 lists a switch button panel is available. Use it to focus on the intersection of interest.
+				  	Moreover, to enhance the figure’s readability on the classical six lists Venn graphic, it was decided
+					not to present all the values and to link some areas to their figures using lines. This
+					still did not permit to show all figures, use the switch button panel to display it.
+					<br/><br/>
+					<b>Warning:</b> having one switch botton on disable all other interaction with the diagram.</p>
+					<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="48%" src="images/jvenn-legend-classic.png" class="img-rounded img-polaroid"> <img width="48%" src="images/jvenn-legend-edwards.png" class="img-rounded img-polaroid">
+				  	</div>
+				</section>
+				
+				<section id="extraCharts">
+					<div class="page-header">
+				    	<h1>Extra charts</h1>
+					</div>
+				  	<p>Having an overview of the list size and comparing multiple diagrams can be difficult using a Venn diagram. Thus, jvenn provides
+				  	two extra charts bellow the Venn.
+					  	<ul>
+					  		<li>The first one represents the input lists size histogram. It allows users to	check the homogeneity of the lists size.</li>
+							<li>The second one displays the number of elements located in intersections of a certain size.
+								This feature can be used to compare the compactness of multiple Venn diagrams.
+							</li>
+						</ul>
+					</p>
+					<div class="bs-docs-example">
+				  		<img width="50%" style="float:left" src="images/jvenn-extra-chart.png" class="img-rounded">
+				  		<br/><br/>
+				  		In the first chart you can see the number of elements in each list (the shorter list is the "list 5" with 858 elements).
+				  		<br/><br/><br/><br/>
+				  		In the second chart, 1707 elements are specific of one list and 399 elements are shared by two of the six lists.
+				  		<br/><br/><br/>
+				  	</div>
+		  	</div>
+		</div>
+</script>
+
+<h2>Compare signatures</h2>
+
+<div class="well">
+	<p>The TOXsIgN compare module, is a feature allowing users to compare toxicogenomics signatures between them or in several custom lists. This module is adapted from P. Bardou <i>et al.</i>. It works and displays intersection between up to 6 signatures in a Venn diagram. <b style="color:red;">In order to compare signatures across species, only the HomoloGene Ids associated to the signature are used and displayed.</b> <br><br></p>
+
+	<div style="position:relative;padding:0px 5px 0 5px;background-color:white;border:1px solid lightgrey;border-radius:5px;text-align:justify">
+		<span class="label label-info" style="position:absolute;top:-10px;left:-10px">How to cite</span>
+		<h6>Philippe Bardou, Jérôme Mariette, Frédéric Escudié, Christophe Djemiel and Christophe Klopp. jvenn: an interactive Venn diagram viewer.
+		   	 	BMC Bioinformatics 2014, 15:293 doi:10.1186/1471-2105-15-293 &nbsp; - &nbsp;
+		<a href="http://www.biomedcentral.com/1471-2105/15/293" target="_blank"> Abstract/FREE Full Text </a></h6>
+	</div><br /><br />
+
+	<a href="" ng-click="open_info('usermanual')">See user manual</a><br>
+	<b>How to compare your signatures</b><br><br>
+	<b><i>Input data (list 1 - list 6)</i></b>:Select the signature or a file. You can also copy/paste a list in the specified area.<br>
+	<b><i>Parameters</i></b>: Defined which parameter to be used to display the result.<br>
+	<b><i>Output data</i></b>: Venn diagram downloadable as png, csv or save in your workspace.
+</div>
+
+<h3>Selected signatures</h3>
+<label ng-repeat="sign in signatures" ng-if="sign.genes_down != undefined && sign.genes_down.length > 0 ">
+    <input type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-down') > -1" ng-click="toggleSelection2('down',sign.genes_down,sign.id)"> {{sign.id}} - Down genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+</label>
+<label ng-repeat="sign in signatures" ng-if="sign.genes_up != undefined && sign.genes_up.length > 0 ">
+    <input type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-up') > -1" ng-click="toggleSelection2('up',sign.genes_up,sign.id)"> {{sign.id}} - Up genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+</label>
+
+
+<div class="row-fluid ">
+	<div class="span12 content-box-large">
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="row-fluid">
+					<div id="jvenn-container"></div>
+				</div>
+				<div class="row-fluid">
+					<div>
+						<p> Click on a venn diagram figure to display the linked elements: </p>
+						<textarea readonly id="names" style="width: 87%;" wrap="off" rows="10"></textarea>
+						<button type="button" class="btn btn-link" ng-click="saveSelected(save_values)">Save in dashboard</button>
+						<button disabled>Convert selection (coming soon)</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="span6">
+				<div class="bs-docs-example">
+			  		<img src="images/bullet.png" style="vertical-align:initial;padding-top:10px">
+			  		Display mode:
+			  		<div class="btn-group" data-toggle="buttons-radio">
+			  			<button id="dm_classic" type="button" class="btn btn-mini active">Classic</button>
+						<button id="dm_edwards" type="button" class="btn btn-mini">Edwards'</button>
+					</div><br/>
+			  		<img src="images/bullet.png" style="vertical-align:initial;padding-top:10px">
+					Font family: 
+			  		<div class="btn-group" data-toggle="buttons-radio">
+			  			<button id="ff_arial"  type="button" class="btn btn-mini active">Arial</button>
+			  			<button id="ff_sserif" type="button" class="btn btn-mini">Sans-serif</button>
+						<button id="ff_serif"  type="button" class="btn btn-mini">Serif</button>
+						<button id="ff_mono"   type="button" class="btn btn-mini">Monospace</button>
+					</div><br/>
+			  		<img src="images/bullet.png" style="vertical-align:initial;padding-top:10px">
+					Font size: 
+			  		<div class="btn-group" data-toggle="buttons-radio">
+			  			<button id="fs_8"  type="button" class="btn btn-mini">8px</button>
+			  			<button id="fs_9"  type="button" class="btn btn-mini">9px</button>
+			  			<button id="fs_10" type="button" class="btn btn-mini">10px</button>
+			  			<button id="fs_11" type="button" class="btn btn-mini">11px</button>
+			  			<button id="fs_12" type="button" class="btn btn-mini active">12px</button>
+						<button id="fs_13" type="button" class="btn btn-mini">13px</button>
+						<button id="fs_14" type="button" class="btn btn-mini">14px</button>
+					</div><br/>
+			  		<img src="images/bullet.png" style="vertical-align:initial;padding-top:10px">
+					Display some statistics based on input lists: 
+					<div class="btn-group" data-toggle="buttons-radio">
+			  			<button id="ds_yes" type="button" class="btn btn-mini active">Yes</button>
+						<button id="ds_no"  type="button" class="btn btn-mini">No</button>
+					</div><br/>
+			  		<img src="images/bullet.png" style="vertical-align:initial;padding-top:10px">
+					Substitute intersection count size by a question mark: 
+			  		<div class="btn-group" data-toggle="buttons-radio">
+			  			<button id="qm_yes" type="button" class="btn btn-mini active">Yes</button>
+						<button id="qm_no"  type="button" class="btn btn-mini">No</button>
+					</div>
+					<hr style="margin-bottom:12px;margin-left:50px;margin-right:50px"/>
+					<img src="images/bullet.png" style="vertical-align:initial;">
+					Find an element in list(s):
+					<input id="search-field" type="text" style="margin-top:8px" placeholder="enter an element name..."/>
+					<span  id="search-status" class="label label-info" style="vertical-align: 16px; margin-left: -35px;"></span>
+			  	</div>
+		  	</div>
+		  	
+			<div class="span6"> 
+				<div class="row-fluid">
+					<div class="span6">
+						<div class="control-group color1">
+							<input class="span6" id="name1" type="text" style="font-weight: bold;" value="List 1" maxlength="11"/>
+							<div id="colorp_1" class="input-append colorpicker-component colorpicker-element">
+							    <input type="text" value="#006600" class="form-control" style="display:none"/>
+                    			<span class="add-on"><i></i></span>
+                			</div>
+                			<div class="btn-group" style="margin-left:15px">
+                				<button id="colord_1" style="margin-bottom:10px" class="btn btn-mini"><i class="icon-refresh"></i></button>
+                				<button id="clear_1"  style="margin-bottom:10px" class="btn btn-mini"><i class="icon-trash"></i></button>
+                			</div>
+							<div class="controls controls-row">
+								<textarea class="span11" id="area1" wrap="off" rows="4" style="resize:none"></textarea>
+							</div>
+						</div>
+	 				</div>
+	 				<div class="span6">
+	 					<div class="control-group color2">
+							<input class="span6" id="name2" type="text" style="font-weight: bold;" value="List 2" maxlength="11"/>
+							<div id="colorp_2" class="input-append colorpicker-component colorpicker-element">
+							    <input type="text" value="#5a9bd4" class="form-control" style="display:none"/>
+                    			<span class="add-on"><i></i></span>
+                			</div>	
+                			<div class="btn-group" style="margin-left:15px">
+                    			<button id="colord_2" style="margin-bottom:10px" class="btn btn-mini"><i class="icon-refresh"></i></button>
+                    			<button id="clear_2"  style="margin-bottom:10px" class="btn btn-mini"><i class="icon-trash"></i></button>
+                    		</div>
+							<div class="controls controls-row">
+								<textarea class="span11" id="area2" wrap="off" rows="4" style="resize:none"></textarea>
+							</div>
+						</div>
+					</div>
+	 			</div>
+	 			
+				<div class="row-fluid">
+	 				<div class="span6">
+	 					 <div class="control-group color3">
+							<input class="span6" id="name3" type="text" style="font-weight: bold;" value="List 3" maxlength="11"/>
+							<div id="colorp_3" class="input-append colorpicker-component colorpicker-element">
+							    <input type="text" value="#f15a60" class="form-control" style="display:none"/>
+                    			<span class="add-on"><i></i></span>
+                			</div>
+                			<div class="btn-group" style="margin-left:15px">
+                    			<button id="colord_3" style="margin-bottom:10px" class="btn btn-mini"><i class="icon-refresh"></i></button>
+                    			<button id="clear_3"  style="margin-bottom:10px" class="btn btn-mini"><i class="icon-trash"></i></button>
+                    		</div>
+							<div class="controls controls-row">
+								<textarea class="span11" id="area3" wrap="off" rows="4" style="resize:none"></textarea>
+							</div>
+	 					</div>
+	 				</div>
+	 				<div class="span6">
+	 					<div class="control-group color4">
+							<input class="span6" id="name4" type="text" style="font-weight: bold;" value="List 4" maxlength="11"/>
+							<div id="colorp_4" class="input-append colorpicker-component colorpicker-element">
+                    			<input type="text" value="#cfcf1b" class="form-control" style="display:none"/>
+                    			<span class="add-on"><i></i></span>
+                			</div>
+                			<div class="btn-group" style="margin-left:15px">
+                    			<button id="colord_4" style="margin-bottom:10px" class="btn btn-mini"><i class="icon-refresh"></i></button>
+                    			<button id="clear_4"  style="margin-bottom:10px" class="btn btn-mini"><i class="icon-trash"></i></button>
+                    		</div>							
+							<div class="controls controls-row">
+								<textarea class="span11" id="area4" wrap="off" rows="4" style="resize:none"></textarea>
+							</div>
+						</div>
+	 				</div>
+	 			</div>
+	 			
+	 			<div class="row-fluid">
+	 				<div class="span6">
+	 					<div class="control-group color5">
+							<input class="span6" id="name5" type="text" style="font-weight: bold;" value="List 5" maxlength="11"/>
+							<div id="colorp_5" class="input-append colorpicker-component colorpicker-element">
+							    <input type="text" value="#ff7500" class="form-control" style="display:none"/>                            			
+                    			<span class="add-on"><i></i></span>
+                			</div>
+                			<div class="btn-group" style="margin-left:15px">
+                    			<button id="colord_5" style="margin-bottom:10px" class="btn btn-mini"><i class="icon-refresh"></i></button>
+                    			<button id="clear_5"  style="margin-bottom:10px" class="btn btn-mini"><i class="icon-trash"></i></button>
+                    		</div>							
+							<div class="controls controls-row">
+								<textarea class="span11" id="area5" wrap="off" rows="4" style="resize:none"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="span6">
+	 					<div class="control-group color6">
+							<input class="span6" id="name6" type="text" style="font-weight: bold;" value="List 6" maxlength="11"/>
+							<div id="colorp_6" class="input-append colorpicker-component colorpicker-element">
+							    <input type="text" value="#c09853" class="form-control" style="display:none"/>                            			
+                    			<span class="add-on"><i></i></span>
+                			</div>
+                			<div class="btn-group" style="margin-left:15px">
+                				<button id="colord_6" style="margin-bottom:10px" class="btn btn-mini"><i class="icon-refresh"></i></button>
+                				<button id="clear_6"  style="margin-bottom:10px" class="btn btn-mini"><i class="icon-trash"></i></button>
+                			</div>							
+							<div class="controls controls-row">
+								<textarea class="span11" id="area6" wrap="off" rows="4" style="resize:none"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>
+<script>
+ 	!function ($) {
+ 		$(function(){
+			window.prettyPrint && prettyPrint()   
+		})
+	}(window.jQuery)
+</script>
+<script src="tools/js/custom.js"></script>
