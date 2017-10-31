@@ -1,0 +1,306 @@
+2017-10-31 14:23:03,431 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313430363238373233343138333230/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 14:23:03,470 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313430363238373233303536373230/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 14:23:24,441 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313430363238373232353931383838/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 14:24:24,830 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313430343539383630393231363830/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 14:24:24,878 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313430343539383631303734353132/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 14:24:52,357 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313430343539383630383130313932/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 14:25:16,728 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313430343539383630343831363830/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 14:25:19,820 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313430343539383630323137363136/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 14:25:25,344 :: ERROR :: Uncaught Exception at http://localhost:6543/dataset_download/templates/TOXsIgN_template_v0.4.xlsx
+traceback url: http://localhost:6543/_debug_toolbar/313430343539383539393431393638/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/mnt/c/Tools/GitHub/RGV/rgv/views.py", line 266, in file_dataset
+    z.write(url_file,os.path.basename(url_file))
+  File "/usr/lib/python2.7/zipfile.py", line 1123, in write
+    st = os.stat(filename)
+OSError: [Errno 2] No such file or directory: '/mnt/c/Tools/GitHub/RGV/var/Data/Public/downloads/templates/TOXsIgN_template_v0.4.xlsx'
+2017-10-31 14:25:34,797 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313430343539363532333939373630/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 14:47:51,791 :: ERROR :: Squashed Exception at http://localhost:6543/1
+traceback url: http://localhost:6543/_debug_toolbar/313339393030303338323837343430/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /1
+2017-10-31 16:13:49,056 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303730323131393230/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:16:56,237 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303638353533343234/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:17:17,532 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303637373031373132/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:21:45,294 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303637333537373736/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:23:38,720 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303635393630393736/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:25:17,029 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303634373337353532/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:25:20,079 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303634323835323030/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:25:22,853 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303633343235363136/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:27:48,599 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303632363735303234/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:30:45,393 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336303631383832363430/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:31:19,863 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336313538363137383038/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:32:10,601 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336313538313132303136/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:34:25,024 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336313537343333323332/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
+2017-10-31 16:34:45,310 :: ERROR :: Squashed Exception at http://localhost:6543/app/styles/bootstrap.min.css.map
+traceback url: http://localhost:6543/_debug_toolbar/313339373336313537383736363234/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://localhost:6543/app/styles/bootstrap.min.css.map
