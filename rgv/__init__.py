@@ -5,19 +5,14 @@ from pyramid.authentication import AuthTktAuthenticationPolicy
 from pyramid.authorization import ACLAuthorizationPolicy
 from pyramid_beaker import session_factory_from_settings
 
-
-
 import os
 import sys
 import json
 import datetime
 from bson import json_util
 from bson.objectid import ObjectId
-
 from pymongo import MongoClient
-
 from elasticsearch import Elasticsearch
-
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
@@ -53,7 +48,6 @@ def main(global_config, **settings):
     config.registry.es = Elasticsearch( [settings['elastic_host']])
     config.registry.es_db = settings['elastic_db']
     config.registry.es.indices.create(index=settings['elastic_db'], ignore=400)
-
 
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_static_view('app', 'rgv:webapp/app')

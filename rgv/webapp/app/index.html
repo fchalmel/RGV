@@ -35,10 +35,10 @@
 		<![endif]-->
 	</head>
 
-	<body ng-controller="appCtrl">
+	<body ng-controller="appCtrl"
 		<div class="container">
 			<!-- Static navbar -->
-			<nav class="navbar navbar-default" ng-controller="userCtrl">
+			<nav class="navbar navbar-default navbar-fixed-top" ng-controller="userCtrl">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -60,6 +60,9 @@
 								</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#/tutorial" active-link="active"><i class="glyphicon glyphicon-education"></i> Tutorial</a></li>
+									<li class="divider"></li>
+									<li><a href="#/download" active-link="active"><i class="glyphicon glyphicon-wrench"></i> Technical corner</a></li>
+									<li class="divider"></li>
 									<li><a href="#/download" active-link="active"><i class="glyphicon glyphicon-download-alt"></i> Download</a></li>
 								</ul>
 							</li>
@@ -69,12 +72,17 @@
 								</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-flash"></i> RGV concept</a></li>
+									<li class="divider"></li>
 									<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-bell"></i> News</a></li>
 									<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-equalizer"></i> Statistics</a></li>
-									<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-king"></i> Institutions and funders</a></li>
+									<li class="divider"></li>
+									<li><a href="#/funders" active-link="active"><i class="glyphicon glyphicon-king"></i> Institutions and funders</a></li>
 									<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-link"></i> Get involved</a></li>
-									<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-pencil"></i> Citing RGV</a></li>
-									<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
+									<li class="divider"></li>
+									<li><a href="#/resources" active-link="active"><i class="glyphicon glyphicon-thumbs-up"></i> Other resources</a></li>
+									<li class="divider"></li>
+									<li><a href="#/citing" active-link="active"><i class="glyphicon glyphicon-pencil"></i> Citing RGV</a></li>
+									<li><a href="#/contact" active-link="active"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -84,8 +92,9 @@
 									<i class="glyphicon glyphicon-user"></i> User<span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="#/login" active-link="active"><i class="glyphicon glyphicon-log-in"></i> Log in</a></li>
-									<li><a href="#/signin" active-link="active"><i class="glyphicon glyphicon-registration-mark"></i> Register</a></li>
+									<li><a href="#/login" active-link="active"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
+									<li class="divider"></li>
+									<li><a href="#/signin" active-link="active"><i class="glyphicon glyphicon-registration-mark"></i> Sign up</a></li>
 								</ul>
 							</li>
 							<li ng-if="is_logged" class="btn-group" dropdown is-open="status.isopen">
@@ -94,6 +103,7 @@
 								</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#/user/{{user.id}}" active-link="active"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+									<li class="divider"></li>
 									<li ng-if="is_logged && user.admin"><a href="#/admin" active-link="active"><i class="glyphicon glyphicon-dashboard"></i> Admin</a></li>
 									<li class="divider"></li>
 									<li><a href="" ng-click="logout()"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
@@ -103,69 +113,25 @@
 					</div><!--/.nav-collapse -->
 				</div><!--/.container-fluid -->
 			</nav>
+		</div>
 
-			<!-- Main component for a primary marketing message or call to action -->
+		<!-- Main component for a primary marketing message or call to action -->
+		<div class="container">
 			<div ng-view></div>
 		</div> <!-- /container -->
 
-
 		<div class="container">
-			<!--
-	  		<section style="height:80px;"></section>
-			<div class="row" style="text-align:center;">
-			</div>
-			-->
-			<footer class="footer-bs" style="background-color: grey;">
-				<div class="row">
-					<div class="col-md-3 footer-brand animated fadeInLeft">
-						<img src="images/rgvlogo.png" alt="The ReproGenomics Viewer" title="The ReproGenomics Viewer" width="100"/>
-						<p>Copyright © 2017 GenOuest core facility - IRISA, All rights reserved</p>
+			<nav class="navbar navbar-inverse navbar-fixed-bottom">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#/">The ReproGenomics Viewer</a>						
 					</div>
-					<div class="col-md-3 footer-nav animated fadeInUp">
-						<h4>Supported by</h4>
-						<div class="col-md-3">
-							<ul class="pages">
-								<li><a href="http://www.irset.fr"><img src="images/irsetlogo.jpg" alt="Irset" title="Irset" width="50"/></a></li>
-								<li><a href="http://www.inserm.fr"><img src="images/insermlogo.gif" alt="Inserm" title="Inserm" width="50"/></a></li>
-								<li><a href="http://www.ehesp.fr"><img src="images/ehesplogo.jpg" alt="EHESP" title="EHESP" width="50"/></a></li>
-								<li><a href="http://www.univ-rennes1.fr/"><img src="images/ur1logo.jpg" alt="University of Rennes 1" title="Unniversity of Rennes 1" width="50"/></a></li>
-							</ul>
-						</div>
-						<div class="col-md-3">
-							<ul class="pages">
-								<li><a href="http://www.genouest.org/"><img src="images/genouestlogo.png" alt="The GenOuest Bioinformatics Facility" title="The GenOuest Bioinformatics Facility" width="50"/></a></li>
-								<li><a href="http://www.inria.fr/"><img src="images/inrialogo.jpg" alt="Inria" title="Inria" width="50"/></a></li>
-								<li><a href="http://www.cnrs.fr/"><img src="images/cnrslogo.png" alt="CNRS" title="CNRS" width="50"/></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-3 footer-nav animated fadeInUp">
-						<h4>Funded by</h4>
-						<div class="col-md-3">
-							<ul class="pages">
-								<li><a href="http://www.frm.fr"><img src="images/frmlogo.png" alt="FRM" title="FRM" width="50"/></a></li>
-								<li><a href="http://www.anses.fr"><img src="images/anseslogo.jpg" alt="ANSES" title="ANSES" width="50"/></a></li>
-							</ul>
-						</div>
-						<div class="col-md-3">
-							<ul class="pages">
-								<li><a href="http://europe.bzh"><img src="images/federlogo.png" alt="FEDER" title="FEDER" width="50"/></a></li>
-								<li><a href="http://www.snf.ch/"><img src="images/fnslogo.png" alt="The Swiss National Foundation" title="The Swiss National Foundation" width="50"/></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-3 footer-social animated fadeInDown">
-						<h4>Quick links</h4>
-						<ul>
-							<li><a href="#/tutorial">Tutorial</a></li>
-							<li><a href="#/help">Help</a></li>
-							<li><a href="#/about">About us</a></li>
-							<li><a href="#/download">Download</a></li>
-						</ul>
-					</div>
+					<p class="navbar-text">Copyright © 2017 GenOuest core facility - IRISA, All rights reserved</p>
 				</div>
-			</footer>
+			</nav>
 		</div>
+		
+		
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->

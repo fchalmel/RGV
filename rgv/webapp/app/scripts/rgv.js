@@ -11,12 +11,27 @@ config(['$routeProvider','$logProvider',
             templateUrl: 'views/home.html',
             controller: 'appCtrl'
         });
+        $routeProvider.when('/contact', {
+            templateUrl: 'views/contact.html',
+            controller: 'noCtrl'
+        });
+        $routeProvider.when('/citing', {
+            templateUrl: 'views/citing.html',
+            controller: 'noCtrl'
+        });
+        $routeProvider.when('/funders', {
+            templateUrl: 'views/funders.html',
+            controller: 'noCtrl'
+        });
+		$routeProvider.when('/resources', {
+            templateUrl: 'views/resources.html',
+            controller: 'noCtrl'
+        });
 
         $routeProvider.when('/help', {
             templateUrl: 'views/help.html',
             controller: 'noCtrl'
         });
-
         $routeProvider.when('/query', {
             templateUrl: 'views/query.html',
             controller: 'queryCtrl'

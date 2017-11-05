@@ -22,9 +22,9 @@ RGV/
 						 Créer un fonction en python implique référencement dans le fichier "_init.py"
 			"webapp/" : répertoire relatif aux packages web, ne toucher à aucun sous fichier
 					   contient:
-					   "app" : côté client (juste affichage et ce qui est executé sur le navigateir donc seulement des fonctions (javascript) les plus simples possibles
+					   "app" : côté client (juste affichage et ce qui est executé sur le navigateur donc seulement des fonctions (javascript) les plus simples possibles
 						       contient :
-							   "views/" : contient toutes les fichiers html (views, tels que "about.html", "download.html", "help.html"...)
+							   "views/" : contient toutes les fichiers html (views, tels que "about.html", "download.html", "tutorial.html"...)
 	         					"index.html" : contient 3 parties: Header, Footer et ng-view
                                                ng-view fait appel aux différentes views (fichiers html présents dans le répertoire "views/")
 									           possibilité d'attacher un CSS pour chaque fichier html indépendamment
@@ -52,7 +52,7 @@ RGV/
 																- dans "views.py", "user_register" est lié à la fonction "user_register" 
 											"rgv.js" : Fichier javascript qui gère toutes les fonctions du site web (fonctions clients)
 							                           Gère les routes entre les "views" (fichiers html) et l'URL
-													   Contient dico avec informations pour décrire que, par exemple "/help" fait appel à la page "views/help.html" 
+													   Contient dico avec informations pour décrire que, par exemple "/tutorial" fait appel à la page "views/tutorial.html" 
 													   A ça se rajoute des contrôleurs de page: 
 													       - 'noCtrl' : pour page texte sans bouton ni interaction avec l'utilisateur
 														   - 'appCtrl': contrôleur de base associé avec "/", i.e. le "home" 
