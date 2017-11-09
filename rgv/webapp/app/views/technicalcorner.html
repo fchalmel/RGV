@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="styles/justified-nav.css" rel="stylesheet">
+
+<div class="jumbotron">
+	<h2><i class="glyphicon glyphicon-wrench"></i> Technical corner</h2>
+	The backbone of the RGV is the series of tools for processing and organizing data within the system.
+	The system integrates an implementation of the <a href="https://www.ncbi.nlm.nih.gov/pubmed/27072794" target="_blanck">JBrowse</a> genome browser grafted to the RGV backbone.<br>
+	<br>
+	Four types of information are manually extracted and curated for each study, including:<br>
+	1- the scientific name of each species and the genome release with which the experiments were performed and analyzed;<br>
+	2- the associated scientific publication;<br>
+	3- each biology topic investigated in the study;<br>
+	4- and the high-throughput technologies performed. Then each raw data file of a given data set underwent a series of automatic processing to make it fully compatible with the RGV system.<br>
+	<br>
+	For each sample, eight processing steps are sequentially performed:<br>
+	1- The raw data file (sra file) of a given sample and their associated information are downloaded from the <a href="https://www.ncbi.nlm.nih.gov/geo/" target="_blanck">Gene Expression Omnibus</a> (GEO) and to the <a href="https://www.ncbi.nlm.nih.gov/sra" target="_blanck">Sequence Read Archive</a> (SRA);<br>
+	2- The fastq file is extracted from the sra archive file;<br>
+	3- reads are mapped on its corresponding reference genome using the <a href="https://www.ncbi.nlm.nih.gov/pubmed/23104886" target="_blanck">STAR</a> tool.<br>
+	4- each bam file is converted into a simple tab-delimited text file (BED) in which data are standardized according to the total nuber of read counts using <a href="https://www.ncbi.nlm.nih.gov/pubmed/20110278" target="_blanck">BEDTools</a>;<br>
+	5- the standardized BED file is then converted into an indexed binary format (bigWig or bw) to enable fast remote access to the data;<br>
+	6- the pairwise alignments between genome assemblies and between species provided by UCSC made it possible to convert genome coordinates in the resulting bigWig file from a genome of a given species into a genome of another species ussing <a href="https://www.ncbi.nlm.nih.gov/pubmed/24351709" target="_blanck">CrossMap</a>.<br>
+	7- reference transcripts are quantified in the corresponding sample using the <a href="https://www.ncbi.nlm.nih.gov/pubmed/25690850" target="_blanck">StringTie</a> tool.<br>
+	8- We used manually extracted information to organize the processed data into four broad categories, i.e. biological topics, technologies, publications and species.<br>
+	<br>
+	The web interface of TOXsIgN was built with two open web frameworks, <a href="https://trypyramid.com/" target="_blanck">Pyramid</a> and <a href="https://angularjs.org/" target="_blanck">AngularJS</a>.
+	Pyramid embeds many features, such as a REST API, a JSON renderer, an SQLAlchemy Object-relational mapper (ORM), a Deform library to generate forms, and compatibility with SMTP servers.
+	AngularJS, on the other hand, is an open JavaScript framework that extends traditional HTML vocabulary; it allows implementation of readable and quickly developable web environments.
+</div>

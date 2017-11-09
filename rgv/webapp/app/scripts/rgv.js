@@ -11,6 +11,10 @@ config(['$routeProvider','$logProvider',
             templateUrl: 'views/home.html',
             controller: 'appCtrl'
         });
+        $routeProvider.when('/about', {
+            templateUrl: 'views/about.html',
+            controller: 'noCtrl'
+        });
         $routeProvider.when('/contact', {
             templateUrl: 'views/contact.html',
             controller: 'noCtrl'
@@ -27,41 +31,56 @@ config(['$routeProvider','$logProvider',
             templateUrl: 'views/resources.html',
             controller: 'noCtrl'
         });
-
-        $routeProvider.when('/help', {
-            templateUrl: 'views/help.html',
+		$routeProvider.when('/getinvolved', {
+            templateUrl: 'views/getinvolved.html',
             controller: 'noCtrl'
         });
-        $routeProvider.when('/query', {
-            templateUrl: 'views/query.html',
-            controller: 'queryCtrl'
-        });
-
-        $routeProvider.when('/about', {
-            templateUrl: 'views/about.html',
+		$routeProvider.when('/technicalcorner', {
+            templateUrl: 'views/technicalcorner.html',
             controller: 'noCtrl'
         });
-
-        $routeProvider.when('/recover', {
-            templateUrl: 'views/recover.html',
-            controller: 'recoverCtrl'
-        });
-
-        $routeProvider.when('/search', {
-            templateUrl: 'views/search.html',
-            controller: 'searchCtrl'
-        });
-
-        $routeProvider.when('/tutorial', {
-            templateUrl: 'views/tutorial.html',
+		$routeProvider.when('/news', {
+            templateUrl: 'views/news.html',
             controller: 'noCtrl'
         });
-
+		$routeProvider.when('/statistics', {
+            templateUrl: 'views/statistics.html',
+            controller: 'noCtrl'
+        });
         $routeProvider.when('/download', {
             templateUrl: 'views/download.html',
             controller: 'noCtrl'
         });
+        $routeProvider.when('/tutorial', {
+            templateUrl: 'views/tutorial.html',
+            controller: 'noCtrl'
+        });
+        $routeProvider.when('/studies', {
+            templateUrl: 'views/studies.html',
+            controller: 'noCtrl'
+        });
 
+        $routeProvider.when('/browser_genome', {
+            templateUrl: 'views/browser_genome.html',
+            controller: 'noCtrl'
+        });
+        $routeProvider.when('/browser_genelevel', {
+            templateUrl: 'views/browser_genelevel.html',
+            controller: 'noCtrl'
+        });
+        $routeProvider.when('/browser_scRNAseq', {
+            templateUrl: 'views/browser_scRNAseq.html',
+            controller: 'noCtrl'
+        });
+
+		$routeProvider.when('/query', {
+            templateUrl: 'views/query.html',
+            controller: 'queryCtrl'
+        });
+        $routeProvider.when('/recover', {
+            templateUrl: 'views/recover.html',
+            controller: 'recoverCtrl'
+        });
         $routeProvider.when('/signin', {
             templateUrl: 'views/signin.html',
             controller: 'signinCtrl'
@@ -69,6 +88,10 @@ config(['$routeProvider','$logProvider',
         $routeProvider.when('/login', {
             templateUrl: 'views/login.html',
             controller: 'loginCtrl'
+        });
+        $routeProvider.when('/search', {
+            templateUrl: 'views/search.html',
+            controller: 'searchCtrl'
         });
        $routeProvider.otherwise({
             redirectTo: '/'

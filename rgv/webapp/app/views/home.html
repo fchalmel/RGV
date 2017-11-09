@@ -1,38 +1,48 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+<link href="styles/justified-nav.css" rel="stylesheet">
 
 <div ng-if="msg" class="alert alert-warning">
-    {{msg}}
+	{{msg}}
 </div>
 <link href="styles/justified-nav.css" rel="stylesheet">
 <div class="jumbotron">
-  <h3>Welcome to the ReproGenomics Viewer</h3>
-  <h5>The genomics toolbox for the reproductive science community</h5>
-  <p class="lead">The ReproGenomics Viewer (RGV) is a cross-species genomic toolbox for the reproductive community. The system is based on the implementation of a JBrowse genome browser and a Galaxy bioinformatics workflow environment. It was developed to provide a one-stop genomic working environment and aims to assist scientists in the analysis and the mining of a wide range of high-throughput repro-genomics data, including sequencing data.<br><br> RGV allows hosting, visualization, and direct comparison of users’ data to published genomics studies as well as to relevant genetic variations linked to reproduction. One way it does this is by enabling various genomic file format conversions.<br><br>The ReproGenomics Viewer currently hosts datasets that are oriented mainly towards testis biology and spermatogenesis. In the near future, these will extend to other areas of reproduction, including gonad development, urogenital cancers, and reproductive toxicology.<br></p>
+	<h2>Welcome to the ReproGenomics Viewer</h2>
+	<h3>The genomics toolbox for the reproductive science community!</h3>
 </div>
 
 <div class="row">
-
-  <a href="#/help">
-    <div class="col-md-4" style="text-align: center;">
-      <i class="fa fa-list fa-5x" aria-hidden="true" ></i>
-      <h2>Get started</h2>
-    </div>
-  </a> 
-
-  <a href="#/tutorial" style="text-align: center;">
-    <div class="col-md-4">
-      <i class="fa fa-magic fa-5x" aria-hidden="true"></i>
-      <h2>How using it ?</h2>
-    </div>
-  </a> 
-
-  <a href="#/involved" style="text-align: center;">
-    <div class="col-md-4">
-      <i class="fa fa-users fa-5x" aria-hidden="true"></i>
-      <h2>Get involved</h2>
-    </div>
-  </a> 
+	<a href="#/browser_genome">
+		<div class="col-md-4" style="text-align: center;">
+			<h1><i class="glyphicon glyphicon-indent-left"></i></h1><h2> Genome browser</h2>
+		</div>
+	</a> 
+	<a href="#/browser_genelevel">
+		<div class="col-md-4" style="text-align: center;">
+			<h1><i class="glyphicon glyphicon-align-left"></i></h1><h2> Gene-level browser</h2>
+		</div>
+	</a> 
+	<a href="#/browser_scRNAseq">
+		<div class="col-md-4" style="text-align: center;">
+			<h1><i class="glyphicon glyphicon-cloud"></i></h1><h2> Single-cell browser</h2>
+		</div>
+	</a> 
+</div>
+<div class="row">
+	<a href="#/about">
+		<div class="col-md-4" style="text-align: center;">
+			<h1><i class="glyphicon glyphicon-flash"></i></h1><h2> What is RGV?</h2>
+		</div>
+	</a> 
+	<a href="#/tutorial">
+		<div class="col-md-4" style="text-align: center;">
+			<h1><i class="glyphicon glyphicon-education"></i></h1><h2> How to use it?</h2>
+		</div>
+	</a> 
+	<a href="#/getinvolved">
+		<div class="col-md-4" style="text-align: center;">
+			<h1><i class="glyphicon glyphicon-link"></i></h1><h2> How to get involved?</h2>
+		</div>
+	</a> 
 </div>
 <div class="row">
   <div class="col-md-4">
