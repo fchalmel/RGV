@@ -66,7 +66,7 @@ config(['$routeProvider','$logProvider',
         });
         $routeProvider.when('/browser_genelevel', {
             templateUrl: 'views/browser_genelevel.html',
-            controller: 'noCtrl'
+            controller: 'browsergenelevelCtrl'
         });
         $routeProvider.when('/browser_scRNAseq', {
             templateUrl: 'views/browser_scRNAseq.html',
@@ -132,6 +132,14 @@ angular.module('rgv').controller('userCtrl',
 angular.module('rgv').controller('noCtrl',
     function ($scope,$rootScope, $log, Auth, User,$location) {
 
+});
+
+angular.module('rgv').controller('browsergenelevelCtrl',
+    function ($scope,$rootScope, Dataset) {
+        Dataset.read_file().$promise.then(function(dataset){
+			console.log(dataset);
+			$scope.species=dataset.data;
+		});
 });
 
 

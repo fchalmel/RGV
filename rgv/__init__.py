@@ -64,6 +64,7 @@ def main(global_config, **settings):
     config.add_route('user_info', '/user/{id}')
     config.add_route('search', '/search')
     config.add_route('file_dataset','/dataset_download/{dir}/{file}')
+    config.add_route('read_file','/browser_genelevel_init')
 
     config.scan()
 

@@ -18,6 +18,17 @@
         });
     }
 
+    function Dataset($resource) {
+        return $resource('/dataset', { }, {
+            read_file: {
+                url: '/browser_genelevel_init',
+                method: 'GET',
+                isArray: false,
+                cache: false
+            }
+        });
+    }
+
     function User($resource) {
         //var user = null;
         return $resource('/user/:uid', {}, {
@@ -69,6 +80,7 @@
   angular.module('rgv.resources', ['ngResource'])
     .factory('User', User)
     .factory('Search', Search)
-    .factory('Logout', Logout);
+    .factory('Logout', Logout)
+    .factory('Dataset', Dataset);
 
 }());
