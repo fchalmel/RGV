@@ -39,22 +39,25 @@ def main(global_config, **settings):
     config.registry.db_mongo = db
     config.registry.admin_list = settings['admin'].split(',')
     config.registry.upload_path = settings['upload_path']
+    config.registry.news_path = settings['news_path']
     config.registry.admin_path = settings['admin_path']
     config.registry.public_path = settings['public_path']
     config.registry.dataset_path = settings['dataset_path']
     config.registry.script_path = settings['script_path']
 
     # by default we don't sniff, ever
-    config.registry.es = Elasticsearch( [settings['elastic_host']])
-    config.registry.es_db = settings['elastic_db']
-    config.registry.es.indices.create(index=settings['elastic_db'], ignore=400)
+    #config.registry.es = Elasticsearch( [settings['elastic_host']])
+    #config.registry.es_db = settings['elastic_db']
+    #config.registry.es.indices.create(index=settings['elastic_db'], ignore=400)
 
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_static_view('app', 'rgv:webapp/app')
+    config.add_route('file_dataset','/dataset_download/{dir}/{file}')
     config.add_route('home', '/')
-    config.add_route('user', '/user')
     config.add_route('login', '/user/login')
     config.add_route('logged', '/user/logged')
+    config.add_route('newsfeed', '/newsfeed')
+    config.add_route('user', '/user')
     config.add_route('user_register', '/user/register')
     config.add_route('user_recover', '/user/recover')
     config.add_route('user_confirm_recover', '/user/confirm_recover')
@@ -62,9 +65,10 @@ def main(global_config, **settings):
     config.add_route('user_validate', '/user/validate')
     config.add_route('user_delete', '/user/delete')
     config.add_route('user_info', '/user/{id}')
-    config.add_route('search', '/search')
-    config.add_route('file_dataset','/dataset_download/{dir}/{file}')
     config.add_route('read_file','/browser_genelevel_init')
+    config.add_route('search', '/search')
+
+
 
     config.scan()
 

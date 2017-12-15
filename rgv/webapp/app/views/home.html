@@ -8,6 +8,31 @@
 <div class="jumbotron">
 	<h2>Welcome to the ReproGenomics Viewer</h2>
 	<h3>The genomics toolbox for the reproductive science community!</h3>
+	<div class="well">
+		<p>The ReproGenomics Viewer (RGV) is a cross-species genomic toolbox for the reproductive community. The system is based on the implementation of a JBrowse genome browser and a Galaxy bioinformatics workflow environment. It was developed to provide a one-stop genomic working environment and aims to assist scientists in the analysis and the mining of a wide range of high-throughput repro-genomics data, including sequencing data.</p>
+	</div>
+</div>
+
+<div class="row">
+	<!--3 col pour avoir le carousel au milieu*/-->
+
+	<div class="col-md-3" style="height: 305px">
+		<!--/*div gauche*/-->
+	</div>
+	<div class="col-md-6" style="height: 305px">
+			<!--/*div milieu*/-->
+	    <carousel interval="myInterval">
+	      <slide ng-repeat="slide in slides" active="slide.active">
+	        <img ng-src="{{slide.image}}">
+	        <div class="carousel-caption">
+	          <h4>{{slide.text}}</h4>
+	        </div>
+	      </slide>
+	    </carousel>
+	</div>
+	<div class="col-md-3" style="height: 305px">
+		<!--/*div droite*/-->
+	</div>
 </div>
 
 <div class="row">
@@ -15,81 +40,76 @@
 		<div class="col-md-4" style="text-align: center;">
 			<h1><i class="glyphicon glyphicon-indent-left"></i></h1><h2> Genome browser</h2>
 		</div>
-	</a> 
+	</a>
 	<a href="#/browser_genelevel">
 		<div class="col-md-4" style="text-align: center;">
 			<h1><i class="glyphicon glyphicon-align-left"></i></h1><h2> Gene-level browser</h2>
 		</div>
-	</a> 
+	</a>
 	<a href="#/browser_scRNAseq">
 		<div class="col-md-4" style="text-align: center;">
 			<h1><i class="glyphicon glyphicon-cloud"></i></h1><h2> Single-cell browser</h2>
 		</div>
-	</a> 
+	</a>
 </div>
 <div class="row">
 	<a href="#/about">
 		<div class="col-md-4" style="text-align: center;">
 			<h1><i class="glyphicon glyphicon-flash"></i></h1><h2> What is RGV?</h2>
 		</div>
-	</a> 
+	</a>
 	<a href="#/tutorial">
 		<div class="col-md-4" style="text-align: center;">
 			<h1><i class="glyphicon glyphicon-education"></i></h1><h2> How to use it?</h2>
 		</div>
-	</a> 
+	</a>
 	<a href="#/getinvolved">
 		<div class="col-md-4" style="text-align: center;">
 			<h1><i class="glyphicon glyphicon-link"></i></h1><h2> How to get involved?</h2>
 		</div>
-	</a> 
+	</a>
 </div>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-8">
     <div class="panel panel-default" style="margin-top:20px;">
         <div class="panel-heading">
-            Last updates
+            Last news
         </div>
         <div class="panel-body fixed-panel">
-          <div ng-repeat="sign in last_sign">
-            <h4>{{sign.id}} - {{sign.title}}</h4>
-            <ul>
-              <li><b>Description :</b> {{sign.description}}</li>
-              <li><b>Studies :</b> <span ng-repeat="stud in sign.studies.split(',')"><a href="#/browse?dataset={{stud}}">{{stud}}</a> </span></li>
-              <li><b>Signatures :</b> <span ng-repeat="sig in sign.signatures.split(',')"><a href="#/browse?dataset={{sig}}">{{sig}}</a> </span></li>
-              <li>(<a href="#/browse?dataset={{sign.id}}">view</a>)</li>
-            </ul>
+          <div ng-repeat="(key,value) in newsfeed">
+            <h4>{{value.title}}</h4>
+            <p>{{value.text}}</p>
             <hr>
 
           </div>
-        
+
         </div>
     </div>
   </div>
 
-  <div class="col-md-4">
-    <div class="panel panel-default" style="margin-top:20px;">
-        <div class="panel-heading">
-            Links
-        </div>
-        <div class="panel-body">
-          <p>Information about how to search TOXsIgN, understand search results and how to submit data can be found in our <a href="#/help">Help</a>  section.</p>
-
-          <p>Find out more about the Research Institute for Environmental and Occupational Health (<a href="https://www.irset.org/">IRSET</a>).</p>
-        </div>
-    </div>
-  </div>
 
 
   <div class="col-md-4">
     <div class="panel panel-default" style="margin-top:20px;">
         <div class="panel-heading">
-            Tools and Access
+            Getting started
         </div>
         <div class="panel-body">
-          <p>The <a href="#/tools">TOXsIgN warehouse</a> for toxicogenomics and predictve toxicology tools</p>
-          <p><a href ="#/query">TOXsIgN search engine</a>: a powerful tool to access and query the TOXsIgN repository.</p>
-          <p>HTTP access: data can be downloaded directly from our <a href="http://toxsign.genouest.org/public/toxsign">HTTP site</a>.</p>
+					<ul class="list-unstyled">
+						<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-flash"></i> About RGV</a></li>
+						<li><a href="#/tutorial" active-link="active"><i class="glyphicon glyphicon-education"></i> Tutorial</a></li>
+						<li><a href="#/browser_genome" active-link="active"><i class="glyphicon glyphicon-indent-left"></i> Genome browser</a></li>
+						<li><a href="#/browser_genelevel" active-link="active"><i class="glyphicon glyphicon-align-left"></i> Gene-level browser</a></li>
+						<li><a href="#/browser_scRNAseq" active-link="active"><i class="glyphicon glyphicon-cloud"></i> Single-cell browser</a></li>
+					</ul>
         </div>
     </div>
   </div>
+
+	<div class="row">
+			<!--/*div espace bas de page, footer*/-->
+
+			<div class="col-md-3" style="height: 305px">
+				<!--/*div gauche*/-->
+			</div>
+	</div>

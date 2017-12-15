@@ -145,46 +145,51 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
 // Contrôleur de base associé à home.html
 angular.module('rgv').controller('appCtrl',
-    function ($scope,$rootScope, $log, Auth, User,$cookieStore, $location) {
+    function ($scope,$rootScope, $log, Auth, User, Dataset, $cookieStore, $location) {
         $scope.msg = null;
 
-        var user = Auth.getUser();
-        if(user !== null && user !== undefined) {
-            var cookie_selectID =  $cookieStore.get('selectedID');
-           var cookie_jobID =  $cookieStore.get('jobID');
-           if (cookie_selectID != undefined && cookie_selectID != ''){
-            var user_seletedID = user.selectedID.split(',');
-            var cookies_list = cookie_selectID.split(',');
-            var job_list = cookie_jobID.split(',');
-            
-            for(var i=0;i<cookies_list.length; i++){
-              var index = user_seletedID.indexOf(cookies_list[i]);
-              if (index == -1){
-                user_seletedID.push(cookies_list[i]);
-              }
-            }
-            user.selectedID = user_seletedID.join(',');
-            user.$save({'uid': user.id}).then(function(data){
-                user = data;
-                $cookieStore.put('selectedID',null)
-            });
-           }
+        // carousel boostrap. Ajouter images et textes dans slides
+        $scope.myInterval = 3000;
+        $scope.slides = [
+          {
+            image: 'images/slide1.png',
+            text: 'Display your reprogenomics data in RGV',
+            id:1
+          },
+          {
+            image: 'images/slide2.png',
+            text: 'Convert your own files to use them in RGV',
+            id:2
+          },
+          {
+            image: 'images/slide3.jpg',
+            text: 'Say: Hello Fred',
+            id:3
+          },
+        ];
+        //End carousel
 
-           if (cookie_jobID != undefined && cookie_jobID != ''){
-              for(var i=0;i < job_list.length; i++){
-                var index = user_seletedID.indexOf(job_list[i]);
-                if (index > -1){
-                  user_seletedID.push(job_list[i]);
-                }
-              }
-              user.jobID = user_seletedID.join(',');
-              user.$save({'uid': user.id}).then(function(data){
-                  user = data;
-                  $cookieStore.put('jobID',null)
-              });
-           }
-           
-        }
+        var user = Auth.getUser();
+
+
+        //Get Users ip for admin part
+        $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+          console.log(JSON.stringify(data, null, 2));
+        });
+
+
+        //Récupération news from local json file
+        Dataset.news_feed().$promise.then(function(news){
+    			console.log(news);
+          if(news.status != 1){
+            $scope.newsfeed = news.data["news_list"];
+            console.log($scope.newsfeed);
+          }
+          else {
+            $scope.msg = news.msg;
+          };
+    		});
+
 
         if(user === null || user === undefined) {
             User.is_authenticated({},{}).$promise.then(function(data){
@@ -240,7 +245,7 @@ angular.module('rgv').controller('loginCtrl',
             $scope.msg = data.msg;
         });
       }
-      
+
       $scope.login = function() {
 
           User.login({},{'user_name': $scope.user_name, 'user_password': $scope.user_password}).$promise.then(function(data){

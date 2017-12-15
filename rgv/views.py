@@ -37,12 +37,12 @@ if sys.version < '3':
 else:
     from email.mime.text import MIMEText
 from logging.handlers import RotatingFileHandler
- 
+
 # création de l'objet logger qui va nous servir à écrire dans les logs
 logger = logging.getLogger()
 # on met le niveau du logger à DEBUG, comme ça il écrit tout
 logger.setLevel(logging.DEBUG)
- 
+
 # création d'un formateur qui va ajouter le temps, le niveau
 # de chaque message quand on écrira un message dans le log
 formatter = logging.Formatter('%(asctime)s :: %(levelname)s :: %(message)s')
@@ -54,7 +54,7 @@ file_handler = RotatingFileHandler('view.log', 'a', 1000000000, 1)
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
- 
+
 # création d'un second handler qui va rediriger chaque écriture de log
 # sur la console
 steam_handler = logging.StreamHandler()
@@ -80,6 +80,25 @@ def read_file(request):
         return {"data":d, "status":0}
     except:
         return {"data":d, "status":1}
+
+@view_config(route_name='newsfeed', renderer='json', request_method='GET')
+def getnews(request):
+    """
+        func: Lecture fichier json local
+        return: Dico (fichier json)
+        view: home.html
+    """
+    try:
+        url_file = os.path.join(request.registry.news_path,"all_news.news")
+        json_data=open(url_file,'r')
+
+        data = json.load(json_data)
+        return {'data':data,'msg':'OK','status':0}
+
+    except:
+        logger.error('Error in getnews - File missing ?')
+        return {'data':'','msg':'Get newsfeed : something wrong','status':1}
+
 
 
 @view_config(route_name='file_dataset', request_method='GET')
@@ -115,7 +134,7 @@ def search(request):
     body = {"query" : { "query_string" : {"query" :request_query,"default_operator":"AND",'analyzer': "standard"}}}
     print body
     return page
-  
+
     #page = request.registry.es.search(
     #index = request.registry.es_db,
     #  search_type = 'query_then_fetch',

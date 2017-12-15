@@ -1,0 +1,16 @@
+{
+"news_list":[
+    {
+      "title" : "Welcome to RGV 2.0",
+      "text" : "The new version of RGV is now available"
+    },
+    {
+      "title" : "Single cell tool",
+      "text" : "A new world is coming, a single cell tool will be soon here"
+    },
+    {
+      "title" : "RGV funding",
+      "text" : "You like RGV, give us lot of money"
+    }
+  ]
+}

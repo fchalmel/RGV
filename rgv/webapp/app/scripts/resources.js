@@ -25,6 +25,12 @@
                 method: 'GET',
                 isArray: false,
                 cache: false
+            },
+            news_feed: {
+                url: '/newsfeed',
+                method: 'GET',
+                isArray: false,
+                cache: false
             }
         });
     }
