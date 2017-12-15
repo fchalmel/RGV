@@ -2,15 +2,21 @@
 "news_list":[
     {
       "title" : "Welcome to RGV 2.0",
-      "text" : "The new version of RGV is now available"
+      "text" : "The new version of RGV is now available",
+      "category": "Information",
+      "date": "2017/12/12"
     },
     {
       "title" : "Single cell tool",
-      "text" : "A new world is coming, a single cell tool will be soon here"
+      "text" : "A new world is coming, a single cell tool will be soon here",
+      "category": "Tool",
+      "date": "2017/12/15"
     },
     {
       "title" : "RGV funding",
-      "text" : "You like RGV, give us lot of money"
+      "text" : "You like RGV, give us lot of money",
+      "category": "Money",
+      "date": "2017/12/21"
     }
   ]
 }

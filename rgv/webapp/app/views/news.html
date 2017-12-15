@@ -1,18 +1,21 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="styles/justified-nav.css" rel="stylesheet">
-
-<div class="jumbotron">
-	<h2><i class="glyphicon glyphicon-bell"></i> News</h2>
-	<table class="table table-bordered table-hover table-striped">
-		<tr>
-			<th>Date (AAAA/MM/DD)</th>
-			<th>Category</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>AAAA/MM/DD</td>
-			<td>NA</td>
-			<td>NA</td>
-		</tr>
-	</table>
+<div ng-if="msg" class="alert alert-warning">
+	{{msg}}
 </div>
+
+<div class="jumbotron" style="margin-top:50px;text-align:center;">
+	<h2><i class="glyphicon glyphicon-bell"></i> News</h2>
+</div>
+
+<table class="table table-bordered table-hover table-striped">
+	<tr>
+		<th>Date (AAAA/MM/DD)</th>
+		<th>Category</th>
+		<th>Description</th>
+	</tr>
+	<tr ng-repeat="(key,value) in newsfeed">
+		<td>{{value.date}}</td>
+		<td>{{value.category}}</td>
+		<td><h4>{{value.title}}</h4><p>{{value.text}}</p></td>
+	</tr>
+</table>

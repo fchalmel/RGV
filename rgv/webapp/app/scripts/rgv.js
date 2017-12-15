@@ -41,7 +41,7 @@ config(['$routeProvider','$logProvider',
         });
 		$routeProvider.when('/news', {
             templateUrl: 'views/news.html',
-            controller: 'noCtrl'
+            controller: 'newsCtrl'
         });
 		$routeProvider.when('/statistics', {
             templateUrl: 'views/statistics.html',
@@ -133,6 +133,25 @@ angular.module('rgv').controller('noCtrl',
     function ($scope,$rootScope, $log, Auth, User,$location) {
 
 });
+
+// Page news - récupère les news du fichiers JSON local
+angular.module('rgv').controller('newsCtrl',
+    function ($scope,$rootScope, $log, Auth, Dataset, User,$location) {
+
+      //Récupération news from local json file
+      Dataset.news_feed().$promise.then(function(news){
+        console.log(news);
+        if(news.status != 1){
+          $scope.newsfeed = news.data["news_list"];
+          console.log($scope.newsfeed);
+        }
+        else {
+          $scope.msg = news.msg;
+        };
+      });
+
+});
+
 
 angular.module('rgv').controller('browsergenelevelCtrl',
     function ($scope,$rootScope, Dataset) {
