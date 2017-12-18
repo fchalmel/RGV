@@ -17,7 +17,7 @@ config(['$routeProvider','$logProvider',
         });
         $routeProvider.when('/contact', {
             templateUrl: 'views/contact.html',
-            controller: 'noCtrl'
+            controller: 'contactCtrl'
         });
         $routeProvider.when('/citing', {
             templateUrl: 'views/citing.html',
@@ -127,10 +127,56 @@ angular.module('rgv').controller('userCtrl',
     function ($scope,$rootScope, $log, Auth, User,$location) {
 });
 
-
 // Dédié aux pages n'ayant pas besoin de contrôleur (ex que du texte)
-angular.module('rgv').controller('noCtrl',
+angular.module('rgv').controller('userCtrl',
     function ($scope,$rootScope, $log, Auth, User,$location) {
+});
+
+
+//Page contact avec mail crypté
+angular.module('rgv').controller('contactCtrl',
+    function ($scope,$rootScope, $log, Auth, User,$location) {
+      // Email obfuscator script 2.1 by Tim Williams, University of Arizona
+      // Random encryption key feature coded by Andrew Moulden
+      // This code is freeware provided these four comment lines remain intact
+      // A wizard to generate this code is at http://www.jottings.com/obfuscator/
+      //FRED
+      var coded = "oVWsWVf0.0AELSWL@fFXWVS.oV";
+      var key = "ZF1L2i9xQRYXc8U3AjG4bdEVS5uJzKefwgvOpn0lICk7N6TsMqPthyDHWoarmB";
+      var shift=coded.length;
+      var  link="";
+        for (var i=0; i<coded.length; i++) {
+          if (key.indexOf(coded.charAt(i))==-1) {
+            var ltr = coded.charAt(i);
+            link += (ltr);
+          }
+          else {
+            var ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length;
+            link += (key.charAt(ltr));
+          }
+        }
+      document.getElementById("fredmail").innerHTML = "<a class='btn btn-primary btn-twitter btn-sm'  href='mailto:"+link+"'><i class='fa fa-envelope' aria-hidden='true'></i></a>";
+
+
+      //Olivier
+       var coded2 = "m0ZZk4F@KI1k0ImF.k4K"
+       var key2 = "WzQNcmYhIRdZSqu3igakJUBOEnDCbAw7rT0HfKGlt5yj61Ms8Lev4pVx2P9XFo"
+       var coded2 = "AM55hs9@7nqhMnA9.hs7";
+       var key2 = "prZC9jNPfn0ioLMwy3S75sHxav84QqcEhlYDzGUTKAkRXJt6W1BeOIbVu2dFmg";
+       var shift2=coded2.length;
+       var link2="";
+       for (var z=0; z<coded2.length; z++) {
+         if (key2.indexOf(coded2.charAt(z))==-1) {
+           var ltr2 = coded2.charAt(z);
+           link2 += (ltr2);
+         }
+         else {
+           var ltr2 = (key2.indexOf(coded2.charAt(z))-shift2+key2.length) % key2.length;
+           link2 += (key2.charAt(ltr2));
+         }
+       }
+       console.log(link2);
+      document.getElementById("oliviermail").innerHTML = "<a class='btn btn-primary btn-twitter btn-sm'  href='mailto:"+link2+"'><i class='fa fa-envelope' aria-hidden='true'></i></a>";
 
 });
 
