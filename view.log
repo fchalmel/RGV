@@ -1590,3 +1590,136 @@ Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
     raise HTTPNotFound(request.url)
 HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2017-12-18 17:34:17,608 :: ERROR :: Exception when serving /app/videos/RGV_08.mp4
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file.
+2017-12-18 17:34:17,610 :: ERROR :: Exception when serving /app/videos/RGV_07.mp4
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2017-12-18 17:42:14,858 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353839363138383332/exception
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Library/Python/2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Library/Python/2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Library/Python/2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Library/Python/2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2017-12-18 17:45:25,818 :: ERROR :: Exception when serving /app/videos/RGV_07.mp4
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2017-12-18 17:45:25,820 :: ERROR :: Exception when serving /app/videos/RGV_08.mp4
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2017-12-18 17:52:59,054 :: ERROR :: Exception when serving /app/videos/RGV_06.mp4
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2017-12-18 17:52:59,082 :: ERROR :: Exception when serving /app/videos/RGV_07.mp4
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2017-12-18 17:52:59,085 :: ERROR :: Exception when serving /app/videos/RGV_08.mp4
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
