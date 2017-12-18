@@ -1259,3 +1259,12 @@ Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
     raise HTTPNotFound(request.url)
 HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2017-12-18 14:45:34,325 :: ERROR :: Socket error
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/Library/Python/2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 41] Protocol wrong type for socket
