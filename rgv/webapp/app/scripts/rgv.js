@@ -3,7 +3,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('rgv', ['rgv.resources','angular-carousel', 'ngDialog', 'ngHandsontable', 'ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
+var app = angular.module('rgv', ['rgv.resources', 'ngTouch', 'ui.grid', 'ui.grid.grouping', 'ui.grid.selection','angular-carousel', 'ngDialog', 'ngHandsontable', 'ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
 
 config(['$routeProvider','$logProvider',
     function ($routeProvider) {
@@ -200,11 +200,71 @@ angular.module('rgv').controller('newsCtrl',
 
 
 angular.module('rgv').controller('browsergenelevelCtrl',
-    function ($scope,$rootScope, Dataset) {
+    function ($scope,$rootScope,$http, Dataset) {
         Dataset.read_file().$promise.then(function(dataset){
 			console.log(dataset);
 			$scope.species=dataset.data;
 		});
+
+    //GridData (ag-grid) system definition
+    $scope.main = this;
+
+    //liste 
+    $scope.selected = [];
+
+    $scope.main.gridOptions = {
+      treeRowHeaderAlwaysVisible: true,
+      headerTemplate: 'views/header-template.html',
+      category: [{name: 'People', visible: true},
+      {name: 'Year', visible: true},{name: 'Extra1', visible: true},{name: 'Extra2', visible: true}],
+      enableGridMenu: true,
+      enableSorting: false,
+      multiSelect: true,
+      columnDefs: [
+        {name: 'gender', category:'People', grouping: { groupPriority: 0 }, width: 100, enableColumnMenu: false},
+        {name:'name', category:"People", width: 100, enableColumnMenu: false},
+        {name:'title', category:"People", width: 100, enableColumnMenu: false},
+        {name:'age', category:'Year', width: 50, enableColumnMenu: false},
+        {name:'annee', category:'Year', width: 50, enableColumnMenu: false},
+        {name:'No Cat',  width: 50, enableColumnMenu: false},
+        {name:'extra1', category:'Extra1', width: 75, enableColumnMenu: false},
+        {name:'extra3', category:'Extra1', width: 75, enableColumnMenu: false},
+        {name:'extra2', category:'Extra2', width: 75, enableColumnMenu: false}
+        ],
+      data: [
+        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' }
+      ],
+      onRegisterApi: function( gridApi ) {
+        $scope.main.gridApi = gridApi;
+        $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
+          gridApi.selection.on.rowSelectionChanged($scope, function(row) {
+              var index = $scope.selected.indexOf(row.entity.name);
+              console.log(index);
+              if ( index != -1){
+                 $scope.selected.splice(index,1);
+               } else{
+                 $scope.selected.push(row.entity.name);
+               };
+              console.log($scope.selected);
+          });
+      }
+    };
+
+    //collapse panel
+    $(".left").click(function () {
+      $(".panel").css("width","1px");
+      $(".left").hide();
+      $(".right").show();
+    });
+
+    $(".right").click(function () {
+      $(".panel").css("width","auto");
+      $(".right").hide();
+      $(".left").show();
+    });
 });
 
 

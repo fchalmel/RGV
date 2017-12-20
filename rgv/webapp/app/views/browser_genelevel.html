@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="https://unpkg.com/ag-grid@15.0.0/dist/ag-grid.js"></script>
+
+
 
 <div class="jumbotron" style="margin-top:50px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
 	<h2><i class="glyphicon glyphicon-align-left"></i> Gene-level browser</h2>
@@ -13,4 +16,16 @@
 
 
 	<h3><i class="glyphicon glyphicon-ban-circle"></i> Under construction! Coming soon... <i class="glyphicon glyphicon-ban-circle"></i></h3>
+</div>
+
+
+
+<div class="grid" ui-grid-grouping ui-grid-selection ui-grid="main.gridOptions" style="height:300px"></div>
+
+{{msg}}
+
+<div class="panel">
+  <div class="title">Expand / Collapse Panel</div>
+  <div class="left"></div>
+  <div class="right"></div>
 </div>
