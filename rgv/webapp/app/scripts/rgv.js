@@ -200,7 +200,7 @@ angular.module('rgv').controller('newsCtrl',
 
 
 angular.module('rgv').controller('browsergenelevelCtrl',
-    function ($scope,$rootScope,$http, Dataset) {
+    function ($scope,$rootScope,$http, Dataset, $templateCache) {
         Dataset.read_file().$promise.then(function(dataset){
 			console.log(dataset);
 			$scope.species=dataset.data;
@@ -208,28 +208,45 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
     //GridData (ag-grid) system definition
     $scope.main = this;
+    $templateCache.put('ui-grid/selectionRowHeaderButtons',
+    "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
+  );
 
-    //liste 
+
+  $templateCache.put('ui-grid/selectionSelectAllButtons',
+    "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-all-selected': grid.selection.selectAll}\" ng-if=\"grid.options.enableSelectAll\"><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"grid.selection.selectAll\" ng-click=\"grid.selection.selectAll=!grid.selection.selectAll;headerButtonClick($event)\"></div>"
+  );
+
+  $scope.cellStateEditableTemplate = '<div class="typeaheadcontainer"><input type="text" ' +
+                                            'class="typeaheadcontrol"' +
+                                            'data-ng-model="MODEL_COL_FIELD" ' +
+                                            'data-typeahead="name as state.name for state in grid.appScope.states | filter:$viewValue | limitTo:8" ' +
+                                            'data-ng-required="true" ' +
+                                            'data-typeahead-editable ="false"' +
+                                            'data-typeahead-on-select="typeaheadSelected(row.entity, $item)" ' +
+                                            '/></div>';
+
+
+ $scope.typeaheadSelected = function(entity, selectedItem) {
+            entity.state = selectedItem;
+ };
+
+    //liste
     $scope.selected = [];
 
     $scope.main.gridOptions = {
       treeRowHeaderAlwaysVisible: true,
-      headerTemplate: 'views/header-template.html',
-      category: [{name: 'People', visible: true},
-      {name: 'Year', visible: true},{name: 'Extra1', visible: true},{name: 'Extra2', visible: true}],
-      enableGridMenu: true,
-      enableSorting: false,
+      enableGridMenu: false,
+      enableSorting: true,
+      enableFiltering: true,
       multiSelect: true,
       columnDefs: [
-        {name: 'gender', category:'People', grouping: { groupPriority: 0 }, width: 100, enableColumnMenu: false},
-        {name:'name', category:"People", width: 100, enableColumnMenu: false},
-        {name:'title', category:"People", width: 100, enableColumnMenu: false},
-        {name:'age', category:'Year', width: 50, enableColumnMenu: false},
-        {name:'annee', category:'Year', width: 50, enableColumnMenu: false},
-        {name:'No Cat',  width: 50, enableColumnMenu: false},
-        {name:'extra1', category:'Extra1', width: 75, enableColumnMenu: false},
-        {name:'extra3', category:'Extra1', width: 75, enableColumnMenu: false},
-        {name:'extra2', category:'Extra2', width: 75, enableColumnMenu: false}
+        {name: 'gender', width: 200, enableColumnMenu: false},
+        {name:'name', width: 200, enableColumnMenu: false},
+        {name:'title', width: 200, enableColumnMenu: false},
+        {name:'age', width: 200, enableColumnMenu: false},
+        {name:'annee', width: 200, enableColumnMenu: false},
+        {name:'extra1', width: 200, enableColumnMenu: false},
         ],
       data: [
         { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
