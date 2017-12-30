@@ -159,8 +159,8 @@ angular.module('rgv').controller('contactCtrl',
 
 
       //Olivier
-       var coded2 = "m0ZZk4F@KI1k0ImF.k4K"
-       var key2 = "WzQNcmYhIRdZSqu3igakJUBOEnDCbAw7rT0HfKGlt5yj61Ms8Lev4pVx2P9XFo"
+       var coded2 = "m0ZZk4F@KI1k0ImF.k4K";
+       var key2 = "WzQNcmYhIRdZSqu3igakJUBOEnDCbAw7rT0HfKGlt5yj61Ms8Lev4pVx2P9XFo";
        var coded2 = "AM55hs9@7nqhMnA9.hs7";
        var key2 = "prZC9jNPfn0ioLMwy3S75sHxav84QqcEhlYDzGUTKAkRXJt6W1BeOIbVu2dFmg";
        var shift2=coded2.length;
