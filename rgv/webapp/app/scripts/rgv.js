@@ -205,9 +205,15 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 			console.log(dataset);
 			$scope.species=dataset.data;
 		});
+    
+        $scope.updateSelection = function() {
+            console.log("Update");
+            $scope.gridApi.grid.refresh();
+        };
 
     //GridData (ag-grid) system definition
-    $scope.main = this;
+    $scope.main = {};
+    $scope.second = {};
     $templateCache.put('ui-grid/selectionRowHeaderButtons',
     "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
   );
@@ -234,6 +240,10 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     //liste
     $scope.selected = [];
 
+    /////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////
+    //Angular UI-grid
+    //Grid One --> Filtre de sélection
     $scope.main.gridOptions = {
       treeRowHeaderAlwaysVisible: true,
       enableGridMenu: false,
@@ -241,18 +251,13 @@ angular.module('rgv').controller('browsergenelevelCtrl',
       enableFiltering: true,
       multiSelect: true,
       columnDefs: [
-        {name: 'gender', width: 200, enableColumnMenu: false},
         {name:'name', width: 200, enableColumnMenu: false},
-        {name:'title', width: 200, enableColumnMenu: false},
-        {name:'age', width: 200, enableColumnMenu: false},
-        {name:'annee', width: 200, enableColumnMenu: false},
-        {name:'extra1', width: 200, enableColumnMenu: false},
         ],
       data: [
-        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' }
+        { name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+        { name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+        { name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+        { name: 'Jessica', title: 'Engineer', age: '35', annee:'3' }
       ],
       onRegisterApi: function( gridApi ) {
         $scope.main.gridApi = gridApi;
@@ -262,13 +267,72 @@ angular.module('rgv').controller('browsergenelevelCtrl',
               console.log(index);
               if ( index != -1){
                  $scope.selected.splice(index,1);
+                 $scope.second.gridApi.grid.refresh();
+                 
+                 
                } else{
                  $scope.selected.push(row.entity.name);
+                 $scope.second.gridApi.grid.refresh();
+                 
                };
               console.log($scope.selected);
           });
       }
     };
+
+    // Grid 2 --> All Data
+    $scope.second.gridOptions = {
+        treeRowHeaderAlwaysVisible: true,
+        enableGridMenu: false,
+        enableSorting: false,
+        enableFiltering: true,
+        multiSelect: true,
+        columnDefs: [
+            {name: 'gender', width: 200, enableColumnMenu: false},
+            {name:'name', width: 200, enableColumnMenu: false},
+            {name:'title', width: 200, enableColumnMenu: false},
+            {name:'age', width: 200, enableColumnMenu: false},
+            {name:'annee', width: 200, enableColumnMenu: false},
+            {name:'extra1', width: 200, enableColumnMenu: false},
+          ],
+        data: [
+          { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+          { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+          { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+          { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+          { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+          { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+          { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+        ],
+        onRegisterApi: function( gridoApi ) {
+            $scope.second.gridApi = gridoApi;
+            $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
+            console.log($scope.second.gridApi.grid);
+        }
+      };
+
+      //Fonction de filtration
+      $scope.singleFilter = function( renderableRows ){
+            
+        console.log("SINGLE FILTER");
+         renderableRows.forEach( function( row ) {
+           
+           var match = false;
+          if ($scope.selected.indexOf(row.entity.name) > -1) {
+            match = true;
+          }
+          console.log(row.entity.name + ': ' + match)
+          if ( !match ){
+            row.visible = false;
+          }
+        });
+        return renderableRows;
+      };
+   
+    //Angular UI-grid END
+    /////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////
+
 
     //collapse panel
     $(".left").click(function () {
