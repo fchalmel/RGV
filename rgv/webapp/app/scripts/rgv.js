@@ -3,7 +3,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('rgv', ['rgv.resources', 'ngTouch', 'ui.grid', 'ui.grid.grouping', 'ui.grid.selection','angular-carousel', 'ngDialog', 'ngHandsontable', 'ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
+var app = angular.module('rgv', ['rgv.resources', 'ngTouch', 'ui.grid', 'ui.grid.grouping', 'ui.grid.autoResize', 'ui.grid.selection','angular-carousel', 'ngDialog', 'ngHandsontable', 'ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
 
 config(['$routeProvider','$logProvider',
     function ($routeProvider) {
@@ -214,6 +214,53 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     //GridData (ag-grid) system definition
     $scope.main = {};
     $scope.second = {};
+
+    $scope.users = [
+        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+    ];
+    
+    $scope.filterText;
+    
+    $scope.refreshData = function() {
+        $scope.second.data = $filter('filter')($scope.Data, $scope.filterText, undefined);
+        $scope.filterGrid2.data = $filter('filter')($scope.Data, $scope.filterText, undefined);
+        $scope.filterGrid3.data = $filter('visibleColumns')($scope.Data, $scope.filterGrid3, $scope.filterText);
+    };
+
     $templateCache.put('ui-grid/selectionRowHeaderButtons',
     "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
   );
@@ -247,11 +294,9 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     $scope.main.gridOptions = {
       treeRowHeaderAlwaysVisible: true,
       enableGridMenu: false,
-      enableSorting: true,
-      enableFiltering: true,
       multiSelect: true,
       columnDefs: [
-        {name:'name', width: 200, enableColumnMenu: false},
+        {name:'name', enableColumnMenu: false},
         ],
       data: [
         { name: 'Bob', title: 'CEO', age : '14', annee:'1' },
@@ -288,22 +333,14 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         enableFiltering: true,
         multiSelect: true,
         columnDefs: [
-            {name: 'gender', width: 200, enableColumnMenu: false},
-            {name:'name', width: 200, enableColumnMenu: false},
-            {name:'title', width: 200, enableColumnMenu: false},
-            {name:'age', width: 200, enableColumnMenu: false},
-            {name:'annee', width: 200, enableColumnMenu: false},
-            {name:'extra1', width: 200, enableColumnMenu: false},
+            {name: 'gender', width: 50, enableColumnMenu: false},
+            {name:'name', width: 50, enableColumnMenu: false},
+            {name:'title', width: 100, enableColumnMenu: false},
+            {name:'age', width: 50, enableColumnMenu: false},
+            {name:'annee', width: 50, enableColumnMenu: false},
+            {name:'extra1', width: 50, enableColumnMenu: false},
           ],
-        data: [
-          { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-          { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-          { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-          { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-          { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-          { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-          { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-        ],
+        data: $scope.users,
         onRegisterApi: function( gridoApi ) {
             $scope.second.gridApi = gridoApi;
             $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
@@ -313,20 +350,28 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
       //Fonction de filtration
       $scope.singleFilter = function( renderableRows ){
+        if ($scope.selected.length != 0){
             
-        console.log("SINGLE FILTER");
-         renderableRows.forEach( function( row ) {
+            renderableRows.forEach( function( row ) {
            
-           var match = false;
-          if ($scope.selected.indexOf(row.entity.name) > -1) {
-            match = true;
-          }
-          console.log(row.entity.name + ': ' + match)
-          if ( !match ){
-            row.visible = false;
-          }
-        });
-        return renderableRows;
+                var match = false;
+               if ($scope.selected.indexOf(row.entity.name) > -1) {
+                 match = true;
+               }
+               if ( !match ){
+                 row.visible = false;
+               }
+             });
+             return renderableRows;
+        }
+        else{
+            console.log("===0")
+            renderableRows.forEach( function( row ) {
+                row.visible = true;
+             });
+             return renderableRows;
+        }
+         
       };
    
     //Angular UI-grid END
