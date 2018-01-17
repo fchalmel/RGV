@@ -200,197 +200,214 @@ angular.module('rgv').controller('newsCtrl',
 
 
 angular.module('rgv').controller('browsergenelevelCtrl',
-    function ($scope,$rootScope,$http, Dataset, $templateCache) {
+    function ($scope,$rootScope,$http,$filter, Dataset, $templateCache) {
+        //Get Gene level information
         Dataset.read_file().$promise.then(function(dataset){
 			console.log(dataset);
 			$scope.species=dataset.data;
 		});
     
+        //Update grid2 en fonction de la selection de la grid1
         $scope.updateSelection = function() {
             console.log("Update");
             $scope.gridApi.grid.refresh();
         };
 
-    //GridData (ag-grid) system definition
-    $scope.main = {};
-    $scope.second = {};
 
-    $scope.users = [
-        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-        { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-        { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-        { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-        { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-    ];
+        //GridData (ag-grid) system definition
+        $scope.main = {};
+        $scope.second = {};
+        $scope.filterValue = null;
+
+        $scope.users = [
+            { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Male', name: 'Bob', title: 'Lowly Developer', age : '12', annee:'1' },
+            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Male', name: 'Bob', title: 'Engineer', age : '32', annee:'1' },
+            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Male', name: 'Bob', title: 'Lowly Developer', age : '41', annee:'1' },
+            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
+            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
+        ];
     
-    $scope.filterText;
-    
-    $scope.refreshData = function() {
-        $scope.second.data = $filter('filter')($scope.Data, $scope.filterText, undefined);
-        $scope.filterGrid2.data = $filter('filter')($scope.Data, $scope.filterText, undefined);
-        $scope.filterGrid3.data = $filter('visibleColumns')($scope.Data, $scope.filterGrid3, $scope.filterText);
-    };
 
-    $templateCache.put('ui-grid/selectionRowHeaderButtons',
-    "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
-  );
+        //Checkbox grid template
+        $templateCache.put('ui-grid/selectionRowHeaderButtons',
+            "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
+        );
 
 
-  $templateCache.put('ui-grid/selectionSelectAllButtons',
-    "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-all-selected': grid.selection.selectAll}\" ng-if=\"grid.options.enableSelectAll\"><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"grid.selection.selectAll\" ng-click=\"grid.selection.selectAll=!grid.selection.selectAll;headerButtonClick($event)\"></div>"
-  );
+        $templateCache.put('ui-grid/selectionSelectAllButtons',
+            "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-all-selected': grid.selection.selectAll}\" ng-if=\"grid.options.enableSelectAll\"><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"grid.selection.selectAll\" ng-click=\"grid.selection.selectAll=!grid.selection.selectAll;headerButtonClick($event)\"></div>"
+        );
 
-  $scope.cellStateEditableTemplate = '<div class="typeaheadcontainer"><input type="text" ' +
-                                            'class="typeaheadcontrol"' +
-                                            'data-ng-model="MODEL_COL_FIELD" ' +
-                                            'data-typeahead="name as state.name for state in grid.appScope.states | filter:$viewValue | limitTo:8" ' +
-                                            'data-ng-required="true" ' +
-                                            'data-typeahead-editable ="false"' +
-                                            'data-typeahead-on-select="typeaheadSelected(row.entity, $item)" ' +
-                                            '/></div>';
+        //liste obj selectionnés
+        $scope.selected = [];
 
-
- $scope.typeaheadSelected = function(entity, selectedItem) {
-            entity.state = selectedItem;
- };
-
-    //liste
-    $scope.selected = [];
-
-    /////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////
-    //Angular UI-grid
-    //Grid One --> Filtre de sélection
-    $scope.main.gridOptions = {
-      treeRowHeaderAlwaysVisible: true,
-      enableGridMenu: false,
-      multiSelect: true,
-      columnDefs: [
-        {name:'name', enableColumnMenu: false},
-        ],
-      data: [
-        { name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-        { name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-        { name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-        { name: 'Jessica', title: 'Engineer', age: '35', annee:'3' }
-      ],
-      onRegisterApi: function( gridApi ) {
-        $scope.main.gridApi = gridApi;
-        $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
-          gridApi.selection.on.rowSelectionChanged($scope, function(row) {
-              var index = $scope.selected.indexOf(row.entity.name);
-              console.log(index);
-              if ( index != -1){
-                 $scope.selected.splice(index,1);
-                 $scope.second.gridApi.grid.refresh();
-                 
-                 
-               } else{
-                 $scope.selected.push(row.entity.name);
-                 $scope.second.gridApi.grid.refresh();
-                 
-               };
-              console.log($scope.selected);
-          });
-      }
-    };
-
-    // Grid 2 --> All Data
-    $scope.second.gridOptions = {
+        //Angular UI-grid
+        //Grid One --> Filtre de sélection
+        $scope.main.gridOptions = {
         treeRowHeaderAlwaysVisible: true,
         enableGridMenu: false,
-        enableSorting: false,
-        enableFiltering: true,
         multiSelect: true,
         columnDefs: [
-            {name: 'gender', width: 50, enableColumnMenu: false},
-            {name:'name', width: 50, enableColumnMenu: false},
-            {name:'title', width: 100, enableColumnMenu: false},
-            {name:'age', width: 50, enableColumnMenu: false},
-            {name:'annee', width: 50, enableColumnMenu: false},
-            {name:'extra1', width: 50, enableColumnMenu: false},
-          ],
-        data: $scope.users,
-        onRegisterApi: function( gridoApi ) {
-            $scope.second.gridApi = gridoApi;
-            $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
-            console.log($scope.second.gridApi.grid);
+            {name:'name', enableColumnMenu: false},
+            ],
+        data: [
+            { name: 'Bob', title: 'CEO', age : '14', annee:'1' },
+            { name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
+            { name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
+            { name: 'Jessica', title: 'Engineer', age: '35', annee:'3' }
+        ],
+        onRegisterApi: function( gridApi ) {
+            $scope.main.gridApi = gridApi;
+            $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
+            gridApi.selection.on.rowSelectionChanged($scope, function(row) {
+                var index = $scope.selected.indexOf(row.entity.name);
+                console.log(index);
+                if ( index != -1){
+                    $scope.selected.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.push(row.entity.name);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+                console.log($scope.selected);
+            });
         }
-      };
+        };
 
-      //Fonction de filtration
-      $scope.singleFilter = function( renderableRows ){
-        if ($scope.selected.length != 0){
+        // Grid 2 --> All Data
+        $scope.second.gridOptions = {
+            treeRowHeaderAlwaysVisible: true,
+            enableGridMenu: false,
+            enableSorting: true,
+            enableFiltering: true,
+            multiSelect: true,
+            columnDefs: [
+                {name: 'gender', width: 100, enableColumnMenu: false},
+                {name:'name', width:100, enableColumnMenu: false},
+                {name:'title', width: 100, enableColumnMenu: false},
+                {name:'age', width: 100, enableColumnMenu: false},
+                {name:'annee', width: 100, enableColumnMenu: false},
+            ],
+            data: $scope.users,
+            onRegisterApi: function( gridoApi ) {
+                $scope.second.gridApi = gridoApi;
+                $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
+            }
+        };
+
+        $scope.filter = function() {
+            $scope.second.gridApi.grid.refresh();
+        };
+
+        //Fonction de filtration
+        $scope.singleFilter = function( renderableRows ){
+            if ($scope.selected.length != 0){
+                
+                renderableRows.forEach( function( row ) {
             
-            renderableRows.forEach( function( row ) {
-           
-                var match = false;
-               if ($scope.selected.indexOf(row.entity.name) > -1) {
-                 match = true;
-               }
-               if ( !match ){
-                 row.visible = false;
-               }
-             });
-             return renderableRows;
-        }
-        else{
-            console.log("===0")
-            renderableRows.forEach( function( row ) {
-                row.visible = true;
-             });
-             return renderableRows;
-        }
-         
-      };
+                    var match = false;
+                if ($scope.selected.indexOf(row.entity.name) > -1) {
+                    match = true;
+                }
+                if ( !match ){
+                    row.visible = false;
+                }
+                });
+                if ($scope.filterValue !=null){
+                    console.log($scope.filterValue)
+                    var matcher = new RegExp($scope.filterValue);
+                    renderableRows.forEach( function( row ) {
+                        var match = false;
+                        [ 'name', 'title', 'age' ].forEach(function( field ){
+                            if ( row.entity[field].match(matcher) ){
+                                match = true;
+                            }
+                        });
+                        if ( !match ){
+                            row.visible = false;
+                        }
+                    });
+                    return renderableRows;
+
+                }else{
+                    return renderableRows;
+                }
+            }
+            else{
+                
+                renderableRows.forEach( function( row ) {
+                    row.visible = true;
+                });
+                //Check fitration input
+                if ($scope.filterValue !=null){
+                    console.log($scope.filterValue)
+                    var matcher = new RegExp($scope.filterValue);
+                    renderableRows.forEach( function( row ) {
+                        var match = false;
+                        [ 'name', 'title', 'age' ].forEach(function( field ){
+                            if ( row.entity[field].match(matcher) ){
+                                match = true;
+                            }
+                        });
+                        if ( !match ){
+                            row.visible = false;
+                        }
+                    });
+                    return renderableRows;
+
+                }else{
+                    return renderableRows;
+                }
+            }
+        };
    
-    //Angular UI-grid END
-    /////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////
+        //Angular UI-grid END
 
+        //collapse panel
+        $(".left").click(function () {
+        $(".panel").css("width","1px");
+        $(".left").hide();
+        $(".right").show();
+        });
 
-    //collapse panel
-    $(".left").click(function () {
-      $(".panel").css("width","1px");
-      $(".left").hide();
-      $(".right").show();
-    });
-
-    $(".right").click(function () {
-      $(".panel").css("width","auto");
-      $(".right").hide();
-      $(".left").show();
-    });
+        $(".right").click(function () {
+        $(".panel").css("width","auto");
+        $(".right").hide();
+        $(".left").show();
+        });
 });
 
 
