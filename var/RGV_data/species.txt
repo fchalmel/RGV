@@ -1,0 +1,8 @@
+Human
+Rat
+Mouse
+Dog
+Zebrafish
+Pig
+Elephant
+Alien

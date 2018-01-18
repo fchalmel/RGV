@@ -61,22 +61,17 @@ steam_handler = logging.StreamHandler()
 steam_handler.setLevel(logging.DEBUG)
 logger.addHandler(steam_handler)
 
-@view_config(route_name='read_file', renderer='json', request_method='GET')
+@view_config(route_name='read_file', renderer='json', request_method='POST')
 def read_file(request):
-    print "Read file"
-    url_file = os.path.join(request.registry.dataset_path,"genomes.txt")
-    d = {}
+    form = json.loads(request.body, encoding=request.charset)
+    file_name = form['name']
+    url_file = os.path.join(request.registry.dataset_path,file_name)
+    d = {'line':[]}
     try:
         f = open(url_file, "r")
         for li in f.readlines():
-            lli = li.split("\t")
-            pub = lli[0].rstrip()
-            study = lli[1].rstrip()
-            org = lli[2].rstrip()
-            species = lli[3].rstrip()
-            if species not in d:
-                d[species] = []
-            d[species].append(study)
+            d["line"].append(li)
+
         return {"data":d, "status":0}
     except:
         return {"data":d, "status":1}

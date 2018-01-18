@@ -38,6 +38,7 @@ Main components
   position: absolute;
   top: 0;
   left: 0;
+  margin-top: 50px;
   height: 100%;
   width: 100%;
   visibility: hidden;
@@ -112,7 +113,7 @@ Main components
   }
 }
 .panel-header {
-  position: fixed;
+  position: absolute;
   width: 90%;
   height: 50px;
   line-height: 50px;
@@ -123,7 +124,7 @@ Main components
   -webkit-transition: top 0.3s 0s;
   transition: top 0.3s 0s;
 }
-.panel-header h1 {
+.panel-header h2 {
   font-weight: bold;
   color: #C1292E;
   padding-left: 5%;
@@ -144,12 +145,12 @@ Main components
 }
 @media only screen and (min-width: 768px) {
   .panel-header {
-    width: 70%;
+    width: 100%;
   }
 }
 @media only screen and (min-width: 1170px) {
   .panel-header {
-    width: 50%;
+    width: 90%;
   }
 }
 
@@ -214,7 +215,7 @@ Main components
   width: 90%;
   height: 100%;
   top: 0;
-  background: #E0D0C1;
+  background: #ffffff;
   z-index: 1;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;

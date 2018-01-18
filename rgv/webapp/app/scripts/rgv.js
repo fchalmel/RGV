@@ -200,11 +200,14 @@ angular.module('rgv').controller('newsCtrl',
 
 
 angular.module('rgv').controller('browsergenelevelCtrl',
-    function ($scope,$rootScope,$http,$filter, Dataset, $templateCache) {
+    function ($scope,$rootScope,$http,$filter, Dataset, $q, $templateCache) {
         //Get Gene level information
-        Dataset.read_file().$promise.then(function(dataset){
+        $scope.speciesValue = null;
+        
+        Dataset.read_file({"name":"species.txt"}).$promise.then(function(dataset){
 			console.log(dataset);
-			$scope.species=dataset.data;
+            $scope.species=dataset.data.line;
+            console.log($scope.species);
 		});
     
         //Update grid2 en fonction de la selection de la grid1
@@ -218,44 +221,18 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         $scope.main = {};
         $scope.second = {};
         $scope.filterValue = null;
+        $scope.users;
 
-        $scope.users = [
-            { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Male', name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Male', name: 'Bob', title: 'Lowly Developer', age : '12', annee:'1' },
-            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Male', name: 'Bob', title: 'Engineer', age : '32', annee:'1' },
-            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Male', name: 'Bob', title: 'Lowly Developer', age : '41', annee:'1' },
-            { gender: 'Male', name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-            { gender: 'Female', name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-            { gender: 'Female', name: 'Jessica', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Titi', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tata', title: 'Engineer', age: '35', annee:'3' },
-            { gender: 'Female', name: 'Tutu', title: 'Engineer', age: '35', annee:'3' },
-        ];
+        var canceler = $q.defer();
+        $http.get('https://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/data/10000_complex.json', {timeout: canceler.promise})
+            .then(function(response) {
+        $scope.main.data = response.data;
+        $scope.second.data = response.data;
+        console.log(response.data);
+
+        });
+
+       
     
 
         //Checkbox grid template
@@ -280,12 +257,6 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         columnDefs: [
             {name:'name', enableColumnMenu: false},
             ],
-        data: [
-            { name: 'Bob', title: 'CEO', age : '14', annee:'1' },
-            { name: 'Frank', title: 'Lowly Developer', age: '16', annee:'2' },
-            { name: 'Catherine', title: 'Developer', age: '27', annee:'2' },
-            { name: 'Jessica', title: 'Engineer', age: '35', annee:'3' }
-        ],
         onRegisterApi: function( gridApi ) {
             $scope.main.gridApi = gridApi;
             $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
@@ -315,13 +286,12 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             enableFiltering: true,
             multiSelect: true,
             columnDefs: [
-                {name: 'gender', width: 100, enableColumnMenu: false},
-                {name:'name', width:100, enableColumnMenu: false},
-                {name:'title', width: 100, enableColumnMenu: false},
-                {name:'age', width: 100, enableColumnMenu: false},
-                {name:'annee', width: 100, enableColumnMenu: false},
+                {name:'id'},
+                {name:'name'},
+                {field:'age'}, // showing backwards compatibility with 2.x.  you can use field in place of name
+                {name: 'address.city'},
+                {name: 'age again', field:'age'}
             ],
-            data: $scope.users,
             onRegisterApi: function( gridoApi ) {
                 $scope.second.gridApi = gridoApi;
                 $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
@@ -351,7 +321,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
                     var matcher = new RegExp($scope.filterValue);
                     renderableRows.forEach( function( row ) {
                         var match = false;
-                        [ 'name', 'title', 'age' ].forEach(function( field ){
+                        [ 'name', 'address.city', 'age' ].forEach(function( field ){
                             if ( row.entity[field].match(matcher) ){
                                 match = true;
                             }
@@ -395,19 +365,9 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         };
    
         //Angular UI-grid END
+        console.log($scope.second.data);
 
-        //collapse panel
-        $(".left").click(function () {
-        $(".panel").css("width","1px");
-        $(".left").hide();
-        $(".right").show();
-        });
-
-        $(".right").click(function () {
-        $(".panel").css("width","auto");
-        $(".right").hide();
-        $(".left").show();
-        });
+        
 });
 
 

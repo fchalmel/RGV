@@ -13,11 +13,3 @@ jQuery(document).ready(function($){
 	});
 });
 
-// Show slide in preview (;
-setTimeout(function(){
-  $('.slide-panel').addClass('is-visible');
-  
-  setTimeout(function(){
-    $('.slide-panel').removeClass('is-visible');
-  }, 2000);
-}, 50);

@@ -22,7 +22,7 @@
         return $resource('/dataset', { }, {
             read_file: {
                 url: '/browser_genelevel_init',
-                method: 'GET',
+                method: 'POST',
                 isArray: false,
                 cache: false
             },

@@ -5,53 +5,70 @@
 	<h2><i class="glyphicon glyphicon-align-left"></i> Gene-level browser</h2>
 </div>
 
-<div>
-	<h4>Raw species data</h4>
-	<p>{{species}}</p>
-	<ul>
-		<li ng-repeat="(key,val) in species">{{key}}: {{val}}</li>
-	</ul>
-
-
-	<h3><i class="glyphicon glyphicon-ban-circle"></i> Under construction! Coming soon... <i class="glyphicon glyphicon-ban-circle"></i></h3>
+<div class="row">
+  <h2>Step 1 - Select species</h2>
+  <hr>
+  <div class="col-md-8">
+    <form>
+      <div class="form-group">
+        <select class="form-control" ng-model="speciesValue" ng-options="spe as spe for spe in species"></select>
+      </div>
+    </form>
+  </div>
 </div>
 
-<a href="#" class="btn panel-open">Open Panel</a>
-<div class="slide-panel from-right no-touch">
+<div class="row" ng-if="speciesValue !=null">
+  <h2>Step 2  - Select your study</h2>
+  <hr>
+
+</div>
+  
+
+<a href="" class="btn panel-open">Open Panel</a>
+<div class="slide-panel from-left no-touch">
 	<header class="panel-header">
-			<h1>Title Goes Here</h1>
+			<h2>Select your study</h2>
 			<a href="#" class="panel-close">Close</a>
 		</header>
 
 		<div class="panel-container">
 			<div class="panel-content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam magnam accusamus obcaecati nisi eveniet quo veniam quibusdam veritatis autem accusantium doloribus nam mollitia maxime explicabo nemo quae aspernatur impedit cupiditate dicta molestias consectetur, sint reprehenderit maiores. Tempora, exercitationem, voluptate. Sapiente modi officiis nulla sed ullam, amet placeat, illum necessitatibus, eveniet dolorum et maiores earum tempora, quas iste perspiciatis quibusdam vero accusamus veritatis. Recusandae sunt, repellat incidunt impedit tempore iusto, nostrum eaque necessitatibus sint eos omnis! Beatae, itaque, in. Vel reiciendis consequatur saepe soluta itaque aliquam praesentium, neque tempora. Voluptatibus sit, totam rerum quo ex nemo pariatur tempora voluptatem est repudiandae iusto, architecto perferendis sequi, asperiores dolores doloremque odit. Libero, ipsum fuga repellat quae numquam cumque nobis ipsa voluptates pariatur, a rerum aspernatur aliquid maxime magnam vero dolorum omnis neque fugit laboriosam eveniet veniam explicabo, similique reprehenderit at. Iusto totam vitae blanditiis. Culpa, earum modi rerum velit voluptatum voluptatibus debitis, architecto aperiam vero tempora ratione sint ullam voluptas non! Odit sequi ipsa, voluptatem ratione illo ullam quaerat qui, vel dolorum eligendi similique inventore quisquam perferendis reprehenderit quos officia! Maxime aliquam, soluta reiciendis beatae quisquam. Alias porro facilis obcaecati et id, corporis accusamus? Ab porro fuga consequatur quisquam illo quae quas tenetur.</p>
+
+        <div class=row><!-- Top grids -->
+            <div class="col-md-2">
+                <h3>Select tracks</h3>
+              </div>
+              <div class="col-md-10" style="margin-top: 20px;">
+                <form>
+                    <div class="input-group">
+                        <input ng-model='filterValue' class="form-control" id="inputdefault" type="text">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click='filter()' >Filter</button>
+                        </span>
+                     </div>
+                </form>
+              </div>
+        </div>
+
+          <div class="row"><!-- Grids -->
+              <div class="col-md-2">
+                <div id="grid1" ui-grid-selection ui-grid="main.gridOptions"  width=100%></div>
+              </div>
+              <div class="col-md-10">
+                <div id="grid2" ui-grid-selection ui-grid="second.gridOptions"  width=100%></div>
+              </div>
+          </div>
 
       </div> <!-- panel-content -->
     </div> <!-- panel-container -->
 </div> <!-- panel -->
 
-<div class="row">
-    <div class="col-md-4">
-      <div id="grid1" ui-grid-selection ui-grid="main.gridOptions" class="grid" width=auto></div>
-    </div>
-    
-    <div class="col-md-8">
-      <input ng-model='filterValue'/><button ng-click='filter()'>Filter</button>
-      <div id="grid2" ui-grid-selection ui-grid="second.gridOptions" class="grid"></div>
-    </div>
-</div>
+
 
 
 
 
 {{msg}}
 
-
-<div class="panel">
-  <div class="title">Expand / Collapse Panel</div>
-  <div class="left"></div>
-  <div class="right"></div>
-</div>
 
 <script  src="scripts/index.js"></script>
