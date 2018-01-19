@@ -11,57 +11,57 @@
   <div class="col-md-8">
     <form>
       <div class="form-group">
-        <select class="form-control" ng-model="speciesValue" ng-options="spe as spe for spe in species"></select>
+        <select class="form-control" ng-model="speciesValue" ng-options="spe as spe for spe in species" ng-change="displayStep('step2')"></select>
       </div>
     </form>
   </div>
 </div>
 
-<div class="row" ng-if="speciesValue !=null">
+<div class="row" id="step2" style="visibility:hidden;">
   <h2>Step 2  - Select your study</h2>
   <hr>
+  <a href="" class="btn panel-open"><button class="btn btn-default">Select study</button></a>
+  <div class="slide-panel from-left no-touch">
+    <header class="panel-header">
+        <h2>Select your study</h2>
+        <a href="#" class="panel-close"></a>
+      </header>
 
+      <div class="panel-container">
+        <div class="panel-content">
+
+          <div class=row><!-- Top grids -->
+              <div class="col-md-2">
+                  <h3>Select tracks</h3>
+                </div>
+                <div class="col-md-10" style="margin-top: 20px;">
+                  <form>
+                      <div class="input-group">
+                          <input ng-model='filterValue' class="form-control" id="inputdefault" type="text">
+                          <span class="input-group-btn">
+                              <button class="btn btn-default" ng-click='filter()' >Filter</button>
+                          </span>
+                      </div>
+                  </form>
+                </div>
+          </div>
+
+            <div class="row"><!-- Grids -->
+                <div class="col-md-2">
+                  <div id="grid1" ui-grid-selection ui-grid="main.gridOptions"  width=100%></div>
+                </div>
+                <div class="col-md-10">
+                  <div id="grid2" ui-grid-selection ui-grid="second.gridOptions"  width=100%></div>
+                </div>
+            </div>
+
+        </div> <!-- panel-content -->
+      </div> <!-- panel-container -->
+  </div> <!-- panel -->
 </div>
   
 
-<a href="" class="btn panel-open">Open Panel</a>
-<div class="slide-panel from-left no-touch">
-	<header class="panel-header">
-			<h2>Select your study</h2>
-			<a href="#" class="panel-close">Close</a>
-		</header>
 
-		<div class="panel-container">
-			<div class="panel-content">
-
-        <div class=row><!-- Top grids -->
-            <div class="col-md-2">
-                <h3>Select tracks</h3>
-              </div>
-              <div class="col-md-10" style="margin-top: 20px;">
-                <form>
-                    <div class="input-group">
-                        <input ng-model='filterValue' class="form-control" id="inputdefault" type="text">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" ng-click='filter()' >Filter</button>
-                        </span>
-                     </div>
-                </form>
-              </div>
-        </div>
-
-          <div class="row"><!-- Grids -->
-              <div class="col-md-2">
-                <div id="grid1" ui-grid-selection ui-grid="main.gridOptions"  width=100%></div>
-              </div>
-              <div class="col-md-10">
-                <div id="grid2" ui-grid-selection ui-grid="second.gridOptions"  width=100%></div>
-              </div>
-          </div>
-
-      </div> <!-- panel-content -->
-    </div> <!-- panel-container -->
-</div> <!-- panel -->
 
 
 

@@ -26,6 +26,8 @@ from collections import OrderedDict
 import simplejson as json
 import subprocess
 from csv import DictWriter
+import pandas as pd
+import numpy as np
 
 import logging
 
@@ -75,6 +77,15 @@ def read_file(request):
         return {"data":d, "status":0}
     except:
         return {"data":d, "status":1}
+
+@view_config(route_name='d_getter', renderer='json', request_method='POST')
+def d_getter(request):
+    form = json.loads(request.body, encoding=request.charset)
+    file_name = form['name']
+    url_file = os.path.join(request.registry.dataset_path,file_name)
+    df = pd.read_csv(url_file, sep="\t")
+    print df
+
 
 @view_config(route_name='newsfeed', renderer='json', request_method='GET')
 def getnews(request):

@@ -52,6 +52,7 @@ def main(global_config, **settings):
 
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_static_view('app', 'rgv:webapp/app')
+    config.add_route('d_getter', '/data_frame')
     config.add_route('file_dataset','/dataset_download/{dir}/{file}')
     config.add_route('home', '/')
     config.add_route('login', '/user/login')
@@ -67,7 +68,6 @@ def main(global_config, **settings):
     config.add_route('user_info', '/user/{id}')
     config.add_route('read_file','/browser_genelevel_init')
     config.add_route('search', '/search')
-
 
 
     config.scan()

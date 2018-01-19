@@ -20,6 +20,12 @@
 
     function Dataset($resource) {
         return $resource('/dataset', { }, {
+            data_frame: {
+                url: '/data_frame',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
             read_file: {
                 url: '/browser_genelevel_init',
                 method: 'POST',
@@ -31,7 +37,7 @@
                 method: 'GET',
                 isArray: false,
                 cache: false
-            }
+            },
         });
     }
 

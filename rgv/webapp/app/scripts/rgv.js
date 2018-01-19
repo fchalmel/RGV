@@ -203,19 +203,24 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     function ($scope,$rootScope,$http,$filter, Dataset, $q, $templateCache) {
         //Get Gene level information
         $scope.speciesValue = null;
-        
+
         Dataset.read_file({"name":"species.txt"}).$promise.then(function(dataset){
-			console.log(dataset);
             $scope.species=dataset.data.line;
-            console.log($scope.species);
 		});
-    
+        
+        Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(data){
+            $scope.studies = data.data.line ;
+		});
         //Update grid2 en fonction de la selection de la grid1
         $scope.updateSelection = function() {
             console.log("Update");
             $scope.gridApi.grid.refresh();
         };
 
+        //Display block
+        $scope.displayStep = function(id){
+            document.getElementById(id).style.visibility = "visible";
+        };
 
         //GridData (ag-grid) system definition
         $scope.main = {};
