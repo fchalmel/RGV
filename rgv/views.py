@@ -83,8 +83,17 @@ def d_getter(request):
     form = json.loads(request.body, encoding=request.charset)
     file_name = form['name']
     url_file = os.path.join(request.registry.dataset_path,file_name)
-    df = pd.read_csv(url_file, sep="\t")
-    print df
+    df = pd.read_csv(url_file,sep='\t')
+    df_json = df.to_json(orient='records')
+    filters = []
+    for el in request.registry.filter:
+        filters.append({'name':el})
+    displays = []
+    for el in request.registry.col_display:
+        displays.append({'name':el})
+    col_filter = request.registry.col_filter
+    return {'data':df_json,'filter':filters,'display':displays,'col_filter':col_filter}
+
 
 
 @view_config(route_name='newsfeed', renderer='json', request_method='GET')

@@ -202,15 +202,7 @@ angular.module('rgv').controller('newsCtrl',
 angular.module('rgv').controller('browsergenelevelCtrl',
     function ($scope,$rootScope,$http,$filter, Dataset, $q, $templateCache) {
         //Get Gene level information
-        $scope.speciesValue = null;
 
-        Dataset.read_file({"name":"species.txt"}).$promise.then(function(dataset){
-            $scope.species=dataset.data.line;
-		});
-        
-        Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(data){
-            $scope.studies = data.data.line ;
-		});
         //Update grid2 en fonction de la selection de la grid1
         $scope.updateSelection = function() {
             console.log("Update");
@@ -228,18 +220,6 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         $scope.filterValue = null;
         $scope.users;
 
-        var canceler = $q.defer();
-        $http.get('https://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/data/10000_complex.json', {timeout: canceler.promise})
-            .then(function(response) {
-        $scope.main.data = response.data;
-        $scope.second.data = response.data;
-        console.log(response.data);
-
-        });
-
-       
-    
-
         //Checkbox grid template
         $templateCache.put('ui-grid/selectionRowHeaderButtons',
             "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
@@ -252,6 +232,45 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
         //liste obj selectionnés
         $scope.selected = [];
+        
+        $scope.speciesValue = null;
+        Dataset.read_file({"name":"species.txt"}).$promise.then(function(dataset){
+            $scope.species=dataset.data.line;
+		});
+        
+        Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(response){
+            
+            $scope.test = response.filter;
+        //Angular UI-grid
+        //Grid One --> Filtre de sélection
+        $scope.main.gridOptions = {
+            treeRowHeaderAlwaysVisible: true,
+            enableGridMenu: false,
+            multiSelect: true,
+            columnDefs: $scope.test,
+            onRegisterApi: function( gridApi ) {
+                $scope.main.gridApi = gridApi;
+                $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
+                gridApi.selection.on.rowSelectionChanged($scope, function(row) {
+                    var index = $scope.selected.indexOf(row.entity.name);
+                    console.log(index);
+                    if ( index != -1){
+                        $scope.selected.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.push(row.entity.name);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                    console.log($scope.selected);
+                });
+            }
+            };
+        });
+        console.log($scope.data);
+        
 
         //Angular UI-grid
         //Grid One --> Filtre de sélection
@@ -259,9 +278,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         treeRowHeaderAlwaysVisible: true,
         enableGridMenu: false,
         multiSelect: true,
-        columnDefs: [
-            {name:'name', enableColumnMenu: false},
-            ],
+        columnDefs: $scope.test,
         onRegisterApi: function( gridApi ) {
             $scope.main.gridApi = gridApi;
             $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
@@ -290,13 +307,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             enableSorting: true,
             enableFiltering: true,
             multiSelect: true,
-            columnDefs: [
-                {name:'id'},
-                {name:'name'},
-                {field:'age'}, // showing backwards compatibility with 2.x.  you can use field in place of name
-                {name: 'address.city'},
-                {name: 'age again', field:'age'}
-            ],
+            columnDefs: $scope.display,
             onRegisterApi: function( gridoApi ) {
                 $scope.second.gridApi = gridoApi;
                 $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
@@ -370,8 +381,6 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         };
    
         //Angular UI-grid END
-        console.log($scope.second.data);
-
         
 });
 

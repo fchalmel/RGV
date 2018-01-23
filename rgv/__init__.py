@@ -45,6 +45,11 @@ def main(global_config, **settings):
     config.registry.dataset_path = settings['dataset_path']
     config.registry.script_path = settings['script_path']
 
+    config.registry.filter = settings['filter'].split(',')
+    config.registry.col_display = settings['column'].split(',')
+    config.registry.col_filter = settings['col_filter'].split(',')
+    config.registry.metadata = settings['metadata'].split(',')
+
     # by default we don't sniff, ever
     #config.registry.es = Elasticsearch( [settings['elastic_host']])
     #config.registry.es_db = settings['elastic_db']
