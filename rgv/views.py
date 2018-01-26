@@ -85,14 +85,23 @@ def d_getter(request):
     url_file = os.path.join(request.registry.dataset_path,file_name)
     df = pd.read_csv(url_file,sep='\t')
     df_json = df.to_json(orient='records')
+    final_df = json.loads(df_json)
     filters = []
-    for el in request.registry.filter:
-        filters.append({'name':el})
     displays = []
     for el in request.registry.col_display:
         displays.append({'name':el})
-    col_filter = request.registry.col_filter
-    return {'data':df_json,'filter':filters,'display':displays,'col_filter':col_filter}
+
+    #Create Data treeview for filtering grid (Species, Technology...)
+    df_filtered = df.Species.unique()
+    data_filter = [{'selection':'Species','$$treeLevel':0}]
+    for spe in df_filtered :
+        data_filter.append({'selection':spe,'$$treeLevel':1})
+    df_filtered = df.Technology.unique()
+    data_filter.append({'selection':'Technologies','$$treeLevel':0})
+    for techno in df_filtered :
+        data_filter.append({'selection':techno,'$$treeLevel':1})
+
+    return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
 
 
 

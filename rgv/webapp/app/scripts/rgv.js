@@ -3,7 +3,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('rgv', ['rgv.resources', 'ngTouch', 'ui.grid', 'ui.grid.grouping', 'ui.grid.autoResize', 'ui.grid.selection','angular-carousel', 'ngDialog', 'ngHandsontable', 'ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
+var app = angular.module('rgv', ['rgv.resources', 'ngTouch', 'ui.grid', 'ui.grid.treeView', 'ui.grid.grouping', 'ui.grid.autoResize', 'ui.grid.selection','angular-carousel', 'ngDialog', 'ngHandsontable', 'ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
 
 config(['$routeProvider','$logProvider',
     function ($routeProvider) {
@@ -219,6 +219,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         $scope.second = {};
         $scope.filterValue = null;
         $scope.users;
+        $scope.chosen = [];
 
         //Checkbox grid template
         $templateCache.put('ui-grid/selectionRowHeaderButtons',
@@ -238,81 +239,82 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             $scope.species=dataset.data.line;
 		});
         
-        Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(response){
-            
-            $scope.test = response.filter;
+        var startPromise = Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(response){
+            return $q.when(response)
+        })
+        startPromise.then(function(value){
+            var data_all = value.data;
+            $scope.filterD = value.filter;
+            //Angular UI-grid
+            //Grid One --> Filtre de sélection
+            $scope.main.gridOptions.data = value.data_filter;
+
+            // Grid 2 --> All Data
+            $scope.second.gridOptions.columnDefs = value.display;
+            $scope.second.gridOptions.data = value.data;
+        
+        });        
+
         //Angular UI-grid
         //Grid One --> Filtre de sélection
         $scope.main.gridOptions = {
-            treeRowHeaderAlwaysVisible: true,
+            enableRowSelection: true,
+            showTreeRowHeader: true,
+            enableRowHeaderSelection: true, // Display checkboxes on every row when it's true
+            showTreeExpandNoChildren: true, 
             enableGridMenu: false,
+            enableColumnMenus: false,
             multiSelect: true,
-            columnDefs: $scope.test,
+            columnDefs: [{ name: 'Selection',field:'selection',enableSorting: false ,enableColumnMenu: false, width: '40%' },],
             onRegisterApi: function( gridApi ) {
                 $scope.main.gridApi = gridApi;
                 $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
                 gridApi.selection.on.rowSelectionChanged($scope, function(row) {
-                    var index = $scope.selected.indexOf(row.entity.name);
-                    console.log(index);
+                    var index = $scope.selected.indexOf(row.entity.selection);
                     if ( index != -1){
                         $scope.selected.splice(index,1);
                         $scope.second.gridApi.grid.refresh();
                         
                         
                     } else{
-                        $scope.selected.push(row.entity.name);
+                        $scope.selected.push(row.entity.selection);
                         $scope.second.gridApi.grid.refresh();
                         
                     };
-                    console.log($scope.selected);
                 });
             }
-            };
-        });
-        console.log($scope.data);
-        
-
-        //Angular UI-grid
-        //Grid One --> Filtre de sélection
-        $scope.main.gridOptions = {
-        treeRowHeaderAlwaysVisible: true,
-        enableGridMenu: false,
-        multiSelect: true,
-        columnDefs: $scope.test,
-        onRegisterApi: function( gridApi ) {
-            $scope.main.gridApi = gridApi;
-            $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
-            gridApi.selection.on.rowSelectionChanged($scope, function(row) {
-                var index = $scope.selected.indexOf(row.entity.name);
-                console.log(index);
-                if ( index != -1){
-                    $scope.selected.splice(index,1);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                    
-                } else{
-                    $scope.selected.push(row.entity.name);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                };
-                console.log($scope.selected);
-            });
-        }
         };
 
-        // Grid 2 --> All Data
         $scope.second.gridOptions = {
             treeRowHeaderAlwaysVisible: true,
             enableGridMenu: false,
             enableSorting: true,
             enableFiltering: true,
             multiSelect: true,
-            columnDefs: $scope.display,
+            flatEntityAccess: true,
+            showGridFooter: true,
+            fastWatch: true,
             onRegisterApi: function( gridoApi ) {
                 $scope.second.gridApi = gridoApi;
                 $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
+                $scope.mySelectedRows = $scope.second.gridApi.selection.getSelectedRows();
+                gridoApi.selection.on.rowSelectionChanged($scope, function(row) {
+                    console.log($scope.chosen);
+                    var index = $scope.chosen.indexOf(row.entity);
+                    if ( index != -1){
+                        $scope.chosen.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.chosen.push(row.entity);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                });
             }
         };
+
 
         $scope.filter = function() {
             $scope.second.gridApi.grid.refresh();
@@ -320,12 +322,13 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
         //Fonction de filtration
         $scope.singleFilter = function( renderableRows ){
-            if ($scope.selected.length != 0){
+            if ($scope.selected.length >= 2){
                 
                 renderableRows.forEach( function( row ) {
-            
-                    var match = false;
-                if ($scope.selected.indexOf(row.entity.name) > -1) {
+                
+                // Test si.. en fonction de la selection de la grid 1
+                var match = false;
+                if ($scope.selected.indexOf(row.entity.Species) > -1 && $scope.selected.indexOf(row.entity.Technology) > -1) {
                     match = true;
                 }
                 if ( !match ){
@@ -333,11 +336,42 @@ angular.module('rgv').controller('browsergenelevelCtrl',
                 }
                 });
                 if ($scope.filterValue !=null){
-                    console.log($scope.filterValue)
                     var matcher = new RegExp($scope.filterValue);
                     renderableRows.forEach( function( row ) {
                         var match = false;
-                        [ 'name', 'address.city', 'age' ].forEach(function( field ){
+                        $scope.filterD.forEach(function( field ){
+                            if ( row.entity[field].match(matcher) ){
+                                match = true;
+                            }
+                        });
+                        if ( !match ){
+                            row.visible = false;
+                        }
+                    });
+                    return renderableRows;
+
+                }else{
+                    return renderableRows;
+                }
+            }
+            if ($scope.selected.length == 1){
+                
+                renderableRows.forEach( function( row ) {
+                
+                // Test si.. en fonction de la selection de la grid 1
+                var match = false;
+                if ($scope.selected.indexOf(row.entity.Species) > -1 || $scope.selected.indexOf(row.entity.Technology) > -1) {
+                    match = true;
+                }
+                if ( !match ){
+                    row.visible = false;
+                }
+                });
+                if ($scope.filterValue !=null){
+                    var matcher = new RegExp($scope.filterValue);
+                    renderableRows.forEach( function( row ) {
+                        var match = false;
+                        $scope.filterD.forEach(function( field ){
                             if ( row.entity[field].match(matcher) ){
                                 match = true;
                             }
@@ -359,11 +393,10 @@ angular.module('rgv').controller('browsergenelevelCtrl',
                 });
                 //Check fitration input
                 if ($scope.filterValue !=null){
-                    console.log($scope.filterValue)
                     var matcher = new RegExp($scope.filterValue);
                     renderableRows.forEach( function( row ) {
                         var match = false;
-                        [ 'name', 'title', 'age' ].forEach(function( field ){
+                        $scope.filterD.forEach(function( field ){
                             if ( row.entity[field].match(matcher) ){
                                 match = true;
                             }
