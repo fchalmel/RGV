@@ -6,6 +6,8 @@ ADD development.ini.* /opt/toxsign/
 ADD CHANGES.txt README.md *.txt /opt/toxsign/
 ADD *.py /opt/toxsign/
 RUN cd /opt/toxsign && pip install -r requirements.txt
+RUN pip install pandas
+RUN pip install simplejson
 RUN cd /opt/toxsign && python setup.py develop
 WORKDIR /opt/toxsign
 RUN mkdir -p /opt/toxsign/var/upload

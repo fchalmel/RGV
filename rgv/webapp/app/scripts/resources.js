@@ -38,6 +38,12 @@
                 isArray: false,
                 cache: false
             },
+            autocomplete: {
+                url: '/autocomplete',
+                method: 'POST',
+                isArray: true,
+                cache: false
+            },
         });
     }
 

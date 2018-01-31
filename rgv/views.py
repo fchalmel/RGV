@@ -72,7 +72,7 @@ def read_file(request):
     try:
         f = open(url_file, "r")
         for li in f.readlines():
-            d["line"].append(li)
+            d["line"].append(li.rstrip())
 
         return {"data":d, "status":0}
     except:
@@ -93,16 +93,28 @@ def d_getter(request):
 
     #Create Data treeview for filtering grid (Species, Technology...)
     df_filtered = df.Species.unique()
-    data_filter = [{'selection':'Species','$$treeLevel':0}]
+    data_filter = [{'selection':'Species','type':'species','$$treeLevel':0}]
     for spe in df_filtered :
-        data_filter.append({'selection':spe,'$$treeLevel':1})
+        data_filter.append({'selection':spe,'type':'species','$$treeLevel':1})
     df_filtered = df.Technology.unique()
-    data_filter.append({'selection':'Technologies','$$treeLevel':0})
+    data_filter.append({'selection':'Technologies','type':'technology','$$treeLevel':0})
     for techno in df_filtered :
-        data_filter.append({'selection':techno,'$$treeLevel':1})
+        data_filter.append({'selection':techno,'type':'technology','$$treeLevel':1})
 
     return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
 
+@view_config(route_name='autocomplete', renderer='json', request_method='POST')
+def autocomplete(request):
+    form = json.loads(request.body, encoding=request.charset)
+    search = form['search']
+    database = form['database']
+    tax_id = form['tax_id']
+    regx = re.compile(search, re.IGNORECASE)
+    repos = request.registry.db_mongo[database].find({"$and":[{"$or":[{'Symbol':regx},{'Synonyms':regx}]},{'tax_id':tax_id}]})
+    result = []
+    for dataset in repos[:15]:
+        result.append(dataset)
+    return result
 
 
 @view_config(route_name='newsfeed', renderer='json', request_method='GET')

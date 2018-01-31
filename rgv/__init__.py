@@ -63,6 +63,7 @@ def main(global_config, **settings):
     config.add_route('login', '/user/login')
     config.add_route('logged', '/user/logged')
     config.add_route('newsfeed', '/newsfeed')
+    config.add_route('autocomplete', '/autocomplete')
     config.add_route('user', '/user')
     config.add_route('user_register', '/user/register')
     config.add_route('user_recover', '/user/recover')

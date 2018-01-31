@@ -1,8 +1,8 @@
-Human
-Rat
-Mouse
-Dog
-Zebrafish
-Pig
-Elephant
-Alien
+Human|9606
+Rat|10116
+Mouse|10090
+Dog|9615
+Zebrafish|7955
+Pig|9823
+Elephant|9783
+Tyrannosaurus rex|436495
