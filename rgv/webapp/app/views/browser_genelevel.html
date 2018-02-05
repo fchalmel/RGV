@@ -1,172 +1,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="styles/distrochart.css">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <link href="styles/style.css" rel="stylesheet">
 
 <style>
-  .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
 
-.tdl-holder{
-	margin:0px auto;
-	width: 300px;
-}
-
-.tdl-holder h2{
-	background-color: #de3f53;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	color:#fff;
-	font-family:"Roboto Condensed", Arial, sans-serif;
-	font-size:16px;
-	font-weight: 100;
-	line-height: 56px;
-	padding-left: 15px;
-	margin:0;
-}
-
-.tdl-holder ul, .tdl-holder li {
-	list-style: none;
-	margin:0;
-	padding:0;
-}
-
-.tdl-holder li{
-	background-color: #262e4c;
-	border-bottom:1px solid #1c2340;
-	color: #b1b2c9;
-}
-
-.tdl-holder li span{
-	margin-left:30px;
-	-webkit-transition: all .2s linear;
-	   -moz-transition: all .2s linear;
-	     -o-transition: all .2s linear;
-		    transition: all .2s linear;	
-}
-
-.tdl-holder label{
-	cursor:pointer;
-	display:block;
-	line-height: 56px;
-	padding: 0 15px; 
-	position: relative;
-}
-
-.tdl-holder label:hover{
-	background-color: #2a3353;
-	color:#8284a3;
-}
-
-.tdl-holder label a{
-	color:#fff;
-	display:block;
-	float:right;
-	font-weight: bold;
-	line-height: normal;
-	height:16px;
-	margin-top: 20px;
-	text-align: center;
-	text-decoration: none;
-	width:16px;
-	-webkit-transition: all .2s linear;
-	   -moz-transition: all .2s linear;
-	     -o-transition: all .2s linear;
-		    transition: all .2s linear;	
-}
-
-
-.tdl-holder input[type="checkbox"]{
-	cursor: pointer;
-	opacity: 0;
-	position: absolute;
-}
-
-.tdl-holder input[type="checkbox"] + i{
-	background-color: #404a6e;
-	border-radius: 50%;
-	display: block;
-	height: 16px;
-	position: absolute;
-	top:20px;
-	width: 16px;	
-	z-index: 1;
-}
-
-.tdl-holder input[type="checkbox"]:checked + i::after{
-	background-color: #6E6E96;
-	border-radius: 50%;
-	content: '';
-	display: block;
-	height:8px;
-	left:4px;
-	position: absolute;
-	top:4px;
-	width:8px;	
-	z-index: 2;
-}
-
-.tdl-holder input[type="checkbox"]:checked ~ span{	
-	color: #586186;
-	text-decoration: line-through;
-}
-
-.tdl-holder input[type="text"]{
-	background-color: #171d37;
-	border: none;
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
-	box-shadow: inset 0 0 8px 0 #0e1329;
-	color: #464f72;
-	font-size:14px;
-	margin:0;
-	padding:20px 15px;
-	width:270px;
-	-webkit-transition: all .2s linear;
-	   -moz-transition: all .2s linear;
-	     -o-transition: all .2s linear;
-		    transition: all .2s linear;		
-}
-
-.tdl-holder input[type="text"]:hover{
-	color:#4c577f;
-}
-
-.tdl-holder input[type="text"]:focus{
-	color:#fff;
-}
-
-.tdl-holder ::-webkit-input-placeholder {color: #464f72;} /* WebKit browsers */
-.tdl-holder :-moz-placeholder 			{color: #464f72;} /* Mozilla Firefox 4 to 18 */
-.tdl-holder ::-moz-placeholder 			{color: #464f72;} /* Mozilla Firefox 19+ */
-.tdl-holder :-ms-input-placeholder 		{color: #464f72;} /* Internet Explorer 10+ */
-
-
-
-.tdl-holder li.remove{
-	-webkit-animation:collapseItem 300ms ease;
-			animation:collapseItem 300ms ease;
-	-webkit-transform-origin: 50% 0%;
-		-ms-transform-origin: 50% 0%;
-			transform-origin: 50% 0%;
-
-}
-
-.tdl-holder li.remove span{
-	color: #586186;
-	text-decoration: line-through;
-}
-
-@keyframes collapseItem {
-    0% 		{ -ms-transform: perspective(500px) rotateX(0deg);transform: perspective(500px) rotateX(0deg); 	}
-    100% 	{ -ms-transform: perspective(500px) rotateX(-90deg);transform: perspective(500px) rotateX(-90deg); }
-}
-
-@-webkit-keyframes collapseItem {
-    0% 		{ -webkit-transform: perspective(500px) rotateX(0deg); 	}
-    100% 	{ -webkit-transform: perspective(500px) rotateX(-90deg);}
-}
 
 </style>
 
@@ -174,13 +12,15 @@
 	<h2><i class="glyphicon glyphicon-align-left"></i> Gene-level browser</h2>
 </div>
 
-<div ng-if="msg.length > 0" class="alert alert-warning" style="z-index:99;">
+<div ng-if="msg.length > 0" class="alert alert-warning alert-fixed" style="z-index:99;">
+  <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <h3>Warning</h3>
   <ul>
     <li ng-repeat='mes in msg'>{{mes}}</li>
   </ul>
 </div>
-<div ng-if="msgwrn" class="alert alert-danger">
+<div ng-if="msgwrn" class="alert alert-danger alert-fixed">
+    <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <h3>ERROR</h3>
 	{{msgwrn}}
 </div>
@@ -259,10 +99,10 @@
         <div>
             <form >
                 <div class="input-group">
-                    <input style="z-index: 0;" class="form-control" name="states" id="states" type="text" placeholder="Select your genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',speciesValue)" typeahead-loading="Loading">
-                    <!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"  typeahead-on-select="selected_gene($item, $model,label)" typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
+                    <input style="z-index: 0;" class="form-control" name="states" id="states" type="text" placeholder="Select your genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',speciesValue)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading">
+                    <!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"   typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
                     <span class="input-group-btn">
-                        <button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(selectedgene)' >Select</button>
+                        <button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(higlight_gene)' >Select</button>
                     </span>
                 </div>
             </form>
@@ -273,7 +113,7 @@
               <h2>Selected genes<span style="text-align:right"><b>          {{selected_gene.length}}/5</b></span></h2>
               <div class="tdl-content">
                 <ul>
-                  <li ng-repeat="gene in selected_gene"><label><i></i><span>{{gene}}</span><a ng-click="remove_genes(gene)"><i class="fa fa-trash" aria-hidden="true"></i></a></label></li>
+                  <li ng-repeat="gene in selected_gene"><label><i></i><span>{{gene.Symbol}}</span><a ng-click="remove_genes(gene)"><i class="fa fa-trash" aria-hidden="true"></i></a></label></li>
                 </ul>
               </div>
             </div>
@@ -311,9 +151,32 @@
 <div class="row" ng-if="chosen.length != 0">
   <h2>Step 4 - Show results</h2>
   <hr>
-  <button class="btn btn-default" ng-click="showGeneLevel(chosen)">Show</button>
+  <button class="btn btn-default" ng-click="showGeneLevel(chosen,selected_gene)">Show</button>
 </div>
 
+
+
+
+<div class="chart-wrapper" id="chart-distro1"></div>
+
+<!--Sorry about all the inline JS. It is a quick way to show what options are available-->
+<div class="chart-options">
+    <p>Show: </p>
+    <button onclick="$scope.chart1.violinPlots.hide();$scope.chart1.boxPlots.show({reset:true});$scope.chart1.notchBoxes.hide();$scope.chart1.dataPlots.change({showPlot:false,showBeanLines:false})">Box Plot</button>
+    <button onclick="chart1.violinPlots.hide();chart1.notchBoxes.show({reset:true});chart1.boxPlots.show({reset:true, showBox:false,showOutliers:true,boxWidth:20,scatterOutliers:true});chart1.dataPlots.change({showPlot:false,showBeanLines:false})">Notched Box Plot</button>
+    <button onclick="chart1.violinPlots.show({reset:true,clamp:0});chart1.boxPlots.show({reset:true, showWhiskers:false,showOutliers:false,boxWidth:10,lineWidth:15,colors:['#555']});chart1.notchBoxes.hide();chart1.dataPlots.change({showPlot:false,showBeanLines:false})">Violin Plot Unbound</button>
+    <button onclick="chart1.violinPlots.show({reset:true,clamp:1});chart1.boxPlots.show({reset:true, showWhiskers:false,showOutliers:false,boxWidth:10,lineWidth:15,colors:['#555']});chart1.notchBoxes.hide();chart1.dataPlots.change({showPlot:false,showBeanLines:false})">Violin Plot Clamp to Data</button>
+    <button onclick="chart1.violinPlots.show({reset:true, width:75, clamp:0, resolution:30, bandwidth:50});chart1.dataPlots.show({showBeanLines:true,beanWidth:15,showPlot:false,colors:['#555']});chart1.boxPlots.hide();chart1.notchBoxes.hide()">Bean Plot</button>
+    <button onclick="chart1.violinPlots.hide();chart1.dataPlots.show({showPlot:true, plotType:'beeswarm',showBeanLines:false, colors:null});chart1.notchBoxes.hide();chart1.boxPlots.hide();">Beeswarm Plot</button>
+    <button onclick="chart1.violinPlots.hide();chart1.dataPlots.show({showPlot:true, plotType:40, showBeanLines:false,colors:null});chart1.notchBoxes.hide();chart1.boxPlots.hide();">Scatter Plot</button>
+    <button onclick="if(chart1.dataPlots.options.showLines){chart1.dataPlots.change({showLines:false});} else {chart1.dataPlots.change({showLines:['median','quartile1','quartile3']});}">Trend Lines</button>
+</div>
+
+
+<script src="scripts/distrochart.js" charset="utf-8"></script>
+<script type="text/javascript">
+    
+</script>
 
 <!-- Footer -->
 <div class="row">

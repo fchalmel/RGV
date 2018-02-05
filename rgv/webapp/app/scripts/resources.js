@@ -44,6 +44,12 @@
                 isArray: true,
                 cache: false
             },
+            genelevel: {
+                url: '/genelevel',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
         });
     }
 

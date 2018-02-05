@@ -7,7 +7,9 @@ from pyramid.renderers import render_to_response
 from pyramid.response import Response, FileResponse
 
 import os
+import time 
 import json
+import random
 from bson import json_util
 from bson.objectid import ObjectId
 from bson.errors import InvalidId
@@ -114,6 +116,35 @@ def autocomplete(request):
     result = []
     for dataset in repos[:15]:
         result.append(dataset)
+    return result
+
+@view_config(route_name='genelevel', renderer='json', request_method='POST')
+def genelevel(request):
+    form = json.loads(request.body, encoding=request.charset)
+    directories = form['directory']
+    #selected_genes = form['genes']
+    selected_genes = [100036765,499956,83730,29328,293455]
+    #conditions = form['conditions']
+    conditions = ["TGGATE+LIVER+2-4-dinitrophenol+F0+20_mgkg+29_day","TGGATE+LIVER+2-4-dinitrophenol+F0+20_mgkg+24_hr","TGGATE+LIVER+2-4-dinitrophenol+F0+60_mgkg+6_hr","TGGATE+LIVER+2-4-dinitrophenol+F0+60_mgkg+8_day"]
+    result = {'data':{},'warning':[],'time':''}
+
+    start_time = time.time()  
+
+    for stud in directories:
+        url_file = os.path.join(request.registry.dataset_path,'Studies',stud,'study_001.csv')
+        df = pd.read_csv(url_file,index_col=0)
+        for gene in selected_genes :
+            result['data'][str(gene)]=[]
+            try:
+                for cond in conditions :
+                    #result['data'][str(gene)].append({'condition':cond,'value':df.loc[gene,cond]})
+                    result['data'][str(gene)].append({'condition':cond,'value':random.random()})
+            except :
+                result['warning'].append('No data avaible for ' + gene)
+                    
+    interval = time.time() - start_time  
+    result['time'] = interval 
+
     return result
 
 

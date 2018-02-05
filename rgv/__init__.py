@@ -59,6 +59,7 @@ def main(global_config, **settings):
     config.add_static_view('app', 'rgv:webapp/app')
     config.add_route('d_getter', '/data_frame')
     config.add_route('file_dataset','/dataset_download/{dir}/{file}')
+    config.add_route('genelevel', '/genelevel')
     config.add_route('home', '/')
     config.add_route('login', '/user/login')
     config.add_route('logged', '/user/logged')

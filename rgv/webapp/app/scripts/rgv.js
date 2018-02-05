@@ -211,6 +211,8 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
         //Display block
         $scope.displayStep = function(id){
+            $scope.selected_gene =[];
+
             document.getElementById(id).style.visibility = "visible";
         };
 
@@ -471,9 +473,10 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
         //Fonction visualisation gene Level
         $scope.msg = []
-        $scope.showGeneLevel = function(selected_lst){
-            $scope.msg = []
-            var directory_list = []
+        $scope.showGeneLevel = function(selected_lst,selected_gene){
+            $scope.msg = [];
+            var directory_list = [];
+            var genes_list = [];
             for (var i=0;i<selected_lst.length;i++){
                 if (selected_lst[i].Directory !=null){
                     directory_list.push(selected_lst[i].Directory);
@@ -481,14 +484,83 @@ angular.module('rgv').controller('browsergenelevelCtrl',
                     $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
                 }
             }
+            for(var z=0;z<selected_gene.length;z++){
+                console.log(selected_gene[z])
+                if (selected_gene[z].GeneID !=null){
+                    genes_list.push(parseInt(selected_gene[z].GeneID));
+                }else{
+                    $scope.msg.push(" No data available for study: "+selected_gene[z].Study+';');
+                }
+            }
             if(directory_list.length > 0){
-                console.log('YO');
+                //test
+                genes_list = [100036765,499956,83730,29328,293455];
+                $scope.chart1 =null;
+                $scope.chart2 =null;
+                $scope.chart3 =null;
+                $scope.chart4 =null;
+                $scope.chart5 =null;
+
+                Dataset.genelevel({},{'directory':['Study_001'],'conditions':'test','genes':genes_list}).$promise.then(function(response){
+                    console.log(response);
+                    $scope.chart_data = response.data;
+
+
+                    //Chart 1
+                    $scope.chart_data[genes_list[0]].forEach(function (d) {
+                    d.value = +d.value;});
+                    
+
+
+                    $scope.chart1 = makeDistroChart({
+                        data:$scope.chart_data[genes_list[0]],
+                        xName:'condition',
+                        yName:'value',
+                        axisLabels: {xAxis: null, yAxis: 'Values'},
+                        selector:"#chart-distro1",
+                        chartSize:{height:460, width:960},
+                        constrainExtremes:true});
+
+                    $scope.chart1.renderBoxPlot();
+                    $scope.chart1.renderDataPlots();
+                    $scope.chart1.renderNotchBoxes({showNotchBox:false});
+                    $scope.chart1.renderViolinPlot({showViolinPlot:false});
+
+
+                    //Chart 2
+                    if(genes_list.length == 2){
+                        $scope.chart_data[genes_list[1]].forEach(function (d) {
+                            d.value = +d.value;});
+                            
+        
+        
+                            $scope.chart2 = makeDistroChart({
+                                data:$scope.chart_data[genes_list[1]],
+                                xName:'condition',
+                                yName:'value',
+                                axisLabels: {xAxis: null, yAxis: 'Values'},
+                                selector:"#chart-distro2",
+                                chartSize:{height:460, width:960},
+                                constrainExtremes:true});
+        
+                            $scope.chart2.renderBoxPlot();
+                            $scope.chart2.renderDataPlots();
+                            $scope.chart2.renderNotchBoxes({showNotchBox:false});
+                            $scope.chart2.renderViolinPlot({showViolinPlot:false});
+                    }
+                    
+
+                });
             }else{
                 $scope.msgwrn ="No data available. Please select other studies or contact RGV support.";
                 return $scope.msgwrn;
             }
             
         }
+        $scope.get_item = function(item, model,label){
+            $scope.higlight_gene = item;
+         };
+
         $scope.select_genes = function(selectedgene){
             $scope.msg = []
             var index = $scope.selected_gene.indexOf(selectedgene);
@@ -521,8 +593,6 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             var index = $scope.chosen.indexOf(study);
             console.log(study)
             if ( index != -1){
-                console.log($scope.second.gridApi.selection.getSelectedRows());
-                $scope.second.gridApi.selection.unSelectRow(study);
                 $scope.chosen.splice(index,1);
             };
         }
