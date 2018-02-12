@@ -2,11 +2,7 @@
 <link rel="stylesheet" type="text/css" href="styles/distrochart.css">
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <link href="styles/style.css" rel="stylesheet">
-
-<style>
-
-
-</style>
+<script src="scripts/plotly-latest.min.js"></script>
 
 <div class="jumbotron" style="margin-top:50px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
 	<h2><i class="glyphicon glyphicon-align-left"></i> Gene-level browser</h2>
@@ -110,7 +106,7 @@
       </div><!--
       --><div class="col-xs-6 col-md-8 col-lg-8">
           <div class="tdl-holder">
-              <h2>Selected genes<span style="text-align:right"><b>          {{selected_gene.length}}/5</b></span></h2>
+              <h2>Selected genes<span style="text-align:right"><b>          {{selected_gene.length}}</b></span></h2>
               <div class="tdl-content">
                 <ul>
                   <li ng-repeat="gene in selected_gene"><label><i></i><span>{{gene.Symbol}}</span><a ng-click="remove_genes(gene)"><i class="fa fa-trash" aria-hidden="true"></i></a></label></li>
@@ -154,12 +150,19 @@
   <button class="btn btn-default" ng-click="showGeneLevel(chosen,selected_gene)">Show</button>
 </div>
 
+<div ng-if="charts">
+  <div class="row">
+    <h6>Results generated in {{ time }} seconds</h6>
+    <div class="col-md-6" ng-repeat="chart in charts">
+      <h4>{{ chart.gene }}</h4>
+      <div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
+    </div>
+  </div>
+</div>
 
 
 
-<div class="chart-wrapper" id="chart-distro1"></div>
-
-<!--Sorry about all the inline JS. It is a quick way to show what options are available-->
+<!--Sorry about all the inline JS. It is a quick way to show what options are available
 <div class="chart-options">
     <p>Show: </p>
     <button onclick="$scope.chart1.violinPlots.hide();$scope.chart1.boxPlots.show({reset:true});$scope.chart1.notchBoxes.hide();$scope.chart1.dataPlots.change({showPlot:false,showBeanLines:false})">Box Plot</button>
@@ -170,18 +173,13 @@
     <button onclick="chart1.violinPlots.hide();chart1.dataPlots.show({showPlot:true, plotType:'beeswarm',showBeanLines:false, colors:null});chart1.notchBoxes.hide();chart1.boxPlots.hide();">Beeswarm Plot</button>
     <button onclick="chart1.violinPlots.hide();chart1.dataPlots.show({showPlot:true, plotType:40, showBeanLines:false,colors:null});chart1.notchBoxes.hide();chart1.boxPlots.hide();">Scatter Plot</button>
     <button onclick="if(chart1.dataPlots.options.showLines){chart1.dataPlots.change({showLines:false});} else {chart1.dataPlots.change({showLines:['median','quartile1','quartile3']});}">Trend Lines</button>
-</div>
+</div>-->
 
 
-<script src="scripts/distrochart.js" charset="utf-8"></script>
-<script type="text/javascript">
-    
-</script>
 
 <!-- Footer -->
 <div class="row">
 		<!--/*div espace bas de page, footer*/-->
-
 		<div class="col-md-3" style="height: 305px">
 			<!--/*div gauche*/-->
 		</div>

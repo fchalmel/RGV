@@ -9,6 +9,7 @@ from pyramid.response import Response, FileResponse
 import os
 import time 
 import json
+import pickle, cPickle
 import random
 from bson import json_util
 from bson.objectid import ObjectId
@@ -30,6 +31,7 @@ import subprocess
 from csv import DictWriter
 import pandas as pd
 import numpy as np
+from collections import OrderedDict
 
 import logging
 
@@ -120,32 +122,87 @@ def autocomplete(request):
 
 @view_config(route_name='genelevel', renderer='json', request_method='POST')
 def genelevel(request):
+    def getValue(file_in,selectedvalues):
+        start_time = time.time()
+        dIndex =  cPickle.load(open(file_in+".pickle"))
+        fList = open(file_in,"r")
+        result = {}
+        for val in selectedvalues :
+            if str(val) in dIndex:
+                iPosition = dIndex[str(val)]
+                fList.seek(iPosition)
+                result[str(val)] = fList.readline().rstrip().split('\t')[1:]
+            else:
+                result[str(val)] = []
+        interval = time.time() - start_time
+        return result
+
+
+
     form = json.loads(request.body, encoding=request.charset)
     directories = form['directory']
-    #selected_genes = form['genes']
-    selected_genes = [100036765,499956,83730,29328,293455]
-    #conditions = form['conditions']
-    conditions = ["TGGATE+LIVER+2-4-dinitrophenol+F0+20_mgkg+29_day","TGGATE+LIVER+2-4-dinitrophenol+F0+20_mgkg+24_hr","TGGATE+LIVER+2-4-dinitrophenol+F0+60_mgkg+6_hr","TGGATE+LIVER+2-4-dinitrophenol+F0+60_mgkg+8_day"]
-    result = {'data':{},'warning':[],'time':''}
+    all_genes = form['genes']
+    selected_genes = all_genes.keys()
+    result = {'charts':[],'warning':[],'time':''}
 
     start_time = time.time()  
 
     for stud in directories:
-        url_file = os.path.join(request.registry.dataset_path,'Studies',stud,'study_001.csv')
-        df = pd.read_csv(url_file,index_col=0)
-        for gene in selected_genes :
-            result['data'][str(gene)]=[]
-            try:
-                for cond in conditions :
-                    #result['data'][str(gene)].append({'condition':cond,'value':df.loc[gene,cond]})
-                    result['data'][str(gene)].append({'condition':cond,'value':random.random()})
-            except :
-                result['warning'].append('No data avaible for ' + gene)
-                    
+        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Clusters'])
+        groups = np.array(groups['Clusters'])
+        _, idx = np.unique(groups, return_index=True)
+        uniq_groups = groups[np.sort(idx)[::-1]]
+        
+        samples = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])
+        samples = np.array(samples['Sample'])
+
+        genes = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),selected_genes)
+        result['charts']=[]
+        for i in range(0,len(selected_genes)):
+            gene_name = all_genes[selected_genes[i]]
+            chart = {}
+            chart['config']={'displaylogo':False}
+            chart['data']=[]
+            chart['description'] = ""
+            chart['name'] = "%s in %s study" % (gene_name,stud)
+            chart['title'] = ""
+            chart['layout'] = {'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
+            chart['gene'] = gene_name
+            chart['msg'] = []
+            
+            for cond in uniq_groups :
+                val_gene = np.array(genes[str(selected_genes[i])])
+                if len(val_gene) != 0 :
+                    val = val_gene[np.where(groups == cond)[0]]
+                    data_chart = {}
+                    data_chart['study'] = stud
+                    data_chart['x'] = []
+                    data_chart['x'].extend(val)
+                    data_chart['name'] = cond
+                    data_chart['hoverinfo'] = "all"
+                    ratio_type = len(samples)/len(uniq_groups)
+                    if ratio_type > 10 :
+                        data_chart['type'] = 'violin'
+                        data_chart['orientation'] = 'h'
+                        data_chart['box'] = {'visible': True}
+                        data_chart['boxpoints'] = False
+
+                    else :
+                        data_chart['type'] = 'box'
+                    chart['data'].append(data_chart)
+                else:
+                    chart['msg'].append("No data available")
+                    data_chart = {}
+                    data_chart['study'] = stud
+                    data_chart['x'] = []
+                    data_chart['hoverinfo'] = "name"
+                    chart['data'].append(data_chart)
+            result['charts'].append(chart)
+
     interval = time.time() - start_time  
     result['time'] = interval 
-
     return result
+
 
 
 @view_config(route_name='newsfeed', renderer='json', request_method='GET')

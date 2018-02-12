@@ -1,8 +1,8 @@
 /*!
- * Angular Material Design
+ * AngularJS Material Design
  * https://github.com/angular/material
  * @license MIT
- * v1.0.6
+ * v1.1.7
  */
 (function( window, angular, undefined ){
 "use strict";
@@ -11,6 +11,10 @@
  * @ngdoc module
  * @name material.components.gridList
  */
+GridListController['$inject'] = ["$mdUtil"];
+GridLayoutFactory['$inject'] = ["$mdUtil"];
+GridListDirective['$inject'] = ["$interpolate", "$mdConstant", "$mdGridLayout", "$mdMedia"];
+GridTileDirective['$inject'] = ["$mdMedia"];
 angular.module('material.components.gridList', ['material.core'])
        .directive('mdGridList', GridListDirective)
        .directive('mdGridTile', GridTileDirective)
@@ -113,6 +117,8 @@ function GridListDirective($interpolate, $mdConstant, $mdGridLayout, $mdMedia) {
   };
 
   function postLink(scope, element, attrs, ctrl) {
+    element.addClass('_md');     // private md component indicator for styling
+    
     // Apply semantics
     element.attr('role', 'list');
 
@@ -277,8 +283,17 @@ function GridListDirective($interpolate, $mdConstant, $mdGridLayout, $mdMedia) {
 
       // The width and horizontal position of each tile is always calculated the same way, but the
       // height and vertical position depends on the rowMode.
-      var style = {
-        left: POSITION({ unit: hUnit, offset: position.col, gutter: gutter }),
+      var ltr = document.dir != 'rtl' && document.body.dir != 'rtl';
+      var style = ltr ? {
+          left: POSITION({ unit: hUnit, offset: position.col, gutter: gutter }),
+          width: DIMENSION({ unit: hUnit, span: spans.col, gutter: gutter }),
+          // resets
+          paddingTop: '',
+          marginTop: '',
+          top: '',
+          height: ''
+        } : {
+        right: POSITION({ unit: hUnit, offset: position.col, gutter: gutter }),
         width: DIMENSION({ unit: hUnit, span: spans.col, gutter: gutter }),
         // resets
         paddingTop: '',
@@ -314,10 +329,10 @@ function GridListDirective($interpolate, $mdConstant, $mdGridLayout, $mdMedia) {
           var vGutterShare = (rowCount - 1) / rowCount;
 
           // Percent of the available vertical space that one row takes up.
-          var vShare = (1 / rowCount) * 100;
+          vShare = (1 / rowCount) * 100;
 
           // Base vertical size of a row.
-          var vUnit = UNIT({share: vShare, gutterShare: vGutterShare, gutter: gutter});
+          vUnit = UNIT({share: vShare, gutterShare: vGutterShare, gutter: gutter});
 
           style.top = POSITION({unit: vUnit, offset: position.row, gutter: gutter});
           style.height = DIMENSION({unit: vUnit, span: spans.row, gutter: gutter});
@@ -391,6 +406,10 @@ function GridListDirective($interpolate, $mdConstant, $mdGridLayout, $mdMedia) {
 
     function getRowHeight() {
       var rowHeight = $mdMedia.getResponsiveAttribute(attrs, 'md-row-height');
+      if (!rowHeight) {
+        throw 'md-grid-list: md-row-height attribute was not found';
+      }
+
       switch (getRowMode()) {
         case 'fixed':
           return applyDefaultUnit(rowHeight);
@@ -404,6 +423,10 @@ function GridListDirective($interpolate, $mdConstant, $mdGridLayout, $mdMedia) {
 
     function getRowMode() {
       var rowHeight = $mdMedia.getResponsiveAttribute(attrs, 'md-row-height');
+      if (!rowHeight) {
+        throw 'md-grid-list: md-row-height attribute was not found';
+      }
+
       if (rowHeight == 'fit') {
         return 'fit';
       } else if (rowHeight.indexOf(':') !== -1) {
@@ -418,7 +441,6 @@ function GridListDirective($interpolate, $mdConstant, $mdGridLayout, $mdMedia) {
     }
   }
 }
-GridListDirective.$inject = ["$interpolate", "$mdConstant", "$mdGridLayout", "$mdMedia"];
 
 /* ngInject */
 function GridListController($mdUtil) {
@@ -427,7 +449,6 @@ function GridListController($mdUtil) {
   this.$timeout_ = $mdUtil.nextTick;
   this.layoutDelegate = angular.noop;
 }
-GridListController.$inject = ["$mdUtil"];
 
 GridListController.prototype = {
   invalidateTiles: function() {
@@ -650,7 +671,6 @@ function GridLayoutFactory($mdUtil) {
     }
   }
 }
-GridLayoutFactory.$inject = ["$mdUtil"];
 
 /**
  * @ngdoc directive
@@ -752,7 +772,6 @@ function GridTileDirective($mdMedia) {
     }
   }
 }
-GridTileDirective.$inject = ["$mdMedia"];
 
 
 function GridTileCaptionDirective() {
