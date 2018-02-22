@@ -2,3 +2,6 @@
 .DS_Store
 *.csv
 *.pickle
+var/RGV_data/Studies/RNAseqHuman/RNAseqHuman.txt
+var/RGV_data/Studies/RNAseqHuman/Sample_testfile.txt
+var/RGV_data/Studies/RNAseqRat/RNAseqRat.txt

@@ -144,7 +144,7 @@ def genelevel(request):
     all_genes = form['genes']
     selected_genes = all_genes.keys()
     result = {'charts':[],'warning':[],'time':''}
-
+    print directories
     start_time = time.time()  
 
     for stud in directories:
@@ -157,25 +157,24 @@ def genelevel(request):
         samples = np.array(samples['Sample'])
 
         genes = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),selected_genes)
-        result['charts']=[]
         for i in range(0,len(selected_genes)):
             gene_name = all_genes[selected_genes[i]]
             chart = {}
-            chart['config']={'displaylogo':False}
+            chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
             chart['data']=[]
             chart['description'] = ""
             chart['name'] = "%s in %s study" % (gene_name,stud)
             chart['title'] = ""
-            chart['layout'] = {'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
+            chart['layout'] = {'width':575,'height':489,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},'margin':{'l':200}}
             chart['gene'] = gene_name
             chart['msg'] = []
-            
+            chart['study'] = stud
             for cond in uniq_groups :
                 val_gene = np.array(genes[str(selected_genes[i])])
                 if len(val_gene) != 0 :
                     val = val_gene[np.where(groups == cond)[0]]
                     data_chart = {}
-                    data_chart['study'] = stud
+                    
                     data_chart['x'] = []
                     data_chart['x'].extend(val)
                     data_chart['name'] = cond

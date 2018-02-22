@@ -7913,3 +7913,1782 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
     raise HTTPNotFound(request.url)
 HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 17:34:12,657 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363230313635393034/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 17:54:34,526 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363139313333363438/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 17:57:40,941 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363233303631373132/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 17:58:30,796 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363233323638303438/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:01:55,514 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363337343332373834/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:06:36,709 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363037373338313932/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:08:02,059 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363233333833343430/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:08:48,519 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363037343637313532/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:10:31,772 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363230343836363038/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:12:11,409 :: ERROR :: Exception when serving /app/videos/RGV_05.mp4
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 248, in append
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 231, in _set_large_buffer
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 114, in __init__
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 118, in newfile
+  File "/usr/local/Cellar/python/2.7.14_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/tempfile.py", line 511, in TemporaryFile
+  File "/usr/local/Cellar/python/2.7.14_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/tempfile.py", line 244, in _mkstemp_inner
+OSError: [Errno 24] Too many open files: '/var/folders/69/lq729j8s0t18f4wjmf6p_hv00000gp/T/tmpCN_gIB'
+2018-02-12 18:12:11,425 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/videos/RGV_05.mp4
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363138303230313132/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/videos/RGV_05.mp4'
+2018-02-12 18:12:11,430 :: ERROR :: Unexpected exception when flushing
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 139, in handle_write
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 226, in _flush_some_if_lockable
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 253, in _flush_some
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 280, in prune
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 95, in prune
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 118, in newfile
+  File "/usr/local/Cellar/python/2.7.14_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/tempfile.py", line 511, in TemporaryFile
+  File "/usr/local/Cellar/python/2.7.14_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/tempfile.py", line 244, in _mkstemp_inner
+OSError: [Errno 24] Too many open files: '/var/folders/69/lq729j8s0t18f4wjmf6p_hv00000gp/T/tmpq4CJze'
+2018-02-12 18:12:11,433 :: ERROR :: Exception when serving /app/videos/RGV_05.mp4
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 399, in execute
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 270, in __call__
+    response = self.execution_policy(environ, self)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 278, in default_execution_policy
+    return request.invoke_exception_view(reraise=True)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 755, in invoke_exception_view
+    reraise_(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 276, in default_execution_policy
+    return router.invoke_request(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 260, in invoke_request
+    request._process_finished_callbacks()
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/request.py", line 147, in _process_finished_callbacks
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/headers.py", line 19, in finished_callback
+    self.process_response_deferred()
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/headers.py", line 31, in process_response_deferred
+    response = self.response
+AttributeError: 'HeaderDebugPanel' object has no attribute 'response'
+2018-02-12 18:12:11,434 :: ERROR :: Unknown exception while trying to close outbuf
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 279, in handle_close
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 298, in close
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 108, in close
+IOError: close() called during concurrent operation on the same file object.
+2018-02-12 18:12:11,463 :: ERROR :: Exception when serving /app/videos/RGV_06.mp4
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2018-02-12 18:12:11,488 :: ERROR :: Exception when serving /app/videos/RGV_07.mp4
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file.
+2018-02-12 18:12:24,733 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363136383235333630/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:14:33,887 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363231303235333630/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:14:59,385 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363137333532343030/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:15:25,765 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363230383531363634/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:15:53,153 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363030333233323830/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:16:15,334 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363133353136353630/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:19:14,177 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363238393138303332/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:20:32,967 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363033343330313630/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:21:48,147 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363236313937323634/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:27:19,467 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353633393336373230/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:29:32,034 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363137333532383438/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:30:24,368 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363330383439343838/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:33:02,875 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363135393435343838/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:34:01,696 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363136333535393834/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-12 18:36:49,118 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363236363033323136/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 08:27:24,328 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363230333030373532/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 08:31:12,578 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363134303536333336/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 08:42:52,649 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363032313837333434/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 08:44:56,055 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/ng-dialog/css/ngDialog-theme-default.css
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363136363231303732/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/ng-dialog/css/ngDialog-theme-default.css'
+2018-02-13 08:44:56,121 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/ng-dialog/js/ngDialog.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363230363735353336/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/ng-dialog/js/ngDialog.js'
+2018-02-13 08:44:56,162 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/ng-table/dist/ng-table.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363236333835363830/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/ng-table/dist/ng-table.js'
+2018-02-13 08:45:23,820 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363038313939313834/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 08:47:26,473 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353239373631333630/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 08:47:45,102 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/angular-ui-grid/ui-grid.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363032313836383332/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/angular-ui-grid/ui-grid.js'
+2018-02-13 08:47:45,178 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/vis/dist/vis.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363232363939383536/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/vis/dist/vis.js'
+2018-02-13 08:48:07,657 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363236333533363136/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 08:50:34,575 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353038343330303332/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 08:53:34,968 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/angular-cookies/angular-cookies.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353033323837323438/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/angular-cookies/angular-cookies.js'
+2018-02-13 08:53:34,972 :: ERROR :: Exception when serving /app/bower_components/angular-cookies/angular-cookies.js
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 399, in execute
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 270, in __call__
+    response = self.execution_policy(environ, self)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 278, in default_execution_policy
+    return request.invoke_exception_view(reraise=True)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 755, in invoke_exception_view
+    reraise_(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 276, in default_execution_policy
+    return router.invoke_request(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 260, in invoke_request
+    request._process_finished_callbacks()
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/request.py", line 147, in _process_finished_callbacks
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/headers.py", line 19, in finished_callback
+    self.process_response_deferred()
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/headers.py", line 31, in process_response_deferred
+    response = self.response
+AttributeError: 'HeaderDebugPanel' object has no attribute 'response'
+2018-02-13 08:53:35,019 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353134353936313132/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+2018-02-13 08:54:41,661 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/angular-cookies/angular-cookies.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353036383830343634/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/angular-cookies/angular-cookies.js'
+2018-02-13 08:54:41,715 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/bootstrap/dist/js/bootstrap.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353037353634373532/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/bootstrap/dist/js/bootstrap.js'
+2018-02-13 08:55:59,597 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353230303433373238/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 08:56:31,664 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/angular-ui-grid/ui-grid.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353231393637333132/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/angular-ui-grid/ui-grid.js'
+2018-02-13 08:56:31,717 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/bootstrap/dist/js/bootstrap.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353035333530323838/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/bootstrap/dist/js/bootstrap.js'
+2018-02-13 08:56:31,748 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/scripts/bootstrap.min.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353133313831353834/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/scripts/bootstrap.min.js'
+2018-02-13 08:58:47,331 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353033383831363830/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 09:05:20,151 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353232363438343030/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 09:05:37,403 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/angular-sanitize/angular-sanitize.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353330323731363332/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/angular-sanitize/angular-sanitize.js'
+2018-02-13 09:05:37,437 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/ng-dialog/js/ngDialog.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353033363830313434/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/ng-dialog/js/ngDialog.js'
+2018-02-13 09:05:37,469 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/app/bower_components/ng-table/dist/ng-table.js
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353231373430343936/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 142, in __call__
+    content_type, content_encoding=None)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/response.py", line 65, in __init__
+    f = open(path, 'rb')
+IOError: [Errno 24] Too many open files: u'/Users/tdarde/Documents/GitHub/RGV/rgv/webapp/app/bower_components/ng-table/dist/ng-table.js'
+2018-02-13 09:07:51,305 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353133313338313238/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 09:10:11,152 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353531313736323732/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 09:16:05,900 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343935303534343136/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 09:19:42,541 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363235353737353532/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 09:24:45,713 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363337373539383838/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 09:26:36,851 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363338383835303732/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-13 09:29:00,293 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363430313538323234/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-14 14:19:04,790 :: ERROR :: Exception when serving /app/videos/RGV_06.mp4
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file.
+2018-02-14 14:19:04,791 :: ERROR :: Exception when serving /app/videos/RGV_05.mp4
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2018-02-14 14:19:04,845 :: ERROR :: Exception when serving /app/videos/RGV_08.mp4
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2018-02-14 14:19:04,863 :: ERROR :: Exception when serving /app/videos/RGV_07.mp4
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/usr/local/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2018-02-19 16:29:12,268 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343831313433373630/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-19 16:29:46,035 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343831343433343732/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-19 16:46:14,525 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343938313532343634/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-19 16:47:25,184 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353030373036363430/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-19 17:27:44,398 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343833393038363234/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-19 17:27:57,742 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343832383336383136/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-19 17:44:11,866 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343830333238323732/exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/usr/local/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 09:08:14,640 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363239383634303830/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 09:09:25,438 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363239333238353238/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 09:13:30,831 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363037373730373638/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 09:13:57,162 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353331363331313230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 09:22:33,457 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363336373631363830/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 09:23:27,236 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353735393933323936/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 10:42:04,357 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363235393934303634/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 10:42:45,746 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363236383935333736/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 10:43:04,730 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363235393936363234/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 11:02:51,664 :: ERROR :: Exception when serving /app/videos/RGV_05.mp4
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2018-02-21 11:02:51,673 :: ERROR :: Exception when serving /app/videos/RGV_06.mp4
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2018-02-21 11:02:51,705 :: ERROR :: Exception when serving /app/videos/RGV_07.mp4
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
+2018-02-21 11:02:51,718 :: ERROR :: Socket error
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 139, in handle_write
+    flush()
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 226, in _flush_some_if_lockable
+    self._flush_some()
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 258, in _flush_some
+    num_sent = self.send(chunk)
+  File "/Users/tdarde/anaconda2/lib/python2.7/asyncore.py", line 374, in send
+    result = self.socket.send(data)
+error: [Errno 41] Protocol wrong type for socket
+2018-02-21 11:11:19,896 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353331333638323732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 11:29:31,335 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363333323332303136/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 11:29:51,259 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363333313235373736/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 11:38:43,694 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363333313434303830/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 11:39:11,421 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363237313039313336/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 11:54:59,040 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363237303238343936/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 11:55:23,743 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363237393531313230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 15:23:38,368 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363437383733373434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 15:24:17,804 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363437393732323430/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 15:25:58,137 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363438323736353630/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 15:26:14,773 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363432303431313638/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 15:26:57,584 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363432323431373434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 15:30:08,282 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363438393930343830/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 15:30:54,007 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363532373332383136/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 18:09:27,457 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363138353831373132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 18:11:08,213 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363039313337393336/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 18:12:05,275 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363036313338303634/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-21 18:12:44,725 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363130383138363430/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-22 08:48:47,203 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363134373632343438/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-22 08:52:01,588 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353531373138363038/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-22 08:56:58,678 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343537303531343732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-22 09:43:46,526 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343634363131373932/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-22 09:53:58,477 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343539363734383332/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-22 09:54:34,661 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343430323931303234/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-22 09:56:24,641 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343036333634343332/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-02-22 11:51:30,912 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343630333139393532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map

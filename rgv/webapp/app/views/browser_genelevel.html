@@ -4,10 +4,152 @@
 <link href="styles/style.css" rel="stylesheet">
 <script src="scripts/plotly-latest.min.js"></script>
 
-<div class="jumbotron" style="margin-top:50px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
-	<h2><i class="glyphicon glyphicon-align-left"></i> Gene-level browser</h2>
-</div>
+<style>
+  /* Tabs panel */
+.tabbable-panel {
+  padding: 10px;
+}
 
+/* Default mode */
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
+}
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid #fbcdcf;
+}
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid #f3565d;
+  position: relative;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+
+.stepwizard-step p {
+    margin-top: 10px;    
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;     
+    width: 100%;
+    position: relative;
+}
+
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+    
+}
+
+.stepwizard-step {    
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.stepwizard-content{
+ border:none !important;
+ float: left !important;
+ margin-top: 0 !important;
+ padding: 15px !important;
+ width: 100% !important;
+ 
+}
+
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: 1;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #df3f53;
+    border-color: #df3f53;
+}
+</style>
+
+<script>
+function stepnext(n){
+
+  if(n != 0){
+      //$(".stepwizard-row a").switchClass('btn-primary','btn-default');
+      $(".stepwizard-row a").removeClass('btn-primary');
+      $(".stepwizard-row a").addClass('btn-default');
+      $('.stepwizard a[href="#step-'+n+'"]').tab('show');
+      //$('.stepwizard-row a[href="#step-'+n+'"]').switchClass('btn-default','btn-primary');
+      $('.stepwizard-row a[href="#step-'+n+'"]').removeClass('btn-default');
+      $('.stepwizard-row a[href="#step-'+n+'"]').addClass('btn-primary');
+  }
+}
+stepnext(1);
+</script>
+
+<div class="jumbotron" style="margin-top:30px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
+  <h2><i class="glyphicon glyphicon-align-left"></i> Gene-level browser</h2>
+</div>
 <div ng-if="msg.length > 0" class="alert alert-warning alert-fixed" style="z-index:99;">
   <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <h3>Warning</h3>
@@ -18,164 +160,206 @@
 <div ng-if="msgwrn" class="alert alert-danger alert-fixed">
     <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <h3>ERROR</h3>
-	{{msgwrn}}
+  {{msgwrn}}
 </div>
+
+
+
 
 <!-- Collapsed Panel  -->
 <div class="slide-panel from-left no-touch" style="z-index:95;">
-  <header class="panel-header">
-      <h2>Select your study</h2>
-      <a href="#" class="panel-close"></a>
-      {{colfilter}}
-    </header>
-
-    <div class="panel-container">
-      <div class="panel-content">
-
-        <div class=row><!-- Top grids -->
-            <div class="col-md-2">
-                <h3>Select tracks</h3>
-              </div>
-              <div class="col-md-10" style="margin-top: 20px;">
-                <form>
-                    <div class="input-group">
-                        <input ng-model='filterValue' class="form-control" id="inputdefault" type="text">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" ng-click='filter()' >Filter</button>
-                        </span>
-                    </div>
-                </form>
-              </div>
-        </div>
-
-          <div class="row"><!-- Grids -->
-              <div class="col-md-4">
-                <div id="grid1" ui-grid-selection ui-grid-tree-view ui-grid="main.gridOptions"  width=100%></div>
-              </div>
-              <div class="col-md-8">
-                <div id="grid2" ui-grid-selection ui-grid="second.gridOptions"  width=100%></div>
-              </div>
-          </div>
-
-      </div> <!-- panel-content -->
-    </div> <!-- panel-container -->
-</div> <!-- panel -->
-
-
-<!-- Start page  -->
-<div class="row">
-  <h2>Step 1 - Select species</h2>
-  <hr>
-  <div class="row">
-      <div class="col-xs-6 col-md-4 col-lg-4 vcenter">
-        <div>
-          <form>
-            <div class="form-group">
-              <select class="form-control" ng-model="speciesValue" ng-change="displayStep('step2')">
-                <option ng-repeat="spe in species" value="{{spe.tax_id}}">{{spe.name}}</option>
-              </select>
-            </div>
-          </form>
-        </div>
-      </div><!--
-      --><div class="col-xs-6 col-md-8 col-lg-8 vcenter">
-          <div class="alert-message alert-message-info">
-              <h4><i class="fa fa-info-circle" aria-hidden="true"></i> About</h4>
-              <p>Select the species in which you wish to view one or more studies, regardless of the origin species of the study.</p>
-          </div>
-      </div>
-  </div>
-</div>
-
-<div class="row" id="step2" style="visibility:hidden;">
-  <h2>Step 2 - Chose your genes</h2>
-  <hr>
-  <div class="row">
-      <div class="col-xs-6 col-md-4 col-lg-4">
-        <div>
-            <form >
-                <div class="input-group">
-                    <input style="z-index: 0;" class="form-control" name="states" id="states" type="text" placeholder="Select your genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',speciesValue)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading">
-                    <!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"   typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
-                    <span class="input-group-btn">
-                        <button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(higlight_gene)' >Select</button>
-                    </span>
+    <header class="panel-header">
+        <h2>Select your study</h2>
+        <a href="#" class="panel-close"></a>
+        {{colfilter}}
+      </header>
+  
+      <div class="panel-container">
+        <div class="panel-content">
+  
+          <div class=row><!-- Top grids -->
+              <div class="col-md-2">
+                  <h3>Select tracks</h3>
                 </div>
-            </form>
-        </div>
-      </div><!--
-      --><div class="col-xs-6 col-md-8 col-lg-8">
-          <div class="tdl-holder">
-              <h2>Selected genes<span style="text-align:right"><b>          {{selected_gene.length}}</b></span></h2>
-              <div class="tdl-content">
-                <ul>
-                  <li ng-repeat="gene in selected_gene"><label><i></i><span>{{gene.Symbol}}</span><a ng-click="remove_genes(gene)"><i class="fa fa-trash" aria-hidden="true"></i></a></label></li>
-                </ul>
-              </div>
-            </div>
-      </div>
-  </div>
-</div>
-
-<div class="row" id="step3" style="visibility:hidden;">
-  <h2>Step 3 - Select your studies</h2>
-  <hr>
-  <div class="row">
-      <div class="col-xs-6 col-md-4 col-lg-4">
-        <div>
-            <form >
-                <div class="input-group">
-                    <a href="" class="btn panel-open"><button class="btn btn-default">Select study</button></a>
+                <div class="col-md-10" style="margin-top: 20px;">
+                  <form>
+                      <div class="input-group">
+                          <input ng-model='filterValue' class="form-control" id="inputdefault" type="text">
+                          <span class="input-group-btn">
+                              <button class="btn btn-default" ng-click='filter()' >Filter</button>
+                          </span>
+                      </div>
+                  </form>
                 </div>
-            </form>
-        </div>
-      </div><!--
-      --><div class="col-xs-6 col-md-8 col-lg-8">
-          <div class="tdl-holder">
-              <h2>Selected studies<span style="text-align:right"><b>          {{chosen.length}}/5</b></span></h2>
-              <div class="tdl-content">
-                <ul>
-                  <li ng-repeat="study in chosen"><label><i></i><span>{{study.Study}}</span><!--<a ng-click="remove_study(study)"><i class="fa fa-trash" aria-hidden="true"></i></a>--></label></li>
-                </ul>
-              </div>
+          </div>
+  
+            <div class="row"><!-- Grids -->
+                <div class="col-md-4">
+                  <div id="grid1" ui-grid-selection ui-grid-tree-view ui-grid="main.gridOptions"  width=100%></div>
+                </div>
+                <div class="col-md-8">
+                  <div id="grid2" ui-grid-selection ui-grid="second.gridOptions"  width=100%></div>
+                </div>
             </div>
+  
+        </div> <!-- panel-content -->
+      </div> <!-- panel-container -->
+  </div> <!-- panel -->
+
+
+
+  
+    <div class="stepwizard">
+      <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <a class="btn btn-default btn-circle active-step disabled" href="#step-1" target="_self" data-toggle="tab" onclick="stepnext(1)" >1</a>
+        </div>
+        <div class="stepwizard-step">
+            <a class="btn btn-default btn-circle disabled" disabled href="#step-2" target="_self" data-toggle="tab">2</a>
+        </div>
+        <div class="stepwizard-step">
+          <a class="btn btn-default btn-circle" disabled href="#step-3" target="_self" data-toggle="tab">3</a>
+        </div> 
+        <div class="stepwizard-step">
+          <a class="btn btn-default btn-circle" disabled href="#step-4" target="_self" data-toggle="tab">4</a>
+        </div> 
       </div>
-  </div>
-</div>
-
-
-<div class="row" ng-if="chosen.length != 0">
-  <h2>Step 4 - Show results</h2>
-  <hr>
-  <button class="btn btn-default" ng-click="showGeneLevel(chosen,selected_gene)">Show</button>
-</div>
-
-<div ng-if="charts">
-  <div class="row">
-    <h6>Results generated in {{ time }} seconds</h6>
-    <div class="col-md-6" ng-repeat="chart in charts">
-      <h4>{{ chart.gene }}</h4>
-      <div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
     </div>
-  </div>
-</div>
+      <div class="rate-updates">
+        <div class="tab-content margintop0" style="border:none !important;">
 
+          <!-- STEP 1 -->
+          <div class="tab-pane fade active in padding20" id="step-1" >
+            <h3>Step 1 - Select species</h3>
+              <div class="row">
+                <div class="col-xs-6 col-md-4 col-lg-4 vcenter">
+                  <div>
+                    <form>
+                      <div class="form-group">
+                        <select class="form-control" ng-model="speciesValue">
+                          <option ng-repeat="spe in species" value="{{spe.tax_id}}">{{spe.name}}</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                </div><!--
+              --><div class="col-xs-6 col-md-8 col-lg-8 vcenter">
+                  <div class="alert-message alert-message-info">
+                      <h4><i class="fa fa-info-circle" aria-hidden="true"></i> About</h4>
+                      <p>Select the species in which you wish to view one or more studies, regardless of the origin species of the study.</p>
+                  </div>
+                </div>
+              </div>
+            <button ng-if="speciesValue" class="btn btn-default"  onclick="stepnext(2);" type="button"><i class="icon-next"></i> Next</button>
+          </div>
+          
+          <!-- STEP 2 -->
+          <div class="tab-pane fade padding20 " id="step-2">
+            <h3> Step 2 - Select genes</h3>
+            <div class="row">
+              <div class="col-xs-6 col-md-4 col-lg-4">
+                <div>
+                    <form >
+                        <div class="input-group">
+                            <input style="z-index: 0;" class="form-control" name="states" id="states" type="text" placeholder="Select your genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',speciesValue)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading">
+                            <!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"   typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
+                            <span class="input-group-btn">
+                                <button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(higlight_gene)' >Select</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+              </div><!--
+              --><div class="col-xs-6 col-md-8 col-lg-8">
+                  <div class="tdl-holder">
+                      <h2>Selected genes<span style="text-align:right"><b>          {{selected_gene.length}}</b></span></h2>
+                      <div class="tdl-content">
+                        <ul>
+                          <li ng-repeat="gene in selected_gene"><label><i></i><span>{{gene.Symbol}}</span><a ng-click="remove_genes(gene)"><i class="fa fa-trash" aria-hidden="true"></i></a></label></li>
+                        </ul>
+                      </div>
+                    </div>
+              </div>
+            </div> 
+            <button class="btn btn-default"  onclick="stepnext(1);" type="button"><i class="icon-next"></i> Previous</button>
+            <button ng-if="selected_gene.length > 0" class="btn btn-default"  onclick="stepnext(3);" type="button"><i class="icon-next"></i> Next</button>
+          </div>
 
-
-<!--Sorry about all the inline JS. It is a quick way to show what options are available
-<div class="chart-options">
-    <p>Show: </p>
-    <button onclick="$scope.chart1.violinPlots.hide();$scope.chart1.boxPlots.show({reset:true});$scope.chart1.notchBoxes.hide();$scope.chart1.dataPlots.change({showPlot:false,showBeanLines:false})">Box Plot</button>
-    <button onclick="chart1.violinPlots.hide();chart1.notchBoxes.show({reset:true});chart1.boxPlots.show({reset:true, showBox:false,showOutliers:true,boxWidth:20,scatterOutliers:true});chart1.dataPlots.change({showPlot:false,showBeanLines:false})">Notched Box Plot</button>
-    <button onclick="chart1.violinPlots.show({reset:true,clamp:0});chart1.boxPlots.show({reset:true, showWhiskers:false,showOutliers:false,boxWidth:10,lineWidth:15,colors:['#555']});chart1.notchBoxes.hide();chart1.dataPlots.change({showPlot:false,showBeanLines:false})">Violin Plot Unbound</button>
-    <button onclick="chart1.violinPlots.show({reset:true,clamp:1});chart1.boxPlots.show({reset:true, showWhiskers:false,showOutliers:false,boxWidth:10,lineWidth:15,colors:['#555']});chart1.notchBoxes.hide();chart1.dataPlots.change({showPlot:false,showBeanLines:false})">Violin Plot Clamp to Data</button>
-    <button onclick="chart1.violinPlots.show({reset:true, width:75, clamp:0, resolution:30, bandwidth:50});chart1.dataPlots.show({showBeanLines:true,beanWidth:15,showPlot:false,colors:['#555']});chart1.boxPlots.hide();chart1.notchBoxes.hide()">Bean Plot</button>
-    <button onclick="chart1.violinPlots.hide();chart1.dataPlots.show({showPlot:true, plotType:'beeswarm',showBeanLines:false, colors:null});chart1.notchBoxes.hide();chart1.boxPlots.hide();">Beeswarm Plot</button>
-    <button onclick="chart1.violinPlots.hide();chart1.dataPlots.show({showPlot:true, plotType:40, showBeanLines:false,colors:null});chart1.notchBoxes.hide();chart1.boxPlots.hide();">Scatter Plot</button>
-    <button onclick="if(chart1.dataPlots.options.showLines){chart1.dataPlots.change({showLines:false});} else {chart1.dataPlots.change({showLines:['median','quartile1','quartile3']});}">Trend Lines</button>
-</div>-->
-
-
+          <!-- STEP 3 -->
+          <div class="tab-pane fade padding20 " id="step-3">
+              <h3> Step 3 - Select your studies</h3>
+              <div class="row">
+                  <div class="col-xs-6 col-md-4 col-lg-4">
+                    <div>
+                        <form >
+                            <div class="input-group">
+                                <a href="" class="btn panel-open"><button class="btn btn-default">Select study</button></a>
+                            </div>
+                        </form>
+                    </div>
+                  </div><!--
+                  --><div class="col-xs-6 col-md-8 col-lg-8">
+                      <div class="tdl-holder">
+                          <h2>Selected studies<span style="text-align:right"><b>          {{chosen.length}}/5</b></span></h2>
+                          <div class="tdl-content">
+                            <ul>
+                              <li ng-repeat="study in chosen"><label><i></i><span>{{study.Study}}</span><!--<a ng-click="remove_study(study)"><i class="fa fa-trash" aria-hidden="true"></i></a>--></label></li>
+                            </ul>
+                          </div>
+                        </div>
+                  </div>
+              </div>
+              <button class="btn btn-default" onclick="stepnext(2);" type="button"><i class="icon-next"></i> Previous</button>
+              <button ng-if="chosen.length > 0" class="btn btn-default"  onclick="stepnext(4);" type="button"><i class="icon-next"></i> Next</button>
+          </div>
+          
+          <!-- STEP 4 -->
+          <div class="tab-pane fade padding20 " id="step-4" >
+              <div class="col-md-12">
+                  <h3>Results</h3>
+                  <p><b>Selected species:</b> {{ dispalaySpe(species,speciesValue) }}</p>
+                  <p><b>Selected genes:<br></b>
+                    <ul>
+                      <li ng-repeat="gene in selected_gene">{{ gene.Symbol }}</li>
+                    </ul>
+                  </p>
+                  <p><b>Selected studies:</b>
+                    <ul>
+                      <li ng-repeat="study in chosen"> {{ study.Author }}, {{ study.Year }} </li>
+                    </ul>
+                  </p>
+                  <button class="btn btn-default"  onclick="stepnext(3);" type="button"><i class="icon-next"></i> Previous</button>
+                  <button class="btn btn-default" ng-click="showGeneLevel(chosen,selected_gene)" type="submit">Show</button>
+              </div>
+              <div ng-if="charts">
+                <h6>Results generated in {{ time }} seconds</h6>
+                <div class="tabbable-panel">
+                    <div class="tabbable-line">
+                    <ul class="nav nav-tabs ">
+                      <li ng-repeat="study in chosen" ng-class="{active:$index==0}">
+                        <a href="#tab_default-{{ $index }}" target="_self" data-toggle="tab">
+                          {{ study.Author }}, {{ study.Year }}</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content">
+                      <div ng-repeat="stud in chosen" class="tab-pane" ng-class="{active:$index==0}" id="tab_default-{{ $index }}">
+                        <div class="row">
+                          <h4>{{ stud.Author }}, {{ stud.Year }}</h4>
+                            <div class="col-lg-6" ng-repeat="chart in charts" ng-if="chart.study == stud.Directory">
+                              <h4>{{ chart.gene }}</h4>
+                              <div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
+                            </div>
+                          </div>
+              
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+        </div>
+      </div>
 
 <!-- Footer -->
 <div class="row">
@@ -184,4 +368,5 @@
 			<!--/*div gauche*/-->
 		</div>
 </div>
+
 <script  src="scripts/index.js"></script>
