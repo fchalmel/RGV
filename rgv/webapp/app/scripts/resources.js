@@ -50,6 +50,18 @@
                 isArray: false,
                 cache: false
             },
+            scData: {
+                url: '/scData',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
+            scDataGenes: {
+                url: '/scDataGenes',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
         });
     }
 

@@ -57,6 +57,7 @@ def main(global_config, **settings):
 
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_static_view('app', 'rgv:webapp/app')
+    config.add_route('autocomplete', '/autocomplete')
     config.add_route('d_getter', '/data_frame')
     config.add_route('file_dataset','/dataset_download/{dir}/{file}')
     config.add_route('genelevel', '/genelevel')
@@ -64,7 +65,8 @@ def main(global_config, **settings):
     config.add_route('login', '/user/login')
     config.add_route('logged', '/user/logged')
     config.add_route('newsfeed', '/newsfeed')
-    config.add_route('autocomplete', '/autocomplete')
+    config.add_route('scData', '/scData')
+    config.add_route('scDataGenes', '/scDataGenes')
     config.add_route('user', '/user')
     config.add_route('user_register', '/user/register')
     config.add_route('user_recover', '/user/recover')

@@ -220,6 +220,64 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             }
         }
     }
+    
+    var display = false
+    $scope.displayGeneExp = function(selected_lst,selected_gene){
+        if (display == true) {
+            display = false
+            $scope.msg = [];
+            var directory_list = [];
+            var genes_list = {};
+            for (var i=0;i<selected_lst.length;i++){
+                if (selected_lst[i].Directory !=null){
+                    directory_list.push(selected_lst[i].Directory);
+                }else{
+                    $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
+                }
+            }
+            if(directory_list.length > 0){
+                //test
+                Dataset.scData({},{'directory':directory_list,'conditions':'scRNA-seq','genes':''}).$promise.then(function(response){
+
+                    $scope.time = response.time;
+                    $scope.charts = response.charts;
+                    console.log(response);
+                });
+            }else{
+                $scope.msgwrn ="No data available. Please select other studies or contact RGV support.";
+                return $scope.msgwrn;
+            }
+        }
+        else {
+            $scope.msg = [];
+            var directory_list = [];
+            display = true;
+            var genes_list = {};
+            for (var i=0;i<selected_lst.length;i++){
+                if (selected_lst[i].Directory !=null){
+                    directory_list.push(selected_lst[i].Directory);
+                }else{
+                    $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
+                }
+            }
+
+            if (selected_gene.GeneID !=null){
+                genes_list[selected_gene.GeneID] = selected_gene.Symbol;
+            }
+
+            if(directory_list.length > 0){
+                //test
+                Dataset.scDataGenes({},{'directory':directory_list,'conditions':'test','genes':genes_list}).$promise.then(function(response){
+
+                    $scope.time = response.time;
+                    $scope.charts = response.charts;
+                    console.log(response);
+                });
+
+            }
+        }
+    };
+    
 
     //Update grid2 en fonction de la selection de la grid1
     $scope.updateSelection = function() {
@@ -496,7 +554,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
 
     //Fonction visualisation gene Level
     $scope.msg = []
-    $scope.showGeneLevel = function(selected_lst,selected_gene){
+    $scope.showData = function(selected_lst){
         $scope.msg = [];
         var directory_list = [];
         var genes_list = {};
@@ -507,14 +565,9 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
                 $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
             }
         }
-        for(var z=0;z<selected_gene.length;z++){
-            if (selected_gene[z].GeneID !=null){
-                genes_list[selected_gene[z].GeneID] = selected_gene[z].Symbol;
-            }
-        }
         if(directory_list.length > 0){
             //test
-            Dataset.genelevel({},{'directory':directory_list,'conditions':'test','genes':genes_list}).$promise.then(function(response){
+            Dataset.scData({},{'directory':directory_list,'conditions':'scRNA-seq','genes':''}).$promise.then(function(response){
 
                 $scope.time = response.time;
                 $scope.charts = response.charts;
@@ -922,7 +975,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
                 $scope.chosen.splice(index,1);
             };
         }
-        
+
         $scope.get_genes = function(val,database,species_val) {
             var species_convertor = {};
             return Dataset.autocomplete({},{'database':database,'search':val,'tax_id':species_val}).$promise.then(function(data){

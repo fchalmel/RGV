@@ -137,14 +137,13 @@ def genelevel(request):
         interval = time.time() - start_time
         return result
 
-
-
     form = json.loads(request.body, encoding=request.charset)
     directories = form['directory']
+
     all_genes = form['genes']
     selected_genes = all_genes.keys()
     result = {'charts':[],'warning':[],'time':''}
-    print directories
+    #print directories
     start_time = time.time()  
 
     for stud in directories:
@@ -202,6 +201,147 @@ def genelevel(request):
     result['time'] = interval 
     return result
 
+@view_config(route_name='scDataGenes', renderer='json', request_method='POST')
+def scDataGenes(request):
+    def getValue(file_in,selectedvalues):
+        start_time = time.time()
+        dIndex =  cPickle.load(open(file_in+".pickle"))
+        fList = open(file_in,"r")
+        result = {}
+        for val in selectedvalues :
+            if str(val) in dIndex:
+                iPosition = dIndex[str(val)]
+                fList.seek(iPosition)
+                result[str(val)] = fList.readline().rstrip().split('\t')[1:]
+            else:
+                result[str(val)] = []
+        interval = time.time() - start_time
+        return result
+
+    form = json.loads(request.body, encoding=request.charset)
+    directories = form['directory']
+
+    all_genes = form['genes']
+    selected_genes = all_genes.keys()
+    result = {'charts':[],'warning':[],'time':''}
+    #print directories
+    start_time = time.time()  
+
+    for stud in directories:
+        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Clusters'])
+        groups = np.array(groups['Clusters'])
+        _, idx = np.unique(groups, return_index=True)
+        uniq_groups = groups[np.sort(idx)[::-1]]
+        
+        samples = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])
+        samples = np.array(samples['Sample'])
+
+        x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['x'])['x'])
+        y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['y'])['y'])
+
+        genes = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),selected_genes)
+        for i in range(0,len(selected_genes)):
+            gene_name = all_genes[selected_genes[i]]
+            chart = {}
+            chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
+            chart['data']=[]
+            chart['description'] = ""
+            chart['name'] = "%s in %s study" % (gene_name,stud)
+            chart['title'] = ""
+            chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
+            chart['gene'] = gene_name
+            chart['msg'] = []
+            chart['study'] = stud
+            for cond in uniq_groups :
+                val_gene = np.array(genes[str(selected_genes[i])])
+                if len(val_gene) != 0 :
+                    val = val_gene[np.where(groups == cond)[0]]
+                    val_x= x[np.where(groups == cond)[0]]
+                    val_y= y[np.where(groups == cond)[0]]
+                    text = samples[np.where(groups == cond)[0]]
+                    data_chart = {}
+                    data_chart['type'] = 'scatter'
+                    data_chart['mode']= 'markers'
+                    data_chart['text'] = []
+                    data_chart['text'].extend(text)
+                    data_chart['x'] = []
+                    data_chart['x'].extend(val_x)
+                    data_chart['y'] = []
+                    data_chart['y'].extend(val_y)
+                    data_chart['name'] = cond
+                    data_chart['hoverinfo'] = "all"
+                    data_chart['marker']={'color':[]}
+                    data_chart['marker']['color'].extend(val)
+                    chart['data'].append(data_chart)
+            result['charts'].append(chart)
+
+    interval = time.time() - start_time  
+    result['time'] = interval 
+    return result
+
+@view_config(route_name='scData', renderer='json', request_method='POST')
+def scData(request):
+    def getValue(file_in,selectedvalues):
+        start_time = time.time()
+        dIndex =  cPickle.load(open(file_in+".pickle"))
+        fList = open(file_in,"r")
+        result = {}
+        for val in selectedvalues :
+            if str(val) in dIndex:
+                iPosition = dIndex[str(val)]
+                fList.seek(iPosition)
+                result[str(val)] = fList.readline().rstrip().split('\t')[1:]
+            else:
+                result[str(val)] = []
+        interval = time.time() - start_time
+        return result
+
+    form = json.loads(request.body, encoding=request.charset)
+    directories = form['directory']
+
+    result = {'charts':[],'warning':[],'time':''}
+    #print directories
+    start_time = time.time()  
+
+    for stud in directories:
+        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Clusters'])
+        groups = np.array(groups['Clusters'])
+        _, idx = np.unique(groups, return_index=True)
+        uniq_groups = groups[np.sort(idx)[::-1]]
+        
+        samples = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])['Sample'])
+        x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['x'])['x'])
+        y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['y'])['y'])
+        chart = {}
+        chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
+        chart['data']=[]
+        chart['description'] = ""
+        chart['title'] = ""
+        chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
+        chart['gene'] = ""
+        chart['msg'] = []
+        for cond in uniq_groups :
+            val_x= x[np.where(groups == cond)[0]]
+            val_y= y[np.where(groups == cond)[0]]
+            text = samples[np.where(groups == cond)[0]]
+            data_chart = {}
+            data_chart['x'] = []
+            data_chart['x'].extend(val_x)
+            data_chart['y'] = []
+            data_chart['y'].extend(val_y)
+            data_chart['name'] = cond
+            data_chart['text'] = []
+            data_chart['text'].extend(text)
+            data_chart['hoverinfo'] = "all"
+            data_chart['type'] = 'scatter'
+            data_chart['mode']= 'markers'
+            chart['data'].append(data_chart)
+        result['charts'].append(chart)
+
+    interval = time.time() - start_time  
+    result['time'] = interval 
+    return result
+
 
 
 @view_config(route_name='newsfeed', renderer='json', request_method='GET')
@@ -226,7 +366,7 @@ def getnews(request):
 
 @view_config(route_name='file_dataset', request_method='GET')
 def file_dataset(request):
-    print "Get Dataset"
+    #print "Get Dataset"
     directory = request.matchdict['dir']
     downfile = request.matchdict['file']
     url_file = os.path.join(request.registry.dataset_path,directory,downfile)
@@ -337,7 +477,7 @@ def user_info_update(request):
     tid = form['_id']
     del form['_id']
     request.registry.db_mongo['users'].update({'id': request.matchdict['id']}, form)
-    form['_id'] = tid;
+    form['_id'] = tid
     return form
 
 @view_config(route_name='user', renderer='json')

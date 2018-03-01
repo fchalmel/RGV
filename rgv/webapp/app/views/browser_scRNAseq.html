@@ -280,7 +280,7 @@ stepnext(1);
           </div>
           
           <!-- STEP 4 -->
-          <div class="tab-pane fade padding20 " id="step-4" >
+          <div class="tab-pane fade padding20 " id="step-3" >
               <div class="col-md-12">
                   <h3>Results</h3>
                   <p><b>Selected species:</b> {{ dispalaySpe(species,speciesValue) }}</p>
@@ -290,11 +290,41 @@ stepnext(1);
                     </ul>
 				  </p>
 				  <button class="btn btn-default"  onclick="stepnext(2);" type="button"><i class="icon-next"></i> Previous</button>
-                  <button class="btn btn-default" ng-click="showGeneLevel(chosen,selected_gene)" type="submit">Show</button>
+                  <button class="btn btn-default" ng-click="showData(chosen)" type="submit">Show</button>
               </div>
               <div ng-if="charts">
-                <h6>Results generated in {{ time }} seconds</h6>
-                <div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
+				<h6>Results generated in {{ time }} seconds</h6>
+				<div class="row">
+					<div class="col-md-8">
+						<div ng-repeat="chart in charts">
+							<div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<form >
+							<div class="input-group" style="margin-bottom:15px;">
+								<input style="z-index: 0;" class="form-control" name="states" id="states" type="text" placeholder="Select genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',speciesValue)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading">
+								<!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"   typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
+								<span class="input-group-btn">
+									<button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(higlight_gene)' >Select</button>
+								</span>
+							</div>
+						</form>
+						<div class="list-group" >
+                <div class="list-group-item" ng-repeat="gene in selected_gene" style="margin-bottom:10px">
+									<div class="pull-left form-control-inline">
+										<h4 class="list-group-item-heading">{{ gene.Symbol }}</h4>
+										<p class="list-group-item-text">{{ gene.GeneID }}</p>
+									</div>
+									<button class="btn btn-default pull-right"  ng-click="displayGeneExp(chosen,gene)">Display</button>									
+									<div class="clearfix" ></div>
+									
+								</div>
+						</div>
+
+					</div>
+				</div>
+				
               </div>
               
           </div>
