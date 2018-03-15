@@ -1,14 +1,12 @@
 FROM debian:stable
 RUN apt-get update && apt-get install -y --force-yes mongodb openssl libpython-dev libffi-dev libssl-dev python python-dev python-pip
 EXPOSE 6543
-ADD chemsign /opt/toxsign/chemsign
-ADD development.ini.* /opt/toxsign/
-ADD CHANGES.txt README.md *.txt /opt/toxsign/
-ADD *.py /opt/toxsign/
-RUN cd /opt/toxsign && pip install -r requirements.txt
-RUN pip install pandas
-RUN pip install simplejson
-RUN cd /opt/toxsign && python setup.py develop
-WORKDIR /opt/toxsign
-RUN mkdir -p /opt/toxsign/var/upload
+COPY rgv/ /opt/rgv/rgv/
+ADD development.ini /opt/rgv/
+ADD CHANGES.txt README.md *.txt /opt/rgv/
+ADD *.py /opt/rgv/
+RUN cd /opt/rgv && pip install -r requirements.txt
+RUN cd /opt/rgv && python setup.py develop
+WORKDIR /opt/rgv
+RUN mkdir -p /opt/rgv/var/upload
 ENTRYPOINT ["pserve", "development.ini"]
