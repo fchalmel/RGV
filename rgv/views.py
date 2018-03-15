@@ -136,6 +136,7 @@ def genelevel(request):
                 result[str(val)] = []
         interval = time.time() - start_time
         return result
+    
 
     form = json.loads(request.body, encoding=request.charset)
     directories = form['directory']
@@ -217,19 +218,32 @@ def scDataGenes(request):
                 result[str(val)] = []
         interval = time.time() - start_time
         return result
+    
+    def getClass(file_in):
+        dIndex =  cPickle.load(open(file_in+".pickle"))
+        fList = open(file_in,"r")
+        result = []
+        for index in dIndex :
+            if "Class" in index :
+                result.append(index)
+        return result
 
     form = json.loads(request.body, encoding=request.charset)
     directories = form['directory']
 
     all_genes = form['genes']
     selected_genes = all_genes.keys()
-    result = {'charts':[],'warning':[],'time':''}
+    result = {'charts':[],'warning':[],'time':'','class':{}}
+    selected_class = form['selected_class']
     #print directories
     start_time = time.time()  
 
     for stud in directories:
-        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Clusters'])
-        groups = np.array(groups['Clusters'])
+        result['class'][stud] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+        if selected_class == '':
+            selected_class = result['class'][stud][0]
+        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
+        groups = np.array(groups[selected_class])
         _, idx = np.unique(groups, return_index=True)
         uniq_groups = groups[np.sort(idx)[::-1]]
         
@@ -295,17 +309,30 @@ def scData(request):
                 result[str(val)] = []
         interval = time.time() - start_time
         return result
+    
+    def getClass(file_in):
+        dIndex =  cPickle.load(open(file_in+".pickle"))
+        fList = open(file_in,"r")
+        result = []
+        for index in dIndex :
+            if "Class" in index :
+                result.append(index)
+        return result
 
     form = json.loads(request.body, encoding=request.charset)
     directories = form['directory']
+    selected_class = form['selected_class']
 
-    result = {'charts':[],'warning':[],'time':''}
+    result = {'charts':[],'warning':[],'time':'','class':{}}
     #print directories
     start_time = time.time()  
 
     for stud in directories:
-        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Clusters'])
-        groups = np.array(groups['Clusters'])
+        result['class'][stud] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+        if selected_class == '':
+            selected_class = result['class'][stud][0]
+        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
+        groups = np.array(groups[selected_class])
         _, idx = np.unique(groups, return_index=True)
         uniq_groups = groups[np.sort(idx)[::-1]]
         
@@ -316,7 +343,7 @@ def scData(request):
         chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
         chart['data']=[]
         chart['description'] = ""
-        chart['title'] = ""
+        chart['study'] = stud
         chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
         chart['gene'] = ""
         chart['msg'] = []

@@ -2,134 +2,8 @@
 <link rel="stylesheet" type="text/css" href="styles/distrochart.css">
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <link href="styles/style.css" rel="stylesheet">
+<link href="styles/singlecellvisu.css" rel="stylesheet">
 <script src="scripts/plotly-latest.min.js"></script>
-
-<style>
-  /* Tabs panel */
-.tabbable-panel {
-  padding: 10px;
-}
-
-/* Default mode */
-.tabbable-line > .nav-tabs {
-  border: none;
-  margin: 0px;
-}
-.tabbable-line > .nav-tabs > li {
-  margin-right: 2px;
-}
-.tabbable-line > .nav-tabs > li > a {
-  border: 0;
-  margin-right: 0;
-  color: #737373;
-}
-.tabbable-line > .nav-tabs > li > a > i {
-  color: #a6a6a6;
-}
-.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
-  border-bottom: 4px solid #fbcdcf;
-}
-.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
-  border: 0;
-  background: none !important;
-  color: #333333;
-}
-.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
-  color: #a6a6a6;
-}
-.tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
-  margin-top: 0px;
-}
-.tabbable-line > .nav-tabs > li.active {
-  border-bottom: 4px solid #f3565d;
-  position: relative;
-}
-.tabbable-line > .nav-tabs > li.active > a {
-  border: 0;
-  color: #333333;
-}
-.tabbable-line > .nav-tabs > li.active > a > i {
-  color: #404040;
-}
-.tabbable-line > .tab-content {
-  margin-top: -3px;
-  background-color: #fff;
-  border: 0;
-  border-top: 1px solid #eee;
-  padding: 15px 0;
-}
-.portlet .tabbable-line > .tab-content {
-  padding-bottom: 0;
-}
-
-.stepwizard-step p {
-    margin-top: 10px;    
-}
-
-.stepwizard-row {
-    display: table-row;
-}
-
-.stepwizard {
-    display: table;     
-    width: 100%;
-    position: relative;
-}
-
-
-.stepwizard-row:before {
-    top: 14px;
-    bottom: 0;
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 1px;
-    background-color: #ccc;
-    z-order: 0;
-    
-}
-
-.stepwizard-step {    
-    display: table-cell;
-    text-align: center;
-    position: relative;
-}
-
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-.stepwizard-content{
- border:none !important;
- float: left !important;
- margin-top: 0 !important;
- padding: 15px !important;
- width: 100% !important;
- 
-}
-
-.disabled {
-   pointer-events: none;
-   cursor: default;
-}
-.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
-    cursor: not-allowed;
-    filter: alpha(opacity=65);
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    opacity: 1;
-}
-.btn-primary {
-    color: #fff;
-    background-color: #df3f53;
-    border-color: #df3f53;
-}
-</style>
 
 <script>
 function stepnext(n){
@@ -290,41 +164,56 @@ stepnext(1);
                     </ul>
 				  </p>
 				  <button class="btn btn-default"  onclick="stepnext(2);" type="button"><i class="icon-next"></i> Previous</button>
-                  <button class="btn btn-default" ng-click="showData(chosen)" type="submit">Show</button>
+                  <button class="btn btn-default" ng-click="showData(chosen,'')" type="submit">Show</button>
               </div>
               <div ng-if="charts">
-				<h6>Results generated in {{ time }} seconds</h6>
-				<div class="row">
-					<div class="col-md-8">
-						<div ng-repeat="chart in charts">
-							<div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<form >
-							<div class="input-group" style="margin-bottom:15px;">
-								<input style="z-index: 0;" class="form-control" name="states" id="states" type="text" placeholder="Select genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',speciesValue)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading">
-								<!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"   typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
-								<span class="input-group-btn">
-									<button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(higlight_gene)' >Select</button>
-								</span>
-							</div>
-						</form>
-						<div class="list-group" >
-                <div class="list-group-item" ng-repeat="gene in selected_gene" style="margin-bottom:10px">
-									<div class="pull-left form-control-inline">
-										<h4 class="list-group-item-heading">{{ gene.Symbol }}</h4>
-										<p class="list-group-item-text">{{ gene.GeneID }}</p>
-									</div>
-									<button class="btn btn-default pull-right"  ng-click="displayGeneExp(chosen,gene)">Display</button>									
-									<div class="clearfix" ></div>
-									
-								</div>
-						</div>
-
-					</div>
-				</div>
-				
+                  <h6>Results generated in {{ time }} seconds</h6>
+                  <div class="tabbable-panel">
+                    <div class="tabbable-line">
+                    <ul class="nav nav-tabs ">
+                      <li ng-repeat="study in chosen" ng-class="{active:$index==0}">
+                        <a href="#tab_default-{{ $index }}" target="_self" data-toggle="tab">
+                          {{ study.Author }}, {{ study.Year }}</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content">
+                      <div ng-repeat="stud in chosen" class="tab-pane" ng-class="{active:$index==0}" id="tab_default-{{ $index }}">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <div ng-repeat="chart in charts" ng-if="chart.study == stud.Directory">
+                              <div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
+                              <select ng-options="class as class for class in allclass" ng-model="selected_class" ng-change="update(stud,chart-div-{{ $index }})"></select>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <form >
+                              <div class="input-group" style="margin-bottom:15px;">
+                                <input style="z-index: 0;" class="form-control" name="states" id="states" type="text" placeholder="Select genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',speciesValue)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading">
+                                <!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"   typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
+                                <span class="input-group-btn">
+                                  <button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(higlight_gene)'>Select</button>
+                                </span>
+                              </div>
+                            </form>
+                            <div class="list-group" >
+                                <div class="list-group-item" ng-repeat="gene in selected_gene" style="margin-bottom:10px">
+                                  <div class="pull-left form-control-inline">
+                                    <h4 class="list-group-item-heading">{{ gene.Symbol }}</h4>
+                                    <p class="list-group-item-text">{{ gene.GeneID }}</p>
+                                  </div>
+                                  <button class="btn btn-default pull-right"  ng-click="displayGeneExp(chosen,gene)">Display</button>									
+                                  <div class="clearfix" ></div>
+                                  
+                                </div>
+                            </div>
+        
+                          </div>
+                        </div>
+              
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               
           </div>

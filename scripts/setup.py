@@ -58,10 +58,28 @@ logger.addHandler(steam_handler)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Initialize database content.')
-    parser.add_argument('--install')
+    parser = argparse.ArgumentParser(description='Initialize RGV database content.')
+    parser.add_argument('-i', action='store', dest='gene_info',default="",
+                    help='NCBI gene_info file')
+
+    parser.add_argument('-e', action='store', dest='gene2ensembl',
+                        default="", help='NCBI gene2ensemble file')
+
+    parser.add_argument('-o', action='store', dest='homologene',default="",
+                        help='NCBI homologene.data file')
+
+    parser.add_argument('-d', action='store_false', default=True,
+                        help='Download files directly from NCBI ftp server')
+
+    parser.add_argument('--version', action='version', version='%(prog)s 1.0')
     args = parser.parse_args()
-            
-    if args.install == 'DATABASE':
-        os.system('mongo rgv --eval "db.dropDatabase()"')
-        rgv.createCollections()
+
+    if args.gene_info != "" and args.gene2ensembl != "" and args.homologene != "":
+        dirpath = os.getcwd()
+        geneFile = rgv.Concat_files("",use_dl=False,file_list=[args.gene2ensembl,args.gene_info,args.homologene])
+        rgv.InsertCollections(geneFile)
+    else :
+        dirpath = rgv.Download_datafiles()
+        geneFile = rgv.Concat_files(dirpath,use_dl=True,file_list=[])
+        rgv.InsertCollections(geneFile)
+    

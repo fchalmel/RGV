@@ -117,7 +117,7 @@ DOC = "This script format file in order to visualize it in RGV gene-level and si
         Common.samples      <- intersect(colnames(Expr.Data),rownames(Class.Data))
         Expr.Data           <- Expr.Data[,Common.samples]
         Class.Data          <- Class.Data[Common.samples,]
-        rownames(Expr.Data) <- gsub("\\..*$","",as.vector(Gene.Data[rownames(Expr.Data),]))
+        rownames(Expr.Data) <- gsub("\\.[0-9]+$","",as.vector(Gene.Data[rownames(Expr.Data),]))
         #-----------------------------------------------------------------------
         
         #-----------------------------------------------------------------------

@@ -554,7 +554,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
 
     //Fonction visualisation gene Level
     $scope.msg = []
-    $scope.showData = function(selected_lst){
+    $scope.showData = function(selected_lst,selected_class){
         $scope.msg = [];
         var directory_list = [];
         var genes_list = {};
@@ -567,7 +567,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         }
         if(directory_list.length > 0){
             //test
-            Dataset.scData({},{'directory':directory_list,'conditions':'scRNA-seq','genes':''}).$promise.then(function(response){
+            Dataset.scData({},{'directory':directory_list,'conditions':'scRNA-seq','genes':'','class':selected_class}).$promise.then(function(response){
 
                 $scope.time = response.time;
                 $scope.charts = response.charts;
