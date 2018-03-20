@@ -8,3 +8,28 @@
 2018-01-29 16:07:57,174 :: DEBUG :: CreateCollection - create RGV_geneDB collection
 2018-01-29 16:07:57,174 :: ERROR :: [Errno 2] No such file or directory: 'genes_DB.rdb'
 2018-01-29 16:08:30,851 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-14 16:28:55,603 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-14 16:28:55,610 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-14 16:28:55,610 :: ERROR :: [Errno 2] No such file or directory: 'ERROR - Not enougth file provided'
+2018-03-15 08:09:00,176 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-15 08:09:00,188 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-15 08:09:00,189 :: ERROR :: [Errno 2] No such file or directory: '/var/folders/69/lq729j8s0t18f4wjmf6p_hv00000gp/T/tmpoH6TMN/RGV_database_genes.txt'
+2018-03-15 08:29:56,346 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-15 08:41:15,094 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-15 08:41:15,094 :: ERROR :: 
+2018-03-15 09:06:04,405 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-15 10:49:39,409 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-15 10:49:39,412 :: ERROR :: 
+2018-03-15 10:56:05,493 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-16 20:31:57,250 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-16 20:31:58,478 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-16 20:31:58,478 :: ERROR :: [Errno 2] No such file or directory: '/Users/tdarde/Desktop/RGV_database_genes.txt'
+2018-03-16 20:32:19,237 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-16 20:32:19,524 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-16 20:32:19,524 :: ERROR :: [Errno 2] No such file or directory: '/Users/tdarde/Desktop/RGV_database_genes.txt'
+2018-03-16 20:32:38,484 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-16 20:32:38,689 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-16 20:32:38,690 :: ERROR :: [Errno 2] No such file or directory: '/Users/tdarde/Desktop/RGV_database_genes.txt'
+2018-03-16 20:35:30,519 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-16 20:39:24,726 :: DEBUG :: CreateCollection - create RGV_geneDB collection
+2018-03-16 20:44:00,265 :: DEBUG :: CreateCollection - create RGV_geneDB collection

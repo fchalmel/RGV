@@ -137,19 +137,32 @@ def genelevel(request):
         interval = time.time() - start_time
         return result
     
+    def getClass(file_in):
+        dIndex =  cPickle.load(open(file_in+".pickle"))
+        fList = open(file_in,"r")
+        result = []
+        for index in dIndex :
+            if "Class" in index :
+                result.append(index)
+        return result
+    
 
     form = json.loads(request.body, encoding=request.charset)
     directories = form['directory']
+    selected_class  = form['selected_class']
 
     all_genes = form['genes']
     selected_genes = all_genes.keys()
-    result = {'charts':[],'warning':[],'time':''}
+    result = {'charts':[],'warning':[],'time':'','class':{}}
     #print directories
     start_time = time.time()  
 
     for stud in directories:
-        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Clusters'])
-        groups = np.array(groups['Clusters'])
+        result['class'][stud] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+        if selected_class == '':
+            selected_class = result['class'][stud][0]
+        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
+        groups = np.array(groups[selected_class])
         _, idx = np.unique(groups, return_index=True)
         uniq_groups = groups[np.sort(idx)[::-1]]
         
@@ -233,13 +246,23 @@ def scDataGenes(request):
 
     all_genes = form['genes']
     selected_genes = all_genes.keys()
-    result = {'charts':[],'warning':[],'time':'','class':{}}
-    selected_class = form['selected_class']
+    ensemblgenes = []
+    for i in all_genes :
+        ensemblgenes.append(all_genes[i]['ensembl'])
+    result = {'charts':[],'warning':[],'time':''}
+    studies = form['studies']
     #print directories
     start_time = time.time()  
 
     for stud in directories:
-        result['class'][stud] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+        if len(form['model']) !=0 :
+            selected_class =  form['model'][stud]
+        else :
+            selected_class = form['class']
+            
+        chart = {}
+        chart['class'] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+        
         if selected_class == '':
             selected_class = result['class'][stud][0]
         groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
@@ -250,47 +273,133 @@ def scDataGenes(request):
         samples = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])
         samples = np.array(samples['Sample'])
 
-        x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['x'])['x'])
-        y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['y'])['y'])
+        x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['X'])['X'])
+        y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Y'])['Y'])
 
         genes = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),selected_genes)
+        ensembl_genes = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),ensemblgenes)
         for i in range(0,len(selected_genes)):
-            gene_name = all_genes[selected_genes[i]]
-            chart = {}
-            chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
-            chart['data']=[]
-            chart['description'] = ""
-            chart['name'] = "%s in %s study" % (gene_name,stud)
-            chart['title'] = ""
-            chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
-            chart['gene'] = gene_name
-            chart['msg'] = []
-            chart['study'] = stud
-            for cond in uniq_groups :
+            if all_genes[selected_genes[i]]['study'] == stud :
+                gene_name = all_genes[selected_genes[i]]['symbol']
+                chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','pan2d','lasso2d','resetScale2d']}
+                chart['data']=[]
+                chart['description'] = ""
+                chart['name'] = "Expression of: %s " % (gene_name)
+                chart['title'] = ""
+                chart['dir'] = stud
+                chart['selected'] = selected_class
+                chart['layout'] = {'height':700,'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+                chart['gene'] = gene_name
+                chart['msg'] = ""
+                chart['study'] = stud
+
+                max_val = 0
+                min_val = 0
+                #EntrezGenes
                 val_gene = np.array(genes[str(selected_genes[i])])
                 if len(val_gene) != 0 :
-                    val = val_gene[np.where(groups == cond)[0]]
-                    val_x= x[np.where(groups == cond)[0]]
-                    val_y= y[np.where(groups == cond)[0]]
-                    text = samples[np.where(groups == cond)[0]]
-                    data_chart = {}
-                    data_chart['type'] = 'scatter'
-                    data_chart['mode']= 'markers'
-                    data_chart['text'] = []
-                    data_chart['text'].extend(text)
-                    data_chart['x'] = []
-                    data_chart['x'].extend(val_x)
-                    data_chart['y'] = []
-                    data_chart['y'].extend(val_y)
-                    data_chart['name'] = cond
-                    data_chart['hoverinfo'] = "all"
-                    data_chart['marker']={'color':[]}
-                    data_chart['marker']['color'].extend(val)
-                    chart['data'].append(data_chart)
+                    max_val =  np.max(val_gene.astype(np.float))
+                    min_val =  np.min(val_gene.astype(np.float))
+
+                #Ensembl IDs
+                val_gene_ensembl = np.array(ensembl_genes[all_genes[selected_genes[i]]['ensembl']])
+                if len(val_gene_ensembl) != 0 :
+                    max_val =  np.max(val_gene_ensembl.astype(np.float))
+                    min_val =  np.min(val_gene_ensembl.astype(np.float))
+
+                for cond in uniq_groups :
+                    if len(val_gene) != 0 :
+                        val = val_gene[np.where(groups == cond)[0]]
+                        val_x= x[np.where(groups == cond)[0]]
+                        val_y= y[np.where(groups == cond)[0]]
+                        text = samples[np.where(groups == cond)[0]]
+                        data_chart = {}
+                        data_chart['type'] = 'scatter'
+                        data_chart['mode']= 'markers'
+                        data_chart['text'] = []
+                        data_chart['text'].extend(text)
+                        data_chart['x'] = []
+                        data_chart['x'].extend(val_x)
+                        data_chart['y'] = []
+                        data_chart['y'].extend(val_y)
+                        data_chart['name'] = cond
+                        data_chart['hoverinfo'] = "all"
+                        data_chart['marker']={'color':[],'cmax':max_val,'cmin':min_val,'colorbar': {}}
+                        data_chart['marker']['color'].extend(val)
+                        chart['data'].append(data_chart)
+                    elif len(val_gene_ensembl) != 0 :
+                        val = val_gene_ensembl[np.where(groups == cond)[0]]
+                        val_x= x[np.where(groups == cond)[0]]
+                        val_y= y[np.where(groups == cond)[0]]
+                        text = samples[np.where(groups == cond)[0]]
+                        data_chart = {}
+                        data_chart['type'] = 'scatter'
+                        data_chart['mode']= 'markers'
+                        data_chart['text'] = []
+                        data_chart['text'].extend(text)
+                        data_chart['x'] = []
+                        data_chart['x'].extend(val_x)
+                        data_chart['y'] = []
+                        data_chart['y'].extend(val_y)
+                        data_chart['name'] = cond
+                        data_chart['hoverinfo'] = "all"
+                        data_chart['marker']={'color':[],'cmax':max_val,'cmin':min_val,'colorbar': {}}
+                        data_chart['marker']['color'].extend(val)
+                        chart['data'].append(data_chart)
+                    else :
+                        chart['msg'] = "No data available for %s gene" % (gene_name)
+                result['charts'].append(chart)
+        if stud not in studies:
+            if len(form['model']) !=0 :
+                selected_class =  form['model'][stud]
+            else :
+                selected_class = form['class']
+                
+            chart = {}
+            chart['class'] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+            
+            if selected_class == '':
+                selected_class =  chart['class'][0]
+            groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
+            groups = np.array(groups[selected_class])
+            _, idx = np.unique(groups, return_index=True)
+            uniq_groups = groups[np.sort(idx)[::-1]]
+
+            samples = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])['Sample'])
+            x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['X'])['X'])
+            y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Y'])['Y'])
+            
+            chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','pan2d','lasso2d','resetScale2d']}
+            chart['data']=[]
+            chart['description'] = ""
+            chart['selected'] = selected_class
+            chart['dir'] = stud
+            chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+            chart['gene'] = ""
+            chart['msg'] = []
+            for cond in uniq_groups :
+                val_x= x[np.where(groups == str(cond))[0]]
+                val_y= y[np.where(groups == cond)[0]]
+                text = samples[np.where(groups == cond)[0]]
+                data_chart = {}
+                data_chart['x'] = []
+                data_chart['x'].extend(val_x)
+                data_chart['y'] = []
+                data_chart['y'].extend(val_y)
+                if len(data_chart['x']) == 0 and len(data_chart['y']) == 0 :
+                    chart['layout']['title'] = "No available data for %s" % (selected_class)
+                data_chart['name'] = cond
+                data_chart['text'] = []
+                data_chart['text'].extend(text)
+                data_chart['hoverinfo'] = "all"
+                data_chart['type'] = 'scatter'
+                data_chart['mode']= 'markers'
+                chart['data'].append(data_chart)
             result['charts'].append(chart)
 
     interval = time.time() - start_time  
-    result['time'] = interval 
+    result['time'] = interval
+    result['selected'] = selected_class
     return result
 
 @view_config(route_name='scData', renderer='json', request_method='POST')
@@ -321,34 +430,43 @@ def scData(request):
 
     form = json.loads(request.body, encoding=request.charset)
     directories = form['directory']
-    selected_class = form['selected_class']
-
-    result = {'charts':[],'warning':[],'time':'','class':{}}
+    
+    name = form['name']
+    result = {'charts':[],'warning':[],'time':''}
     #print directories
     start_time = time.time()  
 
     for stud in directories:
-        result['class'][stud] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+        if len(form['model']) !=0 :
+            selected_class =  form['model'][stud]
+        else :
+            selected_class = form['class']
+            
+        chart = {}
+        chart['class'] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+        
         if selected_class == '':
-            selected_class = result['class'][stud][0]
+            selected_class =  chart['class'][0]
         groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
         groups = np.array(groups[selected_class])
         _, idx = np.unique(groups, return_index=True)
         uniq_groups = groups[np.sort(idx)[::-1]]
-        
+
         samples = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])['Sample'])
-        x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['x'])['x'])
-        y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['y'])['y'])
-        chart = {}
-        chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
+        x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['X'])['X'])
+        y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Y'])['Y'])
+        
+        chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','pan2d','lasso2d','resetScale2d']}
         chart['data']=[]
         chart['description'] = ""
-        chart['study'] = stud
-        chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
+        chart['selected'] = selected_class
+        chart['study'] = name
+        chart['dir'] = stud
+        chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
         chart['gene'] = ""
         chart['msg'] = []
         for cond in uniq_groups :
-            val_x= x[np.where(groups == cond)[0]]
+            val_x= x[np.where(groups == str(cond))[0]]
             val_y= y[np.where(groups == cond)[0]]
             text = samples[np.where(groups == cond)[0]]
             data_chart = {}
@@ -356,6 +474,8 @@ def scData(request):
             data_chart['x'].extend(val_x)
             data_chart['y'] = []
             data_chart['y'].extend(val_y)
+            if len(data_chart['x']) == 0 and len(data_chart['y']) == 0 :
+                 chart['layout']['title'] = "No available data for %s" % (selected_class)
             data_chart['name'] = cond
             data_chart['text'] = []
             data_chart['text'].extend(text)
@@ -366,7 +486,7 @@ def scData(request):
         result['charts'].append(chart)
 
     interval = time.time() - start_time  
-    result['time'] = interval 
+    result['time'] = interval
     return result
 
 

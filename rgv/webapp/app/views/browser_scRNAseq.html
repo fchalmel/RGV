@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="styles/distrochart.css">
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <link href="styles/style.css" rel="stylesheet">
@@ -91,43 +91,14 @@ stepnext(1);
         <div class="stepwizard-step">
             <a class="btn btn-default btn-circle disabled" disabled href="#step-2" target="_self" data-toggle="tab">2</a>
         </div>
-        <div class="stepwizard-step">
-          <a class="btn btn-default btn-circle" disabled href="#step-3" target="_self" data-toggle="tab">3</a>
-        </div> 
       </div>
     </div>
       <div class="rate-updates">
         <div class="tab-content margintop0" style="border:none !important;">
 
           <!-- STEP 1 -->
-          <div class="tab-pane fade active in padding20" id="step-1" >
-            <h3>Step 1 - Select species</h3>
-              <div class="row">
-                <div class="col-xs-6 col-md-4 col-lg-4 vcenter">
-                  <div>
-                    <form>
-                      <div class="form-group">
-                        <select class="form-control" ng-model="speciesValue">
-                          <option ng-repeat="spe in species" value="{{spe.tax_id}}">{{spe.name}}</option>
-                        </select>
-                      </div>
-                    </form>
-                  </div>
-                </div><!--
-              --><div class="col-xs-6 col-md-8 col-lg-8 vcenter">
-                  <div class="alert-message alert-message-info">
-                      <h4><i class="fa fa-info-circle" aria-hidden="true"></i> About</h4>
-                      <p>Select the species in which you wish to view one or more studies, regardless of the origin species of the study.</p>
-                  </div>
-                </div>
-              </div>
-            <button ng-if="speciesValue" class="btn btn-default"  onclick="stepnext(2);" type="button"><i class="icon-next"></i> Next</button>
-          </div>
-        
-
-          <!-- STEP 2 -->
-          <div class="tab-pane fade padding20 " id="step-2">
-              <h3> Step 2 - Select your study</h3>
+          <div class="tab-pane fade padding20 " id="step-1">
+              <h3> Step 1 - Select your study</h3>
               <div class="row">
                   <div class="col-xs-6 col-md-4 col-lg-4">
                     <div>
@@ -149,25 +120,29 @@ stepnext(1);
                         </div>
                   </div>
               </div>
-              <button class="btn btn-default" onclick="stepnext(1);" type="button"><i class="icon-next"></i> Previous</button>
-              <button ng-if="chosen.length > 0" class="btn btn-default"  onclick="stepnext(3);" type="button"><i class="icon-next"></i> Next</button>
+              <button ng-if="chosen.length > 0" class="btn btn-default"  onclick="stepnext(2);" type="button"><i class="icon-next"></i> Next</button>
           </div>
           
           <!-- STEP 4 -->
-          <div class="tab-pane fade padding20 " id="step-3" >
+          <div class="tab-pane fade padding20 " id="step-2" >
               <div class="col-md-12">
-                  <h3>Results</h3>
-                  <p><b>Selected species:</b> {{ dispalaySpe(species,speciesValue) }}</p>
-                  <p><b>Selected studies:</b>
-                    <ul>
-                      <li ng-repeat="study in chosen"> {{ study.Author }}, {{ study.Year }} </li>
-                    </ul>
-				  </p>
-				  <button class="btn btn-default"  onclick="stepnext(2);" type="button"><i class="icon-next"></i> Previous</button>
-                  <button class="btn btn-default" ng-click="showData(chosen,'')" type="submit">Show</button>
+                  <div class="list-group" style="margin-top:10px;" >
+                    <div class="list-group-item">
+                      <div class="pull-left form-control-inline">
+                        <h4 class="list-group-item-heading">Selected studies:</h4>
+                        <p class="list-group-item-text" ng-repeat="study in chosen"><i class="far fa-newspaper"></i>   {{ study.Author }}, {{ study.Year }}     <i class="fas fa-paw"></i> : {{ study.Species }}</p>
+                        <button class="btn btn-default pull-left"  style="margin-top:10px;" onclick="stepnext(1);" type="button"><i class="icon-next"></i> Previous</button>
+                        <button class="btn btn-default pull-right"  style="margin-top:10px;" ng-click="showData(chosen,'',models)" type="submit">Show</button>
+                      </div>
+                      <div class="clearfix" ></div>
+                      
+                    </div>
+                </div>
               </div>
               <div ng-if="charts">
-                  <h6>Results generated in {{ time }} seconds</h6>
+                  <div class="col-md-12">
+                      <h6>Results generated in {{ time }} seconds</h6>
+                  </div>
                   <div class="tabbable-panel">
                     <div class="tabbable-line">
                     <ul class="nav nav-tabs ">
@@ -178,30 +153,32 @@ stepnext(1);
                     </ul>
                     <div class="tab-content">
                       <div ng-repeat="stud in chosen" class="tab-pane" ng-class="{active:$index==0}" id="tab_default-{{ $index }}">
-                        <div class="row">
+                        <div class="row" ng-repeat="chart in charts" ng-if="chart.dir == stud.Directory">
                           <div class="col-md-8">
-                            <div ng-repeat="chart in charts" ng-if="chart.study == stud.Directory">
-                              <div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
-                              <select ng-options="class as class for class in allclass" ng-model="selected_class" ng-change="update(stud,chart-div-{{ $index }})"></select>
-                            </div>
+                              <select id="select-{{ $index }}" class="form-control" ng-model="models[stud.Directory]" ng-init="models[stud.Directory] = chart.selected" ng-change="showData(chosen,'',models)" ng-options="class for class in chart.class"></select>
+                            <h4 ng-if="chart.name">{{ chart.name }}</h4>
+                            <div chart-div chart="chart" id="chart-div-{{ $index }}" ng-if='chart.msg==""'></div>
+                            <div ng-if="chart.msg != ''" class="alert alert-warning">{{chart.msg}}</div>
+                            
                           </div>
                           <div class="col-md-4">
                             <form >
                               <div class="input-group" style="margin-bottom:15px;">
-                                <input style="z-index: 0;" class="form-control" name="states" id="states" type="text" placeholder="Select genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',speciesValue)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading">
+                                <input style="z-index: 0;" class="form-control" name="states" id="states" type="text" placeholder="Select genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',stud,species)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading">
                                 <!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"   typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
                                 <span class="input-group-btn">
-                                  <button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(higlight_gene)'>Select</button>
+                                  <button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(stud,higlight_gene)'>Select</button>
                                 </span>
                               </div>
                             </form>
                             <div class="list-group" >
-                                <div class="list-group-item" ng-repeat="gene in selected_gene" style="margin-bottom:10px">
+                                <div class="list-group-item" ng-repeat="gene in allgenes[stud.Directory]" style="margin-bottom:10px">
                                   <div class="pull-left form-control-inline">
                                     <h4 class="list-group-item-heading">{{ gene.Symbol }}</h4>
-                                    <p class="list-group-item-text">{{ gene.GeneID }}</p>
+                                    <p class="list-group-item-text">EntrezGene ID: {{ gene.GeneID }}</p>
+                                    <p class="list-group-item-text">Ensembl ID: {{ gene.EnsemblID }}</p>
                                   </div>
-                                  <button class="btn btn-default pull-right"  ng-click="displayGeneExp(chosen,gene)">Display</button>									
+                                  <button id="displayBtn" class="btn btn-default pull-right"  ng-click="displayGeneExp(chosen,'',gene,models)">{{val_button}}</button>	
                                   <div class="clearfix" ></div>
                                   
                                 </div>

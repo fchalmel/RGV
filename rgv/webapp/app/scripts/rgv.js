@@ -220,9 +220,13 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             }
         }
     }
-    
-    var display = false
-    $scope.displayGeneExp = function(selected_lst,selected_gene){
+    var display = false;
+    $scope.lastgenes={};
+    $scope.val_button = 'Display';
+    $scope.displayGeneExp = function(selected_lst,selected_class,selected_gene,model){
+        
+        
+        console.log(selected_gene);
         if (display == true) {
             display = false
             $scope.msg = [];
@@ -237,11 +241,13 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             }
             if(directory_list.length > 0){
                 //test
-                Dataset.scData({},{'directory':directory_list,'conditions':'scRNA-seq','genes':''}).$promise.then(function(response){
-
+                
+                Dataset.scData({},{'directory':directory_list,'conditions':'scRNA-seq','genes':'','name':'','class':selected_class,'model':model}).$promise.then(function(response){
+                    $scope.val_button = 'Display';
                     $scope.time = response.time;
                     $scope.charts = response.charts;
                     console.log(response);
+                    
                 });
             }else{
                 $scope.msgwrn ="No data available. Please select other studies or contact RGV support.";
@@ -260,17 +266,22 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
                     $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
                 }
             }
-
+            var studList = [];
             if (selected_gene.GeneID !=null){
-                genes_list[selected_gene.GeneID] = selected_gene.Symbol;
+                $scope.lastgenes[selected_gene['stud_name']] = selected_gene;
+                for(var stud in $scope.lastgenes){
+                    studList.push(stud);
+                    genes_list[$scope.lastgenes[stud].GeneID] = {'ensembl':$scope.lastgenes[stud].EnsemblID,'symbol':$scope.lastgenes[stud].Symbol,'study':stud};
+                }
             }
 
             if(directory_list.length > 0){
-                //test
-                Dataset.scDataGenes({},{'directory':directory_list,'conditions':'test','genes':genes_list}).$promise.then(function(response){
-
+                
+                Dataset.scDataGenes({},{'directory':directory_list,'conditions':'scRNA-seq','genes':genes_list,'class':selected_class,'model':model,'studies':studList}).$promise.then(function(response){
+                    $scope.val_button = 'Hide';
                     $scope.time = response.time;
                     $scope.charts = response.charts;
+                    
                     console.log(response);
                 });
 
@@ -299,6 +310,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
     $scope.users;
     $scope.chosen = [];
     $scope.selected_gene = [];
+    $scope.allgenes = {};
 
     //Checkbox grid template
     $templateCache.put('ui-grid/selectionRowHeaderButtons',
@@ -321,6 +333,15 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             $scope.species.push({'name':field[0],'tax_id':field[1].replace(/[\n]/gi, "" )});
         }
     });
+
+    $scope.getTaxID = function(Species,speciesDict){
+        for(var i=0;i<speciesDict.length;i++){
+            if(speciesDict[i].name == Species){
+                $scope.speciesValue = speciesDict[i].tax_id;
+                return speciesDict[i].tax_id
+            }
+        }
+    }
     
     var startPromise = Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(response){
         return $q.when(response)
@@ -412,7 +433,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
                 if(!row.isSelected){
                     rowsSelected -= 1;
                 }
-                if(rowsSelected <= 1){
+                if(rowsSelected <= 3){
                     
                     var index = $scope.chosen.indexOf(row.entity);
                     if ( index != -1){
@@ -551,23 +572,26 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
     }
     //Angular UI-grid END
 
-
+    $scope.selected_class ='';
+    $scope.models = {};
     //Fonction visualisation gene Level
     $scope.msg = []
-    $scope.showData = function(selected_lst,selected_class){
+    $scope.showData = function(selected_lst,select_class,model){
         $scope.msg = [];
         var directory_list = [];
         var genes_list = {};
+        var name = '';
         for (var i=0;i<selected_lst.length;i++){
             if (selected_lst[i].Directory !=null){
                 directory_list.push(selected_lst[i].Directory);
+                name = selected_lst[i].Author+'_'+selected_lst[i].Year
             }else{
                 $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
             }
         }
         if(directory_list.length > 0){
             //test
-            Dataset.scData({},{'directory':directory_list,'conditions':'scRNA-seq','genes':'','class':selected_class}).$promise.then(function(response){
+            Dataset.scData({},{'directory':directory_list,'conditions':'scRNA-seq','genes':'','class':select_class,'name':name,'model':model}).$promise.then(function(response){
 
                 $scope.time = response.time;
                 $scope.charts = response.charts;
@@ -583,17 +607,26 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         $scope.higlight_gene = item;
      };
 
-    $scope.select_genes = function(selectedgene){
+    $scope.select_genes = function(stud,selectedgene){
         $scope.msg = []
+        var name = stud.Directory;
+        selectedgene['stud_name'] = name;
         console.log(selectedgene)
-        if (selectedgene != undefined){
-            var index = $scope.selected_gene.indexOf(selectedgene);
-        if ( index != -1){
-            $scope.selected_gene.splice(index,1);                           
-        } else{
-                $scope.selected_gene.push(selectedgene);
-                selectedgene = undefined;     
+
+        if ($scope.allgenes.hasOwnProperty(name)) {
+            console.log('item has xyz');
+            if ($scope.allgenes[name] != undefined){
+                var index = $scope.allgenes[name].indexOf(selectedgene);
+            if ( index != -1){
+                $scope.allgenes[name].splice(index,1);                   
+            } else{
+                    $scope.allgenes[name].push(selectedgene);
+                    selectedgene = undefined;     
+                }
             }
+        } else {
+            $scope.allgenes[name] = [];
+            $scope.allgenes[name].push(selectedgene)
         }
     }
 
@@ -612,8 +645,14 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         };
     }
     
-    $scope.get_genes = function(val,database,species_val) {
-        var species_convertor = {};
+    $scope.get_genes = function(val,database,stud,speciesDict) {
+        var species_val = '';
+        for(var i=0;i<speciesDict.length;i++){
+            if(speciesDict[i].name == stud.Species){
+                species_val = speciesDict[i].tax_id;
+            }
+        }
+        console.log(stud.Species)
         return Dataset.autocomplete({},{'database':database,'search':val,'tax_id':species_val}).$promise.then(function(data){
             return data.map(function(item){
                     return item;

@@ -12,7 +12,7 @@ def createIndex(file_in):
     """
     try :
         fInput=open(file_in,"r")
-        dIndex={'Clusters':0}
+        dIndex={'Sample':0}
         lPosition = []
         while fInput.readline() != '':
             position = fInput.tell()

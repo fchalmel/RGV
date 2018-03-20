@@ -111,6 +111,7 @@ def Concat_files(dirpath,use_dl=False,file_list=[]):
     """
 
     gene2ensembl = gene_info = homologene = ""
+    lTaxID=["9606","9598","9544","9615","9913","10090","10116","9031","8364","7955","7227","7165","6239","4932","28985","33169","4896","318829","5141","3702","4530"]
 
     if use_dl not in (True,False):
         raise ValueError("'use_dl' can only be either True or False")
@@ -144,8 +145,9 @@ def Concat_files(dirpath,use_dl=False,file_list=[]):
                 symbol = line_split[2] 
                 synonyms = line_split[4] 
                 description = line_split[8]
-                if GeneID not in dData_organized :
-                    dData_organized[GeneID] = {'tax_id':tax_id,'symbol':symbol,'synonyms':synonyms,'description':description,'homologene':'NA','ensembl':'NA'}
+                if tax_id in lTaxID :
+                    if GeneID not in dData_organized :
+                        dData_organized[GeneID] = {'tax_id':tax_id,'symbol':symbol,'synonyms':synonyms,'description':description,'homologene':'NA','ensembl':'NA'}
         fGene_info.close()
     except IOError as e:
         print("args: ", e.args)
@@ -240,6 +242,3 @@ def InsertCollections(geneFile):
     except:
         logger.debug('CreateCollection - create RGV_geneDB collection')
         logger.error(sys.exc_info()[1])
-
-
-InsertCollections("/Users/tdarde/Desktop/RGV_database_genes.txt")
