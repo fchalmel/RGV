@@ -261,23 +261,23 @@ def scDataGenes(request):
             selected_class = form['class']
             
         chart = {}
-        chart['class'] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+        chart['class'] = getClass(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'))
         
         if selected_class == '':
             selected_class = result['class'][stud][0]
-        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
+        groups = getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),[selected_class])
         groups = np.array(groups[selected_class])
         _, idx = np.unique(groups, return_index=True)
         uniq_groups = groups[np.sort(idx)[::-1]]
         
-        samples = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])
+        samples = getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),['Sample'])
         samples = np.array(samples['Sample'])
 
-        x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['X'])['X'])
-        y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Y'])['Y'])
+        x = np.array(getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),['X'])['X'])
+        y = np.array(getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),['Y'])['Y'])
 
-        genes = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),selected_genes)
-        ensembl_genes = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),ensemblgenes)
+        genes = getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),selected_genes)
+        ensembl_genes = getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),ensemblgenes)
         for i in range(0,len(selected_genes)):
             if all_genes[selected_genes[i]]['study'] == stud :
                 gene_name = all_genes[selected_genes[i]]['symbol']
@@ -356,18 +356,18 @@ def scDataGenes(request):
                 selected_class = form['class']
                 
             chart = {}
-            chart['class'] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+            chart['class'] = getClass(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'))
             
             if selected_class == '':
                 selected_class =  chart['class'][0]
-            groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
+            groups = getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),[selected_class])
             groups = np.array(groups[selected_class])
             _, idx = np.unique(groups, return_index=True)
             uniq_groups = groups[np.sort(idx)[::-1]]
 
-            samples = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])['Sample'])
-            x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['X'])['X'])
-            y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Y'])['Y'])
+            samples = np.array(getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),['Sample'])['Sample'])
+            x = np.array(getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),['X'])['X'])
+            y = np.array(getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),['Y'])['Y'])
             
             chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','pan2d','lasso2d','resetScale2d']}
             chart['data']=[]
@@ -443,18 +443,18 @@ def scData(request):
             selected_class = form['class']
             
         chart = {}
-        chart['class'] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
+        chart['class'] = getClass(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'))
         
         if selected_class == '':
             selected_class =  chart['class'][0]
-        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
+        groups = getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),[selected_class])
         groups = np.array(groups[selected_class])
         _, idx = np.unique(groups, return_index=True)
         uniq_groups = groups[np.sort(idx)[::-1]]
 
-        samples = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])['Sample'])
-        x = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['X'])['X'])
-        y = np.array(getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Y'])['Y'])
+        samples = np.array(getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),['Sample'])['Sample'])
+        x = np.array(getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),['X'])['X'])
+        y = np.array(getValue(os.path.join(request.registry.dataset_path,'studies',stud,'data_genelevel.txt'),['Y'])['Y'])
         
         chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','pan2d','lasso2d','resetScale2d']}
         chart['data']=[]
