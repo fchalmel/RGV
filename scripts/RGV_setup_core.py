@@ -204,7 +204,7 @@ def Concat_files(dirpath,use_dl=False,file_list=[]):
         for geneID in dData_organized:
             resultFile.write(geneID+'\t'+dData_organized[geneID]['tax_id']+'\t'+dData_organized[geneID]['homologene']+'\t'+dData_organized[geneID]['ensembl']+'\t'+dData_organized[geneID]['symbol']+'\t'+dData_organized[geneID]['synonyms']+'\t'+dData_organized[geneID]['description']+'\n')
         resultFile.close()
-        return os.path.join(dirpath,'RGV_database_genes.txt')
+        return [dirpath,os.path.join(dirpath,'RGV_database_genes.txt')]
     except IOError as e:
         print("args: ", e.args)
         print("errno: ", e.errno)
@@ -212,17 +212,15 @@ def Concat_files(dirpath,use_dl=False,file_list=[]):
         print("strerror: ", e.strerror)
     
 
-def InsertCollections(geneFile):
+def InsertCollections(genefile):
     try :
         logger.debug('CreateCollection - create RGV_geneDB collection')
         #Insert Allbank ID from TOXsIgN_geneDB file
         os.system('mongo rgv --eval "db.dropDatabase()"')
-        geneFile = open(geneFile,'r')
-        x = 0
+        geneFile = open(genefile[1],'r')
+        print "Insert file: " + genefile[1]
         for geneLine in geneFile.readlines():
             if geneLine[0] != '#':
-                x +=1
-                print x 
                 GeneID = geneLine.split('\t')[0]
                 tax_id = geneLine.split('\t')[1]
                 homologeneID = geneLine.split('\t')[2]
@@ -239,6 +237,11 @@ def InsertCollections(geneFile):
                                  'EnsemblID':ensembleID
                                  })
         geneFile.close()
-    except:
-        logger.debug('CreateCollection - create RGV_geneDB collection')
-        logger.error(sys.exc_info()[1])
+        print "File close"
+        shutil.rmtree(genefile[0])
+
+    except IOError as e:
+        print("args: ", e.args)
+        print("errno: ", e.errno)
+        print("filename: ", e.filename)
+        print("strerror: ", e.strerror)

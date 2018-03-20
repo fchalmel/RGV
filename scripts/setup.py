@@ -81,5 +81,6 @@ if __name__ == "__main__":
     else :
         dirpath = rgv.Download_datafiles()
         geneFile = rgv.Concat_files(dirpath,use_dl=True,file_list=[])
+        print geneFile
         rgv.InsertCollections(geneFile)
     
