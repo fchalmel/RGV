@@ -216,7 +216,7 @@ def InsertCollections(genefile):
     try :
         logger.debug('CreateCollection - create RGV_geneDB collection')
         #Insert Allbank ID from TOXsIgN_geneDB file
-        os.system('mongo rgv --eval "db.dropDatabase()"')
+        #os.system('mongo rgv --eval "db.dropDatabase()"')
         geneFile = open(genefile[1],'r')
         print "Insert file: " + genefile[1]
         for geneLine in geneFile.readlines():
