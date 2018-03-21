@@ -4,71 +4,56 @@
 <div ng-if="msg" class="alert alert-warning" style="margin-top:50px;text-align:center;">
 	{{msg}}
 </div>
-<div class="jumbotron">
-	<h2>Welcome to the ReproGenomics Viewer</h2>
-	<h3>The genomics toolbox for the reproductive science community!</h3>
-	<div class="well">
-		<p>The ReproGenomics Viewer (RGV) is a cross-species genomic toolbox for the reproductive community. The system is based on the implementation of a JBrowse genome browser and a Galaxy bioinformatics workflow environment. It was developed to provide a one-stop genomic working environment and aims to assist scientists in the analysis and the mining of a wide range of high-throughput repro-genomics data, including sequencing data.</p>
-	</div>
-</div>
 
-<div class="row">
-	<!--3 col pour avoir le carousel au milieu*/-->
 
-	<div class="col-md-3" style="height: 305px">
-		<!--/*div gauche*/-->
+<div class="container" style="margin-top:10px;">
+	<!-- Heading Row -->
+	<div class="row">
+		<div class="col-lg-8 vcenter">
+			<img class="img-fluid rounded" src="images/RGVLogo_home.png" alt="" width="100%">
+		</div><!--
+		--><div class="col-lg-4 vcenter">
+			<h1>The genomics toolbox for the reproductive science community!</h1>
+			<p>The ReproGenomics Viewer (RGV) is a cross-species genomic toolbox for the reproductive community. The system is based on the implementation of a JBrowse genome browser and a Galaxy bioinformatics workflow environment. It was developed to provide a one-stop genomic working environment and aims to assist scientists in the analysis and the mining of a wide range of high-throughput repro-genomics data, including sequencing data.</p>
+			<a class="btn btn-default btn-lg" href="#/browser_genome">Start</a>
+		</div>
+		<!-- /.col-md-4 -->
 	</div>
-	<div class="col-md-6" style="height: 305px">
-			<!--/*div milieu*/-->
-	    <carousel interval="myInterval">
-	      <slide ng-repeat="slide in slides" active="slide.active">
-	        <img ng-src="{{slide.image}}">
-	        <div class="carousel-caption">
-	          <h4>{{slide.text}}</h4>
-	        </div>
-	      </slide>
-	    </carousel>
-	</div>
-	<div class="col-md-3" style="height: 305px">
-		<!--/*div droite*/-->
-	</div>
-</div>
+	<!-- /.row -->
 
-<div class="row">
-	<a href="#/browser_genome">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-indent-left"></i></h1><h2> Genome browser</h2>
+	<div class="row" style="margin-top:10px;">
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<img src="images/home_jb.png" width="100%" alt="...">
+				<div class="caption">
+					<h3>Genome browser</h3>
+					<p>...</p>
+					<p><a href="#/browser_genome" class="btn btn-default" role="button">Use</a></p>
+				</div>
+			</div>
 		</div>
-	</a>
-	<a href="#/browser_genelevel">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-align-left"></i></h1><h2> Gene-level browser</h2>
-		</div>
-	</a>
-	<a href="#/browser_scRNAseq">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-cloud"></i></h1><h2> Single-cell browser</h2>
-		</div>
-	</a>
-</div>
-<div class="row">
-	<a href="#/about">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-flash"></i></h1><h2> What is RGV?</h2>
-		</div>
-	</a>
-	<a href="#/tutorial">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-education"></i></h1><h2> How to use it?</h2>
-		</div>
-	</a>
-	<a href="#/getinvolved">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-link"></i></h1><h2> How to get involved?</h2>
-		</div>
-	</a>
-</div>
-<div class="row">
+		<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="images/home_violin.png" width="100%" alt="...">
+					<div class="caption">
+						<h3>Violin plot data visualization</h3>
+						<p>...</p>
+						<p><a href="#" class="btn btn-default" role="button">Use</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="images/home_scatter.png" width="100%" alt="...">
+						<div class="caption">
+							<h3>Scatterplot data visualization</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-default" role="button">Use</a></p>
+						</div>
+					</div>
+				</div>
+	</div>
+	<div class="row">
   <div class="col-md-8">
     <div class="panel panel-default" style="margin-top:20px;">
         <div class="panel-heading">
@@ -97,14 +82,14 @@
 					<ul class="list-unstyled">
 						<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-flash"></i> About RGV</a></li>
 						<li><a href="#/tutorial" active-link="active"><i class="glyphicon glyphicon-education"></i> Tutorial</a></li>
+						<li><a href="#/getinvolved" active-link="active"><i class="glyphicon glyphicon-link"></i>How to get involved?</a></li>
 						<li><a href="#/browser_genome" active-link="active"><i class="glyphicon glyphicon-indent-left"></i> Genome browser</a></li>
 						<li><a href="#/browser_genelevel" active-link="active"><i class="glyphicon glyphicon-align-left"></i> Gene-level browser</a></li>
 						<li><a href="#/browser_scRNAseq" active-link="active"><i class="glyphicon glyphicon-cloud"></i> Single-cell browser</a></li>
 					</ul>
         </div>
     </div>
-  </div>
-
+	</div>
 	<div class="row">
 			<!--/*div espace bas de page, footer*/-->
 
@@ -112,3 +97,7 @@
 				<!--/*div gauche*/-->
 			</div>
 	</div>
+
+</div>
+
+	

@@ -11,8 +11,8 @@
 		<title>RGV</title>
 
 		<!-- Bootstrap core CSS -->
+		
 		<link href="styles/bootstrap.min.css" rel="stylesheet">
-
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="styles/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css"/>
 		<link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css"/>
 		<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+		
 		
 		<link href="styles/rgv.css" rel="stylesheet">
 		<style>
@@ -44,7 +45,7 @@
 	<body ng-controller="appCtrl">
 		<div class="container">
 			<!-- Static navbar -->
-			<nav class="navbar navbar-default" ng-controller="userCtrl">
+			<nav class="navbar navbar-default navbar-fixed-top" ng-controller="userCtrl">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -53,7 +54,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#/"><img src="images/rgvlogo.png" alt="The ReproGenomics Viewer" title="The ReproGenomics Viewer" width="100" style="padding:0px"></a>
+						<a class="navbar-brand" href="#/"><img src="images/RGVLogo_tiny.png" alt="The ReproGenomics Viewer" title="The ReproGenomics Viewer" width="70" style="padding:0px"></a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
@@ -66,9 +67,9 @@
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#/browser_genome" active-link="active"><i class="glyphicon glyphicon-indent-left"></i> Genome browser</a></li>
 									<li class="divider"></li>
-									<li><a href="#/browser_genelevel" active-link="active"><i class="glyphicon glyphicon-align-left"></i> Gene-level browser </a></li>
+									<li><a href="#/browser_genelevel" active-link="active"><i class="glyphicon glyphicon-align-left"></i> Violin plot</a></li>
 									<li class="divider"></li>
-									<li><a href="#/browser_scRNAseq" active-link="active"><i class="glyphicon glyphicon-cloud"></i> Single-cell browser (under construction)</a></li>
+									<li><a href="#/browser_scRNAseq" active-link="active"><i class="glyphicon glyphicon-cloud"></i> Scatterplot</a></li>
 								</ul>
 							</li>
 							<li ng-if="1" class="btn-group" dropdown is-open="status.isopen">

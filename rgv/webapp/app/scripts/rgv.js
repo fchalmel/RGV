@@ -1049,8 +1049,8 @@ angular.module('rgv').controller('appCtrl',
             id:2
           },
           {
-            image: 'images/slide3.jpg',
-            text: 'Say: Hello Fred',
+            image: 'images/slide3.png',
+            text: 'Scatterplot data visualization',
             id:3
           },
         ];
