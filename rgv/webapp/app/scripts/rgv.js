@@ -196,6 +196,7 @@ angular.module('rgv').controller('newsCtrl',
 
 });
 
+
 angular.module('rgv').directive("chartDiv", function() {
     return {
         scope: {
@@ -203,6 +204,18 @@ angular.module('rgv').directive("chartDiv", function() {
         },
         link: function(scope, element, attrs) {
             scope.$watch(attrs.chartDiv, function(value) {
+                scope.chart.config['modeBarButtons'] = [[{
+                    name: 'Donwload plot as png',
+                    icon: Plotly.Icons.camera,
+                    click: function (gd) {
+                      Plotly.downloadImage(gd, {
+                        filename: scope.chart.name,
+                        format: 'png',
+                        width: gd._fullLayout.width,
+                        height: gd._fullLayout.height
+                      })
+                    }
+                  }, 'sendDataToCloud','select2d','zoomIn2d','zoomOut2d','autoScale2d','hoverClosestCartesian']]
                 Plotly.newPlot(attrs.id, scope.chart.data, scope.chart.layout, scope.chart.config || {});
             });
         }
@@ -611,10 +624,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         $scope.msg = []
         var name = stud.Directory;
         selectedgene['stud_name'] = name;
-        console.log(selectedgene)
 
         if ($scope.allgenes.hasOwnProperty(name)) {
-            console.log('item has xyz');
             if ($scope.allgenes[name] != undefined){
                 var index = $scope.allgenes[name].indexOf(selectedgene);
             if ( index != -1){
@@ -630,10 +641,10 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         }
     }
 
-    $scope.remove_genes = function(gene){
-        var index = $scope.selected_gene.indexOf(gene);
+    $scope.remove_genes = function(gene,stud){
+        var index = $scope.allgenes[stud].indexOf(gene);
         if ( index != -1){
-            $scope.selected_gene.splice(index,1);                              
+            $scope.allgenes[stud].splice(index,1);                              
         };
     }
 
@@ -659,6 +670,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             });
         });
     };
+
 
                 
 

@@ -178,7 +178,7 @@ def genelevel(request):
             chart['description'] = ""
             chart['name'] = "%s in %s study" % (gene_name,stud)
             chart['title'] = ""
-            chart['layout'] = {'width':575,'height':489,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},'margin':{'l':200}}
+            chart['layout'] = {'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},'margin':{'l':200}}
             chart['gene'] = gene_name
             chart['msg'] = []
             chart['study'] = stud
@@ -281,14 +281,14 @@ def scDataGenes(request):
         for i in range(0,len(selected_genes)):
             if all_genes[selected_genes[i]]['study'] == stud :
                 gene_name = all_genes[selected_genes[i]]['symbol']
-                chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','pan2d','lasso2d','resetScale2d']}
+                chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
                 chart['data']=[]
                 chart['description'] = ""
                 chart['name'] = "Expression of: %s " % (gene_name)
                 chart['title'] = ""
                 chart['dir'] = stud
                 chart['selected'] = selected_class
-                chart['layout'] = {'height':700,'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+                chart['layout'] = {'height':500,'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
                 chart['gene'] = gene_name
                 chart['msg'] = ""
                 chart['study'] = stud
@@ -348,6 +348,44 @@ def scDataGenes(request):
                         chart['data'].append(data_chart)
                     else :
                         chart['msg'] = "No data available for %s gene" % (gene_name)
+
+                #ADD VIOLIN PLOT FOR GENE
+                chart['violin'] = {}
+                gene_name = all_genes[selected_genes[i]]['symbol']
+                chart['violin']['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
+                chart['violin']['data']=[]
+                chart['violin']['description'] = ""
+                chart['violin']['name'] = "Violin plot of: %s " % (gene_name)
+                chart['violin']['title'] = "violin"
+                chart['violin']['selected'] = selected_class
+                chart['violin']['layout'] = { 'xaxis': {'autorange': True},'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":'','margin':{'l':200}}
+                chart['violin']['gene'] = gene_name
+                chart['violin']['msg'] = ""
+                chart['violin']['study'] = stud
+                for cond in uniq_groups :
+                    if len(val_gene) != 0 :
+                        val = val_gene[np.where(groups == cond)[0]]
+                    elif len(val_gene_ensembl) != 0 :
+                        val = val_gene_ensembl[np.where(groups == cond)[0]]
+                    median = np.median(val.astype(np.float))
+                    data_chart = {}
+                    data_chart['x'] = []
+                    data_chart['x'].extend(val)
+                    data_chart['name'] = cond
+                    data_chart['hoverinfo'] = "all"
+                    ratio_type = len(samples)/len(uniq_groups)
+                    if ratio_type > 10 and median > 0:
+                        data_chart['type'] = 'violin'
+                        data_chart['orientation'] = 'h'
+                        data_chart['box'] = {'visible': True}
+                        data_chart['boxpoints'] = False
+
+                    else :
+                        data_chart['type'] = 'box'
+                        data_chart['box'] = {'visible': True}
+                        data_chart['boxpoints'] = 'all'
+                        data_chart['meanline'] = {'visible': True}
+                    chart['violin']['data'].append(data_chart)
                 result['charts'].append(chart)
         if stud not in studies:
             if len(form['model']) !=0 :
@@ -369,12 +407,13 @@ def scDataGenes(request):
             x = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['X'])['X'])
             y = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Y'])['Y'])
             
-            chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','pan2d','lasso2d','resetScale2d']}
+            chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
             chart['data']=[]
             chart['description'] = ""
+            chart['name'] = "Classification by: %s" % (selected_class)
             chart['selected'] = selected_class
             chart['dir'] = stud
-            chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+            chart['layout'] = {'height':500,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
             chart['gene'] = ""
             chart['msg'] = []
             for cond in uniq_groups :
@@ -456,13 +495,14 @@ def scData(request):
         x = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['X'])['X'])
         y = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Y'])['Y'])
         
-        chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','pan2d','lasso2d','resetScale2d']}
+        chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
         chart['data']=[]
         chart['description'] = ""
         chart['selected'] = selected_class
         chart['study'] = name
+        chart['name'] = "Classification by: %s" % (selected_class)
         chart['dir'] = stud
-        chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+        chart['layout'] = {'height':500,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
         chart['gene'] = ""
         chart['msg'] = []
         for cond in uniq_groups :
