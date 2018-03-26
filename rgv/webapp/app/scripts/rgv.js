@@ -1071,11 +1071,6 @@ angular.module('rgv').controller('appCtrl',
         var user = Auth.getUser();
 
 
-        //Get Users ip for admin part
-        $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
-          console.log(JSON.stringify(data, null, 2));
-        });
-
 
         //Récupération news from local json file
         Dataset.news_feed().$promise.then(function(news){
