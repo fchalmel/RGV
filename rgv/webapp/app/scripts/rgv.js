@@ -3,9 +3,9 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('rgv', ['rgv.resources', 'angulartics', 'angulartics.google.analytics', 'ngTouch', 'ui.grid', 'ui.grid.treeView', 'ui.grid.grouping', 'ui.grid.autoResize', 'ui.grid.selection','angular-carousel', 'ngDialog', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'ngRoute', 'ui.bootstrap', 'ui.tree', 'uuid', 'ngTable']).
+var app = angular.module('rgv', ['rgv.resources', 'ngTouch', 'ui.grid', 'ui.grid.treeView', 'ui.grid.grouping', 'ui.grid.autoResize', 'ui.grid.selection','angular-carousel', 'ngDialog', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'ngRoute', 'ui.bootstrap', 'ui.tree', 'uuid', 'ngTable']).
 
-config(['$routeProvider','$logProvider','$analyticsProvider',
+config(['$routeProvider','$logProvider',
     function ($routeProvider) {
         $routeProvider.when('/', {
             templateUrl: 'views/home.html',
