@@ -2,8 +2,8 @@
 <link href="styles/justified-nav.css" rel="stylesheet">
 
 <script>
-	ga('set', 'page', '/home.html');
-	ga('send', 'pageview');
+	console.log(location.pathname)
+	ga('send', 'pageview', '/home.html');
 </script>
 
 <div ng-if="msg" class="alert alert-warning" style="margin-top:50px;text-align:center;">
@@ -53,7 +53,7 @@
 						<div class="caption">
 							<h3>Scatterplot data visualization</h3>
 							<p>...</p>
-							<p><a href="#/browser_scRNAseq" class="btn btn-default" role="button">Use</a></p>
+							<p><a href="#/browser_scRNAseq" class="btn btn-default" role="button" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'enquiry home page'});">Use</a></p>
 						</div>
 					</div>
 				</div>
