@@ -3,7 +3,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('rgv', ['rgv.resources', 'ngTouch', 'ui.grid', 'ui.grid.treeView', 'ui.grid.grouping', 'ui.grid.autoResize', 'ui.grid.selection','angular-carousel', 'ngDialog', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'ngRoute', 'ui.bootstrap', 'ui.tree', 'uuid', 'ngTable']).
+var app = angular.module('rgv', ['rgv.resources', 'angulartics', 'angulartics.google.analytics', 'ngTouch', 'ui.grid', 'ui.grid.treeView', 'ui.grid.grouping', 'ui.grid.autoResize', 'ui.grid.selection','angular-carousel', 'ngDialog', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'ngRoute', 'ui.bootstrap', 'ui.tree', 'uuid', 'ngTable']).
 
 config(['$routeProvider','$logProvider',
     function ($routeProvider) {
@@ -124,24 +124,14 @@ config(['$httpProvider', function ($httpProvider){
 
 // Dédié aux pages n'ayant pas besoin de contrôleur (ex que du texte)
 angular.module('rgv').controller('userCtrl',
-    function ($scope,$rootScope, $log, Auth, User,$location, $window) {
-
-        //Google analytics
-        $scope.$on('$viewContentLoaded', function(event) {
-            $window.ga('send', 'pageview', { page: $location.url() });
-          });
+    function ($scope,$rootScope, $log, Auth, User,$location) {
 });
 
 
 ////////////////////// CONTACT ///////////////////////////////////////
 //Page contact avec mail crypté
 angular.module('rgv').controller('contactCtrl',
-    function ($scope,$rootScope, $log, Auth, User,$location, $window) {
-
-        //Google analytics
-        $scope.$on('$viewContentLoaded', function(event) {
-            $window.ga('send', 'pageview', { page: $location.url() });
-          });
+    function ($scope,$rootScope, $log, Auth, User,$location) {
       // Email obfuscator script 2.1 by Tim Williams, University of Arizona
       // Random encryption key feature coded by Andrew Moulden
       // This code is freeware provided these four comment lines remain intact
@@ -190,12 +180,7 @@ angular.module('rgv').controller('contactCtrl',
 ////////////////////// NEWS ////////////////////////////////////////
 // Page news - récupère les news du fichiers JSON local
 angular.module('rgv').controller('newsCtrl',
-    function ($scope,$rootScope, $log, Auth, Dataset, User,$location, $window) {
-
-        //Google analytics
-        $scope.$on('$viewContentLoaded', function(event) {
-            $window.ga('send', 'pageview', { page: $location.url() });
-          });
+    function ($scope,$rootScope, $log, Auth, Dataset, User,$location) {
 
       //Récupération news from local json file
       Dataset.news_feed().$promise.then(function(news){
@@ -239,14 +224,7 @@ angular.module('rgv').directive("chartDiv", function() {
 
 ////////////////////// SC RNAseq Browser////////////////////////////////////////
 angular.module('rgv').controller('browser_scRNAseqCtrl',
-function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache, $location, $window) {
-
-    //Google analytics
-    $scope.$on('$viewContentLoaded', function(event) {
-        $window.ga('send', 'pageview', { page: $location.url() });
-      });
-
-
+function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache) {
     //Get Gene level information
     $scope.dispalaySpe = function(dict, value){
         for(var key in dict) {
@@ -701,13 +679,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
 
 ////////////////////// Gene-level ////////////////////////////////////////
 angular.module('rgv').controller('browsergenelevelCtrl',
-    function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache, $location, $window) {
-
-        //Google analytics
-        $scope.$on('$viewContentLoaded', function(event) {
-            $window.ga('send', 'pageview', { page: $location.url() });
-          });
-
+    function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache) {
+        
         //Get Gene level information
         $scope.dispalaySpe = function(dict, value){
             for(var key in dict) {
@@ -1072,15 +1045,10 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
 // Contrôleur de base associé à home.html
 angular.module('rgv').controller('appCtrl',
-    function ($scope,$rootScope, $log, Auth, User, Dataset, $cookieStore, $location, $window) {
-
-        //Google analytics
-        $scope.$on('$viewContentLoaded', function(event) {
-            $window.ga('send', 'pageview', { page: $location.url() });
-          });
+    function ($scope,$rootScope, $log, Auth, User, Dataset, $cookieStore, $location) {
         $scope.msg = null;
 
-        
+       
 
         var user = Auth.getUser();
 
