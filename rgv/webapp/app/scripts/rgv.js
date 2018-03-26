@@ -124,14 +124,24 @@ config(['$httpProvider', function ($httpProvider){
 
 // Dédié aux pages n'ayant pas besoin de contrôleur (ex que du texte)
 angular.module('rgv').controller('userCtrl',
-    function ($scope,$rootScope, $log, Auth, User,$location) {
+    function ($scope,$rootScope, $log, Auth, User,$location, $window) {
+
+        //Google analytics
+        $scope.$on('$viewContentLoaded', function(event) {
+            $window.ga('send', 'pageview', { page: $location.url() });
+          });
 });
 
 
 ////////////////////// CONTACT ///////////////////////////////////////
 //Page contact avec mail crypté
 angular.module('rgv').controller('contactCtrl',
-    function ($scope,$rootScope, $log, Auth, User,$location) {
+    function ($scope,$rootScope, $log, Auth, User,$location, $window) {
+
+        //Google analytics
+        $scope.$on('$viewContentLoaded', function(event) {
+            $window.ga('send', 'pageview', { page: $location.url() });
+          });
       // Email obfuscator script 2.1 by Tim Williams, University of Arizona
       // Random encryption key feature coded by Andrew Moulden
       // This code is freeware provided these four comment lines remain intact
@@ -180,7 +190,12 @@ angular.module('rgv').controller('contactCtrl',
 ////////////////////// NEWS ////////////////////////////////////////
 // Page news - récupère les news du fichiers JSON local
 angular.module('rgv').controller('newsCtrl',
-    function ($scope,$rootScope, $log, Auth, Dataset, User,$location) {
+    function ($scope,$rootScope, $log, Auth, Dataset, User,$location, $window) {
+
+        //Google analytics
+        $scope.$on('$viewContentLoaded', function(event) {
+            $window.ga('send', 'pageview', { page: $location.url() });
+          });
 
       //Récupération news from local json file
       Dataset.news_feed().$promise.then(function(news){
@@ -224,7 +239,14 @@ angular.module('rgv').directive("chartDiv", function() {
 
 ////////////////////// SC RNAseq Browser////////////////////////////////////////
 angular.module('rgv').controller('browser_scRNAseqCtrl',
-function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache) {
+function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache, $location, $window) {
+
+    //Google analytics
+    $scope.$on('$viewContentLoaded', function(event) {
+        $window.ga('send', 'pageview', { page: $location.url() });
+      });
+
+
     //Get Gene level information
     $scope.dispalaySpe = function(dict, value){
         for(var key in dict) {
@@ -679,7 +701,13 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
 
 ////////////////////// Gene-level ////////////////////////////////////////
 angular.module('rgv').controller('browsergenelevelCtrl',
-    function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache) {
+    function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache, $location, $window) {
+
+        //Google analytics
+        $scope.$on('$viewContentLoaded', function(event) {
+            $window.ga('send', 'pageview', { page: $location.url() });
+          });
+
         //Get Gene level information
         $scope.dispalaySpe = function(dict, value){
             for(var key in dict) {
@@ -1044,39 +1072,18 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
 // Contrôleur de base associé à home.html
 angular.module('rgv').controller('appCtrl',
-    function ($scope,$rootScope, $log, Auth, User, Dataset, $cookieStore, $window, $location) {
+    function ($scope,$rootScope, $log, Auth, User, Dataset, $cookieStore, $location, $window) {
+
+        //Google analytics
+        $scope.$on('$viewContentLoaded', function(event) {
+            $window.ga('send', 'pageview', { page: $location.url() });
+          });
         $scope.msg = null;
 
-        // carousel boostrap. Ajouter images et textes dans slides
-        $scope.myInterval = 3000;
-        $scope.slides = [
-          {
-            image: 'images/slide1.png',
-            text: 'Display your reprogenomics data in RGV',
-            id:1
-          },
-          {
-            image: 'images/slide2.png',
-            text: 'Convert your own files to use them in RGV',
-            id:2
-          },
-          {
-            image: 'images/slide3.png',
-            text: 'Scatterplot data visualization',
-            id:3
-          },
-        ];
-        //End carousel
+        
 
         var user = Auth.getUser();
 
-        // initialise google analytics
-        $window.ga('create', 'UA-116410038-1', 'auto');
- 
-        // track pageview on state change
-        $rootScope.$on('$stateChangeSuccess', function (event) {
-            $window.ga('send', 'pageview', $location.path());
-        });
 
 
         //Récupération news from local json file
