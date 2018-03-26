@@ -1044,7 +1044,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
 // Contrôleur de base associé à home.html
 angular.module('rgv').controller('appCtrl',
-    function ($scope,$rootScope, $log, Auth, User, Dataset, $cookieStore, $location) {
+    function ($scope,$rootScope, $log, Auth, User, Dataset, $cookieStore, $window, $location) {
         $scope.msg = null;
 
         // carousel boostrap. Ajouter images et textes dans slides
@@ -1070,6 +1070,13 @@ angular.module('rgv').controller('appCtrl',
 
         var user = Auth.getUser();
 
+        // initialise google analytics
+        $window.ga('create', 'UA-116410038-1', 'auto');
+ 
+        // track pageview on state change
+        $rootScope.$on('$stateChangeSuccess', function (event) {
+            $window.ga('send', 'pageview', $location.path());
+        });
 
 
         //Récupération news from local json file
