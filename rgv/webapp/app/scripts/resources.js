@@ -38,6 +38,12 @@
                 isArray: false,
                 cache: false
             },
+            study_feed: {
+                url: '/studyfeed',
+                method: 'GET',
+                isArray: false,
+                cache: false
+            },
             autocomplete: {
                 url: '/autocomplete',
                 method: 'POST',

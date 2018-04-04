@@ -123,7 +123,6 @@ def autocomplete(request):
 @view_config(route_name='genelevel', renderer='json', request_method='POST')
 def genelevel(request):
     def getValue(file_in,selectedvalues):
-        start_time = time.time()
         dIndex =  cPickle.load(open(file_in+".pickle"))
         fList = open(file_in,"r")
         result = {}
@@ -134,91 +133,161 @@ def genelevel(request):
                 result[str(val)] = fList.readline().rstrip().split('\t')[1:]
             else:
                 result[str(val)] = []
-        interval = time.time() - start_time
         return result
     
     def getClass(file_in):
         dIndex =  cPickle.load(open(file_in+".pickle"))
-        fList = open(file_in,"r")
         result = []
         for index in dIndex :
             if "Class" in index :
                 result.append(index)
         return result
     
+    def getGene(file_in):
+        dIndex =  cPickle.load(open(file_in+".pickle"))
+        result = []
+        allIndex = list(dIndex.keys())
+        result.append(allIndex[4])
+        return result
 
     form = json.loads(request.body, encoding=request.charset)
     directories = form['directory']
-    selected_class  = form['selected_class']
 
     all_genes = form['genes']
-    selected_genes = all_genes.keys()
-    result = {'charts':[],'warning':[],'time':'','class':{}}
+    if all_genes == '':
+        all_genes  = {}
+        for study in directories :
+            all_genes[study] =  getGene(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'))
+
+    model = form['model']
+
+    ensemblgenes = []
+    selected_genes = []
+    result = {'time':''}
     #print directories
     start_time = time.time()  
-
-    for stud in directories:
-        result['class'][stud] = getClass(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'))
-        if selected_class == '':
-            selected_class = result['class'][stud][0]
-        groups = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),[selected_class])
-        groups = np.array(groups[selected_class])
-        _, idx = np.unique(groups, return_index=True)
-        uniq_groups = groups[np.sort(idx)[::-1]]
+    div = 0
+    for study in directories :
+        result[study] = {}
         
-        samples = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),['Sample'])
-        samples = np.array(samples['Sample'])
-
-        genes = getValue(os.path.join(request.registry.dataset_path,'Studies',stud,stud+'.txt'),selected_genes)
-        for i in range(0,len(selected_genes)):
-            gene_name = all_genes[selected_genes[i]]
-            chart = {}
-            chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
-            chart['data']=[]
-            chart['description'] = ""
-            chart['name'] = "%s in %s study" % (gene_name,stud)
-            chart['title'] = ""
-            chart['layout'] = {'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},'margin':{'l':200}}
-            chart['gene'] = gene_name
-            chart['msg'] = []
-            chart['study'] = stud
-            for cond in uniq_groups :
-                val_gene = np.array(genes[str(selected_genes[i])])
-                if len(val_gene) != 0 :
-                    val = val_gene[np.where(groups == cond)[0]]
-                    data_chart = {}
+        if study in all_genes :
+            for gene in all_genes[study]:
+                if gene['stud_name'] == study:
+                    result[study][gene['Symbol']] = {}
+                    result[study][gene['Symbol']]['charts'] = []
+                    chart = {}
+                    result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'))
+                    selected_genes.append(gene['GeneID'])
+                    ensemblgenes.append(gene['EnsemblID'])
+                    if gene['Symbol'] in model[study] :
+                        selected_class = model[study][gene['Symbol']]
+                    else : 
+                        selected_class = result[study][gene['Symbol']]['class'][0]
+                    groups = getValue(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'),[selected_class])
+                    groups = np.array(groups[selected_class])
+                    _, idx = np.unique(groups, return_index=True)
+                    uniq_groups = groups[np.sort(idx)[::-1]]
                     
-                    data_chart['x'] = []
-                    data_chart['x'].extend(val)
-                    data_chart['name'] = cond
-                    data_chart['hoverinfo'] = "all"
-                    ratio_type = len(samples)/len(uniq_groups)
-                    if ratio_type > 10 :
-                        data_chart['type'] = 'violin'
-                        data_chart['orientation'] = 'h'
-                        data_chart['box'] = {'visible': True}
-                        data_chart['boxpoints'] = False
+                    samples = getValue(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'),['Sample'])
+                    samples = np.array(samples['Sample'])
 
-                    else :
-                        data_chart['type'] = 'box'
-                    chart['data'].append(data_chart)
-                else:
-                    chart['msg'].append("No data available")
-                    data_chart = {}
-                    data_chart['study'] = stud
-                    data_chart['x'] = []
-                    data_chart['hoverinfo'] = "name"
-                    chart['data'].append(data_chart)
-            result['charts'].append(chart)
+                    genes = getValue(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'),selected_genes)
+                    ensembl_genes = getValue(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'),ensemblgenes)
+
+                    #ADD VIOLIN PLOT FOR GENE
+                    gene_name = gene['Symbol']
+                    chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
+                    chart['data']=[]
+                    chart['div']=str(div)
+                    div += 1
+                    chart['description'] = ""
+                    chart['dir'] = study
+                    chart['selected'] = selected_class
+                    chart['name'] = gene_name
+                    chart['title'] = "violin"
+                    chart['selected'] = selected_class
+                    chart['layout'] = { 'xaxis': {'autorange': True},'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":'','margin':{'l':200}}
+                    chart['gene'] = gene_name
+                    chart['msg'] = ""
+                    chart['study'] = study
+
+                    #EntrezGenes
+                    val_gene = np.array(genes[str(gene['GeneID'])])
+                    #Ensembl IDs
+                    val_gene_ensembl = np.array(ensembl_genes[str(gene['EnsemblID'])])
+        
+                    for cond in uniq_groups :
+                        if len(val_gene) != 0 :
+                            val = val_gene[np.where(groups == cond)[0]]
+                        elif len(val_gene_ensembl) != 0 :
+                            val = val_gene_ensembl[np.where(groups == cond)[0]]
+                        else :
+                            chart['msg'] = "No data available for %s" % (gene_name)
+
+                        median = np.median(val.astype(np.float))
+                        data_chart = {}
+                        data_chart['x'] = []
+                        data_chart['x'].extend(val)
+                        data_chart['name'] = cond
+                        data_chart['hoverinfo'] = "all"
+                        ratio_type = len(samples)/len(uniq_groups)
+                        if ratio_type > 10 and median > 0:
+                            data_chart['type'] = 'violin'
+                            data_chart['orientation'] = 'h'
+                            data_chart['box'] = {'visible': True}
+                            data_chart['boxpoints'] = False
+
+                        else :
+                            data_chart['type'] = 'box'
+                            data_chart['box'] = {'visible': True}
+                            data_chart['boxpoints'] = 'all'
+                            data_chart['meanline'] = {'visible': True}
+                        
+                        chart['data'].append(data_chart)
+                    result[study][gene['Symbol']]['charts'].append(chart)
+                else :
+                    result[study][gene['Symbol']] = {}
+                    result[study][gene['Symbol']]['charts'] = []
+                    chart = {}
+                    chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
+                    chart['data']=[]
+                    chart['dir'] = study
+                    chart['description'] = ""
+                    chart['name'] = "No selected gene"
+                    chart['title'] = "violin"
+                    chart['selected'] = ''
+                    chart['layout'] = { 'xaxis': {'autorange': True},'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":'','margin':{'l':200}}
+                    chart['gene'] = ""
+                    chart['msg'] = "Please select at least one gene"
+                    chart['study'] = study
+                    result[study][gene['Symbol']]['charts'].append(chart)
+        else :
+            result[study]["No selected gene"] = {}
+            result[study]["No selected gene"]['charts'] = []
+            result[study]["No selected gene"]['class'] = getClass(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'))
+            chart = {}
+            chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
+            chart['data']=[]
+            chart['dir'] = study
+            chart['description'] = ""
+            chart['name'] = "No selected gene"
+            chart['title'] = "violin"
+            chart['selected'] = ''
+            chart['layout'] = { 'xaxis': {'autorange': True},'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":'','margin':{'l':200}}
+            chart['gene'] = ""
+            chart['msg'] = "Please select at least one gene"
+            chart['study'] = study
+            result[study]["No selected gene"]['charts'].append(chart)
 
     interval = time.time() - start_time  
-    result['time'] = interval 
-    return result
+    result['time'] = interval
+    return result                
 
 @view_config(route_name='scDataGenes', renderer='json', request_method='POST')
 def scDataGenes(request):
+
+    # Read file
     def getValue(file_in,selectedvalues):
-        start_time = time.time()
         dIndex =  cPickle.load(open(file_in+".pickle"))
         fList = open(file_in,"r")
         result = {}
@@ -229,12 +298,11 @@ def scDataGenes(request):
                 result[str(val)] = fList.readline().rstrip().split('\t')[1:]
             else:
                 result[str(val)] = []
-        interval = time.time() - start_time
         return result
     
+    #get all classes
     def getClass(file_in):
         dIndex =  cPickle.load(open(file_in+".pickle"))
-        fList = open(file_in,"r")
         result = []
         for index in dIndex :
             if "Class" in index :
@@ -251,20 +319,22 @@ def scDataGenes(request):
         ensemblgenes.append(all_genes[i]['ensembl'])
     result = {'charts':[],'warning':[],'time':''}
     studies = form['studies']
-    #print directories
     start_time = time.time()  
 
+    # Read studies
     for stud in directories:
         if len(form['model']) !=0 :
             selected_class =  form['model'][stud]
         else :
             selected_class = form['class']
-            
+        
+        #Create Study chart
         chart = {}
         chart['class'] = getClass(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'))
         
+        #Get selected classes for each studies
         if selected_class == '':
-            selected_class = result['class'][stud][0]
+            selected_class = chart['class'][0]
         groups = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),[selected_class])
         groups = np.array(groups[selected_class])
         _, idx = np.unique(groups, return_index=True)
@@ -278,6 +348,8 @@ def scDataGenes(request):
 
         genes = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),selected_genes)
         ensembl_genes = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),ensemblgenes)
+
+        #For selected gene
         for i in range(0,len(selected_genes)):
             if all_genes[selected_genes[i]]['study'] == stud :
                 gene_name = all_genes[selected_genes[i]]['symbol']
@@ -307,6 +379,7 @@ def scDataGenes(request):
                     max_val =  np.max(val_gene_ensembl.astype(np.float))
                     min_val =  np.min(val_gene_ensembl.astype(np.float))
 
+                #Add condition information according selected the class
                 for cond in uniq_groups :
                     if len(val_gene) != 0 :
                         val = val_gene[np.where(groups == cond)[0]]
@@ -387,6 +460,8 @@ def scDataGenes(request):
                         data_chart['meanline'] = {'visible': True}
                     chart['violin']['data'].append(data_chart)
                 result['charts'].append(chart)
+        
+        # If no gene selected for the study
         if stud not in studies:
             if len(form['model']) !=0 :
                 selected_class =  form['model'][stud]
@@ -550,16 +625,45 @@ def getnews(request):
         return {'data':'','msg':'Get newsfeed : something wrong','status':1}
 
 
+@view_config(route_name='studyfeed', renderer='json', request_method='GET')
+def getstudies(request):
+    """
+        func: Lecture fichier json local
+        return: Dico (fichier json)
+        view: home.html
+    """
+    try:
+        url_file = os.path.join(request.registry.dataset_path,"studies.txt")
+        file_data=open(url_file,'r')
+        data = {}
+        for lines in file_data.readlignes():
+            studyName = lines.split('\t')[2] #uniq PMID
+            data[studyName]['Date'] = lines.split('\t')[0]
+            data[studyName]['Name'] = lines.split('\t')[1]
+            data[studyName]['PubmedID'] = lines.split('\t')[2]
+            data[studyName]['Description'] = lines.split('\t')[3]
+            data[studyName]['Topics'] = lines.split('\t')[4]
+            data[studyName]['Species'] = lines.split('\t')[5]
+            data[studyName]['Techno'] = lines.split('\t')[6]
+            data[studyName]['Samples'] = lines.split('\t')[7]
+            data[studyName]['Links'] = lines.split('\t')[8]
+
+        return {'data':data,'msg':'OK','status':0}
+
+    except:
+        logger.error('Error in getstudy - File missing ?')
+        return {'data':'','msg':'Get studyfeed : something wrong','status':1}
+
+
 
 @view_config(route_name='file_dataset', request_method='GET')
 def file_dataset(request):
-    #print "Get Dataset"
     directory = request.matchdict['dir']
     downfile = request.matchdict['file']
-    url_file = os.path.join(request.registry.dataset_path,directory,downfile)
+    url_file = os.path.join(request.registry.download_path,directory,downfile)
     (handle, tmp_file) = tempfile.mkstemp('.zip')
     z = zipfile.ZipFile(tmp_file, "w")
-    z.write(url_file,os.path.basename(url_file))
+    z.write(url_file,os.path.basename(url_file)+'.zip')
     z.close()
     return FileResponse(tmp_file,
                         request=request,

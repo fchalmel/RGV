@@ -191,7 +191,7 @@ stepnext(1);
                                     <p class="list-group-item-text">EntrezGene ID: {{ gene.GeneID }}</p>
                                     <p class="list-group-item-text">Ensembl ID: {{ gene.EnsemblID }}</p>
                                   </div>
-                                  <button id="displayBtn" class="btn btn-default pull-right"  ng-click="displayGeneExp(chosen,'',gene,models)">{{val_button}}</button>	
+                                  <button id="displayBtn-{{ gene.Symbol }}-{{ stud.Directory }}" class="btn btn-default pull-right"  ng-click="displayGeneExp(chosen,'',gene,models,stud.Directory)">{{val_button[stud.Directory][gene.Symbol]}}</button>	
                                   <div class="clearfix" ></div>
                                   
                                 </div>

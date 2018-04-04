@@ -44,6 +44,7 @@ def main(global_config, **settings):
     config.registry.public_path = settings['public_path']
     config.registry.dataset_path = settings['dataset_path']
     config.registry.script_path = settings['script_path']
+    config.registry.download_path = settings['download_path']
 
     config.registry.filter = settings['filter'].split(',')
     config.registry.col_display = settings['column'].split(',')
@@ -67,6 +68,7 @@ def main(global_config, **settings):
     config.add_route('newsfeed', '/newsfeed')
     config.add_route('scData', '/scData')
     config.add_route('scDataGenes', '/scDataGenes')
+    config.add_route('studyfeed', '/studyfeed')
     config.add_route('user', '/user')
     config.add_route('user_register', '/user/register')
     config.add_route('user_recover', '/user/recover')

@@ -49,15 +49,15 @@ config(['$routeProvider','$logProvider',
         });
         $routeProvider.when('/download', {
             templateUrl: 'views/download.html',
-            controller: 'noCtrl'
+            controller: 'downloadCtrl'
         });
         $routeProvider.when('/tutorial', {
             templateUrl: 'views/tutorial.html',
-            controller: 'noCtrl'
+            controller: 'tutoCtrl'
         });
         $routeProvider.when('/studies', {
             templateUrl: 'views/studies.html',
-            controller: 'noCtrl'
+            controller: 'studiesCtrl'
         });
 
         $routeProvider.when('/browser_genome', {
@@ -127,6 +127,51 @@ angular.module('rgv').controller('userCtrl',
     function ($scope,$rootScope, $log, Auth, User,$location) {
 });
 
+
+
+////////////////////// Studies ///////////////////////////////////////
+angular.module('rgv').controller('studiesCtrl',
+    function ($scope,$rootScope, $log, Auth, User) {
+
+        Dataset.study_feed().$promise.then(function(response){
+            if(news.status != 1){
+              $scope.studies = response.data;
+            }
+            else {
+              $scope.msg = response.msg;
+            };
+        });
+
+});
+
+////////////////////// Downloads ///////////////////////////////////////
+angular.module('rgv').controller('downloadCtrl',
+    function ($scope,$rootScope, $log, Auth, User) {
+
+        $scope.msg="";
+
+});
+
+////////////////////// Tutorial ///////////////////////////////////////
+angular.module('rgv').controller('tutoCtrl',
+    function ($scope,$rootScope, $log, Auth, User) {
+
+        $scope.displayDiv = function(div){
+            var x = document.getElementById(div);
+
+            var arrayOfElements=document.getElementsByClassName('tutoinfo');
+            var lengthOfArray=arrayOfElements.length;
+            for (var i=0; i<lengthOfArray;i++){
+                arrayOfElements[i].style.display='none';
+            }
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+});
 
 ////////////////////// CONTACT ///////////////////////////////////////
 //Page contact avec mail crypté
@@ -233,15 +278,13 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             }
         }
     }
-    var display = false;
     $scope.lastgenes={};
-    $scope.val_button = 'Display';
-    $scope.displayGeneExp = function(selected_lst,selected_class,selected_gene,model){
+    $scope.val_button = {};
+    $scope.displayGeneExp = function(selected_lst,selected_class,selected_gene,model,stud){
         
-        
-        console.log(selected_gene);
-        if (display == true) {
-            display = false
+
+
+        if (selected_gene.display == true) {
             $scope.msg = [];
             var directory_list = [];
             var genes_list = {};
@@ -254,9 +297,11 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             }
             if(directory_list.length > 0){
                 //test
+
                 
                 Dataset.scData({},{'directory':directory_list,'conditions':'scRNA-seq','genes':'','name':'','class':selected_class,'model':model}).$promise.then(function(response){
-                    $scope.val_button = 'Display';
+                    selected_gene.display = false;
+                    $scope.val_button[stud][selected_gene.Symbol] = "Display";
                     $scope.time = response.time;
                     $scope.charts = response.charts;
                     console.log(response);
@@ -270,7 +315,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         else {
             $scope.msg = [];
             var directory_list = [];
-            display = true;
             var genes_list = {};
             for (var i=0;i<selected_lst.length;i++){
                 if (selected_lst[i].Directory !=null){
@@ -291,7 +335,12 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             if(directory_list.length > 0){
                 
                 Dataset.scDataGenes({},{'directory':directory_list,'conditions':'scRNA-seq','genes':genes_list,'class':selected_class,'model':model,'studies':studList}).$promise.then(function(response){
-                    $scope.val_button = 'Hide';
+                    for (var x in $scope.val_button[stud]){
+                        $scope.val_button[stud][x] = "Display"
+                    }
+                    selected_gene.display = true;
+                    $scope.val_button[stud][selected_gene.Symbol] = "Hide";
+                    
                     $scope.time = response.time;
                     $scope.charts = response.charts;
                     
@@ -624,6 +673,397 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         $scope.msg = []
         var name = stud.Directory;
         selectedgene['stud_name'] = name;
+        selectedgene['display'] = false;
+        if ($scope.val_button[name] == undefined ){
+            $scope.val_button[name] = {};
+        }
+
+        if ($scope.allgenes.hasOwnProperty(name)) {
+            if ($scope.allgenes[name] != undefined){
+                var index = $scope.allgenes[name].indexOf(selectedgene);
+            if ( index != -1){
+                $scope.allgenes[name].splice(index,1);
+                $scope.val_button[selectedgene.Symbol] = {}
+            } else{
+                    $scope.allgenes[name].push(selectedgene);
+                    $scope.val_button[name][selectedgene.Symbol]= "Display"
+                    selectedgene = undefined;     
+                }
+            }
+        } else {
+            $scope.allgenes[name] = [];
+            $scope.allgenes[name].push(selectedgene)
+            $scope.val_button[name][selectedgene.Symbol]= "Display"
+        }
+    }
+
+    $scope.remove_genes = function(gene,stud){
+        var index = $scope.allgenes[stud].indexOf(gene);
+        if ( index != -1){
+            $scope.allgenes[stud].splice(index,1);                              
+        };
+    }
+
+    $scope.remove_study = function(study){
+        var index = $scope.chosen.indexOf(study);
+        console.log(study)
+        if ( index != -1){
+            $scope.chosen.splice(index,1);
+        };
+    }
+    
+    $scope.get_genes = function(val,database,stud,speciesDict) {
+        var species_val = '';
+        for(var i=0;i<speciesDict.length;i++){
+            if(speciesDict[i].name == stud.Species){
+                species_val = speciesDict[i].tax_id;
+            }
+        }
+        console.log(stud.Species)
+        return Dataset.autocomplete({},{'database':database,'search':val,'tax_id':species_val}).$promise.then(function(data){
+            return data.map(function(item){
+                    return item;
+            });
+        });
+    };
+
+
+                
+
+    
+});
+
+////////////////////// Gene-level ////////////////////////////////////////
+angular.module('rgv').controller('browsergenelevelCtrl',
+    function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache) {
+        
+        //Get Gene level information
+    $scope.dispalaySpe = function(dict, value){
+        for(var key in dict) {
+            if(dict[key] === value) {
+                return key
+            }
+        }
+    }
+    
+    //Update grid2 en fonction de la selection de la grid1
+    $scope.updateSelection = function() {
+        console.log("Update");
+        $scope.gridApi.grid.refresh();
+    };
+
+    //Display block
+    $scope.displayStep = function(id){
+        $scope.selected_gene =[];
+
+        document.getElementById(id).style.visibility = "visible";
+    };
+
+    //GridData (ag-grid) system definition
+    $scope.main = {};
+    $scope.second = {};
+    $scope.filterValue = null;
+    $scope.users;
+    $scope.chosen = [];
+    $scope.selected_gene = [];
+    $scope.allgenes = {};
+
+    //Checkbox grid template
+    $templateCache.put('ui-grid/selectionRowHeaderButtons',
+        "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
+    );
+
+
+    $templateCache.put('ui-grid/selectionSelectAllButtons',
+        "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-all-selected': grid.selection.selectAll}\" ng-if=\"grid.options.enableSelectAll\"><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"grid.selection.selectAll\" ng-click=\"grid.selection.selectAll=!grid.selection.selectAll;headerButtonClick($event)\"></div>"
+    );
+
+    //liste obj selectionnés
+    
+    //Species list & tax_id
+    $scope.speciesValue = null;
+    Dataset.read_file({"name":"species.txt"}).$promise.then(function(dataset){
+        $scope.species = []
+        for (var i=0;i<dataset.data.line.length;i++){
+            var field = dataset.data.line[i].split('|');
+            $scope.species.push({'name':field[0],'tax_id':field[1].replace(/[\n]/gi, "" )});
+        }
+    });
+
+    $scope.getTaxID = function(Species,speciesDict){
+        for(var i=0;i<speciesDict.length;i++){
+            if(speciesDict[i].name == Species){
+                $scope.speciesValue = speciesDict[i].tax_id;
+                return speciesDict[i].tax_id
+            }
+        }
+    }
+    
+    var startPromise = Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(response){
+        return $q.when(response)
+    })
+    startPromise.then(function(value){
+        var data_all = value.data;
+        $scope.filterD = value.filter;
+        //Angular UI-grid
+        //Grid One --> Filtre de sélection
+        $scope.main.gridOptions.data = value.data_filter;
+
+        // Grid 2 --> All Data
+        $scope.second.gridOptions.columnDefs = value.display;
+        $scope.second.gridOptions.data = value.data;
+    
+    });        
+
+
+    //Angular UI-grid
+    //Grid One --> Filtre de sélection
+    $scope.selected = {'species':[],'technology':[]};
+
+    //main grid --> Grille gauche: pré-filtre les valeures de la grille droite
+    $scope.main.gridOptions = {
+        enableRowSelection: true,
+        showTreeRowHeader: true,
+        enableRowHeaderSelection: true, // Display checkboxes on every row when it's true
+        showTreeExpandNoChildren: true, 
+        enableGridMenu: false,
+        enableColumnMenus: false,
+        multiSelect: true,
+        columnDefs: [{ name: 'Selection',field:'selection',enableSorting: false ,enableColumnMenu: false, width: '40%' },],
+        onRegisterApi: function( gridApi ) {
+            $scope.main.gridApi = gridApi;
+            $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
+            gridApi.selection.on.rowSelectionChanged($scope, function(row) {
+            if(row.entity.type == 'species'){
+                var index = $scope.selected.species.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.species.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.species.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'technology'){
+                var index = $scope.selected.technology.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.technology.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.technology.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+                
+            });
+        }
+    };
+
+    var rowsSelected = 0;
+    
+    //second grid --> Grille droite: informations sur les études en fonctions des filtres selectionnées
+    $scope.second.gridOptions = {
+        treeRowHeaderAlwaysVisible: true,
+        enableGridMenu: false,
+        enableSorting: true,
+        enableFiltering: true,
+        multiSelect: true,
+        flatEntityAccess: true,
+        showGridFooter: false,
+        fastWatch: true,
+        onRegisterApi: function( gridoApi ) {
+            $scope.second.gridApi = gridoApi;
+            $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
+            $scope.mySelectedRows = $scope.second.gridApi.selection.getSelectedRows();
+            gridoApi.selection.on.rowSelectionChanged($scope, function(row) {
+                var msg = 'row selected ' + row.isSelected;
+                if(row.isSelected){
+                    rowsSelected += 1;
+                }
+                if(!row.isSelected){
+                    rowsSelected -= 1;
+                }
+                if(rowsSelected <= 3){
+                    
+                    var index = $scope.chosen.indexOf(row.entity);
+                    if ( index != -1){
+                        $scope.chosen.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                    } else{
+                        $scope.chosen.push(row.entity);
+                        $scope.second.gridApi.grid.refresh();
+                    }
+                }else{
+                    row.isSelected = false;
+                    $scope.msg.push("You can select only 1 study");
+                }
+            });
+        }
+    };
+
+    //refresh second grid an fonction de la main grid
+    $scope.filter = function() {
+        $scope.second.gridApi.grid.refresh();
+    };
+
+    //Fonction de filtration
+    $scope.singleFilter = function( renderableRows ){
+        if ($scope.selected.species.length > 0){
+            
+            renderableRows.forEach( function( row ) {
+            
+                // Test si.. en fonction de la selection de la grid 1
+                var match = false;
+                if ($scope.selected.technology.length > 0){
+                    if ($scope.selected.species.indexOf(row.entity.Species) > -1 && $scope.selected.technology.indexOf(row.entity.Technology) > -1) {
+                        match = true;
+                    }
+                    if ( !match ){
+                        row.visible = false;
+                    }
+                }else{
+                    if ($scope.selected.species.indexOf(row.entity.Species) > -1) {
+                        match = true;
+                    }
+                    if ( !match ){
+                        row.visible = false;
+                    }
+                }
+            });
+            if ($scope.filterValue !=null){
+                var matcher = new RegExp($scope.filterValue);
+                renderableRows.forEach( function( row ) {
+                    var match = false;
+                    $scope.filterD.forEach(function( field ){
+                        if ( row.entity[field].match(matcher) ){
+                            match = true;
+                        }
+                    });
+                    if ( !match ){
+                        row.visible = false;
+                    }
+                });
+                return renderableRows;
+
+            }else{
+                return renderableRows;
+            }
+        }
+        if ($scope.selected.technology.length > 0){
+            
+            renderableRows.forEach( function( row ) {
+            
+                // Test si.. en fonction de la selection de la grid 1
+                var match = false;
+                if ($scope.selected.species.length > 0){
+                    if ($scope.selected.species.indexOf(row.entity.Species) > -1 && $scope.selected.technology.indexOf(row.entity.Technology) > -1) {
+                        match = true;
+                    }
+                    if ( !match ){
+                        row.visible = false;
+                    }
+                }else{
+                    if ($scope.selected.technology.indexOf(row.entity.Technology) > -1) {
+                        match = true;
+                    }
+                    if ( !match ){
+                        row.visible = false;
+                    }
+                }
+            });
+            if ($scope.filterValue !=null){
+                var matcher = new RegExp($scope.filterValue);
+                renderableRows.forEach( function( row ) {
+                    var match = false;
+                    $scope.filterD.forEach(function( field ){
+                        if ( row.entity[field].match(matcher) ){
+                            match = true;
+                        }
+                    });
+                    if ( !match ){
+                        row.visible = false;
+                    }
+                });
+                return renderableRows;
+
+            }else{
+                return renderableRows;
+            }
+        }
+        else{
+            
+            renderableRows.forEach( function( row ) {
+                row.visible = true;
+            });
+            //Check fitration input
+            if ($scope.filterValue !=null){
+                var matcher = new RegExp($scope.filterValue);
+                renderableRows.forEach( function( row ) {
+                    var match = false;
+                    $scope.filterD.forEach(function( field ){
+                        if ( row.entity[field].match(matcher) ){
+                            match = true;
+                        }
+                    });
+                    if ( !match ){
+                        row.visible = false;
+                    }
+                });
+                return renderableRows;
+
+            }else{
+                return renderableRows;
+            }
+        }
+    };
+    
+    //Angular UI-grid END
+
+    $scope.selected_class ='';
+    $scope.models = {};
+    //Fonction visualisation gene Level
+    $scope.msg = []
+    $scope.showData = function(selected_lst,select_class,genes,model){
+        $scope.msg = [];
+        var directory_list = [];
+        var genes_list = {};
+        var name = '';
+        for (var i=0;i<selected_lst.length;i++){
+            if (selected_lst[i].Directory !=null){
+                directory_list.push(selected_lst[i].Directory);
+                name = selected_lst[i].Author+'_'+selected_lst[i].Year
+            }else{
+                $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
+            }
+        }
+        if(directory_list.length > 0){
+            //test
+            Dataset.genelevel({},{'directory':directory_list,'genes':genes,'class':select_class,'name':name,'model':model}).$promise.then(function(response){
+
+                $scope.time = response.time;
+                $scope.response = response;
+                console.log(response);
+            });
+        }else{
+            $scope.msgwrn ="No data available. Please select other studies or contact RGV support.";
+            return $scope.msgwrn;
+        }
+        
+    }
+    $scope.get_item = function(item, model,label){
+        $scope.higlight_gene = item;
+     };
+
+    $scope.select_genes = function(stud,selectedgene){
+        $scope.msg = []
+        var name = stud.Directory;
+        selectedgene['stud_name'] = name;
 
         if ($scope.allgenes.hasOwnProperty(name)) {
             if ($scope.allgenes[name] != undefined){
@@ -670,372 +1110,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             });
         });
     };
-
-
-                
-
-    
-});
-
-////////////////////// Gene-level ////////////////////////////////////////
-angular.module('rgv').controller('browsergenelevelCtrl',
-    function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache) {
-        
-        //Get Gene level information
-        $scope.dispalaySpe = function(dict, value){
-            for(var key in dict) {
-                if(dict[key] === value) {
-                    return key
-                }
-            }
-        }
-
-        //Update grid2 en fonction de la selection de la grid1
-        $scope.updateSelection = function() {
-            console.log("Update");
-            $scope.gridApi.grid.refresh();
-        };
-
-        //Display block
-        $scope.displayStep = function(id){
-            $scope.selected_gene =[];
-
-            document.getElementById(id).style.visibility = "visible";
-        };
-
-        //GridData (ag-grid) system definition
-        $scope.main = {};
-        $scope.second = {};
-        $scope.filterValue = null;
-        $scope.users;
-        $scope.chosen = [];
-        $scope.selected_gene = [];
-
-        //Checkbox grid template
-        $templateCache.put('ui-grid/selectionRowHeaderButtons',
-            "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
-        );
-
-
-        $templateCache.put('ui-grid/selectionSelectAllButtons',
-            "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-all-selected': grid.selection.selectAll}\" ng-if=\"grid.options.enableSelectAll\"><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"grid.selection.selectAll\" ng-click=\"grid.selection.selectAll=!grid.selection.selectAll;headerButtonClick($event)\"></div>"
-        );
-
-        //liste obj selectionnés
-        
-        //Species list & tax_id
-        $scope.speciesValue = null;
-        Dataset.read_file({"name":"species.txt"}).$promise.then(function(dataset){
-            $scope.species = []
-            for (var i=0;i<dataset.data.line.length;i++){
-                var field = dataset.data.line[i].split('|');
-                $scope.species.push({'name':field[0],'tax_id':field[1].replace(/[\n]/gi, "" )});
-            }
-		});
-        
-        var startPromise = Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(response){
-            return $q.when(response)
-        })
-        startPromise.then(function(value){
-            var data_all = value.data;
-            $scope.filterD = value.filter;
-            //Angular UI-grid
-            //Grid One --> Filtre de sélection
-            $scope.main.gridOptions.data = value.data_filter;
-
-            // Grid 2 --> All Data
-            $scope.second.gridOptions.columnDefs = value.display;
-            $scope.second.gridOptions.data = value.data;
-        
-        });        
-
-
-        //Angular UI-grid
-        //Grid One --> Filtre de sélection
-        $scope.selected = {'species':[],'technology':[]};
-
-        //main grid --> Grille gauche: pré-filtre les valeures de la grille droite
-        $scope.main.gridOptions = {
-            enableRowSelection: true,
-            showTreeRowHeader: true,
-            enableRowHeaderSelection: true, // Display checkboxes on every row when it's true
-            showTreeExpandNoChildren: true, 
-            enableGridMenu: false,
-            enableColumnMenus: false,
-            multiSelect: true,
-            columnDefs: [{ name: 'Selection',field:'selection',enableSorting: false ,enableColumnMenu: false, width: '40%' },],
-            onRegisterApi: function( gridApi ) {
-                $scope.main.gridApi = gridApi;
-                $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
-                gridApi.selection.on.rowSelectionChanged($scope, function(row) {
-                if(row.entity.type == 'species'){
-                    var index = $scope.selected.species.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.species.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.species.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'technology'){
-                    var index = $scope.selected.technology.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.technology.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.technology.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                    
-                });
-            }
-        };
-
-        var rowsSelected = 0;
-        
-        //second grid --> Grille droite: informations sur les études en fonctions des filtres selectionnées
-        $scope.second.gridOptions = {
-            treeRowHeaderAlwaysVisible: true,
-            enableGridMenu: false,
-            enableSorting: true,
-            enableFiltering: true,
-            multiSelect: true,
-            flatEntityAccess: true,
-            showGridFooter: false,
-            fastWatch: true,
-            onRegisterApi: function( gridoApi ) {
-                $scope.second.gridApi = gridoApi;
-                $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
-                $scope.mySelectedRows = $scope.second.gridApi.selection.getSelectedRows();
-                gridoApi.selection.on.rowSelectionChanged($scope, function(row) {
-                    var msg = 'row selected ' + row.isSelected;
-                    if(row.isSelected){
-                        rowsSelected += 1;
-                    }
-                    if(!row.isSelected){
-                        rowsSelected -= 1;
-                    }
-                    if(rowsSelected <= 5){
-                        
-                        var index = $scope.chosen.indexOf(row.entity);
-                        if ( index != -1){
-                            $scope.chosen.splice(index,1);
-                            $scope.second.gridApi.grid.refresh();
-                        } else{
-                            $scope.chosen.push(row.entity);
-                            $scope.second.gridApi.grid.refresh();
-                        }
-                    }else{
-                        row.isSelected = false;
-                        $scope.msg.push("You can select only 5 studies");
-                    }
-                });
-            }
-        };
-
-        //refresh second grid an fonction de la main grid
-        $scope.filter = function() {
-            $scope.second.gridApi.grid.refresh();
-        };
-
-        //Fonction de filtration
-        $scope.singleFilter = function( renderableRows ){
-            if ($scope.selected.species.length > 0){
-                
-                renderableRows.forEach( function( row ) {
-                
-                    // Test si.. en fonction de la selection de la grid 1
-                    var match = false;
-                    if ($scope.selected.technology.length > 0){
-                        if ($scope.selected.species.indexOf(row.entity.Species) > -1 && $scope.selected.technology.indexOf(row.entity.Technology) > -1) {
-                            match = true;
-                        }
-                        if ( !match ){
-                            row.visible = false;
-                        }
-                    }else{
-                        if ($scope.selected.species.indexOf(row.entity.Species) > -1) {
-                            match = true;
-                        }
-                        if ( !match ){
-                            row.visible = false;
-                        }
-                    }
-                });
-                if ($scope.filterValue !=null){
-                    var matcher = new RegExp($scope.filterValue);
-                    renderableRows.forEach( function( row ) {
-                        var match = false;
-                        $scope.filterD.forEach(function( field ){
-                            if ( row.entity[field].match(matcher) ){
-                                match = true;
-                            }
-                        });
-                        if ( !match ){
-                            row.visible = false;
-                        }
-                    });
-                    return renderableRows;
-
-                }else{
-                    return renderableRows;
-                }
-            }
-            if ($scope.selected.technology.length > 0){
-                
-                renderableRows.forEach( function( row ) {
-                
-                    // Test si.. en fonction de la selection de la grid 1
-                    var match = false;
-                    if ($scope.selected.species.length > 0){
-                        if ($scope.selected.species.indexOf(row.entity.Species) > -1 && $scope.selected.technology.indexOf(row.entity.Technology) > -1) {
-                            match = true;
-                        }
-                        if ( !match ){
-                            row.visible = false;
-                        }
-                    }else{
-                        if ($scope.selected.technology.indexOf(row.entity.Technology) > -1) {
-                            match = true;
-                        }
-                        if ( !match ){
-                            row.visible = false;
-                        }
-                    }
-                });
-                if ($scope.filterValue !=null){
-                    var matcher = new RegExp($scope.filterValue);
-                    renderableRows.forEach( function( row ) {
-                        var match = false;
-                        $scope.filterD.forEach(function( field ){
-                            if ( row.entity[field].match(matcher) ){
-                                match = true;
-                            }
-                        });
-                        if ( !match ){
-                            row.visible = false;
-                        }
-                    });
-                    return renderableRows;
-
-                }else{
-                    return renderableRows;
-                }
-            }
-            else{
-                
-                renderableRows.forEach( function( row ) {
-                    row.visible = true;
-                });
-                //Check fitration input
-                if ($scope.filterValue !=null){
-                    var matcher = new RegExp($scope.filterValue);
-                    renderableRows.forEach( function( row ) {
-                        var match = false;
-                        $scope.filterD.forEach(function( field ){
-                            if ( row.entity[field].match(matcher) ){
-                                match = true;
-                            }
-                        });
-                        if ( !match ){
-                            row.visible = false;
-                        }
-                    });
-                    return renderableRows;
-
-                }else{
-                    return renderableRows;
-                }
-            }
-        };
-        
-        $scope.violinPlot = function(data){
-            console.log(data);
-        }
-        //Angular UI-grid END
-
-
-        //Fonction visualisation gene Level
-        $scope.msg = []
-        $scope.showGeneLevel = function(selected_lst,selected_gene){
-            $scope.msg = [];
-            var directory_list = [];
-            var genes_list = {};
-            for (var i=0;i<selected_lst.length;i++){
-                if (selected_lst[i].Directory !=null){
-                    directory_list.push(selected_lst[i].Directory);
-                }else{
-                    $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
-                }
-            }
-            for(var z=0;z<selected_gene.length;z++){
-                if (selected_gene[z].GeneID !=null){
-                    genes_list[selected_gene[z].GeneID] = selected_gene[z].Symbol;
-                }
-            }
-            if(directory_list.length > 0){
-                //test
-                Dataset.genelevel({},{'directory':directory_list,'conditions':'test','genes':genes_list}).$promise.then(function(response){
-
-                    $scope.time = response.time;
-                    $scope.charts = response.charts;
-                    console.log(response);
-                });
-            }else{
-                $scope.msgwrn ="No data available. Please select other studies or contact RGV support.";
-                return $scope.msgwrn;
-            }
-            
-        }
-        $scope.get_item = function(item, model,label){
-            $scope.higlight_gene = item;
-         };
-
-        $scope.select_genes = function(selectedgene){
-            $scope.msg = []
-            console.log(selectedgene)
-            if (selectedgene != undefined){
-                var index = $scope.selected_gene.indexOf(selectedgene);
-            if ( index != -1){
-                $scope.selected_gene.splice(index,1);                           
-            } else{
-                    $scope.selected_gene.push(selectedgene);
-                    selectedgene = undefined;     
-                }
-            }
-        }
-
-        $scope.remove_genes = function(gene){
-            var index = $scope.selected_gene.indexOf(gene);
-            if ( index != -1){
-                $scope.selected_gene.splice(index,1);                              
-            };
-        }
-
-        $scope.remove_study = function(study){
-            var index = $scope.chosen.indexOf(study);
-            console.log(study)
-            if ( index != -1){
-                $scope.chosen.splice(index,1);
-            };
-        }
-
-        $scope.get_genes = function(val,database,species_val) {
-            var species_convertor = {};
-            return Dataset.autocomplete({},{'database':database,'search':val,'tax_id':species_val}).$promise.then(function(data){
-                return data.map(function(item){
-                        return item;
-                });
-            });
-        };
 
                     
 

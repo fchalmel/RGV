@@ -34,7 +34,7 @@
   margin-top: 0px;
 }
 .tabbable-line > .nav-tabs > li.active {
-  border-bottom: 4px solid #f3565d;
+  border-bottom: 4px solid #d80606;
   position: relative;
 }
 .tabbable-line > .nav-tabs > li.active > a {
@@ -119,6 +119,6 @@
 }
 .btn-primary {
     color: #fff;
-    background-color: #df3f53;
-    border-color: #df3f53;
+    background-color: #d80606;
+    border-color: #d80606;
 }

@@ -6,75 +6,205 @@
 	<h2><i class="glyphicon glyphicon-education"></i> Tutorial</h2>
 </div>
 
-<div>
 
-	<h3><i class="glyphicon glyphicon-indent-left"></i> Genome browser</h3>
-	<div class="row">
-		<div class="col-md-6">
-			<h4>Displaying specific genes</h4><br>
-			<ul>
-				<li align="justify"><b>Step 1 - </b>Enter gene name in the search bar and validate. Valid names include gene symbol and synonyms and are not case sensitive.</li>
-				<li align="justify"><b>Step 2 - </b>In a result windows, choose your displayed annotation. Click on "Show" or "Go" to display your gene. As RGV integrates information from NCBI and Ensembl, genes can be identified in duplicate.</li>
-				<li align="justify"><b>Step 3 - </b>To have an overview of your gene region, use the zoom-in or zoom-out button. </li>
-			</ul>
+<div class="row">
+	<div class="col-sm-3 col-md-3"> <!--MENU-->
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" target="_self"><span class="glyphicon glyphicon-indent-left">
+						</span>    Genome Browser</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse in">
+					<div class="panel-body">
+						<table class="table">
+							<tr>
+								<td>
+									<a href="" target="_self" ng-click="displayDiv('collapseSpecificgenes')">Displaying specific genes</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="" target="_self" ng-click="displayDiv('collapseSelectTrack')">Selecting tracks</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="" target="_self" ng-click="displayDiv('collapseTrackInfo')">Track information</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="" target="_self" ng-click="displayDiv('collapseImport')">Import data</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" target="_self"><span class="glyphicon glyphicon-align-left">
+						</span>    Violin plot visualization</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse">
+					<div class="panel-body">
+						<table class="table">
+							<tr>
+								<td>
+									<a href="">Select studies</a> 
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="">Select gene(s)</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="">Save plot</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="">Download data</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="">Reading the Results</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" target="_self"><span class="glyphicon glyphicon-cloud">
+						</span>    Scatterplot visualization</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse">
+					<div class="panel-body">
+						<table class="table">
+							<tr>
+								<td>
+									<a href="">Select studies</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="">Select gene(s)</a> 
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="">Save plot</a> 
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="">Reading the Results</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-6">
-			<br>
-			<video width="300" controls="controls">
-				<source src="videos/RGV_05.mp4" type="video/mp4">
-			</video>
+	</div> <!--END of menu-->
+	<div class="col-sm-9 col-md-9">
+		<div id="collapseSpecificgenes" class="tutoinfo" style="display: none;">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<h4>Displaying specific genes</h4><br>
+						<ul>
+							<li align="justify"><b>Step 1 - </b>Enter gene name in the search bar and validate. Valid names include gene symbol and synonyms and are not case sensitive.</li>
+							<li align="justify"><b>Step 2 - </b>In a result windows, choose your displayed annotation. Click on "Show" or "Go" to display your gene. As RGV integrates information from NCBI and Ensembl, genes can be identified in duplicate.</li>
+							<li align="justify"><b>Step 3 - </b>To have an overview of your gene region, use the zoom-in or zoom-out button. </li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<br>
+						<video width="300" controls="controls">
+							<source src="videos/RGV_05.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="col-md-6">
-			<h4>Selecting tracks</h4><br>
-			<ul>
-				<li align="justify"><b>Step 1 - </b>Use the left menu "Available tracks" to choose your tracks. To show the different tracks, use the collapse menu.</li>
-				<li align="justify"><b>Step 2 - </b>Drag and drop selected feature, to reorganized displayed tracks. Note that the “Available Tracks” menu is organized so that the same tracks could have been identified by the “Technologies” tab, by the “Biological topics” tab, by "Species" tab or by "Publications" tab.</li>
-				<li align="justify"><b>Step 3 - </b>To delete a track, click on "close" button near of name</li>
-			</ul>
+
+		<div id="collapseSelectTrack" class="tutoinfo" style="display: none;">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<h4>Selecting tracks</h4><br>
+						<ul>
+							<li align="justify"><b>Step 1 - </b>Use the left menu "Available tracks" to choose your tracks. To show the different tracks, use the collapse menu.</li>
+							<li align="justify"><b>Step 2 - </b>Drag and drop selected feature, to reorganized displayed tracks. Note that the “Available Tracks” menu is organized so that the same tracks could have been identified by the “Technologies” tab, by the “Biological topics” tab, by "Species" tab or by "Publications" tab.</li>
+							<li align="justify"><b>Step 3 - </b>To delete a track, click on "close" button near of name</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<br>
+						<video width="300" controls="controls">
+							<source src="videos/RGV_06.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-6">
-			<br>
-			<video width="300" controls="controls">
-				<source src="videos/RGV_06.mp4" type="video/mp4">
-			</video>
+
+
+		<div id="collapseTrackInfo" class="tutoinfo" style="display: none;">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<h4>Track information</h4><br>
+						<ul>
+							<li align="justify"><b>Step 1 - </b>For genes or variant tracks, you can display an information box by clicking on selected gene. A link to PubMed and ClinVar/GWAS database are available for variant tracks.</li>
+							<li align="justify"><b>Step 2 - </b>For expression tracks, the expression value appear when cursor browse the track.</li>
+							<li align="justify"><b>Step 3 - </b>To display information box of expression tracks, click on down arrow near of the name and select "About this track". For each tracks, a PubMed link to associated publication is available.</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<br>
+						<video width="300" controls="controls">
+							<source src="videos/RGV_07.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="col-md-6">
-			<h4>Track information</h4><br>
-			<ul>
-				<li align="justify"><b>Step 1 - </b>For genes or variant tracks, you can display an information box by clicking on selected gene. A link to PubMed and ClinVar/GWAS database are available for variant tracks.</li>
-				<li align="justify"><b>Step 2 - </b>For expression tracks, the expression value appear when cursor browse the track.</li>
-				<li align="justify"><b>Step 3 - </b>To display information box of expression tracks, click on down arrow near of the name and select "About this track". For each tracks, a PubMed link to associated publication is available.</li>
-			</ul>
-		</div>
-		<div class="col-md-6">
-			<br>
-			<video width="300" controls="controls">
-				<source src="videos/RGV_07.mp4" type="video/mp4">
-			</video>
-		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="col-md-6">
-			<h4>Import your data on the genome browser</h4><br>
-			<ul>
-				<li align="justify"><b>Step 1 - </b>Click on File > Open on the head menu.</li>
-				<li align="justify"><b>Step 2 - </b>Files could be opened by drag and drop file in the dedicated area. Files could be also opened by clicking on select files button or by copy / paste a URL.</li>
-				<li align="justify"><b>Step 3 - </b>If the file extension is not recognized, pleased defined it in Files and URLs section. File accepted are : GTF, GFF3, BigWig, Bam, Bamindex or VCF.</li>
-				<li align="justify"><b>Step 4 - </b>Configure the display track.  For an advance users, use edit configuration button.</li>
-			</ul>
-		</div>
-		<div class="col-md-6">
-			<br>
-			<video width="300" controls="controls">
-				<source src="videos/RGV_08.mp4" type="video/mp4">
-			</video>
+
+
+		<div id="collapseImport" class="tutoinfo" style="display: none;">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<h4>Import your data on the genome browser</h4><br>
+						<ul>
+							<li align="justify"><b>Step 1 - </b>Click on File > Open on the head menu.</li>
+							<li align="justify"><b>Step 2 - </b>Files could be opened by drag and drop file in the dedicated area. Files could be also opened by clicking on select files button or by copy / paste a URL.</li>
+							<li align="justify"><b>Step 3 - </b>If the file extension is not recognized, pleased defined it in Files and URLs section. File accepted are : GTF, GFF3, BigWig, Bam, Bamindex or VCF.</li>
+							<li align="justify"><b>Step 4 - </b>Configure the display track.  For an advance users, use edit configuration button.</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<br>
+						<video width="300" controls="controls">
+							<source src="videos/RGV_08.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
