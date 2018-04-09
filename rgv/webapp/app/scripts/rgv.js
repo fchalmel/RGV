@@ -409,6 +409,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         return $q.when(response)
     })
     startPromise.then(function(value){
+        console.log(value)
         var data_all = value.data;
         $scope.filterD = value.filter;
         //Angular UI-grid
