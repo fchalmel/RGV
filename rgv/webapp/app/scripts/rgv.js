@@ -388,7 +388,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
     
     //Species list & tax_id
     $scope.speciesValue = null;
-    Dataset.read_file({"name":"genome.txt"}).$promise.then(function(dataset){
+    Dataset.read_file({"name":"genomes.txt"}).$promise.then(function(dataset){
         $scope.species = []
         console.log(dataset);
         for (var i=0;i<dataset.data.line.length;i++){
