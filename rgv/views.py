@@ -107,6 +107,23 @@ def d_getter(request):
 
     return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
 
+@view_config(route_name='checkgene', renderer='json', request_method='POST')
+def check(request):
+    form = json.loads(request.body, encoding=request.charset)
+    gene_list = form['list']
+    tax_id = form['tax_id']
+    result = []
+    print tax_id
+    for gene in gene_list :
+        repos = request.registry.db_mongo['genes'].find_one({"$and":[{"$or":[{"GeneID":gene},{"EnsemblID":gene}]},{'tax_id':tax_id}]})
+        if repos is not None :
+            d = {"geneID":repos["GeneID"],"name":repos["Symbol"],"status":"Used"}
+            result.append(d)
+        else :
+            d = {"geneID":gene,"name":"NA","status":"Not used"}
+            result.append(d)
+    return {"data":result}
+
 @view_config(route_name='autocomplete', renderer='json', request_method='POST')
 def autocomplete(request):
     form = json.loads(request.body, encoding=request.charset)
@@ -482,6 +499,7 @@ def scDataGenes(request):
             x = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['X'])['X'])
             y = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Y'])['Y'])
             
+            
             chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
             chart['data']=[]
             chart['description'] = ""
@@ -598,6 +616,108 @@ def scData(request):
             data_chart['type'] = 'scatter'
             data_chart['mode']= 'markers'
             chart['data'].append(data_chart)
+        result['charts'].append(chart)
+
+    interval = time.time() - start_time  
+    result['time'] = interval
+    return result
+
+
+@view_config(route_name='hmtData', renderer='json', request_method='POST')
+def heatmap(request):
+    def getValue(file_in,selectedvalues):
+        start_time = time.time()
+        dIndex =  cPickle.load(open(file_in+".pickle"))
+        fList = open(file_in,"r")
+        result = {}
+        for val in selectedvalues :
+            if str(val) in dIndex:
+                iPosition = dIndex[str(val)]
+                fList.seek(iPosition)
+                result[str(val)] = fList.readline().rstrip().split('\t')[1:]
+            else:
+                result[str(val)] = []
+        interval = time.time() - start_time
+        return result
+    
+    def getClass(file_in):
+        dIndex =  cPickle.load(open(file_in+".pickle"))
+        fList = open(file_in,"r")
+        result = []
+        for index in dIndex :
+            if "Class" in index :
+                result.append(index)
+        return result
+
+    form = json.loads(request.body, encoding=request.charset)
+    directories = form['directory']
+    
+    name = form['name']
+    result = {'charts':[],'warning':[],'time':''}
+    #print directories
+    start_time = time.time()  
+
+    selected_genes = form['genes']
+    ensemblgenes = form['genes']
+    for stud in directories:
+        if len(form['model']) !=0 :
+            selected_class =  form['model'][stud]
+        else :
+            selected_class = form['class']
+            
+        chart = {}
+        chart['class'] = getClass(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'))
+        
+        if selected_class == '':
+            selected_class =  chart['class'][0]
+        groups = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),[selected_class])
+        groups = np.array(groups[selected_class])
+        _, idx = np.unique(groups, return_index=True)
+
+        samples = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Sample'])['Sample'])
+
+        genes = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),selected_genes)
+        ensembl_genes = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),ensemblgenes)
+
+        #EntrezGenes
+        val_gene = np.array(genes[str(gene['GeneID'])])
+        #Ensembl IDs
+        val_gene_ensembl = np.array(ensembl_genes[str(gene['EnsemblID'])])
+        if len(val_gene) != 0 :
+            val = val_gene[np.where(groups == cond)[0]]
+        elif len(val_gene_ensembl) != 0 :
+            val = val_gene_ensembl[np.where(groups == cond)[0]]
+        else :
+            chart['msg'] = "No data available for %s" % (gene_name)
+
+
+        
+        
+        chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
+        chart['data']=[]
+        chart['description'] = ""
+        chart['selected'] = selected_class
+        chart['study'] = name
+        chart['name'] = "Heatmap visualisation: %s" % (selected_class)
+        chart['dir'] = stud
+        chart['layout'] = {'height':500,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+        chart['gene'] = ""
+        chart['msg'] = []
+        data_chart={}
+        data_chart['x'] = samples
+        data_chart['y'] = selected_genes
+        data_chart['z'] = []
+        for gene in selected_genes :
+            if len(val_gene) != 0 :
+                val_z= genes[gene]
+                data_chart['z'].extend(val_z)
+            if len(val_gene_ensembl) != 0 :
+                val_z= val_gene_ensembl[gene]
+                data_chart['z'].extend(val_z)
+        data_chart['name'] = "Heatmap"
+        data_chart['hoverinfo'] = "all"
+        data_chart['type'] = 'heatmap'
+        chart['data'].append(data_chart)
         result['charts'].append(chart)
 
     interval = time.time() - start_time  

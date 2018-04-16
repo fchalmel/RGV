@@ -32,6 +32,12 @@
                 isArray: false,
                 cache: false
             },
+            checkgene: {
+                url: '/checkgene',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
             news_feed: {
                 url: '/newsfeed',
                 method: 'GET',
@@ -58,6 +64,12 @@
             },
             scData: {
                 url: '/scData',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
+            hmtData: {
+                url: '/hmtData',
                 method: 'POST',
                 isArray: false,
                 cache: false
