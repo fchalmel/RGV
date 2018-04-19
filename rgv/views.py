@@ -96,19 +96,15 @@ def d_getter(request):
         displays.append({'name':el})
 
     #Create Data treeview for filtering grid (Species, Technology...)
-    df_filtered = df.species.unique()
-    data_filter = [{'selection':'species','type':'species','$$treeLevel':0}]
-    for spe in df_filtered :
-        data_filter.append({'selection':spe,'type':'species','$$treeLevel':1})
-    
-    df_filtered = df.technology.unique()
-    data_filter.append({'selection':'technology','type':'technology','$$treeLevel':0})
-    for techno in df_filtered :
-        data_filter.append({'selection':techno,'type':'technology','$$treeLevel':1})
+    df_species = df.species.unique()
+    df_ome = df.ome.unique()
+    df_technology = df.technology.unique()
+    df_sex = df.sex.unique()
+
 
     #return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
     # Test new table 
-    return {'data':final_df}
+    return {'data':final_df,'species':df_species,'ome':df_ome,'technology':df_technology,'sex':df_sex}
 
 @view_config(route_name='checkgene', renderer='json', request_method='POST')
 def check(request):

@@ -395,6 +395,10 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,ngTableParams
     startPromise.then(function(value){
         console.log(value)
         $scope.data_all = value.data;
+        $scope.ome = value.ome;
+        $scope.allspe = value.species;
+        $scope.techno = value.technology;
+        $scope.sex = value.sex
         $scope.ExperimentalTable = new ngTableParams({
             page: 1,
             count: 50,

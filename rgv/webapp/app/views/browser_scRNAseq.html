@@ -101,15 +101,15 @@ stepnext(1);
               <tr ng-repeat="val in $data" ng-class="{'selected': val.selected}" ng-click="select_study(val)">
                 <td ng-if="val.path !=''" data-title="'Article'" >{{val.article}}</td>
                 <td ng-if="val.path !=''" data-title="'Platform'">{{val.platform}}</td>
-                <td ng-if="val.path !=''" data-title="'Technology'">{{val.technology}}</td>
-                <td ng-if="val.path !=''" data-title="'Ome'" filter="{ome: 'select'}" filter-data="data_all.ome">{{val.ome}}</td>
+                <td ng-if="val.path !=''" data-title="'Technology'" filter="{technology: 'select'}" filter-data="technology">{{val.technology}}</td>
+                <td ng-if="val.path !=''" data-title="'Ome'" filter="{ome: 'select'}" filter-data="ome">{{val.ome}}</td>
                 <td ng-if="val.path !=''" data-title="'Single or paired'">{{val.single_or_paired}}</td>
                 <td ng-if="val.path !=''" data-title="'Strand'">{{val.strand_information}}</td>
-                <td ng-if="val.path !=''" data-title="'Species'" filter="{species: 'select'}" filter-data="data_all.species">{{val.species}}</td>
+                <td ng-if="val.path !=''" data-title="'Species'" filter="{species: 'select'}" filter-data="allspe">{{val.species}}</td>
                 <td ng-if="val.path !=''" data-title="'Biological topics'">{{val.biological_topics}}</td>
                 <td ng-if="val.path !=''" data-title="'Experimental design'">{{val.experimental_design}}</td>
                 <td ng-if="val.path !=''" data-title="'Tissue or cell'">{{val.tissue_or_cell}}</td>
-                <td ng-if="val.path !=''" data-title="'Sex'" filter="{sex: 'select'}" filter-data="data_all.sex">{{val.sex}}</td>
+                <td ng-if="val.path !=''" data-title="'Sex'" filter="{sex: 'select'}" filter-data="sex">{{val.sex}}</td>
                 <td ng-if="val.path !=''" data-title="'Developmental stage'">{{val.developmental_stage}}</td>
                 <td ng-if="val.path !=''" data-title="'Age'">{{val.age}}</td>
                 <td ng-if="val.path !=''" data-title="'Antibody'">{{val.antibody}}</td>
