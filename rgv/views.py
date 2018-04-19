@@ -87,7 +87,7 @@ def d_getter(request):
     form = json.loads(request.body, encoding=request.charset)
     file_name = form['name']
     url_file = os.path.join(request.registry.dataset_path,file_name)
-    df = pd.read_csv(url_file,sep='\t')
+    df = pd.read_csv(url_file,sep=',')
     df_json = df.to_json(orient='records')
     final_df = json.loads(df_json)
     filters = []
