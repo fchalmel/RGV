@@ -411,7 +411,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         }
     }
     
-    var startPromise = Dataset.data_frame({"name":"metadat.csv"}).$promise.then(function(response){
+    var startPromise = Dataset.data_frame({"name":"metadata.csv"}).$promise.then(function(response){
         return $q.when(response)
     })
     startPromise.then(function(value){
