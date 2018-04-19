@@ -117,10 +117,10 @@ def check(request):
     for gene in gene_list :
         repos = request.registry.db_mongo['genes'].find_one({"$and":[{"$or":[{"GeneID":gene},{"EnsemblID":gene}]},{'tax_id':tax_id}]})
         if repos is not None :
-            d = {"geneID":repos["GeneID"],"name":repos["Symbol"],"status":"Used"}
+            d = {"id":gene,"geneID":repos["GeneID"],"name":repos["Symbol"],"ensembl":repos["EnsemblID"],"status":"Used"}
             result.append(d)
         else :
-            d = {"geneID":gene,"name":"NA","status":"Not used"}
+            d = {"id":gene,"geneID":"NA","name":"NA","status":"Not used","ensembl":"NA"}
             result.append(d)
     return {"data":result}
 
@@ -193,23 +193,23 @@ def genelevel(request):
                     result[study][gene['Symbol']] = {}
                     result[study][gene['Symbol']]['charts'] = []
                     chart = {}
-                    result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'))
+                    result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.dataset_path,study))
                     selected_genes.append(gene['GeneID'])
                     ensemblgenes.append(gene['EnsemblID'])
                     if gene['Symbol'] in model[study] :
                         selected_class = model[study][gene['Symbol']]
                     else : 
                         selected_class = result[study][gene['Symbol']]['class'][0]
-                    groups = getValue(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'),[selected_class])
+                    groups = getValue(os.path.join(request.registry.dataset_path,study),[selected_class])
                     groups = np.array(groups[selected_class])
                     _, idx = np.unique(groups, return_index=True)
                     uniq_groups = groups[np.sort(idx)[::-1]]
                     
-                    samples = getValue(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'),['Sample'])
+                    samples = getValue(os.path.join(request.registry.dataset_path,study),['Sample'])
                     samples = np.array(samples['Sample'])
 
-                    genes = getValue(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'),selected_genes)
-                    ensembl_genes = getValue(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'),ensemblgenes)
+                    genes = getValue(os.path.join(request.registry.dataset_path,study),selected_genes)
+                    ensembl_genes = getValue(os.path.join(request.registry.dataset_path,study),ensemblgenes)
 
                     #ADD VIOLIN PLOT FOR GENE
                     gene_name = gene['Symbol']
@@ -281,7 +281,7 @@ def genelevel(request):
         else :
             result[study]["No selected gene"] = {}
             result[study]["No selected gene"]['charts'] = []
-            result[study]["No selected gene"]['class'] = getClass(os.path.join(request.registry.dataset_path,study,'data_genelevel.txt'))
+            result[study]["No selected gene"]['class'] = getClass(os.path.join(request.registry.dataset_path,study))
             chart = {}
             chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
             chart['data']=[]
@@ -347,24 +347,24 @@ def scDataGenes(request):
         
         #Create Study chart
         chart = {}
-        chart['class'] = getClass(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'))
+        chart['class'] = getClass(os.path.join(request.registry.dataset_path,stud))
         
         #Get selected classes for each studies
         if selected_class == '':
             selected_class = chart['class'][0]
-        groups = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),[selected_class])
+        groups = getValue(os.path.join(request.registry.dataset_path,stud),[selected_class])
         groups = np.array(groups[selected_class])
         _, idx = np.unique(groups, return_index=True)
         uniq_groups = groups[np.sort(idx)[::-1]]
         
-        samples = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Sample'])
+        samples = getValue(os.path.join(request.registry.dataset_path,stud),['Sample'])
         samples = np.array(samples['Sample'])
 
-        x = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['X'])['X'])
-        y = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Y'])['Y'])
+        x = np.array(getValue(os.path.join(request.registry.dataset_path,stud),['X'])['X'])
+        y = np.array(getValue(os.path.join(request.registry.dataset_path,stud),['Y'])['Y'])
 
-        genes = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),selected_genes)
-        ensembl_genes = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),ensemblgenes)
+        genes = getValue(os.path.join(request.registry.dataset_path,stud),selected_genes)
+        ensembl_genes = getValue(os.path.join(request.registry.dataset_path,stud),ensemblgenes)
 
         #For selected gene
         for i in range(0,len(selected_genes)):
@@ -486,18 +486,18 @@ def scDataGenes(request):
                 selected_class = form['class']
                 
             chart = {}
-            chart['class'] = getClass(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'))
+            chart['class'] = getClass(os.path.join(request.registry.dataset_path,stud))
             
             if selected_class == '':
                 selected_class =  chart['class'][0]
-            groups = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),[selected_class])
+            groups = getValue(os.path.join(request.registry.dataset_path,stud),[selected_class])
             groups = np.array(groups[selected_class])
             _, idx = np.unique(groups, return_index=True)
             uniq_groups = groups[np.sort(idx)[::-1]]
 
-            samples = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Sample'])['Sample'])
-            x = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['X'])['X'])
-            y = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Y'])['Y'])
+            samples = np.array(getValue(os.path.join(request.registry.dataset_path,stud),['Sample'])['Sample'])
+            x = np.array(getValue(os.path.join(request.registry.dataset_path,stud),['X'])['X'])
+            y = np.array(getValue(os.path.join(request.registry.dataset_path,stud),['Y'])['Y'])
             
             
             chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
@@ -655,10 +655,21 @@ def heatmap(request):
     name = form['name']
     result = {'charts':[],'warning':[],'time':''}
     #print directories
-    start_time = time.time()  
+    start_time = time.time() 
 
-    selected_genes = form['genes']
-    ensemblgenes = form['genes']
+    selected_genes = []
+    selected_ensembl = []
+    selected_genes_names = []
+    selected_ensembl_names = []
+
+    for i in form['genes'] :
+        if i["geneID"] != "NA":
+            selected_genes.append(i["geneID"])
+            selected_genes_names.append(i["name"])
+        if i["ensembl"] != "NA":
+            selected_ensembl.append(i["ensembl"])
+            selected_ensembl_names.append(i["name"])
+
     for stud in directories:
         if len(form['model']) !=0 :
             selected_class =  form['model'][stud]
@@ -672,27 +683,15 @@ def heatmap(request):
             selected_class =  chart['class'][0]
         groups = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),[selected_class])
         groups = np.array(groups[selected_class])
-        _, idx = np.unique(groups, return_index=True)
 
-        samples = np.array(getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Sample'])['Sample'])
+        samples = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),['Sample'])['Sample']
 
         genes = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),selected_genes)
-        ensembl_genes = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),ensemblgenes)
+        genes2 =  dict((k, v) for k, v in genes.iteritems() if v)
+        ensembl_genes = getValue(os.path.join(request.registry.dataset_path,stud,'data_genelevel.txt'),selected_ensembl)
+        ensembl_genes2 = dict((k, v) for k, v in ensembl_genes.iteritems() if v)
 
-        #EntrezGenes
-        val_gene = np.array(genes[str(gene['GeneID'])])
-        #Ensembl IDs
-        val_gene_ensembl = np.array(ensembl_genes[str(gene['EnsemblID'])])
-        if len(val_gene) != 0 :
-            val = val_gene[np.where(groups == cond)[0]]
-        elif len(val_gene_ensembl) != 0 :
-            val = val_gene_ensembl[np.where(groups == cond)[0]]
-        else :
-            chart['msg'] = "No data available for %s" % (gene_name)
-
-
-        
-        
+ 
         chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
         chart['data']=[]
         chart['description'] = ""
@@ -700,20 +699,25 @@ def heatmap(request):
         chart['study'] = name
         chart['name'] = "Heatmap visualisation: %s" % (selected_class)
         chart['dir'] = stud
-        chart['layout'] = {'height':500,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+        chart['layout'] = {"width": "100%",'height':800,'showlegend': True,"title":''}
         chart['gene'] = ""
         chart['msg'] = []
         data_chart={}
+        data_chart['y'] =[]
         data_chart['x'] = samples
-        data_chart['y'] = selected_genes
+        if len(genes2) != 0 :
+            data_chart['y'] = selected_genes_names
+        if len(ensembl_genes2) != 0 :
+            data_chart['y'] = selected_ensembl_names
         data_chart['z'] = []
-        for gene in selected_genes :
-            if len(val_gene) != 0 :
+        if len(genes2) != 0 :
+            for gene in selected_genes :
                 val_z= genes[gene]
-                data_chart['z'].extend(val_z)
-            if len(val_gene_ensembl) != 0 :
-                val_z= val_gene_ensembl[gene]
-                data_chart['z'].extend(val_z)
+                data_chart['z'].append(val_z)
+        if len(ensembl_genes2) != 0 :
+            for gene in selected_ensembl :
+                val_z= ensembl_genes[gene]
+                data_chart['z'].append(val_z)
         data_chart['name'] = "Heatmap"
         data_chart['hoverinfo'] = "all"
         data_chart['type'] = 'heatmap'

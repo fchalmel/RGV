@@ -293,8 +293,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             var directory_list = [];
             var genes_list = {};
             for (var i=0;i<selected_lst.length;i++){
-                if (selected_lst[i].Directory !=null){
-                    directory_list.push(selected_lst[i].Directory);
+                if (selected_lst[i].path !=null){
+                    directory_list.push(selected_lst[i].path);
                 }else{
                     $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
                 }
@@ -321,8 +321,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             var directory_list = [];
             var genes_list = {};
             for (var i=0;i<selected_lst.length;i++){
-                if (selected_lst[i].Directory !=null){
-                    directory_list.push(selected_lst[i].Directory);
+                if (selected_lst[i].path !=null){
+                    directory_list.push(selected_lst[i].path);
                 }else{
                     $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
                 }
@@ -411,7 +411,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         }
     }
     
-    var startPromise = Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(response){
+    var startPromise = Dataset.data_frame({"name":"metadat.csv"}).$promise.then(function(response){
         return $q.when(response)
     })
     startPromise.then(function(value){
@@ -447,6 +447,215 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             $scope.main.gridApi = gridApi;
             $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
             gridApi.selection.on.rowSelectionChanged($scope, function(row) {
+            if(row.entity.type == 'sample_name'){
+                var index = $scope.selected.sample_name.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.sample_name.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.sample_name.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'exposed_to'){
+                var index = $scope.selected.exposed_to.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.exposed_to.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.exposed_to.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'cell_sorted'){
+                var index = $scope.selected.cell_sorted.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.cell_sorted.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.cell_sorted.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'mutant'){
+                var index = $scope.selected.mutant.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.mutant.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.mutant.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'antibody'){
+                var index = $scope.selected.antibody.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.antibody.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.antibody.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'age'){
+                var index = $scope.selected.age.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.age.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.age.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'developmental_stage'){
+                var index = $scope.selected.developmental_stage.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.developmental_stage.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.developmental_stage.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'sex'){
+                var index = $scope.selected.sex.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.sex.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.sex.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'tissue_or_cell'){
+                var index = $scope.selected.tissue_or_cell.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.tissue_or_cell.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.tissue_or_cell.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'experimental_design'){
+                var index = $scope.selected.experimental_design.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.experimental_design.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.experimental_design.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'biological_topics'){
+                var index = $scope.selected.biological_topics.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.biological_topics.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.biological_topics.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'strand_information'){
+                var index = $scope.selected.strand_information.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.strand_information.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.strand_information.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'single_or_paired'){
+                var index = $scope.selected.single_or_paired.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.single_or_paired.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.single_or_paired.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'ome'){
+                var index = $scope.selected.ome.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.ome.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.ome.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'platform'){
+                var index = $scope.selected.platform.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.platform.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.platform.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+            if(row.entity.type == 'article'){
+                var index = $scope.selected.article.indexOf(row.entity.selection);
+                if ( index != -1){
+                    $scope.selected.article.splice(index,1);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                    
+                } else{
+                    $scope.selected.article.push(row.entity.selection);
+                    $scope.second.gridApi.grid.refresh();
+                    
+                };
+            }
+
             if(row.entity.type == 'species'){
                 var index = $scope.selected.species.indexOf(row.entity.selection);
                 if ( index != -1){
@@ -651,8 +860,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         var genes_list = {};
         var name = '';
         for (var i=0;i<selected_lst.length;i++){
-            if (selected_lst[i].Directory !=null){
-                directory_list.push(selected_lst[i].Directory);
+            if (selected_lst[i].path !=null){
+                directory_list.push(selected_lst[i].path);
                 name = selected_lst[i].Author+'_'+selected_lst[i].Year
             }else{
                 $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
@@ -678,7 +887,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
 
     $scope.select_genes = function(stud,selectedgene){
         $scope.msg = []
-        var name = stud.Directory;
+        var name = stud.path;
         selectedgene['stud_name'] = name;
         selectedgene['display'] = false;
         if ($scope.val_button[name] == undefined ){
@@ -830,7 +1039,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         }
     }
     
-    var startPromise = Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(response){
+    var startPromise = Dataset.data_frame({"name":"metadata.csv"}).$promise.then(function(response){
         return $q.when(response)
     })
     startPromise.then(function(value){
@@ -866,32 +1075,241 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
             $scope.main.gridApi = gridApi;
             $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
             gridApi.selection.on.rowSelectionChanged($scope, function(row) {
-            if(row.entity.type == 'species'){
-                var index = $scope.selected.species.indexOf(row.entity.selection);
-                if ( index != -1){
-                    $scope.selected.species.splice(index,1);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                    
-                } else{
-                    $scope.selected.species.push(row.entity.selection);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                };
-            }
-            if(row.entity.type == 'technology'){
-                var index = $scope.selected.technology.indexOf(row.entity.selection);
-                if ( index != -1){
-                    $scope.selected.technology.splice(index,1);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                    
-                } else{
-                    $scope.selected.technology.push(row.entity.selection);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                };
-            }
+                if(row.entity.type == 'sample_name'){
+                    var index = $scope.selected.sample_name.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.sample_name.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.sample_name.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'exposed_to'){
+                    var index = $scope.selected.exposed_to.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.exposed_to.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.exposed_to.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'cell_sorted'){
+                    var index = $scope.selected.cell_sorted.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.cell_sorted.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.cell_sorted.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'mutant'){
+                    var index = $scope.selected.mutant.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.mutant.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.mutant.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'antibody'){
+                    var index = $scope.selected.antibody.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.antibody.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.antibody.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'age'){
+                    var index = $scope.selected.age.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.age.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.age.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'developmental_stage'){
+                    var index = $scope.selected.developmental_stage.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.developmental_stage.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.developmental_stage.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'sex'){
+                    var index = $scope.selected.sex.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.sex.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.sex.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'tissue_or_cell'){
+                    var index = $scope.selected.tissue_or_cell.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.tissue_or_cell.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.tissue_or_cell.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'experimental_design'){
+                    var index = $scope.selected.experimental_design.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.experimental_design.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.experimental_design.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'biological_topics'){
+                    var index = $scope.selected.biological_topics.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.biological_topics.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.biological_topics.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'strand_information'){
+                    var index = $scope.selected.strand_information.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.strand_information.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.strand_information.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'single_or_paired'){
+                    var index = $scope.selected.single_or_paired.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.single_or_paired.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.single_or_paired.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'ome'){
+                    var index = $scope.selected.ome.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.ome.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.ome.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'platform'){
+                    var index = $scope.selected.platform.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.platform.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.platform.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'article'){
+                    var index = $scope.selected.article.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.article.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.article.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+    
+                if(row.entity.type == 'species'){
+                    var index = $scope.selected.species.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.species.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.species.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'technology'){
+                    var index = $scope.selected.technology.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.technology.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.technology.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
                 
             });
         }
@@ -1070,8 +1488,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         var genes_list = {};
         var name = '';
         for (var i=0;i<selected_lst.length;i++){
-            if (selected_lst[i].Directory !=null){
-                directory_list.push(selected_lst[i].Directory);
+            if (selected_lst[i].path !=null){
+                directory_list.push(selected_lst[i].path);
                 name = selected_lst[i].Author+'_'+selected_lst[i].Year
             }else{
                 $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
@@ -1097,7 +1515,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
 
     $scope.select_genes = function(stud,selectedgene){
         $scope.msg = []
-        var name = stud.Directory;
+        var name = stud.path;
         selectedgene['stud_name'] = name;
         selectedgene['display'] = false;
         if ($scope.val_button[name] == undefined ){
@@ -1224,7 +1642,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         }
     }
     
-    var startPromise = Dataset.data_frame({"name":"studies.txt"}).$promise.then(function(response){
+    var startPromise = Dataset.data_frame({"name":"metadata.csv"}).$promise.then(function(response){
         return $q.when(response)
     })
     startPromise.then(function(value){
@@ -1259,32 +1677,241 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             $scope.main.gridApi = gridApi;
             $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
             gridApi.selection.on.rowSelectionChanged($scope, function(row) {
-            if(row.entity.type == 'species'){
-                var index = $scope.selected.species.indexOf(row.entity.selection);
-                if ( index != -1){
-                    $scope.selected.species.splice(index,1);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                    
-                } else{
-                    $scope.selected.species.push(row.entity.selection);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                };
-            }
-            if(row.entity.type == 'technology'){
-                var index = $scope.selected.technology.indexOf(row.entity.selection);
-                if ( index != -1){
-                    $scope.selected.technology.splice(index,1);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                    
-                } else{
-                    $scope.selected.technology.push(row.entity.selection);
-                    $scope.second.gridApi.grid.refresh();
-                    
-                };
-            }
+                if(row.entity.type == 'sample_name'){
+                    var index = $scope.selected.sample_name.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.sample_name.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.sample_name.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'exposed_to'){
+                    var index = $scope.selected.exposed_to.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.exposed_to.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.exposed_to.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'cell_sorted'){
+                    var index = $scope.selected.cell_sorted.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.cell_sorted.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.cell_sorted.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'mutant'){
+                    var index = $scope.selected.mutant.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.mutant.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.mutant.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'antibody'){
+                    var index = $scope.selected.antibody.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.antibody.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.antibody.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'age'){
+                    var index = $scope.selected.age.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.age.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.age.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'developmental_stage'){
+                    var index = $scope.selected.developmental_stage.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.developmental_stage.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.developmental_stage.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'sex'){
+                    var index = $scope.selected.sex.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.sex.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.sex.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'tissue_or_cell'){
+                    var index = $scope.selected.tissue_or_cell.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.tissue_or_cell.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.tissue_or_cell.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'experimental_design'){
+                    var index = $scope.selected.experimental_design.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.experimental_design.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.experimental_design.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'biological_topics'){
+                    var index = $scope.selected.biological_topics.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.biological_topics.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.biological_topics.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'strand_information'){
+                    var index = $scope.selected.strand_information.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.strand_information.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.strand_information.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'single_or_paired'){
+                    var index = $scope.selected.single_or_paired.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.single_or_paired.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.single_or_paired.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'ome'){
+                    var index = $scope.selected.ome.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.ome.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.ome.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'platform'){
+                    var index = $scope.selected.platform.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.platform.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.platform.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'article'){
+                    var index = $scope.selected.article.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.article.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.article.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+    
+                if(row.entity.type == 'species'){
+                    var index = $scope.selected.species.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.species.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.species.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
+                if(row.entity.type == 'technology'){
+                    var index = $scope.selected.technology.indexOf(row.entity.selection);
+                    if ( index != -1){
+                        $scope.selected.technology.splice(index,1);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                        
+                    } else{
+                        $scope.selected.technology.push(row.entity.selection);
+                        $scope.second.gridApi.grid.refresh();
+                        
+                    };
+                }
                 
             });
         }
@@ -1460,8 +2087,8 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         var genes_list = {};
         var name = '';
         for (var i=0;i<selected_lst.length;i++){
-            if (selected_lst[i].Directory !=null){
-                directory_list.push(selected_lst[i].Directory);
+            if (selected_lst[i].path !=null){
+                directory_list.push(selected_lst[i].path);
                 name = selected_lst[i].Author+'_'+selected_lst[i].Year
             }else{
                 $scope.msg.push(" No data available for study: "+selected_lst[i].Study+';');
@@ -1487,7 +2114,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
 
     $scope.select_genes = function(stud,selectedgene){
         $scope.msg = []
-        var name = stud.Directory;
+        var name = stud.path;
         selectedgene['stud_name'] = name;
 
         if ($scope.allgenes.hasOwnProperty(name)) {
