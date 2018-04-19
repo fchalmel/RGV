@@ -488,6 +488,18 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,ngTableParams
             $scope.chosen.splice(index,1);
         };
     }
+
+    $scope.select_study = function(study){
+        study.selected ? study.selected = false : study.selected = true;
+    }
+
+    $scope.getAllSelectedRows = function() {
+        var selectedRows = $filter("filter")($scope.data_all, {
+          selected: true
+        }, true);
+        
+        $scope.chosen = selectedRows;
+      }
     
     $scope.get_genes = function(val,database,stud,speciesDict) {
         var species_val = '';
