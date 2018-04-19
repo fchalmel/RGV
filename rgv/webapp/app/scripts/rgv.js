@@ -931,11 +931,11 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
     $scope.get_genes = function(val,database,stud,speciesDict) {
         var species_val = '';
         for(var i=0;i<speciesDict.length;i++){
-            if(speciesDict[i].name == stud.Species){
+            if(speciesDict[i].name == stud.species){
                 species_val = speciesDict[i].tax_id;
             }
         }
-        console.log(stud.Species)
+        console.log(stud.species)
         return Dataset.autocomplete({},{'database':database,'search':val,'tax_id':species_val}).$promise.then(function(data){
             return data.map(function(item){
                     return item;
@@ -971,7 +971,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
         var list_x = x.split("\n");
         var species_val = '';
         for(var i=0;i<speciesDict.length;i++){
-            if(speciesDict[i].name == stud.Species){
+            if(speciesDict[i].name == stud.species){
                 species_val = speciesDict[i].tax_id;
             }
         }
@@ -1559,11 +1559,11 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
     $scope.get_genes = function(val,database,stud,speciesDict) {
         var species_val = '';
         for(var i=0;i<speciesDict.length;i++){
-            if(speciesDict[i].name == stud.Species){
+            if(speciesDict[i].name == stud.species){
                 species_val = speciesDict[i].tax_id;
             }
         }
-        console.log(stud.Species)
+        console.log(stud.species)
         return Dataset.autocomplete({},{'database':database,'search':val,'tax_id':species_val}).$promise.then(function(data){
             return data.map(function(item){
                     return item;
@@ -2151,11 +2151,11 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     $scope.get_genes = function(val,database,stud,speciesDict) {
         var species_val = '';
         for(var i=0;i<speciesDict.length;i++){
-            if(speciesDict[i].name == stud.Species){
+            if(speciesDict[i].name == stud.species){
                 species_val = speciesDict[i].tax_id;
             }
         }
-        console.log(stud.Species)
+        console.log(stud.species)
         return Dataset.autocomplete({},{'database':database,'search':val,'tax_id':species_val}).$promise.then(function(data){
             return data.map(function(item){
                     return item;
