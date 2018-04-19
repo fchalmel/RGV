@@ -106,7 +106,9 @@ def d_getter(request):
     for techno in df_filtered :
         data_filter.append({'selection':techno,'type':'technology','$$treeLevel':1})
 
-    return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
+    #return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
+    # Test new table 
+    return {'data':final_df}
 
 @view_config(route_name='checkgene', renderer='json', request_method='POST')
 def check(request):
