@@ -45,6 +45,7 @@ def main(global_config, **settings):
     config.registry.dataset_path = settings['dataset_path']
     config.registry.script_path = settings['script_path']
     config.registry.download_path = settings['download_path']
+    config.registry.studies_path = settings['studies_path']
 
     config.registry.filter = settings['filter'].split(',')
     config.registry.col_display = settings['column'].split(',')
