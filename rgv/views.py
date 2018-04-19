@@ -96,12 +96,13 @@ def d_getter(request):
         displays.append({'name':el})
 
     #Create Data treeview for filtering grid (Species, Technology...)
-    df_filtered = df.Species.unique()
-    data_filter = [{'selection':'Species','type':'species','$$treeLevel':0}]
+    df_filtered = df.species.unique()
+    data_filter = [{'selection':'species','type':'species','$$treeLevel':0}]
     for spe in df_filtered :
         data_filter.append({'selection':spe,'type':'species','$$treeLevel':1})
-    df_filtered = df.Technology.unique()
-    data_filter.append({'selection':'Technologies','type':'technology','$$treeLevel':0})
+    
+    df_filtered = df.technology.unique()
+    data_filter.append({'selection':'technology','type':'technology','$$treeLevel':0})
     for techno in df_filtered :
         data_filter.append({'selection':techno,'type':'technology','$$treeLevel':1})
 
