@@ -101,10 +101,12 @@ def d_getter(request):
     df_technology = df.technology.unique()
     df_sex = df.sex.unique()
 
+    print df_sex
+    print list(df_sex)
 
     #return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
     # Test new table 
-    return {'data':final_df,'species':df_species,'ome':df_ome,'technology':df_technology,'sex':df_sex}
+    return {'data':final_df,'species':list(df_species),'ome':list(df_ome),'technology':list(df_technology),'sex':list(df_sex)}
 
 @view_config(route_name='checkgene', renderer='json', request_method='POST')
 def check(request):
