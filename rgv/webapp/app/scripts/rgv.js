@@ -454,7 +454,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
     });
     
     $scope.replaceString = function(stingToReplace){
-        console.log(stingToReplace);
         if (stingToReplace == null){
             return " ";
         }
@@ -479,6 +478,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         }, true);
         
         $scope.chosen = selectedRows;
+        selected_lst = $scope.chosen;
         $scope.msg = [];
         var directory_list = [];
         var genes_list = {};
@@ -1251,7 +1251,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         
         
     }
-    
+
     //GridData (ag-grid) system definition
     $scope.main = {};
     $scope.second = {};
@@ -1324,7 +1324,8 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             isSelected: true
             }, true);
             
-            $scope.chosen = selectedRows;
+        $scope.chosen = selectedRows;
+        selected_lst = $scope.chosen;
         $scope.msg = [];
         var directory_list = [];
         var genes_list = {};
