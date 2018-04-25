@@ -86,7 +86,7 @@ def read_file(request):
 def d_getter(request):
     form = json.loads(request.body, encoding=request.charset)
     file_name = form['name']
-    url_file = os.path.join(request.registry.dataset_path,file_name)
+    url_file = os.path.join(request.registry.dataset_path,'metadata.csv')
     df = pd.read_csv(url_file,sep=',')
     df_json = df.to_json(orient='records')
     final_df = json.loads(df_json)
@@ -103,7 +103,7 @@ def d_getter(request):
 
     #return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
     # Test new table 
-    return {'data':final_df,'species':df_species,'ome':df_ome,'technology':df_technology,'sex':df_sex}
+    return {'data':final_df,'species':df_species,'ome':df_ome,'technology':df_technology}
 
 @view_config(route_name='checkgene', renderer='json', request_method='POST')
 def check(request):

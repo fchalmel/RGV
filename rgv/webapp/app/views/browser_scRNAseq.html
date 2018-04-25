@@ -5,9 +5,21 @@
 <link href="styles/singlecellvisu.css" rel="stylesheet">
 <script src="scripts/plotly-latest.min.js"></script>
 <style>
-  tr.selected td {
-  background: #ccc!important;
+  .st-selected > td {
+  background: aliceblue;
 }
+table  {
+    font-size: 10px;
+}
+.form-control  {
+    font-size: 10px;
+    height: 27px;
+}
+.input-sm  {
+    font-size: 10px;
+    height: 27px;
+}
+
 </style>
 
 
@@ -88,53 +100,6 @@ stepnext(1);
         </div> <!-- panel-content
       </div> <!-- panel-container 
   </div> <!-- panel -->
-
-  <div class="slide-panel from-left no-touch" style="z-index:95;">
-  <header class="panel-header">
-      <h2>Select your study</h2>
-      <a href="#" class="panel-close" ng-click="getAllSelectedRows()"></a>
-    </header>
-
-    <div class="panel-container">
-      <div class="panel-content">
-          <table ng-table="ExperimentalTable"  show-filter="true" class="table table-striped" export-csv="csv" separator=";" export-csv-ignore="ignore">
-              <tr ng-repeat="val in $data" ng-class="{'selected': val.selected}" ng-click="select_study(val)">
-                <td ng-if="val.path !=''" data-title="'Article'" >{{val.article}}</td>
-                <td ng-if="val.path !=''" data-title="'Platform'">{{val.platform}}</td>
-                <td ng-if="val.path !=''" data-title="'Technology'" filter="{technology: 'select'}" filter-data="technology">{{val.technology}}</td>
-                <td ng-if="val.path !=''" data-title="'Ome'" filter="{ome: 'select'}" filter-data="ome">{{val.ome}}</td>
-                <td ng-if="val.path !=''" data-title="'Single or paired'">{{val.single_or_paired}}</td>
-                <td ng-if="val.path !=''" data-title="'Strand'">{{val.strand_information}}</td>
-                <td ng-if="val.path !=''" data-title="'Species'" filter="{species: 'select'}" filter-data="allspe">{{val.species}}</td>
-                <td ng-if="val.path !=''" data-title="'Biological topics'">{{val.biological_topics}}</td>
-                <td ng-if="val.path !=''" data-title="'Experimental design'">{{val.experimental_design}}</td>
-                <td ng-if="val.path !=''" data-title="'Tissue or cell'">{{val.tissue_or_cell}}</td>
-                <td ng-if="val.path !=''" data-title="'Sex'" filter="{sex: 'select'}" filter-data="sex">{{val.sex}}</td>
-                <td ng-if="val.path !=''" data-title="'Developmental stage'">{{val.developmental_stage}}</td>
-                <td ng-if="val.path !=''" data-title="'Age'">{{val.age}}</td>
-                <td ng-if="val.path !=''" data-title="'Antibody'">{{val.antibody}}</td>
-                <td ng-if="val.path !=''" data-title="'Mutant'">{{val.mutant}}</td>
-                <td ng-if="val.path !=''" data-title="'Cell sorted'">{{val.cell_sorted}}</td>
-                <td ng-if="val.path !=''" data-title="'Exposition'">{{val.exposed_to}}</td>
-                <td ng-if="val.path !=''" data-title="'Sample name'">{{val.sample_name}}</td>
-
-
-
-
-                <!--<td data-title="'Chemical'" sortable="'Chemical'">{{val.chemical}}</td>
-                <td data-title="'Dose'" sortable="'Dose'">{{val.dose}}</td>
-                <td data-title="'Time'" sortable="'Time'">{{val.time}}</td>
-                <td data-title="'Tissue'" sortable="'Tissue'">{{val.tissue}}</td>
-                <td data-title="'Generation'">{{val.generation}}</td>
-                <td data-title="'Signature ID'">{{val.id['signatures']}}</td>-->
-              </tr>
-            </table>
-
-
-      </div> <!-- panel-content-->
-    </div> <!-- panel-container -->
-</div> <!-- panel -->
-
   
     <div class="stepwizard">
       <div class="stepwizard-row">
@@ -152,41 +117,125 @@ stepnext(1);
           <!-- STEP 1 -->
           <div class="tab-pane fade padding20 " id="step-1">
               <h3> Step 1 - Select your study</h3>
+              <table st-table="displayedCollection" st-safe-src="data_all" class="table">
+                  <thead>
+                    <tr>
+                      <th st-sort-default="true" st-sort="article">Article</th>
+                      <th st-sort="platform">Platform</th>
+                      <th st-sort="technology">Technology</th>
+                      <th st-sort="ome">Ome</th>
+                      <th st-sort="species">Species</th>
+                      <th st-sort="biological_topics">Biological topics</th>
+                      <th st-sort="experimental_design">Experimental design</th>
+                      <th st-sort="tissue_or_cell">Tissue/Cell</th>
+                      <th st-sort="sex">Sex</th>
+                      <th st-sort="developmental_stage">Developmental stage</th>
+                      <th st-sort="age">Age</th>
+                      <th st-sort="antibody">Antibody</th>
+                      <th st-sort="mutant">Mutant</th>
+                      <th st-sort="cell_sorted">Cell sorted</th>
+                    </tr>
+                    <tr>
+                        <th>
+                          <input st-search="article" placeholder="Article" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <select st-search="platform" class="form-control">
+                                <option value="">Platform</option>
+                                <option ng-repeat="row in data_all | unique:'platform'" value="{{row.platform}}">{{row.platform}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="technology" class="form-control">
+                                <option value="">Technology</option>
+                                <option ng-repeat="row in data_all | unique:'technology'" value="{{row.technology}}">{{row.technology}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="ome" class="form-control">
+                                <option value="">Ome</option>
+                                <option ng-repeat="row in data_all | unique:'ome'" value="{{row.ome}}">{{row.ome}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="species" class="form-control">
+                                <option value="">Search for species</option>
+                                <option ng-repeat="row in data_all | unique:'species'" value="{{row.species}}">{{row.species}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <input st-search="biological_topics" placeholder="Biological topics" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <select st-search="species" class="form-control">
+                                <option value="">Experimental design</option>
+                                <option ng-repeat="row in data_all | unique:'experimental_design'" value="{{row.experimental_design}}">{{row.experimental_design}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <input st-search="tissue_or_cell" placeholder="Tissue/cell" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <select st-search="sex" class="form-control">
+                                <option value="">Sex</option>
+                                <option ng-repeat="row in data_all | unique:'sex'" value="{{row.sex}}">{{row.sex}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <input st-search="developmental_stage" placeholder="Developmental stage" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <input st-search="age" placeholder="Age" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <input st-search="antibody" placeholder="Antibody" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <input st-search="mutant" placeholder="Mutant" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <input st-search="cell_sorted" placeholder="Cell sorted" class="input-sm form-control" type="search"/>
+                        </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr st-select-row="row" st-select-mode="multiple" ng-repeat="row in displayedCollection" >
+                      <td>{{row.article}}</td>
+                      <td>{{row.platform}}</td>
+                      <td>{{row.technology}}</td>
+                      <td>{{row.ome}}</td>
+                      <td>{{replaceString(row.species)}}</td>
+                      <td>{{replaceString(row.biological_topics)}}</td>
+                      <td>{{replaceString(row.experimental_design)}}</td>
+                      <td>{{replaceString(row.tissue_or_cell)}}</td>
+                      <td>{{replaceString(row.sex)}}</td>
+                      <td>{{replaceString(row.developmental_stage)}}</td>
+                      <td>{{ replaceString(row.age)}}</td>
+                      <td>{{replaceString(row.antibody)}}</td>
+                      <td>{{replaceString(row.mutant)}}</td>
+                      <td>{{replaceString(row.cell_sorted)}}</td>
+
+                    </tr>
+                  </tbody>
+                  <tbody ng-if="!displayedCollection">
+                      <tr>
+                        <td colspan="2">Loading ...</td>
+                      </tr>
+                    </tbody>
+                </table>
+              
+             
+        
               <div class="row">
                   <div class="col-xs-6 col-md-4 col-lg-4">
                     <div>
                         <form >
                             <div class="input-group">
-                                <a href="" class="btn panel-open"><button class="btn btn-default">Select study</button></a>
+                               <button class="btn btn-default" ng-click="showData(chosen,'',models)" onclick="stepnext(2);">Select study</button>
                             </div>
                         </form>
                     </div>
-                  </div><!--
-                  --><div class="col-xs-6 col-md-8 col-lg-8">
-                      <div class="list-group" >
-                          <div class="list-group-item" ng-repeat="study in chosen" style="margin-bottom:10px">
-                            <a ng-click="remove_study(study)"><i class="fas fa-times panel-close" style="color: white; text-decoration: none;background:#d80606;"></i></a>
-                            <div class="pull-left form-control-inline">
-                              <h4 class="list-group-item-heading">{{ study.article }}</h4>
-                              <p class="list-group-item-text">Ome: {{ study.ome }}</p>
-                              <p class="list-group-item-text">Species: {{ study.species }}</p>
-                            </div>
-                            <div class="clearfix" ></div>
-                            
-                          </div>
-                      </div>
                   </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-6 col-md-4 col-lg-4">
-                  <div>
-                      <form >
-                          <div class="input-group">
-                              <button ng-if="chosen.length > 0" class="btn btn-default"  ng-click="showData(chosen,'',models)" onclick="stepnext(2);" type="button"><i class="icon-next"></i> View</button>
-                          </div>
-                      </form>
-                  </div>
-                </div>
               </div>
           </div>
           
