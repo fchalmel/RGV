@@ -1237,7 +1237,6 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     };
 
     $scope.replaceString = function(stingToReplace){
-        console.log(stingToReplace);
         if (stingToReplace == null){
             return " ";
         }
@@ -1300,7 +1299,6 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     startPromise.then(function(value){
         var data_all = value.data;
         $scope.filterD = value.filter;
-        console.log(value)
         $scope.data_all = value.data;
         $scope.ome = value.ome;
         $scope.allspe = value.species;
