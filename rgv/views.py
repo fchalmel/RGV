@@ -221,7 +221,7 @@ def genelevel(request):
                     chart['name'] = gene_name
                     chart['title'] = "violin"
                     chart['selected'] = selected_class
-                    chart['layout'] = { 'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-100},"title":'',}
+                    chart['layout'] = { 'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":'',}
                     chart['gene'] = gene_name
                     chart['msg'] = ""
                     chart['study'] = study
@@ -271,7 +271,7 @@ def genelevel(request):
                     chart['name'] = "No selected gene"
                     chart['title'] = "violin"
                     chart['selected'] = ''
-                    chart['layout'] = {'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-100},"title":''}
+                    chart['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
                     chart['gene'] = ""
                     chart['msg'] = "Please select at least one gene"
                     chart['study'] = study
@@ -288,7 +288,7 @@ def genelevel(request):
             chart['name'] = "No selected gene"
             chart['title'] = "violin"
             chart['selected'] = ''
-            chart['layout'] = {'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-100},"title":''}
+            chart['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
             chart['gene'] = ""
             chart['msg'] = "Please select at least one gene"
             chart['study'] = study
