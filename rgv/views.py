@@ -375,7 +375,7 @@ def scDataGenes(request):
                 chart['title'] = ""
                 chart['dir'] = stud
                 chart['selected'] = selected_class
-                chart['layout'] = {'height':500,'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+                chart['layout'] = {'height': 770,'width': 850,'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
                 chart['gene'] = gene_name
                 chart['msg'] = ""
                 chart['study'] = stud
@@ -446,7 +446,7 @@ def scDataGenes(request):
                 chart['violin']['name'] = "Violin plot of: %s " % (gene_name)
                 chart['violin']['title'] = "violin"
                 chart['violin']['selected'] = selected_class
-                chart['violin']['layout'] = { 'xaxis': {'autorange': True},'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":'','margin':{'l':200}}
+                chart['violin']['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
                 chart['violin']['gene'] = gene_name
                 chart['violin']['msg'] = ""
                 chart['violin']['study'] = stud
