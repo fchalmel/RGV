@@ -24,6 +24,7 @@ import shutil
 import urllib2
 from zipfile import ZipFile
 import gzip
+from time import gmtime, strftime
 
 # création de l'objet logger qui va nous servir à écrire dans les logs
 logger = logging.getLogger()
@@ -245,3 +246,5 @@ def InsertCollections(genefile):
         print("errno: ", e.errno)
         print("filename: ", e.filename)
         print("strerror: ", e.strerror)
+
+

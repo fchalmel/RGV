@@ -1032,6 +1032,7 @@ def user_recover(request):
 @view_config(route_name='login', renderer='json', request_method='POST')
 def login(request):
     form = json.loads(request.body, encoding=request.charset)
+    print form
     user_in_db = request.registry.db_mongo['users'].find_one({'id': form['user_name']})
     if user_in_db is None:
         return {'msg': 'Invalid email'}
