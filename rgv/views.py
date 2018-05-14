@@ -271,7 +271,7 @@ def genelevel(request):
                     chart['name'] = "No selected gene"
                     chart['title'] = "violin"
                     chart['selected'] = ''
-                    chart['layout'] = { 'xaxis': {'autorange': True},'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":'','margin':{'l':200}}
+                    chart['layout'] = {'showlegend': False, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
                     chart['gene'] = ""
                     chart['msg'] = "Please select at least one gene"
                     chart['study'] = study
@@ -288,7 +288,7 @@ def genelevel(request):
             chart['name'] = "No selected gene"
             chart['title'] = "violin"
             chart['selected'] = ''
-            chart['layout'] = { 'xaxis': {'autorange': True},'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":'','margin':{'l':200}}
+            chart['layout'] = { 'showlegend': False, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
             chart['gene'] = ""
             chart['msg'] = "Please select at least one gene"
             chart['study'] = study
@@ -375,7 +375,7 @@ def scDataGenes(request):
                 chart['title'] = ""
                 chart['dir'] = stud
                 chart['selected'] = selected_class
-                chart['layout'] = {'height':500,'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+                chart['layout'] = {'showlegend': False, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
                 chart['gene'] = gene_name
                 chart['msg'] = ""
                 chart['study'] = stud
@@ -446,7 +446,7 @@ def scDataGenes(request):
                 chart['violin']['name'] = "Violin plot of: %s " % (gene_name)
                 chart['violin']['title'] = "violin"
                 chart['violin']['selected'] = selected_class
-                chart['violin']['layout'] = { 'xaxis': {'autorange': True},'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":'','margin':{'l':200}}
+                chart['violin']['layout'] = {'showlegend': False, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
                 chart['violin']['gene'] = gene_name
                 chart['violin']['msg'] = ""
                 chart['violin']['study'] = stud
@@ -504,7 +504,7 @@ def scDataGenes(request):
             chart['name'] = "Classification by: %s" % (selected_class)
             chart['selected'] = selected_class
             chart['dir'] = stud
-            chart['layout'] = {'height':500,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+            chart['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
             chart['gene'] = ""
             chart['msg'] = []
             for cond in uniq_groups :
@@ -593,7 +593,7 @@ def scData(request):
         chart['study'] = name
         chart['name'] = "Classification by: %s" % (selected_class)
         chart['dir'] = stud
-        chart['layout'] = {'height':500,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+        chart['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
         chart['gene'] = ""
         chart['msg'] = []
         for cond in uniq_groups :
