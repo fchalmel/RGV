@@ -375,7 +375,7 @@ def scDataGenes(request):
                 chart['title'] = ""
                 chart['dir'] = stud
                 chart['selected'] = selected_class
-                chart['layout'] = {'height': 750,'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+                chart['layout'] = {'height': 770,'showlegend': False, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-400},"title":''}
                 chart['gene'] = gene_name
                 chart['msg'] = ""
                 chart['study'] = stud
@@ -446,7 +446,7 @@ def scDataGenes(request):
                 chart['violin']['name'] = "Violin plot of: %s " % (gene_name)
                 chart['violin']['title'] = "violin"
                 chart['violin']['selected'] = selected_class
-                chart['violin']['layout'] = {'height': 770,'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
+                chart['violin']['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
                 chart['violin']['gene'] = gene_name
                 chart['violin']['msg'] = ""
                 chart['violin']['study'] = stud
@@ -504,7 +504,7 @@ def scDataGenes(request):
             chart['name'] = "Classification by: %s" % (selected_class)
             chart['selected'] = selected_class
             chart['dir'] = stud
-            chart['layout'] = {'height':500,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'},"title":''}
+            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-400},"title":''}
             chart['gene'] = ""
             chart['msg'] = []
             for cond in uniq_groups :
@@ -593,7 +593,7 @@ def scData(request):
         chart['study'] = name
         chart['name'] = "Classification by: %s" % (selected_class)
         chart['dir'] = stud
-        chart['layout'] = {'autosize': False,'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-300},"title":''}
+        chart['layout'] = {'autosize': False,'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-400},"title":''}
         chart['gene'] = ""
         chart['msg'] = []
         for cond in uniq_groups :
