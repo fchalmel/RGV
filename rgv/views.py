@@ -271,7 +271,7 @@ def genelevel(request):
                     chart['name'] = "No selected gene"
                     chart['title'] = "violin"
                     chart['selected'] = ''
-                    chart['layout'] = { 'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-100},"title":'','margin':{'l':300}}
+                    chart['layout'] = { 'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-100},"title":'','margin':{'l':500}}
                     chart['gene'] = ""
                     chart['msg'] = "Please select at least one gene"
                     chart['study'] = study
@@ -288,7 +288,7 @@ def genelevel(request):
             chart['name'] = "No selected gene"
             chart['title'] = "violin"
             chart['selected'] = ''
-            chart['layout'] = { 'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-100},"title":'','margin':{'l':300}}
+            chart['layout'] = { 'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':-100,'y':-100},"title":'','margin':{'l':500}}
             chart['gene'] = ""
             chart['msg'] = "Please select at least one gene"
             chart['study'] = study
