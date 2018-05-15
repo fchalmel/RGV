@@ -162,16 +162,47 @@ angular.module('rgv').controller('userCtrl',
 
 ////////////////////// Studies ///////////////////////////////////////
 angular.module('rgv').controller('studiesCtrl',
-    function ($scope,$rootScope, $log, Auth, User) {
+    function ($scope,$rootScope, $log, Auth, User,$q, Dataset) {
 
-        Dataset.study_feed().$promise.then(function(response){
-            if(news.status != 1){
-              $scope.studies = response.data;
-            }
-            else {
-              $scope.msg = response.msg;
-            };
+        var startPromise = Dataset.data_frame({"name":"metadata.csv"}).$promise.then(function(response){
+            return $q.when(response)
+        })
+        startPromise.then(function(value){
+            $scope.data_all = value.data;
+            $scope.ome = value.ome;
+            $scope.allspe = value.species;
+            $scope.techno = value.technology;
+            $scope.sex = value.sex
+    
+            //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
+            $scope.displayedCollection = [].concat($scope.data_all);
         });
+
+        $scope.replaceString = function(stingToReplace){
+            if (stingToReplace == null){
+                return " ";
+            }
+            if (stingToReplace.indexOf('|') > -1){
+                var finalString = stingToReplace.split('|').join(', ');
+                return finalString;
+            } else {
+                return stingToReplace;
+            }
+            
+            
+        }
+
+        $scope.getSampleNumber = function(SRRList){
+            if (stingToReplace == null){
+                return " ";
+            }
+            if (stingToReplace.indexOf('|') > -1){
+                var finalString = stingToReplace.split('|');
+                return finalString.length;
+            } else {
+                return 1;
+            }
+        }
 
 });
 
@@ -404,7 +435,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             var field = dataset.data.line[i].split('\t');
             $scope.species.push({'name':field[0],'tax_id':field[2].replace(/[\n]/gi, "" )});
         }
-        console.log($scope.species);
     });
 
     $scope.getTaxID = function(Species,speciesDict){
@@ -467,7 +497,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         return $q.when(response)
     })
     startPromise.then(function(value){
-        console.log(value)
         $scope.data_all = value.data;
         $scope.ome = value.ome;
         $scope.allspe = value.species;
@@ -486,7 +515,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         }
         if (stingToReplace.indexOf('|') > -1){
             var finalString = stingToReplace.split('|').join(', ');
-            console.log(finalString);
             return finalString;
         } else {
             return stingToReplace;
@@ -524,7 +552,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
 
                 $scope.time = response.time;
                 $scope.charts = response.charts;
-                console.log(response);
             });
         }else{
             $scope.msgwrn ="No data available. Please select other studies or contact RGV support.";
@@ -573,7 +600,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
 
     $scope.remove_study = function(study){
         var index = $scope.chosen.indexOf(study);
-        console.log(study)
         if ( index != -1){
             $scope.chosen.splice(index,1);
         };
@@ -725,416 +751,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
     $scope.selected = {'species':[],'technology':[]};
 
     //main grid --> Grille gauche: pré-filtre les valeures de la grille droite
-    $scope.main.gridOptions = {
-        enableRowSelection: true,
-        showTreeRowHeader: true,
-        enableRowHeaderSelection: true, // Display checkboxes on every row when it's true
-        showTreeExpandNoChildren: true, 
-        enableGridMenu: false,
-        enableColumnMenus: false,
-        multiSelect: true,
-        columnDefs: [{ name: 'Selection',field:'selection',enableSorting: false ,enableColumnMenu: false, width: '40%' },],
-        onRegisterApi: function( gridApi ) {
-            $scope.main.gridApi = gridApi;
-            $scope.mySelectedRows = $scope.main.gridApi.selection.getSelectedRows();
-            gridApi.selection.on.rowSelectionChanged($scope, function(row) {
-                if(row.entity.type == 'sample_name'){
-                    var index = $scope.selected.sample_name.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.sample_name.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.sample_name.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'exposed_to'){
-                    var index = $scope.selected.exposed_to.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.exposed_to.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.exposed_to.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'cell_sorted'){
-                    var index = $scope.selected.cell_sorted.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.cell_sorted.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.cell_sorted.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'mutant'){
-                    var index = $scope.selected.mutant.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.mutant.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.mutant.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'antibody'){
-                    var index = $scope.selected.antibody.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.antibody.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.antibody.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'age'){
-                    var index = $scope.selected.age.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.age.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.age.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'developmental_stage'){
-                    var index = $scope.selected.developmental_stage.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.developmental_stage.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.developmental_stage.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'sex'){
-                    var index = $scope.selected.sex.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.sex.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.sex.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'tissue_or_cell'){
-                    var index = $scope.selected.tissue_or_cell.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.tissue_or_cell.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.tissue_or_cell.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'experimental_design'){
-                    var index = $scope.selected.experimental_design.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.experimental_design.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.experimental_design.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'biological_topics'){
-                    var index = $scope.selected.biological_topics.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.biological_topics.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.biological_topics.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'strand_information'){
-                    var index = $scope.selected.strand_information.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.strand_information.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.strand_information.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'single_or_paired'){
-                    var index = $scope.selected.single_or_paired.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.single_or_paired.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.single_or_paired.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'ome'){
-                    var index = $scope.selected.ome.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.ome.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.ome.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'platform'){
-                    var index = $scope.selected.platform.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.platform.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.platform.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'article'){
-                    var index = $scope.selected.article.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.article.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.article.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
     
-                if(row.entity.type == 'species'){
-                    var index = $scope.selected.species.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.species.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.species.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                if(row.entity.type == 'technology'){
-                    var index = $scope.selected.technology.indexOf(row.entity.selection);
-                    if ( index != -1){
-                        $scope.selected.technology.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                        
-                    } else{
-                        $scope.selected.technology.push(row.entity.selection);
-                        $scope.second.gridApi.grid.refresh();
-                        
-                    };
-                }
-                
-            });
-        }
-    };
-
-    var rowsSelected = 0;
-    
-    //second grid --> Grille droite: informations sur les études en fonctions des filtres selectionnées
-    $scope.second.gridOptions = {
-        treeRowHeaderAlwaysVisible: true,
-        enableGridMenu: false,
-        enableSorting: true,
-        enableFiltering: true,
-        multiSelect: true,
-        flatEntityAccess: true,
-        showGridFooter: false,
-        fastWatch: true,
-        onRegisterApi: function( gridoApi ) {
-            $scope.second.gridApi = gridoApi;
-            $scope.second.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
-            $scope.mySelectedRows = $scope.second.gridApi.selection.getSelectedRows();
-            gridoApi.selection.on.rowSelectionChanged($scope, function(row) {
-                var msg = 'row selected ' + row.isSelected;
-                if(row.isSelected){
-                    rowsSelected += 1;
-                }
-                if(!row.isSelected){
-                    rowsSelected -= 1;
-                }
-                if(rowsSelected <= 3){
-                    
-                    var index = $scope.chosen.indexOf(row.entity);
-                    if ( index != -1){
-                        $scope.chosen.splice(index,1);
-                        $scope.second.gridApi.grid.refresh();
-                    } else{
-                        $scope.chosen.push(row.entity);
-                        $scope.second.gridApi.grid.refresh();
-                    }
-                }else{
-                    row.isSelected = false;
-                    $scope.msg.push("You can select only 1 study");
-                }
-            });
-        }
-    };
-
-    //refresh second grid an fonction de la main grid
-    $scope.filter = function() {
-        $scope.second.gridApi.grid.refresh();
-    };
-
-    //Fonction de filtration
-    $scope.singleFilter = function( renderableRows ){
-        if ($scope.selected.species.length > 0){
-            
-            renderableRows.forEach( function( row ) {
-            
-                // Test si.. en fonction de la selection de la grid 1
-                var match = false;
-                if ($scope.selected.technology.length > 0){
-                    if ($scope.selected.species.indexOf(row.entity.Species) > -1 && $scope.selected.technology.indexOf(row.entity.Technology) > -1) {
-                        match = true;
-                    }
-                    if ( !match ){
-                        row.visible = false;
-                    }
-                }else{
-                    if ($scope.selected.species.indexOf(row.entity.Species) > -1) {
-                        match = true;
-                    }
-                    if ( !match ){
-                        row.visible = false;
-                    }
-                }
-            });
-            if ($scope.filterValue !=null){
-                var matcher = new RegExp($scope.filterValue);
-                renderableRows.forEach( function( row ) {
-                    var match = false;
-                    $scope.filterD.forEach(function( field ){
-                        if ( row.entity[field].match(matcher) ){
-                            match = true;
-                        }
-                    });
-                    if ( !match ){
-                        row.visible = false;
-                    }
-                });
-                return renderableRows;
-
-            }else{
-                return renderableRows;
-            }
-        }
-        if ($scope.selected.technology.length > 0){
-            
-            renderableRows.forEach( function( row ) {
-            
-                // Test si.. en fonction de la selection de la grid 1
-                var match = false;
-                if ($scope.selected.species.length > 0){
-                    if ($scope.selected.species.indexOf(row.entity.Species) > -1 && $scope.selected.technology.indexOf(row.entity.Technology) > -1) {
-                        match = true;
-                    }
-                    if ( !match ){
-                        row.visible = false;
-                    }
-                }else{
-                    if ($scope.selected.technology.indexOf(row.entity.Technology) > -1) {
-                        match = true;
-                    }
-                    if ( !match ){
-                        row.visible = false;
-                    }
-                }
-            });
-            if ($scope.filterValue !=null){
-                var matcher = new RegExp($scope.filterValue);
-                renderableRows.forEach( function( row ) {
-                    var match = false;
-                    $scope.filterD.forEach(function( field ){
-                        if ( row.entity[field].match(matcher) ){
-                            match = true;
-                        }
-                    });
-                    if ( !match ){
-                        row.visible = false;
-                    }
-                });
-                return renderableRows;
-
-            }else{
-                return renderableRows;
-            }
-        }
-        else{
-            
-            renderableRows.forEach( function( row ) {
-                row.visible = true;
-            });
-            //Check fitration input
-            if ($scope.filterValue !=null){
-                var matcher = new RegExp($scope.filterValue);
-                renderableRows.forEach( function( row ) {
-                    var match = false;
-                    $scope.filterD.forEach(function( field ){
-                        if ( row.entity[field].match(matcher) ){
-                            match = true;
-                        }
-                    });
-                    if ( !match ){
-                        row.visible = false;
-                    }
-                });
-                return renderableRows;
-
-            }else{
-                return renderableRows;
-            }
-        }
-    };
     
     $scope.violinPlot = function(data){
         console.log(data);
@@ -1278,24 +895,13 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         
     }
 
-    //GridData (ag-grid) system definition
-    $scope.main = {};
-    $scope.second = {};
+
     $scope.filterValue = null;
     $scope.users;
     $scope.chosen = [];
     $scope.selected_gene = [];
     $scope.allgenes = {};
 
-    //Checkbox grid template
-    $templateCache.put('ui-grid/selectionRowHeaderButtons',
-        "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
-    );
-
-
-    $templateCache.put('ui-grid/selectionSelectAllButtons',
-        "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-all-selected': grid.selection.selectAll}\" ng-if=\"grid.options.enableSelectAll\"><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"grid.selection.selectAll\" ng-click=\"grid.selection.selectAll=!grid.selection.selectAll;headerButtonClick($event)\"></div>"
-    );
 
     //liste obj selectionnés
     

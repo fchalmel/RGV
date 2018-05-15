@@ -10,26 +10,31 @@
 <div>
 	<h3>Current list of studies integrated into the ReproGenomics Viewer</h3>
 	An excel sheet is available in the <a href="#/download">Download section</a> describing in more details the corresponding studies.
-	<table class="table table-hover">
-		<tr>
-			<th>Date (AAAA/MM/DD)</th>
+	<table st-table="displayedCollection" st-safe-src="data_all" class="table">
+		<thead>
+		  <tr>
+			<th>Article</th>
 			<th>Biological topic</th>
-			<th>Name</th>
-			<th>Short description</th>
-			<th>Genome</th>
+			<th>Species</th>
 			<th>Technology</th>
 			<th>n° of samples</th>
 			<th>Links (PubMed, SRA, GEO)</th>
-		</tr>
-		<tr>
-			<td>AAAA/MM/DD</td>
-			<td>Spermatogenesis, gonad development, oogenesis, PGCs</td>
-			<td>NA</td>
-			<td>NA</td>
-			<td>Homo sapiens</td>
-			<td>RNA-seq, ChIP-seq, ...</td>
-			<td>0</td>
-			<td><a href="https://www.ncbi.nlm.nih.gov/pubmed/29040674" target="_blanck">PubMed</a>, <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE3634" target="_blanck">GEO</a>, <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRP035612" target="_blanck">SRA</a></td>
-		</tr>
-	</table>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr st-select-row="row" st-select-mode="multiple" ng-repeat="row in displayedCollection" >
+			<td>{{row.article}}</td>
+			<td>{{replaceString(row.biological_topics)}}</td>
+			<td>{{replaceString(row.species)}}</td>
+			<td>{{row.technology}}</td>
+			<td>{{getSampleNumber(row.run_ID)}}</td>
+			<td>https://www.ncbi.nlm.nih.gov/pubmed/{{replaceString(row.PubMedID)}}</td>
+		  </tr>
+		</tbody>
+		<tbody ng-if="!displayedCollection">
+			<tr>
+			  <td colspan="2">Loading ...</td>
+			</tr>
+		  </tbody>
+	  </table>
 </div>
