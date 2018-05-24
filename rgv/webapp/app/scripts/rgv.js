@@ -193,11 +193,11 @@ angular.module('rgv').controller('studiesCtrl',
         }
 
         $scope.getSampleNumber = function(SRRList){
-            if (stingToReplace == null){
+            if (SRRList == null){
                 return " ";
             }
-            if (stingToReplace.indexOf('|') > -1){
-                var finalString = stingToReplace.split('|');
+            if (SRRList.indexOf('|') > -1){
+                var finalString = SRRList.split('|');
                 return finalString.length;
             } else {
                 return 1;
@@ -1059,7 +1059,7 @@ angular.module('rgv').controller('appCtrl',
         Dataset.news_feed().$promise.then(function(news){
     			console.log(news);
           if(news.status != 1){
-            $scope.newsfeed = news.data["news_list"];
+            $scope.newsfeed = news.data["news_list"].slice(1, 5);
             console.log($scope.newsfeed);
           }
           else {

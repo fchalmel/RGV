@@ -28,7 +28,7 @@
 			<td>{{replaceString(row.species)}}</td>
 			<td>{{row.technology}}</td>
 			<td>{{getSampleNumber(row.run_ID)}}</td>
-			<td>https://www.ncbi.nlm.nih.gov/pubmed/{{replaceString(row.PubMedID)}}</td>
+			<td><a href="https://www.ncbi.nlm.nih.gov/pubmed/{{row.PubMedID}}">{{row.PubMedID}}</a></td>
 		  </tr>
 		</tbody>
 		<tbody ng-if="!displayedCollection">
