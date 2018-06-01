@@ -5,3 +5,14 @@
 var/RGV_data/Studies/RNAseqHuman/RNAseqHuman.txt
 var/RGV_data/Studies/RNAseqHuman/Sample_testfile.txt
 var/RGV_data/Studies/RNAseqRat/RNAseqRat.txt
+var/RGV_data/species.txt
+var/RGV_data/species.txt
+var/RGV_data/studies.txt
+var/RGV_data/studies/Nef_2018/scRNA-seq/Mus_musculus/data_genelevel.txt
+var/RGV_data/studies/RNAseqHuman/data_genelevel.txt
+var/RGV_data/studies/Nef_2018/scRNA-seq/Mus_musculus/data_genelevel.txt
+var/RGV_data/studies/RNAseqRat/prepare_clustering_method.R
+var/RGV_data/studies/species.txt
+var/RGV_data/studies/studies.txt
+var/RGV_data/studies/studies/29425512/scRNA-Seq/Mus_musculus/data_genelevel.txt
+view.log
