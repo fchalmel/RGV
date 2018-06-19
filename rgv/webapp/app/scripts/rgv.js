@@ -894,6 +894,18 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         
     }
 
+    $scope.replaceStringtoList = function(stingToReplace){
+        if (stingToReplace == null){
+            return [""];
+        }
+        if (stingToReplace.indexOf('|') > -1){
+            var finalString = stingToReplace.split('|');
+            return finalString;
+        } else {
+            return [stingToReplace];
+        }
+    }
+
 
     $scope.filterValue = null;
     $scope.users;
