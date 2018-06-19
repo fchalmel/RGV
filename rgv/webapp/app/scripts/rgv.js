@@ -954,7 +954,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         var selectedRows = $filter("filter")($scope.data_all, {
             isSelected: true
             }, true);
-            
+        console.log(selectedRows);
         $scope.chosen = selectedRows;
         selected_lst = $scope.chosen;
         $scope.msg = [];

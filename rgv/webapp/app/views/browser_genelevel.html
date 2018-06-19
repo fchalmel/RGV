@@ -57,51 +57,6 @@ stepnext(1);
   {{msgwrn}}
 </div>
 
-
-
-
-<!-- Collapsed Panel  
-<div class="slide-panel from-left no-touch" style="z-index:95;">
-    <header class="panel-header">
-        <h2>Select your study</h2>
-        <a href="#" class="panel-close"></a>
-        {{colfilter}}
-      </header>
-  
-      <div class="panel-container">
-        <div class="panel-content">
-  
-          <div class=row><!-- Top grids 
-              <div class="col-md-2">
-                  <h3>Select tracks</h3>
-                </div>
-                <div class="col-md-10" style="margin-top: 20px;">
-                  <form>
-                      <div class="input-group">
-                          <input ng-model='filterValue' class="form-control" id="inputdefault" type="text">
-                          <span class="input-group-btn">
-                              <button class="btn btn-default" ng-click='filter()' >Filter</button>
-                          </span>
-                      </div>
-                  </form>
-                </div>
-          </div>
-  
-            <div class="row"><!-- Grids 
-                <div class="col-md-4">
-                  <div id="grid1" ui-grid-selection ui-grid-tree-view ui-grid="main.gridOptions"  width=100%></div>
-                </div>
-                <div class="col-md-8">
-                  <div id="grid2" ui-grid-selection ui-grid="second.gridOptions"  width=100%></div>
-                </div>
-            </div>
-  
-        </div> <!-- panel-content 
-      </div> <!-- panel-container 
-  </div> <!-- panel -->
-
-
-
   
     <div class="stepwizard">
       <div class="stepwizard-row">
@@ -201,7 +156,7 @@ stepnext(1);
                     </tr>
                   </thead>
                   <tbody>
-                    <tr st-select-row="row" st-select-mode="multiple" ng-repeat="row in displayedCollection" >
+                    <tr st-select-row="row" st-select-mode="multiple" ng-repeat="row in displayedCollection" ng-if="row.path !=''">
                       <td>{{row.article}}</td>
                       <td>{{row.platform}}</td>
                       <td>{{row.technology}}</td>
