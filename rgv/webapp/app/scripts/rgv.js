@@ -886,7 +886,6 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         }
         if (stingToReplace.indexOf('|') > -1){
             var finalString = stingToReplace.split('|').join(', ');
-            console.log(finalString);
             return finalString;
         } else {
             return stingToReplace;
