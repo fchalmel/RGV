@@ -954,7 +954,11 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         } else{
             return false;
         }
-    }
+    };
+
+    $scope.selectPath = function(study, path){
+        console.log(study,path);
+    };
 
     $scope.selected_class ='';
     $scope.models = {};

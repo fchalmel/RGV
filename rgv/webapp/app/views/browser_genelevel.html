@@ -180,17 +180,18 @@ stepnext(1);
                       </tr>
                     </tbody>
                 </table>
-
+                {{chosen}}
                 <div class="row" ng-if="hasSelected()">
                     <table>
                         <tr>
                             <th>Study</th>
                             <th>Select data</th>
                         </tr>
-                        <tr ng-repeat="stud in chosen">
-                            <th>{{stud.article}}</th>
-                            <th ng-init="paths = replaceString(stud.path)">
-                                <select class="form-control" ng-change="" ng-options="path in paths " ng-init=""></select>
+                        <tr ng-repeat="selstud in chosen">
+                            <th>{{selstud.article}}</th>
+                            <th ng-init="paths = replaceString(selstud.path)">
+                                {{paths}}
+                                <select class="form-control" ng-change="selectPath(selstud,path)" ng-options="path in paths " ng-init=""></select>
                             </th>
                         </tr>
 
