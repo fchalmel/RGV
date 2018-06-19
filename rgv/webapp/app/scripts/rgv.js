@@ -523,6 +523,43 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         
     }
 
+    $scope.hasSelected = function(){
+        var selectedRows = $filter("filter")($scope.data_all, {
+            isSelected: true
+            }, true);
+        $scope.chosen = selectedRows;
+        if(selectedRows.length > 0){
+            return true;
+        } else{
+            return false;
+        }
+    };
+
+    $scope.selectPath = function(study, newpath){
+        console.log(study,newpath);
+        var index = $scope.chosen.indexOf(study);
+        if ( index != -1){
+            var stud = $scope.chosen[index];
+            console.log(stud)
+            stud.path = newpath;
+            console.log(stud)
+            $scope.chosen[index] = stud;
+        };
+
+    };
+
+    $scope.replaceStringtoList = function(stingToReplace){
+        if (stingToReplace == null){
+            return [""];
+        }
+        if (stingToReplace.indexOf('|') > -1){
+            var finalString = stingToReplace.split('|');
+            return finalString;
+        } else {
+            return [stingToReplace];
+        }
+    }
+
     $scope.selected_class ='';
     $scope.models = {};
     //Fonction visualisation gene Level
