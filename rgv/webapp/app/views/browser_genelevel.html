@@ -191,10 +191,9 @@ stepnext(1);
                             <th>{{selstud.article}}</th>
                             <th ng-init="paths = replaceString(selstud.path)">
                                 {{paths}}
-                                <select class="form-control" ng-change="selectPath(selstud,path)" ng-options="path in paths " ng-init=""></select>
+                                <select class="form-control" ng-model="selstud.path" ng-change="selectPath(selstud,path)" ng-options="path in paths " ng-init=""></select>
                             </th>
                         </tr>
-
                     </table>
                 </div>
               
