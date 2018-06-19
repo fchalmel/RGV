@@ -944,6 +944,17 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     
     });        
 
+    $scope.hasSelected = function(){
+        var selectedRows = $filter("filter")($scope.data_all, {
+            isSelected: true
+            }, true);
+        $scope.chosen = selectedRows;
+        if(selectedRows.length > 0){
+            return true;
+        } else{
+            return false;
+        }
+    }
 
     $scope.selected_class ='';
     $scope.models = {};

@@ -61,10 +61,10 @@ stepnext(1);
     <div class="stepwizard">
       <div class="stepwizard-row">
         <div class="stepwizard-step">
-            <a class="btn btn-default btn-circle active-step disabled" href="#step-1" target="_self" data-toggle="tab" onclick="stepnext(1)" >1</a>
+            <a class="btn btn-default btn-circle active-step " onclick="stepnext(1);" href="#step-1" target="_self" data-toggle="tab" onclick="stepnext(1)" >1</a>
         </div>
         <div class="stepwizard-step">
-            <a class="btn btn-default btn-circle disabled" disabled href="#step-2" target="_self" data-toggle="tab">2</a>
+            <a class="btn btn-default btn-circle" disabled href="#step-2" target="_self" data-toggle="tab">2</a>
         </div>
       </div>
     </div>
@@ -91,7 +91,6 @@ stepnext(1);
                       <th st-sort="antibody">Antibody</th>
                       <th st-sort="mutant">Mutant</th>
                       <th st-sort="cell_sorted">Cell sorted</th>
-                      <th st-sort="path">Path</th>
                     </tr>
                     <tr>
                         <th>
@@ -172,7 +171,6 @@ stepnext(1);
                       <td>{{replaceString(row.antibody)}}</td>
                       <td>{{replaceString(row.mutant)}}</td>
                       <td>{{replaceString(row.cell_sorted)}}</td>
-                      <td>{{row.path}}</td>
 
                     </tr>
                   </tbody>
@@ -182,6 +180,22 @@ stepnext(1);
                       </tr>
                     </tbody>
                 </table>
+
+                <div class="row" ng-if="hasSelected()">
+                    <table>
+                        <tr>
+                            <th>Study</th>
+                            <th>Select data</th>
+                        </tr>
+                        <tr ng-repeat="stud in chosen">
+                            <th>{{stud.article}}</th>
+                            <th ng-init="paths = replaceString(stud.path)">
+                                <select class="form-control" ng-change="" ng-options="path in paths " ng-init=""></select>
+                            </th>
+                        </tr>
+
+                    </table>
+                </div>
               
              
         
