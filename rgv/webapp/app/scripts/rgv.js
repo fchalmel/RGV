@@ -968,8 +968,17 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         }
     };
 
-    $scope.selectPath = function(study, path){
-        console.log(study,path);
+    $scope.selectPath = function(study, newpath){
+        console.log(study,newpath);
+        var index = $scope.chosen.indexOf(study);
+        if ( index != -1){
+            var stud = $scope.chosen[index];
+            console.log(stud)
+            stud.path = newpath;
+            console.log(stud)
+            $scope.chosen[index] = stud;
+        };
+
     };
 
     $scope.selected_class ='';
