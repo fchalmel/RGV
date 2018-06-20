@@ -558,35 +558,31 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         if (stingToReplace.indexOf('|') > -1){
             var finalString = stingToReplace.split('|');
             for (var i=0; i< finalString.length;i++){
-                var name = finalString[i].split('/');
-                name = name[name.length - 1];
-                name = name.replace("data_genelevel_","");
-                name = name.replace(".txt","");
-                name = name.replace("_"," ");
+                var names = finalString[i].split('/');
+                names = names[names.length - 1];
+                names = names.replace("data_genelevel_","");
+                names = names.replace(".txt","");
+                names = names.replace("_"," ");
                 
-                if(name == "data genelevel"){
-                    name = 'Default'
+                if(names == "data genelevel"){
+                    names = 'Default'
                 }
-                name = name.replace("_"," ");
-                var dico = {path:finalString[i],name:name};
-                dico.path = finalString[i];
-                dico.name = name;
+                names = names.replace("_"," ");
+                var dico = {path:finalString[i],name:names};
                 listPath.push(dico);
             }
             return listPath;
         } else {
-            var name = stingToReplace.split('/');
-            name = name[name.length - 1];
-            name = name.replace("data_genelevel_","");
-            name = name.replace(".txt","");
-            name = name.replace("_"," ");
-            if(name == "data genelevel"){
-                name = 'Default';
+            var names = stingToReplace.split('/');
+            names = names[names.length - 1];
+            names = names.replace("data_genelevel_","");
+            names = names.replace(".txt","");
+            names = names.replace("_"," ");
+            if(names == "data genelevel"){
+                names = 'Default';
             }
             
-            var dico = {};
-            dico.path = stingToReplace;
-            dico.name = name;
+            var dico = {path:stingToReplace,name:names};
             listPath.push(dico);
             return listPath
         }
