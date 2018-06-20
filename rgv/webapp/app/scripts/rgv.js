@@ -553,7 +553,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
     $scope.replaceStringtoList = function(stingToReplace){
         var listPath = [];
         if (stingToReplace == null){
-            return [{'path':""}] ;
+            return [{path:""}] ;
         }
         if (stingToReplace.indexOf('|') > -1){
             var finalString = stingToReplace.split('|');
@@ -568,7 +568,9 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
                     name = 'Default'
                 }
                 name = name.replace("_"," ");
-                var dico = {'path':finalString[i],'name':name};
+                var dico = {path:finalString[i],name:name};
+                dico["path"] = finalString[i];
+                dico["name"] = name;
                 listPath.push(dico);
             }
             return listPath;
@@ -582,7 +584,9 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
                 name = 'Default';
             }
             
-            var dico = {'path':stingToReplace,'name':name};
+            var dico = {};
+            dico["path"] = stingToReplace;
+            dico["name"] = name;
             listPath.push(dico);
             return listPath
         }
