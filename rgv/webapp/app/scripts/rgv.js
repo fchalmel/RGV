@@ -562,8 +562,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
     };
 
     $scope.getName = function(stingToReplace){
-        var finalString = stingToReplace.split('|');
-        var names = finalString.split('/');
+        var names = stingToReplace.split('/');
         names = names[names.length - 1];
         names = names.replace("data_genelevel_","");
         names = names.replace(".txt","");
