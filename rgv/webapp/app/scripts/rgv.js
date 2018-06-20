@@ -541,7 +541,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             }, true);
         $scope.models = {};
         $scope.chosen = selectedRows;
-        var index = $scope.chosen.indexOf(study);
+        var index = $scope.chosen.indexOf(study.path);
         if ( index != -1){
             var stud = $scope.chosen[index];
             stud.path = newpath.path;
@@ -563,8 +563,9 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
                 name = name[name.length - 1];
                 name = name.replace("data_genelevel_","");
                 name = name.replace(".txt","");
+                name = name.replace("_"," ");
                 
-                if(name == "data_genelevel"){
+                if(name == "data genelevel"){
                     name = 'Default'
                 }
                 name = name.replace("_"," ");
@@ -578,10 +579,11 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             name = name[name.length - 1];
             name = name.replace("data_genelevel_","");
             name = name.replace(".txt","");
-            if(name == "data_genelevel"){
-                name = 'Default'
-            }
             name = name.replace("_"," ");
+            if(name == "data genelevel"){
+                name = 'Default';
+            }
+            
             var dico = {'path':stingToReplace,'name':name};
             listPath.push(dico);
             return listPath
