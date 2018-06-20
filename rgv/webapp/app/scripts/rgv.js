@@ -569,8 +569,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
                 }
                 name = name.replace("_"," ");
                 var dico = {path:finalString[i],name:name};
-                dico["path"] = finalString[i];
-                dico["name"] = name;
+                dico.path = finalString[i];
+                dico.name = name;
                 listPath.push(dico);
             }
             return listPath;
@@ -585,8 +585,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             }
             
             var dico = {};
-            dico["path"] = stingToReplace;
-            dico["name"] = name;
+            dico.path = stingToReplace;
+            dico.name = name;
             listPath.push(dico);
             return listPath
         }
