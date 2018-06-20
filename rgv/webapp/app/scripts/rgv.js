@@ -526,10 +526,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
     $scope.multiFile = null;
     $scope.hasSelected = function(){
         var multiFile = [];
-        var selectedRows = $filter("filter")($scope.data_all, {
-            isSelected: true
-            }, true);
-        $scope.chosen = selectedRows;
         for(var i=0; i < selectedRows.length;i++){
             var stud = selectedRows[i];
             console.log(stud);
@@ -546,6 +542,10 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
 
     $scope.selectPath = function(study, newpath){
         console.log(study,newpath);
+        var selectedRows = $filter("filter")($scope.data_all, {
+            isSelected: true
+            }, true);
+        $scope.chosen = selectedRows;
         var index = $scope.chosen.indexOf(study);
         if ( index != -1){
             var stud = $scope.chosen[index];
