@@ -523,16 +523,23 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         
     }
 
+    $scope.multiFile = null;
     $scope.hasSelected = function(){
+        var multiFile = [];
         var selectedRows = $filter("filter")($scope.data_all, {
             isSelected: true
             }, true);
         $scope.chosen = selectedRows;
-        if(selectedRows.length > 0){
-            return true;
-        } else{
-            return false;
+        for(var stud in $scope.chosen){
+            if(stud.path.indexOf('|') > -1){
+                multiFile.push(stud)
+            }
         }
+        if(multiFile.length > 0){
+            $scope.multiFile = multiFile;
+            return true;
+        }
+        return false;
     };
 
     $scope.selectPath = function(study, newpath){
@@ -1002,16 +1009,23 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     
     });        
 
+    $scope.multiFile = null;
     $scope.hasSelected = function(){
+        var multiFile = [];
         var selectedRows = $filter("filter")($scope.data_all, {
             isSelected: true
             }, true);
         $scope.chosen = selectedRows;
-        if(selectedRows.length > 0){
-            return true;
-        } else{
-            return false;
+        for(var stud in $scope.chosen){
+            if(stud.path.indexOf('|') > -1){
+                multiFile.push(stud)
+            }
         }
+        if(multiFile.length > 0){
+            $scope.multiFile = multiFile;
+            return true;
+        }
+        return false;
     };
 
     $scope.selectPath = function(study, newpath){

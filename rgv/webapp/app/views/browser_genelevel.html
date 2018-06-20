@@ -181,12 +181,12 @@ stepnext(1);
                     </tbody>
                 </table>
                 <div class="row" ng-if="hasSelected()">
-                    <table>
+                    <table class="table">
                         <tr>
                             <th>Study</th>
                             <th>Select data</th>
                         </tr>
-                        <tr ng-repeat="selstud in chosen">
+                        <tr ng-repeat="selstud in multiFile">
                             <th>{{selstud.article}}</th>
                             <th ng-init="paths = replaceStringtoList(selstud.path)">
                                 <select class="form-control" ng-init="paths[0]" ng-model="selstud.path" ng-change="selectPath(selstud,selstud.path)" ng-options="path for path in paths " ng-init=""></select>
