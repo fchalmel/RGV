@@ -530,7 +530,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             isSelected: true
             }, true);
         $scope.chosen = selectedRows;
-        for(var stud in $scope.chosen){
+        for(var stud in selectedRows){
+            console.log(stud)
             if(stud.path.indexOf('|') > -1){
                 multiFile.push(stud)
             }
