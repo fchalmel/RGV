@@ -1088,14 +1088,6 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         var selectedRows = $filter("filter")($scope.data_all, {
             isSelected: true
             }, true);
-        
-        if($scope.val_button.length > 0){
-            for( var y in scope.val_button){
-                for (var x in $scope.val_button[stud]){
-                    $scope.val_button[y][x] = "Display"
-                }
-            }
-        }
 
         $scope.chosen = selectedRows;
         selected_lst = $scope.chosen;
