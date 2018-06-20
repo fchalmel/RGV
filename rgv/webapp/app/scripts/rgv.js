@@ -566,9 +566,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
     //Fonction visualisation gene Level
     $scope.msg = []
     $scope.showData = function(selected_lst,select_class,model){
-        var selectedRows = $filter("filter")($scope.data_all, {
-        isSelected: true
-        }, true);
 
         if($scope.val_button.length > 0){
             for( var y in scope.val_button){
