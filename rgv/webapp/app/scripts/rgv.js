@@ -526,6 +526,9 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
     $scope.multiFile = null;
     $scope.hasSelected = function(){
         var multiFile = [];
+        var selectedRows = $filter("filter")($scope.data_all, {
+            isSelected: true
+            }, true);
         for(var i=0; i < selectedRows.length;i++){
             var stud = selectedRows[i];
             console.log(stud);
