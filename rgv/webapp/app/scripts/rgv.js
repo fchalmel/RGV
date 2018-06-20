@@ -539,6 +539,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         var selectedRows = $filter("filter")($scope.data_all, {
             isSelected: true
             }, true);
+        $scope.models = {};
         $scope.chosen = selectedRows;
         var index = $scope.chosen.indexOf(study);
         if ( index != -1){
