@@ -543,8 +543,11 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             var stud = $scope.chosen[index];
             console.log(stud);
             console.log(newpath);
-            stud.path = newpath.path;
-            stud["pathName"] = newpath.name;
+            console.log(typeof(newpath));
+            var myobj = JSON.parse(newpath);
+            console.log(typeof(myobj));
+            stud.path = myobj.path;
+            stud["pathName"] = myobj.name;
             $scope.chosen[index] = stud;
         };
 
