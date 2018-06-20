@@ -523,23 +523,12 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         
     }
 
-    $scope.multiFile = null;
-    $scope.hasSelected = function(){
-        var selectedRows = $filter("filter")($scope.data_all, {
-            isSelected: true
-            }, true);
-        $scope.multiFile = selectedRows;
-        if($scope.multiFile.length > 0){
-            return true
-        }
-        else {
-            return $scope.msg = "Please select at least one study";
-        }
-        
-    };
+    $scope.selection = $filter("filter")($scope.data_all, {
+        isSelected: true
+        }, true);
+    console.log($scope.selection);
 
     $scope.selectPath = function(study, newpath){
-        console.log(study,newpath);
         var selectedRows = $filter("filter")($scope.data_all, {
             isSelected: true
             }, true);
@@ -547,9 +536,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         var index = $scope.chosen.indexOf(study);
         if ( index != -1){
             var stud = $scope.chosen[index];
-            console.log(stud)
             stud.path = newpath;
-            console.log(stud)
             $scope.chosen[index] = stud;
         };
 
