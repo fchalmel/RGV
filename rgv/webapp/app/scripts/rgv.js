@@ -544,7 +544,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         var index = $scope.chosen.indexOf(study);
         if ( index != -1){
             var stud = $scope.chosen[index];
-            stud.path = newpath;
+            stud.path = newpath.path;
+            stud["pathName"] = newpath.name;
             $scope.chosen[index] = stud;
         };
 

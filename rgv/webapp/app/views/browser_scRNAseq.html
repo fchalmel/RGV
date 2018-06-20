@@ -215,7 +215,7 @@ stepnext(1);
                             <th>{{selstud.article}}</th>
                             <th ng-init="paths = replaceStringtoList(selstud.path)">
                                 <select class="form-control" ng-model="selstud.path" ng-init="paths[1]" ng-change="selectPath(selstud,selstud.path)">
-                                    <option ng-repeat="path in paths" value="{{path}}">{{path}}</option>
+                                    <option ng-repeat="path in paths" value="{{path}}">{{path.name}}</option>
                                 </select>
                             </th>
                         </tr>
@@ -235,7 +235,7 @@ stepnext(1);
                     <ul class="nav nav-tabs ">
                       <li ng-repeat="study in chosen" ng-class="{active:$index==0}">
                         <a href="#tab_default-{{ $index }}" target="_self" data-toggle="tab">
-                          {{ study.article }}</a>
+                          {{ study.article }} <span ng-if="study.pathName">{{study.pathName}}</span></a>
                       </li>
                     </ul>
                     <div class="tab-content">
