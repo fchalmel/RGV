@@ -366,7 +366,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
                     $scope.val_button[stud][selected_gene.Symbol] = "Display";
                     $scope.time = response.time;
                     $scope.charts = response.charts;
-                    console.log(response);
                     
                 });
             }else{
@@ -430,7 +429,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
     $scope.speciesValue = null;
     Dataset.read_file({"name":"genomes"}).$promise.then(function(dataset){
         $scope.species = []
-        console.log(dataset);
         for (var i=0;i<dataset.data.line.length;i++){
             var field = dataset.data.line[i].split('\t');
             $scope.species.push({'name':field[0],'tax_id':field[2].replace(/[\n]/gi, "" )});
@@ -530,7 +528,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             isSelected: true
             }, true);
         $scope.chosen = selectedRows;
-        console.log($scope.chosen);
         $scope.multiFile = selectedRows;
         return true;
     };
@@ -541,9 +538,11 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             }, true);
         $scope.models = {};
         $scope.chosen = selectedRows;
-        var index = $scope.chosen.indexOf(study.path);
+        var index = $scope.chosen.indexOf(study);
         if ( index != -1){
             var stud = $scope.chosen[index];
+            console.log(stud);
+            console.log(newpath);
             stud.path = newpath.path;
             stud["pathName"] = newpath.name;
             $scope.chosen[index] = stud;
@@ -569,7 +568,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
                     name = 'Default'
                 }
                 name = name.replace("_"," ");
-                console.log(name);
                 var dico = {'path':finalString[i],'name':name};
                 listPath.push(dico);
             }
@@ -696,7 +694,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
                 species_val = speciesDict[i].tax_id;
             }
         }
-        console.log(stud.species)
         return Dataset.autocomplete({},{'database':database,'search':val,'tax_id':species_val}).$promise.then(function(data){
             return data.map(function(item){
                     return item;
