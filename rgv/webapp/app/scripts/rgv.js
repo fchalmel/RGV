@@ -62,7 +62,7 @@ config(['$routeProvider','$logProvider',
 
         $routeProvider.when('/browser_genome', {
             templateUrl: 'views/browser_genome.html',
-            controller: 'noCtrl'
+            controller: 'genomeCtrl'
         });
         $routeProvider.when('/browser_genelevel', {
             templateUrl: 'views/browser_genelevel.html',
@@ -203,6 +203,14 @@ angular.module('rgv').controller('studiesCtrl',
                 return 1;
             }
         }
+
+});
+
+////////////////////// Genome Browser ///////////////////////////////////////
+angular.module('rgv').controller('genomeCtrl',
+    function ($scope,$rootScope, $log, Auth, User) {
+
+        $scope.msg="";
 
 });
 
@@ -762,16 +770,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
     $scope.chosen = [];
     $scope.selected_gene = [];
     $scope.allgenes = {};
-
-    //Checkbox grid template
-    $templateCache.put('ui-grid/selectionRowHeaderButtons',
-        "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-row-selected': row.isSelected}\" ><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"row.isSelected\" ng-click=\"row.isSelected=!row.isSelected;selectButtonClick(row, $event)\">&nbsp;</div>"
-    );
-
-
-    $templateCache.put('ui-grid/selectionSelectAllButtons',
-        "<div class=\"ui-grid-selection-row-header-buttons \" ng-class=\"{'ui-grid-all-selected': grid.selection.selectAll}\" ng-if=\"grid.options.enableSelectAll\"><input style=\"margin: 0; vertical-align: middle\" type=\"checkbox\" ng-model=\"grid.selection.selectAll\" ng-click=\"grid.selection.selectAll=!grid.selection.selectAll;headerButtonClick($event)\"></div>"
-    );
 
     //liste obj selectionnés
     

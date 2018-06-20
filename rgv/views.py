@@ -174,7 +174,10 @@ def genelevel(request):
         for study in directories :
             all_genes[study] =  getGene(os.path.join(request.registry.studies_path,study))
 
-    model = form['model']
+    if "model" in form :
+        model = form['model']
+    else :
+        model = {}
 
     ensemblgenes = []
     selected_genes = []
