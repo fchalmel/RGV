@@ -230,7 +230,7 @@ stepnext(1);
                           <div class="col-md-6">
                               <form >
                                 <div class="input-group" style="margin-bottom:15px;">
-                                  <input style="z-index: 0;font-size: 14px;height:34px;" class="form-control" name="states" id="states" type="text" placeholder="Select genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',stud,species)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading">
+                                  <input style="z-index: 0;font-size: 14px;height:34px;" class="form-control" name="states" id="states" type="text" placeholder="Select genes" ng-model="selectedgene"  typeahead-min-length="2" typeahead="item.Symbol for item in get_genes($viewValue,'genes',stud,species)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading" autocomplete="off">
                                   <!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"   typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
                                   <span class="input-group-btn">
                                     <button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(stud,higlight_gene)'>Select</button>
