@@ -1024,7 +1024,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     
     });        
 
-    scope.multiFile = null;
+    $scope.multiFile = null;
 
     $scope.hasSelected = function(){
         var selectedRows = $filter("filter")($scope.data_all, {
