@@ -204,14 +204,14 @@ stepnext(1);
               </div>
           </div>
 
-          <div class="tab-pane fade padding20 " id="step-2" >
+          <div class="tab-pane fade padding20 " id="step-2" ng-if="hasSelected()">
                 <div class="row" >
                     <table class="table">
                         <tr>
                             <th>Study</th>
                             <th>Select data</th>
                         </tr>
-                        <tr ng-repeat="selstud in chosen">
+                        <tr ng-repeat="selstud in multiFile">
                             <th>{{selstud.article}}</th>
                             <th ng-init="paths = replaceStringtoList(selstud.path)">
                                 <select ng-if="paths.length > 0" class="form-control" ng-init="paths[0]" ng-model="selstud.path" ng-change="selectPath(selstud,selstud.path)" ng-options="path for path in paths "></select>

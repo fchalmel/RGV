@@ -523,10 +523,15 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         
     }
 
-    $scope.selection = $filter("filter")($scope.data_all, {
-        isSelected: true
-        }, true);
-    console.log($scope.selection);
+    $scope.multiFile = null;
+
+    $scope.hasSelected = function(){
+        var selectedRows = $filter("filter")($scope.data_all, {
+            isSelected: true
+            }, true);
+        $scope.multiFile = selectedRows;
+        return true;
+    };
 
     $scope.selectPath = function(study, newpath){
         var selectedRows = $filter("filter")($scope.data_all, {
