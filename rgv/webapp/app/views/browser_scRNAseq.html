@@ -127,7 +127,7 @@ stepnext(1);
                             <input st-search="biological_topics" placeholder="Biological topics" class="input-sm form-control" type="search"/>
                         </th>
                         <th>
-                            <select st-search="species" class="form-control">
+                            <select st-search="experimental_design" class="form-control">
                                 <option value="">Experimental design</option>
                                 <option ng-repeat="row in data_all | unique:'experimental_design'" value="{{row.experimental_design}}">{{row.experimental_design}}</option>
                             </select>
