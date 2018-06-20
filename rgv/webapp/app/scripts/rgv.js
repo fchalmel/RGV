@@ -576,7 +576,6 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         }
         
         
-        $scope.chosen = selectedRows;
         selected_lst = $scope.chosen;
         $scope.msg = [];
         var directory_list = [];
