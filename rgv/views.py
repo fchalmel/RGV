@@ -568,7 +568,10 @@ def scData(request):
 
     for stud in directories:
         if len(form['model']) !=0 :
-            selected_class =  form['model'][stud]
+            if stud in form['model'] :
+                selected_class =  form['model'][stud]
+            else :
+                selected_class = form['class']
         else :
             selected_class = form['class']
             
