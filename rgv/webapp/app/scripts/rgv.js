@@ -561,27 +561,26 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             for (var i=0; i< finalString.length;i++){
                 var name = finalString[i].split('/');
                 name = name[name.length - 1];
-                console.log(name);
-                name = name.split('_');
-                name = name[0];
-                console.log(name);
-                if(name == "data"){
+                name = name.replace("data_genelevel_","");
+                name = name.replace(".txt","");
+                
+                if(name == "data_genelevel"){
                     name = 'Default'
                 }
+                name = name.replace("_"," ");
                 var dico = {'path':finalString[i],'name':name};
                 listPath.push(dico);
             }
             return listPath;
         } else {
-            var name = stingToReplace[i].split('/');
+            var name = stingToReplace.split('/');
             name = name[name.length - 1];
-            console.log(name);
-            name = name.split('_');
-            name = name[0];
-            console.log(name);
-            if(name == "data"){
+            name = name.replace("data_genelevel_","");
+            name = name.replace(".txt","");
+            if(name == "data_genelevel"){
                 name = 'Default'
             }
+            name = name.replace("_"," ");
             var dico = {'path':stingToReplace,'name':name};
             listPath.push(dico);
             return listPath
