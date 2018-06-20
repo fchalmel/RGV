@@ -1046,10 +1046,39 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         if ( index != -1){
             var stud = $scope.chosen[index];
             stud.path = newpath;
+
+            var names = newpath.split('/');
+            names = names[names.length - 1];
+            names = names.replace("data_genelevel_","");
+            names = names.replace(".txt","");
+            names = names.replace("_"," ");
+            
+            if(names == "data genelevel"){
+                names = 'Default'
+            }
+            names = names.replace("_"," ");
+
+
+            stud["pathName"] = names;
             $scope.chosen[index] = stud;
         };
 
     };
+
+    $scope.getName = function(stingToReplace){
+        var names = stingToReplace.split('/');
+        names = names[names.length - 1];
+        names = names.replace("data_genelevel_","");
+        names = names.replace(".txt","");
+        names = names.replace("_"," ");
+        
+        if(names == "data genelevel"){
+            names = 'Default'
+        }
+        names = names.replace("_"," ");
+        return names
+    }
+
 
     $scope.selected_class ='';
     $scope.models = {};
