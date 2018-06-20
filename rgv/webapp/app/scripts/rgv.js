@@ -568,6 +568,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
                     name = 'Default'
                 }
                 name = name.replace("_"," ");
+                console.log(name);
                 var dico = {'path':finalString[i],'name':name};
                 listPath.push(dico);
             }
