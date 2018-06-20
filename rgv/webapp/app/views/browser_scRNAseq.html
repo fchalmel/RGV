@@ -214,16 +214,7 @@ stepnext(1);
                         <tr ng-repeat="selstud in chosen">
                             <th>{{selstud.article}}</th>
                             <th ng-init="paths = replaceStringtoList(selstud.path)">
-                                <div ng-if="paths.length = 1">
-                                    1
-                                </div>
-                                <div ng-if="paths.length > 1">
-                                        {{paths.length}}
-                                </div>
-                                <select ng-if="paths.length = 1" class="form-control" ng-model="selstud.path" ng-init="paths[1]" ng-change="selectPath(selstud,selstud.path)" disabled>
-                                    <option ng-repeat="path in paths" value="{{path}}">{{path}}</option>
-                                </select>
-                                <select ng-if="paths.length > 1" class="form-control" ng-model="selstud.path" ng-init="paths[1]" ng-change="selectPath(selstud,selstud.path)">
+                                <select class="form-control" ng-model="selstud.path" ng-init="paths[1]" ng-change="selectPath(selstud,selstud.path)">
                                     <option ng-repeat="path in paths" value="{{path}}">{{path}}</option>
                                 </select>
                             </th>

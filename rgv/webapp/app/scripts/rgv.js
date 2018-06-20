@@ -551,14 +551,39 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
     };
 
     $scope.replaceStringtoList = function(stingToReplace){
+        var listPath = [];
         if (stingToReplace == null){
-            return [""];
+            return [{'path':""}] ;
         }
         if (stingToReplace.indexOf('|') > -1){
             var finalString = stingToReplace.split('|');
-            return finalString;
+            for (var i=0; i< finalString.length;i++){
+                var name = finalString[i].split('/');
+                name = name[name.length - 1];
+                console.log(name);
+                name = name.split('_');
+                name = name[0];
+                console.log(name);
+                if(name == "data"){
+                    name = 'Default'
+                }
+                var dico = {'path':finalString[i],'name':name};
+                listPath.push(dico);
+            }
+            return listPath;
         } else {
-            return [stingToReplace];
+            var name = stingToReplace[i].split('/');
+            name = name[name.length - 1];
+            console.log(name);
+            name = name.split('_');
+            name = name[0];
+            console.log(name);
+            if(name == "data"){
+                name = 'Default'
+            }
+            var dico = {'path':stingToReplace,'name':name};
+            listPath.push(dico);
+            return listPath
         }
     }
 
