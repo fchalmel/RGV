@@ -211,11 +211,11 @@ stepnext(1);
                             <th>Study</th>
                             <th>Select data</th>
                         </tr>
-                        <tr ng-repeat="selstud in multiFile">
+                        <tr ng-repeat="selstud in chosen">
                             <th>{{selstud.article}}</th>
                             <th ng-init="paths = replaceStringtoList(selstud.path)">
-                                <select ng-if="paths.length > 0" class="form-control" ng-init="paths[0]" ng-model="selstud.path" ng-change="selectPath(selstud,selstud.path)" ng-options="path for path in paths "></select>
-                                <select ng-if="paths.length = 0" class="form-control" ng-init="paths[0]" ng-model="selstud.path" ng-change="selectPath(selstud,selstud.path)" ng-options="path for path in paths " disabled></select>
+                                <select ng-if="paths.length > 1" class="form-control" ng-init="paths[0]" ng-model="selstud.path" ng-change="selectPath(selstud,selstud.path)" ng-options="path for path in paths "></select>
+                                <select ng-if="paths.length = 1" class="form-control" ng-init="paths[0]" ng-model="selstud.path" ng-change="selectPath(selstud,selstud.path)" ng-options="path for path in paths " disabled></select>
                             </th>
                         </tr>
                     </table>
