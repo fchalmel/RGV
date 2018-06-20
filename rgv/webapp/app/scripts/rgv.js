@@ -525,22 +525,17 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
 
     $scope.multiFile = null;
     $scope.hasSelected = function(){
-        var multiFile = [];
         var selectedRows = $filter("filter")($scope.data_all, {
             isSelected: true
             }, true);
-        for(var i=0; i < selectedRows.length;i++){
-            var stud = selectedRows[i];
-            console.log(stud);
-            if(stud.path.indexOf('|') > -1){
-                multiFile.push(stud)
-            }
+        $scope.multiFile = selectedRows;
+        if($scope.multiFile.length > 0){
+            return true
         }
-        if(multiFile.length > 0){
-            $scope.multiFile = multiFile;
-            return true;
+        else {
+            return $scope.msg = "Please select at least one study";
         }
-        return false;
+        
     };
 
     $scope.selectPath = function(study, newpath){
