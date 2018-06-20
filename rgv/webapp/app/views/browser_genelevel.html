@@ -61,10 +61,13 @@ stepnext(1);
     <div class="stepwizard">
       <div class="stepwizard-row">
         <div class="stepwizard-step">
-            <a class="btn btn-default btn-circle active-step " onclick="stepnext(1);" href="#step-1" target="_self" data-toggle="tab" onclick="stepnext(1)" >1</a>
+            <a class="btn btn-default btn-circle active-step " onclick="stepnext(1);" href="#step-1" target="_self" data-toggle="tab">1</a>
         </div>
         <div class="stepwizard-step">
-            <a class="btn btn-default btn-circle" disabled href="#step-2" target="_self" data-toggle="tab">2</a>
+                <a class="btn btn-default btn-circle" onclick="stepnext(2);" href="#step-2" target="_self" data-toggle="tab">2</a>
+            </div>
+        <div class="stepwizard-step">
+            <a class="btn btn-default btn-circle" disabled href="#step-3" target="_self" data-toggle="tab">3</a>
         </div>
       </div>
     </div>
@@ -180,20 +183,6 @@ stepnext(1);
                       </tr>
                     </tbody>
                 </table>
-                <div class="row">
-                    <table class="table">
-                        <tr>
-                            <th>Study</th>
-                            <th>Select data</th>
-                        </tr>
-                        <tr ng-repeat="selstud in multiFile">
-                            <th>{{selstud.article}}</th>
-                            <th ng-init="paths = replaceStringtoList(selstud.path)">
-                                <select class="form-control" ng-init="paths[0]" ng-model="selstud.path" ng-change="selectPath(selstud,selstud.path)" ng-options="path for path in paths " ng-init=""></select>
-                            </th>
-                        </tr>
-                    </table>
-                </div>
               
              
         
@@ -202,12 +191,32 @@ stepnext(1);
                     <div>
                         <form >
                             <div class="input-group">
-                               <button class="btn btn-default" ng-click="showData(chosen,'',allgenes,models)" onclick="stepnext(2);">Select study</button>
+                               <button class="btn btn-default" onclick="stepnext(2);">Next</button>
                             </div>
                         </form>
                     </div>
                   </div>
               </div>
+          </div>
+
+          <div class="tab-pane fade padding20 " id="step-2" ng-if="hasSelected()">
+                <div class="row" >
+                    <table class="table">
+                        <tr>
+                            <th>Study</th>
+                            <th>Select data</th>
+                        </tr>
+                        <tr ng-repeat="selstud in chosen">
+                            <th>{{selstud.article}}</th>
+                            <th ng-init="paths = replaceStringtoList(selstud.path)">
+                                <select class="form-control" ng-model="selstud.path" ng-init="paths[0]" ng-change="selectPath(selstud,selstud.path)">
+                                    <option ng-repeat="path in paths" value="{{path}}">{{path}}</option>
+                                </select>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <button class="btn btn-default" ng-click="showData(chosen,'',models)" onclick="stepnext(3);">Show</button>
           </div>
           
           <!-- STEP 4 -->
@@ -271,7 +280,7 @@ stepnext(1);
                   </div>
                 </div>
               </div>
-              <button class="btn btn-default" onclick="stepnext(1);" type="button"><i class="icon-next"></i> Previous</button>
+              <button class="btn btn-default" onclick="stepnext(2);" type="button"><i class="icon-next"></i> Previous</button>
           </div>
         </div>
       </div>

@@ -1000,33 +1000,28 @@ angular.module('rgv').controller('browsergenelevelCtrl',
     
     });        
 
-    $scope.multiFile = null;
+    scope.multiFile = null;
+
     $scope.hasSelected = function(){
-        var multiFile = [];
         var selectedRows = $filter("filter")($scope.data_all, {
             isSelected: true
             }, true);
         $scope.chosen = selectedRows;
-        for(var stud in $scope.chosen){
-            if(stud.path.indexOf('|') > -1){
-                multiFile.push(stud)
-            }
-        }
-        if(multiFile.length > 0){
-            $scope.multiFile = multiFile;
-            return true;
-        }
-        return false;
+        console.log($scope.chosen);
+        $scope.multiFile = selectedRows;
+        return true;
     };
 
     $scope.selectPath = function(study, newpath){
-        console.log(study,newpath);
+        var selectedRows = $filter("filter")($scope.data_all, {
+            isSelected: true
+            }, true);
+        $scope.models = {};
+        $scope.chosen = selectedRows;
         var index = $scope.chosen.indexOf(study);
         if ( index != -1){
             var stud = $scope.chosen[index];
-            console.log(stud)
             stud.path = newpath;
-            console.log(stud)
             $scope.chosen[index] = stud;
         };
 

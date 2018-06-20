@@ -339,7 +339,10 @@ def scDataGenes(request):
     # Read studies
     for stud in directories:
         if len(form['model']) !=0 :
-            selected_class =  form['model'][stud]
+            if stud in form['model'] :
+                selected_class =  form['model'][stud]
+            else :
+                selected_class = form['class']
         else :
             selected_class = form['class']
         
@@ -479,7 +482,10 @@ def scDataGenes(request):
         # If no gene selected for the study
         if stud not in studies:
             if len(form['model']) !=0 :
-                selected_class =  form['model'][stud]
+                if stud in form['model'] :
+                    selected_class =  form['model'][stud]
+                else :
+                    selected_class = form['class']
             else :
                 selected_class = form['class']
                 
@@ -673,7 +679,10 @@ def heatmap(request):
 
     for stud in directories:
         if len(form['model']) !=0 :
-            selected_class =  form['model'][stud]
+            if stud in form['model'] :
+                selected_class =  form['model'][stud]
+            else :
+                selected_class = form['class']
         else :
             selected_class = form['class']
             
