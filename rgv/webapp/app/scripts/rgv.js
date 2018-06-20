@@ -541,53 +541,50 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
         var index = $scope.chosen.indexOf(study);
         if ( index != -1){
             var stud = $scope.chosen[index];
-            console.log(stud);
-            console.log(newpath);
-            console.log(typeof(newpath));
-            var myobj = JSON.parse(newpath);
-            console.log(typeof(myobj));
-            stud.path = myobj.path;
-            stud["pathName"] = myobj.name;
+            stud.path = newpath;
+
+            var names = newpath.split('/');
+            names = names[names.length - 1];
+            names = names.replace("data_genelevel_","");
+            names = names.replace(".txt","");
+            names = names.replace("_"," ");
+            
+            if(names == "data genelevel"){
+                names = 'Default'
+            }
+            names = names.replace("_"," ");
+
+
+            stud["pathName"] = names;
             $scope.chosen[index] = stud;
         };
 
     };
 
+    $scope.getName = function(stingToReplace){
+        var finalString = stingToReplace.split('|');
+        var names = finalString.split('/');
+        names = names[names.length - 1];
+        names = names.replace("data_genelevel_","");
+        names = names.replace(".txt","");
+        names = names.replace("_"," ");
+        
+        if(names == "data genelevel"){
+            names = 'Default'
+        }
+        names = names.replace("_"," ");
+        return names
+    }
+
     $scope.replaceStringtoList = function(stingToReplace){
-        var listPath = [];
         if (stingToReplace == null){
-            return [{path:""}] ;
+            return [""];
         }
         if (stingToReplace.indexOf('|') > -1){
             var finalString = stingToReplace.split('|');
-            for (var i=0; i< finalString.length;i++){
-                var names = finalString[i].split('/');
-                names = names[names.length - 1];
-                names = names.replace("data_genelevel_","");
-                names = names.replace(".txt","");
-                names = names.replace("_"," ");
-                
-                if(names == "data genelevel"){
-                    names = 'Default'
-                }
-                names = names.replace("_"," ");
-                var dico = {path:finalString[i],name:names};
-                listPath.push(dico);
-            }
-            return listPath;
+            return finalString;
         } else {
-            var names = stingToReplace.split('/');
-            names = names[names.length - 1];
-            names = names.replace("data_genelevel_","");
-            names = names.replace(".txt","");
-            names = names.replace("_"," ");
-            if(names == "data genelevel"){
-                names = 'Default';
-            }
-            
-            var dico = {path:stingToReplace,name:names};
-            listPath.push(dico);
-            return listPath
+            return [stingToReplace];
         }
     }
 
