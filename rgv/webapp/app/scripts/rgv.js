@@ -530,6 +530,7 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             isSelected: true
             }, true);
         $scope.chosen = selectedRows;
+        console.log(chosen);
         $scope.multiFile = selectedRows;
         return true;
     };
