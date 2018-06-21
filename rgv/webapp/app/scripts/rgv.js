@@ -224,6 +224,15 @@ angular.module('rgv').controller('statCtrl',
         Dataset.data_frame({"name":"metadata.csv",'stat':'stat'}).$promise.then(function(dataset){
                 $scope.Stat = dataset;
                 $scope.charts = dataset.chart_techno
+                var data = [
+                    {
+                      x: $scope.charts.x,
+                      y: $scope.charts.y,
+                      type: 'bar'
+                    }
+                  ];
+                  
+                Plotly.newPlot('chart-techno', data);
         });
 });
 
