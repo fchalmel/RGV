@@ -121,6 +121,42 @@ def d_getter(request):
     df_technology = df.technology.unique().tolist()
     df_sex = df.sex.unique().tolist()
 
+    if 'stat' in form:
+        number_of_species = len(df.species.unique())
+        number_of_ome = len(df.ome.unique())
+        number_of_technology = len(df.technology.unique())
+        result = {}
+        lspecies = ['Mus musculus', 'Homo sapiens', 'Rattus norvegicus', 'Gallus gallus', 'Macaca mulatta', 'Canis lupus familiaris','Danio rerio', 'Bos taurus', 'Sus scrofa']
+        for species in lspecies:
+            result[species] = {}
+            nb_studies = len(df.loc[df["species"] == species,"PubMedID"].unique())
+            lOme = []
+            ome = len(df.loc[df["species"] == species,"ome"].unique())
+            for i in ome :
+                if '|' in i :
+                    for z in i.split('|'):
+                        if z not in lOme :
+                            lOme.append(z)
+                else :
+                    if i not in lOme:
+                        lOme.append(i)
+            number_of_techno = len(lOme)
+
+            ltopics = []
+            topics = len(df.loc[df["species"] == species,"biological_topics"].unique())
+            for i in topics :
+                if '|' in i :
+                    for z in i.split('|'):
+                        if z not in ltopics :
+                            ltopics.append(z)
+                else :
+                    if i not in ltopics:
+                        ltopics.append(i)
+            number_of_topics = len(ltopics)
+            result[species] = {"study_number":nb_studies,"techno_number":number_of_techno,'number_of_topics':number_of_topics}
+        return result
+
+
     #return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
     # Test new table 
     return {'data':final_df,'species':df_species,'ome':df_ome,'technology':df_technology}

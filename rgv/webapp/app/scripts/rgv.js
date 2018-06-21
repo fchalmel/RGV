@@ -45,7 +45,7 @@ config(['$routeProvider','$logProvider',
         });
 		$routeProvider.when('/statistics', {
             templateUrl: 'views/statistics.html',
-            controller: 'noCtrl'
+            controller: 'statCtrl'
         });
         $routeProvider.when('/download', {
             templateUrl: 'views/download.html',
@@ -212,6 +212,16 @@ angular.module('rgv').controller('genomeCtrl',
 
         $scope.msg="";
         Dataset.read_file({"name":"dfghjkltyuio"}).$promise.then(function(dataset){
+                $scope.Stat = dataset;
+        });
+});
+
+////////////////////// Statistics  ///////////////////////////////////////
+angular.module('rgv').controller('statCtrl',
+    function ($scope,$rootScope, $log, Auth, User, Dataset) {
+
+        $scope.msg="";
+        Dataset.data_frame({"name":"metadata.csv",'stat':'stat'}).$promise.then(function(dataset){
                 $scope.Stat = dataset;
         });
 });
