@@ -180,8 +180,18 @@ def d_getter(request):
 
         #Get general stat
         nb_biological_chart = []
+        l_bt = []
         df_biological_topics = df.biological_topics.unique().tolist()
-        for bt in df_biological_topics :
+        for i in df_biological_topics :
+            if '|' in i :
+                for z in i.split('|'):
+                    if z not in l_bt :
+                        l_bt.append(z)
+            else :
+                if i not in l_bt:
+                    l_bt.append(i)
+        
+        for bt in l_bt :
             nb_biological_chart.append(len(df.loc[df["biological_topics"] == bt]))
 
         chart_techno = {}
@@ -193,7 +203,7 @@ def d_getter(request):
         chart_techno['msg'] = ""
         chart_techno['div'] = "techno"
         data_chart = {}
-        data_chart['x'] = df_biological_topics
+        data_chart['x'] = l_bt
         data_chart['y'] = nb_biological_chart
         data_chart['name'] = "Biological Topics"
         data_chart['hoverinfo'] = "all"
