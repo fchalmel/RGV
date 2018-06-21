@@ -192,7 +192,7 @@ def d_getter(request):
                     l_bt.append(i)
         
         for bt in l_bt :
-            nb_biological_chart.append(len(df.loc[df["biological_topics"] == bt]))
+            nb_biological_chart.append(len(df.loc[df["biological_topics"].str.contains(bt)]))
 
         chart_techno = {}
         chart_techno['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
