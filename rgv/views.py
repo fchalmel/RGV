@@ -178,7 +178,7 @@ def d_getter(request):
         chart_techno['data']=[data_chart]
 
         #techno
-        result["chart_techno"] = chart_techno
+        result["chart_techno"] = [chart_techno]
 
         return result
 

@@ -223,7 +223,7 @@ angular.module('rgv').controller('statCtrl',
         $scope.msg="";
         Dataset.data_frame({"name":"metadata.csv",'stat':'stat'}).$promise.then(function(dataset){
                 $scope.Stat = dataset;
-                console.log($scope.Stat);
+                $scope.charts = dataset.chart_techno
         });
 });
 
