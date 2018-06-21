@@ -176,9 +176,11 @@ def d_getter(request):
         data_chart['boxpoints'] = 'all'
         data_chart['meanline'] = {'visible': True}
         chart_techno['data']=[data_chart]
-        
+
         #techno
         result["chart_techno"] = chart_techno
+
+        return result
 
 
     #return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
