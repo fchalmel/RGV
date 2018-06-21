@@ -176,6 +176,8 @@ def d_getter(request):
         data_chart['meanline'] = {'visible': True}
         chart_techno['data']=[data_chart]
 
+        result["chart_techno"] = [chart_techno]
+
         #Get general stat
         nb_biological_chart = []
         df_biological_topics = df.biological_topics.unique().tolist()
