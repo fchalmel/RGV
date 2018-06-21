@@ -46,11 +46,8 @@ def main(global_config, **settings):
     config.registry.script_path = settings['script_path']
     config.registry.download_path = settings['download_path']
     config.registry.studies_path = settings['studies_path']
+    config.registry.jbrowse_path = settings['jbrowse_path']
 
-    config.registry.filter = settings['filter'].split(',')
-    config.registry.col_display = settings['column'].split(',')
-    config.registry.col_filter = settings['col_filter'].split(',')
-    config.registry.metadata = settings['metadata'].split(',')
 
     # by default we don't sniff, ever
     #config.registry.es = Elasticsearch( [settings['elastic_host']])
@@ -81,6 +78,7 @@ def main(global_config, **settings):
     config.add_route('user_delete', '/user/delete')
     config.add_route('user_info', '/user/{id}')
     config.add_route('read_file','/browser_genelevel_init')
+    config.add_route('read_stat','/read_stat')
     config.add_route('search', '/search')
 
 

@@ -208,9 +208,16 @@ angular.module('rgv').controller('studiesCtrl',
 
 ////////////////////// Genome Browser ///////////////////////////////////////
 angular.module('rgv').controller('genomeCtrl',
-    function ($scope,$rootScope, $log, Auth, User) {
+    function ($scope,$rootScope, $log, Auth, User, Dataset) {
 
         $scope.msg="";
+        $scope.getStat = function(species,info){
+            Dataset.read_stat({"species":species}).$promise.then(function(dataset){
+                var result = dataset;
+                return result[info];
+            });
+        }
+
 
 });
 

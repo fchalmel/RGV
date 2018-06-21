@@ -32,6 +32,12 @@
                 isArray: false,
                 cache: false
             },
+            read_stat: {
+                url: '/read_stat',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
             checkgene: {
                 url: '/checkgene',
                 method: 'POST',
