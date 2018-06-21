@@ -84,16 +84,20 @@ def read_file(request):
 
 def read_stat(request):
     form = json.loads(request.body, encoding=request.charset)
-    species = form['species']
-    url_file = os.path.join(request.registry.jbrowse_path,species,"metadata.csv")
-    df = pd.read_csv(url_file,sep=',')
-    study_number = len(df.article.unique())
-    df = df[df.sample_ID.notnull()]
-    sample_liste = df.sample_ID.unique()
-    sample_number = 0
-    for i in sample_liste:
-        sample_number = sample_number + len(i.split('|'))
-    return {"study_number":study_number,"sample_number":sample_number}
+    result = {}
+    lspecies = ["bosTau8","canFam3","danRer10","galGal5","hg38","mm10","rheMac8","rn6","susScr3"]
+    for species in lspecies
+        result[species] = {}
+        url_file = os.path.join(request.registry.jbrowse_path,species,"metadata.csv")
+        df = pd.read_csv(url_file,sep=',')
+        study_number = len(df.article.unique())
+        df = df[df.sample_ID.notnull()]
+        sample_liste = df.sample_ID.unique()
+        sample_number = 0
+        for i in sample_liste:
+            sample_number = sample_number + len(i.split('|'))
+        result[species] = {"study_number":study_number,"sample_number":sample_number}
+    return result
 
 @view_config(route_name='d_getter', renderer='json', request_method='POST')
 def d_getter(request):
