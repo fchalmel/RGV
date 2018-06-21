@@ -129,7 +129,7 @@ def d_getter(request):
             result[species] = {}
             nb_studies = len(df.loc[df["species"] == species,"PubMedID"].unique())
             lOme = []
-            ome = df.loc[df["species"] == species,"ome"].unique()
+            ome = df.loc[df["species"] == species,"technology"].unique()
             for i in ome :
                 if '|' in i :
                     for z in i.split('|'):
@@ -152,7 +152,31 @@ def d_getter(request):
                         ltopics.append(i)
             number_of_topics = len(ltopics)
             result[species] = {"study_number":nb_studies,"techno_number":number_of_techno,'number_of_topics':number_of_topics}
-        return result
+        
+        #Get general stat
+        nb_techno_chart = []
+        for tech in df_technology :
+            nb_techno_chart.append(len(df.loc[df["technology"] == tech]))
+        chart_techno = {}
+        chart_techno['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
+        chart_techno['data']=[]
+        chart_techno['description'] = ""
+        chart_techno['name'] = "Technologies informations"
+        chart_techno['title'] = "Technologies informations"
+        chart_techno['layout'] = { 'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":'',}
+        chart_techno['msg'] = ""
+
+        data_chart = {}
+        data_chart['x'] = df_technology
+        data_chart['y'] = nb_techno_chart
+        data_chart['name'] = "Technologies informations"
+        data_chart['hoverinfo'] = "all"
+        data_chart['type'] = 'bar'
+        data_chart['box'] = {'visible': True}
+        data_chart['boxpoints'] = 'all'
+        data_chart['meanline'] = {'visible': True}
+        #techno
+        result["chart_techno"] = chart_techno
 
 
     #return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
