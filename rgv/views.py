@@ -86,7 +86,7 @@ def read_stat(request):
     form = json.loads(request.body, encoding=request.charset)
     result = {}
     lspecies = ["bosTau8","canFam3","danRer10","galGal5","hg38","mm10","rheMac8","rn6","susScr3"]
-    for species in lspecies
+    for species in lspecies:
         result[species] = {}
         url_file = os.path.join(request.registry.jbrowse_path,species,"metadata.csv")
         df = pd.read_csv(url_file,sep=',')
