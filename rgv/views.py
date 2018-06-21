@@ -162,13 +162,13 @@ def d_getter(request):
         chart_techno['description'] = ""
         chart_techno['name'] = "Technologies informations"
         chart_techno['title'] = "Technologies informations"
-        chart_techno['layout'] = { 'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":'',}
+        chart_techno['layout'] = { 'showlegend': True,"title":'',}
         chart_techno['msg'] = ""
-        chart_techno['div'] = "techno"
+        chart_techno['div'] = "bt"
         data_chart = {}
         data_chart['x'] = df_technology
         data_chart['y'] = nb_techno_chart
-        data_chart['name'] = "Technologies informations"
+        data_chart['name'] = "Technologies"
         data_chart['hoverinfo'] = "all"
         data_chart['type'] = 'bar'
         data_chart['box'] = {'visible': True}
@@ -176,8 +176,33 @@ def d_getter(request):
         data_chart['meanline'] = {'visible': True}
         chart_techno['data']=[data_chart]
 
+        #Get general stat
+        nb_biological_chart = []
+        df_biological_topics = df.biological_topics.unique().tolist()
+        for bt in df_biological_topics :
+            nb_biological_chart.append(len(df.loc[df["biological_topics"] == bt]))
+
+        chart_techno = {}
+        chart_techno['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
+        chart_techno['description'] = ""
+        chart_techno['name'] = "Biological Topics informations"
+        chart_techno['title'] = "Biological Topics informations"
+        chart_techno['layout'] = { 'showlegend': True,"title":'',}
+        chart_techno['msg'] = ""
+        chart_techno['div'] = "techno"
+        data_chart = {}
+        data_chart['x'] = df_biological_topics
+        data_chart['y'] = nb_biological_chart
+        data_chart['name'] = "Biological Topics"
+        data_chart['hoverinfo'] = "all"
+        data_chart['type'] = 'bar'
+        data_chart['box'] = {'visible': True}
+        data_chart['boxpoints'] = 'all'
+        data_chart['meanline'] = {'visible': True}
+        chart_techno['data']=[data_chart]v
+
         #techno
-        result["chart_techno"] = [chart_techno]
+        result["chart_bt"] = [chart_techno]
 
         return result
 
