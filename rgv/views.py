@@ -199,7 +199,7 @@ def d_getter(request):
         data_chart['box'] = {'visible': True}
         data_chart['boxpoints'] = 'all'
         data_chart['meanline'] = {'visible': True}
-        chart_techno['data']=[data_chart]v
+        chart_techno['data']=[data_chart]
 
         #techno
         result["chart_bt"] = [chart_techno]
