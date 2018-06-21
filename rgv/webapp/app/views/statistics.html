@@ -72,6 +72,6 @@
 		</tr>
 	</table>
 </div>
-<div class="row">
-	<div chart-div chart="charts" id="chart-techno"></div>
+<div class="row" ng-repeat="chart in charts">
+	<div chart-div chart="charts" id="chart-{{ chart.div }}"></div>
 </div>

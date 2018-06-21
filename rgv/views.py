@@ -159,12 +159,12 @@ def d_getter(request):
             nb_techno_chart.append(len(df.loc[df["technology"] == tech]))
         chart_techno = {}
         chart_techno['config']={'displaylogo':False,'modeBarButtonsToRemove':['toImage','zoom2d','pan2d','lasso2d','resetScale2d']}
-        chart_techno['data']=[]
         chart_techno['description'] = ""
         chart_techno['name'] = "Technologies informations"
         chart_techno['title'] = "Technologies informations"
         chart_techno['layout'] = { 'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":'',}
         chart_techno['msg'] = ""
+        chart_techno['div'] = "techno"
 
         data_chart = {}
         data_chart['x'] = df_technology
@@ -178,7 +178,7 @@ def d_getter(request):
         chart_techno['data']=[data_chart]
 
         #techno
-        result["chart_techno"] = chart_techno
+        result["chart_techno"] = [chart_techno]
 
         return result
 
