@@ -33,7 +33,7 @@
                 cache: false
             },
             read_stat: {
-                url: '/1',
+                url: '/browser_stat',
                 method: 'POST',
                 isArray: false,
                 cache: false

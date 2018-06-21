@@ -56,9 +56,9 @@ def main(global_config, **settings):
 
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_static_view('app', 'rgv:webapp/app')
-    config.add_route('statgenome','/1')
     config.add_route('autocomplete', '/autocomplete')
     config.add_route('checkgene', '/checkgene')
+    config.add_route('browser_stat','/browser_stat')
     config.add_route('d_getter', '/data_frame')
     config.add_route('file_dataset','/dataset_download/{dir}/{file}')
     config.add_route('genelevel', '/genelevel')
