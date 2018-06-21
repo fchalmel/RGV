@@ -71,33 +71,36 @@ logger.addHandler(steam_handler)
 def read_file(request):
     form = json.loads(request.body, encoding=request.charset)
     file_name = form['name']
-    url_file = os.path.join(request.registry.dataset_path,file_name)
-    d = {'line':[]}
-    try:
-        f = open(url_file, "r")
-        for li in f.readlines():
-            d["line"].append(li.rstrip())
+    if file_name != "dfghjkltyuio":
+        url_file = os.path.join(request.registry.dataset_path,file_name)
+        d = {'line':[]}
+        try:
+            f = open(url_file, "r")
+            for li in f.readlines():
+                d["line"].append(li.rstrip())
 
-        return {"data":d, "status":0}
-    except:
-        return {"data":d, "status":1}
+            return {"data":d, "status":0}
+        except:
+            return {"data":d, "status":1}
+    else :
+        result = {}
+        lspecies = ["bosTau8","canFam3","danRer10","galGal5","hg38","mm10","rheMac8","rn6","susScr3"]
+        for species in lspecies:
+            result[species] = {}
+            url_file = os.path.join(request.registry.jbrowse_path,species,"metadata.csv")
+            df = pd.read_csv(url_file,sep=',')
+            study_number = len(df.article.unique())
+            df = df[df.sample_ID.notnull()]
+            sample_liste = df.sample_ID.unique()
+            sample_number = 0
+            for i in sample_liste:
+                sample_number = sample_number + len(i.split('|'))
+            result[species] = {"study_number":study_number,"sample_number":sample_number}
+        return result
 
 def browser_stat(request):
     form = json.loads(request.body, encoding=request.charset)
-    result = {}
-    lspecies = ["bosTau8","canFam3","danRer10","galGal5","hg38","mm10","rheMac8","rn6","susScr3"]
-    for species in lspecies:
-        result[species] = {}
-        url_file = os.path.join(request.registry.jbrowse_path,species,"metadata.csv")
-        df = pd.read_csv(url_file,sep=',')
-        study_number = len(df.article.unique())
-        df = df[df.sample_ID.notnull()]
-        sample_liste = df.sample_ID.unique()
-        sample_number = 0
-        for i in sample_liste:
-            sample_number = sample_number + len(i.split('|'))
-        result[species] = {"study_number":study_number,"sample_number":sample_number}
-    return result
+    
 
 @view_config(route_name='d_getter', renderer='json', request_method='POST')
 def d_getter(request):

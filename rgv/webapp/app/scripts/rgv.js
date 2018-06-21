@@ -211,7 +211,7 @@ angular.module('rgv').controller('genomeCtrl',
     function ($scope,$rootScope, $log, Auth, User, Dataset) {
 
         $scope.msg="";
-        Dataset.read_stat({"species":"species"}).$promise.then(function(dataset){
+        Dataset.read_file({"name":"dfghjkltyuio"}).$promise.then(function(dataset){
                 $scope.Stat = dataset;
         });
 });
