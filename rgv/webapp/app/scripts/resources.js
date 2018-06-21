@@ -33,7 +33,7 @@
                 cache: false
             },
             read_stat: {
-                url: '/statgenome',
+                url: '/1',
                 method: 'POST',
                 isArray: false,
                 cache: false

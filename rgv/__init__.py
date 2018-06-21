@@ -78,7 +78,7 @@ def main(global_config, **settings):
     config.add_route('user_delete', '/user/delete')
     config.add_route('user_info', '/user/{id}')
     config.add_route('read_file','/browser_genelevel_init')
-    config.add_route('statgenome','/statgenome')
+    config.add_route('statgenome','/1')
     config.add_route('search', '/search')
 
 
