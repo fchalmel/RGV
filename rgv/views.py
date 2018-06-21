@@ -112,8 +112,6 @@ def d_getter(request):
     final_df = json.loads(df_json)
     filters = []
     displays = []
-    for el in request.registry.col_display:
-        displays.append({'name':el})
 
     #Create Data treeview for filtering grid (Species, Technology...)
     df_species = df.species.unique().tolist()
