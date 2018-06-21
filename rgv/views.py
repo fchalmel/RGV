@@ -129,7 +129,7 @@ def d_getter(request):
             result[species] = {}
             nb_studies = len(df.loc[df["species"] == species,"PubMedID"].unique())
             lOme = []
-            ome = len(df.loc[df["species"] == species,"ome"].unique())
+            ome = df.loc[df["species"] == species,"ome"].unique()
             for i in ome :
                 if '|' in i :
                     for z in i.split('|'):
@@ -141,7 +141,7 @@ def d_getter(request):
             number_of_techno = len(lOme)
 
             ltopics = []
-            topics = len(df.loc[df["species"] == species,"biological_topics"].unique())
+            topics = df.loc[df["species"] == species,"biological_topics"].unique()
             for i in topics :
                 if '|' in i :
                     for z in i.split('|'):
