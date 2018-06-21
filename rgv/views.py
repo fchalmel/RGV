@@ -82,7 +82,7 @@ def read_file(request):
     except:
         return {"data":d, "status":1}
 
-def read_stat(request):
+def statgenome(request):
     form = json.loads(request.body, encoding=request.charset)
     result = {}
     lspecies = ["bosTau8","canFam3","danRer10","galGal5","hg38","mm10","rheMac8","rn6","susScr3"]
