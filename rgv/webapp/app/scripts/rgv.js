@@ -283,7 +283,6 @@ angular.module('rgv').controller('downloadCtrl',
                     dico.name = names;
                     modified_path.push(dico);
                 }
-                return modified_path
             } else {
                 var dico = {};
                 dico.path = path;
@@ -301,6 +300,7 @@ angular.module('rgv').controller('downloadCtrl',
                 dico.name = names;
                 modified_path.push(dico);
             }
+            return modified_path
         }
 
 });
