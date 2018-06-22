@@ -230,7 +230,7 @@ angular.module('rgv').controller('statCtrl',
 
 ////////////////////// Downloads ///////////////////////////////////////
 angular.module('rgv').controller('downloadCtrl',
-    function ($scope,$rootScope, $log, Auth, User) {
+    function ($scope,$rootScope, $log, Auth, User, Dataset) {
 
         $scope.msg="";
         var startPromise = Dataset.data_frame({"name":"metadata.csv"}).$promise.then(function(response){
