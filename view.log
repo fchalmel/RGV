@@ -10812,3 +10812,4 @@ Traceback (most recent call last):
   File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
     raise HTTPNotFound(request.url)
 HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
