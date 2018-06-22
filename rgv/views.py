@@ -934,6 +934,7 @@ def file_dataset(request):
     z.close()
     logger.warning("TMPPPP")
     logger.warning(tmp_file)
+    logger.warning(request)
     return FileResponse(tmp_file,
                         request=request,
                         content_type='application/zip')
