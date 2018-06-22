@@ -915,7 +915,7 @@ def getstudies(request):
 @view_config(route_name='file_dataset', request_method='GET')
 def file_dataset(request):
     directory = request.matchdict['dir']
-    downfile = request.matchdict['file']
+    downfile = request.matchdict['file'].replace('.zip','')
 
     url_file = os.path.join(request.registry.base_url,directory,downfile)
 
@@ -928,11 +928,10 @@ def file_dataset(request):
         url_file = os.path.join(request.registry.base_url,'download',downfile)
 
     logger.warning(url_file)
-    (handle, tmp_file) = tempfile.mkstemp('.txt')
-    #z = zipfile.ZipFile(tmp_file, "w")
-    #z.write(url_file,os.path.basename(url_file)+'.zip')
-    #z.close()
-    logger.warning(request)
+    (handle, tmp_file) = tempfile.mkstemp('.zip')
+    z = zipfile.ZipFile(tmp_file, "w")
+    z.write(url_file,os.path.basename(url_file)+'.zip')
+    z.close()
     return FileResponse(tmp_file,
                         request=request,
                         content_type='application/zip')
