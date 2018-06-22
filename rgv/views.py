@@ -933,7 +933,6 @@ def file_dataset(request):
     z.write(url_file,os.path.basename(url_file)+'.zip')
     z.close()
     return FileResponse(tmp_file,
-                        request=request,
                         content_type='application/zip')
 
 @view_config(route_name='search', renderer='json', request_method='POST')
