@@ -267,9 +267,9 @@ angular.module('rgv').controller('downloadCtrl',
                 var finalString = path.split('|');
                 for (var i=0;i<finalString.length;i++){
                     var dico = {};
-                    dico.path = finalString[i].replace("_","+");
+                    dico.path = finalString[i].replace("/","+");
 
-                    var names = path.split('/');
+                    var names = finalString[i].split('/');
                     names = names[names.length - 1];
                     names = names.replace("data_genelevel_","");
                     names = names.replace(".txt","");
@@ -285,7 +285,7 @@ angular.module('rgv').controller('downloadCtrl',
                 }
             } else {
                 var dico = {};
-                dico.path = path.replace("_","+");
+                dico.path = path.replace("/","+");
                 var names = path.split('/');
                 names = names[names.length - 1];
                 names = names.replace("data_genelevel_","");
