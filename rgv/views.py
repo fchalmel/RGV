@@ -916,8 +916,18 @@ def getstudies(request):
 def file_dataset(request):
     directory = request.matchdict['dir']
     downfile = request.matchdict['file']
+
     url_file = os.path.join(request.registry.base_url,directory,downfile)
-    print(url_file)
+    
+    if directory == "jbrowse" :
+        downfile = downfile.replace("+","/")
+        url_file = os.path.join(request.registry.jbrowse_path,downfile)
+
+    if directory == "annotation" :
+        downfile = downfile.replace("+","/")
+        url_file = os.path.join(request.registry.base_url,'download',downfile)
+
+    logger.warning(url_file)
     (handle, tmp_file) = tempfile.mkstemp('.zip')
     z = zipfile.ZipFile(tmp_file, "w")
     z.write(url_file,os.path.basename(url_file)+'.zip')
