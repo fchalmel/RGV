@@ -233,6 +233,75 @@ angular.module('rgv').controller('downloadCtrl',
     function ($scope,$rootScope, $log, Auth, User) {
 
         $scope.msg="";
+        var startPromise = Dataset.data_frame({"name":"metadata.csv"}).$promise.then(function(response){
+            return $q.when(response)
+        })
+        startPromise.then(function(value){
+            $scope.data_all = value.data;
+            $scope.ome = value.ome;
+            $scope.allspe = value.species;
+            $scope.techno = value.technology;
+            $scope.sex = value.sex
+    
+            //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
+            $scope.displayedCollection = [].concat($scope.data_all);
+        });
+
+        $scope.replaceString = function(stingToReplace){
+            if (stingToReplace == null){
+                return " ";
+            }
+            if (stingToReplace.indexOf('|') > -1){
+                var finalString = stingToReplace.split('|').join(', ');
+                return finalString;
+            } else {
+                return stingToReplace;
+            }
+            
+            
+        }
+
+        $scope.haveOnePath = function(path){
+            var modified_path =[]
+            if (path.indexOf('|') > -1){
+                var finalString = path.split('|').join(', ');
+                for (var i=0;i<finalString.length;i++){
+                    var dico = {};
+                    dico.path = finalString[i];
+
+                    var names = newpath.split('/');
+                    names = names[names.length - 1];
+                    names = names.replace("data_genelevel_","");
+                    names = names.replace(".txt","");
+                    names = names.replace("_"," ");
+                    
+                    if(names == "data genelevel"){
+                        names = 'Default'
+                    }
+                    names = names.replace("_"," ");
+
+                    dico.name = names;
+                    modified_path.push(dico);
+                }
+                return modified_path
+            } else {
+                var dico = {};
+                dico.path = path;
+                var names = newpath.split('/');
+                names = names[names.length - 1];
+                names = names.replace("data_genelevel_","");
+                names = names.replace(".txt","");
+                names = names.replace("_"," ");
+                
+                if(names == "data genelevel"){
+                    names = 'Default'
+                }
+                names = names.replace("_"," ");
+
+                dico.name = names;
+                modified_path.push(dico);
+            }
+        }
 
 });
 
