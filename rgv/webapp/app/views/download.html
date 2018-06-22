@@ -91,7 +91,7 @@
 				<td>{{replaceString(row.biological_topics)}}</td>
 				<td>{{replaceString(row.species)}}</td>
 				<td>{{row.technology}}</td>
-				<td ng-init = "formatRow = haveOnePath(row.path)"><a ng-repeat="pathd in formatRow" ng-href="/dataset_download/jbrowse/{{pathd.path}}"> Download {{pathd.name}} </a></td>
+				<td ng-init = "formatRow = haveOnePath(row.path)"><a ng-repeat="pathd in formatRow" ng-href="/dataset_download/jbrowse/{{pathd.path}}"> Download {{pathd.name}} | </a></td>
 			</tr>
 		</tbody>
 		<tbody ng-if="!displayedCollection">
