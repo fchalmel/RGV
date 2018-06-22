@@ -264,7 +264,7 @@ angular.module('rgv').controller('downloadCtrl',
         $scope.haveOnePath = function(path){
             var modified_path =[]
             if (path.indexOf('|') > -1){
-                var finalString = path.split('|').join(', ');
+                var finalString = path.split('|');
                 for (var i=0;i<finalString.length;i++){
                     var dico = {};
                     dico.path = finalString[i].replace("_","+");

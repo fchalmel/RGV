@@ -918,10 +918,10 @@ def file_dataset(request):
     downfile = request.matchdict['file']
 
     url_file = os.path.join(request.registry.base_url,directory,downfile)
-    
+
     if directory == "jbrowse" :
         downfile = downfile.replace("+","/")
-        url_file = os.path.join(request.registry.jbrowse_path,downfile)
+        url_file = os.path.join(request.registry.base_url,'data',downfile)
 
     if directory == "annotation" :
         downfile = downfile.replace("+","/")
