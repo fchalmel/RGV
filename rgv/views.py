@@ -928,12 +928,10 @@ def file_dataset(request):
         url_file = os.path.join(request.registry.base_url,'download',downfile)
 
     logger.warning(url_file)
-    (handle, tmp_file) = tempfile.mkstemp('.zip')
-    z = zipfile.ZipFile(tmp_file, "w")
-    z.write(url_file,os.path.basename(url_file)+'.zip')
-    z.close()
-    logger.warning("TMPPPP")
-    logger.warning(tmp_file)
+    (handle, tmp_file) = tempfile.mkstemp('.txt')
+    #z = zipfile.ZipFile(tmp_file, "w")
+    #z.write(url_file,os.path.basename(url_file)+'.zip')
+    #z.close()
     logger.warning(request)
     return FileResponse(tmp_file,
                         request=request,
