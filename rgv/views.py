@@ -915,8 +915,7 @@ def getstudies(request):
 @view_config(route_name='file_dataset', request_method='GET')
 def file_dataset(request):
     directory = request.matchdict['dir']
-    downfile = request.matchdict['file'].replace('.zip','')
-
+    downfile = request.matchdict['file']
     url_file = os.path.join(request.registry.base_url,directory,downfile)
 
     if directory == "jbrowse" :
@@ -933,6 +932,7 @@ def file_dataset(request):
     z.write(url_file,os.path.basename(url_file)+'.zip')
     z.close()
     return FileResponse(tmp_file,
+                        content_disposition='attachment; filename="%s"' % (downfile.split('/')[-1]+'.zip'),
                         content_type='application/zip')
 
 @view_config(route_name='search', renderer='json', request_method='POST')
