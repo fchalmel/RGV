@@ -269,7 +269,7 @@ angular.module('rgv').controller('downloadCtrl',
                     var dico = {};
                     dico.path = finalString[i];
 
-                    var names = newpath.split('/');
+                    var names = path.split('/');
                     names = names[names.length - 1];
                     names = names.replace("data_genelevel_","");
                     names = names.replace(".txt","");
@@ -287,7 +287,7 @@ angular.module('rgv').controller('downloadCtrl',
             } else {
                 var dico = {};
                 dico.path = path;
-                var names = newpath.split('/');
+                var names = path.split('/');
                 names = names[names.length - 1];
                 names = names.replace("data_genelevel_","");
                 names = names.replace(".txt","");
