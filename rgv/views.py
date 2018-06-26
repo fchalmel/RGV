@@ -299,6 +299,7 @@ def genelevel(request):
 
     ensemblgenes = []
     selected_genes = []
+    selected_class = ""
     result = {'time':''}
     #print directories
     start_time = time.time()  
