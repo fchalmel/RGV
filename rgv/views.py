@@ -316,6 +316,7 @@ def genelevel(request):
                     result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.studies_path,study))
                     selected_genes.append(gene['GeneID'])
                     ensemblgenes.append(gene['EnsemblID'])
+                    selected_class = result[study][gene['Symbol']]['class'][0]
                     if study in model :
                         if gene['Symbol'] in model[study] :
                             selected_class = model[study][gene['Symbol']]
