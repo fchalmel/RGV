@@ -423,7 +423,7 @@ angular.module('rgv').directive("chartDiv", function() {
 
 ////////////////////// SC RNAseq Browser////////////////////////////////////////
 angular.module('rgv').controller('browser_scRNAseqCtrl',
-function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q, $templateCache) {
+function ($scope,$rootScope,$http,$filter,Auth, Dataset,uiGridConstants,$resource, $q, $templateCache) {
     //Get Gene level information
     $scope.dispalaySpe = function(dict, value){
         for(var key in dict) {
@@ -432,6 +432,8 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants,$resource, $q
             }
         }
     }
+    var user = Auth.getUser();
+    console.log(user);
     $scope.lastgenes={};
     $scope.val_button = {};
     $scope.displayGeneExp = function(selected_lst,selected_class,selected_gene,model,stud){
