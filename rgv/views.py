@@ -106,7 +106,9 @@ def browser_stat(request):
 def d_getter(request):
     form = json.loads(request.body, encoding=request.charset)
     file_name = form['name']
-    user = form['user']
+    user = "none"
+    if "user" in form :
+        user = form['user']
     if user != "none" :
         url_file = os.path.join(request.registry.dataset_path,"private",user,'metadata.csv')
     else :

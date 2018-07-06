@@ -1030,8 +1030,10 @@ function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templat
 
 ////////////////////// Gene-level ////////////////////////////////////////
 angular.module('rgv').controller('browsergenelevelCtrl',
-    function ($scope,$rootScope,$http,$filter, Dataset,uiGridConstants, $q, $templateCache) {
-        
+    function ($scope,$rootScope,$http,$filter, Dataset, Auth, uiGridConstants, $q, $templateCache) {
+    
+    var user = Auth.getUser();
+
         //Get Gene level information
     $scope.dispalaySpe = function(dict, value){
         for(var key in dict) {
@@ -1111,24 +1113,43 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         }
     }
     
-    var startPromise = Dataset.data_frame({"name":"metadata.csv"}).$promise.then(function(response){
-        return $q.when(response)
-    })
-    startPromise.then(function(value){
-        var data_all = value.data;
-        $scope.filterD = value.filter;
-        $scope.data_all = value.data;
-        $scope.ome = value.ome;
-        $scope.allspe = value.species;
-        $scope.techno = value.technology;
-        $scope.sex = value.sex
-
-        //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
-            $scope.displayedCollection = [].concat($scope.data_all);
-
+    if (user == null){
 
     
-    });        
+        var startPromise = Dataset.data_frame({"name":"metadata.csv","user":"none"}).$promise.then(function(response){
+            return $q.when(response)
+        })
+        startPromise.then(function(value){
+            $scope.data_all = value.data;
+            $scope.ome = value.ome;
+            $scope.allspe = value.species;
+            $scope.techno = value.technology;
+            $scope.sex = value.sex
+
+            //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
+                $scope.displayedCollection = [].concat($scope.data_all);
+
+        
+        });
+    }
+
+    if (user != null){
+        var startPromise = Dataset.data_frame({"name":"metadata.csv","user":user.id}).$promise.then(function(response){
+            return $q.when(response)
+        })
+        startPromise.then(function(value){
+            $scope.data_all = value.data;
+            $scope.ome = value.ome;
+            $scope.allspe = value.species;
+            $scope.techno = value.technology;
+            $scope.sex = value.sex
+
+            //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
+                $scope.displayedCollection = [].concat($scope.data_all);
+
+        
+        });
+    }      
 
     $scope.multiFile = null;
 
