@@ -434,6 +434,7 @@ function ($scope,$rootScope,$http,$filter,Auth, Dataset,uiGridConstants,$resourc
     }
     var user = Auth.getUser();
     console.log(user);
+
     $scope.lastgenes={};
     $scope.val_button = {};
     $scope.displayGeneExp = function(selected_lst,selected_class,selected_gene,model,stud){
@@ -584,22 +585,43 @@ function ($scope,$rootScope,$http,$filter,Auth, Dataset,uiGridConstants,$resourc
     
   }
     
-
-    var startPromise = Dataset.data_frame({"name":"metadata.csv"}).$promise.then(function(response){
-        return $q.when(response)
-    })
-    startPromise.then(function(value){
-        $scope.data_all = value.data;
-        $scope.ome = value.ome;
-        $scope.allspe = value.species;
-        $scope.techno = value.technology;
-        $scope.sex = value.sex
-
-        //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
-            $scope.displayedCollection = [].concat($scope.data_all);
+    if (user == null){
 
     
-    });
+        var startPromise = Dataset.data_frame({"name":"metadata.csv","user":"none"}).$promise.then(function(response){
+            return $q.when(response)
+        })
+        startPromise.then(function(value){
+            $scope.data_all = value.data;
+            $scope.ome = value.ome;
+            $scope.allspe = value.species;
+            $scope.techno = value.technology;
+            $scope.sex = value.sex
+
+            //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
+                $scope.displayedCollection = [].concat($scope.data_all);
+
+        
+        });
+    }
+
+    if (user != null){
+        var startPromise = Dataset.data_frame({"name":"metadata.csv","user":user.id}).$promise.then(function(response){
+            return $q.when(response)
+        })
+        startPromise.then(function(value){
+            $scope.data_all = value.data;
+            $scope.ome = value.ome;
+            $scope.allspe = value.species;
+            $scope.techno = value.technology;
+            $scope.sex = value.sex
+
+            //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
+                $scope.displayedCollection = [].concat($scope.data_all);
+
+        
+        });
+    }
     
     $scope.replaceString = function(stingToReplace){
         if (stingToReplace == null){

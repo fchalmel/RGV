@@ -106,7 +106,11 @@ def browser_stat(request):
 def d_getter(request):
     form = json.loads(request.body, encoding=request.charset)
     file_name = form['name']
-    url_file = os.path.join(request.registry.dataset_path,'metadata.csv')
+    user = forn['user']
+    if user != "none" :
+        url_file = os.path.join(request.registry.dataset_path,"private",user,'metadata.csv')
+    else :
+        url_file = os.path.join(request.registry.dataset_path,'metadata.csv')
     df = pd.read_csv(url_file,sep=',')
     df_json = df.to_json(orient='records')
     final_df = json.loads(df_json)
