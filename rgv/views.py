@@ -713,7 +713,7 @@ def scData(request):
             
         chart = {}
         chart['class'] = getClass(os.path.join(request.registry.studies_path,stud))
-        
+        logger.warning(chart['class'])
         if selected_class == '':
             selected_class =  chart['class'][0]
         logger.warning(selected_class)
