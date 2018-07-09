@@ -716,10 +716,12 @@ def scData(request):
         
         if selected_class == '':
             selected_class =  chart['class'][0]
+        print selected_class
         groups = getValue(os.path.join(request.registry.studies_path,stud),[selected_class])
         groups = np.array(groups[selected_class])
         _, idx = np.unique(groups, return_index=True)
         uniq_groups = groups[np.sort(idx)[::-1]]
+        print (uniq_groups)
 
         samples = np.array(getValue(os.path.join(request.registry.studies_path,stud),['Sample'])['Sample'])
         x = np.array(getValue(os.path.join(request.registry.studies_path,stud),['X'])['X'])
