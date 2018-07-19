@@ -10812,4 +10812,1094 @@ Traceback (most recent call last):
   File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
     raise HTTPNotFound(request.url)
 HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-06-19 16:48:28,435 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363230373034373230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
   File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 90, in d_getter
+    df = pd.read_csv(url_file,sep=',')
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File /Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/metadata.csv does not exist
+2018-06-29 08:38:22,211 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353737353637333132/exception
+2018-06-29 16:57:57,552 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353733363036333532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 110, in d_getter
+    df = pd.read_csv(url_file,sep=',')
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File /Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/metadata.csv does not exist
+2018-07-09 17:20:50,066 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333939313437313532/exception
+2018-07-09 17:22:46,606 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343030383234343634/exception
+2018-07-09 17:24:35,625 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343031353738343438/exception
+2018-07-09 17:27:19,838 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343032313835343234/exception
+2018-07-09 17:32:32,413 :: ERROR :: Exception when serving /browser_genelevel_init
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 270, in __call__
+    response = self.execution_policy(environ, self)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 278, in default_execution_policy
+    return request.invoke_exception_view(reraise=True)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 755, in invoke_exception_view
+    reraise_(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 276, in default_execution_policy
+    return router.invoke_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 249, in invoke_request
+    response = handle_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 213, in toolbar_tween
+    return handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 91, in read_file
+    df = pd.read_csv(url_file,sep=',')
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File /Users/tdarde/Documents/Dev/envRGV/RGV/bosTau8/metadata.csv does not exist
+2018-07-09 17:38:52,816 :: ERROR :: Exception when serving /data_frame
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 270, in __call__
+    response = self.execution_policy(environ, self)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 278, in default_execution_policy
+    return request.invoke_exception_view(reraise=True)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 755, in invoke_exception_view
+    reraise_(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 276, in default_execution_policy
+    return router.invoke_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 249, in invoke_request
+    response = handle_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 213, in toolbar_tween
+    return handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 116, in d_getter
+    df = pd.read_csv(url_file,sep=',')
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File /Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/metadata.csv does not exist
+2018-07-09 17:40:53,889 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343032363937363830/exception
+2018-07-09 17:41:41,353 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343038383434303438/exception
+2018-07-09 17:42:28,965 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343034323030313434/exception
+2018-07-09 17:43:09,524 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343034363537343234/exception
+2018-07-09 17:43:24,818 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343035323933333932/exception
+2018-07-09 17:43:52,333 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343035373539393532/exception
+2018-07-09 17:44:04,923 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343036313939383234/exception
+2018-07-09 17:46:44,434 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333938383637373238/exception
+2018-07-09 17:48:49,972 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343033343834333638/exception
+2018-07-09 17:58:01,945 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343034353535313532/exception
+2018-07-09 17:59:37,752 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343130333331363634/exception
+2018-07-09 18:13:23,813 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343037393638303136/exception
+2018-07-10 16:22:41,752 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343039323739333736/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 116, in d_getter
+    df = pd.read_csv(url_file,sep=',')
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File /Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/metadata.csv does not exist
+2018-07-10 16:55:00,429 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343033333930343136/exception
+2018-07-11 15:30:25,825 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363332343532323430/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 116, in d_getter
+    df = pd.read_csv(url_file,sep=',')
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File /Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/metadata.csv does not exist
+2018-07-11 15:33:45,862 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363336323438343634/exception
+2018-07-11 15:34:17,193 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363239353538373336/exception
+2018-07-11 15:35:27,666 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353236373532353238/exception
+2018-07-11 15:39:59,538 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343137313531353638/exception
+2018-07-11 15:42:19,803 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333637383433343732/exception
+2018-07-11 15:42:20,734 :: ERROR :: Uncaught TypeError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333639383831353532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 130, in d_getter
+    if '|' in i :
+TypeError: argument of type 'float' is not iterable
+2018-07-11 15:46:14,900 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343839393239363136/exception
+2018-07-11 15:46:15,569 :: ERROR :: Uncaught TypeError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343932323239303732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 131, in d_getter
+    if '|' in i :
+TypeError: argument of type 'float' is not iterable
+2018-07-11 15:47:26,496 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343436343632333532/exception
+2018-07-11 15:47:27,162 :: ERROR :: Uncaught ValueError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343438333337363830/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 127, in d_getter
+    df_sex.remove('nan')
+ValueError: list.remove(x): x not in list
+2018-07-11 15:47:53,406 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343239323638343936/exception
+2018-07-11 15:47:54,362 :: ERROR :: Uncaught NameError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343331333539313834/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 127, in d_getter
+    df_sex.remove(nan)
+NameError: global name 'nan' is not defined
+2018-07-11 15:49:39,149 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353035343738303332/exception
+2018-07-11 15:49:40,090 :: ERROR :: Uncaught NameError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353037353139363936/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 127, in d_getter
+    df_sex.remove(nan)
+NameError: global name 'nan' is not defined
+2018-07-11 15:49:54,152 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353037393036323536/exception
+2018-07-11 15:49:54,784 :: ERROR :: Uncaught TypeError at http://0.0.0.0:6543/data_frame
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353039373832363732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 130, in d_getter
+    if math.isnan(i) :
+TypeError: a float is required
+2018-07-11 15:51:04,832 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343139333634333034/exception
+2018-07-11 16:52:21,656 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363035393733353230/exception
+2018-07-16 16:18:36,162 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/Users/tdarde/Desktop/test/data.csv
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363233303330303332/exception
+2018-07-16 16:18:52,631 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363233363535313834/exception
+2018-07-16 16:19:09,261 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/Users/tdarde/Desktop/test/data.csv
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363233313939343430/exception
+2018-07-16 16:20:21,947 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363235303131343732/exception
+2018-07-16 16:20:22,537 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/Users/tdarde/Desktop/test/data.csv
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363233373539393532/exception
+2018-07-16 16:20:35,952 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363230363039303430/exception
+2018-07-16 16:20:39,105 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/Users/tdarde/Desktop/test/data.csv
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363234343232343136/exception
+2018-07-16 16:21:43,058 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363232323138313932/exception
+2018-07-16 16:22:12,024 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363233333037323136/exception
+2018-07-16 16:51:57,931 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353434323737343536/exception
+2018-07-16 16:52:14,751 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/scData
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353433393836393630/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 870, in scData
+    chart['class'] = getClass(os.path.join(request.registry.studies_path,stud))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 844, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/29425512/scRNA-Seq/Mus_musculus/data_genelevel.txt.pickle'
+2018-07-16 16:52:57,388 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353530343633343430/exception
+2018-07-16 16:53:03,572 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/scData
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353533333332303438/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 870, in scData
+    chart['class'] = getClass(os.path.join(request.registry.studies_path,stud))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 844, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/29425512/scRNA-Seq/Mus_musculus/data_genelevel.txt.pickle'
+2018-07-16 16:53:37,109 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353535313335313230/exception
+2018-07-16 16:53:44,318 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-16 16:53:44,320 :: WARNING :: Class:stages
+2018-07-16 16:53:44,409 :: WARNING :: ['E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-16 16:55:59,826 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-16 16:55:59,826 :: WARNING :: Class:stages
+2018-07-16 16:55:59,912 :: WARNING :: ['E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-16 17:00:46,033 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353437313538393238/exception
+2018-07-16 17:00:54,793 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-16 17:00:54,793 :: WARNING :: Class:stages
+2018-07-16 17:00:54,881 :: WARNING :: ['E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-16 17:01:59,888 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343033353333393638/exception
+2018-07-16 17:02:06,470 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-16 17:02:06,470 :: WARNING :: Class:stages
+2018-07-16 17:02:06,557 :: WARNING :: ['E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-16 17:03:03,986 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333536303634393132/exception
+2018-07-16 17:20:20,489 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343030353238323038/exception
+2018-07-16 17:22:19,979 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333638353935303234/exception
+2018-07-16 17:22:37,052 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333739343732313434/exception
+2018-07-16 17:23:33,406 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333830363231323030/exception
+2018-07-16 17:25:34,345 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363038393635393638/exception
+2018-07-16 17:28:26,464 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-16 17:28:26,465 :: WARNING :: Class:stages
+2018-07-16 17:28:26,631 :: WARNING :: ['E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-16 17:33:53,696 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363132393838333034/exception
+2018-07-16 17:34:08,233 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-16 17:34:08,233 :: WARNING :: Class:stages
+2018-07-16 17:34:08,320 :: WARNING :: ['E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-16 17:37:12,820 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363135343636393630/exception
+2018-07-16 17:38:00,046 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363132353330313238/exception
+2018-07-16 17:38:40,280 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343037383336383136/exception
+2018-07-16 17:39:09,563 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343137313132393736/exception
+2018-07-16 17:39:29,981 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-16 17:39:29,982 :: WARNING :: Class:stages
+2018-07-16 17:39:30,066 :: WARNING :: ['E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-16 17:40:49,367 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343235343632303332/exception
+2018-07-16 17:43:19,424 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353731363531373932/exception
+2018-07-16 17:44:49,404 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353733343132363838/exception
+2018-07-16 17:45:58,397 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353739303137343838/exception
+2018-07-16 17:46:57,601 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353734383135363936/exception
+2018-07-16 17:52:21,920 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353634343430313434/exception
+2018-07-16 17:52:37,264 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353635323130383936/exception
+2018-07-16 17:53:48,151 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353636373434323038/exception
+2018-07-16 17:55:28,790 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353736333935363030/exception
+2018-07-16 17:59:10,633 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333830383833353336/exception
+2018-07-16 17:59:51,417 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333832323931393834/exception
+2018-07-16 18:05:43,405 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333936383239393638/exception
+2018-07-16 18:08:11,202 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333834323637363634/exception
+2018-07-16 18:11:11,912 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-16 18:11:11,912 :: WARNING :: Class:stages
+2018-07-16 18:11:12,001 :: WARNING :: ['E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-16 18:11:14,742 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333831313034343634/exception
+2018-07-16 18:11:38,262 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333832343231353230/exception
+2018-07-16 18:16:27,851 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333131343137323332/exception
+2018-07-16 19:29:43,518 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353837343736373532/exception
+2018-07-16 19:34:33,472 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353932313233303838/exception
+2018-07-16 19:34:49,241 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353832313737323332/exception
+2018-07-16 19:35:56,375 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353832373034343030/exception
+2018-07-16 19:50:51,086 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353835303135303536/exception
+2018-07-16 19:52:18,946 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353835313139323438/exception
+2018-07-16 19:54:53,364 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353930303035393638/exception
+2018-07-16 20:09:15,509 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363034353834303830/exception
+2018-07-16 20:09:38,151 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353938373133373434/exception
+2018-07-16 20:11:53,279 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-16 20:11:53,279 :: WARNING :: Class:stages
+2018-07-16 20:11:53,394 :: WARNING :: ['E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-16 20:17:11,736 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363037333936303438/exception
+2018-07-16 20:18:17,492 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363132323835363438/exception
+2018-07-17 11:23:43,906 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363132313837313532/exception
+2018-07-17 11:38:49,256 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363132313837303234/exception
+2018-07-17 11:40:14,224 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363139363136313434/exception
+2018-07-17 11:40:24,365 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363237303831313638/exception
+2018-07-17 11:45:49,413 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363037323339303536/exception
+2018-07-17 11:49:24,150 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363233303534393238/exception
+2018-07-17 11:49:38,428 :: ERROR :: Uncaught IndexError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363131323136353238/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 535, in genelevel
+    print groups[i]
+IndexError: index 399 is out of bounds for axis 0 with size 399
+2018-07-17 11:52:09,520 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363137353832383030/exception
+2018-07-17 11:56:02,402 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363132363039343234/exception
+2018-07-17 12:01:46,972 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363235363037333132/exception
+2018-07-17 12:07:45,697 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363237303433393834/exception
+2018-07-17 14:03:00,301 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363237313437313532/exception
+2018-07-17 14:04:33,169 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363237323233333736/exception
+2018-07-17 14:21:15,743 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363238333034313434/exception
+2018-07-17 14:22:02,459 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363136333233343038/exception
+2018-07-19 11:05:39,567 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333839393732333034/exception
+2018-07-19 11:14:02,700 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343031343837393532/exception
+2018-07-19 11:19:05,826 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353735343630373532/exception
+2018-07-19 11:22:46,477 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343530333534303634/exception
+2018-07-19 11:23:03,834 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343533303235393336/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 493, in genelevel
+    result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 449, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/26377738/RNA-Seq/Gallus_gallus/data_genelevel.txt.pickle'
+2018-07-19 11:23:13,290 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343536363238383830/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 493, in genelevel
+    result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 449, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/26377738/RNA-Seq/Gallus_gallus/data_genelevel.txt.pickle'
+2018-07-19 11:23:20,118 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343537383530383332/exception
+2018-07-19 11:25:24,806 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353832333834353238/exception
+2018-07-19 11:30:50,220 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333835373432343830/exception
+2018-07-19 11:31:13,939 :: ERROR :: Uncaught NameError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333839343738363732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 519, in genelevel
+    chart['name'] = gene_name
+NameError: global name 'gene_name' is not defined
+2018-07-19 11:31:17,786 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333939333330353132/exception
+2018-07-19 11:31:54,623 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353237343932363838/exception
+2018-07-19 11:33:41,297 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343230313931313230/exception
+2018-07-19 11:34:02,770 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343232383437313230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 493, in genelevel
+    result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 449, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/27560004/RNA-Seq/Mus_musculus/data_genelevel.txt.pickle'
+2018-07-19 11:34:07,435 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343236353136313132/exception
+2018-07-19 11:36:01,852 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343237363532333638/exception
+2018-07-19 11:36:14,810 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343430333438343936/exception
+2018-07-19 11:37:23,463 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343232323930333230/exception
+2018-07-19 11:40:31,665 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343336373530313630/exception
+2018-07-19 11:42:30,263 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343437303032353132/exception
+2018-07-19 11:49:35,351 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343438383337323634/exception
+2018-07-19 11:54:21,633 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343631333632313238/exception
+2018-07-19 12:00:18,136 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343630343237343038/exception
+2018-07-19 12:00:51,477 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343439333337313638/exception
+2018-07-19 12:32:37,989 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343532373231313638/exception
+2018-07-19 12:34:27,639 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343435383037383838/exception
+2018-07-19 12:37:35,965 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343632333534363430/exception
+2018-07-19 12:42:59,127 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343634333338333230/exception
+2018-07-19 14:32:31,243 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/browser_genelevel_init
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343530323936373834/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 92, in read_file
+    df = pd.read_csv(url_file,sep=',')
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File /Users/tdarde/Documents/Dev/envRGV/RGV/bosTau8/metadata.csv does not exist
+2018-07-19 14:37:03,700 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343636333438343332/exception
+2018-07-19 14:43:10,680 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343736303235333630/exception
+2018-07-19 14:52:21,588 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343436363232393932/exception
+2018-07-19 14:55:54,821 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343534353130393238/exception
+2018-07-19 15:17:30,585 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343635343730393932/exception
+2018-07-19 15:22:41,644 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343633363334303030/exception
+2018-07-19 16:09:02,399 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343934333536333034/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 586, in genelevel
+    result[study]["No selected gene"]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 451, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/Li.pickle'
+2018-07-19 16:09:08,059 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343936323237363634/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 495, in genelevel
+    result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 451, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/Li.pickle'
+2018-07-19 16:09:11,518 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343938393436343438/exception
+2018-07-19 16:10:06,582 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343934313634363838/exception
+2018-07-19 16:39:11,080 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353334323730373336/exception
+2018-07-19 16:48:26,659 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343830333333383430/exception
+2018-07-19 17:12:24,700 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363330383837313834/exception
+2018-07-19 17:22:52,702 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353036353135363634/exception
+2018-07-19 17:29:16,105 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363139303435373736/exception
+2018-07-19 17:30:13,191 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363134303833363030/exception
+2018-07-19 17:34:25,848 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353337333837393230/exception
+2018-07-19 17:34:38,141 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353338393832323234/exception
+2018-07-19 17:48:35,456 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/browser_genelevel_init
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353734373938303936/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 92, in read_file
+    df = pd.read_csv(url_file,sep=',')
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File /Users/tdarde/Documents/Dev/envRGV/RGV/bosTau8/metadata.csv does not exist
+2018-07-19 17:59:46,098 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/images/home_scatter.png
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353733323531383536/exception
+2018-07-19 17:59:46,099 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/images/home_violin.png
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353733393231333630/exception
+2018-07-19 17:59:46,100 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/images/home_genoebrowser_final.png
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353733393233383536/exception
+2018-07-19 17:59:54,247 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353734303437373630/exception
+2018-07-19 18:00:37,955 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353734343732393132/exception
+2018-07-19 18:01:31,313 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353838393838333034/exception

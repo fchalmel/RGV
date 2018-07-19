@@ -172,7 +172,18 @@ angular.module('rgv').controller('studiesCtrl',
             $scope.ome = value.ome;
             $scope.allspe = value.species;
             $scope.techno = value.technology;
-            $scope.sex = value.sex
+            $scope.sex = value.sex;
+            $scope.experimentaldesign = value.experimental_design;
+            $scope.biotop = value.biological_topics;
+            $scope.tissues = value.tissue_or_cell;
+            $scope.stage = value.developmental_stage;
+            $scope.age = value.age;
+            $scope.antibody = value.antibody;
+            $scope.mutant = value.mutant;
+            $scope.cellsorted = value.cell_sorted;
+            $scope.keywords = value.keywords;
+            $scope.alltech = value.alltech;
+            console.log($scope.alltech)
     
             //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
             $scope.displayedCollection = [].concat($scope.data_all);
@@ -592,11 +603,21 @@ function ($scope,$rootScope,$http,$filter,Auth, Dataset,uiGridConstants,$resourc
             return $q.when(response)
         })
         startPromise.then(function(value){
+            
             $scope.data_all = value.data;
             $scope.ome = value.ome;
             $scope.allspe = value.species;
             $scope.techno = value.technology;
-            $scope.sex = value.sex
+            $scope.sex = value.sex;
+            $scope.experimentaldesign = value.experimental_design;
+            $scope.biotop = value.biological_topics;
+            $scope.tissues = value.tissue_or_cell;
+            $scope.stage = value.developmental_stage;
+            $scope.age = value.age;
+            $scope.antibody = value.antibody;
+            $scope.mutant = value.mutant;
+            $scope.cellsorted = value.cell_sorted;
+            $scope.keywords = value.keywords;
 
             //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
                 $scope.displayedCollection = [].concat($scope.data_all);
@@ -610,11 +631,21 @@ function ($scope,$rootScope,$http,$filter,Auth, Dataset,uiGridConstants,$resourc
             return $q.when(response)
         })
         startPromise.then(function(value){
+
             $scope.data_all = value.data;
             $scope.ome = value.ome;
             $scope.allspe = value.species;
             $scope.techno = value.technology;
-            $scope.sex = value.sex
+            $scope.sex = value.sex;
+            $scope.experimentaldesign = value.experimental_design;
+            $scope.biotop = value.biological_topics;
+            $scope.tissues = value.tissue_or_cell;
+            $scope.stage = value.developmental_stage;
+            $scope.age = value.age;
+            $scope.antibody = value.antibody;
+            $scope.mutant = value.mutant;
+            $scope.cellsorted = value.cell_sorted;
+            $scope.keywords = value.keywords;
 
             //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
                 $scope.displayedCollection = [].concat($scope.data_all);
@@ -1124,8 +1155,16 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             $scope.ome = value.ome;
             $scope.allspe = value.species;
             $scope.techno = value.technology;
-            $scope.sex = value.sex
-
+            $scope.sex = value.sex;
+            $scope.experimentaldesign = value.experimental_design;
+            $scope.biotop = value.biological_topics;
+            $scope.tissues = value.tissue_or_cell;
+            $scope.stage = value.developmental_stage;
+            $scope.age = value.age;
+            $scope.antibody = value.antibody;
+            $scope.mutant = value.mutant;
+            $scope.cellsorted = value.cell_sorted;
+            $scope.keywords = value.keywords;
             //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
                 $scope.displayedCollection = [].concat($scope.data_all);
 
@@ -1142,7 +1181,17 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             $scope.ome = value.ome;
             $scope.allspe = value.species;
             $scope.techno = value.technology;
-            $scope.sex = value.sex
+            $scope.sex = value.sex;
+            $scope.experimentaldesign = value.experimental_design;
+            $scope.biotop = value.biological_topics;
+            $scope.tissues = value.tissue_or_cell;
+            $scope.stage = value.developmental_stage;
+            $scope.age = value.age;
+            $scope.antibody = value.antibody;
+            $scope.mutant = value.mutant;
+            $scope.cellsorted = value.cell_sorted;
+            $scope.keywords = value.keywords;
+
 
             //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
                 $scope.displayedCollection = [].concat($scope.data_all);
@@ -1237,6 +1286,8 @@ angular.module('rgv').controller('browsergenelevelCtrl',
                 $scope.time = response.time;
                 $scope.response = response;
                 console.log(response);
+
+
             });
         }else{
             $scope.msgwrn ="No data available. Please select other studies or contact RGV support.";
@@ -1244,6 +1295,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         }
         
     }
+    
     $scope.get_item = function(item, model,label){
         $scope.higlight_gene = item;
      };
@@ -1298,6 +1350,33 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             });
         });
     };
+
+    $scope.changeGraph = function(type,chart){
+        if(type == "BoxPlot"){
+            chart.violinPlots.hide();chart.boxPlots.show({reset:true});chart.notchBoxes.hide();chart.dataPlots.change({showPlot:false,showBeanLines:false});
+        };
+        if(type == "NotchedBoxPlot"){
+            chart.violinPlots.hide();chart.notchBoxes.show({reset:true});chart.boxPlots.show({reset:true, showBox:false,showOutliers:true,boxWidth:20,scatterOutliers:true});chart.dataPlots.change({showPlot:false,showBeanLines:false});
+        };
+        if(type == "ViolinPlotUnbound"){
+            chart.violinPlots.show({reset:true,clamp:0});chart.boxPlots.show({reset:true, showWhiskers:false,showOutliers:false,boxWidth:10,lineWidth:15,colors:['#555']});chart.notchBoxes.hide();chart.dataPlots.change({showPlot:false,showBeanLines:false});
+        };
+        if(type == "ViolinPlotClamptoData"){
+            chart.violinPlots.show({reset:true,clamp:1});chart.boxPlots.show({reset:true, showWhiskers:false,showOutliers:false,boxWidth:10,lineWidth:15,colors:['#555']});chart.notchBoxes.hide();chart.dataPlots.change({showPlot:false,showBeanLines:false})
+        };
+        if(type == "BeanPlot"){
+            chart.violinPlots.show({reset:true, width:75, clamp:0, resolution:30, bandwidth:50});chart.dataPlots.show({showBeanLines:true,beanWidth:15,showPlot:false,colors:['#555']});chart.boxPlots.hide();chart.notchBoxes.hide()
+        };
+        if(type == "BeeswarmPlot"){
+            chart.violinPlots.hide();chart.dataPlots.show({showPlot:true, plotType:'beeswarm',showBeanLines:false, colors:null});chart.notchBoxes.hide();chart.boxPlots.hide();
+        };
+        if(type == "ScatterPlot"){
+            chart.violinPlots.hide();chart.dataPlots.show({showPlot:true, plotType:40, showBeanLines:false,colors:null});chart.notchBoxes.hide();chart.boxPlots.hide();
+        };
+        if(type == "TrendLines"){
+            if(chart.dataPlots.options.showLines){chart.dataPlots.change({showLines:false});} else {chart.dataPlots.change({showLines:['median','quartile1','quartile3']});}
+        };
+    }
 
                     
 

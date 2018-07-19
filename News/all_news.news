@@ -2,12 +2,12 @@
 "news_list":[
     {
       "title" : "Welcome to RGV 2.0",
-      "text" : "The new version of RGV is now available. Discover what’s new in RGV now. ",
+      "text" : "The new version of RGV is now available. Discover what’s new in RGV now.",
       "category": "Information",
       "date": "2017/12/12"
     },
     {
-      "title" : "Single cell visualization tool",
+      "title" : "Single-cell visualization tool",
       "text" : "Use the two dimensional visualization tool for single-cell dataset exploration.",
       "category": "Tool",
       "date": "2017/12/15"

@@ -32,7 +32,7 @@ from csv import DictWriter
 import pandas as pd
 import numpy as np
 from collections import OrderedDict
-
+import math
 import logging
 
 import smtplib
@@ -73,6 +73,7 @@ def read_file(request):
     file_name = form['name']
     if file_name != "dfghjkltyuio":
         url_file = os.path.join(request.registry.dataset_path,file_name)
+        print url_file
         d = {'line':[]}
         try:
             f = open(url_file, "r")
@@ -121,9 +122,193 @@ def d_getter(request):
 
     #Create Data treeview for filtering grid (Species, Technology...)
     df_species = df.species.unique().tolist()
+    l_species = []
+    for i in df_species :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_species :
+                    l_species.append(z)
+        else :
+            if i not in l_species:
+                if str(i) != 'nan': 
+                    l_species.append(i)
+
+    df_bt = df.biological_topics.unique().tolist()
+    l_bt = []
+    for i in df_bt :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_bt :
+                    l_bt.append(z)
+        else :
+            if i not in l_bt:
+                if str(i) != 'nan': 
+                    l_bt.append(i)
+    
+    df_tc = df.tissue_or_cell.unique().tolist()
+    l_tc = []
+    for i in df_tc :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_tc :
+                    l_tc.append(z)
+        else :
+            if i not in l_tc:
+                if str(i) != 'nan': 
+                    l_tc.append(i)
+
+    df_experimental_design = df.experimental_design.unique().tolist()
+    l_ed = []
+    for i in df_experimental_design :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_ed :
+                    l_ed.append(z)
+        else :
+            if i not in l_ed:
+                if str(i) != 'nan': 
+                    l_ed.append(i)
+    
+    df_dev = df.developmental_stage.unique().tolist()
+    l_dev = []
+    for i in df_dev :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_dev :
+                    l_dev.append(z)
+        else :
+            if i not in l_dev:
+                if str(i) != 'nan': 
+                    l_dev.append(i)
+
     df_ome = df.ome.unique().tolist()
-    df_technology = df.technology.unique().tolist()
+    l_ome = []
+    for i in df_ome :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_ome :
+                    l_ome.append(z)
+        else :
+            if i not in l_ome:
+                if str(i) != 'nan': 
+                    l_ome.append(i)
+    
+    df_alltech = df.technology.unique().tolist()
+    l_alltech = []
+    for i in df_alltech :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_alltech :
+                    l_alltech.append(z)
+        else :
+            if i not in l_alltech:
+                if str(i) != 'nan': 
+                    l_alltech.append(i)
+
+
+
+    df_path = df.loc[pd.notna(df['path'])]
+    df_technology = df_path.technology.unique().tolist()
+    l_technology = []
+    for i in df_technology :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_technology :
+                    l_technology.append(z)
+        else :
+            if i not in l_technology:
+                if str(i) != 'nan': 
+                    l_technology.append(i)
+    
     df_sex = df.sex.unique().tolist()
+    l_sex = []
+    for i in df_sex :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_sex :
+                    l_sex.append(z)
+        else :
+            if i not in l_sex:
+                if str(i) != 'nan': 
+                    l_sex.append(i)
+    
+    df_age = df.age.unique().tolist()
+    l_age = []
+    for i in df_age :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_age :
+                    l_age.append(z)
+        else :
+            if i not in l_age:
+                if str(i) != 'nan': 
+                    l_age.append(i)
+    
+    df_antibody = df.antibody.unique().tolist()
+    l_antibody = []
+    for i in df_antibody :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_antibody :
+                    l_antibody.append(z)
+        else :
+            if i not in l_antibody:
+                if str(i) != 'nan': 
+                    l_antibody.append(i)
+
+    df_mutant = df.mutant.unique().tolist()
+    l_mutant = []
+    for i in df_mutant :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_mutant :
+                    l_mutant.append(z)
+        else :
+            if i not in l_mutant:
+                if str(i) != 'nan': 
+                    l_mutant.append(i)
+    
+    df_cell_sorted = df.cell_sorted.unique().tolist()
+    l_cell_sorted = []
+    for i in df_cell_sorted :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_cell_sorted :
+                    l_cell_sorted.append(z)
+        else :
+            if i not in l_cell_sorted:
+                if str(i) != 'nan': 
+                    l_cell_sorted.append(i)
+    
+    df_keywords = df.keywords.unique().tolist()
+    l_keywords = []
+    for i in df_keywords :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_keywords :
+                    l_keywords.append(z)
+        else :
+            if i not in l_keywords:
+                if str(i) != 'nan': 
+                    l_keywords.append(i)
+
+
+    return {'data':final_df,
+            'species':l_species,
+            'ome':l_ome,
+            'technology':l_technology,
+            'sex':l_sex,
+            'experimental_design':l_ed,
+            'biological_topics':l_bt,
+            'tissue_or_cell':l_tc,
+            'developmental_stage':l_dev,
+            "age":l_age,
+            'antibody':l_antibody,
+            'mutant':l_mutant,
+            'cell_sorted':l_cell_sorted,
+            'keywords':l_keywords,
+            'alltech':l_alltech
+            }
 
     if 'stat' in form:
         number_of_species = len(df.species.unique())
@@ -224,10 +409,8 @@ def d_getter(request):
 
         return result
 
-
-    #return {'data':final_df,'filter':request.registry.filter,'display':displays,'data_filter':data_filter}
     # Test new table 
-    return {'data':final_df,'species':df_species,'ome':df_ome,'technology':df_technology}
+    
 
 @view_config(route_name='checkgene', renderer='json', request_method='POST')
 def check(request):
@@ -252,12 +435,15 @@ def autocomplete(request):
     search = form['search']
     database = form['database']
     tax_id = form['tax_id']
+    print form
     regx = re.compile(search, re.IGNORECASE)
     repos = request.registry.db_mongo[database].find({"$and":[{"$or":[{'Symbol':regx},{'Synonyms':regx}]},{'tax_id':tax_id}]})
     result = []
     for dataset in repos[:15]:
         result.append(dataset)
     return result
+
+
 
 @view_config(route_name='genelevel', renderer='json', request_method='POST')
 def genelevel(request):
@@ -351,7 +537,7 @@ def genelevel(request):
                     chart['name'] = gene_name
                     chart['title'] = "violin"
                     chart['selected'] = selected_class
-                    chart['layout'] = { 'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":'',}
+                    chart['layout'] = { 'showlegend': False, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
                     chart['gene'] = gene_name
                     chart['msg'] = ""
                     chart['study'] = study
@@ -372,12 +558,21 @@ def genelevel(request):
                         median = np.median(val.astype(np.float))
                         data_chart = {}
                         data_chart['x'] = []
-                        data_chart['x'].extend(val)
+
+                        ############################ Remove outliers ###################
+                        q = np.percentile(val.astype(np.float), 95) #95eme percentile
+                        for x in val :
+                            if float(x) <= q :
+                                data_chart['x'].append(x)
+                        ############################ Remove outliers ###################
+                        #data_chart['x'].extend(val)
                         data_chart['name'] = cond
                         data_chart['hoverinfo'] = "all"
                         ratio_type = len(samples)/len(uniq_groups)
                         if ratio_type > 10 and median > 0:
                             data_chart['type'] = 'violin'
+                            data_chart['points'] = False
+                            data_chart['spanmode'] = "hard"
                             data_chart['orientation'] = 'h'
                             data_chart['box'] = {'visible': True}
                             data_chart['boxpoints'] = False
@@ -579,7 +774,7 @@ def scDataGenes(request):
                 chart['violin']['name'] = "Violin plot of: %s " % (gene_name)
                 chart['violin']['title'] = "violin"
                 chart['violin']['selected'] = selected_class
-                chart['violin']['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
+                chart['violin']['layout'] = {'showlegend': False, 'legend': {'traceorder':'reversed','x':-100,'y':-100},"title":''}
                 chart['violin']['gene'] = gene_name
                 chart['violin']['msg'] = ""
                 chart['violin']['study'] = stud
@@ -591,12 +786,20 @@ def scDataGenes(request):
                     median = np.median(val.astype(np.float))
                     data_chart = {}
                     data_chart['x'] = []
-                    data_chart['x'].extend(val)
+                    q = np.percentile(val.astype(np.float), 95) #95eme percentile
+                    for x in val :
+                        if float(x) <= q :
+                            data_chart['x'].append(x)
+
+                    
+                    #data_chart['x'].extend(val)
                     data_chart['name'] = cond
                     data_chart['hoverinfo'] = "all"
                     ratio_type = len(samples)/len(uniq_groups)
                     if ratio_type > 10 and median > 0:
                         data_chart['type'] = 'violin'
+                        data_chart['points'] = False
+                        data_chart['spanmode'] = "hard"
                         data_chart['orientation'] = 'h'
                         data_chart['box'] = {'visible': True}
                         data_chart['boxpoints'] = False

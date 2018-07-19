@@ -1,217 +1,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="styles/justified-nav.css" rel="stylesheet">
+<link href="styles/home_cards.css" rel="stylesheet">
+<link href="styles/progress_circle.css" rel="stylesheet">
 
 <script>
 	console.log(location.pathname)
 	ga('send', 'pageview', '/home.html');
 </script>
-<style>
-.progress {
-  width: 150px;
-  height: 150px;
-  line-height: 150px;
-  background: none;
-  margin: 0 auto;
-  box-shadow: none;
-  position: relative;
-}
-.progress:after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 7px solid #eee;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.progress > span {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-.progress .progress-left {
-  left: 0;
-}
-.progress .progress-bar {
-  width: 100%;
-  height: 100%;
-  background: none;
-  border-width: 7px;
-  border-style: solid;
-  position: absolute;
-  top: 0;
-  border-color: #d80505;
-}
-.progress .progress-left .progress-bar {
-  left: 100%;
-  border-top-right-radius: 75px;
-  border-bottom-right-radius: 75px;
-  border-left: 0;
-  -webkit-transform-origin: center left;
-  transform-origin: center left;
-}
-.progress .progress-right {
-  right: 0;
-}
-.progress .progress-right .progress-bar {
-  left: -100%;
-  border-top-left-radius: 75px;
-  border-bottom-left-radius: 75px;
-  border-right: 0;
-  -webkit-transform-origin: center right;
-  transform-origin: center right;
-}
-.progress .progress-value {
-  display: flex;
-  border-radius: 50%;
-  font-size: 36px;
-  text-align: center;
-  line-height: 20px;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-weight: 300;
-}
-.progress .progress-value div {
-  margin-top: 10px;
-}
-.progress .progress-value span {
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-/* This for loop creates the 	necessary css animation names 
-Due to the split circle of progress-left and progress right, we must use the animations on each side. 
-*/
-.progress[data-percentage="10"] .progress-right .progress-bar {
-  animation: loading-1 1.5s linear forwards;
-}
-.progress[data-percentage="10"] .progress-left .progress-bar {
-  animation: 0;
-}
-
-.progress[data-percentage="20"] .progress-right .progress-bar {
-  animation: loading-2 1.5s linear forwards;
-}
-.progress[data-percentage="20"] .progress-left .progress-bar {
-  animation: 0;
-}
-
-.progress[data-percentage="30"] .progress-right .progress-bar {
-  animation: loading-3 1.5s linear forwards;
-}
-.progress[data-percentage="30"] .progress-left .progress-bar {
-  animation: 0;
-}
-
-.progress[data-percentage="40"] .progress-right .progress-bar {
-  animation: loading-4 1.5s linear forwards;
-}
-.progress[data-percentage="40"] .progress-left .progress-bar {
-  animation: 0;
-}
-
-.progress[data-percentage="50"] .progress-right .progress-bar {
-  animation: loading-5 1.5s linear forwards;
-}
-.progress[data-percentage="50"] .progress-left .progress-bar {
-  animation: 0;
-}
-
-.progress[data-percentage="60"] .progress-right .progress-bar {
-  animation: loading-5 1.5s linear forwards;
-}
-.progress[data-percentage="60"] .progress-left .progress-bar {
-  animation: loading-1 1.5s linear forwards 1.5s;
-}
-
-.progress[data-percentage="70"] .progress-right .progress-bar {
-  animation: loading-5 1.5s linear forwards;
-}
-.progress[data-percentage="70"] .progress-left .progress-bar {
-  animation: loading-2 1.5s linear forwards 1.5s;
-}
-
-.progress[data-percentage="80"] .progress-right .progress-bar {
-  animation: loading-5 1.5s linear forwards;
-}
-.progress[data-percentage="80"] .progress-left .progress-bar {
-  animation: loading-3 1.5s linear forwards 1.5s;
-}
-
-.progress[data-percentage="90"] .progress-right .progress-bar {
-  animation: loading-5 1.5s linear forwards;
-}
-.progress[data-percentage="90"] .progress-left .progress-bar {
-  animation: loading-4 1.5s linear forwards 1.5s;
-}
-
-.progress[data-percentage="100"] .progress-right .progress-bar {
-  animation: loading-5 1.5s linear forwards;
-}
-.progress[data-percentage="100"] .progress-left .progress-bar {
-  animation: loading-5 1.5s linear forwards 1.5s;
-}
-
-@keyframes loading-1 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(36);
-    transform: rotate(36deg);
-  }
-}
-@keyframes loading-2 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(72);
-    transform: rotate(72deg);
-  }
-}
-@keyframes loading-3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(108);
-    transform: rotate(108deg);
-  }
-}
-@keyframes loading-4 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(144);
-    transform: rotate(144deg);
-  }
-}
-@keyframes loading-5 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(180);
-    transform: rotate(180deg);
-  }
-}
-.progress {
-  margin-bottom: 1em;
-}
-
-</style>
 
 <div ng-if="msg" class="alert alert-warning" style="margin-top:50px;text-align:center;">
 	{{msg}}
@@ -219,15 +14,51 @@ Due to the split circle of progress-left and progress right, we must use the ani
 
 
 
-<div class="container" style="margin-top:10px;">
+<div class="container" style="margin-top:50px;" >
 	<!-- Heading Row -->
 	<div class="row">
-		<div class="col-lg-8 vcenter">
+		<div class="col-lg-6 vcenter" style="height: 336px;">
 			<img class="img-fluid rounded" src="images/RGVLogo_home.png" alt="" width="100%">
-		</div><!--
-		--><div class="col-lg-4 vcenter">
-			<h1>The genomics database for the reproductive science community!</h1>
 			<p>The ReproGenomics Viewer is a cross-species genomic resource for the reproductive science community. It aims to centralize and harmonize ultra-high-throughput sequencing data accumulated in the field of reproductive biology and to assist scientists in the exploration of these datasets.</p>
+		</div><!--
+		--><div class="col-lg-6 vcenter" style="height: 336px;">
+				<div class="blog-card" style="height: 100px;">
+						<div class="photo photo1"></div>
+						<ul class="details">
+							<li ><a href="#/browser_genome">Get started</a></li>
+							<li><a href="#/tutorial">Read More</a></li>
+						</ul>
+						<div class="description">
+							<h1 style="font-size: 24px;">Genome browser</h1>
+							<h2>Fluid and intuitive genomic navigation among chromosomes </h2>
+							<p class="summary"></p>
+							
+						</div>
+					</div>
+					<div class="blog-card" style="height: 100px;">
+						<div class="photo photo2"></div>
+						<ul class="details">
+								<li ><a href="#/browser_genelevel">Get started</a></li>
+								<li><a href="#/tutorial">Read More</a></li>
+						</ul>
+						<div class="description">
+							<h1 style="font-size: 24px;">Violin plot</h1>
+							<h2>Display distribution of an expression data set</h2>
+							<p class="summary"></p>
+						</div>
+					</div>
+					<div class="blog-card" style="height: 100px;">
+							<div class="photo photo3"></div>
+							<ul class="details">
+									<li ><a href="#/browser_scRNAseq">Get started</a></li>
+									<li><a href="#/tutorial">Read More</a></li>
+							</ul>
+							<div class="description">
+								<h1 style="font-size: 24px;">Scatter plot</h1>
+								<h2>Explore complex datasets </h2>
+								<p class="summary"></p>
+							</div>
+						</div>
 		</div>
 		<!-- /.col-md-4 -->
 	</div>
@@ -266,7 +97,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 				</div>
 	</div>-->
 
-	<hr>
+	<hr style="margin-top: 0px;">
 
 		<div class="row">
 			<div class="col-sm-3 col-md-2">
@@ -331,7 +162,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 					<div class="progress-value">
 						<div>
 							11<br>
-							<span>biological topics</span>
+							<span>topics</span>
 						</div>
 					</div>
 				</div>
@@ -365,7 +196,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 					<div class="progress-value">
 						<div>
 							3<br>
-							<span>visualization tools</span>
+							<span>tools</span>
 						</div>
 					</div>
 				</div>
@@ -399,16 +230,18 @@ Due to the split circle of progress-left and progress right, we must use the ani
   <div class="col-md-4">
     <div class="panel panel-default" style="margin-top:20px;">
         <div class="panel-heading">
-            <a href="#/studies">Getting started</a>
+            Getting started
         </div>
         <div class="panel-body">
 					<ul class="list-unstyled">
 						<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-flash"></i> About RGV</a></li>
+						<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-list"></i> Studies</a></li>
+						<hr>
 						<li><a href="#/tutorial" active-link="active"><i class="glyphicon glyphicon-education"></i> Tutorial</a></li>
 						<li><a href="#/getinvolved" active-link="active"><i class="glyphicon glyphicon-link"></i>How to get involved?</a></li>
-						<li><a href="#/browser_genome" active-link="active"><i class="glyphicon glyphicon-indent-left"></i> Genome browser</a></li>
-						<li><a href="#/browser_genelevel" active-link="active"><i class="glyphicon glyphicon-align-left"></i> Violin plot data visualization</a></li>
-						<li><a href="#/browser_scRNAseq" active-link="active"><i class="glyphicon glyphicon-cloud"></i> Scatterplot data visualization</a></li>
+						<hr>
+						<li><a href="#/citing" active-link="active"><i class="glyphicon glyphicon-pencil"></i> Citing RGV</a></li>
+						<li><a href="#/contact" active-link="active"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
 					</ul>
         </div>
     </div>

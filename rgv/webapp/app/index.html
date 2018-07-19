@@ -78,7 +78,6 @@
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#/studies"><i class="glyphicon glyphicon-list"></i> Studies</a></li>
 							<!-- J'ai mis ng-if 1 car sinon les menus ne sont pas actifs -->
 							<li ng-if="1" class="btn-group" dropdown is-open="status.isopen">
 								<a type="button" dropdown-toggle ng-disabled="disabled">
@@ -112,6 +111,7 @@
 								</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-flash"></i> About RGV</a></li>
+									<li><a href="#/studies"><i class="glyphicon glyphicon-list"></i> Studies</a></li>
 									<li class="divider"></li>
 									<li><a href="#/news" active-link="active"><i class="glyphicon glyphicon-bell"></i> News</a></li>
 									<li><a href="#/statistics" active-link="active"><i class="glyphicon glyphicon-equalizer"></i> Statistics</a></li>
