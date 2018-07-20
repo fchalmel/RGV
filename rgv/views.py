@@ -704,7 +704,7 @@ def scDataGenes(request):
                 chart['title'] = ""
                 chart['dir'] = stud
                 chart['selected'] = selected_class
-                chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':3,'yanchor':"bottom"},"shapes":[],"title":''}
+                chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"bottom"},"shapes":[],"title":''}
                 chart['gene'] = gene_name
                 chart['msg'] = ""
                 chart['study'] = stud
@@ -883,7 +883,7 @@ def scDataGenes(request):
             chart['name'] = "Classification by: %s" % (selected_class)
             chart['selected'] = selected_class
             chart['dir'] = stud
-            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':3,'yanchor':"bottom"},"shapes":[],"title":''}
+            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"bottom"},"shapes":[],"title":''}
             chart['gene'] = ""
             chart['msg'] = []
             for cond in uniq_groups :
@@ -997,7 +997,7 @@ def scData(request):
         chart['study'] = name
         chart['name'] = "Classification by: %s" % (selected_class)
         chart['dir'] = stud
-        chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','x':3,'yanchor':"bottom"},"shapes":[],"title":''}
+        chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"bottom"},"shapes":[],"title":''}
         chart['gene'] = ""
         chart['msg'] = []
         for cond in uniq_groups :
