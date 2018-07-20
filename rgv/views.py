@@ -704,7 +704,7 @@ def scDataGenes(request):
                 chart['title'] = ""
                 chart['dir'] = stud
                 chart['selected'] = selected_class
-                chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"bottom"},"shapes":[],"title":''}
+                chart['layout'] = {'height': 770,'showlegend': False, 'legend': {"orientation": "h",'yanchor':"bottom"},"title":''}
                 chart['gene'] = gene_name
                 chart['msg'] = ""
                 chart['study'] = stud
@@ -739,25 +739,6 @@ def scDataGenes(request):
                         data_chart['x'].extend(val_x)
                         data_chart['y'] = []
                         data_chart['y'].extend(val_y)
-
-                        minx = min(val_x, key=float)
-                        miny = min(val_y, key=float)
-                        maxx = max(val_x, key=float)
-                        maxy = max(val_y, key=float)
-
-                        print minx,miny,maxx,maxy
-
-                        dico_shape = {
-                        "type": 'circle',
-                        "xref": 'x',
-                        "yref": 'y',
-                        "x0": minx,
-                        "y0": miny,
-                        "x1": maxx,
-                        "y1": maxy,
-                        "opacity": 0.2,
-                        }
-                        chart['layout']['shapes'].append(dico_shape)
                         data_chart['name'] = cond
                         data_chart['hoverinfo'] = "all"
                         data_chart['marker']={'color':[],'cmax':max_val,'cmin':min_val,'colorbar': {}}
@@ -777,26 +758,6 @@ def scDataGenes(request):
                         data_chart['x'].extend(val_x)
                         data_chart['y'] = []
                         data_chart['y'].extend(val_y)
-
-                        minx = min(val_x, key=float)
-                        miny = min(val_y, key=float)
-                        maxx = max(val_x, key=float)
-                        maxy = max(val_y, key=float)
-
-                        print minx,miny,maxx,maxy
-
-                        dico_shape = {
-                        "type": 'circle',
-                        "xref": 'x',
-                        "yref": 'y',
-                        "x0": minx,
-                        "y0": miny,
-                        "x1": maxx,
-                        "y1": maxy,
-                        "opacity": 0.2,
-                        }
-                        chart['layout']['shapes'].append(dico_shape)
-
                         data_chart['name'] = cond
                         data_chart['hoverinfo'] = "all"
                         data_chart['marker']={'color':[],'cmax':max_val,'cmin':min_val,'colorbar': {}}
@@ -883,7 +844,7 @@ def scDataGenes(request):
             chart['name'] = "Classification by: %s" % (selected_class)
             chart['selected'] = selected_class
             chart['dir'] = stud
-            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"bottom"},"shapes":[],"title":''}
+            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"bottom"},"title":''}
             chart['gene'] = ""
             chart['msg'] = []
             for cond in uniq_groups :
@@ -895,26 +856,6 @@ def scDataGenes(request):
                 data_chart['x'].extend(val_x)
                 data_chart['y'] = []
                 data_chart['y'].extend(val_y)
-
-                minx = min(val_x, key=float)
-                miny = min(val_y, key=float)
-                maxx = max(val_x, key=float)
-                maxy = max(val_y, key=float)
-
-                print minx,miny,maxx,maxy
-
-                dico_shape = {
-                "type": 'circle',
-                "xref": 'x',
-                "yref": 'y',
-                "x0": minx,
-                "y0": miny,
-                "x1": maxx,
-                "y1": maxy,
-                "opacity": 0.2,
-                }
-                chart['layout']['shapes'].append(dico_shape)
-
                 if len(data_chart['x']) == 0 and len(data_chart['y']) == 0 :
                     chart['layout']['title'] = "No available data for %s" % (selected_class)
                 data_chart['name'] = cond
@@ -997,7 +938,7 @@ def scData(request):
         chart['study'] = name
         chart['name'] = "Classification by: %s" % (selected_class)
         chart['dir'] = stud
-        chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"bottom"},"shapes":[],"title":''}
+        chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-0.3,'x':0.5},"title":''}
         chart['gene'] = ""
         chart['msg'] = []
         for cond in uniq_groups :
@@ -1009,28 +950,6 @@ def scData(request):
             data_chart['x'].extend(val_x)
             data_chart['y'] = []
             data_chart['y'].extend(val_y)
-            minx = min(val_x, key=float)
-            miny = min(val_y, key=float)
-            maxx = max(val_x, key=float)
-            maxy = max(val_y, key=float)
-
-            print minx,miny,maxx,maxy
-
-            dico_shape = {
-            "type": 'circle',
-            "xref": 'x',
-            "yref": 'y',
-            "x0": minx,
-            "y0": miny,
-            "x1": maxx,
-            "y1": maxy,
-            "opacity": 0.2,
-            }
-            chart['layout']['shapes'].append(dico_shape)
-
-
-
-
             if len(data_chart['x']) == 0 and len(data_chart['y']) == 0 :
                  chart['layout']['title'] = "No available data for %s" % (selected_class)
             data_chart['name'] = cond
