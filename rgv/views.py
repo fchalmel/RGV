@@ -132,6 +132,7 @@ def d_getter(request):
             if i not in l_species:
                 if str(i) != 'nan': 
                     l_species.append(i)
+    l_species.sort()
 
     df_bt = df.biological_topics.unique().tolist()
     l_bt = []
@@ -144,6 +145,7 @@ def d_getter(request):
             if i not in l_bt:
                 if str(i) != 'nan': 
                     l_bt.append(i)
+    l_bt.sort()
     
     df_tc = df.tissue_or_cell.unique().tolist()
     l_tc = []
@@ -156,6 +158,7 @@ def d_getter(request):
             if i not in l_tc:
                 if str(i) != 'nan': 
                     l_tc.append(i)
+    l_tc.sort()
 
     df_experimental_design = df.experimental_design.unique().tolist()
     l_ed = []
@@ -168,6 +171,7 @@ def d_getter(request):
             if i not in l_ed:
                 if str(i) != 'nan': 
                     l_ed.append(i)
+    l_ed = l_ed.sort()
     
     df_dev = df.developmental_stage.unique().tolist()
     l_dev = []
@@ -180,6 +184,7 @@ def d_getter(request):
             if i not in l_dev:
                 if str(i) != 'nan': 
                     l_dev.append(i)
+    l_dev.sort()
 
     df_ome = df.ome.unique().tolist()
     l_ome = []
@@ -192,6 +197,7 @@ def d_getter(request):
             if i not in l_ome:
                 if str(i) != 'nan': 
                     l_ome.append(i)
+    l_ome.sort()
     
     df_alltech = df.technology.unique().tolist()
     l_alltech = []
@@ -204,6 +210,7 @@ def d_getter(request):
             if i not in l_alltech:
                 if str(i) != 'nan': 
                     l_alltech.append(i)
+    l_alltech.sort()
 
 
 
@@ -219,6 +226,7 @@ def d_getter(request):
             if i not in l_technology:
                 if str(i) != 'nan': 
                     l_technology.append(i)
+    l_technology.sort()
     
     df_sex = df.sex.unique().tolist()
     l_sex = []
@@ -231,6 +239,7 @@ def d_getter(request):
             if i not in l_sex:
                 if str(i) != 'nan': 
                     l_sex.append(i)
+    l_sex.sort()
     
     df_age = df.age.unique().tolist()
     l_age = []
@@ -243,6 +252,7 @@ def d_getter(request):
             if i not in l_age:
                 if str(i) != 'nan': 
                     l_age.append(i)
+    l_age.sort()
     
     df_antibody = df.antibody.unique().tolist()
     l_antibody = []
@@ -255,6 +265,7 @@ def d_getter(request):
             if i not in l_antibody:
                 if str(i) != 'nan': 
                     l_antibody.append(i)
+    l_antibody.sort()
 
     df_mutant = df.mutant.unique().tolist()
     l_mutant = []
@@ -267,6 +278,7 @@ def d_getter(request):
             if i not in l_mutant:
                 if str(i) != 'nan': 
                     l_mutant.append(i)
+    l_mutant.sort()
     
     df_cell_sorted = df.cell_sorted.unique().tolist()
     l_cell_sorted = []
@@ -279,6 +291,7 @@ def d_getter(request):
             if i not in l_cell_sorted:
                 if str(i) != 'nan': 
                     l_cell_sorted.append(i)
+    l_cell_sorted.sort()
     
     df_keywords = df.keywords.unique().tolist()
     l_keywords = []
@@ -291,6 +304,7 @@ def d_getter(request):
             if i not in l_keywords:
                 if str(i) != 'nan': 
                     l_keywords.append(i)
+    l_keywords.sort()
 
 
     return {'data':final_df,
