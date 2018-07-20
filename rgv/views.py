@@ -307,23 +307,6 @@ def d_getter(request):
     l_keywords.sort()
 
 
-    return {'data':final_df,
-            'species':l_species,
-            'ome':l_ome,
-            'technology':l_technology,
-            'sex':l_sex,
-            'experimental_design':l_ed,
-            'biological_topics':l_bt,
-            'tissue_or_cell':l_tc,
-            'developmental_stage':l_dev,
-            "age":l_age,
-            'antibody':l_antibody,
-            'mutant':l_mutant,
-            'cell_sorted':l_cell_sorted,
-            'keywords':l_keywords,
-            'alltech':l_alltech
-            }
-
     if 'stat' in form:
         number_of_species = len(df.species.unique())
         number_of_ome = len(df.ome.unique())
@@ -422,6 +405,23 @@ def d_getter(request):
         result["chart_bt"] = [chart_techno]
 
         return result
+    
+    return {'data':final_df,
+            'species':l_species,
+            'ome':l_ome,
+            'technology':l_technology,
+            'sex':l_sex,
+            'experimental_design':l_ed,
+            'biological_topics':l_bt,
+            'tissue_or_cell':l_tc,
+            'developmental_stage':l_dev,
+            "age":l_age,
+            'antibody':l_antibody,
+            'mutant':l_mutant,
+            'cell_sorted':l_cell_sorted,
+            'keywords':l_keywords,
+            'alltech':l_alltech
+            }
 
     # Test new table 
     
