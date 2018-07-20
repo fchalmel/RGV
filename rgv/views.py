@@ -938,7 +938,7 @@ def scData(request):
         chart['study'] = name
         chart['name'] = "Classification by: %s" % (selected_class)
         chart['dir'] = stud
-        chart['layout'] = {'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-0.3,'x':0.5},"title":''}
+        chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-0.3,'x':0.5},"title":''}
         chart['gene'] = ""
         chart['msg'] = []
         for cond in uniq_groups :
