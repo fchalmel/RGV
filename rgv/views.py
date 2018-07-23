@@ -551,7 +551,10 @@ def genelevel(request):
                     chart['name'] = gene_name
                     chart['title'] = "violin"
                     chart['selected'] = selected_class
-                    chart['layout'] = { 'showlegend': False,"title":''}
+                    if len(uniq_groups) > 25 :
+                        chart['layout'] = {'height': 1000,'showlegend': False,'margin':{'l':300,},'yaxis':{'tickfont':10}}
+                    else :
+                        chart['layout'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10}}
                     chart['gene'] = gene_name
                     chart['msg'] = ""
                     chart['study'] = study
@@ -611,7 +614,7 @@ def genelevel(request):
                     chart['name'] = "No selected gene"
                     chart['title'] = "violin"
                     chart['selected'] = ''
-                    chart['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','yanchor':"bottom"},"title":''}
+                    chart['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','yanchor':"bottom"},"title":'','yaxis':{'dtick':1}}
                     chart['gene'] = ""
                     chart['msg'] = "Please select at least one gene"
                     chart['study'] = study
@@ -789,6 +792,10 @@ def scDataGenes(request):
                 chart['violin']['name'] = "Violin plot of: %s " % (gene_name)
                 chart['violin']['title'] = "violin"
                 chart['violin']['selected'] = selected_class
+                if len(uniq_groups) > 25 :
+                    chart['violin']['selected'] = {'height': 1000,'showlegend': False,'margin':{'l':300,},'yaxis':{'tickfont':10}}
+                else :
+                    chart['violin']['selected'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10}}
                 chart['violin']['layout'] = {'showlegend': False, 'legend': {'traceorder':'reversed','yanchor':"bottom"},"title":''}
                 chart['violin']['gene'] = gene_name
                 chart['violin']['msg'] = ""
@@ -952,9 +959,13 @@ def scData(request):
         chart['study'] = name
         chart['name'] = "Classification by: %s" % (selected_class)
         chart['dir'] = stud
-        chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-0.3,'x':0.5},"title":''}
+        if len(uniq_groups) > 15 :
+            chart['layout'] = {'height': 1000,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-15.3,'x':0.5},"title":''}
+        else :
+            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-0.3,'x':0.5},"title":''}
         chart['gene'] = ""
         chart['msg'] = []
+        chart['manual_legend'] = {}
         for cond in uniq_groups :
             val_x= x[np.where(groups == str(cond))[0]]
             val_y= y[np.where(groups == cond)[0]]
@@ -1209,7 +1220,7 @@ def send_mail(request, email_to, subject, message):
     mto = email_to
     msg = MIMEText(message)
     msg['To'] = email.utils.formataddr(('Recipient', mto))
-    msg['From'] = email.utils.formataddr(('Author', mfrom))
+    msg['From'] = email.utils.formataddr(('RGV administrators', mfrom))
     msg['Subject'] = subject
     server = None
     try:
@@ -1280,30 +1291,21 @@ def user(request):
 @view_config(route_name='user_register', renderer='json', request_method='POST')
 def user_register(request):
     form = json.loads(request.body, encoding=request.charset)
-    if not form['user_name'] or not form['user_password']:
-        return {'msg': 'emtpy fields, user name and password are mandatory'}
-    user_in_db = request.registry.db_mongo['users'].find_one({'id': form['user_name']})
-    if user_in_db is None :
-        if 'address' not in form :
-            form['address'] = 'No address'
-        secret = request.registry.settings['secret_passphrase']
-        token = jwt.encode({'user': {'id': form['user_name'],
-                                     'password': bcrypt.hashpw(form['user_password'].encode('utf-8'), bcrypt.gensalt()),
-                                     'first_name': form['first_name'],
-                                     'last_name': form['last_name'],
-                                     'laboratory': form['laboratory'],
-                                     'country': form['country'],
-                                     'address': form['address'],
-                                     },
-                        'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=36000),
-                        'aud': 'urn:rgv/api'}, secret)
-        message = "You requested an account, please click on following link to validate it\n"
-        message += request.host_url+'/app/index.html#/login?action=confirm_email&token='+token
-        send_mail(request, form['user_name'], '[ToxSigN] Please validate your account', message)
-        return {'msg': 'You will receive a confirmation email. Please click the link to verify your account.'}
-    else :
-        msg = 'This email is already taken.'
-        return {'msg': msg}
+    print form
+    if not form['sra']:
+        return {'type':'danger','value':'Something wrong when sending email. Please contact RGV adminitrators'}
+    
+    
+    message = "%s requested a new study.\n" % (form['user'])
+    message += "Article: " + form['article']+"\n"
+    message += "PMID: " + form['pmid']+"\n"
+    message += "SRA: " + form['sra']+"\n"
+    message += "GSE: " + form['gse']+"\n"
+    message += "PRJ: " + form['prj']+"\n"
+    send_mail(request, "frederic.chalmel@inserm.fr", form['obj'], message)
+
+    return {'type':'success'}
+
 
 @view_config(route_name='user_confirm_email', renderer='json', request_method='POST')
 def confirm_email(request):

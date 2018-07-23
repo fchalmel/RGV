@@ -33,7 +33,7 @@ config(['$routeProvider','$logProvider',
         });
 		$routeProvider.when('/getinvolved', {
             templateUrl: 'views/getinvolved.html',
-            controller: 'noCtrl'
+            controller: 'involvedCtrl'
         });
 		$routeProvider.when('/technicalcorner', {
             templateUrl: 'views/technicalcorner.html',
@@ -227,6 +227,82 @@ angular.module('rgv').controller('genomeCtrl',
         });
 });
 
+////////////////////// Get involved ///////////////////////////////////////
+angular.module('rgv').controller('involvedCtrl',
+    function ($scope, User) {
+
+        $scope.msg="";
+        $scope.suggest = function(){
+            //check form
+            console.log("SENDEMAIL")
+
+            $scope.msg={'type':null,'value':[]};
+            console.log($scope.msg);
+            //Format if null
+            
+            if($scope.article_title === undefined || $scope.article_title == ''){
+                $scope.article_title = "NA"
+            }
+            if($scope.article_pmid === undefined || $scope.article_pmid == ''){
+                $scope.article_pmid = "NA"
+            }
+            if($scope.article_gse === undefined || $scope.article_gse == ''){
+                $scope.article_gse = "NA"
+            }
+            if($scope.article_prjna === undefined || $scope.article_prjna == ''){
+                $scope.article_prjna = "NA"
+            }
+
+
+            
+            if($scope.first_name === undefined || $scope.first_name == ''){
+                $scope.msg.type = 'warning';
+                $scope.msg.value.push('Please supply your first name');
+            }
+            if($scope.last_name === undefined || $scope.last_name == ''){
+                $scope.msg.type = 'warning';
+                $scope.msg.value.push('Please supply your last name');
+            }
+            if($scope.email === undefined || $scope.email == ''){
+                $scope.msg.type = 'warning';
+                $scope.msg.value.push('Please supply your email');
+            }
+            if($scope.article_sra === undefined || $scope.article_sra == ''){
+                $scope.msg.type = 'warning';
+                $scope.msg.value.push('Please supply at least one SRA id');
+            }
+            if($scope.verif_code === undefined || $scope.verif_code == ''){
+                $scope.msg.type = 'warning';
+                $scope.msg.value.push('Please supply the verification code');
+            }
+            console.log($scope.article_title,$scope.first_name,$scope.last_name,$scope.email)
+
+            console.log($scope.msg);
+            if($scope.msg.type != null){
+                console.log($scope.msg);
+                return $scope.msg;
+            } else{
+                //Format mail
+                var mail = {};
+                mail.obj = "[RGV study] - "+$scope.first_name+" "+$scope.last_name + " suggest new study";
+                
+                mail.user = $scope.first_name+" "+$scope.last_name;
+                mail.email = $scope.email;
+                mail.article = $scope.article_title;
+                mail.pmid = $scope.article_pmid;
+                mail.sra = $scope.article_sra;
+                mail.gse = $scope.article_gse;
+                mail.prj = $scope.article_prjna;
+
+                User.register({},mail).$promise.then(function(msg){
+                    $scope.msg =  msg;
+                });
+            }
+
+
+        }
+});
+
 ////////////////////// Statistics  ///////////////////////////////////////
 angular.module('rgv').controller('statCtrl',
     function ($scope,$rootScope, $log, Auth, User, Dataset) {
@@ -287,7 +363,7 @@ angular.module('rgv').controller('downloadCtrl',
                     names = names.replace("_"," ");
                     
                     if(names == "data genelevel"){
-                        names = 'Default'
+                        names = 'Default dataset'
                     }
                     names = names.replace("_"," ");
 
@@ -305,7 +381,7 @@ angular.module('rgv').controller('downloadCtrl',
                 names = names.replace("_"," ");
                 
                 if(names == "data genelevel"){
-                    names = 'Default'
+                    names = 'Default dataset'
                 }
                 names = names.replace("_"," ");
 
@@ -697,7 +773,7 @@ function ($scope,$rootScope,$http,$filter,Auth, Dataset,uiGridConstants,$resourc
             names = names.replace("_"," ");
             
             if(names == "data genelevel"){
-                names = 'Default'
+                names = 'Default dataset'
             }
             names = names.replace("_"," ");
 
@@ -716,7 +792,7 @@ function ($scope,$rootScope,$http,$filter,Auth, Dataset,uiGridConstants,$resourc
         names = names.replace("_"," ");
         
         if(names == "data genelevel"){
-            names = 'Default'
+            names = 'Default dataset'
         }
         names = names.replace("_"," ");
         return names
@@ -768,6 +844,7 @@ function ($scope,$rootScope,$http,$filter,Auth, Dataset,uiGridConstants,$resourc
 
                 $scope.time = response.time;
                 $scope.charts = response.charts;
+                console.log($scope.charts);
             });
         }else{
             $scope.msgwrn ="No data available. Please select other studies or contact RGV support.";
@@ -1230,7 +1307,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
             names = names.replace("_"," ");
             
             if(names == "data genelevel"){
-                names = 'Default'
+                names = 'Default dataset'
             }
             names = names.replace("_"," ");
 
@@ -1249,7 +1326,7 @@ angular.module('rgv').controller('browsergenelevelCtrl',
         names = names.replace("_"," ");
         
         if(names == "data genelevel"){
-            names = 'Default'
+            names = 'Default dataset'
         }
         names = names.replace("_"," ");
         return names

@@ -102,7 +102,7 @@ stepnext(1);
                             <th st-sort="developmental_stage">Developmental stage</th>
                             <th st-sort="age">Age</th>
                             <th st-sort="antibody">Antibody</th>
-                            <th st-sort="mutant">Mutant</th>
+                            <th st-sort="mutant">Patient / Mutant</th>
                             <th st-sort="cell_sorted">Cell sorted</th>
                             <th st-sort="keywords">Keywords</th>
                           </tr>
@@ -298,7 +298,7 @@ stepnext(1);
                         </div>
                         <hr>
                         <div class="row" ng-repeat="(key,val) in response" ng-if="key == stud.path">
-                          <div class="col-md-6" ng-repeat="(gene,info) in val">
+                          <div class="col-md-12" ng-repeat="(gene,info) in val">
                             <div class="row" ng-repeat="chart in info.charts">
                                 <select id="select-{{ chart.name }}-{{ $index }}" class="form-control" ng-model="models[stud.path][chart.gene]" ng-init="models[stud.path][chart.gene] = chart.selected" ng-change="showData(chosen,'',allgenes,models)" ng-options="class for class in info.class"></select>
                               <h4 ng-if="chart.name">{{ chart.name }}</h4>

@@ -105,7 +105,7 @@ stepnext(1);
                       <th st-sort="developmental_stage">Developmental stage</th>
                       <th st-sort="age">Age</th>
                       <th st-sort="antibody">Antibody</th>
-                      <th st-sort="mutant">Mutant</th>
+                      <th st-sort="mutant">Patient / Mutant</th>
                       <th st-sort="cell_sorted">Cell sorted</th>
                       <th st-sort="keywords">Keywords</th>
                     </tr>
@@ -287,7 +287,7 @@ stepnext(1);
                             <div ng-if="!chart.violin">
                                 <h4 ng-if="chart.name">{{ chart.name }}</h4>
                                 <div ng-if="chart.msg != ''" class="alert alert-warning">{{chart.msg}}</div>
-                                <div chart-div chart="chart" id="chart-div-{{ $index }}" ng-if='chart.msg==""'></div>    
+                                <div chart-div chart="chart" id="chart-div-{{ $index }}" ng-if='chart.msg==""'></div> 
                             </div>                            
                           </div>
                           <div class="col-md-4">
