@@ -793,10 +793,9 @@ def scDataGenes(request):
                 chart['violin']['title'] = "violin"
                 chart['violin']['selected'] = selected_class
                 if len(uniq_groups) > 25 :
-                    chart['violin']['selected'] = {'height': 1000,'showlegend': False,'margin':{'l':300,},'yaxis':{'tickfont':10}}
+                    chart['violin']['layout'] = {'height': 1000,'showlegend': False,'margin':{'l':300,},'yaxis':{'tickfont':10}}
                 else :
-                    chart['violin']['selected'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10}}
-                chart['violin']['layout'] = {'showlegend': False, 'legend': {'traceorder':'reversed','yanchor':"bottom"},"title":''}
+                    chart['violin']['layout'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10}}
                 chart['violin']['gene'] = gene_name
                 chart['violin']['msg'] = ""
                 chart['violin']['study'] = stud
