@@ -586,20 +586,20 @@ def genelevel(request):
                         data_chart['name'] = cond
                         data_chart['hoverinfo'] = "all"
                         ratio_type = len(samples)/len(uniq_groups)
-                        if ratio_type > 10 and median > 0:
-                            data_chart['type'] = 'violin'
-                            data_chart['points'] = False
-                            data_chart['scalemode'] = "count"
-                            data_chart['spanmode'] = "hard"
-                            data_chart['orientation'] = 'h'
-                            data_chart['box'] = {'visible': True}
-                            data_chart['boxpoints'] = False
+                        #if ratio_type > 10 and median > 0:
+                        data_chart['type'] = 'violin'
+                        data_chart['points'] = False
+                        data_chart['scalemode'] = "count"
+                        data_chart['spanmode'] = "hard"
+                        data_chart['orientation'] = 'h'
+                        data_chart['box'] = {'visible': True}
+                        data_chart['boxpoints'] = False
 
-                        else :
-                            data_chart['type'] = 'box'
-                            data_chart['box'] = {'visible': True}
-                            data_chart['boxpoints'] = 'all'
-                            data_chart['meanline'] = {'visible': True}
+                        #else :
+                        #    data_chart['type'] = 'box'
+                        #    data_chart['box'] = {'visible': True}
+                        #    data_chart['boxpoints'] = 'all'
+                        #    data_chart['meanline'] = {'visible': True}
                         
                         chart['data'].append(data_chart)
                     result[study][gene['Symbol']]['charts'].append(chart)
@@ -817,19 +817,19 @@ def scDataGenes(request):
                     data_chart['name'] = cond
                     data_chart['hoverinfo'] = "all"
                     ratio_type = len(samples)/len(uniq_groups)
-                    if ratio_type > 10 and median > 0:
-                        data_chart['type'] = 'violin'
-                        data_chart['points'] = False
-                        data_chart['spanmode'] = "hard"
-                        data_chart['orientation'] = 'h'
-                        data_chart['box'] = {'visible': True}
-                        data_chart['boxpoints'] = False
+                    #if ratio_type > 10 and median > 0:
+                    data_chart['type'] = 'violin'
+                    data_chart['points'] = False
+                    data_chart['spanmode'] = "hard"
+                    data_chart['orientation'] = 'h'
+                    data_chart['box'] = {'visible': True}
+                    data_chart['boxpoints'] = False
 
-                    else :
-                        data_chart['type'] = 'box'
-                        data_chart['box'] = {'visible': True}
-                        data_chart['boxpoints'] = 'all'
-                        data_chart['meanline'] = {'visible': True}
+                    #else :
+                        #data_chart['type'] = 'box'
+                        #data_chart['box'] = {'visible': True}
+                        #data_chart['boxpoints'] = 'all'
+                        #data_chart['meanline'] = {'visible': True}
                     chart['violin']['data'].append(data_chart)
                 result['charts'].append(chart)
         
@@ -959,7 +959,7 @@ def scData(request):
         chart['name'] = "Classification by: %s" % (selected_class)
         chart['dir'] = stud
         if len(uniq_groups) > 15 :
-            chart['layout'] = {'height': 1000,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-15.3,'x':0.5},"title":''}
+            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-15.3,'x':0.5},"title":''}
         else :
             chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-0.3,'x':0.5},"title":''}
         chart['gene'] = ""

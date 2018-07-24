@@ -271,9 +271,9 @@ angular.module('rgv').controller('involvedCtrl',
                 $scope.msg.type = 'warning';
                 $scope.msg.value.push('Please supply at least one SRA id');
             }
-            if($scope.verif_code === undefined || $scope.verif_code == ''){
+            if($scope.verif_code === undefined || $scope.verif_code == '' || $scope.verif_code != 20){
                 $scope.msg.type = 'warning';
-                $scope.msg.value.push('Please supply the verification code');
+                $scope.msg.value.push('Please supply the good verification code');
             }
             console.log($scope.article_title,$scope.first_name,$scope.last_name,$scope.email)
 
