@@ -822,7 +822,7 @@ def scDataGenes(request):
                     data_chart['hoverinfo'] = "all"
                     ratio_type = len(samples)/len(uniq_groups)
                     print ratio_type
-                    if ren(data_chart['x']) > 10 and q3 > 0.1:
+                    if len(data_chart['x']) > 10 and q3 > 0.1:
                         data_chart['type'] = 'violin'
                         data_chart['points'] = False
                         data_chart['spanmode'] = "hard"
