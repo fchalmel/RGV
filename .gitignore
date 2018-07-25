@@ -25,3 +25,6 @@ var/RGV_data/studies/studies/26378784/RNA-Seq/Mus_musculus/data_genelevel.txt
 var/RGV_data/studies/Nef_2018/scRNA-seq/Mus_musculus/data_genelevel.txt
 var/RGV_data/studies/studies/28457750/scRNA-Seq/Homo_sapiens/data_genelevel.txt
 view.log
+*.pyc
+*.log
+var/RGV_data/studies/Nef_2018/scRNA-seq/Mus_musculus/data_genelevel.txt

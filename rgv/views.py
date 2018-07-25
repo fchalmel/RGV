@@ -552,9 +552,9 @@ def genelevel(request):
                     chart['title'] = "violin"
                     chart['selected'] = selected_class
                     if len(uniq_groups) > 25 :
-                        chart['layout'] = {'height': 1000,'showlegend': False,'margin':{'l':300,},'yaxis':{'tickfont':10}}
+                        chart['layout'] = {'height': 1000,'showlegend': False,'margin':{'l':300,},'yaxis':{'tickfont':10},'hovermode': 'closest'}
                     else :
-                        chart['layout'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10}}
+                        chart['layout'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10},'hovermode': 'closest'}
                     chart['gene'] = gene_name
                     chart['msg'] = ""
                     chart['study'] = study
@@ -578,6 +578,7 @@ def genelevel(request):
 
                         ############################ Remove outliers ###################
                         q = np.percentile(val.astype(np.float), 95) #95eme percentile
+                        q3 = np.percentile(val.astype(np.float), 75)
                         for x in val :
                             if float(x) <= q :
                                 data_chart['x'].append(x)
@@ -586,20 +587,22 @@ def genelevel(request):
                         data_chart['name'] = cond
                         data_chart['hoverinfo'] = "all"
                         ratio_type = len(samples)/len(uniq_groups)
-                        #if ratio_type > 10 and median > 0:
-                        data_chart['type'] = 'violin'
-                        data_chart['points'] = False
-                        data_chart['scalemode'] = "count"
-                        data_chart['spanmode'] = "hard"
-                        data_chart['orientation'] = 'h'
-                        data_chart['box'] = {'visible': True}
-                        data_chart['boxpoints'] = False
+                        if len(data_chart['x']) > 10 and q3 > 0.1:
+                            data_chart['type'] = 'violin'
+                            data_chart['points'] = False
+                            data_chart['scalemode'] = "count"
+                            data_chart['spanmode'] = "hard"
+                            data_chart['orientation'] = 'h'
+                            data_chart['box'] = {'visible': True}
+                            data_chart['boxpoints'] = False
+                            data_chart['q3_value'] = q3
 
-                        #else :
-                        #    data_chart['type'] = 'box'
-                        #    data_chart['box'] = {'visible': True}
-                        #    data_chart['boxpoints'] = 'all'
-                        #    data_chart['meanline'] = {'visible': True}
+                        else :
+                            data_chart['type'] = 'scatter'
+                            data_chart['mode'] = 'markers'
+                            data_chart['y'] = [cond] * len(data_chart['x'])
+                            data_chart['boxpoints'] = "all"
+                            data_chart['q3_value'] = q3
                         
                         chart['data'].append(data_chart)
                     result[study][gene['Symbol']]['charts'].append(chart)
@@ -614,7 +617,7 @@ def genelevel(request):
                     chart['name'] = "No selected gene"
                     chart['title'] = "violin"
                     chart['selected'] = ''
-                    chart['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','yanchor':"bottom"},"title":'','yaxis':{'dtick':1}}
+                    chart['layout'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10},'hovermode': 'closest'}
                     chart['gene'] = ""
                     chart['msg'] = "Please select at least one gene"
                     chart['study'] = study
@@ -631,7 +634,7 @@ def genelevel(request):
             chart['name'] = "No selected gene"
             chart['title'] = "violin"
             chart['selected'] = ''
-            chart['layout'] = {'showlegend': True, 'legend': {'traceorder':'reversed','yanchor':"bottom"},"title":''}
+            chart['layout'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10},'hovermode': 'closest'}
             chart['gene'] = ""
             chart['msg'] = "Please select at least one gene"
             chart['study'] = study
@@ -721,7 +724,7 @@ def scDataGenes(request):
                 chart['title'] = ""
                 chart['dir'] = stud
                 chart['selected'] = selected_class
-                chart['layout'] = {'height': 770,'showlegend': False, 'legend': {"orientation": "h",'yanchor':"top", 'xanchor':"center", 'y':-0.3,'x':0.5},"title":''}
+                chart['layout'] = {'width':1215 ,'height':800,'yaxis':{'autorange': True,'showgrid': False,'showticklabels': False,'zeroline': True,'showline': False,'autotick': True},'xaxis':{'showticklabels': False,'autorange': True,'showgrid': False,'zeroline': True,'showline': False,'autotick': True},'autoexpand': True,'showlegend': False, 'legend': {'yanchor':'bottom','orientation':'h','traceorder':'reversed'},"title":'', 'hovermode': 'closest'}
                 chart['gene'] = gene_name
                 chart['msg'] = ""
                 chart['study'] = stud
@@ -793,9 +796,9 @@ def scDataGenes(request):
                 chart['violin']['title'] = "violin"
                 chart['violin']['selected'] = selected_class
                 if len(uniq_groups) > 25 :
-                    chart['violin']['layout'] = {'height': 1000,'showlegend': False,'margin':{'l':300,},'yaxis':{'tickfont':10}}
+                    chart['violin']['layout'] = {'height': 1000,'showlegend': False,'margin':{'l':300,},'yaxis':{'tickfont':10},'hovermode': 'closest'}
                 else :
-                    chart['violin']['layout'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10}}
+                    chart['violin']['layout'] = {'height': 600,'showlegend': False,"title":'','margin':{'l':300,},'yaxis':{'tickfont':10},'hovermode': 'closest'}
                 chart['violin']['gene'] = gene_name
                 chart['violin']['msg'] = ""
                 chart['violin']['study'] = stud
@@ -808,6 +811,7 @@ def scDataGenes(request):
                     data_chart = {}
                     data_chart['x'] = []
                     q = np.percentile(val.astype(np.float), 95) #95eme percentile
+                    q3 = np.percentile(val.astype(np.float), 75) #Q3 
                     for x in val :
                         if float(x) <= q :
                             data_chart['x'].append(x)
@@ -817,19 +821,20 @@ def scDataGenes(request):
                     data_chart['name'] = cond
                     data_chart['hoverinfo'] = "all"
                     ratio_type = len(samples)/len(uniq_groups)
-                    #if ratio_type > 10 and median > 0:
-                    data_chart['type'] = 'violin'
-                    data_chart['points'] = False
-                    data_chart['spanmode'] = "hard"
-                    data_chart['orientation'] = 'h'
-                    data_chart['box'] = {'visible': True}
-                    data_chart['boxpoints'] = False
-
-                    #else :
-                        #data_chart['type'] = 'box'
-                        #data_chart['box'] = {'visible': True}
-                        #data_chart['boxpoints'] = 'all'
-                        #data_chart['meanline'] = {'visible': True}
+                    print ratio_type
+                    if ren(data_chart['x']) > 10 and q3 > 0.1:
+                        data_chart['type'] = 'violin'
+                        data_chart['points'] = False
+                        data_chart['spanmode'] = "hard"
+                        data_chart['orientation'] = 'h'
+                        data_chart['box'] = {'visible': True}
+                        data_chart['boxpoints'] = False
+                    else :
+                        data_chart['type'] = 'scatter'
+                        data_chart['mode'] = 'markers'
+                        data_chart['y'] = [cond] * len(data_chart['x'])
+                        data_chart['boxpoints'] = "all"
+                        data_chart['q3_value'] = q3
                     chart['violin']['data'].append(data_chart)
                 result['charts'].append(chart)
         
@@ -864,7 +869,7 @@ def scDataGenes(request):
             chart['name'] = "Classification by: %s" % (selected_class)
             chart['selected'] = selected_class
             chart['dir'] = stud
-            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-0.3,'x':0.5},"title":''}
+            chart['layout'] = {'width':1215 ,'height':800,'yaxis':{'autorange': True,'showgrid': False,'showticklabels': False,'zeroline': True,'showline': False,'autotick': True},'xaxis':{'showticklabels': False,'autorange': True,'showgrid': False,'zeroline': True,'showline': False,'autotick': True},'autoexpand': True,'showlegend': False, 'legend': {'yanchor':'bottom','orientation':'h','traceorder':'reversed'},"title":'', 'hovermode': 'closest'}
             chart['gene'] = ""
             chart['msg'] = []
             for cond in uniq_groups :
@@ -958,10 +963,7 @@ def scData(request):
         chart['study'] = name
         chart['name'] = "Classification by: %s" % (selected_class)
         chart['dir'] = stud
-        if len(uniq_groups) > 15 :
-            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-15.3,'x':0.5},"title":''}
-        else :
-            chart['layout'] = {'height': 770,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed','yanchor':"top", 'xanchor':"center", 'y':-0.3,'x':0.5},"title":''}
+        chart['layout'] = {'width':1180 ,'height':800,'yaxis':{'autorange': True,'showgrid': False,'showticklabels': False,'zeroline': True,'showline': False,'autotick': True},'xaxis':{'showticklabels': False,'autorange': True,'showgrid': False,'zeroline': True,'showline': False,'autotick': True},'autoexpand': True,'showlegend': True, 'legend': {'yanchor':'bottom','orientation':'h','traceorder':'reversed'},"title":'', 'hovermode': 'closest'}
         chart['gene'] = ""
         chart['msg'] = []
         chart['manual_legend'] = {}
@@ -1069,7 +1071,7 @@ def heatmap(request):
         chart['study'] = name
         chart['name'] = "Heatmap visualisation: %s" % (selected_class)
         chart['dir'] = stud
-        chart['layout'] = {"width": "100%",'height':800,'showlegend': True,"title":''}
+        chart['layout'] = {'width':1180 ,'height':800,'yaxis':{'autorange': True,'showgrid': False,'showticklabels': False,'zeroline': True,'showline': False,'autotick': True},'xaxis':{'showticklabels': False,'autorange': True,'showgrid': False,'zeroline': True,'showline': False,'autotick': True},'autoexpand': True,'showlegend': False, 'legend': {'yanchor':'bottom','orientation':'h','traceorder':'reversed'},"title":'', 'hovermode': 'closest'}
         chart['gene'] = ""
         chart['msg'] = []
         data_chart={}
@@ -1301,6 +1303,23 @@ def user_register(request):
     message += "SRA: " + form['sra']+"\n"
     message += "GSE: " + form['gse']+"\n"
     message += "PRJ: " + form['prj']+"\n"
+
+    path_to_file = os.path.join(request.registry.studies_path,"requested_studies.txt")
+    requested_pmid = []
+    if os.path.isfile(path_to_file):
+        file_studies_request = open(path_to_file,'r')
+        for study in file_studies_request.readlignes():
+            requested_pmid.append(study.split('\t')[0])
+        file_studies_request.close()
+        file_studies_request = open(path_to_file,'a')
+    else :
+        file_studies_request = open(path_to_file,'a')
+    
+    date = datetime.datetime.now()
+    
+    if form['pmid'] not in requested_pmid :
+        file_studies_request.write( form['pmid'] +"\t"+ form['sra'] +"\t"+ form['gse'] +"\t"+ str(date)+"\n")
+
     send_mail(request, "frederic.chalmel@inserm.fr", form['obj'], message)
 
     return {'type':'success'}
