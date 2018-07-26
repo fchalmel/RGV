@@ -19,6 +19,16 @@ table  {
     font-size: 10px;
     height: 27px;
 }
+#colorstrip{
+    height: 25px;
+    border-style: solid;
+    border-color: black;
+    background: #dcdcdb; /* Old browsers */
+    background: -moz-linear-gradient(left, #dcdcdb 0%, #f5bb91 28%, #da644a 63%, #b20b1d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #dcdcdb 0%,#f5bb91 28%,#da644a 63%,#b20b1d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #dcdcdb 0%,#f5bb91 28%,#da644a 63%,#b20b1d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dcdcdb', endColorstr='#b20b1d',GradientType=1 ); /* IE6-9 */
+}
 
 </style>
 
@@ -308,14 +318,23 @@ stepnext(1);
                                         <div class="row" ng-if="chart.violin">
                                             <h4 ng-if="chart.name">{{ chart.name }}</h4>
                                             <div ng-if="chart.msg != ''" class="alert alert-warning">{{chart.msg}}</div>
+                                            <div chart-div chart="chart" id="chart-div-{{ $index }}" ng-if='chart.msg==""'></div>
                                             <div class="row">
-                                                <div class="col-md-12" chart-div chart="chart" id="chart-div-{{ $index }}" ng-if='chart.msg==""'></div>
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4" id="colorstrip"></div>
+                                                <div class="col-md-4" ></div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div chart-div chart="chart.violin" id="chart-div-violin-{{ $index }}" ng-if="chart.violin"></div>
-                                        </div>                          
-                                        <div ng-if="!chart.violin">
+                                            <div class="row">
+                                                    <div class="col-md-4"></div>
+                                                    <div class="col-md-4">
+                                                        <span class="pull-left">{{chart.minval}}</span>
+                                                        <span class="pull-right">{{chart.maxval}}</span>
+                                                    </div>
+                                                    <div class="col-md-4" ></div>
+                                                </div>
+                                            <div class="col-md-12" chart-div chart="chart.violin" id="chart-div-violin-{{ $index }}" ng-if="chart.violin"></div>
+                                        </div>                        
+                                        <div class="row" ng-if="!chart.violin">
                                             <h4 ng-if="chart.name">{{ chart.name }}</h4>
                                             <div  ng-if="chart.msg != ''" class="alert alert-warning">{{chart.msg}}</div>
                                             <div chart-div chart="chart" id="chart-div-{{ $index }}" ng-if='chart.msg==""'></div> 

@@ -724,7 +724,7 @@ def scDataGenes(request):
                 chart['title'] = ""
                 chart['dir'] = stud
                 chart['selected'] = selected_class
-                chart['layout'] = {'width':1215 ,'height':800,'yaxis':{'autorange': True,'showgrid': False,'showticklabels': False,'zeroline': True,'showline': False,'autotick': True},'xaxis':{'showticklabels': False,'autorange': True,'showgrid': False,'zeroline': True,'showline': False,'autotick': True},'autoexpand': True,'showlegend': False, 'legend': {'yanchor':'bottom','orientation':'h','traceorder':'reversed'},"title":'', 'hovermode': 'closest'}
+                chart['layout'] = {'width':1180 ,'height':800,'yaxis':{'autorange': True,'showgrid': False,'showticklabels': False,'zeroline': True,'showline': False,'autotick': True},'xaxis':{'showticklabels': False,'autorange': True,'showgrid': False,'zeroline': True,'showline': False,'autotick': True},'autoexpand': True,'showlegend': False, 'legend': {'yanchor':'bottom','orientation':'h','traceorder':'reversed'},"title":'', 'hovermode': 'closest'}
                 chart['gene'] = gene_name
                 chart['msg'] = ""
                 chart['study'] = stud
@@ -761,7 +761,7 @@ def scDataGenes(request):
                         data_chart['y'].extend(val_y)
                         data_chart['name'] = cond
                         data_chart['hoverinfo'] = "all"
-                        data_chart['marker']={'color':[],'cmax':max_val,'cmin':min_val,'colorbar': {}}
+                        data_chart['marker']={'color':[],'cmax':max_val,'cmin':min_val}
                         data_chart['marker']['color'].extend(val)
                         chart['data'].append(data_chart)
                     elif len(val_gene_ensembl) != 0 :
@@ -780,7 +780,9 @@ def scDataGenes(request):
                         data_chart['y'].extend(val_y)
                         data_chart['name'] = cond
                         data_chart['hoverinfo'] = "all"
-                        data_chart['marker']={'color':[],'cmax':max_val,'cmin':min_val,'colorbar': {}}
+                        chart['maxval'] = int(round(max_val))
+                        chart['minval'] = int(round(min_val))
+                        data_chart['marker']={'color':[],'cmax':max_val,'cmin':min_val}
                         data_chart['marker']['color'].extend(val)
                         chart['data'].append(data_chart)
                     else :
@@ -829,6 +831,7 @@ def scDataGenes(request):
                         data_chart['orientation'] = 'h'
                         data_chart['box'] = {'visible': True}
                         data_chart['boxpoints'] = False
+                        data_chart['q3_value'] = q3
                     else :
                         data_chart['type'] = 'scatter'
                         data_chart['mode'] = 'markers'
@@ -869,7 +872,7 @@ def scDataGenes(request):
             chart['name'] = "Classification by: %s" % (selected_class)
             chart['selected'] = selected_class
             chart['dir'] = stud
-            chart['layout'] = {'width':1215 ,'height':800,'yaxis':{'autorange': True,'showgrid': False,'showticklabels': False,'zeroline': True,'showline': False,'autotick': True},'xaxis':{'showticklabels': False,'autorange': True,'showgrid': False,'zeroline': True,'showline': False,'autotick': True},'autoexpand': True,'showlegend': False, 'legend': {'yanchor':'bottom','orientation':'h','traceorder':'reversed'},"title":'', 'hovermode': 'closest'}
+            chart['layout'] = {'width':1180 ,'height':800,'yaxis':{'autorange': True,'showgrid': False,'showticklabels': False,'zeroline': True,'showline': False,'autotick': True},'xaxis':{'showticklabels': False,'autorange': True,'showgrid': False,'zeroline': True,'showline': False,'autotick': True},'autoexpand': True,'showlegend': False, 'legend': {'yanchor':'bottom','orientation':'h','traceorder':'reversed'},"title":'', 'hovermode': 'closest'}
             chart['gene'] = ""
             chart['msg'] = []
             for cond in uniq_groups :
