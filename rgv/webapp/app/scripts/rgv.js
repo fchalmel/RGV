@@ -1492,6 +1492,15 @@ angular.module('rgv').controller('appCtrl',
             });
 
         }
+        Dataset.data_frame({"name":"metadata.csv",'stat':'stat'}).$promise.then(function(dataset){
+            var overview= dataset.overview;
+            $scope.techno = overview.techno;
+            $scope.topics = overview.topics;
+            $scope.species = overview.species;
+            $scope.sample = overview.samples;
+            $scope.studies = overview.studies;
+
+    });
 });
 
 // Dans barre "query" permet de faire une recherche, pas encore implémenté dans RGV

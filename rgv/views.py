@@ -306,13 +306,49 @@ def d_getter(request):
                     l_keywords.append(i)
     l_keywords.sort()
 
+    df_samples = df.sample_ID.unique().tolist()
+    l_samples = []
+    for i in df_samples :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_samples :
+                    l_samples.append(z)
+        else :
+            if i not in l_samples:
+                if str(i) != 'nan': 
+                    l_samples.append(i)
+
+    df_PubMedID = df.PubMedID.unique().tolist()
+    l_PubMedID = []
+    for i in df_PubMedID :
+        if '|' in str(i) :
+            for z in i.split('|'):
+                if z not in l_PubMedID :
+                    l_PubMedID.append(z)
+        else :
+            if i not in l_PubMedID:
+                if str(i) != 'nan': 
+                    l_PubMedID.append(i)
+
+
 
     if 'stat' in form:
         number_of_species = len(df.species.unique())
         number_of_ome = len(df.ome.unique())
         number_of_technology = len(df.technology.unique())
         result = {}
+        overview = {}
+        sample_number = len(l_samples)
+        total_studies = len(l_PubMedID)
+        total_technologies = len(l_alltech)
+        total_topics = len(l_bt)
+        
+        allsample = df["sample_ID"]
+        for sample in allsample :
+            sample_number = sample_number + len(sample.split('|'))
         lspecies = ['Mus musculus', 'Homo sapiens', 'Rattus norvegicus', 'Gallus gallus', 'Macaca mulatta', 'Canis lupus familiaris','Danio rerio', 'Bos taurus', 'Sus scrofa']
+        species_number = len(lspecies)
+
         for species in lspecies:
             result[species] = {}
             nb_studies = len(df.loc[df["species"] == species,"PubMedID"].unique())
@@ -403,7 +439,7 @@ def d_getter(request):
 
         #techno
         result["chart_bt"] = [chart_techno]
-
+        result["overview"] = {'techno':total_technologies,'topics':total_topics,'samples':sample_number,'studies':total_studies,'species':species_number}
         return result
     
     return {'data':final_df,
