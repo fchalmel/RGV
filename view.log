@@ -11903,3 +11903,2460 @@ traceback url: http://0.0.0.0:6543/_debug_toolbar/34353734303437373630/exception
 traceback url: http://0.0.0.0:6543/_debug_toolbar/34353734343732393132/exception
 2018-07-19 18:01:31,313 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
 traceback url: http://0.0.0.0:6543/_debug_toolbar/34353838393838333034/exception
+2018-07-19 22:28:55,180 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353735373339343732/exception
+2018-07-19 22:55:27,292 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-19 22:55:27,293 :: WARNING :: Class:stages
+2018-07-19 22:55:27,437 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-19 22:55:47,023 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-19 22:55:47,024 :: WARNING :: Class:clusters
+2018-07-19 22:55:47,106 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-20 08:26:50,069 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 08:26:50,071 :: WARNING :: Class:stages
+2018-07-20 08:26:50,156 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-20 08:27:00,227 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 08:27:00,227 :: WARNING :: Class:clusters
+2018-07-20 08:27:00,310 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-20 08:27:14,432 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 08:27:14,433 :: WARNING :: Class:stages
+2018-07-20 08:27:14,518 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-20 08:27:40,235 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 08:27:40,235 :: WARNING :: Class:clusters
+2018-07-20 08:27:40,319 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-20 08:29:24,440 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 08:29:24,440 :: WARNING :: Class:stages
+2018-07-20 08:29:24,520 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-20 08:29:27,814 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 08:29:27,817 :: WARNING :: Class:clusters
+2018-07-20 08:29:27,939 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-20 09:04:40,142 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 09:04:40,143 :: WARNING :: Class:stages
+2018-07-20 09:04:40,227 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-20 09:04:50,625 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 09:04:50,625 :: WARNING :: Class:clusters
+2018-07-20 09:04:50,710 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-20 09:05:21,662 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 09:05:21,662 :: WARNING :: Class:stages
+2018-07-20 09:05:21,749 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-20 09:05:25,729 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 09:05:25,729 :: WARNING :: Class:stages
+2018-07-20 09:05:25,810 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-20 09:19:32,618 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-20 09:19:32,618 :: WARNING :: Class:stages
+2018-07-20 09:19:32,703 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-20 10:37:22,006 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343931373535393834/exception
+2018-07-20 10:38:03,662 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353038363132383830/exception
+2018-07-23 11:58:01,790 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333835343036393238/exception
+2018-07-23 11:58:11,137 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333837353937353834/exception
+2018-07-23 11:58:34,235 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333838303436393932/exception
+2018-07-23 11:59:20,415 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333932323336393434/exception
+2018-07-23 12:00:14,201 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333933323131343038/exception
+2018-07-23 12:00:44,162 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333933373333323030/exception
+2018-07-23 12:02:44,551 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333933383430333336/exception
+2018-07-23 12:03:04,291 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333934393237313834/exception
+2018-07-23 12:03:18,385 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333936303236383936/exception
+2018-07-23 12:03:35,013 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333835353131383838/exception
+2018-07-23 12:04:35,906 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333835363438313434/exception
+2018-07-23 12:04:39,016 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333837353937363438/exception
+2018-07-23 12:05:05,561 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333839323031303430/exception
+2018-07-23 12:05:07,481 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333839353436373034/exception
+2018-07-23 12:05:30,546 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333930313133383732/exception
+2018-07-23 12:05:31,988 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333930333134383936/exception
+2018-07-23 12:05:36,970 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333931313239383038/exception
+2018-07-23 12:06:25,356 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333931363734383936/exception
+2018-07-23 12:09:15,494 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333932313437313532/exception
+2018-07-23 12:09:18,532 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333932363130303634/exception
+2018-07-23 12:09:21,300 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333933333435353532/exception
+2018-07-23 12:14:19,835 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333934323033373238/exception
+2018-07-23 12:14:22,067 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333934353734333532/exception
+2018-07-23 12:15:42,741 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333930333134383332/exception
+2018-07-23 12:15:47,919 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333930373631373434/exception
+2018-07-23 12:16:39,422 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333939313731353336/exception
+2018-07-23 12:16:46,949 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343030303135373630/exception
+2018-07-23 12:17:55,007 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333838393839393638/exception
+2018-07-23 12:17:58,139 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333932343137373434/exception
+2018-07-23 12:18:01,068 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343030393739363634/exception
+2018-07-23 12:18:13,058 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343036383837313834/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 622, in genelevel
+    result[study]["No selected gene"]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 478, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/25710594/RNA-Seq/Mus_musculus/data_genelevel.txt.pickle'
+2018-07-23 12:19:48,527 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333935333033333132/exception
+2018-07-23 12:21:51,106 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343032353539303536/exception
+2018-07-23 12:23:39,106 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333935303635323332/exception
+2018-07-23 12:25:30,788 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333937353636353434/exception
+2018-07-23 12:37:56,241 :: ERROR :: Uncaught KeyError at http://0.0.0.0:6543/user/register
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343137323339363936/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 1292, in user_register
+    message += "PRJ: " + form['PRJ']
+KeyError: 'PRJ'
+2018-07-23 12:38:39,753 :: ERROR :: Could not send email: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials q188-v6sm4150264wmd.36 - gsmtp')
+2018-07-23 15:02:26,687 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363332313035363830/exception
+2018-07-23 15:02:44,701 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363335303136343030/exception
+2018-07-23 15:02:56,546 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-23 15:02:56,546 :: WARNING :: Class:stages
+2018-07-23 15:02:56,642 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-23 15:30:36,989 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-23 15:30:36,990 :: WARNING :: Class:stages
+2018-07-23 15:30:37,082 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-23 15:30:44,142 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-23 15:30:44,143 :: WARNING :: Class:clusters
+2018-07-23 15:30:44,322 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-23 15:48:58,881 :: WARNING :: ['Class:samples']
+2018-07-23 15:48:58,883 :: WARNING :: Class:samples
+2018-07-23 15:48:59,034 :: WARNING :: ['Male Primordial germ cells (137dpc), cKIT+'
+ 'Male Primordial germ cells (122dpc), cKIT+'
+ 'Male Primordial germ cells (98dpc), cKIT+'
+ 'Male Primordial germ cells (74dpc), cKIT+'
+ 'Male Primordial germ cells (72dpc), cKIT+'
+ 'Male Primordial germ cells (54dpc), cKIT+'
+ 'Female Primordial germ cells (113dpc), cKIT+'
+ 'Female Primordial germ cells (110dpc), cKIT+'
+ 'Female Primordial germ cells (108dpc), cKIT+'
+ 'Female Primordial germ cells (94dpc), cKIT+'
+ 'Female Primordial germ cells (93dpc), cKIT+'
+ 'Female Primordial germ cells (67dpc), cKIT+'
+ 'Female Primordial germ cells (57dpc), cKIT+'
+ 'Female Primordial germ cells (53dpc), cKIT+'
+ 'Embryonic stem cells, TRA-1-81+' 'Embryonic stem cells, SSEA4+TRA-1-81+']
+2018-07-23 15:49:42,092 :: WARNING :: ['Class:samples']
+2018-07-23 15:49:42,093 :: WARNING :: Class:samples
+2018-07-23 15:49:42,420 :: WARNING :: ['Male Primordial germ cells (137dpc), cKIT+'
+ 'Male Primordial germ cells (122dpc), cKIT+'
+ 'Male Primordial germ cells (98dpc), cKIT+'
+ 'Male Primordial germ cells (74dpc), cKIT+'
+ 'Male Primordial germ cells (72dpc), cKIT+'
+ 'Male Primordial germ cells (54dpc), cKIT+'
+ 'Female Primordial germ cells (113dpc), cKIT+'
+ 'Female Primordial germ cells (110dpc), cKIT+'
+ 'Female Primordial germ cells (108dpc), cKIT+'
+ 'Female Primordial germ cells (94dpc), cKIT+'
+ 'Female Primordial germ cells (93dpc), cKIT+'
+ 'Female Primordial germ cells (67dpc), cKIT+'
+ 'Female Primordial germ cells (57dpc), cKIT+'
+ 'Female Primordial germ cells (53dpc), cKIT+'
+ 'Embryonic stem cells, TRA-1-81+' 'Embryonic stem cells, SSEA4+TRA-1-81+']
+2018-07-23 15:50:29,716 :: WARNING :: ['Class:samples']
+2018-07-23 15:50:29,717 :: WARNING :: Class:samples
+2018-07-23 15:50:30,042 :: WARNING :: ['Male Primordial germ cells (137dpc), cKIT+'
+ 'Male Primordial germ cells (122dpc), cKIT+'
+ 'Male Primordial germ cells (98dpc), cKIT+'
+ 'Male Primordial germ cells (74dpc), cKIT+'
+ 'Male Primordial germ cells (72dpc), cKIT+'
+ 'Male Primordial germ cells (54dpc), cKIT+'
+ 'Female Primordial germ cells (113dpc), cKIT+'
+ 'Female Primordial germ cells (110dpc), cKIT+'
+ 'Female Primordial germ cells (108dpc), cKIT+'
+ 'Female Primordial germ cells (94dpc), cKIT+'
+ 'Female Primordial germ cells (93dpc), cKIT+'
+ 'Female Primordial germ cells (67dpc), cKIT+'
+ 'Female Primordial germ cells (57dpc), cKIT+'
+ 'Female Primordial germ cells (53dpc), cKIT+'
+ 'Embryonic stem cells, TRA-1-81+' 'Embryonic stem cells, SSEA4+TRA-1-81+']
+2018-07-23 15:51:04,145 :: WARNING :: ['Class:samples']
+2018-07-23 15:51:04,146 :: WARNING :: Class:samples
+2018-07-23 15:51:04,379 :: WARNING :: ['Male Primordial germ cells (137dpc), cKIT+'
+ 'Male Primordial germ cells (122dpc), cKIT+'
+ 'Male Primordial germ cells (98dpc), cKIT+'
+ 'Male Primordial germ cells (74dpc), cKIT+'
+ 'Male Primordial germ cells (72dpc), cKIT+'
+ 'Male Primordial germ cells (54dpc), cKIT+'
+ 'Female Primordial germ cells (113dpc), cKIT+'
+ 'Female Primordial germ cells (110dpc), cKIT+'
+ 'Female Primordial germ cells (108dpc), cKIT+'
+ 'Female Primordial germ cells (94dpc), cKIT+'
+ 'Female Primordial germ cells (93dpc), cKIT+'
+ 'Female Primordial germ cells (67dpc), cKIT+'
+ 'Female Primordial germ cells (57dpc), cKIT+'
+ 'Female Primordial germ cells (53dpc), cKIT+'
+ 'Embryonic stem cells, TRA-1-81+' 'Embryonic stem cells, SSEA4+TRA-1-81+']
+2018-07-23 15:54:00,532 :: WARNING :: ['Class:samples']
+2018-07-23 15:54:00,533 :: WARNING :: Class:samples
+2018-07-23 15:54:00,685 :: WARNING :: ['Male Primordial germ cells (137dpc), cKIT+'
+ 'Male Primordial germ cells (122dpc), cKIT+'
+ 'Male Primordial germ cells (98dpc), cKIT+'
+ 'Male Primordial germ cells (74dpc), cKIT+'
+ 'Male Primordial germ cells (72dpc), cKIT+'
+ 'Male Primordial germ cells (54dpc), cKIT+'
+ 'Female Primordial germ cells (113dpc), cKIT+'
+ 'Female Primordial germ cells (110dpc), cKIT+'
+ 'Female Primordial germ cells (108dpc), cKIT+'
+ 'Female Primordial germ cells (94dpc), cKIT+'
+ 'Female Primordial germ cells (93dpc), cKIT+'
+ 'Female Primordial germ cells (67dpc), cKIT+'
+ 'Female Primordial germ cells (57dpc), cKIT+'
+ 'Female Primordial germ cells (53dpc), cKIT+'
+ 'Embryonic stem cells, TRA-1-81+' 'Embryonic stem cells, SSEA4+TRA-1-81+']
+2018-07-23 15:55:16,218 :: WARNING :: ['Class:samples']
+2018-07-23 15:55:16,220 :: WARNING :: Class:samples
+2018-07-23 15:55:16,567 :: WARNING :: ['Male Primordial germ cells (137dpc), cKIT+'
+ 'Male Primordial germ cells (122dpc), cKIT+'
+ 'Male Primordial germ cells (98dpc), cKIT+'
+ 'Male Primordial germ cells (74dpc), cKIT+'
+ 'Male Primordial germ cells (72dpc), cKIT+'
+ 'Male Primordial germ cells (54dpc), cKIT+'
+ 'Female Primordial germ cells (113dpc), cKIT+'
+ 'Female Primordial germ cells (110dpc), cKIT+'
+ 'Female Primordial germ cells (108dpc), cKIT+'
+ 'Female Primordial germ cells (94dpc), cKIT+'
+ 'Female Primordial germ cells (93dpc), cKIT+'
+ 'Female Primordial germ cells (67dpc), cKIT+'
+ 'Female Primordial germ cells (57dpc), cKIT+'
+ 'Female Primordial germ cells (53dpc), cKIT+'
+ 'Embryonic stem cells, TRA-1-81+' 'Embryonic stem cells, SSEA4+TRA-1-81+']
+2018-07-23 16:09:41,214 :: WARNING :: ['Class:samples']
+2018-07-23 16:09:41,215 :: WARNING :: Class:samples
+2018-07-23 16:09:41,291 :: WARNING :: ['Fetal Testis (16.5dpc), wild-type, Germcell+'
+ 'Fetal Testis (16.5dpc), cKIT+/-, Germcell-'
+ 'Fetal Testis (14.5dpc), wild-type, Germcell+'
+ 'Fetal Testis (14.5dpc), cKIT+/-, Germcell-'
+ 'Fetal Testis (12.5dpc), wild-type, Germcell+'
+ 'Fetal Testis (12.5dpc), cKIT+/-, Germcell-'
+ 'Fetal Ovary posterior third (13.5dpc), wild-type'
+ 'Fetal Ovary posterior third (12.5dpc), wild-type'
+ 'Fetal Ovary anterior third (13.5dpc), wild-type'
+ 'Fetal Ovary (14.5dpc), STRA8+/+' 'Fetal Ovary (14.5dpc), STRA8-/-'
+ 'Fetal Ovary (14.5dpc), DAZL+/+' 'Fetal Ovary (14.5dpc), DAZL-/-'
+ 'Fetal Ovary (16.5dpc), wild-type, Germcell+'
+ 'Fetal Ovary (16.5dpc), cKIT+/-, Germcell-'
+ 'Fetal Ovary (14.5dpc), wild-type, Germcell+'
+ 'Fetal Ovary (14.5dpc), cKIT+/-, Germcell-'
+ 'Fetal Ovary (12.5dpc), wild-type, Germcell+'
+ 'Fetal Ovary (12.5dpc), cKIT+/-, Germcell-'
+ 'Fetal Ovarian anterior third (12.5dpc), wild-type']
+2018-07-23 16:10:02,605 :: WARNING :: ['Class:samples']
+2018-07-23 16:10:02,606 :: WARNING :: Class:samples
+2018-07-23 16:10:02,690 :: WARNING :: ['Male Primordial germ cells (25wdev)'
+ 'Male Primordial germ cells (21wdev)'
+ 'Male Primordial germ cells (20wdev)'
+ 'Male Primordial germ cells (19wdev)'
+ 'Male Primordial germ cells (12wdev)'
+ 'Male Primordial germ cells (10wdev)'
+ 'Male Primordial germ cells (9wdev)'
+ 'Female Primordial germ cells (26wdev)'
+ 'Female Primordial germ cells (24wdev)'
+ 'Female Primordial germ cells (23wdev)'
+ 'Female Primordial germ cells (20wdev)'
+ 'Female Primordial germ cells (18wdev)'
+ 'Female Primordial germ cells (14wdev)'
+ 'Female Primordial germ cells (12wdev)'
+ 'Female Primordial germ cells (10wdev)'
+ 'Female Primordial germ cells (8wdev)'
+ 'Female Primordial germ cells (7wdev)'
+ 'Female Primordial germ cells (5wdev)'
+ 'Mixed Primordial germ cells (4-11wdev)']
+2018-07-23 16:10:24,006 :: WARNING :: ['Class:samples']
+2018-07-23 16:10:24,006 :: WARNING :: Class:samples
+2018-07-23 16:10:24,093 :: WARNING :: ['Male Primordial germ cells (25wdev)'
+ 'Male Primordial germ cells (21wdev)'
+ 'Male Primordial germ cells (20wdev)'
+ 'Male Primordial germ cells (19wdev)'
+ 'Male Primordial germ cells (12wdev)'
+ 'Male Primordial germ cells (10wdev)'
+ 'Male Primordial germ cells (9wdev)'
+ 'Female Primordial germ cells (26wdev)'
+ 'Female Primordial germ cells (24wdev)'
+ 'Female Primordial germ cells (23wdev)'
+ 'Female Primordial germ cells (20wdev)'
+ 'Female Primordial germ cells (18wdev)'
+ 'Female Primordial germ cells (14wdev)'
+ 'Female Primordial germ cells (12wdev)'
+ 'Female Primordial germ cells (10wdev)'
+ 'Female Primordial germ cells (8wdev)'
+ 'Female Primordial germ cells (7wdev)'
+ 'Female Primordial germ cells (5wdev)'
+ 'Mixed Primordial germ cells (4-11wdev)']
+2018-07-23 16:10:44,366 :: WARNING :: ['Class:samples']
+2018-07-23 16:10:44,368 :: WARNING :: Class:samples
+2018-07-23 16:10:44,532 :: WARNING :: ['Male Primordial germ cells (25wdev)'
+ 'Male Primordial germ cells (21wdev)'
+ 'Male Primordial germ cells (20wdev)'
+ 'Male Primordial germ cells (19wdev)'
+ 'Male Primordial germ cells (12wdev)'
+ 'Male Primordial germ cells (10wdev)'
+ 'Male Primordial germ cells (9wdev)'
+ 'Female Primordial germ cells (26wdev)'
+ 'Female Primordial germ cells (24wdev)'
+ 'Female Primordial germ cells (23wdev)'
+ 'Female Primordial germ cells (20wdev)'
+ 'Female Primordial germ cells (18wdev)'
+ 'Female Primordial germ cells (14wdev)'
+ 'Female Primordial germ cells (12wdev)'
+ 'Female Primordial germ cells (10wdev)'
+ 'Female Primordial germ cells (8wdev)'
+ 'Female Primordial germ cells (7wdev)'
+ 'Female Primordial germ cells (5wdev)'
+ 'Mixed Primordial germ cells (4-11wdev)']
+2018-07-23 17:28:22,616 :: ERROR :: Uncaught TypeError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343133303838393132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 518, in genelevel
+    if gene['stud_name'] == study:
+TypeError: string indices must be integers
+2018-07-23 17:30:57,671 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343133303838373834/exception
+2018-07-23 17:33:28,386 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363335333836333230/exception
+2018-07-23 17:43:16,330 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343436373836353132/exception
+2018-07-23 17:45:24,335 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363133353430373532/exception
+2018-07-23 17:46:26,748 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353639313931353638/exception
+2018-07-23 17:47:12,160 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333739393134343438/exception
+2018-07-23 18:02:54,308 :: WARNING :: ['Class:samples']
+2018-07-23 18:02:54,310 :: WARNING :: Class:samples
+2018-07-23 18:02:54,444 :: WARNING :: ['Male Primordial germ cells (25wdev)'
+ 'Male Primordial germ cells (21wdev)'
+ 'Male Primordial germ cells (20wdev)'
+ 'Male Primordial germ cells (19wdev)'
+ 'Male Primordial germ cells (12wdev)'
+ 'Male Primordial germ cells (10wdev)'
+ 'Male Primordial germ cells (9wdev)'
+ 'Female Primordial germ cells (26wdev)'
+ 'Female Primordial germ cells (24wdev)'
+ 'Female Primordial germ cells (23wdev)'
+ 'Female Primordial germ cells (20wdev)'
+ 'Female Primordial germ cells (18wdev)'
+ 'Female Primordial germ cells (14wdev)'
+ 'Female Primordial germ cells (12wdev)'
+ 'Female Primordial germ cells (10wdev)'
+ 'Female Primordial germ cells (8wdev)'
+ 'Female Primordial germ cells (7wdev)'
+ 'Female Primordial germ cells (5wdev)'
+ 'Mixed Primordial germ cells (4-11wdev)']
+2018-07-23 18:03:34,416 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363132373633343732/exception
+2018-07-23 18:05:00,498 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353733343131373932/exception
+2018-07-23 18:05:10,653 :: WARNING :: ['Class:samples']
+2018-07-23 18:05:10,653 :: WARNING :: Class:samples
+2018-07-23 18:05:10,779 :: WARNING :: ['Male Primordial germ cells (25wdev)'
+ 'Male Primordial germ cells (21wdev)'
+ 'Male Primordial germ cells (20wdev)'
+ 'Male Primordial germ cells (19wdev)'
+ 'Male Primordial germ cells (12wdev)'
+ 'Male Primordial germ cells (10wdev)'
+ 'Male Primordial germ cells (9wdev)'
+ 'Female Primordial germ cells (26wdev)'
+ 'Female Primordial germ cells (24wdev)'
+ 'Female Primordial germ cells (23wdev)'
+ 'Female Primordial germ cells (20wdev)'
+ 'Female Primordial germ cells (18wdev)'
+ 'Female Primordial germ cells (14wdev)'
+ 'Female Primordial germ cells (12wdev)'
+ 'Female Primordial germ cells (10wdev)'
+ 'Female Primordial germ cells (8wdev)'
+ 'Female Primordial germ cells (7wdev)'
+ 'Female Primordial germ cells (5wdev)'
+ 'Mixed Primordial germ cells (4-11wdev)']
+2018-07-23 18:06:32,435 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353138363636353736/exception
+2018-07-23 18:06:45,058 :: WARNING :: ['Class:samples']
+2018-07-23 18:06:45,059 :: WARNING :: Class:samples
+2018-07-23 18:06:45,165 :: WARNING :: ['Male Primordial germ cells (25wdev)'
+ 'Male Primordial germ cells (21wdev)'
+ 'Male Primordial germ cells (20wdev)'
+ 'Male Primordial germ cells (19wdev)'
+ 'Male Primordial germ cells (12wdev)'
+ 'Male Primordial germ cells (10wdev)'
+ 'Male Primordial germ cells (9wdev)'
+ 'Female Primordial germ cells (26wdev)'
+ 'Female Primordial germ cells (24wdev)'
+ 'Female Primordial germ cells (23wdev)'
+ 'Female Primordial germ cells (20wdev)'
+ 'Female Primordial germ cells (18wdev)'
+ 'Female Primordial germ cells (14wdev)'
+ 'Female Primordial germ cells (12wdev)'
+ 'Female Primordial germ cells (10wdev)'
+ 'Female Primordial germ cells (8wdev)'
+ 'Female Primordial germ cells (7wdev)'
+ 'Female Primordial germ cells (5wdev)'
+ 'Mixed Primordial germ cells (4-11wdev)']
+2018-07-23 18:09:32,617 :: WARNING :: ['Class:samples']
+2018-07-23 18:09:32,617 :: WARNING :: Class:samples
+2018-07-23 18:09:32,701 :: WARNING :: ['Male Primordial germ cells (25wdev)'
+ 'Male Primordial germ cells (21wdev)'
+ 'Male Primordial germ cells (20wdev)'
+ 'Male Primordial germ cells (19wdev)'
+ 'Male Primordial germ cells (12wdev)'
+ 'Male Primordial germ cells (10wdev)'
+ 'Male Primordial germ cells (9wdev)'
+ 'Female Primordial germ cells (26wdev)'
+ 'Female Primordial germ cells (24wdev)'
+ 'Female Primordial germ cells (23wdev)'
+ 'Female Primordial germ cells (20wdev)'
+ 'Female Primordial germ cells (18wdev)'
+ 'Female Primordial germ cells (14wdev)'
+ 'Female Primordial germ cells (12wdev)'
+ 'Female Primordial germ cells (10wdev)'
+ 'Female Primordial germ cells (8wdev)'
+ 'Female Primordial germ cells (7wdev)'
+ 'Female Primordial germ cells (5wdev)'
+ 'Mixed Primordial germ cells (4-11wdev)']
+2018-07-24 14:25:10,322 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:25:10,323 :: WARNING :: Class:Sex
+2018-07-24 14:25:10,451 :: WARNING :: ['Male' 'Female']
+2018-07-24 14:25:17,713 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:25:17,714 :: WARNING :: Class:Final_clusters
+2018-07-24 14:25:17,842 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 14:25:53,886 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:25:53,887 :: WARNING :: Class:Sex
+2018-07-24 14:25:54,010 :: WARNING :: ['Male' 'Female']
+2018-07-24 14:25:56,386 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:25:56,386 :: WARNING :: Class:Sex
+2018-07-24 14:25:56,529 :: WARNING :: ['Male' 'Female']
+2018-07-24 14:25:59,826 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:25:59,826 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 14:25:59,968 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 14:26:03,721 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:26:03,723 :: WARNING :: Class:Sex_age
+2018-07-24 14:26:03,844 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 14:26:07,355 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:26:07,356 :: WARNING :: Class:Age
+2018-07-24 14:26:07,467 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 14:26:10,389 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:26:10,390 :: WARNING :: Class:Sex_age
+2018-07-24 14:26:10,507 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 14:26:14,909 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:26:14,909 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 14:26:15,024 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 14:26:20,081 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:26:20,082 :: WARNING :: Class:Sex
+2018-07-24 14:26:20,190 :: WARNING :: ['Male' 'Female']
+2018-07-24 14:28:57,044 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343232393631313034/exception
+2018-07-24 14:29:07,521 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:29:07,522 :: WARNING :: Class:Final_clusters
+2018-07-24 14:29:07,673 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 14:32:39,191 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343236373739353336/exception
+2018-07-24 14:37:09,932 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:37:09,933 :: WARNING :: Class:Sex
+2018-07-24 14:37:10,128 :: WARNING :: ['Male' 'Female']
+2018-07-24 14:37:18,570 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:37:18,571 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 14:37:18,829 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 14:37:23,432 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:37:23,432 :: WARNING :: Class:Sex_age
+2018-07-24 14:37:23,582 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 14:37:28,861 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:37:28,863 :: WARNING :: Class:Age
+2018-07-24 14:37:28,998 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 14:37:38,362 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:37:38,362 :: WARNING :: Class:Final_clusters
+2018-07-24 14:37:38,477 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 14:48:19,302 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363231303835373736/exception
+2018-07-24 14:49:32,983 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:49:32,985 :: WARNING :: Class:Sex
+2018-07-24 14:49:33,118 :: WARNING :: ['Male' 'Female']
+2018-07-24 14:49:40,652 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:49:40,653 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 14:49:40,789 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 14:49:48,747 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:49:48,749 :: WARNING :: Class:Sex_age
+2018-07-24 14:49:48,883 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 14:49:57,735 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:49:57,736 :: WARNING :: Class:Age
+2018-07-24 14:49:57,850 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 14:50:07,310 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:50:07,311 :: WARNING :: Class:Final_clusters
+2018-07-24 14:50:07,433 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 14:51:43,911 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343139393133323936/exception
+2018-07-24 14:51:58,994 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:51:58,995 :: WARNING :: Class:Sex
+2018-07-24 14:51:59,110 :: WARNING :: ['Male' 'Female']
+2018-07-24 14:52:05,621 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:52:05,622 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 14:52:05,746 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 14:52:15,988 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:52:15,988 :: WARNING :: Class:Sex_age
+2018-07-24 14:52:16,121 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 14:52:24,342 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 14:52:24,342 :: WARNING :: Class:Age
+2018-07-24 14:52:24,458 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:03:33,434 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:03:33,434 :: WARNING :: Class:Sex
+2018-07-24 15:03:33,547 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:03:37,688 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:03:37,689 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:03:37,807 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:03:40,871 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:03:40,872 :: WARNING :: Class:Sex_age
+2018-07-24 15:03:40,996 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 15:03:45,691 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:03:45,693 :: WARNING :: Class:Age
+2018-07-24 15:03:45,910 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:03:49,147 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:03:49,147 :: WARNING :: Class:Final_clusters
+2018-07-24 15:03:49,253 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 15:08:32,595 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:08:32,596 :: WARNING :: Class:Final_clusters
+2018-07-24 15:08:32,727 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 15:08:35,478 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:08:35,479 :: WARNING :: Class:Age
+2018-07-24 15:08:35,601 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:08:40,021 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:08:40,021 :: WARNING :: Class:Final_clusters
+2018-07-24 15:08:40,128 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 15:19:13,072 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:19:13,072 :: WARNING :: Class:Sex
+2018-07-24 15:19:13,177 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:19:16,331 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:19:16,333 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:19:16,446 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:19:19,613 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:19:19,614 :: WARNING :: Class:Sex_age
+2018-07-24 15:19:19,723 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 15:19:23,634 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:19:23,634 :: WARNING :: Class:Age
+2018-07-24 15:19:23,740 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:19:27,548 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:19:27,548 :: WARNING :: Class:Final_clusters
+2018-07-24 15:19:27,654 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 15:26:58,376 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:26:58,377 :: WARNING :: Class:Sex
+2018-07-24 15:26:58,460 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:27:01,488 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:27:01,488 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:27:01,577 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:27:04,478 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:27:04,478 :: WARNING :: Class:Sex_age
+2018-07-24 15:27:04,574 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 15:27:08,172 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:27:08,172 :: WARNING :: Class:Age
+2018-07-24 15:27:08,309 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:27:11,380 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:27:11,381 :: WARNING :: Class:Final_clusters
+2018-07-24 15:27:11,497 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 15:28:02,838 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:28:02,838 :: WARNING :: Class:Sex
+2018-07-24 15:28:02,930 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:28:06,291 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:28:06,291 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:28:06,392 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:28:09,363 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:28:09,364 :: WARNING :: Class:Sex_age
+2018-07-24 15:28:09,472 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 15:28:12,435 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:28:12,436 :: WARNING :: Class:Age
+2018-07-24 15:28:12,543 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:28:15,993 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:28:15,994 :: WARNING :: Class:Final_clusters
+2018-07-24 15:28:16,190 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 15:28:22,689 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:28:22,690 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:28:22,776 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:28:26,699 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:28:26,700 :: WARNING :: Class:Sex
+2018-07-24 15:28:26,793 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:28:30,873 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:28:30,875 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:28:30,981 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:29:29,149 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:29:29,150 :: WARNING :: Class:Sex
+2018-07-24 15:29:29,241 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:29:31,938 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:29:31,939 :: WARNING :: Class:Age
+2018-07-24 15:29:32,078 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:29:35,691 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:29:35,692 :: WARNING :: Class:Sex_age
+2018-07-24 15:29:35,795 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 15:29:38,694 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:29:38,695 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:29:38,793 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:29:41,604 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:29:41,604 :: WARNING :: Class:Sex
+2018-07-24 15:29:41,737 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:34:58,590 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:34:58,591 :: WARNING :: Class:Sex
+2018-07-24 15:34:58,675 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:38:02,127 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:38:02,127 :: WARNING :: Class:Sex
+2018-07-24 15:38:02,325 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:38:13,284 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:38:13,284 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:38:13,400 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:38:18,959 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:38:18,959 :: WARNING :: Class:Sex
+2018-07-24 15:38:19,090 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:38:28,445 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:38:28,445 :: WARNING :: Class:Final_clusters
+2018-07-24 15:38:28,571 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 15:39:12,933 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:39:12,934 :: WARNING :: Class:Sex
+2018-07-24 15:39:13,070 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:39:17,266 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:39:17,267 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:39:17,411 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:39:21,289 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:39:21,290 :: WARNING :: Class:Sex
+2018-07-24 15:39:21,429 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:39:25,051 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:39:25,052 :: WARNING :: Class:Sex_age
+2018-07-24 15:39:25,201 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 15:39:29,110 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:39:29,111 :: WARNING :: Class:Age
+2018-07-24 15:39:29,244 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:39:32,657 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:39:32,657 :: WARNING :: Class:Final_clusters
+2018-07-24 15:39:32,791 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 15:39:47,487 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:39:47,489 :: WARNING :: Class:Sex
+2018-07-24 15:39:47,628 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:56:27,524 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:56:27,525 :: WARNING :: Class:Sex
+2018-07-24 15:56:27,626 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:56:31,667 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:56:31,667 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:56:31,767 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:56:35,414 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:56:35,414 :: WARNING :: Class:Sex_age
+2018-07-24 15:56:35,538 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 15:56:38,522 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:56:38,523 :: WARNING :: Class:Age
+2018-07-24 15:56:38,644 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:56:41,900 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:56:41,900 :: WARNING :: Class:Final_clusters
+2018-07-24 15:56:42,017 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 15:58:37,289 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:58:37,290 :: WARNING :: Class:Sex
+2018-07-24 15:58:37,485 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:58:41,214 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:58:41,214 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 15:58:41,330 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 15:58:44,636 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:58:44,637 :: WARNING :: Class:Sex
+2018-07-24 15:58:44,763 :: WARNING :: ['Male' 'Female']
+2018-07-24 15:58:48,459 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:58:48,459 :: WARNING :: Class:Sex_age
+2018-07-24 15:58:48,574 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 15:58:54,209 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:58:54,209 :: WARNING :: Class:Age
+2018-07-24 15:58:54,306 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 15:58:57,646 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 15:58:57,647 :: WARNING :: Class:Final_clusters
+2018-07-24 15:58:57,811 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 16:00:15,845 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:00:15,847 :: WARNING :: Class:Sex
+2018-07-24 16:00:15,945 :: WARNING :: ['Male' 'Female']
+2018-07-24 16:00:18,587 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:00:18,588 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 16:00:18,695 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 16:00:23,088 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:00:23,089 :: WARNING :: Class:Sex_age
+2018-07-24 16:00:23,209 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 16:00:26,682 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:00:26,683 :: WARNING :: Class:Age
+2018-07-24 16:00:26,834 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 16:00:29,831 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:00:29,832 :: WARNING :: Class:Final_clusters
+2018-07-24 16:00:30,128 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 16:02:51,857 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:02:51,858 :: WARNING :: Class:Sex
+2018-07-24 16:02:52,001 :: WARNING :: ['Male' 'Female']
+2018-07-24 16:02:55,579 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:02:55,580 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 16:02:55,752 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 16:02:59,244 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:02:59,244 :: WARNING :: Class:Sex_age
+2018-07-24 16:02:59,377 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 16:03:02,997 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:03:02,998 :: WARNING :: Class:Age
+2018-07-24 16:03:03,134 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 16:03:06,446 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:03:06,447 :: WARNING :: Class:Final_clusters
+2018-07-24 16:03:06,627 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 16:05:12,202 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:05:12,203 :: WARNING :: Class:Sex
+2018-07-24 16:05:12,332 :: WARNING :: ['Male' 'Female']
+2018-07-24 16:05:16,144 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:05:16,144 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 16:05:16,280 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 16:05:19,956 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:05:19,957 :: WARNING :: Class:Sex_age
+2018-07-24 16:05:20,236 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 16:05:23,520 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:05:23,520 :: WARNING :: Class:Age
+2018-07-24 16:05:23,666 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 16:05:27,086 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:05:27,087 :: WARNING :: Class:Final_clusters
+2018-07-24 16:05:27,199 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 16:07:03,000 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:07:03,001 :: WARNING :: Class:Sex
+2018-07-24 16:07:03,109 :: WARNING :: ['Male' 'Female']
+2018-07-24 16:07:05,991 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:07:05,992 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 16:07:06,105 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 16:07:09,010 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:07:09,010 :: WARNING :: Class:Sex_age
+2018-07-24 16:07:09,162 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 16:07:12,276 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:07:12,277 :: WARNING :: Class:Age
+2018-07-24 16:07:12,441 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 16:09:35,742 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:09:35,744 :: WARNING :: Class:Sex
+2018-07-24 16:09:35,855 :: WARNING :: ['Male' 'Female']
+2018-07-24 16:09:41,720 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353033383935373630/exception
+2018-07-24 16:10:28,460 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:10:28,461 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 16:10:28,562 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 16:14:36,089 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:14:36,090 :: WARNING :: Class:Sex
+2018-07-24 16:14:36,207 :: WARNING :: ['Male' 'Female']
+2018-07-24 16:14:48,136 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:14:48,137 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 16:14:48,286 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 16:14:52,930 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:14:52,931 :: WARNING :: Class:Sex_age
+2018-07-24 16:14:53,066 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 16:14:59,750 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:14:59,751 :: WARNING :: Class:Age
+2018-07-24 16:14:59,965 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 16:15:08,751 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:15:08,751 :: WARNING :: Class:Final_clusters
+2018-07-24 16:15:08,888 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 16:32:48,127 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:32:48,128 :: WARNING :: Class:Sex
+2018-07-24 16:32:48,292 :: WARNING :: ['Male' 'Female']
+2018-07-24 16:32:55,019 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:32:55,020 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 16:32:55,159 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 16:33:02,301 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 16:33:02,302 :: WARNING :: Class:Sex_age
+2018-07-24 16:33:02,426 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 17:29:14,596 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 17:29:14,598 :: WARNING :: Class:Age
+2018-07-24 17:29:14,814 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 17:29:22,876 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 17:29:22,877 :: WARNING :: Class:Final_clusters
+2018-07-24 17:29:23,021 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 17:29:32,315 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 17:29:32,316 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 17:29:32,483 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:04:28,333 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:04:28,334 :: WARNING :: Class:Sex
+2018-07-24 18:04:28,454 :: WARNING :: ['Male' 'Female']
+2018-07-24 18:04:33,728 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:04:33,728 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:04:33,848 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:04:39,307 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:04:39,307 :: WARNING :: Class:Sex
+2018-07-24 18:04:39,432 :: WARNING :: ['Male' 'Female']
+2018-07-24 18:04:42,432 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:04:42,432 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:04:42,549 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:04:45,615 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:04:45,617 :: WARNING :: Class:Sex_age
+2018-07-24 18:04:45,750 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 18:04:50,605 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:04:50,606 :: WARNING :: Class:Age
+2018-07-24 18:04:50,726 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:04:54,348 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:04:54,349 :: WARNING :: Class:Final_clusters
+2018-07-24 18:04:54,469 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 18:05:05,768 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:05:05,769 :: WARNING :: Class:Age
+2018-07-24 18:05:05,863 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:05:08,028 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:05:08,028 :: WARNING :: Class:Sex_age
+2018-07-24 18:05:08,131 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 18:05:10,976 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:05:10,977 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:05:11,086 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:05:17,814 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:05:17,815 :: WARNING :: Class:Sex
+2018-07-24 18:05:17,994 :: WARNING :: ['Male' 'Female']
+2018-07-24 18:05:22,554 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:05:22,554 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:05:22,667 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:06:01,786 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:06:01,786 :: WARNING :: Class:Age
+2018-07-24 18:06:02,032 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:06:13,701 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:06:13,702 :: WARNING :: Class:Final_clusters
+2018-07-24 18:06:13,919 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 18:08:33,723 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:08:33,724 :: WARNING :: Class:Sex
+2018-07-24 18:08:33,857 :: WARNING :: ['Male' 'Female']
+2018-07-24 18:08:39,972 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:08:39,973 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:08:40,101 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:08:45,382 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:08:45,384 :: WARNING :: Class:Sex_age
+2018-07-24 18:08:45,518 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 18:11:21,367 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:11:21,368 :: WARNING :: Class:Age
+2018-07-24 18:11:21,438 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:11:25,359 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:11:25,359 :: WARNING :: Class:Final_clusters
+2018-07-24 18:11:25,430 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 18:11:29,937 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:11:29,938 :: WARNING :: Class:Age
+2018-07-24 18:11:30,009 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:11:33,587 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:11:33,588 :: WARNING :: Class:Sex_age
+2018-07-24 18:11:33,658 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 18:11:36,893 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:11:36,893 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:11:36,964 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:11:39,841 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:11:39,841 :: WARNING :: Class:Sex
+2018-07-24 18:11:39,915 :: WARNING :: ['Male' 'Female']
+2018-07-24 18:12:47,544 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353130343530333834/exception
+2018-07-24 18:17:30,677 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:17:30,678 :: WARNING :: Class:Sex
+2018-07-24 18:17:30,749 :: WARNING :: ['Male' 'Female']
+2018-07-24 18:17:38,504 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:17:38,505 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:17:38,576 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:17:41,796 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:17:41,797 :: WARNING :: Class:Sex_age
+2018-07-24 18:17:41,868 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 18:17:46,874 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:17:46,875 :: WARNING :: Class:Age
+2018-07-24 18:17:46,948 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:17:51,667 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:17:51,668 :: WARNING :: Class:Final_clusters
+2018-07-24 18:17:51,741 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 18:17:55,455 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:17:55,455 :: WARNING :: Class:Sex
+2018-07-24 18:17:55,528 :: WARNING :: ['Male' 'Female']
+2018-07-24 18:18:07,339 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:18:07,339 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:18:07,414 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:18:10,494 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:18:10,495 :: WARNING :: Class:Sex_age
+2018-07-24 18:18:10,569 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 18:18:13,992 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:18:13,992 :: WARNING :: Class:Age
+2018-07-24 18:18:14,066 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:18:17,010 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:18:17,012 :: WARNING :: Class:Final_clusters
+2018-07-24 18:18:17,087 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 18:18:55,764 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:18:55,764 :: WARNING :: Class:Sex
+2018-07-24 18:18:55,839 :: WARNING :: ['Male' 'Female']
+2018-07-24 18:19:01,084 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:01,084 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:19:01,156 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:19:05,027 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:05,028 :: WARNING :: Class:Sex_age
+2018-07-24 18:19:05,101 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 18:19:08,905 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:08,906 :: WARNING :: Class:Age
+2018-07-24 18:19:08,979 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:19:11,868 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:11,868 :: WARNING :: Class:Final_clusters
+2018-07-24 18:19:11,941 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-24 18:19:16,645 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:16,647 :: WARNING :: Class:Age
+2018-07-24 18:19:16,721 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:19:19,918 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:19,918 :: WARNING :: Class:Sex_age
+2018-07-24 18:19:19,989 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 18:19:22,511 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:22,512 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:19:22,582 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:19:25,059 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:25,059 :: WARNING :: Class:Sex
+2018-07-24 18:19:25,133 :: WARNING :: ['Male' 'Female']
+2018-07-24 18:19:30,006 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:30,007 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-24 18:19:30,079 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-24 18:19:33,102 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:33,102 :: WARNING :: Class:Sex_age
+2018-07-24 18:19:33,175 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-24 18:19:40,948 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-24 18:19:40,948 :: WARNING :: Class:Age
+2018-07-24 18:19:41,019 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-24 18:19:56,679 :: WARNING :: ['Class:samples']
+2018-07-24 18:19:56,679 :: WARNING :: Class:samples
+2018-07-24 18:19:56,773 :: WARNING :: ['Male Primordial germ cells (137dpc), cKIT+'
+ 'Male Primordial germ cells (122dpc), cKIT+'
+ 'Male Primordial germ cells (98dpc), cKIT+'
+ 'Male Primordial germ cells (74dpc), cKIT+'
+ 'Male Primordial germ cells (72dpc), cKIT+'
+ 'Male Primordial germ cells (54dpc), cKIT+'
+ 'Female Primordial germ cells (113dpc), cKIT+'
+ 'Female Primordial germ cells (110dpc), cKIT+'
+ 'Female Primordial germ cells (108dpc), cKIT+'
+ 'Female Primordial germ cells (94dpc), cKIT+'
+ 'Female Primordial germ cells (93dpc), cKIT+'
+ 'Female Primordial germ cells (67dpc), cKIT+'
+ 'Female Primordial germ cells (57dpc), cKIT+'
+ 'Female Primordial germ cells (53dpc), cKIT+'
+ 'Embryonic stem cells, TRA-1-81+' 'Embryonic stem cells, SSEA4+TRA-1-81+']
+2018-07-25 08:46:05,685 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 08:46:05,685 :: WARNING :: Class:Sex
+2018-07-25 08:46:05,760 :: WARNING :: ['Male' 'Female']
+2018-07-25 08:46:10,590 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 08:46:10,591 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 08:46:10,666 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 08:46:14,794 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 08:46:14,795 :: WARNING :: Class:Sex_age
+2018-07-25 08:46:14,871 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 08:46:17,727 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 08:46:17,728 :: WARNING :: Class:Age
+2018-07-25 08:46:17,802 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 08:46:20,741 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 08:46:20,741 :: WARNING :: Class:Final_clusters
+2018-07-25 08:46:20,814 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 08:57:29,031 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/browser_genelevel_init
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353032333739363634/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 92, in read_file
+    df = pd.read_csv(url_file,sep=',')
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File /Users/tdarde/Documents/Dev/envRGV/RGV/bosTau8/metadata.csv does not exist
+2018-07-25 08:59:19,411 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 08:59:19,412 :: WARNING :: Class:Sex
+2018-07-25 08:59:19,493 :: WARNING :: ['Male' 'Female']
+2018-07-25 08:59:30,182 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 08:59:30,184 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 08:59:30,258 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 08:59:45,599 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 08:59:45,600 :: WARNING :: Class:Sex_age
+2018-07-25 08:59:45,676 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 09:01:31,369 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:01:31,369 :: WARNING :: Class:Sex
+2018-07-25 09:01:31,442 :: WARNING :: ['Male' 'Female']
+2018-07-25 09:01:35,864 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:01:35,864 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 09:01:36,017 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 09:01:39,578 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:01:39,578 :: WARNING :: Class:Sex_age
+2018-07-25 09:01:39,652 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 09:01:43,402 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:01:43,403 :: WARNING :: Class:Age
+2018-07-25 09:01:43,477 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 09:01:46,433 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:01:46,433 :: WARNING :: Class:Final_clusters
+2018-07-25 09:01:46,511 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 09:01:50,187 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:01:50,188 :: WARNING :: Class:Age
+2018-07-25 09:01:50,270 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 09:01:53,239 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:01:53,240 :: WARNING :: Class:Sex_age
+2018-07-25 09:01:53,315 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 09:01:56,686 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:01:56,686 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 09:01:56,832 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 09:01:59,882 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:01:59,883 :: WARNING :: Class:Sex
+2018-07-25 09:02:00,059 :: WARNING :: ['Male' 'Female']
+2018-07-25 09:14:26,273 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:14:26,273 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 09:14:26,434 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 09:14:29,951 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:14:29,951 :: WARNING :: Class:Sex
+2018-07-25 09:14:30,025 :: WARNING :: ['Male' 'Female']
+2018-07-25 09:14:35,686 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:14:35,686 :: WARNING :: Class:Sex_age
+2018-07-25 09:14:35,826 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 09:14:38,273 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:14:38,273 :: WARNING :: Class:Age
+2018-07-25 09:14:38,353 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 09:14:42,491 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:14:42,491 :: WARNING :: Class:Final_clusters
+2018-07-25 09:14:42,567 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 09:14:46,312 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:14:46,313 :: WARNING :: Class:Age
+2018-07-25 09:14:46,392 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 09:14:50,992 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:14:50,992 :: WARNING :: Class:Sex_age
+2018-07-25 09:14:51,074 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 09:17:04,390 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:17:04,390 :: WARNING :: Class:Sex
+2018-07-25 09:17:04,466 :: WARNING :: ['Male' 'Female']
+2018-07-25 09:17:08,052 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:17:08,052 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 09:17:08,133 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 09:17:11,907 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:17:11,907 :: WARNING :: Class:Sex_age
+2018-07-25 09:17:11,987 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 09:17:15,824 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:17:15,825 :: WARNING :: Class:Age
+2018-07-25 09:17:15,900 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 09:17:18,566 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:17:18,566 :: WARNING :: Class:Final_clusters
+2018-07-25 09:17:18,641 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 09:56:40,156 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:56:40,156 :: WARNING :: Class:Sex
+2018-07-25 09:56:40,239 :: WARNING :: ['Male' 'Female']
+2018-07-25 09:56:45,320 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:56:45,321 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 09:56:45,405 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 09:56:48,067 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:56:48,067 :: WARNING :: Class:Sex_age
+2018-07-25 09:56:48,145 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 09:56:50,804 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:56:50,804 :: WARNING :: Class:Age
+2018-07-25 09:56:50,893 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 09:56:54,486 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:56:54,487 :: WARNING :: Class:Final_clusters
+2018-07-25 09:56:54,574 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 09:56:57,269 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:56:57,269 :: WARNING :: Class:Age
+2018-07-25 09:56:57,345 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 09:56:59,680 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:56:59,680 :: WARNING :: Class:Sex_age
+2018-07-25 09:56:59,760 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 09:57:02,725 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:57:02,725 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 09:57:02,798 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 09:57:05,768 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:57:05,768 :: WARNING :: Class:Sex
+2018-07-25 09:57:05,842 :: WARNING :: ['Male' 'Female']
+2018-07-25 09:57:10,633 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:57:10,633 :: WARNING :: Class:Final_clusters
+2018-07-25 09:57:10,712 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 09:57:14,327 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:57:14,327 :: WARNING :: Class:Age
+2018-07-25 09:57:14,404 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 09:57:25,308 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:57:25,309 :: WARNING :: Class:Sex_age
+2018-07-25 09:57:25,387 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 09:57:28,585 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 09:57:28,585 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 09:57:28,659 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 10:02:56,117 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:02:56,118 :: WARNING :: Class:Sex
+2018-07-25 10:02:56,195 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:03:00,038 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:03:00,039 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 10:03:00,180 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 10:10:00,814 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:10:00,816 :: WARNING :: Class:Sex
+2018-07-25 10:10:00,972 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:10:04,154 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:10:04,155 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 10:10:04,241 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 10:10:08,434 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:10:08,434 :: WARNING :: Class:Sex_age
+2018-07-25 10:10:08,526 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 10:10:13,127 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:10:13,128 :: WARNING :: Class:Age
+2018-07-25 10:10:13,212 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 10:10:15,937 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:10:15,937 :: WARNING :: Class:Final_clusters
+2018-07-25 10:10:16,027 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 10:15:35,837 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:15:35,837 :: WARNING :: Class:Sex
+2018-07-25 10:15:35,920 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:15:42,474 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:15:42,474 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 10:15:42,554 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 10:15:45,574 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:15:45,575 :: WARNING :: Class:Sex_age
+2018-07-25 10:15:45,661 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 10:15:48,184 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:15:48,184 :: WARNING :: Class:Age
+2018-07-25 10:15:48,353 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 10:15:50,865 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:15:50,866 :: WARNING :: Class:Final_clusters
+2018-07-25 10:15:50,959 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 10:16:45,041 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:16:45,041 :: WARNING :: Class:Sex
+2018-07-25 10:16:45,122 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:16:49,795 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:16:49,796 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 10:16:49,881 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 10:16:53,005 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:16:53,006 :: WARNING :: Class:Sex_age
+2018-07-25 10:16:53,097 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 10:16:55,314 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:16:55,314 :: WARNING :: Class:Age
+2018-07-25 10:16:55,422 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 10:17:31,016 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:17:31,017 :: WARNING :: Class:Sex
+2018-07-25 10:17:31,132 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:17:35,882 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:17:35,882 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 10:17:36,096 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 10:17:38,825 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:17:38,825 :: WARNING :: Class:Sex_age
+2018-07-25 10:17:38,936 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 10:18:14,392 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:18:14,393 :: WARNING :: Class:Sex
+2018-07-25 10:18:14,606 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:18:19,181 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:18:19,181 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 10:18:19,289 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 10:18:22,853 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:18:22,853 :: WARNING :: Class:Sex_age
+2018-07-25 10:18:23,093 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 10:18:27,491 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:18:27,491 :: WARNING :: Class:Age
+2018-07-25 10:18:27,625 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 10:18:30,511 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:18:30,512 :: WARNING :: Class:Final_clusters
+2018-07-25 10:18:30,621 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 10:34:22,131 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353833383439383732/exception
+2018-07-25 10:35:09,103 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:35:09,103 :: WARNING :: Class:Final_clusters
+2018-07-25 10:35:09,194 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 10:36:49,230 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333834343434303438/exception
+2018-07-25 10:37:02,765 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:37:02,765 :: WARNING :: Class:Sex
+2018-07-25 10:37:02,855 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:38:16,613 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363035333135373238/exception
+2018-07-25 10:39:29,721 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/scData
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363037333638353238/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 939, in scData
+    chart['class'] = getClass(os.path.join(request.registry.studies_path,stud))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 913, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/28404936/RNA-Seq/Mus_musculus/data_genelevel.txt.pickle'
+2018-07-25 10:39:41,516 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363039343530393630/exception
+2018-07-25 10:39:49,803 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:39:49,803 :: WARNING :: Class:Sex
+2018-07-25 10:39:50,034 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:40:09,500 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363131303735303838/exception
+2018-07-25 10:40:21,304 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:40:21,305 :: WARNING :: Class:Sex
+2018-07-25 10:40:21,403 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:40:28,001 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:40:28,001 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 10:40:28,100 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 10:40:31,806 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:40:31,807 :: WARNING :: Class:Sex_age
+2018-07-25 10:40:31,918 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 10:40:36,001 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:40:36,001 :: WARNING :: Class:Age
+2018-07-25 10:40:36,114 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 10:40:40,581 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:40:40,582 :: WARNING :: Class:Final_clusters
+2018-07-25 10:40:40,692 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 10:42:11,337 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353731333336323732/exception
+2018-07-25 10:42:19,566 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:42:19,566 :: WARNING :: Class:Sex
+2018-07-25 10:42:19,659 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:42:24,975 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:42:24,977 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 10:42:25,078 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 10:42:29,135 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:42:29,136 :: WARNING :: Class:Sex_age
+2018-07-25 10:42:29,241 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 10:42:33,151 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:42:33,152 :: WARNING :: Class:Age
+2018-07-25 10:42:33,264 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 10:42:37,082 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:42:37,083 :: WARNING :: Class:Final_clusters
+2018-07-25 10:42:37,266 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 10:44:02,871 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:44:02,872 :: WARNING :: Class:Final_clusters
+2018-07-25 10:44:02,965 :: WARNING :: ['Male_Soma4' 'Male_Soma3' 'Male_Soma2' 'Male_Soma1' 'Male_FGC3'
+ 'Male_FGC2' 'Male_FGC1' 'Female_Soma4' 'Female_Soma3' 'Female_Soma2'
+ 'Female_Soma1' 'Female_FGC4' 'Female_FGC3' 'Female_FGC2' 'Female_FGC1']
+2018-07-25 10:57:12,663 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333833383832383936/exception
+2018-07-25 10:59:10,670 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:59:10,671 :: WARNING :: Class:Sex
+2018-07-25 10:59:10,774 :: WARNING :: ['Male' 'Female']
+2018-07-25 10:59:17,090 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 10:59:17,091 :: WARNING :: Class:Sex_age
+2018-07-25 10:59:17,208 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 11:00:20,691 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363231303231393638/exception
+2018-07-25 11:00:30,110 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:00:30,111 :: WARNING :: Class:Sex
+2018-07-25 11:00:30,211 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:07:25,289 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343537353738373034/exception
+2018-07-25 11:07:48,367 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:07:48,367 :: WARNING :: Class:Sex
+2018-07-25 11:07:48,440 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:07:51,923 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:07:51,923 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:07:51,994 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:14:17,734 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353336353839393034/exception
+2018-07-25 11:14:25,770 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:14:25,770 :: WARNING :: Class:Sex
+2018-07-25 11:14:25,841 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:14:30,223 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:14:30,224 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:14:30,296 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:16:08,933 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363234373037333434/exception
+2018-07-25 11:16:44,011 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:16:44,012 :: WARNING :: Class:Sex
+2018-07-25 11:16:44,095 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:17:07,520 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:17:07,520 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:17:07,615 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:24:15,249 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353832303134373336/exception
+2018-07-25 11:24:23,966 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:24:23,966 :: WARNING :: Class:Sex
+2018-07-25 11:24:24,037 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:24:27,716 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:24:27,716 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:24:27,788 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:24:52,300 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333737313634333034/exception
+2018-07-25 11:27:21,898 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:27:21,899 :: WARNING :: Class:Sex
+2018-07-25 11:27:21,906 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:27:21,906 :: WARNING :: Class:Sex
+2018-07-25 11:27:22,232 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:27:22,239 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:27:23,098 :: ERROR :: Exception when serving /scData
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 285, in write
+    channel.write_soon(rh)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file.
+2018-07-25 11:27:23,100 :: ERROR :: Exception when servicing <waitress.channel.HTTPChannel 127.0.0.1:55847 at 0x104e63a50>
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 78, in handler_thread
+    task.service()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 361, in service
+    task.service() # must not fail
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 329, in execute
+    self.write(tobytes(body))
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 285, in write
+    channel.write_soon(rh)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file.
+2018-07-25 11:27:26,310 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:27:26,310 :: WARNING :: Class:Sex_age
+2018-07-25 11:27:26,382 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 11:27:57,038 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343436303630373532/exception
+2018-07-25 11:29:41,438 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:29:41,439 :: WARNING :: Class:Sex
+2018-07-25 11:29:41,511 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:29:44,925 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:29:44,926 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:29:44,999 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:30:18,521 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353338353537303732/exception
+2018-07-25 11:31:41,021 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:31:41,022 :: WARNING :: Class:Sex
+2018-07-25 11:31:41,093 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:31:45,124 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:31:45,125 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:31:45,197 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:32:11,883 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353839303838333336/exception
+2018-07-25 11:32:21,810 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:32:21,810 :: WARNING :: Class:Sex
+2018-07-25 11:32:21,882 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:32:24,939 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:32:24,939 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:32:25,010 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:32:42,129 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:32:42,129 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:32:42,208 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:33:04,430 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:33:04,430 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:33:04,501 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:33:11,957 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:33:11,958 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:33:12,030 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:41:12,249 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343937333133343234/exception
+2018-07-25 11:41:28,369 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/scData
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353036373533383732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 938, in scData
+    chart['class'] = getClass(os.path.join(request.registry.studies_path,stud))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 912, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/23523368/CAGE/Mus_musculus/data_genelevel.txt.pickle'
+2018-07-25 11:41:37,366 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353031373431373736/exception
+2018-07-25 11:41:47,161 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:41:47,162 :: WARNING :: Class:Sex
+2018-07-25 11:41:47,232 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:44:27,677 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343431303433323136/exception
+2018-07-25 11:45:10,806 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:45:10,806 :: WARNING :: Class:Sex
+2018-07-25 11:45:10,879 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:45:13,674 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:45:13,674 :: WARNING :: Class:Sex_age
+2018-07-25 11:45:13,744 :: WARNING :: ['Male_12wdev' 'Male_21wdev' 'Male_20wdev' 'Male_19wdev' 'Male_10wdev'
+ 'Male_9wdev' 'Male_25wdev' 'Male_4wdev' 'Female_26wdev' 'Female_24wdev'
+ 'Female_23wdev' 'Female_20wdev' 'Female_18wdev' 'Female_14wdev'
+ 'Female_12wdev' 'Female_11wdev' 'Female_10wdev' 'Female_8wdev'
+ 'Female_7wdev' 'Female_5wdev']
+2018-07-25 11:45:16,387 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:45:16,387 :: WARNING :: Class:Sex
+2018-07-25 11:45:16,458 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:46:36,487 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:46:36,487 :: WARNING :: Class:Sex
+2018-07-25 11:46:36,555 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:46:59,798 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343533383939303234/exception
+2018-07-25 11:47:09,283 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:47:09,284 :: WARNING :: Class:Sex
+2018-07-25 11:47:09,352 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:50:36,114 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:50:36,114 :: WARNING :: Class:Sex
+2018-07-25 11:50:36,184 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:53:05,381 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:53:05,381 :: WARNING :: Class:Sex
+2018-07-25 11:53:05,449 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:55:59,089 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343831363239383430/exception
+2018-07-25 11:56:09,123 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:56:09,124 :: WARNING :: Class:Sex
+2018-07-25 11:56:09,192 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:56:14,294 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:56:14,294 :: WARNING :: Class:Clusters_in_t-SNE
+2018-07-25 11:56:14,362 :: WARNING :: ['cluster11' 'cluster10' 'cluster9' 'cluster7' 'cluster6' 'cluster5'
+ 'cluster8' 'cluster4' 'cluster3' 'cluster2' 'cluster1']
+2018-07-25 11:56:36,245 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:56:36,246 :: WARNING :: Class:Sex
+2018-07-25 11:56:36,316 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:56:40,910 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:56:40,911 :: WARNING :: Class:Sex
+2018-07-25 11:56:40,978 :: WARNING :: ['Male' 'Female']
+2018-07-25 11:59:47,393 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 11:59:47,393 :: WARNING :: Class:Sex
+2018-07-25 11:59:47,460 :: WARNING :: ['Male' 'Female']
+2018-07-25 12:02:40,378 :: ERROR :: Uncaught IOError at http://0.0.0.0:6543/genelevel
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343936373734303332/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 625, in genelevel
+    result[study]["No selected gene"]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 478, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/28444387/RNA-Seq/Homo_sapiens/data_genelevel.txt.pickle'
+2018-07-25 12:18:38,032 :: ERROR :: Exception when serving /genelevel
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 270, in __call__
+    response = self.execution_policy(environ, self)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 278, in default_execution_policy
+    return request.invoke_exception_view(reraise=True)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 755, in invoke_exception_view
+    reraise_(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 276, in default_execution_policy
+    return router.invoke_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 249, in invoke_request
+    response = handle_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 213, in toolbar_tween
+    return handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 625, in genelevel
+    result[study]["No selected gene"]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 478, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/28444387/RNA-Seq/Homo_sapiens/data_genelevel.txt.pickle'
+2018-07-25 12:18:47,381 :: ERROR :: Exception when serving /genelevel
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 270, in __call__
+    response = self.execution_policy(environ, self)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 278, in default_execution_policy
+    return request.invoke_exception_view(reraise=True)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 755, in invoke_exception_view
+    reraise_(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 276, in default_execution_policy
+    return router.invoke_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 249, in invoke_request
+    response = handle_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 213, in toolbar_tween
+    return handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 522, in genelevel
+    result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 478, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/28444387/RNA-Seq/Homo_sapiens/data_genelevel.txt.pickle'
+2018-07-25 12:18:56,003 :: ERROR :: Exception when serving /genelevel
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 399, in execute
+    app_iter = self.channel.server.application(env, start_response)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 270, in __call__
+    response = self.execution_policy(environ, self)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 278, in default_execution_policy
+    return request.invoke_exception_view(reraise=True)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 755, in invoke_exception_view
+    reraise_(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 276, in default_execution_policy
+    return router.invoke_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 249, in invoke_request
+    response = handle_request(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 213, in toolbar_tween
+    return handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 522, in genelevel
+    result[study][gene['Symbol']]['class'] = getClass(os.path.join(request.registry.studies_path,study))
+  File "/Users/tdarde/Documents/Dev/envRGV/RGV/rgv/views.py", line 478, in getClass
+    dIndex =  cPickle.load(open(file_in+".pickle"))
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Documents/Dev/envRGV/RGV/var/RGV_data/studies/studies/28444387/RNA-Seq/Homo_sapiens/data_genelevel.txt.pickle'
+2018-07-25 13:57:06,361 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343238303030353932/exception
+2018-07-25 13:57:13,810 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 13:57:13,810 :: WARNING :: Class:Sex
+2018-07-25 13:57:13,879 :: WARNING :: ['Male' 'Female']
+2018-07-25 13:57:22,651 :: ERROR :: Uncaught TypeError at http://0.0.0.0:6543/scDataGenes
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343239353731323830/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 462, in rendered_view
+    request, result, view_inst, context)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 435, in render_view
+    return self.render_to_response(response, system, request=request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 458, in render_to_response
+    result = self.render(value, system_values, request=request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 454, in render
+    result = renderer(value, system_values)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 277, in _render
+    return self.serializer(value, default=default, **self.kw)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 290, in default
+    raise TypeError('%r is not JSON serializable' % (obj,))
+TypeError: <built-in function all> is not JSON serializable
+2018-07-25 13:58:13,347 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343431333537393034/exception
+2018-07-25 13:58:21,558 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 13:58:21,558 :: WARNING :: Class:Sex
+2018-07-25 13:58:21,692 :: WARNING :: ['Male' 'Female']
+2018-07-25 13:58:28,881 :: ERROR :: Uncaught TypeError at http://0.0.0.0:6543/scDataGenes
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343432373936363234/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 248, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid_debugtoolbar-4.4-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/viewderivers.py", line 462, in rendered_view
+    request, result, view_inst, context)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 435, in render_view
+    return self.render_to_response(response, system, request=request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 458, in render_to_response
+    result = self.render(value, system_values, request=request)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 454, in render
+    result = renderer(value, system_values)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 277, in _render
+    return self.serializer(value, default=default, **self.kw)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/pyramid-1.9.2-py2.7.egg/pyramid/renderers.py", line 290, in default
+    raise TypeError('%r is not JSON serializable' % (obj,))
+TypeError: <built-in function all> is not JSON serializable
+2018-07-25 13:58:47,887 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363334363639303038/exception
+2018-07-25 13:59:18,856 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 13:59:18,856 :: WARNING :: Class:Sex
+2018-07-25 13:59:18,928 :: WARNING :: ['Male' 'Female']
+2018-07-25 14:02:02,887 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353131333032323234/exception
+2018-07-25 14:02:34,920 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 14:02:34,921 :: WARNING :: Class:Sex
+2018-07-25 14:02:34,994 :: WARNING :: ['Male' 'Female']
+2018-07-25 14:03:11,828 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353334363230393434/exception
+2018-07-25 14:03:19,589 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 14:03:19,589 :: WARNING :: Class:Sex
+2018-07-25 14:03:19,662 :: WARNING :: ['Male' 'Female']
+2018-07-25 14:06:37,261 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343136373536343936/exception
+2018-07-25 14:11:58,131 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353037383437383838/exception
+2018-07-25 14:19:27,345 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 14:19:27,345 :: WARNING :: Class:Sex
+2018-07-25 14:19:27,456 :: WARNING :: ['Male' 'Female']
+2018-07-25 14:22:58,648 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353538333331353336/exception
+2018-07-25 15:32:45,263 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 15:32:45,264 :: WARNING :: Class:Sex
+2018-07-25 15:32:45,335 :: WARNING :: ['Male' 'Female']
+2018-07-25 15:33:07,776 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34363338333935373238/exception
+2018-07-25 15:34:25,546 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 15:34:25,547 :: WARNING :: Class:Sex
+2018-07-25 15:34:25,645 :: WARNING :: ['Male' 'Female']
+2018-07-25 15:35:18,006 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 15:35:18,007 :: WARNING :: Class:Sex
+2018-07-25 15:35:18,077 :: WARNING :: ['Male' 'Female']
+2018-07-25 15:35:21,417 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 15:35:21,418 :: WARNING :: Class:Age
+2018-07-25 15:35:21,490 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 15:37:14,839 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 15:37:14,840 :: WARNING :: Class:Age
+2018-07-25 15:37:14,911 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-25 15:37:18,762 :: WARNING :: ['Class:Sex', 'Class:Clusters_in_t-SNE', 'Class:Sex_age', 'Class:Age', 'Class:Final_clusters']
+2018-07-25 15:37:18,763 :: WARNING :: Class:Age
+2018-07-25 15:37:18,835 :: WARNING :: ['21wdev' '19wdev' '9wdev' '25wdev' '4wdev' '26wdev' '24wdev' '23wdev'
+ '20wdev' '18wdev' '14wdev' '12wdev' '11wdev' '10wdev' '8wdev' '7wdev'
+ '5wdev']
+2018-07-26 10:35:25,544 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:35:25,545 :: WARNING :: Class:stages
+2018-07-26 10:35:25,668 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:35:29,570 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:35:29,570 :: WARNING :: Class:clusters
+2018-07-26 10:35:29,659 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:36:17,715 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:36:17,716 :: WARNING :: Class:stages
+2018-07-26 10:36:17,854 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:36:20,734 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:36:20,734 :: WARNING :: Class:clusters
+2018-07-26 10:36:20,823 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:36:27,386 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:36:27,387 :: WARNING :: Class:stages
+2018-07-26 10:36:27,480 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:36:32,258 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:36:32,259 :: WARNING :: Class:clusters
+2018-07-26 10:36:32,346 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:36:48,188 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:36:48,188 :: WARNING :: Class:clusters
+2018-07-26 10:36:48,321 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:37:29,949 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:37:29,950 :: WARNING :: Class:stages
+2018-07-26 10:37:30,038 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:37:39,151 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:37:39,151 :: WARNING :: Class:clusters
+2018-07-26 10:37:39,242 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:38:13,759 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:38:13,760 :: WARNING :: Class:stages
+2018-07-26 10:38:13,848 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:38:23,404 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:38:23,405 :: WARNING :: Class:stages
+2018-07-26 10:38:23,496 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:38:27,011 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:38:27,012 :: WARNING :: Class:stages
+2018-07-26 10:38:27,105 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:38:30,000 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:38:30,001 :: WARNING :: Class:stages
+2018-07-26 10:38:30,087 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:38:32,353 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:38:32,353 :: WARNING :: Class:stages
+2018-07-26 10:38:32,439 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:41:56,869 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:41:56,870 :: WARNING :: Class:stages
+2018-07-26 10:41:56,958 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:47:09,985 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:47:09,986 :: WARNING :: Class:clusters
+2018-07-26 10:47:10,074 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:47:20,556 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:47:20,557 :: WARNING :: Class:clusters
+2018-07-26 10:47:20,642 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:47:23,417 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:47:23,417 :: WARNING :: Class:clusters
+2018-07-26 10:47:23,506 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:47:25,984 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:47:25,984 :: WARNING :: Class:clusters
+2018-07-26 10:47:26,072 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:47:28,552 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:47:28,552 :: WARNING :: Class:clusters
+2018-07-26 10:47:28,734 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:51:19,183 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:51:19,184 :: WARNING :: Class:stages
+2018-07-26 10:51:19,274 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:51:31,971 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:51:31,971 :: WARNING :: Class:stages
+2018-07-26 10:51:32,059 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:51:34,816 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:51:34,816 :: WARNING :: Class:stages
+2018-07-26 10:51:34,903 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:51:37,592 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:51:37,592 :: WARNING :: Class:stages
+2018-07-26 10:51:37,680 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:51:43,892 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:51:43,894 :: WARNING :: Class:stages
+2018-07-26 10:51:44,008 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:55:25,051 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:55:25,052 :: WARNING :: Class:stages
+2018-07-26 10:55:25,141 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:55:27,918 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:55:27,918 :: WARNING :: Class:clusters
+2018-07-26 10:55:28,006 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:55:39,905 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:55:39,905 :: WARNING :: Class:clusters
+2018-07-26 10:55:39,993 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:55:42,703 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:55:42,703 :: WARNING :: Class:clusters
+2018-07-26 10:55:42,792 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:55:47,292 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:55:47,292 :: WARNING :: Class:clusters
+2018-07-26 10:55:47,382 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:55:53,335 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:55:53,336 :: WARNING :: Class:clusters
+2018-07-26 10:55:53,426 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:57:53,940 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:57:53,940 :: WARNING :: Class:stages
+2018-07-26 10:57:54,028 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:57:57,493 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:57:57,493 :: WARNING :: Class:clusters
+2018-07-26 10:57:57,581 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:58:07,221 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:58:07,221 :: WARNING :: Class:clusters
+2018-07-26 10:58:07,308 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:58:48,162 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:58:48,163 :: WARNING :: Class:stages
+2018-07-26 10:58:48,252 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 10:58:50,458 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:58:50,458 :: WARNING :: Class:clusters
+2018-07-26 10:58:50,549 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:59:01,431 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:59:01,432 :: WARNING :: Class:clusters
+2018-07-26 10:59:01,519 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:59:04,515 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:59:04,516 :: WARNING :: Class:clusters
+2018-07-26 10:59:04,603 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 10:59:07,239 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 10:59:07,239 :: WARNING :: Class:clusters
+2018-07-26 10:59:07,404 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 11:10:16,254 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:10:16,255 :: WARNING :: Class:stages
+2018-07-26 11:10:16,344 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:10:35,572 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:10:35,572 :: WARNING :: Class:stages
+2018-07-26 11:10:35,662 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:11:19,935 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:11:19,935 :: WARNING :: Class:stages
+2018-07-26 11:11:20,027 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:12:23,872 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:12:23,872 :: WARNING :: Class:stages
+2018-07-26 11:12:23,964 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:16:41,764 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:16:41,765 :: WARNING :: Class:stages
+2018-07-26 11:16:41,855 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:17:07,673 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353134363539343732/exception
+2018-07-26 11:26:52,565 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:26:52,567 :: WARNING :: Class:stages
+2018-07-26 11:26:52,657 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:31:35,156 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353232303933373132/exception
+2018-07-26 11:37:58,000 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:37:58,001 :: WARNING :: Class:stages
+2018-07-26 11:37:58,090 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:39:10,353 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:39:10,353 :: WARNING :: Class:stages
+2018-07-26 11:39:10,440 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:39:24,861 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343438333237323438/exception
+2018-07-26 11:41:33,088 :: INFO :: Squashed pyramid.httpexceptions.HTTPNotFound at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343839363030353932/exception
+2018-07-26 11:41:45,825 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:41:45,826 :: WARNING :: Class:stages
+2018-07-26 11:41:45,918 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:42:16,976 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:42:16,976 :: WARNING :: Class:stages
+2018-07-26 11:42:17,068 :: WARNING :: ['E28.5' 'E26.5' 'E24.5' 'E23.5' 'E22.5' 'E20.5' 'E19.5' 'E18.5' 'E17.5'
+ 'E15.5' 'E14.5' 'E16.5' 'E13.5' 'E12.5' 'E11.5' 'E10.5']
+2018-07-26 11:42:19,444 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:42:19,445 :: WARNING :: Class:clusters
+2018-07-26 11:42:19,618 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 11:43:30,635 :: WARNING :: ['Class:stages', 'Class:clusters']
+2018-07-26 11:43:30,635 :: WARNING :: Class:clusters
+2018-07-26 11:43:30,723 :: WARNING :: ['C5' 'C6' 'C3' 'C1' 'C4' 'C2']
+2018-07-26 18:10:41,658 :: ERROR :: Exception when serving /app/videos/RGV_07.mp4
+Traceback (most recent call last):
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 338, in service
+    task.service()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 169, in service
+    self.execute()
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 437, in execute
+    self.write(chunk)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/task.py", line 303, in write
+    channel.write_soon(towrite)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/channel.py", line 320, in write_soon
+    self.outbufs[-1].append(data)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 242, in append
+    buf.append(s)
+  File "/Users/tdarde/Documents/Dev/envRGV/lib/python2.7/site-packages/waitress-1.1.0-py2.7.egg/waitress/buffers.py", line 53, in append
+    read_pos = file.tell()
+ValueError: I/O operation on closed file
