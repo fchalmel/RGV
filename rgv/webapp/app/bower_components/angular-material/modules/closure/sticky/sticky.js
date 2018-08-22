@@ -1,12 +1,12 @@
 /*!
- * Angular Material Design
+ * AngularJS Material Design
  * https://github.com/angular/material
  * @license MIT
- * v1.0.6
+ * v1.1.7
  */
-goog.provide('ng.material.components.sticky');
-goog.require('ng.material.components.content');
-goog.require('ng.material.core');
+goog.provide('ngmaterial.components.sticky');
+goog.require('ngmaterial.components.content');
+goog.require('ngmaterial.core');
 /**
  * @ngdoc module
  * @name material.components.sticky
@@ -14,6 +14,7 @@ goog.require('ng.material.core');
  * Sticky effects for md
  *
  */
+MdSticky['$inject'] = ["$mdConstant", "$$rAF", "$mdUtil", "$compile"];
 angular
   .module('material.components.sticky', [
     'material.core',
@@ -28,6 +29,9 @@ angular
  *
  * @description
  * The `$mdSticky`service provides a mixin to make elements sticky.
+ *
+ * Whenever the current browser supports stickiness natively, the `$mdSticky` service will just
+ * use the native browser stickiness.
  *
  * By default the `$mdSticky` service compiles the cloned element, when not specified through the `elementClone`
  * parameter, in the same scope as the actual element lives.
@@ -77,9 +81,9 @@ angular
  *     when the user starts scrolling past the original element.
  *     If not provided, it will use the result of `element.clone()` and compiles it in the given scope.
  */
-function MdSticky($document, $mdConstant, $$rAF, $mdUtil, $compile) {
+function MdSticky($mdConstant, $$rAF, $mdUtil, $compile) {
 
-  var browserStickySupport = checkStickySupport();
+  var browserStickySupport = $mdUtil.checkStickySupport();
 
   /**
    * Registers an element as sticky, used internally by directives to register themselves
@@ -196,6 +200,7 @@ function MdSticky($document, $mdConstant, $$rAF, $mdUtil, $compile) {
       var current = item.element[0];
       item.top = 0;
       item.left = 0;
+      item.right = 0;
       while (current && current !== contentEl[0]) {
         item.top += current.offsetTop;
         item.left += current.offsetLeft;
@@ -205,10 +210,10 @@ function MdSticky($document, $mdConstant, $$rAF, $mdUtil, $compile) {
         current = current.offsetParent;
       }
       item.height = item.element.prop('offsetHeight');
-      item.clone.css('margin-left', item.left + 'px');
-      if ($mdUtil.floatingScrollbars()) {
-        item.clone.css('margin-right', '0');
-      }
+
+      var defaultVal = $mdUtil.floatingScrollbars() ? '0' : undefined;
+      $mdUtil.bidi(item.clone, 'margin-left', item.left, defaultVal);
+      $mdUtil.bidi(item.clone, 'margin-right', defaultVal, item.right);
     }
 
     // As we scroll, push in and select the correct sticky element.
@@ -314,31 +319,15 @@ function MdSticky($document, $mdConstant, $$rAF, $mdUtil, $compile) {
         }
       } else {
         item.translateY = amount;
-        item.clone.css(
-          $mdConstant.CSS.TRANSFORM,
-          'translate3d(' + item.left + 'px,' + amount + 'px,0)'
+
+        $mdUtil.bidi( item.clone, $mdConstant.CSS.TRANSFORM,
+          'translate3d(' + item.left + 'px,' + amount + 'px,0)',
+          'translateY(' + amount + 'px)'
         );
       }
     }
   }
 
-  // Function to check for browser sticky support
-  function checkStickySupport($el) {
-    var stickyProp;
-    var testEl = angular.element('<div>');
-    $document[0].body.appendChild(testEl[0]);
-
-    var stickyProps = ['sticky', '-webkit-sticky'];
-    for (var i = 0; i < stickyProps.length; ++i) {
-      testEl.css({position: stickyProps[i], top: 0, 'z-index': 2});
-      if (testEl.css('position') == stickyProps[i]) {
-        stickyProp = stickyProps[i];
-        break;
-      }
-    }
-    testEl.remove();
-    return stickyProp;
-  }
 
   // Android 4.4 don't accurately give scroll events.
   // To fix this problem, we setup a fake scroll event. We say:
@@ -371,6 +360,5 @@ function MdSticky($document, $mdConstant, $$rAF, $mdUtil, $compile) {
   }
 
 }
-MdSticky.$inject = ["$document", "$mdConstant", "$$rAF", "$mdUtil", "$compile"];
 
-ng.material.components.sticky = angular.module("material.components.sticky");
+ngmaterial.components.sticky = angular.module("material.components.sticky");

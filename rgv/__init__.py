@@ -39,22 +39,39 @@ def main(global_config, **settings):
     config.registry.db_mongo = db
     config.registry.admin_list = settings['admin'].split(',')
     config.registry.upload_path = settings['upload_path']
+    config.registry.news_path = settings['news_path']
     config.registry.admin_path = settings['admin_path']
     config.registry.public_path = settings['public_path']
     config.registry.dataset_path = settings['dataset_path']
     config.registry.script_path = settings['script_path']
+    config.registry.download_path = settings['download_path']
+    config.registry.studies_path = settings['studies_path']
+    config.registry.jbrowse_path = settings['jbrowse_path']
+    config.registry.base_url = settings['base_url']
+
 
     # by default we don't sniff, ever
-    config.registry.es = Elasticsearch( [settings['elastic_host']])
-    config.registry.es_db = settings['elastic_db']
-    config.registry.es.indices.create(index=settings['elastic_db'], ignore=400)
+    #config.registry.es = Elasticsearch( [settings['elastic_host']])
+    #config.registry.es_db = settings['elastic_db']
+    #config.registry.es.indices.create(index=settings['elastic_db'], ignore=400)
 
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_static_view('app', 'rgv:webapp/app')
+    config.add_route('autocomplete', '/autocomplete')
+    config.add_route('checkgene', '/checkgene')
+    config.add_route('browser_stat','/browser_stat')
+    config.add_route('d_getter', '/data_frame')
+    config.add_route('file_dataset','/dataset_download/{dir}/{file}')
+    config.add_route('genelevel', '/genelevel')
     config.add_route('home', '/')
-    config.add_route('user', '/user')
+    config.add_route('hmtData', '/hmtData')
     config.add_route('login', '/user/login')
     config.add_route('logged', '/user/logged')
+    config.add_route('newsfeed', '/newsfeed')
+    config.add_route('scData', '/scData')
+    config.add_route('scDataGenes', '/scDataGenes')
+    config.add_route('studyfeed', '/studyfeed')
+    config.add_route('user', '/user')
     config.add_route('user_register', '/user/register')
     config.add_route('user_recover', '/user/recover')
     config.add_route('user_confirm_recover', '/user/confirm_recover')
@@ -62,9 +79,9 @@ def main(global_config, **settings):
     config.add_route('user_validate', '/user/validate')
     config.add_route('user_delete', '/user/delete')
     config.add_route('user_info', '/user/{id}')
-    config.add_route('search', '/search')
-    config.add_route('file_dataset','/dataset_download/{dir}/{file}')
     config.add_route('read_file','/browser_genelevel_init')
+    config.add_route('search', '/search')
+
 
     config.scan()
 

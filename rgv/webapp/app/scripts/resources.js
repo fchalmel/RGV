@@ -20,12 +20,72 @@
 
     function Dataset($resource) {
         return $resource('/dataset', { }, {
+            data_frame: {
+                url: '/data_frame',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
             read_file: {
                 url: '/browser_genelevel_init',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
+            read_stat: {
+                url: '/browser_stat',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
+            checkgene: {
+                url: '/checkgene',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
+            news_feed: {
+                url: '/newsfeed',
                 method: 'GET',
                 isArray: false,
                 cache: false
-            }
+            },
+            study_feed: {
+                url: '/studyfeed',
+                method: 'GET',
+                isArray: false,
+                cache: false
+            },
+            autocomplete: {
+                url: '/autocomplete',
+                method: 'POST',
+                isArray: true,
+                cache: false
+            },
+            genelevel: {
+                url: '/genelevel',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
+            scData: {
+                url: '/scData',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
+            hmtData: {
+                url: '/hmtData',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
+            scDataGenes: {
+                url: '/scDataGenes',
+                method: 'POST',
+                isArray: false,
+                cache: false
+            },
         });
     }
 

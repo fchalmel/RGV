@@ -22,5 +22,8 @@
     "angular-slide-wrapper": "^0.1.8",
     "ngHandsontable": "^0.13.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "resolutions": {
+    "angular-material": "~1.0.6"
+  }
 }

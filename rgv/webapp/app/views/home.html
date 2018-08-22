@@ -1,95 +1,259 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="styles/justified-nav.css" rel="stylesheet">
+<link href="styles/home_cards.css" rel="stylesheet">
+<link href="styles/progress_circle.css" rel="stylesheet">
 
-<div ng-if="msg" class="alert alert-warning">
+<script>
+	console.log(location.pathname)
+	ga('send', 'pageview', '/home.html');
+</script>
+
+<div ng-if="msg" class="alert alert-warning" style="margin-top:50px;text-align:center;">
 	{{msg}}
 </div>
-<link href="styles/justified-nav.css" rel="stylesheet">
-<div class="jumbotron">
-	<h2>Welcome to the ReproGenomics Viewer</h2>
-	<h3>The genomics toolbox for the reproductive science community!</h3>
-</div>
 
-<div class="row">
-	<a href="#/browser_genome">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-indent-left"></i></h1><h2> Genome browser</h2>
+
+
+<div class="container" style="margin-top:50px;" >
+	<!-- Heading Row -->
+	<div class="row">
+		<div class="col-lg-6 vcenter" style="height: 336px;">
+			<img class="img-fluid rounded" src="images/RGVLogo_home.png" alt="" width="100%">
+			<p>The ReproGenomics Viewer is a cross-species genomic resource for the reproductive science community. It aims to centralize and harmonize ultra-high-throughput sequencing data accumulated in the field of reproductive biology and to assist scientists in the exploration of these datasets.</p>
+		</div><!--
+		--><div class="col-lg-6 vcenter" style="height: 336px;">
+				<div class="blog-card" style="height: 100px;">
+						<div class="photo photo1"></div>
+						<ul class="details">
+							<li ><a href="#/browser_genome">Get started</a></li>
+							<li><a href="#/tutorial">Read More</a></li>
+						</ul>
+						<div class="description">
+							<h1 style="font-size: 24px;">Genome browser</h1>
+							<h2>Fluid and intuitive genomic navigation among chromosomes </h2>
+							<p class="summary"></p>
+							
+						</div>
+					</div>
+					<div class="blog-card" style="height: 100px;">
+						<div class="photo photo2"></div>
+						<ul class="details">
+								<li ><a href="#/browser_genelevel">Get started</a></li>
+								<li><a href="#/tutorial">Read More</a></li>
+						</ul>
+						<div class="description">
+							<h1 style="font-size: 24px;">Violin plot</h1>
+							<h2>Display distribution of an expression data set</h2>
+							<p class="summary"></p>
+						</div>
+					</div>
+					<div class="blog-card" style="height: 100px;">
+							<div class="photo photo3"></div>
+							<ul class="details">
+									<li ><a href="#/browser_scRNAseq">Get started</a></li>
+									<li><a href="#/tutorial">Read More</a></li>
+							</ul>
+							<div class="description">
+								<h1 style="font-size: 24px;">Scatter plot</h1>
+								<h2>Explore complex datasets </h2>
+								<p class="summary"></p>
+							</div>
+						</div>
 		</div>
-	</a> 
-	<a href="#/browser_genelevel">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-align-left"></i></h1><h2> Gene-level browser</h2>
+		<!-- /.col-md-4 -->
+	</div>
+	<!-- /.row 
+
+	<div class="row" style="margin-top:10px;">
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<img src="images/home_jb.png" width="100%" alt="...">
+				<div class="caption">
+					<h3>Genome browser</h3>
+					<p><i></i></p>
+					<p><a href="#/browser_genome" class="btn btn-default" role="button">Use</a></p>
+				</div>
+			</div>
 		</div>
-	</a> 
-	<a href="#/browser_scRNAseq">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-cloud"></i></h1><h2> Single-cell browser</h2>
+		<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="images/home_violin.png" width="100%" alt="...">
+					<div class="caption">
+						<h3>Violin plot</h3>
+						<p><i></i></p>
+						<p><a href="#/browser_genelevel" class="btn btn-default" role="button">Use</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="images/home_scatter.png" width="100%" alt="...">
+						<div class="caption">
+							<h3>Scatter plot</h3>
+							<p><i></i></p>
+							<p><a href="#/browser_scRNAseq" class="btn btn-default" role="button">Use</a></p>
+						</div>
+					</div>
+				</div>
+	</div>-->
+
+	<hr style="margin-top: 0px;">
+
+		<div class="row">
+			<div class="col-sm-3 col-md-2">
+				<div class="progress" data-percentage="100">
+					<span class="progress-left">
+						<span class="progress-bar"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar"></span>
+					</span>
+					<div class="progress-value">
+						<div>
+							{{sample}}<br>
+							<span>samples</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3 col-md-2">
+				<div class="progress" data-percentage="100">
+					<span class="progress-left">
+						<span class="progress-bar"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar"></span>
+					</span>
+					<div class="progress-value">
+						<div>
+							{{studies}}<br>
+							<span>studies</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-sm-3 col-md-2">
+				<div class="progress" data-percentage="100">
+					<span class="progress-left">
+						<span class="progress-bar"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar"></span>
+					</span>
+					<div class="progress-value">
+						<div>
+							{{techno}}<br>
+							<span>technologies</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="col-sm-3 col-md-2">
+				<div class="progress" data-percentage="100">
+					<span class="progress-left">
+						<span class="progress-bar"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar"></span>
+					</span>
+					<div class="progress-value">
+						<div>
+							{{topics}}<br>
+							<span>topics</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+				<div class="col-sm-3 col-md-2">
+				<div class="progress" data-percentage="100">
+					<span class="progress-left">
+						<span class="progress-bar"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar"></span>
+					</span>
+					<div class="progress-value">
+						<div>
+							{{species}}<br>
+							<span>species</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3 col-md-2">
+				<div class="progress" data-percentage="100">
+					<span class="progress-left">
+						<span class="progress-bar"></span>
+					</span>
+					<span class="progress-right">
+						<span class="progress-bar"></span>
+					</span>
+					<div class="progress-value">
+						<div>
+							3<br>
+							<span>tools</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
 		</div>
-	</a> 
-</div>
-<div class="row">
-	<a href="#/about">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-flash"></i></h1><h2> What is RGV?</h2>
-		</div>
-	</a> 
-	<a href="#/tutorial">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-education"></i></h1><h2> How to use it?</h2>
-		</div>
-	</a> 
-	<a href="#/getinvolved">
-		<div class="col-md-4" style="text-align: center;">
-			<h1><i class="glyphicon glyphicon-link"></i></h1><h2> How to get involved?</h2>
-		</div>
-	</a> 
-</div>
-<div class="row">
-  <div class="col-md-4">
+	
+
+
+
+	<div class="row">
+  <div class="col-md-8">
     <div class="panel panel-default" style="margin-top:20px;">
         <div class="panel-heading">
-            Last updates
+            Latest news
         </div>
         <div class="panel-body fixed-panel">
-          <div ng-repeat="sign in last_sign">
-            <h4>{{sign.id}} - {{sign.title}}</h4>
-            <ul>
-              <li><b>Description :</b> {{sign.description}}</li>
-              <li><b>Studies :</b> <span ng-repeat="stud in sign.studies.split(',')"><a href="#/browse?dataset={{stud}}">{{stud}}</a> </span></li>
-              <li><b>Signatures :</b> <span ng-repeat="sig in sign.signatures.split(',')"><a href="#/browse?dataset={{sig}}">{{sig}}</a> </span></li>
-              <li>(<a href="#/browse?dataset={{sign.id}}">view</a>)</li>
-            </ul>
+          <div ng-repeat="(key,value) in newsfeed">
+            <h4>{{value.title}}</h4>
+            <p>{{value.text}}</p>
             <hr>
 
           </div>
-        
+
         </div>
     </div>
   </div>
 
-  <div class="col-md-4">
-    <div class="panel panel-default" style="margin-top:20px;">
-        <div class="panel-heading">
-            Links
-        </div>
-        <div class="panel-body">
-          <p>Information about how to search TOXsIgN, understand search results and how to submit data can be found in our <a href="#/help">Help</a>  section.</p>
-
-          <p>Find out more about the Research Institute for Environmental and Occupational Health (<a href="https://www.irset.org/">IRSET</a>).</p>
-        </div>
-    </div>
-  </div>
 
 
   <div class="col-md-4">
     <div class="panel panel-default" style="margin-top:20px;">
         <div class="panel-heading">
-            Tools and Access
+            Getting started
         </div>
         <div class="panel-body">
-          <p>The <a href="#/tools">TOXsIgN warehouse</a> for toxicogenomics and predictve toxicology tools</p>
-          <p><a href ="#/query">TOXsIgN search engine</a>: a powerful tool to access and query the TOXsIgN repository.</p>
-          <p>HTTP access: data can be downloaded directly from our <a href="http://toxsign.genouest.org/public/toxsign">HTTP site</a>.</p>
+					<ul class="list-unstyled">
+						<li><a href="#/about" active-link="active"><i class="glyphicon glyphicon-flash"></i> About RGV</a></li>
+						<li><a href="#/studies" active-link="active"><i class="glyphicon glyphicon-list"></i> Studies</a></li>
+						<hr>
+						<li><a href="#/tutorial" active-link="active"><i class="glyphicon glyphicon-education"></i> Tutorial</a></li>
+						<li><a href="#/getinvolved" active-link="active"><i class="glyphicon glyphicon-link"></i>How to get involved?</a></li>
+						<hr>
+						<li><a href="#/citing" active-link="active"><i class="glyphicon glyphicon-pencil"></i> Citing RGV</a></li>
+						<li><a href="#/contact" active-link="active"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
+					</ul>
         </div>
     </div>
-  </div>
+	</div>
+	<div class="row">
+			<!--/*div espace bas de page, footer*/-->
+
+			<div class="col-md-3" style="height: 305px">
+				<!--/*div gauche*/-->
+			</div>
+	</div>
+
+</div>
+
+	

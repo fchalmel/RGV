@@ -1,72 +1,85 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="styles/justified-nav.css" rel="stylesheet">
 
-<div class="jumbotron">
+<div class="jumbotron" style="margin-top:50px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
 	<h2><i class="glyphicon glyphicon-indent-left"></i> Genome browser</h2>
+</div>
+
+<script>
+	ga('send', 'pageview', '/genomebrowser.html');
+</script>
+
+<div>
 	<h3>Current genomes</h3>
-	<table class="table table-bordered table-hover table-striped">
+	<table class="table table-hover">
 		<tr>
 			<th>Genome</th>
+			<th>RGV genome browser</th>
 			<th>UCSC genome release</th>
 			<th>n° of studies</th>
 			<th>n° of samples</th>
-			<th>Link to the genome browser</th>
 		</tr>
 		<tr>
-			<td><img src="images/genome_hs.png" height="50" title="Homo sapiens" "alt="Homo sapiens"></img></td>
+			<td><img src="images/genome_hs.png" height="50" title="Homo sapiens" alt="Homo sapiens"></img></td>
+			<td><a href="https://jbrowse-rgv.genouest.org/?data=data/sample_data/json/hg38" target="_blank" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'Human genome browser'});"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38" target="_blanck">hg38</a></td>
-			<td>0</td>
-			<td>0</td>
-			<td><a href="http://localhost/JBrowse-1.12.3/?data=sample_data%2Fjson%2Fhg38" target="_blank"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td>{{Stat.hg38.study_number}}</td>
+			<td>{{Stat.hg38.sample_number}}</td>
+		</tr>
+		<tr>
+			<td><img src="images/genome_rheMac.png" height="50" title="Macaca mulatta" alt="Macaca mulatta"></img></td>
+			<td><a href="https://jbrowse-rgv.genouest.org/?data=data/sample_data/json/rheMac8" target="_blank" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'Macaca browser'});"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=rheMac8" target="_blanck">rheMac8</a></td>
+			<td>{{Stat.rheMac8.study_number}}</td>
+			<td>{{Stat.rheMac8.sample_number}}</td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_mm.png" height="50" title="Mus musculus" alt="Mus musculus"></img></td>
+			<td><a href="https://jbrowse-rgv.genouest.org/?data=data/sample_data/json/mm10" target="_blank" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'Mouse genome browser'});"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=mm10" target="_blanck">mm10</a></td>
-			<td>0</td>
-			<td>0</td>
-			<td><a href="http://localhost/JBrowse-1.12.3/?data=sample_data%2Fjson%2Fmm10" target="_blank"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td>{{Stat.mm10.study_number}}</td>
+			<td>{{Stat.mm10.sample_number}}</td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_rn.png" height="50" title="Rattus norvegicus" alt="Rattus norvegicus"></img></td>
+			<td><a href="https://jbrowse-rgv.genouest.org/?data=data/sample_data/json/rn6" target="_blank" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'Rat genome browser'});"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=rn6" target="_blanck">rn6</a></td>
-			<td>0</td>
-			<td>0</td>
-			<td><a href="http://localhost/JBrowse-1.12.3/?data=sample_data%2Fjson%2Frn6" target="_blank"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td>{{Stat.rn6.study_number}}</td>
+			<td>{{Stat.rn6.sample_number}}</td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_canFam.png" height="50" title="Canis familiaris" alt="Canis familiaris"></img></td>
-			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=rn6" target="_blanck">canFam3</a></td>
-			<td>0</td>
-			<td>0</td>
-			<td><a href="http://localhost/JBrowse-1.12.3/?data=sample_data%2Fjson%2FcanFam3" target="_blank"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td><a href="https://jbrowse-rgv.genouest.org/?data=data/sample_data/json/canFam3" target="_blank" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'Dog genome browser'});"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=canFam3" target="_blanck">canFam3</a></td>
+			<td>{{Stat.canFam3.study_number}}</td>
+			<td>{{Stat.canFam3.sample_number}}</td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_bosTau.png" height="50" title="Bos taurus" alt="Bos taurus"></img></td>
+			<td><a href="https://jbrowse-rgv.genouest.org/?data=data/sample_data/json/bosTau8" target="_blank" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'Cow genome browser'});"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=bosTau8" target="_blanck">bosTau8</a></td>
-			<td>0</td>
-			<td>0</td>
-			<td><a href="http://localhost/JBrowse-1.12.3/?data=sample_data%2Fjson%2FbosTau8" target="_blank"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td>{{Stat.bosTau8.study_number}}</td>
+			<td>{{Stat.bosTau8.sample_number}}</td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_susScr.png" height="50" title="Sus scrofa" alt="Sus scrofa"></img></td>
+			<td><a href="https://jbrowse-rgv.genouest.org/?data=data/sample_data/json/susScr3" target="_blank" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'Pig genome browser'});"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=susScr3" target="_blanck">susScr3</a></td>
-			<td>0</td>
-			<td>0</td>
-			<td><a href="http://localhost/JBrowse-1.12.3/?data=sample_data%2Fjson%2FsusScr3" target="_blank"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td>{{Stat.susScr3.study_number}}</td>
+			<td>{{Stat.susScr3.sample_number}}</td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_galGal.jpg" height="50" title="Gallus gallus" alt="Gallus gallus"></img></td>
+			<td><a href="https://jbrowse-rgv.genouest.org/?data=data/sample_data/json/galGal5" target="_blank" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'Chicken genome browser'});"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=galGal5" target="_blanck">galGal5</a></td>
-			<td>0</td>
-			<td>0</td>
-			<td><a href="http://localhost/JBrowse-1.12.3/?data=sample_data%2Fjson%2FgalGal5" target="_blank"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td>{{Stat.galGal5.study_number}}</td>
+			<td>{{Stat.galGal5.sample_number}}</td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_danRer.png" height="50" title="Danio rerio" alt="Danio rerio"></img></td>
+			<td><a href="https://jbrowse-rgv.genouest.org/?data=data/sample_data/json/danRer10" target="_blank" onclick="ga('send', 'event', { eventCategory: 'Book button', eventAction: 'Click', eventLabel: 'Zebrafish genome browser'});"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=danRer10" target="_blanck">danRer10</a></td>
-			<td>0</td>
-			<td>0</td>
-			<td><a href="http://localhost/JBrowse-1.12.3/?data=sample_data%2Fjson%2FdanRer10" target="_blank"><i class="glyphicon glyphicon-indent-left"></i> click here</a></td>
+			<td>{{Stat.danRer10.study_number}}</td>
+			<td>{{Stat.danRer10.sample_number}}</td>
 		</tr>
 	</table>
 </div>

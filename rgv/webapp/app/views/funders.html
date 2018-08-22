@@ -1,28 +1,316 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="styles/justified-nav.css" rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-<div class="jumbotron">
+<script>
+	ga('send', 'pageview', '/funders.html');
+</script>
+<style>
+	@import url(//fonts.googleapis.com/css?family=Lato:400,900);
+    @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+	.animate {
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+	}
+	.info-card {
+		width: 100%;
+		border: 1px solid rgb(215, 215, 215);
+		position: relative;
+		font-family: 'Lato', sans-serif;
+		margin-bottom: 20px;
+		overflow: hidden;
+	}
+	.info-card > img {
+		width: 100px;
+		margin-bottom: 60px;
+	}
+	.info-card .info-card-details,
+	.info-card .info-card-details .info-card-header  {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: -100%;
+		left: 0;
+		padding: 0 15px;
+		background: rgb(255, 255, 255);
+		text-align: center;
+	}
+	.info-card .info-card-details::-webkit-scrollbar {
+		width: 8px;
+	}
+	.info-card .info-card-details::-webkit-scrollbar-button {
+		width: 8px;
+		height: 0px;
+	}
+	.info-card .info-card-details::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	.info-card .info-card-details::-webkit-scrollbar-thumb {
+		background: rgb(160, 160, 160);
+	}
+	.info-card .info-card-details::-webkit-scrollbar-thumb:hover {
+		background: rgb(130, 130, 130);
+	}           
+
+	.info-card .info-card-details .info-card-header {
+		height: auto;		
+		bottom: 100%;
+		padding: 10px 5px;
+	}
+	.info-card:hover .info-card-details {
+		bottom: 0px;
+		overflow: auto;
+		padding-bottom: 25px;
+	}
+	.info-card:hover .info-card-details .info-card-header {
+		position: relative;
+		bottom: 0px;
+		padding-top: 45px;
+		padding-bottom: 25px;
+	}
+	.info-card .info-card-details .info-card-header h1,	
+	.info-card .info-card-details .info-card-header h3 {
+		color: rgb(62, 62, 62);
+		font-size: 22px;
+		font-weight: 900;
+		text-transform: uppercase;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	.info-card .info-card-details .info-card-header h3 {
+		color: rgb(142, 182, 52);
+		font-size: 15px;
+		font-weight: 400;
+		margin-top: 5px;
+	}
+	.info-card .info-card-details .info-card-detail .social {
+		list-style: none;
+		padding: 0px;
+		margin-top: 25px;
+		text-align: center;
+	}
+	.info-card .info-card-details .info-card-detail .social a {
+		position: relative;
+		display: inline-block;
+		min-width: 40px;
+		padding: 10px 0px;
+		margin: 0px 5px;
+		overflow: hidden;
+		text-align: center;
+		background-color: rgb(215, 215, 215);
+		border-radius: 40px;
+	}
+
+	a.social-icon {
+		text-decoration: none !important;
+		box-shadow: 0px 0px 1px rgb(51, 51, 51);
+		box-shadow: 0px 0px 1px rgba(51, 51, 51, 0.7);
+	}
+	a.social-icon:hover {
+		color: rgb(255, 255, 255) !important;
+	}
+	a.facebook {
+		color: rgb(59, 90, 154) !important;
+	}
+	a.facebook:hover {		
+		background-color: rgb(59, 90, 154) !important;
+	}
+	a.twitter {
+		color: rgb(45, 168, 225) !important;
+	}
+	a.twitter:hover {
+		background-color: rgb(45, 168, 225) !important;
+	}
+	a.github {
+		color: rgb(51, 51, 51) !important;
+	}
+	a.github:hover {
+		background-color: rgb(51, 51, 51) !important;
+	}
+	a.google-plus {
+		color: rgb(244, 94, 75) !important;
+	}
+	a.google-plus:hover {
+		background-color: rgb(244, 94, 75) !important;
+	}
+	a.linkedin {
+		color: rgb(1, 116, 179) !important;
+	}
+	a.linkedin:hover {
+		background-color: rgb(1, 116, 179) !important;
+	}
+	.box {
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 10px 25px;
+    text-align: right;
+    display: block;
+    margin-top: 60px;
+}
+.box-icon {
+    background-color: #57a544;
+    border-radius: 0%;
+    display: table;
+    height: 100px;
+    margin: 0 auto;
+    width: 100px;
+    margin-top: -61px;
+}
+.box-icon span {
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.info h4 {
+    font-size: 26px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.info > p {
+    color: #717171;
+    font-size: 16px;
+    padding-top: 10px;
+    text-align: justify;
+}
+
+</style>
+
+
+
+
+
+<div class="jumbotron" style="margin-top:50px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
 	<h2><i class="glyphicon glyphicon-king"></i> Institutions</h2>
-	The ReproGenomics Viewer is supported, built and maintained by the Research Institute for Environmental and Occupational Health (IRSET) and the GenOuest BioInformatics facility located in Rennes (Brittany, France).
-	<div class="row">
-		<div class="col-md-6">
-		<h3><a href="https://www.irset.org" target="_blanck"><img src="images/irsetlogo.jpg" height="50" alt="Irset"></img> Inserm U1085-Irset</a></h3><br>
-		The Research Institute for Environmental and Occupational Health (Irset) is located at Rennes. Its research groups cover diverse and complementary fields such as molecular and genome biology, bioinformatics, analytical chemistry, toxicology and epidemiology that all have a common aim:	gain insight into basic molecular processes related to pathologies that manifest themselves in the context of environmental challenges. Irset is a joint research unit of the French Institute of Medical Research (Inserm), the University of Rennes 1, and the EHESP-School of Public Health,in association with the University of Angers, the University of the Antilles, the National Center of Scientific Research (CNRS), and	the Rennes, Angers and Pointe-à-Pitre University Hospitals.<br>
-		<br>
-		<a href="http://english.inserm.fr/" target="_blanck"><img src="images/insermlogo.gif" height="50" alt="Inserm"></img></a> <a href="https://www.ehesp.fr/en/" target="_blanck"><img src="images/ehesplogo.jpg" height="50" alt="EHESP"></img></a> <a href="https://international.univ-rennes1.fr/" target="_blanck"><img src="images/ur1logo.jpg" height="50" alt="University of Rennes 1"></img></a>
+</div>
+<p><b>The ReproGenomics Viewer database is supported, built and maintained by the Research Institute for Environmental and Occupational Health (IRSET) and the GenOuest BioInformatics facility located in Rennes (Brittany, France).</b></p>
+<div class="row">
+	<div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
+		<div class="[ info-card ]">
+			<img style="width: 100%" src="images/Irset_funders.png" />
+			<div class="[ info-card-details ] animate">
+				<div class="[ info-card-header ]">
+					<h1> IRSET </h1>
+					<h3> INSERM U1085 </h3>
+				</div>
+				<div class="[ info-card-detail ]">
+					<!-- Description -->
+					<p>The Research Institute for Environmental and Occupational Health (Irset) is located at Rennes. Its research groups cover diverse and complementary fields such as molecular and genome biology, bioinformatics, analytical chemistry, toxicology and epidemiology that all have a common aim:	gain insight into basic molecular processes related to pathologies that manifest themselves in the context of environmental challenges. Irset is a joint research unit of the French Institute of Medical Research (Inserm), the University of Rennes 1, and the EHESP-School of Public Health,in association with the University of Angers, the University of the Antilles, the National Center of Scientific Research (CNRS), and	the Rennes, Angers and Pointe-à-Pitre University Hospitals.</p>
+					<a href="http://english.inserm.fr/" target="_blanck"><img src="images/insermlogo.gif" height="50" alt="Inserm"></img></a><a href="https://www.ehesp.fr/en/" target="_blanck"><img src="images/ehesplogo.jpg" height="50" alt="EHESP"></img></a> <a href="https://international.univ-rennes1.fr/" target="_blanck"><img src="images/ur1logo.jpg" height="50" alt="University of Rennes 1"></img></a>
+					<div class="social">
+						<a href="https://www.facebook.com/institut.irset" target="_blanck" class="[ social-icon facebook ] animate"><span class="fab fa-facebook-f"></span></a>
+
+						<a href="https://twitter.com/irset_fr" target="_blanck" class="[ social-icon twitter ] animate"><span class="fab fa-twitter"></span></a>
+
+						<a href="" target="_blanck" class="[ social-icon github ] animate"><span class="fab fa-github"></span></a>
+
+						<a href="http://english.inserm.fr/" target="_blanck" class="[ social-icon google-plus ] animate"><span class="fab fa-chrome"></span></a>
+
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-6">
-		<h3><a href="https://www.genouest.org" target="_blanck"><img src="images/genouestlogo.png" height="50" alt="GenOuest BioInformatics facility"></img> GenOuest BioInformatics facility</a></h3><br>
-		The GenOuest BioInformatics facility is hosted at INRIA Rennes-Bretagne Atlantique and IRISA. It is a member of IFB (Institut Français de Bioinformatique) and a member of Biogenouest. GenOuest is an IBiSA platform and it is recognized by INRA CNOC as a strategic regional platform<br>
-		<br>
-		<a href="https://www.inria.fr/en/" target="_blanck"><img src="images/inrialogo.jpg" height="50" alt="Inria"></img></a> <a href="http://www.cnrs.fr/index.php" target="_blanck"><img src="images/cnrslogo.png" height="50" alt="CNRS"></img></a>
+	<div class="[ col-sm-6 col-md-4 ]">
+		<div class="[ info-card ]">
+			<img style="width: 100%" src="images/genouestlogo.png" />
+			<div class="[ info-card-details ] animate">
+				<div class="[ info-card-header ]">
+					<h1> GenOuest </h1>
+					<h3> BioInformatics facility </h3>
+				</div>
+				<div class="[ info-card-detail ]">
+					<!-- Description -->
+					<p>The GenOuest BioInformatics facility is hosted at INRIA Rennes-Bretagne Atlantique and IRISA. It is a member of IFB (Institut Français de Bioinformatique) and a member of Biogenouest. GenOuest is an IBiSA platform and it is recognized by INRA CNOC as a strategic regional platform</p>
+					<a href="https://www.inria.fr/en/" target="_blanck"><img src="images/inrialogo.jpg" height="50" alt="Inria"></img></a> <a href="http://www.cnrs.fr/index.php" target="_blanck"><img src="images/cnrslogo.png" height="50" alt="CNRS"></img></a>
+					<div class="social">
+						<a href="https://www.facebook.com/GenOUEST-277570175507/" target="_blanck" class="[ social-icon facebook ] animate"><span class="fab fa-facebook-f"></span></a>
+
+						<a href="https://twitter.com/genouest" target="_blanck" class="[ social-icon twitter ] animate"><span class="fab fa-twitter"></span></a>
+
+						<a href="https://github.com/genouest" target="_blanck" class="[ social-icon github ] animate"><span class="fab fa-github"></span></a>
+
+						<a href="https://www.genouest.org/" target="_blanck" class="[ social-icon google-plus ] animate"><span class="fab fa-chrome"></span></a>
+
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-<div class="jumbotron">
+
+<div class="jumbotron" style="margin-top:50px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
 	<h2><i class="glyphicon glyphicon-euro"></i> Founders</h2>
-	The ReproGenomics Viewer was funded by:<br>
-	<a href="https://www.anses.fr/en" target="_blanck"><img src="images/anseslogo.jpg" height="50" alt="ANSES"></img></a> The French Agency for Food, Environmental and Occupational Health & Safety [ANSES No. EST-13-081 to F.C.]<br>
-	<a href="https://www.frm.org" target="_blanck"><img src="images/frmlogo.png" height="50" alt="FRM"></img></a> The Medical Research Foundation [FRM No. DBI20131228558 to F.C.]<br>
-	<a href="http://europe.bzh/jcms/wcrb_223387/fr/accueil" target="_blanck"><img src="images/federlogo.png" height="50" alt="FEDER"></img> </a> The European Union and <img src="images/rblogo.jpg" height="50" alt="Région Bretagne"></img> The Brittany Region [FEDER to F.C.]<br>
-	<a href="http://www.snf.ch/en" target="_blanck"><img src="images/fnslogo.png" height="50" alt="FNS"></img></a> The Swiss National science Foundation<br>
+</div>
+
+<div class="row">
+	<div class="col-md-6 col-lg-6">
+		<div class="box">
+			<div class="box-icon" style="background-image: url('images/anseslogo.jpg');background-repeat: round;">
+			</div>
+			<div class="info">
+				<h4 class="text-center"></h4>
+				<p>The French Agency for Food, Environmental and Occupational Health & Safety [ANSES No. EST-13-081 to F.C.]</p>
+				<a href="https://www.anses.fr/en" target="_blanck" class="btn btn-default">Visit</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-6 col-lg-6">
+		<div class="box">
+			<div class="box-icon" style="background-image: url('images/frmlogo.png');background-repeat: round;">
+			</div>
+			<div class="info">
+				<h4 class="text-center"></h4>
+				<p>The Medical Research Foundation [FRM No. DBI20131228558 to F.C.]</p>
+				<a href="https://www.frm.org" target="_blanck" class="btn btn-default">Visit</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6 col-lg-6">
+		<div class="box">
+			<div class="box-icon" style="background-image: url('images/federlogo.png');background-repeat: round;">
+			</div>
+			<div class="info">
+				<h4 class="text-center"></h4>
+				<p>The European Union [FEDER to F.C.]</p>
+				<a href="http://europe.bzh/jcms/wcrb_223387/fr/accueil" target="_blanck" class="btn btn-default">Visit</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-lg-6">
+		<div class="box">
+			<div class="box-icon" style="background-image: url('images/rblogo.jpg');background-repeat: round;">
+			</div>
+			<div class="info">
+				<h4 class="text-center"></h4>
+				<p>The Brittany Region [FEDER to F.C.]</p>
+				<a href="http://europe.bzh/jcms/wcrb_223387/fr/accueil" target="_blanck"class="btn btn-default">Visit</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6 col-md-6 col-lg-6">
+		<div class="box">
+			<div class="box-icon" style="background-image: url('images/fnslogo.png');background-repeat: round;">
+			</div>
+			<div class="info">
+				<h4 class="text-center"></h4>
+				<p>The Swiss National science Foundation</p>
+				<a href="http://www.snf.ch/en" target="_blanck" class="btn btn-default">Visit</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Footer -->
+<div class="row">
+		<!--/*div espace bas de page, footer*/-->
+
+		<div class="col-md-3" style="height: 305px">
+			<!--/*div gauche*/-->
+		</div>
 </div>

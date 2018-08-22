@@ -1,7 +1,94 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="styles/justified-nav.css" rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+<script src="scripts/plotly-latest.min.js"></script>
+<script>
+	ga('send', 'pageview', '/statistics.html');
+</script>
+<div class="jumbotron" style="margin-top:50px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
+	<h2><i class="fas fa-chart-bar"></i>		Statistics</h2>
+</div>
 
-<div class="jumbotron">
-	<h2><i class="glyphicon glyphicon-equalizer"></i> Statistics</h2>
-	<h3><i class="glyphicon glyphicon-ban-circle"></i> Under construction! Coming soon... <i class="glyphicon glyphicon-ban-circle"></i></h3>
+<div>
+
+	<h3><i class="fas fa-info-circle"></i>		Genome information</h3>
+	<table class="table table-hover">
+		<tr>
+			<th>Genome</th>
+			<th>n° Studies</th>
+			<th>n° Technologies</th>
+			<th>n° Topics</th>
+		</tr>
+		<tr>
+			<td><img src="images/genome_hs.png" height="50" title="Homo sapiens" alt="Homo sapiens"></img></td>
+			<td>{{Stat["Homo sapiens"].study_number}}</td>
+			<td>{{Stat["Homo sapiens"].techno_number}}</td>
+			<td>{{Stat["Homo sapiens"].number_of_topics}}</td>
+		</tr>
+		<tr>
+			<td><img src="images/genome_rheMac.png" height="50" title="Macaca mulatta" alt="Macaca mulatta"></img></td>
+			<td>{{Stat["Macaca mulatta"].study_number}}</td>
+			<td>{{Stat["Macaca mulatta"].techno_number}}</td>
+			<td>{{Stat["Macaca mulatta"].number_of_topics}}</td>
+		</tr>
+		<tr>
+			<td><img src="images/genome_mm.png" height="50" title="Mus musculus" alt="Mus musculus"></img></td>
+			<td>{{Stat["Mus musculus"].study_number}}</td>
+			<td>{{Stat["Mus musculus"].techno_number}}</td>
+			<td>{{Stat["Mus musculus"].number_of_topics}}</td>
+		</tr>
+		<tr>
+			<td><img src="images/genome_rn.png" height="50" title="Rattus norvegicus" alt="Rattus norvegicus"></img></td>
+			<td>{{Stat["Rattus norvegicus"].study_number}}</td>
+			<td>{{Stat["Rattus norvegicus"].techno_number}}</td>
+			<td>{{Stat["Rattus norvegicus"].number_of_topics}}</td>
+		</tr>
+		<tr>
+			<td><img src="images/genome_canFam.png" height="50" title="Canis familiaris" alt="Canis familiaris"></img></td>
+			<td>{{Stat["Canis lupus familiaris"].study_number}}</td>
+			<td>{{Stat["Canis lupus familiaris"].techno_number}}</td>
+			<td>{{Stat["Canis lupus familiaris"].number_of_topics}}</td>
+		</tr>
+		<tr>
+			<td><img src="images/genome_bosTau.png" height="50" title="Bos taurus" alt="Bos taurus"></img></td>
+			<td>{{Stat["Bos taurus"].study_number}}</td>
+			<td>{{Stat["Bos taurus"].techno_number}}</td>
+			<td>{{Stat["Bos taurus"].number_of_topics}}</td>
+		</tr>
+		<tr>
+			<td><img src="images/genome_susScr.png" height="50" title="Sus scrofa" alt="Sus scrofa"></img></td>
+			<td>{{Stat["Sus scrofa"].study_number}}</td>
+			<td>{{Stat["Sus scrofa"].techno_number}}</td>
+			<td>{{Stat["Sus scrofa"].number_of_topics}}</td>
+		</tr>
+		<tr>
+			<td><img src="images/genome_galGal.jpg" height="50" title="Gallus gallus" alt="Gallus gallus"></img></td>
+			<td>{{Stat["Gallus gallus"].study_number}}</td>
+			<td>{{Stat["Gallus gallus"].techno_number}}</td>
+			<td>{{Stat["Gallus gallus"].number_of_topics}}</td>
+		</tr>
+		<tr>
+			<td><img src="images/genome_danRer.png" height="50" title="Danio rerio" alt="Danio rerio"></img></td>
+			<td>{{Stat["Danio rerio"].study_number}}</td>
+			<td>{{Stat["Danio rerio"].techno_number}}</td>
+			<td>{{Stat["Danio rerio"].number_of_topics}}</td>
+		</tr>
+	</table>
+</div>
+<div class="row" ng-repeat="chart in charts">
+	<h3><i class="fas fa-info-circle"></i>		Technologies</h3>
+	<div chart-div chart="chart" id="chart-{{ chart.div }}"></div>
+</div>
+
+<div class="row" ng-repeat="chart in charts2">
+	<h3><i class="fas fa-info-circle"></i>		Topics</h3>
+	<div chart-div chart="chart" id="chart-{{ chart.div }}"></div>
+</div>
+
+
+
+<!-- Footer -->
+<div class="row">
+	<!--/*div espace bas de page, footer*/-->
+	<div class="col-md-3" style="height: 305px">
+		<!--/*div gauche*/-->
+	</div>
 </div>

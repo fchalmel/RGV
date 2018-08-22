@@ -1,14 +1,20 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="styles/justified-nav.css" rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+<script>
+	ga('send', 'pageview', '/download.html');
+</script>
+<div class="jumbotron" style="margin-top:50px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
+		<h2><i class="glyphicon glyphicon-download-alt"></i> Download</h2>
+</div>
 
-<div class="jumbotron">
-	<h2><i class="glyphicon glyphicon-download-alt"></i> Download</h2>
-	<h3>Source code</h3>
+
+<div>
+
+	<h3><i class="fab fa-github" aria-hidden="true"></i> Source code</h3>
 	The source code of the RGV web application is available on <a href="https://github.com/fchalmel/RGV" target="_blanck">GitHub</a>.
 	<br>
-	<br>
-	<h3>Current genome annotation</h3>
-	<table class="table table-bordered table-hover table-striped">
+	<hr>
+	<h3><i class="fas fa-edit" aria-hidden="true"></i> Current genome annotation files</h3>
+	<table class="table table-hover">
 		<tr>
 			<th>Genome</th>
 			<th>UCSC genome release</th>
@@ -16,52 +22,120 @@
 			<th>Download</th>
 		</tr>
 		<tr>
-			<td><img src="images/genome_hs.png" height="50" title="Homo sapiens" "alt="Homo sapiens"></img></td>
+			<td><img src="images/genome_hs.png" height="50" title="Homo sapiens" alt="Homo sapiens"></img></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38" target="_blanck">hg38</a></td>
-			<td>AAAA/MM/DD</td>
-			<td><a ng-href="/link_to_the_file">GTF</a>, <a ng-href="/link_to_the_file">GFF</a></td>
+			<td>2017/11/13</td>
+			<td><a ng-href="/dataset_download/annotation/hg38+RefSeq.complete.gtf.gff.zip">RefSeq</a>, <a ng-href="/dataset_download/annotation/hg38+Ensembl.complete.gtf.gff.zip">Ensembl</a></td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_mm.png" height="50" title="Mus musculus" alt="Mus musculus"></img></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=mm10" target="_blanck">mm10</a></td>
-			<td>AAAA/MM/DD</td>
-			<td><a ng-href="/link_to_the_file">GTF</a>, <a ng-href="/link_to_the_file">GFF</a></td>
+			<td>2017/11/13</td>
+			<td><a ng-href="/dataset_download/annotation/mm10+RefSeq.complete.gtf.gff.zip">RefSeq</a>, <a ng-href="/dataset_download/annotation/mm10+Ensembl.complete.gtf.gff.zip">Ensembl</a></td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_rn.png" height="50" title="Rattus norvegicus" alt="Rattus norvegicus"></img></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=rn6" target="_blanck">rn6</a></td>
-			<td>AAAA/MM/DD</td>
-			<td><a ng-href="/link_to_the_file">GTF</a>, <a ng-href="/link_to_the_file">GFF</a></td>
+			<td>2017/11/13</td>
+			<td><a ng-href="/dataset_download/annotation/rn6+RefSeq.complete.gtf.gff.zip">RefSeq</a>, <a ng-href="/dataset_download/annotation/rn6+Ensembl.complete.gtf.gff.zip">Ensembl</a></td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_canFam.png" height="50" title="Canis familiaris" alt="Canis familiaris"></img></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=rn6" target="_blanck">canFam3</a></td>
-			<td>AAAA/MM/DD</td>
-			<td><a ng-href="/link_to_the_file">GTF</a>, <a ng-href="/link_to_the_file">GFF</a></td>
+			<td>2017/11/13</td>
+			<td><a ng-href="/dataset_download/annotation/canFam3+RefSeq.complete.gtf.gff.zip">RefSeq</a>, <a ng-href="/dataset_download/annotation/canFam3+Ensembl.complete.gtf.gff.zip">Ensembl</a></td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_bosTau.png" height="50" title="Bos taurus" alt="Bos taurus"></img></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=bosTau8" target="_blanck">bosTau8</a></td>
-			<td>AAAA/MM/DD</td>
-			<td><a ng-href="/link_to_the_file">GTF</a>, <a ng-href="/link_to_the_file">GFF</a></td>
+			<td>2017/11/13</td>
+			<td><a ng-href="/dataset_download/annotation/bosTau8+RefSeq.complete.gtf.gff.zip">RefSeq</a>, <a ng-href="/dataset_download/annotation/bosTau8+Ensembl.complete.gtf.gff.zip">Ensembl</a></td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_susScr.png" height="50" title="Sus scrofa" alt="Sus scrofa"></img></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=susScr3" target="_blanck">susScr3</a></td>
-			<td>AAAA/MM/DD</td>
-			<td><a ng-href="/link_to_the_file">GTF</a>, <a ng-href="/link_to_the_file">GFF</a></td>
+			<td>2017/11/13</td>
+			<td><a ng-href="/dataset_download/annotation/susScr3+RefSeq.complete.gtf.gff.zip">RefSeq</a>, <a ng-href="/dataset_download/annotation/susScr3+Ensembl.complete.gtf.gff.zip">Ensembl</a></td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_galGal.jpg" height="50" title="Gallus gallus" alt="Gallus gallus"></img></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=galGal5" target="_blanck">galGal5</a></td>
-			<td>AAAA/MM/DD</td>
-			<td><a ng-href="/link_to_the_file">GTF</a>, <a ng-href="/link_to_the_file">GFF</a></td>
+			<td>2017/11/13</td>
+			<td><a ng-href="/dataset_download/annotation/galGal5+RefSeq.complete.gtf.gff.zip">RefSeq</a>, <a ng-href="/dataset_download/annotation/galGal5+Ensembl.complete.gtf.gff.zip">Ensembl</a></td>
 		</tr>
 		<tr>
 			<td><img src="images/genome_danRer.png" height="50" title="Danio rerio" alt="Danio rerio"></img></td>
 			<td><a href="https://genome.ucsc.edu/cgi-bin/hgTracks?db=danRer10" target="_blanck">danRer10</a></td>
-			<td>AAAA/MM/DD</td>
-			<td><a ng-href="/link_to_the_file">GTF</a>, <a ng-href="/link_to_the_file">GFF</a></td>
+			<td>2017/11/13</td>
+			<td><a ng-href="/dataset_download/annotation/danRer10+RefSeq.complete.gtf.gff.zip">RefSeq</a>, <a ng-href="/dataset_download/annotation/danRer10+Ensembl.complete.gtf.gff.zip">Ensembl</a></td>
 		</tr>
 	</table>
+
+	<h3><i class="far fa-file-excel"></i> RGV metadata file</h3>
+	<p>This file provide the complete description of all studies indexed in RGV database. <a ng-href="/dataset_download/download/metadata.csv.zip">Download</a></p>
+
+	<h3><i class="far fa-chart-bar"></i> Data gene level files</h3>
+	<table st-table="displayedCollection" st-safe-src="data_all" class="table">
+		<thead>
+			<tr>
+				<th>Article</th>
+				<th>Biological topics</th>
+				<th>Species</th>
+				<th>Technology</th>
+				<th>Expression file(s)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr st-select-row="row" st-select-mode="multiple" ng-repeat="row in displayedCollection" ng-if="row.path" >
+				<td>{{row.article}}</td>
+				<td>{{replaceString(row.biological_topics)}}</td>
+				<td>{{replaceString(row.species)}}</td>
+				<td>{{row.technology}}</td>
+				<td ng-init = "formatRow = haveOnePath(row.path)"><a ng-repeat="pathd in formatRow" ng-href="/dataset_download/jbrowse/{{pathd.path}}"> Download {{pathd.name}} | </a></td>
+			</tr>
+		</tbody>
+		<tbody ng-if="!displayedCollection">
+			<tr>
+				<td colspan="2">Loading ...</td>
+			</tr>
+			</tbody>
+	</table>
+
+	<!--
+	<h3><i class="fab fa-python"></i> Data processing scripts</h3>
+	<h5>Prepare file to RGV plot format</h5>
+	<p>R script to format files and open them under RGV. This script requires the gene expression file (csv, tsv), the sample-group association file (csv,tsv), and the gene symbol-gene IDs mapping file (if gene symbol used for the expression file) (gff, csv, tsv).</p>
+	<pre>usage: ./Step_0_RGV_format_file.R [-h] --rpkm RPKM_TABLE --loc LOC_TABLE
+			[--map MAP_TABLE] [--gtf GFF_FILE]
+			[--out OUTFILE] [-v] [-q]
+
+	This script format file in order to visualize it in RGV gene-level and single-
+	cell tool.
+
+	optional arguments:
+	-h, --help         show this help message and exit
+	--rpkm RPKM_TABLE  RPKM genes table
+	--loc LOC_TABLE    Cluster spacial localisation file
+	--map MAP_TABLE    Gene symbol to gene ID csv file
+	--gtf GFF_FILE     Ensembl gtf version associated to gene symbol
+	--out OUTFILE      Output file
+	-v, --verbose      Print extra output [default]
+	-q, --quietly      Print little output</pre>
+	
+	<p>Requires <code>library(argparse)</code> and <code>library(tools)</code></p>
+	<a ng-href="/dataset_download/Data_processing/Step_0_RGV_format_file.R" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-cloud-download"></span> Download R script</a>
+
+
+
+
+	<h3><i class="far fa-file-excel"></i> RGV data Excel sheets</h3>
+</div>-->
+
+<!-- Footer -->
+<div class="row">
+		<!--/*div espace bas de page, footer*/-->
+
+		<div class="col-md-3" style="height: 305px">
+			<!--/*div gauche*/-->
+		</div>
 </div>

@@ -1,7 +1,368 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="styles/justified-nav.css" rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="styles/distrochart.css">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<link href="styles/style.css" rel="stylesheet">
+<link href="styles/singlecellvisu.css" rel="stylesheet">
+<script src="scripts/plotly-latest.min.js"></script>
+<style>
+  .st-selected > td {
+  background: #d8060640;
+}
+table  {
+    font-size: 10px;
+}
+.form-control  {
+    font-size: 10px;
+    height: 27px;
+}
+.input-sm  {
+    font-size: 10px;
+    height: 27px;
+}
+#colorstrip{
+    height: 25px;
+    border-style: solid;
+    border-color: black;
+    background: #dcdcdb; /* Old browsers */
+    background: -moz-linear-gradient(left, #dcdcdb 0%, #f5bb91 28%, #da644a 63%, #b20b1d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #dcdcdb 0%,#f5bb91 28%,#da644a 63%,#b20b1d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #dcdcdb 0%,#f5bb91 28%,#da644a 63%,#b20b1d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dcdcdb', endColorstr='#b20b1d',GradientType=1 ); /* IE6-9 */
+}
 
-<div class="jumbotron">
-	<h2><i class="glyphicon glyphicon-cloud"></i> Single-cell browser</h2>
-	<h3><i class="glyphicon glyphicon-ban-circle"></i> Under construction! Coming soon... <i class="glyphicon glyphicon-ban-circle"></i></h3>
+</style>
+
+
+<script>
+function stepnext(n){
+
+  if(n != 0){
+      //$(".stepwizard-row a").switchClass('btn-primary','btn-default');
+      $(".stepwizard-row a").removeClass('btn-primary');
+      $(".stepwizard-row a").addClass('btn-default');
+      $('.stepwizard a[href="#step-'+n+'"]').tab('show');
+      //$('.stepwizard-row a[href="#step-'+n+'"]').switchClass('btn-default','btn-primary');
+      $('.stepwizard-row a[href="#step-'+n+'"]').removeClass('btn-default');
+      $('.stepwizard-row a[href="#step-'+n+'"]').addClass('btn-primary');
+  }
+}
+stepnext(1);
+</script>
+<script>
+	ga('send', 'pageview', '/scRNAseq.html');
+</script>
+
+<div class="jumbotron" style="margin-top:50px;text-align:center;padding-top: 1px;padding-bottom: 10px;">
+  <h2><i class="glyphicon glyphicon-cloud"></i> Scatter plot</h2>
 </div>
+<div ng-if="msg.length > 0" class="alert alert-warning alert-fixed" style="z-index:99;">
+  <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <h3>Warning</h3>
+  <ul>
+    <li ng-repeat='mes in msg'>{{mes}}</li>
+  </ul>
+</div>
+<div ng-if="msgwrn" class="alert alert-danger alert-fixed">
+    <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <h3>ERROR</h3>
+  {{msgwrn}}
+</div>
+
+
+
+  
+    <div class="stepwizard">
+      <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <a class="btn btn-default btn-circle active-step" onclick="stepnext(1);" href="#step-1" target="_self" data-toggle="tab" onclick="stepnext(1)" >1</a>
+        </div>
+        <div class="stepwizard-step">
+            <a class="btn btn-default btn-circle" onclick="stepnext(2);" href="#step-2" target="_self" data-toggle="tab">2</a>
+        </div>
+        <div class="stepwizard-step">
+                <a class="btn btn-default btn-circle disabled" disabled href="#step-3" target="_self" data-toggle="tab">3</a>
+            </div>
+      </div>
+    </div>
+      <div class="rate-updates">
+        <div class="tab-content margintop0" style="border:none !important;">
+
+          <!-- STEP 1 -->
+          <div class="tab-pane fade padding20 " id="step-1">
+              <h3> Step 1 - Select your study</h3>
+              <div class="row">
+                    <div class="col-xs-6 col-md-4 col-lg-4">
+                      <div>
+                          <form >
+                              <div class="input-group">
+                                 <button class="btn btn-default" onclick="stepnext(2);">Next</button>
+                              </div>
+                          </form>
+                      </div>
+                    </div>
+                </div>
+              <table st-table="displayedCollection" st-safe-src="data_all" class="table">
+                  <thead>
+                    <tr>
+                      <th st-sort-default="true" st-sort="article">Article</th>
+                      <th st-sort="ome">Ome</th>
+                      <th st-sort="technology">Technology</th>
+                      <th st-sort="species">Species</th>
+                      <th st-sort="experimental_design">Experimental design</th>
+                      <th st-sort="biological_topics">Biological topics</th>
+                      <th st-sort="tissue_or_cell">Tissue/Cell</th>
+                      <th st-sort="sex">Sex</th>
+                      <th st-sort="developmental_stage">Developmental stage</th>
+                      <th st-sort="age">Age</th>
+                      <th st-sort="antibody">Antibody</th>
+                      <th st-sort="mutant">Patient / Mutant</th>
+                      <th st-sort="cell_sorted">Cell sorted</th>
+                      <th st-sort="keywords">Keywords</th>
+                    </tr>
+                    <tr>
+                        <th>
+                          <input st-search="article" placeholder="Article" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <select st-search="ome" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="row in ome" value="{{row}}">{{row}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="technology" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="tech in techno" value="{{tech}}">{{tech}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="species" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="spe in allspe " value="{{spe}}">{{spe}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="experimental_design" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="expd in experimentaldesign" value="{{expd}}">{{expd}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="biological_topics" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="bio in biotop" value="{{bio}}">{{bio}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="tissue_or_cell" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="tiss in tissues" value="{{tiss}}">{{tiss}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="sex" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="s in sex" value="{{s}}">{{s}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="developmental_stage" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="dev in stage" value="{{dev}}">{{dev}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="age" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="a in age" value="{{a}}">{{a}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="antibody" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="anti in antibody" value="{{anti}}">{{anti}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="mutant" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="mut in mutant" value="{{mut}}">{{mut}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="cell_sorted" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="cell in cellsorted" value="{{cell}}">{{cell}}</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select st-search="keywords" class="form-control">
+                                <option value="">All</option>
+                                <option ng-repeat="key in keywords" value="{{key}}">{{key}}</option>
+                            </select>
+                        </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr st-select-row="row" st-select-mode="multiple" ng-repeat="row in displayedCollection" ng-if="row.path" >
+                      <td>{{row.article}}</td>
+                      <td>{{row.ome}}</td>
+                      <td>{{row.technology}}</td>
+                      <td>{{replaceString(row.species)}}</td>
+                      <td>{{replaceString(row.experimental_design)}}</td>
+                      <td>{{replaceString(row.biological_topics)}}</td>
+                      <td>{{replaceString(row.tissue_or_cell)}}</td>
+                      <td>{{replaceString(row.sex)}}</td>
+                      <td>{{replaceString(row.developmental_stage)}}</td>
+                      <td>{{ replaceString(row.age)}}</td>
+                      <td>{{replaceString(row.antibody)}}</td>
+                      <td>{{replaceString(row.mutant)}}</td>
+                      <td>{{replaceString(row.cell_sorted)}}</td>
+                      <td>{{replaceString(row.keywords)}}</td>
+
+                    </tr>
+                  </tbody>
+                  <tbody ng-if="!displayedCollection">
+                      <tr>
+                        <td colspan="2">Loading ...</td>
+                      </tr>
+                    </tbody>
+                </table>
+
+                
+              
+             
+        
+              <div class="row">
+                  <div class="col-xs-6 col-md-4 col-lg-4">
+                    <div>
+                        <form >
+                            <div class="input-group">
+                               <button class="btn btn-default" onclick="stepnext(2);">Next</button>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="tab-pane fade padding20 " id="step-2" ng-if="hasSelected()">
+                <div class="row" >
+                    <table class="table">
+                        <tr>
+                            <th>Study</th>
+                            <th>Select data</th>
+                        </tr>
+                        <tr ng-repeat="selstud in chosen">
+                            <th>{{selstud.article}}</th>
+                            <th ng-init="paths = replaceStringtoList(selstud.path)">
+                                <select class="form-control" ng-model="selstud.path" ng-init="paths[1]" ng-change="selectPath(selstud,selstud.path)">
+                                    <option ng-repeat="path in paths" value="{{path}}">{{getName(path)}}</option>
+                                </select>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <button class="btn btn-default" ng-click="showData(chosen,'',models)" onclick="stepnext(3);">Show</button>
+          </div>
+          
+          <!-- STEP 4 -->
+          <div class="tab-pane fade padding20 " id="step-3" >
+              <div ng-if="charts">
+                  <div class="col-md-12">
+                      <h6>Results generated in {{ time }} seconds</h6>
+                  </div>
+                  <div class="tabbable-panel">
+                    <div class="tabbable-line">
+                    <ul class="nav nav-tabs ">
+                      <li ng-repeat="study in chosen" ng-class="{active:$index==0}">
+                        <a href="#tab_default-{{ $index }}" target="_self" data-toggle="tab">
+                          {{ study.article }} <span ng-if="study.pathName">- {{study.pathName}}</span></a>
+                      </li>
+                    </ul>
+                    <div class="tab-content">
+                      <div ng-repeat="stud in chosen" class="tab-pane" ng-class="{active:$index==0}" id="tab_default-{{ $index }}">
+                        <div class="row" ng-repeat="chart in charts" ng-if="chart.dir == stud.path || chart.title == 'violin'">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <select style="font-size: 14px;" id="select-{{ $index }}" class="form-control" ng-model="models[stud.path]" ng-init="models[stud.path] = chart.selected" ng-change="showData(chosen,'',models)" ng-options="class for class in chart.class"></select>
+                                </div>
+                                <div class="col-md-4">
+                                    <form >
+                                        <div class="input-group" style="margin-bottom:15px;">
+                                        <input style="z-index: 0;font-size: 14px;height:34px;" class="form-control" name="states" id="states" type="text" placeholder="Select genes (from the proposals)" ng-model="selectedgene"  typeahead-min-length="3" typeahead="item.Symbol for item in get_genes($viewValue,'genes',stud,species)" typeahead-on-select="get_item($item, $model,label)" typeahead-loading="Loading" autocomplete="off">
+                                        <!--<input id="organism_vivo" type="text" ng-model="tissue" placeholder="Tissue" typeahead-min-length="4"   typeahead="item.name for item in get_onto($viewValue,'tissue.tab')"  class="form-control" >--> 
+                                        <span class="input-group-btn">
+                                            <button style="z-index: 0;" class="btn btn-default" ng-click='select_genes(stud,higlight_gene)'>Select</button>
+                                        </span>
+                                        </div>
+                                    </form>
+                                    <div class="list-group" >
+                                        <div class="list-group-item" ng-repeat="gene in allgenes[stud.path]" style="margin-bottom:10px">
+                                            <a ng-click="remove_genes(gene,stud.path)"><i class="fas fa-times panel-close" style="color: white; text-decoration: none;background:#d80606;"></i></a>
+                                            <div class="pull-left form-control-inline">
+                                            <h4 class="list-group-item-heading">{{ gene.Symbol }}</h4>
+                                            <p class="list-group-item-text">EntrezGene ID: {{ gene.GeneID }}</p>
+                                            <p class="list-group-item-text">Ensembl ID: {{ gene.EnsemblID }}</p>
+                                            </div>
+                                            <button id="displayBtn-{{ gene.Symbol }}-{{ stud.path }}" class="btn btn-default pull-right"  ng-click="displayGeneExp(chosen,'',gene,models,stud.path)">{{val_button[stud.path][gene.Symbol]}}</button>	
+                                            <div class="clearfix" ></div>
+                                            
+                                        </div>
+                                    </div>
+                
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row" ng-if="chart.violin">
+                                            <h4 ng-if="chart.name">{{ chart.name }}</h4>
+                                            <div ng-if="chart.msg != ''" class="alert alert-warning">{{chart.msg}}</div>
+                                            <div chart-div chart="chart" id="chart-div-{{ $index }}" ng-if='chart.msg==""'></div>
+                                            <div class="row">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4" id="colorstrip"></div>
+                                                <div class="col-md-4" ></div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-md-4"></div>
+                                                    <div class="col-md-4">
+                                                        <span class="pull-left">{{chart.minval}}</span>
+                                                        <span class="pull-right">{{chart.maxval}}</span>
+                                                    </div>
+                                                    <div class="col-md-4" ></div>
+                                                </div>
+                                            <div class="col-md-12" chart-div chart="chart.violin" id="chart-div-violin-{{ $index }}" ng-if="chart.violin"></div>
+                                        </div>                        
+                                        <div class="row" ng-if="!chart.violin">
+                                            <h4 ng-if="chart.name">{{ chart.name }}</h4>
+                                            <div  ng-if="chart.msg != ''" class="alert alert-warning">{{chart.msg}}</div>
+                                            <div chart-div chart="chart" id="chart-div-{{ $index }}" ng-if='chart.msg==""'></div> 
+                                        </div>                            
+                                    </div>
+
+                                </div>       
+                            </div>
+                          
+                          
+                        </div>
+              
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-default" onclick="stepnext(2);" type="button"><i class="icon-next"></i> Previous</button>
+          </div>
+        </div>
+      </div>
+
+<!-- Footer -->
+<div class="row">
+		<!--/*div espace bas de page, footer*/-->
+		<div class="col-md-3" style="height: 305px">
+			<!--/*div gauche*/-->
+		</div>
+</div>
+
+<script  src="scripts/index.js"></script>
