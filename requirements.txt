@@ -30,7 +30,7 @@ translationstring==1.3
 urllib3==1.12
 velruse==1.1.1
 venusian==1.0
-waitress==0.8.10
+waitress==1.4.0
 wsgiref==0.1.2
 zope.deprecation==4.1.2
 zope.interface==4.1.2
