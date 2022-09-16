@@ -1,6 +1,6 @@
 Beaker==1.7.0
 Chameleon==2.22
-Mako==1.0.2
+Mako==1.2.2
 MarkupSafe==0.23
 PasteDeploy==1.5.2
 PyJWT==1.4.0
